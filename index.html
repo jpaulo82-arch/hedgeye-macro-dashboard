@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="style.css?v=20260903_3">
   <!-- Chart.js para gráficos dinâmicos -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- html2pdf.js para exportação direta de arquivos PDF de alta fidelidade -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body class="dark-theme">
   <!-- Header / Top Bar -->
@@ -1024,10 +1026,13 @@
           </div>
           <div class="report-actions">
             <button class="btn btn-sm btn-outline" onclick="copyReportToClipboard()">
-              <span class="icon">📋</span> Copiar Relatório
+              <span class="icon">📋</span> Copiar Texto
             </button>
-            <button class="btn btn-sm btn-primary" onclick="printReport()">
-              <span class="icon">🖨️</span> Imprimir / Salvar em PDF
+            <button class="btn btn-sm btn-outline" onclick="printReport()">
+              <span class="icon">🖨️</span> Imprimir
+            </button>
+            <button class="btn btn-sm btn-primary" onclick="downloadExecutivePdf()">
+              <span class="icon">📥</span> Baixar PDF Executivo (Arquivo)
             </button>
           </div>
         </div>
@@ -1044,8 +1049,11 @@
       </div>
       <div class="modal-footer">
         <button class="btn btn-outline" onclick="closeReportModal()">Fechar</button>
-        <button class="btn btn-primary" onclick="printReport()">
-          <span class="icon">🖨️</span> Gerar PDF Executivo
+        <button class="btn btn-outline" onclick="printReport()">
+          <span class="icon">🖨️</span> Imprimir
+        </button>
+        <button class="btn btn-primary" onclick="downloadExecutivePdf()">
+          <span class="icon">📥</span> Baixar Arquivo PDF (2 Páginas)
         </button>
       </div>
     </div>

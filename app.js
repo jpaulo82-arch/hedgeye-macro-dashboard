@@ -1140,187 +1140,194 @@ function renderActiveReportView() {
   const quad2Pct = totalCart > 0 ? ((q2Total / totalCart) * 100).toFixed(1) : "0.0";
   const cashPct = totalCart > 0 ? ((cashTotal / totalCart) * 100).toFixed(1) : "0.0";
 
-  // 1. RENDERIZAÇÃO HTML EXECUTIVA INSTITUCIONAL
-  const riskRowsHtml = riskRangesData.map(r => {
-    let changeTag = '<span class="text-muted">Estável</span>';
-    if (r.low > r.prevLow || r.high > r.prevHigh) changeTag = '<span class="text-emerald font-bold">▲ Subiu</span>';
-    else if (r.low < r.prevLow || r.high < r.prevHigh) changeTag = '<span class="text-rose font-bold">▼ Caiu</span>';
+  // 1. RENDERIZAÇÃO HTML EXECUTIVA INSTITUCIONAL (DIAGRAMADA PARA 2 PÁGINAS A4)
+  const riskRowsHtml = riskRangesData.slice(0, 12).map(r => {
+    let changeTag = '<span class="text-muted" style="font-size:0.75rem;">Estável</span>';
+    if (r.low > r.prevLow || r.high > r.prevHigh) changeTag = '<span class="text-emerald font-bold" style="font-size:0.75rem;">▲ Subiu</span>';
+    else if (r.low < r.prevLow || r.high < r.prevHigh) changeTag = '<span class="text-rose font-bold" style="font-size:0.75rem;">▼ Caiu</span>';
 
     const signalBadge = r.signal === "BULLISH" ? "badge-bullish" : (r.signal === "BEARISH" ? "badge-bearish" : "badge-neutral");
 
     return `
       <tr>
-        <td><strong>${r.ticker}</strong></td>
-        <td>${r.name}</td>
-        <td class="font-bold">${r.low.toLocaleString('pt-BR')} — ${r.high.toLocaleString('pt-BR')}</td>
-        <td><span class="badge ${signalBadge}">${r.signal}</span></td>
-        <td>${changeTag}</td>
+        <td style="padding: 4px 6px;"><strong>${r.ticker}</strong></td>
+        <td style="padding: 4px 6px; font-size: 0.8rem;">${r.name}</td>
+        <td style="padding: 4px 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; font-weight: 700;">${r.low.toLocaleString('pt-BR')} — ${r.high.toLocaleString('pt-BR')}</td>
+        <td style="padding: 4px 6px;"><span class="badge ${signalBadge}" style="font-size: 0.72rem;">${r.signal}</span></td>
+        <td style="padding: 4px 6px;">${changeTag}</td>
       </tr>
     `;
   }).join("");
 
-  const positionsRowsHtml = targetPositions.map(p => {
+  // Top 10 posições estruturais em peso
+  const sortedPositions = [...targetPositions].sort((a, b) => (b.qty * b.price) - (a.qty * a.price));
+  const topPositions = sortedPositions.slice(0, 10);
+
+  const topPositionsRowsHtml = topPositions.map(p => {
     const val = p.qty * p.price;
     const pct = totalCart > 0 ? ((val / totalCart) * 100).toFixed(2) : "0.00";
-    const qtyStr = p.qty === 1 && p.ticker === 'CAIXA' ? '-' : p.qty.toLocaleString('pt-BR');
-    const priceStr = p.price < 2 ? p.price.toFixed(4) : p.price.toFixed(2);
     const quadClass = p.nativeQuad.includes("Quad3") ? "badge-bullish" : (p.nativeQuad.includes("Credito") ? "badge-bearish" : "badge-neutral");
 
     return `
       <tr>
-        <td><strong>${p.ticker}</strong></td>
-        <td>${p.name}</td>
-        <td><span class="tag tag-outline">${p.typeGroup}</span></td>
-        <td><span class="badge ${quadClass}">${p.nativeQuad}</span></td>
-        <td>${qtyStr}</td>
-        <td>US$ ${priceStr}</td>
-        <td class="font-bold">US$ ${val.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-        <td><strong>${pct}%</strong></td>
+        <td style="padding: 5px 8px;"><strong>${p.ticker}</strong></td>
+        <td style="padding: 5px 8px; font-size: 0.82rem;">${p.name}</td>
+        <td style="padding: 5px 8px;"><span class="tag tag-outline" style="font-size: 0.72rem;">${p.typeGroup}</span></td>
+        <td style="padding: 5px 8px;"><span class="badge ${quadClass}" style="font-size: 0.72rem;">${p.nativeQuad}</span></td>
+        <td style="padding: 5px 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; font-weight: 700;">US$ ${val.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+        <td style="padding: 5px 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; font-weight: 800; color: #0284C7;">${pct}%</td>
       </tr>
     `;
   }).join("");
 
   formattedContainer.innerHTML = `
-    <!-- Cabeçalho Institucional -->
-    <div class="report-brand-header">
-      <div class="report-brand-logo">
-        <span class="logo-icon">⚡</span>
-        <div>
-          <h2>HEDGEYE <span>RISK MANAGEMENT</span></h2>
-          <p>Global Macro Strategy & Portfolio Advisory Report</p>
+    <!-- PÁGINA 1: MACRO STRATEGY & OUR LEVELS -->
+    <div class="pdf-page-block">
+      <!-- Cabeçalho Institucional -->
+      <div class="report-brand-header">
+        <div class="report-brand-logo">
+          <span class="logo-icon">⚡</span>
+          <div>
+            <h2>HEDGEYE <span>RISK MANAGEMENT</span></h2>
+            <p>Global Macro Strategy & Portfolio Advisory Report</p>
+          </div>
+        </div>
+        <div class="report-brand-meta">
+          <div class="meta-date">03/09/2026 | 09:30 BRT (07:51 EDT)</div>
+          <div class="meta-author">Research: <strong>Keith McCullough & Daryl Jones</strong></div>
+          <div class="meta-quad"><span class="badge badge-bullish">📍 REGIME ATUAL: QUAD 3 (ESTAGFLAÇÃO)</span></div>
         </div>
       </div>
-      <div class="report-brand-meta">
-        <div class="meta-date">03/09/2026 | 09:30 BRT (07:51 EDT)</div>
-        <div class="meta-author">Research: <strong>Keith McCullough & Daryl Jones</strong></div>
-        <div class="meta-quad"><span class="badge badge-bullish">📍 REGIME ATUAL: QUAD 3 (ESTAGFLAÇÃO)</span></div>
-      </div>
-    </div>
 
-    <!-- Banner de Identificação da Carteira -->
-    <div class="report-section-card highlight">
-      <div class="flex-between">
-        <div>
-          <h3 class="report-section-title" style="margin-bottom: 0.2rem; border: none;"><span class="icon">💼</span> ${cartTitle}</h3>
-          <span class="text-muted" style="font-size: 0.8rem;">Snapshot auditado com reconciliação de preços e Risk Ranges</span>
-        </div>
-        <div class="text-right">
-          <div style="font-size: 0.72rem; color: #94A3B8; text-transform: uppercase; font-weight: 700;">Patrimônio Total</div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 1.4rem; font-weight: 800; color: #38BDF8;">
-            US$ ${totalCart.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+      <!-- Banner de Identificação da Carteira -->
+      <div class="report-section-card highlight" style="margin-bottom: 1rem; padding: 0.85rem 1.25rem;">
+        <div class="flex-between">
+          <div>
+            <h3 class="report-section-title" style="margin-bottom: 0.1rem; border: none; font-size: 1rem;"><span class="icon">💼</span> ${cartTitle}</h3>
+            <span class="text-muted" style="font-size: 0.78rem;">Snapshot auditado com reconciliação de preços e Risk Ranges</span>
+          </div>
+          <div class="text-right">
+            <div style="font-size: 0.68rem; color: #94A3B8; text-transform: uppercase; font-weight: 700;">Patrimônio Total</div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 1.25rem; font-weight: 800; color: #38BDF8;">
+              US$ ${totalCart.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Seção 1: Síntese Macro & Destaques Matinais -->
-    <div class="report-section-card">
-      <h3 class="report-section-title"><span class="icon">🧭</span> 1. Síntese Executiva & Diagnóstico Macro (GIP Framework)</h3>
-      <div class="report-quote-banner">
-        “You can't stop the waves, but you can learn to surf. Volatility is unavoidable; the edge comes from staying disciplined, sizing risk and reading flows.”
-        <br><strong style="font-style: normal; font-size: 0.8rem; color: #38BDF8;">— Keith McCullough & Daryl Jones</strong>
-      </div>
-      <div class="report-bullets-grid">
-        <div class="report-bullet-item">
-          <span class="b-icon">📌</span>
-          <div><strong>Regime Nowcast GIP:</strong> Transição consolidada para <strong>Quad 3 (Estagflação: Crescimento Desacelera | Inflação Acelera)</strong>. Chicago PMI despencou de 57,6 para 47,1 (contração manufatureira profunda) enquanto JOLTS saltou para 7,74M (+790k vagas), cimentando inflação salarial persistente.</div>
+      <!-- Seção 1: Síntese Macro & Destaques Matinais -->
+      <div class="report-section-card" style="margin-bottom: 1rem; padding: 0.85rem 1.25rem;">
+        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">🧭</span> 1. Síntese Executiva & Diagnóstico Macro (GIP Framework)</h3>
+        <div class="report-quote-banner" style="padding: 0.5rem 0.85rem; margin-bottom: 0.6rem; font-size: 0.82rem;">
+          “You can't stop the waves, but you can learn to surf. Volatility is unavoidable; the edge comes from staying disciplined, sizing risk and reading flows.”
+          <strong style="font-style: normal; font-size: 0.75rem; color: #38BDF8;">— Keith McCullough & Daryl Jones</strong>
         </div>
-        <div class="report-bullet-item">
-          <span class="b-icon">📌</span>
-          <div><strong>10Y Yield & Ouro Spot:</strong> O rendimento de 10 anos colado no topo (4,76% vs 4,84%) associado ao VIX calmo (~15) gera fragilidade nos mercados. Se os dados de emprego de sexta-feira puxarem o yield para o piso (4,68%), <strong>Ouro (AAAU / NEM / GDX) e Bitcoin disparam</strong>. Piso do ouro elevado para US$ 4.292/oz.</div>
-        </div>
-        <div class="report-bullet-item">
-          <span class="b-icon">📌</span>
-          <div><strong>Afunilamento de Setores (Narrowing):</strong> O mercado encerrou a expansão ampla e está afunilando. Setores líderes com pricing power: <strong>Healthcare (XLV +1,4% no mês)</strong> e <strong>Commodities/Energia (WTI 86,13–93,94)</strong>. Keith adicionou Software (IGV) via balanço da Snowflake.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Seção 2: Tabela de Risk Ranges Oficiais -->
-    <div class="report-section-card">
-      <h3 class="report-section-title"><span class="icon">🎯</span> 2. Risk Ranges Oficiais (Our Levels — 03/09/2026)</h3>
-      <div class="table-responsive">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Ticker</th>
-              <th>Ativo / Descrição</th>
-              <th>Risk Range Imediato</th>
-              <th>Sinal TREND</th>
-              <th>Dinâmica vs. Anterior</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${riskRowsHtml}
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Seção 3: Diagnóstico de Alocação e Exposição por Quadrante -->
-    <div class="report-section-card success-border">
-      <h3 class="report-section-title"><span class="icon">📊</span> 3. Diagnóstico da Carteira & Aderência ao Regime</h3>
-      <div class="grid-3-col mb-3">
-        <div class="stat-card">
-          <div class="stat-label">ADERÊNCIA A QUAD 3 (VENTO A FAVOR)</div>
-          <div class="stat-val text-emerald">${quad3Pct}%</div>
-          <div class="stat-desc">Ouro, Energia, Defensivos, Cobre e Caixa SGOV</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">EXPOSIÇÃO HIGH BETA (QUAD 1)</div>
-          <div class="stat-val text-amber">${quad1Pct}%</div>
-          <div class="stat-desc">Semicondutores e IA (controlar risco TAIL em 1-3%)</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">CRÉDITO CORPORATIVO (BONDS)</div>
-          <div class="stat-val text-rose">${creditPct}%</div>
-          <div class="stat-desc">Carrego de cupons altos com LQD em Bearish TREND</div>
+        <div class="report-bullets-grid" style="gap: 0.45rem;">
+          <div class="report-bullet-item" style="font-size: 0.82rem;">
+            <span class="b-icon">📌</span>
+            <div><strong>Regime Nowcast GIP:</strong> Transição consolidada para <strong>Quad 3 (Estagflação: Crescimento Desacelera | Inflação Acelera)</strong>. Chicago PMI despencou para 47,1 (contração manufatureira) enquanto JOLTS saltou para 7,74M (+790k vagas), cimentando inflação salarial persistente.</div>
+          </div>
+          <div class="report-bullet-item" style="font-size: 0.82rem;">
+            <span class="b-icon">📌</span>
+            <div><strong>10Y Yield & Ouro Spot:</strong> O 10Y Yield colado no teto (4,76% vs 4,84%) e VIX calmo (~15) criam fragilidade. Se dados de Payrolls puxarem o yield para 4,68%, <strong>Ouro (AAAU / NEM / GDX) dispara</strong>. Piso do ouro elevado para US$ 4.292/oz.</div>
+          </div>
+          <div class="report-bullet-item" style="font-size: 0.82rem;">
+            <span class="b-icon">📌</span>
+            <div><strong>Afunilamento Setorial (Narrowing):</strong> Foco em setores com pricing power: <strong>Healthcare (XLV +1,4% no mês)</strong>, <strong>Energia/Metais (WTI 86,13–93,94)</strong> e Software defensivo de alto FCF (IGV).</div>
+          </div>
         </div>
       </div>
 
-      <div class="table-responsive">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Ticker</th>
-              <th>Nome / Tese</th>
-              <th>Tipo</th>
-              <th>Quad</th>
-              <th>Qtd</th>
-              <th>Preço</th>
-              <th>Valor (USD)</th>
-              <th>Peso (%)</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${positionsRowsHtml}
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Seção 4: Recomendações e Plano de Ação -->
-    <div class="report-section-card warning-border">
-      <h3 class="report-section-title"><span class="icon">⚡</span> 4. Plano de Ação Operacional & Decisões Prioritárias</h3>
-      <div class="report-bullets-grid">
-        <div class="report-bullet-item">
-          <span class="b-icon">🟢</span>
-          <div><strong>Manter Convicção Máxima em Ouro (AAAU / NEM / GDX):</strong> Principal hedge contra estagflação e recuo de yields. Comprar nos recuos até o piso de 4.292.</div>
-        </div>
-        <div class="report-bullet-item">
-          <span class="b-icon">🟡</span>
-          <div><strong>Prata (SLV) — Cautela Operacional:</strong> Sinal TRADE quebrado em US$ 65,11. Respeitar a regra de "não comprar a queda" até reabilitação do sinal.</div>
-        </div>
-        <div class="report-bullet-item">
-          <span class="b-icon">🔵</span>
-          <div><strong>Preservação de Caixa / SGOV (${cashPct}%):</strong> Manter liquidez disponível para aproveitar assimetrias nos pisos de range.</div>
+      <!-- Seção 2: Tabela de Risk Ranges Oficiais -->
+      <div class="report-section-card" style="margin-bottom: 0; padding: 0.85rem 1.25rem;">
+        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">🎯</span> 2. Risk Ranges Oficiais (Our Levels — 03/09/2026)</h3>
+        <div class="table-responsive">
+          <table class="data-table" style="font-size: 0.8rem;">
+            <thead>
+              <tr>
+                <th style="padding: 5px 6px;">Ticker</th>
+                <th style="padding: 5px 6px;">Ativo / Descrição</th>
+                <th style="padding: 5px 6px;">Risk Range Imediato</th>
+                <th style="padding: 5px 6px;">Sinal TREND</th>
+                <th style="padding: 5px 6px;">Dinâmica</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${riskRowsHtml}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
 
-    <!-- Rodapé Institucional -->
-    <div style="border-top: 1px solid #1E293B; padding-top: 1rem; margin-top: 1.5rem; text-align: center; font-size: 0.75rem; color: #64748B;">
-      Relatório de Estratégia Macro Quantitativa gerado para tomada de decisão fundamentada. Metodologia: Hedgeye Risk Management (GIP Framework & Volatility-Adjusted Risk Ranges).
+    <div class="pdf-page-break" style="height: 25px;"></div>
+
+    <!-- PÁGINA 2: PORTFOLIO ALLOCATION & ACTION PLAN -->
+    <div class="pdf-page-block">
+      <!-- Seção 3: Diagnóstico de Alocação e Exposição por Quadrante -->
+      <div class="report-section-card success-border" style="margin-bottom: 1rem; padding: 0.85rem 1.25rem;">
+        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">📊</span> 3. Diagnóstico de Alocação da Carteira</h3>
+        <div class="grid-3-col mb-2" style="gap: 0.5rem;">
+          <div class="stat-card" style="padding: 0.6rem;">
+            <div class="stat-label" style="font-size: 0.68rem;">ADERÊNCIA A QUAD 3 (VENTO A FAVOR)</div>
+            <div class="stat-val text-emerald" style="font-size: 1.15rem;">${quad3Pct}%</div>
+            <div class="stat-desc" style="font-size: 0.7rem;">Ouro, Energia, Defensivos e Caixa SGOV</div>
+          </div>
+          <div class="stat-card" style="padding: 0.6rem;">
+            <div class="stat-label" style="font-size: 0.68rem;">EXPOSIÇÃO HIGH BETA (QUAD 1)</div>
+            <div class="stat-val text-amber" style="font-size: 1.15rem;">${quad1Pct}%</div>
+            <div class="stat-desc" style="font-size: 0.7rem;">Semicondutores e IA (risco TAIL 1-3%)</div>
+          </div>
+          <div class="stat-card" style="padding: 0.6rem;">
+            <div class="stat-label" style="font-size: 0.68rem;">CRÉDITO CORPORATIVO (BONDS)</div>
+            <div class="stat-val text-rose" style="font-size: 1.15rem;">${creditPct}%</div>
+            <div class="stat-desc" style="font-size: 0.7rem;">Cupons com LQD em Bearish TREND</div>
+          </div>
+        </div>
+
+        <h4 style="font-size: 0.85rem; margin: 0.5rem 0 0.4rem 0; color: #CBD5E1;">Principais Posições Estruturais da Carteira (Top Holdings):</h4>
+        <div class="table-responsive">
+          <table class="data-table" style="font-size: 0.8rem;">
+            <thead>
+              <tr>
+                <th style="padding: 5px 8px;">Ticker</th>
+                <th style="padding: 5px 8px;">Nome / Tese</th>
+                <th style="padding: 5px 8px;">Tipo</th>
+                <th style="padding: 5px 8px;">Quad</th>
+                <th style="padding: 5px 8px;">Valor (USD)</th>
+                <th style="padding: 5px 8px;">Peso (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${topPositionsRowsHtml}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Seção 4: Recomendações e Plano de Ação -->
+      <div class="report-section-card warning-border" style="margin-bottom: 1rem; padding: 0.85rem 1.25rem;">
+        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">⚡</span> 4. Plano de Ação Operacional & Recomendações</h3>
+        <div class="report-bullets-grid" style="gap: 0.45rem;">
+          <div class="report-bullet-item" style="font-size: 0.82rem;">
+            <span class="b-icon">🟢</span>
+            <div><strong>Manter Convicção Máxima em Ouro (AAAU / NEM / GDX):</strong> Principal hedge contra estagflação e recuo de yields. Comprar nos recuos até o piso de 4.292.</div>
+          </div>
+          <div class="report-bullet-item" style="font-size: 0.82rem;">
+            <span class="b-icon">🟡</span>
+            <div><strong>Prata (SLV) — Cautela Operacional:</strong> Sinal TRADE quebrado em US$ 65,11. Respeitar a regra de "não comprar a queda" até reabilitação do sinal.</div>
+          </div>
+          <div class="report-bullet-item" style="font-size: 0.82rem;">
+            <span class="b-icon">🔵</span>
+            <div><strong>Preservação de Caixa / SGOV (${cashPct}%):</strong> Manter liquidez disponível para aproveitar assimetrias nos pisos de range.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé Institucional -->
+      <div style="border-top: 1px solid #1E293B; padding-top: 0.75rem; text-align: center; font-size: 0.72rem; color: #64748B;">
+        Relatório de Estratégia Macro Quantitativa gerado para tomada de decisão fundamentada. Metodologia: Hedgeye Risk Management (GIP Framework & Volatility-Adjusted Risk Ranges).
+      </div>
     </div>
   `;
 
@@ -1340,7 +1347,7 @@ Patrimônio Total: US$ ${totalCart.toLocaleString('pt-BR', { minimumFractionDigi
 
 ---
 2. RISK RANGES OFICIAIS (03/09/2026)
-${riskRangesData.map(r => `• ${r.ticker.padEnd(8)}: ${r.low.toString().padEnd(6)} a ${r.high.toString().padEnd(6)} | ${r.signal.padEnd(8)} | ${r.name}`).join("\n")}
+${riskRangesData.slice(0, 15).map(r => `• ${r.ticker.padEnd(8)}: ${r.low.toString().padEnd(6)} a ${r.high.toString().padEnd(6)} | ${r.signal.padEnd(8)} | ${r.name}`).join("\n")}
 
 ---
 3. ADERÊNCIA AO REGIME & EXPOSIÇÃO
@@ -1369,6 +1376,88 @@ function copyReportToClipboard() {
     navigator.clipboard.writeText(formattedText).then(() => {
       showToast("Texto do Relatório Executivo copiado com sucesso!");
     });
+  }
+}
+
+// GERAÇÃO REAL DE ARQUIVO PDF (SEM CABEÇALHOS DO BROWSER)
+function downloadExecutivePdf() {
+  const targetScope = document.getElementById("reportScopeSelect")?.value || activePortfolioKey;
+  const scopeName = targetScope === "schwab" ? "Schwab" : (targetScope === "tastyworks" ? "Tastyworks" : "Consolidado");
+  const fileName = `Relatorio_Hedgeye_Macro_${scopeName}_03_09_2026.pdf`;
+
+  const reportElement = document.getElementById("reportFormattedView");
+  if (!reportElement) return;
+
+  showToast("Gerando arquivo PDF de alta fidelidade...");
+
+  // Criar clone temporário com tema claro para o PDF
+  const tempContainer = document.createElement("div");
+  tempContainer.innerHTML = reportElement.innerHTML;
+  tempContainer.style.background = "#FFFFFF";
+  tempContainer.style.color = "#0F172A";
+  tempContainer.style.padding = "10px";
+  tempContainer.style.fontFamily = "'Inter', sans-serif";
+
+  // Ajustar cards do clone para cores de impressão nítidas
+  tempContainer.querySelectorAll(".report-section-card").forEach(card => {
+    card.style.background = "#F8FAFC";
+    card.style.border = "1px solid #CBD5E1";
+    card.style.color = "#0F172A";
+  });
+  tempContainer.querySelectorAll(".report-section-title").forEach(title => {
+    title.style.color = "#0F172A";
+    title.style.borderBottom = "1px solid #E2E8F0";
+  });
+  tempContainer.querySelectorAll(".report-quote-banner").forEach(q => {
+    q.style.background = "#F0F9FF";
+    q.style.color = "#0369A1";
+    q.style.borderLeft = "3px solid #0284C7";
+  });
+  tempContainer.querySelectorAll(".data-table").forEach(t => {
+    t.style.border = "1px solid #CBD5E1";
+    t.style.color = "#1E293B";
+  });
+  tempContainer.querySelectorAll(".data-table th").forEach(th => {
+    th.style.background = "#F1F5F9";
+    th.style.color = "#0F172A";
+    th.style.borderBottom = "2px solid #94A3B8";
+  });
+  tempContainer.querySelectorAll(".data-table td").forEach(td => {
+    td.style.borderBottom = "1px solid #E2E8F0";
+    td.style.color = "#1E293B";
+  });
+  tempContainer.querySelectorAll(".stat-card").forEach(sc => {
+    sc.style.background = "#FFFFFF";
+    sc.style.border = "1px solid #CBD5E1";
+  });
+  tempContainer.querySelectorAll(".stat-label").forEach(sl => {
+    sl.style.color = "#64748B";
+  });
+  tempContainer.querySelectorAll(".stat-val").forEach(sv => {
+    sv.style.color = "#0F172A";
+  });
+  tempContainer.querySelectorAll(".report-brand-header").forEach(bh => {
+    bh.style.borderBottom = "2px solid #0F172A";
+  });
+  tempContainer.querySelectorAll(".report-brand-logo h2").forEach(h2 => {
+    h2.style.color = "#0F172A";
+  });
+
+  const opt = {
+    margin: [8, 10, 8, 10],
+    filename: fileName,
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true, letterRendering: true, backgroundColor: "#FFFFFF" },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['avoid-all', 'css', 'legacy'], before: '.pdf-page-break' }
+  };
+
+  if (window.html2pdf) {
+    window.html2pdf().set(opt).from(tempContainer).save().then(() => {
+      showToast(`Arquivo "${fileName}" baixado com sucesso!`);
+    });
+  } else {
+    printReport();
   }
 }
 
