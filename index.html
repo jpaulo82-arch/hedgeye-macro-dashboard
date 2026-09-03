@@ -991,36 +991,59 @@
 
   </main>
 
-  <!-- MODAL: GERADOR DE RELATÓRIO 09:30 -->
+  <!-- MODAL: GERADOR DE RELATÓRIO 09:30 (RESEARCH INSTITUCIONAL) -->
   <div class="modal-backdrop" id="reportModal">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-xl">
       <div class="modal-header">
-        <h3><span class="icon">📄</span> Relatório Diário Hedgeye — Padronizado</h3>
+        <div>
+          <h3><span class="icon">📑</span> Relatório Diário de Estratégia Macro & Portfólio</h3>
+          <p class="subtitle">Documento executivo formatado para apresentação e tomada de decisão</p>
+        </div>
         <button class="modal-close" onclick="closeReportModal()">&times;</button>
       </div>
       <div class="modal-body">
         <div class="report-toolbar">
           <div class="report-options">
-            <label>Escopo do Relatório:</label>
-            <select id="reportScopeSelect" onchange="updateGeneratedReportText()">
-              <option value="consolidated">Consolidado Global (Charles Schwab + Tastyworks)</option>
-              <option value="schwab">Exclusivo: Charles Schwab</option>
-              <option value="tastyworks">Exclusivo: Tastyworks</option>
+            <label for="reportScopeSelect"><strong>Escopo:</strong></label>
+            <select id="reportScopeSelect" class="form-select" onchange="renderActiveReportView()">
+              <option value="consolidated">Visão Consolidada Global (Charles Schwab + Tastyworks)</option>
+              <option value="schwab" selected>Carteira Principal: Charles Schwab (US$ 211.922,66)</option>
+              <option value="tastyworks">Carteira de Opcionalidade: Tastyworks (US$ 33.949,63)</option>
             </select>
           </div>
+          <div class="report-view-toggle">
+            <button class="btn btn-sm btn-outline active" id="btnViewFormatted" onclick="setReportViewMode('formatted')">
+              <span class="icon">👁️</span> Relatório Formatado (Executivo)
+            </button>
+            <button class="btn btn-sm btn-outline" id="btnViewRaw" onclick="setReportViewMode('raw')">
+              <span class="icon">📝</span> Markdown Bruto
+            </button>
+          </div>
           <div class="report-actions">
-            <button class="btn btn-sm btn-outline" onclick="copyReportToClipboard()">📋 Copiar Markdown</button>
-            <button class="btn btn-sm btn-primary" onclick="printReport()">🖨️ Imprimir / Salvar PDF</button>
+            <button class="btn btn-sm btn-outline" onclick="copyReportToClipboard()">
+              <span class="icon">📋</span> Copiar Relatório
+            </button>
+            <button class="btn btn-sm btn-primary" onclick="printReport()">
+              <span class="icon">🖨️</span> Imprimir / Salvar em PDF
+            </button>
           </div>
         </div>
         
-        <div class="report-preview-box" id="reportPreviewContent">
-          <!-- Conteúdo gerado dinamicamente -->
+        <!-- Área de Exibição do Relatório (Formatado ou Raw) -->
+        <div id="reportContainer" class="report-display-container">
+          <div id="reportFormattedView" class="executive-report-doc">
+            <!-- Renderizado dinamicamente via JS com template executivo -->
+          </div>
+          <div id="reportRawView" class="report-raw-box" style="display: none;">
+            <pre id="reportRawContent"></pre>
+          </div>
         </div>
       </div>
       <div class="modal-footer">
         <button class="btn btn-outline" onclick="closeReportModal()">Fechar</button>
-        <button class="btn btn-primary" onclick="copyReportToClipboard()">Copiar Relatório</button>
+        <button class="btn btn-primary" onclick="printReport()">
+          <span class="icon">🖨️</span> Gerar PDF Executivo
+        </button>
       </div>
     </div>
   </div>

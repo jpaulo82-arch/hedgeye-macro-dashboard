@@ -861,6 +861,11 @@ body {
   max-width: 900px;
 }
 
+.modal-dialog.modal-xl {
+  max-width: 1150px;
+  width: 95%;
+}
+
 .modal-header {
   padding: 1rem 1.25rem;
   border-bottom: 1px solid var(--border-color);
@@ -893,25 +898,299 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.report-preview-box {
-  background-color: #0A0D13;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  padding: 1.25rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78rem;
-  color: #E2E8F0;
-  white-space: pre-wrap;
-  line-height: 1.6;
-  max-height: 550px;
-  overflow-y: auto;
-}
-
 .report-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.85rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.report-options {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.report-view-toggle {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.report-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* CONTAINER E DOCUMENTO EXECUTIVO */
+.report-display-container {
+  max-height: 680px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: #070B12;
+}
+
+.executive-report-doc {
+  background: #0B101B;
+  color: #E2E8F0;
+  padding: 2.5rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+}
+
+.report-brand-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid #1E293B;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.report-brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.report-brand-logo .logo-icon {
+  font-size: 2.2rem;
+}
+
+.report-brand-logo h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.report-brand-logo h2 span {
+  color: #38BDF8;
+}
+
+.report-brand-logo p {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: #94A3B8;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.report-brand-meta {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.report-brand-meta .meta-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #F8FAFC;
+}
+
+.report-brand-meta .meta-author {
+  font-size: 0.78rem;
+  color: #94A3B8;
+}
+
+.report-brand-meta .meta-quad {
+  margin-top: 0.25rem;
+  display: inline-block;
+}
+
+.report-section-card {
+  background-color: #101726;
+  border: 1px solid #1E293B;
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.report-section-card.highlight {
+  border-left: 4px solid #38BDF8;
+}
+
+.report-section-card.success-border {
+  border-left: 4px solid #10B981;
+}
+
+.report-section-card.warning-border {
+  border-left: 4px solid #F59E0B;
+}
+
+.report-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 0.5rem;
+}
+
+.report-quote-banner {
+  background: rgba(56, 189, 248, 0.07);
+  border-left: 3px solid #38BDF8;
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #BAE6FD;
+}
+
+.report-bullets-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.report-bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.86rem;
+}
+
+.report-bullet-item .b-icon {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.report-raw-box {
+  background-color: #0A0D13;
+  padding: 1.5rem;
+}
+
+.report-raw-box pre {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: #CBD5E1;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* REGRAS DE IMPRESSÃO / SALVAR PDF (PRINT MEDIA) */
+@media print {
+  body {
+    background-color: #FFFFFF !important;
+    color: #0F172A !important;
+    font-size: 10pt;
+  }
+
+  /* Ocultar todos os elementos do app e manter apenas o relatório */
+  .app-header,
+  .nav-tabs,
+  .main-container,
+  .modal-header,
+  .modal-footer,
+  .report-toolbar,
+  .modal-backdrop::before,
+  .toast {
+    display: none !important;
+  }
+
+  .modal-backdrop {
+    position: static !important;
+    background: transparent !important;
+    display: block !important;
+    padding: 0 !important;
+  }
+
+  .modal-dialog {
+    max-width: 100% !important;
+    width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+
+  .modal-body {
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .report-display-container {
+    max-height: none !important;
+    overflow: visible !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  .executive-report-doc {
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    padding: 0 !important;
+  }
+
+  .report-brand-header {
+    border-bottom: 2px solid #0F172A !important;
+  }
+
+  .report-brand-logo h2 {
+    color: #0F172A !important;
+  }
+
+  .report-brand-logo h2 span {
+    color: #0284C7 !important;
+  }
+
+  .report-brand-meta .meta-date {
+    color: #0F172A !important;
+  }
+
+  .report-section-card {
+    background-color: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  .report-section-title {
+    color: #0F172A !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+  }
+
+  .report-quote-banner {
+    background-color: #F0F9FF !important;
+    color: #0369A1 !important;
+    border-left-color: #0284C7 !important;
+  }
+
+  .data-table {
+    border: 1px solid #CBD5E1 !important;
+  }
+
+  .data-table th {
+    background-color: #F1F5F9 !important;
+    color: #0F172A !important;
+    border-bottom: 2px solid #CBD5E1 !important;
+  }
+
+  .data-table td {
+    border-bottom: 1px solid #E2E8F0 !important;
+    color: #1E293B !important;
+  }
+
+  .badge {
+    border: 1px solid #94A3B8 !important;
+  }
+
+  .badge-bullish { background-color: #ECFDF5 !important; color: #065F46 !important; }
+  .badge-bearish { background-color: #FFF1F2 !important; color: #9F1239 !important; }
+  .badge-neutral { background-color: #FFFBEB !important; color: #92400E !important; }
 }
 
 /* Toast */
