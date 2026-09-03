@@ -1081,52 +1081,49 @@ body {
   margin: 0;
 }
 
-/* REGRAS DE IMPRESSÃO / SALVAR PDF (PRINT MEDIA) */
+.print-only-container {
+  display: none;
+}
+
+/* REGRAS DE IMPRESSÃO / SALVAR PDF PROFISSIONAL (PRINT MEDIA ISOLADO) */
 @media print {
-  body {
-    background-color: #FFFFFF !important;
-    color: #0F172A !important;
-    font-size: 10pt;
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm;
   }
 
-  /* Ocultar todos os elementos do app e manter apenas o relatório */
+  html, body {
+    background-color: #FFFFFF !important;
+    background: #FFFFFF !important;
+    color: #0F172A !important;
+    font-size: 9.5pt !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Ocultar TUDO na página inteira */
   .app-header,
   .nav-tabs,
   .main-container,
-  .modal-header,
-  .modal-footer,
-  .report-toolbar,
-  .modal-backdrop::before,
+  .modal-backdrop,
+  .modal-dialog,
+  #reportModal,
   .toast {
     display: none !important;
   }
 
-  .modal-backdrop {
-    position: static !important;
-    background: transparent !important;
+  /* Exibir EXCLUSIVAMENTE o container de impressão */
+  #printReportContainer {
     display: block !important;
-    padding: 0 !important;
-  }
-
-  .modal-dialog {
-    max-width: 100% !important;
+    visibility: visible !important;
+    position: static !important;
     width: 100% !important;
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
+    margin: 0 !important;
     padding: 0 !important;
-  }
-
-  .modal-body {
-    padding: 0 !important;
-    overflow: visible !important;
-  }
-
-  .report-display-container {
-    max-height: none !important;
-    overflow: visible !important;
-    border: none !important;
-    background: transparent !important;
+    background: #FFFFFF !important;
+    color: #0F172A !important;
   }
 
   .executive-report-doc {
@@ -1137,60 +1134,112 @@ body {
 
   .report-brand-header {
     border-bottom: 2px solid #0F172A !important;
+    margin-bottom: 15px !important;
+    padding-bottom: 10px !important;
   }
 
   .report-brand-logo h2 {
     color: #0F172A !important;
+    font-size: 16pt !important;
   }
 
   .report-brand-logo h2 span {
     color: #0284C7 !important;
   }
 
+  .report-brand-logo p {
+    color: #475569 !important;
+    font-size: 8pt !important;
+  }
+
   .report-brand-meta .meta-date {
     color: #0F172A !important;
+    font-size: 9pt !important;
+  }
+
+  .report-brand-meta .meta-author {
+    color: #475569 !important;
   }
 
   .report-section-card {
     background-color: #F8FAFC !important;
-    border: 1px solid #E2E8F0 !important;
-    page-break-inside: avoid;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 4px !important;
+    padding: 10px 14px !important;
+    margin-bottom: 14px !important;
+    page-break-inside: avoid !important;
     box-shadow: none !important;
   }
 
   .report-section-title {
     color: #0F172A !important;
+    font-size: 11pt !important;
     border-bottom: 1px solid #E2E8F0 !important;
+    padding-bottom: 4px !important;
+    margin-bottom: 8px !important;
   }
 
   .report-quote-banner {
     background-color: #F0F9FF !important;
     color: #0369A1 !important;
-    border-left-color: #0284C7 !important;
+    border-left: 3px solid #0284C7 !important;
+    padding: 8px 12px !important;
+    font-size: 9pt !important;
+    margin-bottom: 10px !important;
+  }
+
+  .stat-card {
+    background-color: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    padding: 8px 10px !important;
+  }
+
+  .stat-label {
+    color: #64748B !important;
+    font-size: 7.5pt !important;
+  }
+
+  .stat-val {
+    color: #0F172A !important;
+    font-size: 13pt !important;
+  }
+
+  .stat-desc {
+    color: #475569 !important;
+    font-size: 7.5pt !important;
   }
 
   .data-table {
+    border-collapse: collapse !important;
+    width: 100% !important;
     border: 1px solid #CBD5E1 !important;
+    font-size: 8.5pt !important;
   }
 
   .data-table th {
     background-color: #F1F5F9 !important;
     color: #0F172A !important;
-    border-bottom: 2px solid #CBD5E1 !important;
+    border-bottom: 2px solid #94A3B8 !important;
+    padding: 6px 8px !important;
+    font-weight: 700 !important;
   }
 
   .data-table td {
     border-bottom: 1px solid #E2E8F0 !important;
     color: #1E293B !important;
+    padding: 5px 8px !important;
   }
 
   .badge {
-    border: 1px solid #94A3B8 !important;
+    border: 1px solid #CBD5E1 !important;
+    font-size: 7.5pt !important;
+    padding: 2px 6px !important;
   }
 
-  .badge-bullish { background-color: #ECFDF5 !important; color: #065F46 !important; }
-  .badge-bearish { background-color: #FFF1F2 !important; color: #9F1239 !important; }
-  .badge-neutral { background-color: #FFFBEB !important; color: #92400E !important; }
+  .badge-bullish { background-color: #ECFDF5 !important; color: #065F46 !important; border-color: #A7F3D0 !important; }
+  .badge-bearish { background-color: #FFF1F2 !important; color: #9F1239 !important; border-color: #FECDD3 !important; }
+  .badge-neutral { background-color: #FFFBEB !important; color: #92400E !important; border-color: #FDE68A !important; }
+  .tag-outline { border: 1px solid #CBD5E1 !important; color: #475569 !important; background: transparent !important; }
 }
 
 /* Toast */

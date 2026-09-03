@@ -1373,10 +1373,16 @@ function copyReportToClipboard() {
 }
 
 function printReport() {
-  setReportViewMode("formatted");
+  const formattedHtml = document.getElementById("reportFormattedView")?.innerHTML || "";
+  const printContainer = document.getElementById("printReportContainer");
+  
+  if (printContainer) {
+    printContainer.innerHTML = `<div class="executive-report-doc">${formattedHtml}</div>`;
+  }
+  
   setTimeout(() => {
     window.print();
-  }, 150);
+  }, 100);
 }
 
 function generatePortfolioReport() {
