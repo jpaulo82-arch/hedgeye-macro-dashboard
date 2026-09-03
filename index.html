@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hedgeye Risk Management — Terminal Macro & Portfólio</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Chart.js para gráficos dinâmicos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dark-theme">
+  <!-- Header / Top Bar -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="logo-container">
+        <span class="logo-icon">⚡</span>
+        <div class="logo-text">
+          <h1>HEDGEYE <span>TERMINAL</span></h1>
+          <p class="subtitle">SISTEMA MACRO, RISK RANGES & GESTÃO DE PORTFÓLIO</p>
+        </div>
+      </div>
+      <div class="quad-badge quad-3" id="currentQuadBadge">
+        <span class="pulse-dot"></span>
+        <span id="headerQuadText">REGIME ATUAL: QUAD 3 (ESTAGFLAÇÃO)</span>
+      </div>
+    </div>
+
+    <div class="header-center">
+      <!-- Seletor de Portfólio -->
+      <div class="portfolio-selector-container">
+        <label for="portfolioSelect"><span class="icon">💼</span> Portfólio Ativo:</label>
+        <select id="portfolioSelect" onchange="switchPortfolio(this.value)">
+          <option value="consolidated">Visão Consolidada Global (US$ 245.872,29)</option>
+          <option value="schwab" selected>Charles Schwab (US$ 211.922,66)</option>
+          <option value="tastyworks">Tastyworks (US$ 33.949,63)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="market-status">
+        <span class="status-indicator online"></span>
+        <span id="marketTime">03/09/2026 | NYSE Open</span>
+      </div>
+      <button class="btn btn-primary" onclick="openReportModal()">
+        <span class="icon">📄</span> Relatório Diário 09:30
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="nav-tabs">
+    <button class="nav-tab active" data-tab="dashboard" onclick="setTab('dashboard')">
+      📊 Painel Executivo & GIP
+    </button>
+    <button class="nav-tab" data-tab="riskranges" onclick="setTab('riskranges')">
+      🎯 Risk Ranges & Sinais (02/09)
+    </button>
+    <button class="nav-tab" data-tab="portfolio" onclick="setTab('portfolio')">
+      💼 Portfólios (Schwab / Tastyworks)
+    </button>
+    <button class="nav-tab" data-tab="fundamentals" onclick="setTab('fundamentals')">
+      🔬 Fundamentalista & Tech / IA
+    </button>
+    <button class="nav-tab" data-tab="playbook" onclick="setTab('playbook')">
+      📖 Playbook GIP (Livro Pág. 27)
+    </button>
+    <button class="nav-tab" data-tab="analyzer" onclick="setTab('analyzer')">
+      🔍 Analisador de Ações (5 Passos)
+    </button>
+    <button class="nav-tab" data-tab="earlylook" onclick="setTab('earlylook')">
+      📥 Sincronizador de EARLYLOOK
+    </button>
+    <button class="nav-tab" data-tab="decisions" onclick="setTab('decisions')">
+      📝 Log de Decisões & Auditoria
+    </button>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+    
+    <!-- TAB 1: DASHBOARD EXECUTIVO & GIP -->
+    <section id="tab-dashboard" class="tab-content active">
+      <!-- Métricas Rápidas / Alertas Principais de Hoje -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-title">OURO SPOT (GOLD)</div>
+          <div class="metric-value text-emerald" id="val-gold">4.420 <span class="badge badge-bullish">Bullish TREND</span></div>
+          <div class="metric-sub">Range: 4.251 a 4.752. Pilar de alta convicção no Quad 3.</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-title">DÓLAR INDEX (DXY)</div>
+          <div class="metric-value text-rose" id="val-dxy">99.15 <span class="badge badge-bearish">Bearish TREND</span></div>
+          <div class="metric-sub">Quebrou suporte (98.77–99.99). Favorece Ouro e LatAm.</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-title">PETRÓLEO (WTI)</div>
+          <div class="metric-value text-emerald" id="val-wti">87.50 <span class="badge badge-bullish">Bullish TREND</span></div>
+          <div class="metric-sub">Range: 83.96 a 91.98. Reforça inflação e Quad 3.</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-title">UST 10Y YIELD</div>
+          <div class="metric-value text-amber" id="val-ust10">4.75% <span class="badge badge-bullish">Bullish TREND</span></div>
+          <div class="metric-sub">Range: 4.67% a 4.83%. Pressão contínua em duration.</div>
+        </div>
+      </div>
+
+      <!-- Grid 2 Colunas: Matriz GIP e Diagnóstico Executivo -->
+      <div class="grid-2-col">
+        <!-- Card 1: Matriz de 4 Quadrantes Hedgeye -->
+        <div class="card">
+          <div class="card-header">
+            <h3><span class="icon">🧭</span> Matriz de Regime Macro (GIP Framework)</h3>
+            <span class="tag tag-info">Crescimento vs Inflação (Taxa de Variação)</span>
+          </div>
+          <div class="card-body">
+            <div class="gip-quad-grid">
+              <div class="gip-box quad-2">
+                <div class="quad-num">QUAD 2</div>
+                <div class="quad-name">Reflação / Expansão</div>
+                <div class="quad-factors">G ↑ | I ↑</div>
+                <div class="quad-favors">Favorece: Commodities, Energia, Materiais, Industriais</div>
+              </div>
+              <div class="gip-box quad-1">
+                <div class="quad-num">QUAD 1</div>
+                <div class="quad-name">Goldilocks</div>
+                <div class="quad-factors">G ↑ | I ↓</div>
+                <div class="quad-favors">Favorece: Tech/QQQ, Consumo Discr., Russell (IWM)</div>
+              </div>
+              <div class="gip-box quad-3 active-quad">
+                <div class="active-beacon">📍 REGIME ATUAL</div>
+                <div class="quad-num">QUAD 3</div>
+                <div class="quad-name">Estagflação</div>
+                <div class="quad-factors">G ↓ | I ↑</div>
+                <div class="quad-favors">Favorece: OURO (GOLD), Energia, Commodities, Defensivos, SGOV</div>
+                <div class="quad-avoids">Evitar: Crédito High Yield/Corpo, Cíclicos desacelerando, High Beta</div>
+              </div>
+              <div class="gip-box quad-4">
+                <div class="quad-num">QUAD 4</div>
+                <div class="quad-name">Deflação / Recessão</div>
+                <div class="quad-factors">G ↓ | I ↓</div>
+                <div class="quad-favors">Favorece: SGOV/T-Bills, Treasuries, Healthcare, Staples</div>
+              </div>
+            </div>
+
+            <!-- Camadas de Diagnóstico -->
+            <div class="quad-layers mt-3">
+              <h4>Diagnóstico em Três Camadas (03/09/2026):</h4>
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Camada</th>
+                    <th>Regime</th>
+                    <th>Evidência Central</th>
+                    <th>Confiança</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1. Vigente por Dados</strong></td>
+                    <td><span class="badge quad-badge-sm q3">Quad 3</span></td>
+                    <td>Chicago PMI despencou para 47,1 (contração) enquanto Petróleo (WTIC 86,13–93,94) e Yields sobem</td>
+                    <td><span class="text-emerald font-bold">Alta</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>2. Precificado pelo Mercado</strong></td>
+                    <td><span class="badge quad-badge-sm q3">Fragilidade / Complacência</span></td>
+                    <td>10Y Yield colado no teto (4,76% vs 4,84%) e VIX em 15,20 (calmo) geram vulnerabilidade a choques</td>
+                    <td><span class="text-emerald font-bold">Alta</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>3. Nowcast 1–3 Meses</strong></td>
+                    <td><span class="badge quad-badge-sm q3">Quad 3 Persistente</span></td>
+                    <td>DXY Bearish (98,75–99,69) e commodities sustentam inflação de custos com crescimento misto</td>
+                    <td><span class="text-emerald font-bold">Alta</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Resumo do EARLY LOOK + TOP 3 THINGS de Hoje -->
+        <div class="card">
+          <div class="card-header">
+            <h3><span class="icon">⚡</span> Síntese Matinal: EARLY LOOK + Top 3 Things</h3>
+            <span class="tag tag-accent" id="earlylookTitleTag">"Waves of Volatility" + "Top 3 Things" (03/09/2026)</span>
+          </div>
+          <div class="card-body">
+            <div class="quote-box">
+              <p class="quote-text">“You can't stop the waves, but you can learn to surf. Volatility is unavoidable; the edge comes from staying disciplined, sizing risk and reading flows.”</p>
+              <span class="quote-author">— Keith McCullough & Daryl Jones (03/09/2026)</span>
+            </div>
+
+            <h4 class="mt-3">Destaques Combinados dos Relatórios de Hoje:</h4>
+            <ul class="bullet-list">
+              <li><strong>KM's Top 3 Things #1 (10Y Yield & Ouro):</strong> O 10Y tocou o teto do Risk Range (4,84%) e recuou. Se os dados de emprego vierem fracos e levarem o yield ao piso (4,68%), <strong>Ouro (AAAU/NEM/GDX) e Bitcoin devem disparar</strong>. Manter shorts em crédito corporativo (LQD/TLT).</li>
+              <li><strong>KM's Top 3 Things #2 (Sectors — Narrowing):</strong> O mercado encerrou o "broadening" e está afunilando ("narrowing"). Concentrar em setores com pricing power: <strong>Healthcare (XLV +1,4% no mês)</strong> e <strong>Metals/Commodities (+3,3% no dia)</strong>. Keith adicionou Software (IGV) pelo balanço de SNOW.</li>
+              <li><strong>KM's Top 3 Things #3 (Fluxos de US$ 17B):</strong> A Tier1 Alpha projeta entrada maciça de **US$ 17 Bilhões de compra sistemática no SPX** via estratégias de controle de volatilidade.</li>
+              <li><strong>Early Look (Divergência Macro):</strong> Chicago PMI despencou de 57,6 para 47,1 (contração profunda), enquanto vagas JOLTS subiram em +790k (7,74M), reforçando o ambiente de Quad 3 estagflacionário.</li>
+            </ul>
+
+            <div class="action-box mt-3">
+              <div class="action-header">
+                <span class="icon">🎯</span> <strong>O QUE FAZER AGORA (AÇÕES PRIORITÁRIAS):</strong>
+              </div>
+              <div class="action-steps">
+                <div class="action-step">
+                  <span class="step-num">1</span>
+                  <div class="step-content">
+                    <strong>Manter Convicção em Ouro (AAAU / NEM / GDX):</strong> Piso elevado a 4.292. Se o yield 10Y recuar de 4,76% para 4,68%, o ouro tem catalisador de arrancada imediata.
+                  </div>
+                </div>
+                <div class="action-step">
+                  <span class="step-num">2</span>
+                  <div class="step-content">
+                    <strong>Afunilamento de Setores (Narrowing):</strong> Foco em Healthcare defensivo (XLV), energia/metais e nomes de software com alto FCF. Evitar papéis cíclicos alavancados.
+                  </div>
+                </div>
+                <div class="action-step">
+                  <span class="step-num">3</span>
+                  <div class="step-content">
+                    <strong>Dimensionamento de Risco (Position Sizing):</strong> Respeitar a volatilidade normal de small caps/TAILs (1-3% cada) e manter o caixa de US$ 29k intacto para recuos.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: RISK RANGES & SINAIS HEDGEYE -->
+    <section id="tab-riskranges" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">🎯</span> Risk Ranges Oficiais (Our Levels — 03/09/2026)</h3>
+            <p class="subtitle">Extraídos automaticamente do EARLYLOOK "Riding The Waves of Volatility"</p>
+          </div>
+          <div class="filter-group">
+            <button class="btn btn-sm btn-outline active" onclick="filterRiskRanges('all', this)">Todos</button>
+            <button class="btn btn-sm btn-outline" onclick="filterRiskRanges('indices', this)">Índices</button>
+            <button class="btn btn-sm btn-outline" onclick="filterRiskRanges('rates', this)">Taxas & FX</button>
+            <button class="btn btn-sm btn-outline" onclick="filterRiskRanges('commodities', this)">Commodities / Ouro</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="data-table" id="riskRangeTable">
+              <thead>
+                <tr>
+                  <th>Ativo / Ticker</th>
+                  <th>Tipo</th>
+                  <th>Piso (Low)</th>
+                  <th>Teto (High)</th>
+                  <th>Preço Atual</th>
+                  <th style="min-width: 180px;">Posição no Range</th>
+                  <th>Sinal Hedgeye</th>
+                  <th>Assimetria & Ação Mecânica</th>
+                </tr>
+              </thead>
+              <tbody id="riskRangeTableBody">
+                <!-- Linhas inseridas via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: PORTFÓLIOS (SCHWAB & TASTYWORKS) -->
+    <section id="tab-portfolio" class="tab-content">
+      <!-- Visão Superior de Portfólio -->
+      <div class="portfolio-header-bar">
+        <div class="portfolio-info">
+          <h2 id="portViewTitle">Carteira: Charles Schwab (US$ 211.922,66)</h2>
+          <span class="badge badge-accent" id="portLastUpdate">Último snapshot: 02/09/2026 | Confirmado</span>
+        </div>
+        <div class="portfolio-actions">
+          <button class="btn btn-accent" onclick="openRebalanceModal()">
+            <span class="icon">⚡</span> Otimizar p/ ≥ 60% no Quad 3
+          </button>
+          <button class="btn btn-outline" onclick="openPortfolioModal()">
+            <span class="icon">✏️</span> Atualizar Posições
+          </button>
+          <button class="btn btn-primary" onclick="generatePortfolioReport()">
+            <span class="icon">📑</span> Gerar Relatório Deste Portfólio
+          </button>
+        </div>
+      </div>
+
+      <!-- Resumo de Alocação Real por Quadrante -->
+      <div class="grid-3-col mt-3">
+        <div class="card stat-card">
+          <div class="stat-label">PATRIMÔNIO TOTAL ESTIMADO</div>
+          <div class="stat-val" id="portTotalValue">US$ 211.922,66</div>
+          <div class="stat-desc">Baseado nas capturas confirmadas de 02/09/2026</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label">ALOCAÇÃO DE CAIXA / SGOV</div>
+          <div class="stat-val text-emerald" id="portCashRatio">9.5%</div>
+          <div class="stat-desc">Opcionalidade para buy the dips nos pisos de range</div>
+        </div>
+        <div class="card stat-card">
+          <div class="stat-label">ALOCAÇÃO EM QUAD 3 (VENTO A FAVOR)</div>
+          <div class="stat-val text-emerald" id="portAdherence">38.5%</div>
+          <div class="stat-desc">Ouro, Energia, Defensivos, Cobre e Caixa SGOV</div>
+        </div>
+      </div>
+
+      <!-- Gráfico de Alocação por Quadrante e Mapa de Fatores -->
+      <div class="grid-2-col mt-3">
+        <div class="card">
+          <div class="card-header">
+            <h3><span class="icon">🥧</span> Distribuição do Portfólio por Quadrante GIP (Livro Pág. 27)</h3>
+          </div>
+          <div class="card-body">
+            <div class="chart-container" style="height: 260px; position: relative;">
+              <canvas id="portfolioChart"></canvas>
+            </div>
+            <div class="category-legend mt-2" id="quadChartLegend">
+              <!-- Gerado dinamicamente via JS com as cores e porcentagens dos Quads -->
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3><span class="icon">⚠️</span> Mapa de Fatores de Risco & Concentração</h3>
+          </div>
+          <div class="card-body">
+            <div class="factor-risk-list">
+              <div class="factor-item">
+                <div class="factor-top">
+                  <span class="factor-name">Semicondutores, IA & High Beta (Quad 1)</span>
+                  <span class="factor-pct" id="factorTechPct">~24.4% do total</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill warning" style="width: 60%;"></div></div>
+                <small class="text-muted">Ativos: ASML, AVGO, ALAB, CRDO, COHR, FN, ARM, MTSI, AXTI, DRAM. Vento contrário em Quad 3.</small>
+              </div>
+
+              <div class="factor-item mt-2">
+                <div class="factor-top">
+                  <span class="factor-name">Crédito Corporativo / Bonds</span>
+                  <span class="factor-pct" id="factorCreditPct">27.9% do total</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill danger" style="width: 55%;"></div></div>
+                <small class="text-muted">Bonds da Schwab (Ford, Goodyear, Suzano, Vale, Santander). Crédito é o Worst Asset Class de Quad 3.</small>
+              </div>
+
+              <div class="factor-item mt-2">
+                <div class="factor-top">
+                  <span class="factor-name">Ouro, Mineração, Energia & Defensivos (Quad 3)</span>
+                  <span class="factor-pct" id="factorDefensivePct">38.5% do total</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill success" style="width: 75%;"></div></div>
+                <small class="text-muted">Excelente posicionamento: AAAU, NEM, GDX, BE, GRID, AIPO, MLI, HCA e Caixa.</small>
+              </div>
+
+              <div class="factor-item mt-2">
+                <div class="factor-top">
+                  <span class="factor-name">América Latina / E-commerce (MELI)</span>
+                  <span class="factor-pct" id="factorMeliPct">3.24% do total</span>
+                </div>
+                <div class="progress-bar"><div class="progress-fill info" style="width: 35%;"></div></div>
+                <small class="text-muted">Posição CORE favorecida pelo Dólar fraco (DXY Bearish).</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabela Detalhada de Posições com Quadrante Nativo -->
+      <div class="card mt-3">
+        <div class="card-header">
+          <h3><span class="icon">📋</span> Posições Detalhadas com Classificação de Quadrante</h3>
+          <span class="tag tag-outline" id="positionsCountTag">43 Posições</span>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Ticker / Ativo</th>
+                  <th>Nome da Empresa / Tese</th>
+                  <th>Corretora</th>
+                  <th>Quantidade</th>
+                  <th>Categoria</th>
+                  <th>Market Value</th>
+                  <th>Peso (%)</th>
+                  <th>Quadrante Nativo</th>
+                  <th>Conduta Recomendada</th>
+                </tr>
+              </thead>
+              <tbody id="portfolioTableBody">
+                <!-- Inserido dinamicamente via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB: ANÁLISE FUNDAMENTALISTA & TECH / IA (THE PODS) -->
+    <section id="tab-fundamentals" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">🔬</span> Análise Fundamentalista de Ações & Ecossistema Tech/IA</h3>
+            <p class="subtitle">Cruzamento dos Resultados Recentes (Crescimento de Receita & Margem FCF) com o Cenário Tecnológico</p>
+          </div>
+          <div class="filter-group">
+            <button class="btn btn-sm btn-outline active" onclick="filterFundamentals('all', this)">Todas as Ações</button>
+            <button class="btn btn-sm btn-outline" onclick="filterFundamentals('ai_infra', this)">IA & Conectividade Óptica</button>
+            <button class="btn btn-sm btn-outline" onclick="filterFundamentals('semis', this)">Semicondutores & Monopólios</button>
+            <button class="btn btn-sm btn-outline" onclick="filterFundamentals('core_fcf', this)">Mega-Caps & FCF</button>
+            <button class="btn btn-sm btn-outline" onclick="filterFundamentals('cyclical', this)">Telecom & Cíclicos</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Ticker / Empresa</th>
+                  <th>Nicho Tecnológico</th>
+                  <th>Crescimento de Receita (YoY)</th>
+                  <th>Margem FCF / Balanço</th>
+                  <th>Fosso Competitivo & Tese de Longo Prazo</th>
+                  <th>Veredito Combinado (Macro + Micro)</th>
+                </tr>
+              </thead>
+              <tbody id="fundamentalsTableBody">
+                <!-- Preenchido via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: PLAYBOOK GIP (LIVRO PÁG. 27) -->
+    <section id="tab-playbook" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">📖</span> Playbook Histórico Oficial de Quadrantes (Master The Market — Pág. 27)</h3>
+            <p class="subtitle">Back-test histórico de retornos trimestrais por classe de ativos desde 1Q98</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="grid-2-col">
+            <!-- Quad 1 -->
+            <div class="card" style="border-left: 4px solid var(--quad-1-color);">
+              <div class="card-header">
+                <h4>QUAD 1: Goldilocks (G ↑, I ↓)</h4>
+              </div>
+              <div class="card-body">
+                <p><strong>Melhores Classes de Ativos:</strong> Equities, Crédito, Commodities, FX</p>
+                <p><strong>Piores Classes de Ativos:</strong> Renda Fixa (Fixed Income), USD</p>
+                <p class="mt-2"><strong>Melhores Setores:</strong> Tech, Consumo Discricionário, Materiais, Industriais</p>
+                <p><strong>Piores Setores:</strong> Utilities, REITs, Consumer Staples, Financials</p>
+                <p class="mt-2"><strong>Fatores Favorecidos:</strong> High Beta, Momentum, Cíclicos, Crescimento Secular</p>
+              </div>
+            </div>
+
+            <!-- Quad 2 -->
+            <div class="card" style="border-left: 4px solid var(--quad-2-color);">
+              <div class="card-header">
+                <h4>QUAD 2: Reflação (G ↑, I ↑)</h4>
+              </div>
+              <div class="card-body">
+                <p><strong>Melhores Classes de Ativos:</strong> Commodities, Equities, Crédito, FX</p>
+                <p><strong>Piores Classes de Ativos:</strong> Renda Fixa (Fixed Income), USD</p>
+                <p class="mt-2"><strong>Melhores Setores:</strong> Tech, Consumo Discricionário, Industriais, Materiais, Energia</p>
+                <p><strong>Piores Setores:</strong> Telecom, Utilities, REITs, Consumer Staples</p>
+                <p class="mt-2"><strong>Fatores Favorecidos:</strong> Crescimento Secular, Momentum, Small Caps</p>
+              </div>
+            </div>
+
+            <!-- Quad 3 -->
+            <div class="card" style="border-left: 4px solid var(--quad-3-color); background: rgba(236, 72, 153, 0.04);">
+              <div class="card-header">
+                <h4>QUAD 3: Estagflação (G ↓, I ↑) [REGIME VIGENTE]</h4>
+              </div>
+              <div class="card-body">
+                <p class="text-emerald font-bold"><strong>Melhores Classes de Ativos:</strong> OURO (Gold), Commodities, Energia, SGOV</p>
+                <p class="text-rose font-bold"><strong>Piores Classes de Ativos:</strong> CRÉDITO HIGH YIELD / CORPO (Credit)</p>
+                <p class="mt-2"><strong>Melhores Setores:</strong> Utilities, Tech (selecionada/qualidade), Energia, Industriais</p>
+                <p><strong>Piores Setores:</strong> Financials, REITs, Materiais, Telecom</p>
+                <p class="mt-2"><strong>Fatores Favorecidos:</strong> Crescimento Secular, Low Beta, Opcionalidade</p>
+              </div>
+            </div>
+
+            <!-- Quad 4 -->
+            <div class="card" style="border-left: 4px solid var(--quad-4-color);">
+              <div class="card-header">
+                <h4>QUAD 4: Deflação / Recessão (G ↓, I ↓)</h4>
+              </div>
+              <div class="card-body">
+                <p><strong>Melhores Classes de Ativos:</strong> Renda Fixa (Treasuries), OURO, USD, SGOV/Caixa</p>
+                <p><strong>Piores Classes de Ativos:</strong> Commodities, Equities, Crédito, FX</p>
+                <p class="mt-2"><strong>Melhores Setores:</strong> Consumer Staples, Utilities, REITs, Healthcare</p>
+                <p><strong>Piores Setores:</strong> Energia, Tech, Industriais, Financials</p>
+                <p class="mt-2"><strong>Fatores Favorecidos:</strong> Low Beta, Dividend Yield, Qualidade, Defensivos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: ANALISADOR DE AÇÕES (5 PASSOS HEDGEYE) -->
+    <section id="tab-analyzer" class="tab-content">
+      <div class="grid-2-col">
+        <div class="card">
+          <div class="card-header">
+            <h3><span class="icon">🔍</span> Análise de Ativo pelo Processo Hedgeye (5 Passos)</h3>
+          </div>
+          <div class="card-body">
+            <form id="stockAnalyzerForm" onsubmit="event.preventDefault(); runStockAnalysis();">
+              <div class="form-group">
+                <label for="analyzerTicker">Ticker da Ação, ETF ou Commodity (ex: AAAU, NEM, MELI, BE, AVGO, SLV):</label>
+                <div class="input-with-button">
+                  <input type="text" id="analyzerTicker" class="form-input" placeholder="Digite o ticker..." value="AAAU" required>
+                  <button type="submit" class="btn btn-primary">Analisar Ativo</button>
+                </div>
+              </div>
+
+              <div class="form-group mt-2">
+                <label for="analyzerPortSelect">Avaliar sobreposição com qual carteira?</label>
+                <select id="analyzerPortSelect" class="form-select">
+                  <option value="both">Ambas (Schwab + Tastyworks)</option>
+                  <option value="schwab" selected>Charles Schwab</option>
+                  <option value="tastyworks">Tastyworks</option>
+                </select>
+              </div>
+            </form>
+
+            <div class="quick-tickers mt-3">
+              <label class="text-muted">Exemplos rápidos da sua carteira ou mercado:</label>
+              <div class="chip-group">
+                <span class="chip" onclick="quickAnalyze('AAAU')">AAAU (Ouro Físico)</span>
+                <span class="chip" onclick="quickAnalyze('NEM')">NEM (Newmont Mineração)</span>
+                <span class="chip" onclick="quickAnalyze('MELI')">MELI (MercadoLibre)</span>
+                <span class="chip" onclick="quickAnalyze('BE')">BE (Bloom Energy)</span>
+                <span class="chip" onclick="quickAnalyze('AVGO')">AVGO (Broadcom)</span>
+                <span class="chip" onclick="quickAnalyze('SLV')">SLV (Prata)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resultado da Análise -->
+        <div class="card" id="analyzerResultCard">
+          <div class="card-header">
+            <h3 id="analysisHeaderTitle"><span class="icon">📊</span> Relatório de Análise: AAAU</h3>
+            <span class="badge badge-bullish" id="analysisOverallTag">Bullish TREND</span>
+          </div>
+          <div class="card-body" id="analysisResultBody">
+            <!-- Preenchido via JavaScript com os 5 blocos Hedgeye -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: SINCRONIZADOR DE EARLYLOOK -->
+    <section id="tab-earlylook" class="tab-content">
+      <div class="grid-2-col">
+        <div class="card">
+          <div class="card-header">
+            <h3><span class="icon">📥</span> Sincronizador Automático de E-mail</h3>
+            <span class="tag tag-accent">Gmail IMAP Ativo</span>
+          </div>
+          <div class="card-body">
+            <p class="text-muted">Conta conectada: <strong>jpaulo82@gmail.com</strong></p>
+            <p class="text-muted">Status da Automação: <strong>60 relatórios sincronizados e indexados localmente na pasta 'relatorios/'.</strong></p>
+            
+            <form id="earlylookForm" onsubmit="event.preventDefault(); processEarlyLookText();">
+              <div class="form-group mt-2">
+                <label for="elTitle">Último EARLYLOOK Processado:</label>
+                <input type="text" id="elTitle" class="form-input" value="Bubbles Imploding vs. TRADE Breaks">
+              </div>
+
+              <div class="grid-2-col-nested mt-2">
+                <div class="form-group">
+                  <label for="elDate">Data do Relatório:</label>
+                  <input type="date" id="elDate" class="form-input" value="2026-09-02">
+                </div>
+                <div class="form-group">
+                  <label for="elTime">Horário EDT:</label>
+                  <input type="text" id="elTime" class="form-input" value="07:43 EDT">
+                </div>
+              </div>
+
+              <div class="form-actions mt-3">
+                <button type="submit" class="btn btn-primary">
+                  <span class="icon">⚡</span> Gerar Relatório Formatado de Hoje
+                </button>
+                <button type="button" class="btn btn-outline" onclick="loadSampleEarlyLook()">
+                  Recarregar EARLYLOOK de Hoje (02/09)
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Histórico de Relatórios Processados -->
+        <div class="card">
+          <div class="card-header">
+            <h3><span class="icon">📜</span> Histórico Recente de Relatórios EARLYLOOK</h3>
+          </div>
+          <div class="card-body">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Título</th>
+                  <th>Horário</th>
+                  <th>Mudança Central</th>
+                </tr>
+              </thead>
+              <tbody id="earlylookHistoryBody">
+                <tr>
+                  <td>02/09/2026</td>
+                  <td><strong>Bubbles Imploding vs. TRADE Breaks</strong></td>
+                  <td>07:43 EDT</td>
+                  <td>Ouro Bullish (4251–4752); DXY Bearish; WTI Bullish; Prata quebrou TRADE</td>
+                </tr>
+                <tr>
+                  <td>01/09/2026</td>
+                  <td><strong>Global #Quad3 In Q3 Continues</strong></td>
+                  <td>07:51 EDT</td>
+                  <td>Confirmação de Quad 3 global no 3º trimestre</td>
+                </tr>
+                <tr>
+                  <td>31/08/2026</td>
+                  <td><strong>Fed Hawkish In #Quad3</strong></td>
+                  <td>07:44 EDT</td>
+                  <td>Postura restritiva do Fed perante persistência inflacionária</td>
+                </tr>
+                <tr>
+                  <td>18/08/2026</td>
+                  <td><strong>#Quad3 Bonds, Oil, Consumer</strong></td>
+                  <td>07:34 EDT</td>
+                  <td>Reflação de commodities e alta de juros longos</td>
+                </tr>
+                <tr>
+                  <td>03/08/2026</td>
+                  <td><strong>Quantum Quads</strong></td>
+                  <td>07:41 EDT</td>
+                  <td>Agosto oficializado como Quad 3</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 7: LOG DE DECISÕES & AUDITORIA -->
+    <section id="tab-decisions" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">📝</span> Log de Decisões, Teses & Condições de Invalidação</h3>
+            <p class="subtitle">Registro auditável para separar a qualidade do processo dos resultados de curto prazo</p>
+          </div>
+          <button class="btn btn-primary" onclick="openNewDecisionModal()">
+            <span class="icon">➕</span> Nova Decisão
+          </button>
+        </div>
+        <div class="card-body">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Ativo / Tema</th>
+                <th>Carteira</th>
+                <th>Categoria</th>
+                <th>Decisão / Conduta</th>
+                <th>Racional Operacional</th>
+                <th>Gatilho de Invalidação</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="decisionsTableBody">
+              <tr>
+                <td>02/09/2026</td>
+                <td><strong>Ouro (AAAU / NEM / GDX)</strong></td>
+                <td>Ambas</td>
+                <td><span class="badge badge-core">CORE / HEDGE</span></td>
+                <td>Manter posição máxima de Quad 3</td>
+                <td>Ouro explodiu para Bullish TREND (4251–4752) com DXY em Bearish</td>
+                <td>DXY fechando acima de 100 com quebra do suporte TREND de 4.204 no ouro</td>
+                <td><span class="badge badge-bullish">Vigente</span></td>
+              </tr>
+              <tr>
+                <td>02/09/2026</td>
+                <td><strong>Prata (SLV)</strong></td>
+                <td>Schwab</td>
+                <td><span class="badge badge-trade">TRADE</span></td>
+                <td>Não comprar queda; manter tamanho mínimo</td>
+                <td>Quebra do sinal TRADE em US$ 65,11 conforme EARLYLOOK de 02/09</td>
+                <td>Fechamento confirmado acima de US$ 65,11 reabilita sinal TRADE</td>
+                <td><span class="badge badge-neutral">Vigente</span></td>
+              </tr>
+              <tr>
+                <td>02/09/2026</td>
+                <td><strong>High Beta & Semis IA (Quad 1)</strong></td>
+                <td>Tasty + Schwab</td>
+                <td><span class="badge badge-tail">TAIL (1–3%)</span></td>
+                <td>Manter estritamente dentro do limite TAIL</td>
+                <td>Cestas de momentum em drawdown de -24%; limitar risco a 1-3% por ativo</td>
+                <td>Quebra simultânea de TRADE e TREND aciona saída total (#OUT)</td>
+                <td><span class="badge badge-neutral">Vigente</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL: GERADOR DE RELATÓRIO 09:30 -->
+  <div class="modal-backdrop" id="reportModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <h3><span class="icon">📄</span> Relatório Diário Hedgeye — Padronizado</h3>
+        <button class="modal-close" onclick="closeReportModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="report-toolbar">
+          <div class="report-options">
+            <label>Escopo do Relatório:</label>
+            <select id="reportScopeSelect" onchange="updateGeneratedReportText()">
+              <option value="consolidated">Consolidado Global (Charles Schwab + Tastyworks)</option>
+              <option value="schwab">Exclusivo: Charles Schwab</option>
+              <option value="tastyworks">Exclusivo: Tastyworks</option>
+            </select>
+          </div>
+          <div class="report-actions">
+            <button class="btn btn-sm btn-outline" onclick="copyReportToClipboard()">📋 Copiar Markdown</button>
+            <button class="btn btn-sm btn-primary" onclick="printReport()">🖨️ Imprimir / Salvar PDF</button>
+          </div>
+        </div>
+        
+        <div class="report-preview-box" id="reportPreviewContent">
+          <!-- Conteúdo gerado dinamicamente -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closeReportModal()">Fechar</button>
+        <button class="btn btn-primary" onclick="copyReportToClipboard()">Copiar Relatório</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: ATUALIZAÇÃO DE PORTFÓLIO -->
+  <div class="modal-backdrop" id="portfolioModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3><span class="icon">💼</span> Atualizar Posições do Portfólio</h3>
+        <button class="modal-close" onclick="closePortfolioModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="text-muted">Selecione a corretora e cole o texto ou captura de ordens confirmadas:</p>
+        <div class="form-group">
+          <label>Corretora:</label>
+          <select id="modalBrokerSelect" class="form-select">
+            <option value="schwab">Charles Schwab</option>
+            <option value="tastyworks">Tastyworks</option>
+          </select>
+        </div>
+        <div class="form-group mt-2">
+          <label>Formato de Entrada (Exemplo):</label>
+          <textarea id="portfolioInputText" class="form-textarea" rows="6" placeholder="Comprei: AAAU, 50 cotas, preço US$ 43.10&#10;Vendi: SLV, 30 cotas, preço US$ 58.50&#10;Mantive: demais posições"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closePortfolioModal()">Cancelar</button>
+        <button class="btn btn-primary" onclick="savePortfolioUpdate()">Salvar & Reconciliar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: REBALANCEAMENTO E ADEQUAÇÃO DE QUADRANTE (>= 60% QUAD 3) -->
+  <div class="modal-backdrop" id="rebalanceModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <h3><span class="icon">⚡</span> Plano de Rebalanceamento Estratégico (Alocação ≥ 60% em Quad 3)</h3>
+        <button class="modal-close" onclick="closeRebalanceModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="rebalance-summary-box">
+          <div class="grid-3-col">
+            <div class="stat-card">
+              <div class="stat-label">ALOCAÇÃO ATUAL EM QUAD 3</div>
+              <div class="stat-val text-amber" id="rebCurrentQuad3">38.5%</div>
+              <div class="stat-desc">Vulnerável a rotação em High Beta</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">META PROPOSTA DE QUAD 3</div>
+              <div class="stat-val text-emerald" id="rebTargetQuad3">62.8%</div>
+              <div class="stat-desc">Alinhamento ótimo com o regime</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">VOLUME TOTAL REBALANCEADO</div>
+              <div class="stat-val" id="rebVolumeTotal">~US$ 59.800</div>
+              <div class="stat-desc">Vendas de Quad 1 + Caixa SGOV aplicado</div>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="mt-3">1. Sugestão de Vendas & Desinvestimentos (Sair de Quad 1 / Crédito Frágil):</h4>
+        <table class="data-table mt-1">
+          <thead>
+            <tr>
+              <th>Ativo</th>
+              <th>Categoria / Quad</th>
+              <th>Ação Proposta</th>
+              <th>Volume Liberado</th>
+              <th>Racional Hedgeye</th>
+            </tr>
+          </thead>
+          <tbody id="rebSellTableBody">
+            <!-- Inserido dinamicamente via JS -->
+          </tbody>
+        </table>
+
+        <h4 class="mt-3">2. Sugestão de Compras (Entrar / Aumentar em Quad 3 no LRR):</h4>
+        <table class="data-table mt-1">
+          <thead>
+            <tr>
+              <th>Ativo</th>
+              <th>Classe / Tese</th>
+              <th>Aporte Proposto</th>
+              <th>Posição no Risk Range</th>
+              <th>Racional Hedgeye</th>
+            </tr>
+          </thead>
+          <tbody id="rebBuyTableBody">
+            <!-- Inserido dinamicamente via JS -->
+          </tbody>
+        </table>
+
+        <div class="quote-box mt-3">
+          <p class="quote-text">“Não adicione em ativos em quebra de TRADE. Compre nos pisos de Risk Range dos ativos com Bullish TREND.”</p>
+          <span class="quote-author">— Keith McCullough (*Master The Market*)</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closeRebalanceModal()">Fechar</button>
+        <button class="btn btn-primary" onclick="copyRebalancePlan()">📋 Copiar Plano de Execução</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="toastNotification" class="toast"></div>
+
+  <!-- Script JS -->
+  <script src="app.js"></script>
+</body>
+</html>
