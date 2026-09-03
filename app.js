@@ -112,22 +112,353 @@ const riskRangesData = [
 let activePortfolioKey = "schwab";
 let portfolioChartInstance = null;
 
-// DADOS FUNDAMENTALISTAS MICRO (THE PODS & TECH/IA ECOSYSTEM)
+// DADOS FUNDAMENTALISTAS MICRO, VALUATION & PREÇO-ALVO (THE PODS & TECH/IA ECOSYSTEM)
 const fundamentalsData = [
-  { ticker: "MELI", name: "MercadoLibre Inc", category: "core_fcf", techNiche: "E-commerce, Logística & Fintech LatAm", revGrowth: "+35% a +42%", fcfMargin: "Excelente (US$ 8B+ caixa)", moat: "Monopólio logístico (Meli Delivery) + ecossistema bancário (Mercado Pago). Poder de repasse inflacionário em moedas locais e DXY Bearish.", verdict: "🟢 CORE INDISCUTÍVEL", verdictClass: "badge-bullish" },
-  { ticker: "AVGO", name: "Broadcom Inc", category: "ai_infra", techNiche: "Switches Ethernet (Tomahawk 5/6), ASICs Customizados IA & VMware", revGrowth: "+43% a +47%", fcfMargin: "Altíssima (~45% margem FCF)", moat: "Líder absoluta em switches para clusters de IA (Meta, Google, ByteDance) e chips customizados (XPU). Receita de software recorrente da VMware.", verdict: "🟢 CORE / ÂNCORA IA", verdictClass: "badge-bullish" },
-  { ticker: "ASML", name: "ASML Holding NV", category: "semis", techNiche: "Litografia EUV & High-NA EUV", revGrowth: "+15% a +25% (recup.)", fcfMargin: "Forte (>30% margem)", moat: "Monopólio global absoluto em máquinas EUV indispensáveis para nós de 3nm, 2nm e A16. Ninguém fabrica chips avançados sem ASML.", verdict: "🟢 HOLD ESTRUTURAL", verdictClass: "badge-bullish" },
-  { ticker: "GOOGL", name: "Alphabet Inc", category: "core_fcf", techNiche: "Hyperscaler Cloud, Modelos Gemini & TPUs", revGrowth: "+14% a +16%", fcfMargin: "Fortaleza (US$ 100B+ caixa)", moat: "TPU v5p/v6 competindo com Nvidia em custo/eficiência; liderança em pesquisa de IA e monetização em Search e YouTube.", verdict: "🟢 CORE DE QUALIDADE", verdictClass: "badge-bullish" },
-  { ticker: "BE", name: "Bloom Energy Corp", category: "ai_infra", techNiche: "Células de Combustível de Estado Sólido (SOFC) p/ Data Centers", revGrowth: "+18% a +25%", fcfMargin: "Ponto de inflexão de breakeven", moat: "Resolução do maior gargalo da IA: falta de energia na rede elétrica. Energia 'behind-the-meter' sem esperar 5 anos pela concessionária.", verdict: "🟢 TAIL DE ALTA CONVICÇÃO", verdictClass: "badge-bullish" },
-  { ticker: "FN", name: "Fabrinet", category: "ai_infra", techNiche: "Fabricação Óptica de Alta Precisão (Transceivers 800G/1.6T)", revGrowth: "+12% a +17%", fcfMargin: "Sólida e sem dívida líquida", moat: "Fabricante exclusiva dos transceivers ópticos de IA mais avançados da Nvidia e hyperscalers. Forte barreira técnica de manufatura.", verdict: "🟢 TAIL ESTRUTURAL", verdictClass: "badge-bullish" },
-  { ticker: "ALAB", name: "Astera Labs Inc", category: "ai_infra", techNiche: "Conectividade PCIe 5.0/6.0, CXL & Retimers", revGrowth: "+150%+", fcfMargin: "Margens brutas de 75%+", moat: "Domínio do mercado de chips retimers e switches PCIe/CXL para conectar GPUs e aceleradores dentro dos servidores de IA.", verdict: "🟡 TAIL HIPERCRESCIMENTO", verdictClass: "badge-neutral" },
-  { ticker: "CRDO", name: "Credo Technology", category: "ai_infra", techNiche: "Cabos Elétricos Ativos (AEC) e DSPs SerDes", revGrowth: "+60% a +80%", fcfMargin: "Geração de caixa positiva", moat: "Substituição de cabos de cobre passivos por AECs com economia de 50% de energia e menor peso em racks de servidores.", verdict: "🟡 TAIL ESPECÍFICA", verdictClass: "badge-neutral" },
-  { ticker: "COHR", name: "Coherent Corp", category: "ai_infra", techNiche: "Lasers Industriais, Materiais SiC e Módulos Ópticos 800G", revGrowth: "+10% a +15%", fcfMargin: "Alavancada (em desalavancagem)", moat: "Líder em lasers e módulos de comunicação óptica. Novo CEO focado em expansão de margens e desinvestimento de divisões não essenciais.", verdict: "🟡 TAIL EM MONITORAMENTO", verdictClass: "badge-neutral" },
-  { ticker: "ARM", name: "Arm Holdings plc", category: "semis", techNiche: "Arquitetura de CPUs v9 p/ Servidores e PCs IA", revGrowth: "+35% a +40%", fcfMargin: "Margens operacionais de 45%+", moat: "Transição de royalties de 1-2% para 4-5% na arquitetura ARMv9; avanço de chips Neoverse em data centers (Grace Hopper, Graviton).", verdict: "🟡 TAIL SECULAR", verdictClass: "badge-neutral" },
-  { ticker: "NOK", name: "Nokia Oyj", category: "cyclical", techNiche: "Equipamentos 5G/6G, Roteamento IP e Redes Ópticas", revGrowth: "Estável (-2% a +3%)", fcfMargin: "Sólida (Recompras & Dividendos)", moat: "Forte liderança em IP Networks e Roteadores Ópticos para Data Centers de IA e defesa. Segmento de Network Infrastructure tem alto valor.", verdict: "🟡 AVALIAÇÃO LONGO PRAZO", verdictClass: "badge-neutral" },
-  { ticker: "INTC", name: "Intel Corp", category: "cyclical", techNiche: "CPUs de Servidor, PCs x86 e Foundry (18A)", revGrowth: "Pressionada (-5% a +2%)", fcfMargin: "Queima de caixa em capex", moat: "Processo 18A (1.8nm) é o 'tudo ou nada'. Atrasada em aceleradores de IA e perdendo share em CPUs para AMD e ARM.", verdict: "🔴 CANDIDATA A TROCA", verdictClass: "badge-bearish" },
-  { ticker: "UBER", name: "Uber Technologies", category: "core_fcf", techNiche: "Mobilidade, Delivery & Rede de Frotas Autônomas", revGrowth: "+15% a +18%", fcfMargin: "Forte expansão (US$ 5B+ FCF)", moat: "Plataforma líder global de mobilidade com acordos estratégicos para operar frotas de robotáxis (Waymo, etc.).", verdict: "🟢 CORE DE FCF", verdictClass: "badge-bullish" },
-  { ticker: "META", name: "Meta Platforms", category: "core_fcf", techNiche: "Redes Sociais, Modelos Llama AI & Compute", revGrowth: "+20% a +25%", fcfMargin: "Margens de 35%+", moat: "Infraestrutura de compute massiva para treinar modelos abertos (Llama) que reduzem dependência de terceiros e impulsionam anúncios.", verdict: "🟢 CORE", verdictClass: "badge-bullish" }
+  { 
+    ticker: "MELI", 
+    name: "MercadoLibre Inc", 
+    category: "core_fcf", 
+    techNiche: "E-commerce, Logística & Fintech LatAm", 
+    currentPrice: 1995.50,
+    baseMetric: 48.10, // EPS NTM estimado
+    metricType: "P/E",
+    currentMultiple: 41.5,
+    fairMultiple: 51.0, // Justo pelo crescimento de 38% e monopólio
+    revGrowthVal: 38,
+    revGrowth: "+35% a +42%", 
+    fcfMarginVal: 25,
+    fcfMargin: "Forte (US$ 8B+ caixa)", 
+    targetPrice: 2453.00,
+    upsidePct: 22.9,
+    valuationStatus: "💎 Oportunidade",
+    statusClass: "badge-bullish",
+    actionDesc: "Comprar recuos / Manter CORE",
+    moat: "Monopólio logístico (Meli Delivery) + ecossistema bancário (Mercado Pago). Poder de repasse inflacionário em moedas locais e DXY Bearish.", 
+    verdict: "🟢 CORE INDISCUTÍVEL", 
+    verdictClass: "badge-bullish" 
+  },
+  { 
+    ticker: "AVGO", 
+    name: "Broadcom Inc", 
+    category: "ai_infra", 
+    techNiche: "Switches Ethernet (Tomahawk 5/6), ASICs Customizados IA & VMware", 
+    currentPrice: 164.20,
+    baseMetric: 6.20,
+    metricType: "P/E",
+    currentMultiple: 26.5,
+    fairMultiple: 32.0,
+    revGrowthVal: 45,
+    revGrowth: "+43% a +47%", 
+    fcfMarginVal: 45,
+    fcfMargin: "Altíssima (~45% margem FCF)", 
+    targetPrice: 198.40,
+    upsidePct: 20.8,
+    valuationStatus: "💎 Oportunidade",
+    statusClass: "badge-bullish",
+    actionDesc: "Comprar nos pisos de range",
+    moat: "Líder absoluta em switches para clusters de IA (Meta, Google, ByteDance) e chips customizados (XPU). Receita de software recorrente da VMware.", 
+    verdict: "🟢 CORE / ÂNCORA IA", 
+    verdictClass: "badge-bullish" 
+  },
+  { 
+    ticker: "ASML", 
+    name: "ASML Holding NV", 
+    category: "semis", 
+    techNiche: "Litografia EUV & High-NA EUV", 
+    currentPrice: 840.00,
+    baseMetric: 24.50,
+    metricType: "P/E",
+    currentMultiple: 34.3,
+    fairMultiple: 38.0,
+    revGrowthVal: 22,
+    revGrowth: "+15% a +25%", 
+    fcfMarginVal: 32,
+    fcfMargin: "Forte (>30% margem)", 
+    targetPrice: 931.00,
+    upsidePct: 10.8,
+    valuationStatus: "⚖️ Preço Justo",
+    statusClass: "badge-neutral",
+    actionDesc: "Hold Estrutural",
+    moat: "Monopólio global absoluto em máquinas EUV indispensáveis para nós de 3nm, 2nm e A16. Ninguém fabrica chips avançados sem ASML.", 
+    verdict: "🟢 HOLD ESTRUTURAL", 
+    verdictClass: "badge-bullish" 
+  },
+  { 
+    ticker: "GOOGL", 
+    name: "Alphabet Inc", 
+    category: "core_fcf", 
+    techNiche: "Hyperscaler Cloud, Modelos Gemini & TPUs", 
+    currentPrice: 178.50,
+    baseMetric: 8.90,
+    metricType: "P/E",
+    currentMultiple: 20.1,
+    fairMultiple: 25.0,
+    revGrowthVal: 15,
+    revGrowth: "+14% a +16%", 
+    fcfMarginVal: 28,
+    fcfMargin: "Fortaleza (US$ 100B+ caixa)", 
+    targetPrice: 222.50,
+    upsidePct: 24.6,
+    valuationStatus: "💎 Oportunidade",
+    statusClass: "badge-bullish",
+    actionDesc: "Comprar recuos / Âncora FCF",
+    moat: "TPU v5p/v6 competindo com Nvidia em custo/eficiência; liderança em pesquisa de IA e monetização em Search e YouTube.", 
+    verdict: "🟢 CORE DE QUALIDADE", 
+    verdictClass: "badge-bullish" 
+  },
+  { 
+    ticker: "META", 
+    name: "Meta Platforms", 
+    category: "core_fcf", 
+    techNiche: "Redes Sociais, Modelos Llama AI & Compute", 
+    currentPrice: 535.00,
+    baseMetric: 24.20,
+    metricType: "P/E",
+    currentMultiple: 22.1,
+    fairMultiple: 26.5,
+    revGrowthVal: 22,
+    revGrowth: "+20% a +25%", 
+    fcfMarginVal: 36,
+    fcfMargin: "Margens de 35%+", 
+    targetPrice: 641.30,
+    upsidePct: 19.9,
+    valuationStatus: "💎 Oportunidade",
+    statusClass: "badge-bullish",
+    actionDesc: "Manter / Acumular em dips",
+    moat: "Infraestrutura de compute massiva para treinar modelos abertos (Llama) que reduzem dependência de terceiros e impulsionam anúncios.", 
+    verdict: "🟢 CORE", 
+    verdictClass: "badge-bullish" 
+  },
+  { 
+    ticker: "UBER", 
+    name: "Uber Technologies", 
+    category: "core_fcf", 
+    techNiche: "Mobilidade, Delivery & Rede de Frotas Autônomas", 
+    currentPrice: 72.80,
+    baseMetric: 3.20,
+    metricType: "P/E",
+    currentMultiple: 22.8,
+    fairMultiple: 28.0,
+    revGrowthVal: 17,
+    revGrowth: "+15% a +18%", 
+    fcfMarginVal: 15,
+    fcfMargin: "Forte expansão (US$ 5B+ FCF)", 
+    targetPrice: 89.60,
+    upsidePct: 23.1,
+    valuationStatus: "💎 Oportunidade",
+    statusClass: "badge-bullish",
+    actionDesc: "Comprar / FCF infletindo",
+    moat: "Plataforma líder global de mobilidade com acordos estratégicos para operar frotas de robotáxis (Waymo, etc.).", 
+    verdict: "🟢 CORE DE FCF", 
+    verdictClass: "badge-bullish" 
+  },
+  { 
+    ticker: "BE", 
+    name: "Bloom Energy Corp", 
+    category: "ai_infra", 
+    techNiche: "Células de Combustível de Estado Sólido (SOFC) p/ Data Centers", 
+    currentPrice: 13.50,
+    baseMetric: 0.45,
+    metricType: "EV/Sales",
+    currentMultiple: 2.2,
+    fairMultiple: 3.2,
+    revGrowthVal: 22,
+    revGrowth: "+18% a +25%", 
+    fcfMarginVal: 5,
+    fcfMargin: "Ponto de inflexão", 
+    targetPrice: 19.80,
+    upsidePct: 46.7,
+    valuationStatus: "💎 Oportunidade TAIL",
+    statusClass: "badge-bullish",
+    actionDesc: "Manter 1–3% da carteira",
+    moat: "Resolução do maior gargalo da IA: falta de energia na rede elétrica. Energia 'behind-the-meter' sem esperar 5 anos pela concessionária.", 
+    verdict: "🟢 TAIL DE ALTA CONVICÇÃO", 
+    verdictClass: "badge-bullish" 
+  },
+  { 
+    ticker: "FN", 
+    name: "Fabrinet", 
+    category: "ai_infra", 
+    techNiche: "Fabricação Óptica de Alta Precisão (Transceivers 800G/1.6T)", 
+    currentPrice: 245.00,
+    baseMetric: 9.80,
+    metricType: "P/E",
+    currentMultiple: 25.0,
+    fairMultiple: 28.0,
+    revGrowthVal: 15,
+    revGrowth: "+12% a +17%", 
+    fcfMarginVal: 12,
+    fcfMargin: "Sólida e sem dívida líquida", 
+    targetPrice: 274.40,
+    upsidePct: 12.0,
+    valuationStatus: "⚖️ Preço Justo",
+    statusClass: "badge-neutral",
+    actionDesc: "Hold / Monitorar",
+    moat: "Fabricante exclusiva dos transceivers ópticos de IA mais avançados da Nvidia e hyperscalers. Forte barreira técnica de manufatura.", 
+    verdict: "🟢 TAIL ESTRUTURAL", 
+    verdictClass: "badge-bullish" 
+  },
+  { 
+    ticker: "ALAB", 
+    name: "Astera Labs Inc", 
+    category: "ai_infra", 
+    techNiche: "Conectividade PCIe 5.0/6.0, CXL & Retimers", 
+    currentPrice: 88.00,
+    baseMetric: 1.10,
+    metricType: "P/E",
+    currentMultiple: 80.0,
+    fairMultiple: 50.0,
+    revGrowthVal: 150,
+    revGrowth: "+150%+", 
+    fcfMarginVal: 18,
+    fcfMargin: "Margens brutas de 75%+", 
+    targetPrice: 55.00,
+    upsidePct: -37.5,
+    valuationStatus: "🚨 Risco de Bolha",
+    statusClass: "badge-bearish",
+    actionDesc: "Realizar lucros no topo do range",
+    moat: "Domínio de chips retimers PCIe para GPUs de IA. Porém, valuation com múltiplos extremos vulnerável ao Quad 3.", 
+    verdict: "🟡 TAIL HIPERCRESCIMENTO", 
+    verdictClass: "badge-neutral" 
+  },
+  { 
+    ticker: "CRDO", 
+    name: "Credo Technology", 
+    category: "ai_infra", 
+    techNiche: "Cabos Elétricos Ativos (AEC) e DSPs SerDes", 
+    currentPrice: 38.50,
+    baseMetric: 0.65,
+    metricType: "P/E",
+    currentMultiple: 59.2,
+    fairMultiple: 42.0,
+    revGrowthVal: 70,
+    revGrowth: "+60% a +80%", 
+    fcfMarginVal: 10,
+    fcfMargin: "Geração de caixa positiva", 
+    targetPrice: 27.30,
+    upsidePct: -29.1,
+    valuationStatus: "🚨 Múltiplo Esticado",
+    statusClass: "badge-bearish",
+    actionDesc: "Manter tamanho mínimo (1%)",
+    moat: "Substituição de cabos de cobre por AECs. Crescimento explosivo mas sensível a reprecificação macro.", 
+    verdict: "🟡 TAIL ESPECÍFICA", 
+    verdictClass: "badge-neutral" 
+  },
+  { 
+    ticker: "COHR", 
+    name: "Coherent Corp", 
+    category: "ai_infra", 
+    techNiche: "Lasers Industriais, Materiais SiC e Módulos Ópticos 800G", 
+    currentPrice: 84.50,
+    baseMetric: 3.10,
+    metricType: "P/E",
+    currentMultiple: 27.2,
+    fairMultiple: 26.0,
+    revGrowthVal: 12,
+    revGrowth: "+10% a +15%", 
+    fcfMarginVal: 8,
+    fcfMargin: "Alavancada (em desalavancagem)", 
+    targetPrice: 80.60,
+    upsidePct: -4.6,
+    valuationStatus: "⚖️ Preço Justo",
+    statusClass: "badge-neutral",
+    actionDesc: "Monitorar dívida",
+    moat: "Líder em módulos ópticos e lasers. Alavancagem financeira exige cautela em Quad 3.", 
+    verdict: "🟡 TAIL EM MONITORAMENTO", 
+    verdictClass: "badge-neutral" 
+  },
+  { 
+    ticker: "ARM", 
+    name: "Arm Holdings plc", 
+    category: "semis", 
+    techNiche: "Arquitetura de CPUs v9 p/ Servidores e PCs IA", 
+    currentPrice: 138.00,
+    baseMetric: 1.85,
+    metricType: "P/E",
+    currentMultiple: 74.6,
+    fairMultiple: 48.0,
+    revGrowthVal: 38,
+    revGrowth: "+35% a +40%", 
+    fcfMarginVal: 45,
+    fcfMargin: "Margens de 45%+", 
+    targetPrice: 88.80,
+    upsidePct: -35.7,
+    valuationStatus: "🚨 Risco de Bolha",
+    statusClass: "badge-bearish",
+    actionDesc: "Realizar no topo / Reduzir",
+    moat: "Monopólio de arquitetura ARMv9, mas negociando a 75x lucros. Fragilidade a reprecificação de taxa 10Y.", 
+    verdict: "🟡 TAIL SECULAR", 
+    verdictClass: "badge-neutral" 
+  },
+  { 
+    ticker: "INTC", 
+    name: "Intel Corp", 
+    category: "cyclical", 
+    techNiche: "CPUs de Servidor, PCs x86 e Foundry (18A)", 
+    currentPrice: 20.80,
+    baseMetric: 0.60,
+    metricType: "P/E",
+    currentMultiple: 34.6,
+    fairMultiple: 18.0,
+    revGrowthVal: -2,
+    revGrowth: "Pressionada (-5% a +2%)", 
+    fcfMarginVal: -15,
+    fcfMargin: "Queima de caixa em capex", 
+    targetPrice: 10.80,
+    upsidePct: -48.1,
+    valuationStatus: "🔴 Queima de FCF",
+    statusClass: "badge-bearish",
+    actionDesc: "Candidata prioritária a venda",
+    moat: "Perdendo share para AMD e ARM; queima de caixa pesada em fundição. Pior perfil no Quad 3.", 
+    verdict: "🔴 CANDIDATA A TROCA", 
+    verdictClass: "badge-bearish" 
+  },
+  { 
+    ticker: "NOK", 
+    name: "Nokia Oyj", 
+    category: "cyclical", 
+    techNiche: "Equipamentos 5G/6G, Roteamento IP e Redes Ópticas", 
+    currentPrice: 4.15,
+    baseMetric: 0.38,
+    metricType: "P/E",
+    currentMultiple: 10.9,
+    fairMultiple: 13.5,
+    revGrowthVal: 2,
+    revGrowth: "Estável (-2% a +3%)", 
+    fcfMarginVal: 12,
+    fcfMargin: "Sólida (Recompras & Div)", 
+    targetPrice: 5.13,
+    upsidePct: 23.6,
+    valuationStatus: "💎 Valor / Desconto",
+    statusClass: "badge-bullish",
+    actionDesc: "Manter para dividendos/turnaround",
+    moat: "Infraestrutura óptica e patentes essenciais com múltiplos muito baixos e yield de proventos.", 
+    verdict: "🟡 AVALIAÇÃO LONGO PRAZO", 
+    verdictClass: "badge-neutral" 
+  },
+  { 
+    ticker: "NEM", 
+    name: "Newmont Corp", 
+    category: "core_fcf", 
+    techNiche: "Maior Mineradora de Ouro do Mundo (Quad 3)", 
+    currentPrice: 52.30,
+    baseMetric: 3.80,
+    metricType: "P/E",
+    currentMultiple: 13.8,
+    fairMultiple: 19.0,
+    revGrowthVal: 28,
+    revGrowth: "+25% a +35%", 
+    fcfMarginVal: 30,
+    fcfMargin: "Explosão de FCF com ouro > $4.400", 
+    targetPrice: 72.20,
+    upsidePct: 38.0,
+    valuationStatus: "💎 Oportunidade Máxima",
+    statusClass: "badge-bullish",
+    actionDesc: "Comprar recuos / Pilar Quad 3",
+    moat: "Alavancagem operacional extrema ao preço do ouro spot (Bullish TREND 4.292–4.698). Forte geração de caixa livre.", 
+    verdict: "🟢 PILAR QUAD 3", 
+    verdictClass: "badge-bullish" 
+  }
 ];
 
 // INICIALIZAÇÃO DA APLICAÇÃO
@@ -138,8 +469,10 @@ document.addEventListener("DOMContentLoaded", () => {
   renderRiskRangesTable("all");
   renderPortfolioView(activePortfolioKey);
   renderFundamentalsTable("all");
+  loadCompanyToSimulator("MELI");
   runStockAnalysis("AAAU");
 });
+
 
 // NAVEGAÇÃO ENTRE ABAS
 function setTab(tabId) {
@@ -446,7 +779,123 @@ function updatePortfolioChart(positions, totalVal) {
   }
 }
 
-// 2.1 RENDERIZAR TABELA FUNDAMENTALISTA (THE PODS & TECH/IA)
+// 2.1 MOTOR DE VALUATION, SIMULADOR DE PREÇO-ALVO & TERMOSTATO DE BOLHAS
+let currentSimTicker = "MELI";
+
+function loadCompanyToSimulator(ticker) {
+  const item = fundamentalsData.find(d => d.ticker === ticker) || fundamentalsData[0];
+  currentSimTicker = item.ticker;
+
+  // Atualizar inputs/sliders
+  const revGrowthSlider = document.getElementById("simRevGrowth");
+  const fcfMarginSlider = document.getElementById("simFcfMargin");
+  const fairMultSlider = document.getElementById("simFairMultiple");
+
+  if (revGrowthSlider) revGrowthSlider.value = item.revGrowthVal;
+  if (fcfMarginSlider) fcfMarginSlider.value = item.fcfMarginVal;
+  if (fairMultSlider) fairMultSlider.value = item.fairMultiple;
+
+  // Atualizar labels dos valores estáticos
+  const curPriceEl = document.getElementById("simCurrentPrice");
+  const curMultEl = document.getElementById("simCurrentMultiple");
+  const baseMetEl = document.getElementById("simBaseMetric");
+
+  if (curPriceEl) curPriceEl.innerText = `US$ ${item.currentPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+  if (curMultEl) curMultEl.innerText = `${item.metricType} ${item.currentMultiple.toFixed(1)}x`;
+  if (baseMetEl) baseMetEl.innerText = `US$ ${item.baseMetric.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+
+  updateValuationCalculation();
+}
+
+function updateValuationCalculation() {
+  const item = fundamentalsData.find(d => d.ticker === currentSimTicker) || fundamentalsData[0];
+  
+  const revGrowth = parseFloat(document.getElementById("simRevGrowth")?.value || item.revGrowthVal);
+  const fcfMargin = parseFloat(document.getElementById("simFcfMargin")?.value || item.fcfMarginVal);
+  const fairMult = parseFloat(document.getElementById("simFairMultiple")?.value || item.fairMultiple);
+
+  // Atualizar labels dos sliders
+  const lblRev = document.getElementById("lblRevGrowth");
+  const lblFcf = document.getElementById("lblFcfMargin");
+  const lblMult = document.getElementById("lblFairMultiple");
+
+  if (lblRev) lblRev.innerText = `${revGrowth >= 0 ? '+' : ''}${revGrowth}%`;
+  if (lblFcf) lblFcf.innerText = `${fcfMargin}%`;
+  if (lblMult) lblMult.innerText = `${fairMult.toFixed(1)}x`;
+
+  // Cálculo do Preço-Alvo:
+  // Preço Alvo = Métrica Base Projetada * Múltiplo Justo
+  // Ajustamos a métrica base pelo crescimento adicional esperado
+  const projectedMetric = item.baseMetric * (1 + (revGrowth / 100));
+  let calculatedTargetPrice = projectedMetric * fairMult;
+
+  // Normalização específica se a métrica base for EV/Sales (como BE)
+  if (item.metricType === "EV/Sales") {
+    calculatedTargetPrice = item.currentPrice * (fairMult / item.currentMultiple) * (1 + (revGrowth / 100) * 0.5);
+  }
+
+  const currentPrice = item.currentPrice;
+  const upsidePct = ((calculatedTargetPrice - currentPrice) / currentPrice) * 100;
+
+  // Atualizar Display do Preço-Alvo
+  const displayPriceEl = document.getElementById("valTargetPriceDisplay");
+  const upsideBadgeEl = document.getElementById("valUpsideBadge");
+  const upsidePctEl = document.getElementById("valUpsidePct");
+  const verdictTitleEl = document.getElementById("valVerdictTitle");
+  const verdictDescEl = document.getElementById("valVerdictDesc");
+  const barCurPrice = document.getElementById("barCurPrice");
+  const barTgtPrice = document.getElementById("barTgtPrice");
+  const progressBar = document.getElementById("valProgressBar");
+
+  if (displayPriceEl) displayPriceEl.innerText = `US$ ${calculatedTargetPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  if (barCurPrice) barCurPrice.innerText = `US$ ${currentPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+  if (barTgtPrice) barTgtPrice.innerText = `US$ ${calculatedTargetPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+
+  if (upsidePctEl) {
+    upsidePctEl.innerText = `${upsidePct >= 0 ? '+' : ''}${upsidePct.toFixed(1)}%`;
+  }
+
+  if (upsideBadgeEl) {
+    if (upsidePct >= 0) {
+      upsideBadgeEl.className = "target-upside-badge";
+      upsideBadgeEl.innerHTML = `<span class="icon">🚀</span> Potencial (Upside): <strong>+${upsidePct.toFixed(1)}%</strong>`;
+    } else {
+      upsideBadgeEl.className = "target-upside-badge negative";
+      upsideBadgeEl.innerHTML = `<span class="icon">⚠️</span> Downside Estimado: <strong>${upsidePct.toFixed(1)}%</strong>`;
+    }
+  }
+
+  // Termômetro de Bolha vs Oportunidade
+  if (verdictTitleEl && verdictDescEl) {
+    if (upsidePct >= 20) {
+      verdictTitleEl.innerHTML = "💎 OPORTUNIDADE DE COMPRA (MARGEM DE SEGURANÇA ALTA)";
+      verdictTitleEl.style.color = "#10B981";
+      verdictDescEl.innerText = `A ação negocia com forte desconto em relação ao crescimento projetado (+${revGrowth}%) e múltiplo justo (${fairMult.toFixed(1)}x). O Preço-Alvo de US$ ${calculatedTargetPrice.toFixed(2)} oferece assimetria altista atrativa para acúmulo nos recuos.`;
+      if (progressBar) {
+        progressBar.className = "progress-fill success";
+        progressBar.style.width = `${Math.min(100, Math.max(15, (currentPrice / calculatedTargetPrice) * 100))}%`;
+      }
+    } else if (upsidePct <= -20) {
+      verdictTitleEl.innerHTML = "🚨 ALERTA DE BOLHA / MÚLTIPLO SUPERESTIMADO (RISCO DE REPREÇO)";
+      verdictTitleEl.style.color = "#F43F5E";
+      verdictDescEl.innerText = `Múltiplo de mercado (${item.currentMultiple.toFixed(1)}x) muito acima do justo (${fairMult.toFixed(1)}x). Em regime de Quad 3 com juros longos em 4,76%, papéis com múltiplo esticado sofrem forte compressão. Recomendação: Realizar lucros no topo do Risk Range.`;
+      if (progressBar) {
+        progressBar.className = "progress-fill danger";
+        progressBar.style.width = "100%";
+      }
+    } else {
+      verdictTitleEl.innerHTML = "⚖️ PREÇO JUSTO / EQUILÍBRIO FUNDAMENTALISTA";
+      verdictTitleEl.style.color = "#F59E0B";
+      verdictDescEl.innerText = `A ação está negociando muito próxima do seu valor justo estimado (US$ ${calculatedTargetPrice.toFixed(2)}). Manter posição existente sem grandes aportes adicionais.`;
+      if (progressBar) {
+        progressBar.className = "progress-fill warning";
+        progressBar.style.width = "90%";
+      }
+    }
+  }
+}
+
+// 2.2 RENDERIZAR TABELA FUNDAMENTALISTA COM PREÇO-ALVO & MULTIPLOS
 function renderFundamentalsTable(filter) {
   const tbody = document.getElementById("fundamentalsTableBody");
   if (!tbody) return;
@@ -456,13 +905,22 @@ function renderFundamentalsTable(filter) {
 
   filtered.forEach(item => {
     const tr = document.createElement("tr");
+    const upsideSign = item.upsidePct >= 0 ? `+${item.upsidePct.toFixed(1)}%` : `${item.upsidePct.toFixed(1)}%`;
+    const upsideColor = item.upsidePct >= 15 ? 'text-emerald' : (item.upsidePct <= -15 ? 'text-rose' : 'text-amber');
+
     tr.innerHTML = `
-      <td><strong>${item.ticker}</strong> <br><small class="text-muted">${item.name}</small></td>
-      <td><small>${item.techNiche}</small></td>
+      <td>
+        <strong>${item.ticker}</strong> <br>
+        <small class="text-muted">${item.name}</small>
+      </td>
+      <td class="font-bold">US$ ${item.currentPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</td>
       <td><strong class="text-emerald">${item.revGrowth}</strong></td>
-      <td><small>${item.fcfMargin}</small></td>
-      <td><small>${item.moat}</small></td>
-      <td><span class="badge ${item.verdictClass}">${item.verdict}</span></td>
+      <td><small>${item.metricType} <strong>${item.currentMultiple.toFixed(1)}x</strong></small></td>
+      <td><small class="text-cyan font-bold">${item.fairMultiple.toFixed(1)}x</small></td>
+      <td class="font-bold text-cyan">US$ ${item.targetPrice.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</td>
+      <td><strong class="${upsideColor}">${upsideSign}</strong></td>
+      <td><span class="badge ${item.statusClass}">${item.valuationStatus}</span></td>
+      <td><small>${item.actionDesc}</small></td>
     `;
     tbody.appendChild(tr);
   });
@@ -476,7 +934,7 @@ function filterFundamentals(cat, btnElement) {
   renderFundamentalsTable(cat);
 }
 
-// 3. ANALISADOR DE AÇÕES
+// 3. ANALISADOR DE AÇÕES COM CONFLUÊNCIA VALUATION + RISK RANGE
 function quickAnalyze(ticker) {
   document.getElementById("analyzerTicker").value = ticker;
   runStockAnalysis(ticker);
@@ -492,40 +950,57 @@ function runStockAnalysis(customTicker) {
 
   headerTitle.innerHTML = `<span class="icon">📊</span> Relatório de Análise: <strong>${ticker}</strong>`;
 
+  const fundItem = fundamentalsData.find(d => d.ticker === ticker);
+
   let analysis = {
-    tese: "Ativo de equity ou commodity listado em bolsa americana.",
+    tese: "Ativo listado em bolsa americana avaliado sob o framework quantitativo e macro Hedgeye.",
     quadFit: "Quad 3 (Estagflação) exige seletividade e alinhamento de TREND.",
     sinal: "BULLISH TREND",
-    rangeInfo: "Range atualizado conforme o EARLYLOOK de 02/09/2026.",
+    rangeInfo: "Range atualizado conforme o EARLYLOOK de 03/09/2026.",
+    valuationBlock: fundItem ? `Preço Atual: US$ ${fundItem.currentPrice.toFixed(2)} | Múltiplo Atual: ${fundItem.currentMultiple.toFixed(1)}x vs Múltiplo Justo: ${fundItem.fairMultiple.toFixed(1)}x. <br><strong>Preço-Alvo Fundamentalista:</strong> <span class="text-cyan font-bold">US$ ${fundItem.targetPrice.toFixed(2)}</span> (Upside: <strong class="${fundItem.upsidePct >= 0 ? 'text-emerald' : 'text-rose'}">${fundItem.upsidePct >= 0 ? '+' : ''}${fundItem.upsidePct.toFixed(1)}%</strong>) — Diagnóstico: <strong>${fundItem.valuationStatus}</strong>.` : "Ativo commodity/físico avaliado por métricas de oferta, demanda e paridade monetária.",
     sobreposicao: "Monitorar correlação com carteiras Schwab e Tastyworks.",
-    conclusao: "Conduta: Respeitar a disciplina operacional e evitar compras nos topos de range.",
+    conclusao: "Conduta: Respeitar a disciplina operacional, comprando nos pisos de range de ativos com Bullish TREND.",
     invalidação: "Quebra de TREND com confirmação de volume e virada do DXY."
   };
 
   if (ticker === "AAAU" || ticker === "GOLD" || ticker === "NEM" || ticker === "GDX") {
-    analysis.tese = "Ouro Spot & Mineradoras: Principal posição de alta convicção macro no EARLYLOOK de 02/09/2026. Proteção contra desvalorização monetária e inflação de Quad 3.";
-    analysis.quadFit = "🟢 **Favorecido Absoluto em Quad 3 (Estagflação)**. DXY quebrando suporte em Bearish (98.77 a 99.99).";
-    analysis.sinal = "BULLISH TREND Forte (Range Ouro: 4.251 a 4.752)";
-    analysis.rangeInfo = "Ouro Spot em 4.420 (34% do range - Assimetria Altista Positiva).";
+    analysis.tese = "Ouro Spot & Mineradoras: Principal posição de alta convicção macro da Hedgeye. Proteção máxima contra desvalorização monetária, estagflação de Quad 3 e volatilidade de yields.";
+    analysis.quadFit = "🟢 **Favorecido Absoluto em Quad 3 (Estagflação)**. DXY em Bearish TREND (98,75 a 99,69) amplia fluxo comprador.";
+    analysis.sinal = "BULLISH TREND Forte (Range Ouro Hoje: 4.292 a 4.698)";
+    analysis.rangeInfo = "Ouro Spot em 4.480 (Piso elevado para 4.292. Se 10Y Yield recuar para 4,68%, o rali acelera).";
+    if (ticker === "NEM") {
+      analysis.valuationBlock = `Preço Atual: US$ 52,30 | P/L Atual: 13,8x vs P/L Justo: 19,0x. <br><strong>Preço-Alvo Fundamentalista:</strong> <span class="text-emerald font-bold">US$ 72,20 (+38,0% Upside)</span>. Alavancagem operacional maciça com o ouro acima de US$ 4.400.`;
+    }
     analysis.sobreposicao = "Presente na Schwab (AAAU: US$ 6.460,50 + GDX: US$ 2.904,26) e Tastyworks (NEM: US$ 1.745,10 + GDX: US$ 969,05). Total: US$ 12.078,91 (~4,9% do patrimônio).";
-    analysis.conclusao = "<strong>Conduta:</strong> Manter e considerar compras adicionais escalonadas nos recuos. É o pilar de proteção da carteira.";
+    analysis.conclusao = "<strong>Conduta:</strong> Manter alocação máxima e comprar recuos. Convicção estrutural no Quad 3.";
     analysis.invalidação = "DXY rompendo forte para cima de 100 com quebra do suporte TREND de 4.204 no ouro.";
   } else if (ticker === "MELI") {
-    analysis.tese = "MercadoLibre: Líder indiscutível em e-commerce e ecossistema fintech (Mercado Pago) na América Latina. Crescimento de receitas acelerando.";
-    analysis.quadFit = "🟢 **Favorecida por DXY Bearish** (Alivia moedas LatAm e consumo regional).";
+    analysis.tese = "MercadoLibre: Monopólio logístico e fintech líder na América Latina. Crescimento de receitas de +38% com forte poder de precificação.";
+    analysis.quadFit = "🟢 **Favorecida por DXY Bearish** (Alivia moedas latino-americanas e expande consumo).";
     analysis.sinal = "BULLISH TREND";
     analysis.rangeInfo = "Preço Atual: US$ 1.995,50.";
+    analysis.valuationBlock = `Preço Atual: US$ 1.995,50 | P/L Atual: 41,5x vs P/L Justo: 51,0x. <br><strong>Preço-Alvo Fundamentalista:</strong> <span class="text-emerald font-bold">US$ 2.453,00 (+22,9% Upside)</span>. 💎 <strong>Oportunidade de Compra com Margem de Segurança</strong>.`;
     analysis.sobreposicao = "Presente em ambas: Schwab (US$ 5.986,51) e Tastyworks (US$ 1.994,04). Total: US$ 7.980,55 (3,24% global).";
-    analysis.conclusao = "<strong>Conduta:</strong> Manter posição CORE intacta. Aproveitar o vento a favor do dólar fraco.";
-    analysis.invalidação = "Perda do suporte TREND e desaceleração do TPV fintech.";
+    analysis.conclusao = "<strong>Conduta:</strong> Manter posição CORE intacta e comprar em pullbacks técnicos.";
+    analysis.invalidação = "Perda do suporte TREND e desaceleração do TPV fintech abaixo de 20%.";
   } else if (ticker === "SLV") {
     analysis.tese = "iShares Silver Trust (Prata Física).";
     analysis.quadFit = "🟡 **Híbrido (Monetário e Industrial)**.";
     analysis.sinal = "NEUTRAL (Quebrou sinal TRADE em US$ 65,11)";
-    analysis.rangeInfo = "Piso: US$ 62,00 | Teto: US$ 67,00 (Preço atual: ~US$ 63,80).";
+    analysis.rangeInfo = "Piso: US$ 63,00 | Teto: US$ 69,00 (Preço atual: ~US$ 64,50).";
+    analysis.valuationBlock = `Prata física com suporte quebrado no curto prazo. Manter tamanho mínimo e não comprar na queda até reabilitação de sinal.`;
     analysis.sobreposicao = "Presente na Schwab (US$ 3.520,20 - 1,66%).";
-    analysis.conclusao = "<strong>Alerta Hedgeye de Hoje:</strong> Não comprar a queda ('stop buying the dip'). Manter tamanho mínimo e aguardar recomposição de sinal.";
-    analysis.invalidação = "Fechamento consistente acima de US$ 65,11 reabilita o sinal TRADE.";
+    analysis.conclusao = "<strong>Alerta Hedgeye de Hoje:</strong> Não comprar a queda ('stop buying the dip'). Manter posição mínima.";
+    analysis.invalidação = "Fechamento consistente acima de US$ 65,11 reabilita o sinal TRADE altista.";
+  } else if (ticker === "ALAB" || ticker === "ARM") {
+    analysis.tese = `${ticker}: Ativo de hiper momentum em infraestrutura de IA e semicondutores.`;
+    analysis.quadFit = "🔴 **Vento contrário em Quad 3** (Múltiplos esticados sofrem com juros longos de 4,76%).";
+    analysis.sinal = "NEUTRAL / CAUTELA";
+    analysis.rangeInfo = "Volatilidade elevada.";
+    analysis.valuationBlock = `🚨 <strong>Alerta de Múltiplo Esticado / Risco de Bolha:</strong> Negociando entre 75x e 80x lucros. Downside estimado de -35% a -40% caso haja descompressão de múltiplos macro.`;
+    analysis.sobreposicao = `Posição TAIL restrita a 1–3% da carteira.`;
+    analysis.conclusao = "<strong>Conduta:</strong> Realizar lucros parciais nos topos de range (Trade) e proteger caixa.";
+    analysis.invalidação = "Quebra simultânea de TRADE e TREND aciona saída total (#OUT).";
   }
 
   overallTag.className = `badge ${analysis.sinal.includes("BULLISH") ? "badge-bullish" : (analysis.sinal.includes("BEARISH") ? "badge-bearish" : "badge-neutral")}`;
@@ -548,16 +1023,17 @@ function runStockAnalysis(customTicker) {
     </div>
 
     <div class="analyzer-block mt-2">
-      <div class="block-title">4. Sobreposição com Portfólio (${brokerTarget.toUpperCase()})</div>
-      <p class="block-desc">${analysis.sobreposicao}</p>
+      <div class="block-title">4. Valuation Fundamentalista & Preço-Alvo (Múltiplos Justos)</div>
+      <p class="block-desc">${analysis.valuationBlock}</p>
     </div>
 
     <div class="analyzer-block mt-2">
-      <div class="block-title">5. Conclusão Operacional & Invalidação</div>
-      <p class="block-desc">${analysis.conclusao}<br><span class="text-rose"><strong>Condição de Invalidação:</strong> ${analysis.invalidação}</span></p>
+      <div class="block-title">5. Sobreposição de Carteira & Conclusão Operacional</div>
+      <p class="block-desc"><strong>Posição:</strong> ${analysis.sobreposicao}<br>${analysis.conclusao}<br><span class="text-rose"><strong>Condição de Invalidação:</strong> ${analysis.invalidação}</span></p>
     </div>
   `;
 }
+
 
 // 4. PROCESSADOR DE EARLYLOOK
 function loadSampleEarlyLook() {

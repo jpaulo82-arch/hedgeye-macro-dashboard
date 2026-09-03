@@ -940,7 +940,149 @@ body {
 .text-emerald { color: #10B981 !important; }
 .text-rose { color: #F43F5E !important; }
 .text-amber { color: #F59E0B !important; }
+.text-cyan { color: #38BDF8 !important; }
 .text-muted { color: var(--text-muted) !important; }
 .font-bold { font-weight: 700; }
 .mt-2 { margin-top: 0.5rem; }
 .mt-3 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+
+/* Valuation Simulator & Target Price Styles */
+.valuation-inputs-box {
+  background-color: #0F172A;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.valuation-output-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.target-price-card {
+  background: linear-gradient(145deg, #111C33 0%, #0B132B 100%);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.target-price-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #38BDF8, #10B981, #A855F7);
+}
+
+.target-top-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #94A3B8;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.target-price-display {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #38BDF8;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.target-upside-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.target-upside-badge.negative {
+  background-color: rgba(244, 63, 94, 0.15);
+  color: #F43F5E;
+  border-color: rgba(244, 63, 94, 0.3);
+}
+
+.valuation-verdict-box {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  text-align: left;
+}
+
+.verdict-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #F8FAFC;
+  margin-bottom: 0.25rem;
+}
+
+.verdict-desc {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.valuation-metric-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem;
+}
+
+.metric-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.mini-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.mini-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #E2E8F0;
+}
+
+.selector-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.selector-inline select {
+  max-width: 380px;
+}
+
+.form-range {
+  width: 100%;
+  accent-color: #38BDF8;
+  cursor: pointer;
+}
+

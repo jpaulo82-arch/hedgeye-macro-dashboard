@@ -482,13 +482,155 @@
       </div>
     </section>
 
-    <!-- TAB: ANÁLISE FUNDAMENTALISTA & TECH / IA (THE PODS) -->
+    <!-- TAB: ANÁLISE FUNDAMENTALISTA, VALUATION & PREÇO-ALVO -->
     <section id="tab-fundamentals" class="tab-content">
+      
+      <!-- Topo: Metodologia e Critério de Valuation por Múltiplos Justos -->
       <div class="card">
         <div class="card-header">
           <div>
-            <h3><span class="icon">🔬</span> Análise Fundamentalista de Ações & Ecossistema Tech/IA</h3>
-            <p class="subtitle">Cruzamento dos Resultados Recentes (Crescimento de Receita & Margem FCF) com o Cenário Tecnológico</p>
+            <h3><span class="icon">📐</span> Critério Fundamentalista de Múltiplos Justos & Preço-Alvo (Fair Value Engine)</h3>
+            <p class="subtitle">Metodologia quantitativa que cruza crescimento operacional, poder de precificação (Moat), geração de caixa livre (FCF) e regime macro (Quad 3)</p>
+          </div>
+          <span class="tag tag-accent">Modelo GIP-Adjusted Multiples</span>
+        </div>
+        <div class="card-body">
+          <div class="grid-3-col">
+            <div class="stat-card">
+              <div class="stat-label">1. ÂNCORA DE MÚLTIPLO JUSTO (PEG & FCF)</div>
+              <div class="stat-desc">
+                O múltiplo justo (P/L ou EV/FCF) é ancorado na <strong>taxa de crescimento sustentável</strong> ajustada pela <strong>margem FCF</strong>. Empresas com margem FCF > 30% recebem prêmio de qualidade; empresas sem caixa sofrem desconto de até 40% no Quad 3.
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">2. AJUSTE MACRO AO REGIME QUAD 3</div>
+              <div class="stat-desc">
+                Com o <strong>UST 10Y Yield a 4,76%</strong> e inflação persistente, o custo de capital é elevado. O modelo penaliza ativos de crescimento distante ("long duration cash flows") e privilegia <strong>geração de caixa imediata e poder de repasse de preços</strong>.
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">3. TERMÔMETRO DE BOLHA VS OPORTUNIDADE</div>
+              <div class="stat-desc">
+                <span class="badge badge-bearish">🚨 Risco de Bolha</span>: Múltiplo atual > 40% acima do justo (Downside severo). <br>
+                <span class="badge badge-bullish">💎 Oportunidade</span>: Preço atual com > 20% de desconto e alto FCF. <br>
+                <span class="badge badge-neutral">⚖️ Preço Justo</span>: Negociando em equilíbrio (upside -10% a +15%).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Simulador Interativo de Preço-Alvo & Sensibilidade -->
+      <div class="card mt-3">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">⚡</span> Simulador Interativo de Preço-Alvo & Análise de Sensibilidade</h3>
+            <p class="subtitle">Selecione uma empresa ou teste hipóteses de crescimento e múltiplos para calcular o valor justo em tempo real</p>
+          </div>
+          <div class="selector-inline">
+            <label for="valCompanySelect"><strong>Ativo:</strong></label>
+            <select id="valCompanySelect" class="form-select" onchange="loadCompanyToSimulator(this.value)">
+              <option value="MELI">MELI — MercadoLibre Inc (E-commerce / Fintech LatAm)</option>
+              <option value="AVGO">AVGO — Broadcom Inc (Switches IA / ASICs / VMware)</option>
+              <option value="ASML">ASML — ASML Holding (Monopólio Máquinas EUV)</option>
+              <option value="GOOGL">GOOGL — Alphabet Inc (Cloud, Gemini AI & TPUs)</option>
+              <option value="META">META — Meta Platforms (Llama AI / Família de Apps)</option>
+              <option value="UBER">UBER — Uber Technologies (Mobilidade & FCF)</option>
+              <option value="BE">BE — Bloom Energy Corp (Energia p/ Data Centers)</option>
+              <option value="FN">FN — Fabrinet (Transceivers Ópticos 800G/1.6T)</option>
+              <option value="ALAB">ALAB — Astera Labs (Conectividade PCIe/CXL IA)</option>
+              <option value="CRDO">CRDO — Credo Technology (Cabos Elétricos AEC)</option>
+              <option value="COHR">COHR — Coherent Corp (Lasers & Transceivers)</option>
+              <option value="ARM">ARM — Arm Holdings (Arquitetura CPUs v9)</option>
+              <option value="INTC">INTC — Intel Corp (CPUs x86 & Foundry 18A)</option>
+              <option value="NOK">NOK — Nokia Oyj (Redes Ópticas & Telecom)</option>
+              <option value="NEM">NEM — Newmont Corp (Mineração de Ouro / Quad 3)</option>
+            </select>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="grid-2-col">
+            <!-- Painel de Entradas e Sliders -->
+            <div class="valuation-inputs-box">
+              <h4 class="mb-2">Premissas Operacionais & Projeções (Próximos 12 Meses):</h4>
+              
+              <div class="form-group mb-2">
+                <div class="flex-between">
+                  <label for="simRevGrowth">Crescimento Esperado de Receita/Lucro (YoY %):</label>
+                  <span class="font-bold text-emerald" id="lblRevGrowth">+38%</span>
+                </div>
+                <input type="range" id="simRevGrowth" class="form-range" min="-10" max="150" value="38" step="1" oninput="updateValuationCalculation()">
+              </div>
+
+              <div class="form-group mb-2">
+                <div class="flex-between">
+                  <label for="simFcfMargin">Margem de Fluxo de Caixa Livre (FCF Margin %):</label>
+                  <span class="font-bold text-emerald" id="lblFcfMargin">25%</span>
+                </div>
+                <input type="range" id="simFcfMargin" class="form-range" min="0" max="60" value="25" step="1" oninput="updateValuationCalculation()">
+              </div>
+
+              <div class="form-group mb-2">
+                <div class="flex-between">
+                  <label for="simFairMultiple">Múltiplo Justo Alvo (P/L ou EV/FCF Justo):</label>
+                  <span class="font-bold text-cyan" id="lblFairMultiple">48.0x</span>
+                </div>
+                <input type="range" id="simFairMultiple" class="form-range" min="5" max="90" value="48" step="0.5" oninput="updateValuationCalculation()">
+              </div>
+
+              <div class="valuation-metric-strip mt-2">
+                <div class="metric-mini">
+                  <span class="mini-label">Preço Atual de Mercado:</span>
+                  <span class="mini-val text-amber" id="simCurrentPrice">US$ 1.995,50</span>
+                </div>
+                <div class="metric-mini">
+                  <span class="mini-label">Múltiplo Atual de Mercado:</span>
+                  <span class="mini-val" id="simCurrentMultiple">P/L 41.5x</span>
+                </div>
+                <div class="metric-mini">
+                  <span class="mini-label">EPS / FCF por Ação Base:</span>
+                  <span class="mini-val" id="simBaseMetric">US$ 48,10</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Painel de Resultado do Valuation & Termômetro de Bolha -->
+            <div class="valuation-output-box">
+              <div class="target-price-card" id="targetPriceCard">
+                <div class="target-top-label">PREÇO-ALVO FUNDAMENTALISTA (VALOR JUSTO)</div>
+                <div class="target-price-display" id="valTargetPriceDisplay">US$ 2.450,00</div>
+                
+                <div class="target-upside-badge" id="valUpsideBadge">
+                  <span class="icon">🚀</span> Potencial (Upside): <strong id="valUpsidePct">+22.8%</strong>
+                </div>
+
+                <div class="valuation-verdict-box mt-3" id="valVerdictBox">
+                  <div class="verdict-title" id="valVerdictTitle">💎 OPORTUNIDADE DE COMPRA (MARGEM DE SEGURANÇA ALTA)</div>
+                  <p class="verdict-desc" id="valVerdictDesc">
+                    A ação negocia com desconto relevante em relação ao seu crescimento e forte geração de caixa livre. O Preço-Alvo oferece margem de segurança favorável no regime de Quad 3.
+                  </p>
+                </div>
+
+                <!-- Barra de Comparação Preço Atual vs Alvo -->
+                <div class="price-comparison-bar mt-3">
+                  <div class="flex-between text-xs text-muted mb-1">
+                    <span>Preço Atual: <strong id="barCurPrice">US$ 1.995,50</strong></span>
+                    <span>Preço-Alvo: <strong id="barTgtPrice">US$ 2.450,00</strong></span>
+                  </div>
+                  <div class="progress-bar"><div class="progress-fill success" id="valProgressBar" style="width: 81%;"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabela Completa de Valuation & Termômetro de Ativos -->
+      <div class="card mt-3">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">📊</span> Painel de Valuation & Termômetro de Bolha vs Oportunidade</h3>
+            <p class="subtitle">Visão tabular consolidada com Múltiplos Atuais, Múltiplos Justos, Preço-Alvo e Diagnóstico de Ação</p>
           </div>
           <div class="filter-group">
             <button class="btn btn-sm btn-outline active" onclick="filterFundamentals('all', this)">Todas as Ações</button>
@@ -504,15 +646,18 @@
               <thead>
                 <tr>
                   <th>Ticker / Empresa</th>
-                  <th>Nicho Tecnológico</th>
-                  <th>Crescimento de Receita (YoY)</th>
-                  <th>Margem FCF / Balanço</th>
-                  <th>Fosso Competitivo & Tese de Longo Prazo</th>
-                  <th>Veredito Combinado (Macro + Micro)</th>
+                  <th>Preço Atual</th>
+                  <th>Crescimento YoY</th>
+                  <th>Múltiplo Atual</th>
+                  <th>Múltiplo Justo</th>
+                  <th>Preço-Alvo</th>
+                  <th>Upside / Downside</th>
+                  <th>Diagnóstico de Valuation</th>
+                  <th>Ação Recomendada (Macro + Micro)</th>
                 </tr>
               </thead>
               <tbody id="fundamentalsTableBody">
-                <!-- Preenchido via JavaScript -->
+                <!-- Preenchido dinamicamente via JavaScript -->
               </tbody>
             </table>
           </div>
