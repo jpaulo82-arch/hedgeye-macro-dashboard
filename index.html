@@ -58,7 +58,7 @@
       📊 Painel Executivo & GIP
     </button>
     <button class="nav-tab" data-tab="riskranges" onclick="setTab('riskranges')">
-      🎯 Risk Ranges & Sinais (02/09)
+      🎯 Risk Ranges & Sinais (03/09)
     </button>
     <button class="nav-tab" data-tab="portfolio" onclick="setTab('portfolio')">
       💼 Portfólios (Schwab / Tastyworks)
@@ -89,29 +89,29 @@
       <div class="metrics-grid">
         <div class="metric-card">
           <div class="metric-title">OURO SPOT (GOLD)</div>
-          <div class="metric-value text-emerald" id="val-gold">4.420 <span class="badge badge-bullish">Bullish TREND</span></div>
-          <div class="metric-sub">Range: 4.251 a 4.752. Pilar de alta convicção no Quad 3.</div>
+          <div class="metric-value text-emerald" id="val-gold">4.480 <span class="badge badge-bullish">Bullish TREND</span></div>
+          <div class="metric-sub">Range Hoje: 4.292 a 4.698 (Piso subiu). Pilar máximo de Quad 3.</div>
         </div>
         <div class="metric-card">
           <div class="metric-title">DÓLAR INDEX (DXY)</div>
           <div class="metric-value text-rose" id="val-dxy">99.15 <span class="badge badge-bearish">Bearish TREND</span></div>
-          <div class="metric-sub">Quebrou suporte (98.77–99.99). Favorece Ouro e LatAm.</div>
+          <div class="metric-sub">Range: 98.75–99.69 (Bearish). Vento favorável a Ouro e LatAm.</div>
         </div>
         <div class="metric-card">
           <div class="metric-title">PETRÓLEO (WTI)</div>
-          <div class="metric-value text-emerald" id="val-wti">87.50 <span class="badge badge-bullish">Bullish TREND</span></div>
-          <div class="metric-sub">Range: 83.96 a 91.98. Reforça inflação e Quad 3.</div>
+          <div class="metric-value text-emerald" id="val-wti">89.20 <span class="badge badge-bullish">Bullish TREND</span></div>
+          <div class="metric-sub">Range Hoje: 86.13 a 93.94 (Piso subiu). Reforça inflação e Quad 3.</div>
         </div>
         <div class="metric-card">
           <div class="metric-title">UST 10Y YIELD</div>
-          <div class="metric-value text-amber" id="val-ust10">4.75% <span class="badge badge-bullish">Bullish TREND</span></div>
-          <div class="metric-sub">Range: 4.67% a 4.83%. Pressão contínua em duration.</div>
+          <div class="metric-value text-amber" id="val-ust10">4.76% <span class="badge badge-bullish">Bullish TREND</span></div>
+          <div class="metric-sub">Range: 4.68% a 4.84%. Yields colados no teto geram fragilidade.</div>
         </div>
       </div>
 
       <!-- Grid 2 Colunas: Matriz GIP e Diagnóstico Executivo -->
       <div class="grid-2-col">
-        <!-- Card 1: Matriz de 4 Quadrantes Hedgeye -->
+        <!-- Card 1: Matriz de 4 Quadrantes Hedgeye (ORDEM RIGOROSA: 1, 2, 3, 4) -->
         <div class="card">
           <div class="card-header">
             <h3><span class="icon">🧭</span> Matriz de Regime Macro (GIP Framework)</h3>
@@ -119,18 +119,23 @@
           </div>
           <div class="card-body">
             <div class="gip-quad-grid">
-              <div class="gip-box quad-2">
-                <div class="quad-num">QUAD 2</div>
-                <div class="quad-name">Reflação / Expansão</div>
-                <div class="quad-factors">G ↑ | I ↑</div>
-                <div class="quad-favors">Favorece: Commodities, Energia, Materiais, Industriais</div>
-              </div>
+              <!-- QUAD 1: SUPERIOR ESQUERDO -->
               <div class="gip-box quad-1">
                 <div class="quad-num">QUAD 1</div>
                 <div class="quad-name">Goldilocks</div>
                 <div class="quad-factors">G ↑ | I ↓</div>
                 <div class="quad-favors">Favorece: Tech/QQQ, Consumo Discr., Russell (IWM)</div>
               </div>
+              
+              <!-- QUAD 2: SUPERIOR DIREITO -->
+              <div class="gip-box quad-2">
+                <div class="quad-num">QUAD 2</div>
+                <div class="quad-name">Reflação / Expansão</div>
+                <div class="quad-factors">G ↑ | I ↑</div>
+                <div class="quad-favors">Favorece: Commodities, Energia, Materiais, Industriais</div>
+              </div>
+
+              <!-- QUAD 3: INFERIOR ESQUERDO (REGIME ATUAL) -->
               <div class="gip-box quad-3 active-quad">
                 <div class="active-beacon">📍 REGIME ATUAL</div>
                 <div class="quad-num">QUAD 3</div>
@@ -139,6 +144,8 @@
                 <div class="quad-favors">Favorece: OURO (GOLD), Energia, Commodities, Defensivos, SGOV</div>
                 <div class="quad-avoids">Evitar: Crédito High Yield/Corpo, Cíclicos desacelerando, High Beta</div>
               </div>
+
+              <!-- QUAD 4: INFERIOR DIREITO -->
               <div class="gip-box quad-4">
                 <div class="quad-num">QUAD 4</div>
                 <div class="quad-name">Deflação / Recessão</div>
@@ -229,6 +236,75 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Calendário Econômico & Catalisadores Macro (Nowcast Triggers) -->
+      <div class="card mt-3">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">📅</span> Calendário Econômico & Catalisadores Macro (Nowcast Triggers)</h3>
+            <p class="subtitle">Eventos que podem confirmar, estender ou invalidar a previsão de Quad 3</p>
+          </div>
+          <span class="tag tag-accent">Semana Crítica de Dados</span>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Data / Horário</th>
+                  <th>Indicador Econômico</th>
+                  <th>Dado Recente / Consenso</th>
+                  <th>Impacto no Regime GIP (Quad 3)</th>
+                  <th>O Que Observar (Gatilho de Mercado)</th>
+                  <th>Sensibilidade na Carteira</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>03/09 (Hoje)</strong></td>
+                  <td><strong>JOLTS Job Openings</strong></td>
+                  <td><span class="badge badge-bullish">7,74M (+790k vagas)</span></td>
+                  <td>Mercado de trabalho aquecido reforça pressão salarial e inflação persistente de Quad 3.</td>
+                  <td>Fed sem pressa de cortar juros agressivamente; sustenta yields no topo.</td>
+                  <td><span class="badge badge-core">SGOV / Ouro</span></td>
+                </tr>
+                <tr>
+                  <td><strong>03/09 (Hoje)</strong></td>
+                  <td><strong>Chicago PMI (Manufatura)</strong></td>
+                  <td><span class="badge badge-bearish">47,1 (vs 57,6 ant.)</span></td>
+                  <td>Desaceleração forte do crescimento (G ↓). Confirma contração na manufatura regional.</td>
+                  <td>Divergência gritante com serviços; consolida o ambiente estagflacionário.</td>
+                  <td><span class="badge badge-tail">Cíclicos / Small Caps</span></td>
+                </tr>
+                <tr>
+                  <td><strong>05/09 (Sexta) 08:30 EDT</strong></td>
+                  <td><strong>Non-Farm Payrolls & Unemployment</strong></td>
+                  <td>Consenso: +160k | 4,3% Desemprego</td>
+                  <td><strong>Catalisador Decisivo para Yields:</strong> Dado fraco puxa UST10Y ao piso (4,68%).</td>
+                  <td>Se yield cair para 4,68%, <strong>Ouro (AAAU/GDX/NEM) e Bitcoin disparam</strong>. Se vier forte, yield testa 4,84%.</td>
+                  <td><span class="badge badge-bullish font-bold">ALTO IMPACTO (Ouro / Bonds)</span></td>
+                </tr>
+                <tr>
+                  <td><strong>11/09 08:30 EDT</strong></td>
+                  <td><strong>CPI (Inflação ao Consumidor)</strong></td>
+                  <td>Headline & Core MoM / YoY</td>
+                  <td>Medição do repasse da alta de Petróleo (WTI > US$ 89) e fretes globais aos preços.</td>
+                  <td>Qualquer reaceleração no Core CPI cimenta o Quad 3 e elimina cortes do Fed.</td>
+                  <td><span class="badge badge-bullish">Commodities / Ouro</span></td>
+                </tr>
+                <tr>
+                  <td><strong>17-18/09</strong></td>
+                  <td><strong>Decisão de Juros do FOMC (Fed)</strong></td>
+                  <td>Fed Funds Rate & Dot Plot</td>
+                  <td>Definição da taxa terminal e comunicação de Jerome Powell perante a Estagflação.</td>
+                  <td>Manutenção de taxas altas com balanço quantitativo mantém pressão sobre crédito longo.</td>
+                  <td><span class="badge badge-macro">Renda Fixa / Bonds Schwab</span></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -690,35 +766,77 @@
               </tr>
             </thead>
             <tbody id="decisionsTableBody">
-              <tr>
-                <td>02/09/2026</td>
+              <!-- CHAMADAS DE HOJE: 03/09/2026 -->
+              <tr style="background: rgba(56, 189, 248, 0.05);">
+                <td><strong>03/09/2026</strong> <br><span class="badge badge-accent">KM Call</span></td>
+                <td><strong>Software (IGV / SNOW)</strong></td>
+                <td>Hedgeye Macro</td>
+                <td><span class="badge badge-core">LONG / NOVO</span></td>
+                <td><strong>Comprar / Adicionar IGV</strong></td>
+                <td>Keith McCullough adicionou Software hoje após resultado positivo de Snowflake (SNOW) e rotação de liderança seletiva no Quad 3.</td>
+                <td>Perda de suporte TRADE no IGV com quebra de fluxo em software enterprise.</td>
+                <td><span class="badge badge-bullish">🟢 Ativo (Novo)</span></td>
+              </tr>
+              <tr style="background: rgba(56, 189, 248, 0.05);">
+                <td><strong>03/09/2026</strong> <br><span class="badge badge-accent">KM Call</span></td>
+                <td><strong>Healthcare (XLV)</strong></td>
+                <td>Schwab / Tasty</td>
+                <td><span class="badge badge-core">CORE DEFENSIVO</span></td>
+                <td><strong>Manter / Sobreponderar</strong></td>
+                <td>Mercado em afunilamento (Narrowing); Healthcare lidera no mês (+1,4%) com forte pricing power no Quad 3.</td>
+                <td>Yield 10Y rompendo acima de 4,84% de forma desordenada e desvalorização cambial.</td>
+                <td><span class="badge badge-bullish">🟢 Ativo</span></td>
+              </tr>
+              <tr style="background: rgba(56, 189, 248, 0.05);">
+                <td><strong>03/09/2026</strong> <br><span class="badge badge-accent">KM Call</span></td>
                 <td><strong>Ouro (AAAU / NEM / GDX)</strong></td>
                 <td>Ambas</td>
-                <td><span class="badge badge-core">CORE / HEDGE</span></td>
-                <td>Manter posição máxima de Quad 3</td>
-                <td>Ouro explodiu para Bullish TREND (4251–4752) com DXY em Bearish</td>
-                <td>DXY fechando acima de 100 com quebra do suporte TREND de 4.204 no ouro</td>
-                <td><span class="badge badge-bullish">Vigente</span></td>
+                <td><span class="badge badge-core">PILAR #1 QUAD 3</span></td>
+                <td><strong>Comprar Recuos / Posição Máxima</strong></td>
+                <td>Piso de Risk Range elevado para US$ 4.292. Se Payrolls na 6ª puxar 10Y para 4,68%, o ouro tem catalisador de arrancada imediata.</td>
+                <td>DXY fechando acima de 100 com quebra do suporte TREND de 4.204 no ouro spot.</td>
+                <td><span class="badge badge-bullish">🟢 Convicção Máxima</span></td>
               </tr>
-              <tr>
-                <td>02/09/2026</td>
+              <tr style="background: rgba(56, 189, 248, 0.05);">
+                <td><strong>03/09/2026</strong> <br><span class="badge badge-accent">KM Call</span></td>
+                <td><strong>Crédito Corporativo (LQD / HYG)</strong></td>
+                <td>Schwab (Bonds)</td>
+                <td><span class="badge badge-bearish">SHORT / SUBPONDERAR</span></td>
+                <td><strong>Evitar / Reduzir Duration</strong></td>
+                <td>LQD Bearish TREND (104,90–106,10). Yields no topo da banda mantêm crédito como pior classe de ativos de Quad 3.</td>
+                <td>UST 10Y Yield virando Bearish em TREND abaixo de 4,60%.</td>
+                <td><span class="badge badge-bearish">🔴 Alerta Bearish</span></td>
+              </tr>
+              <tr style="background: rgba(56, 189, 248, 0.05);">
+                <td><strong>03/09/2026</strong> <br><span class="badge badge-accent">KM Call</span></td>
                 <td><strong>Prata (SLV)</strong></td>
                 <td>Schwab</td>
-                <td><span class="badge badge-trade">TRADE</span></td>
-                <td>Não comprar queda; manter tamanho mínimo</td>
-                <td>Quebra do sinal TRADE em US$ 65,11 conforme EARLYLOOK de 02/09</td>
-                <td>Fechamento confirmado acima de US$ 65,11 reabilita sinal TRADE</td>
-                <td><span class="badge badge-neutral">Vigente</span></td>
+                <td><span class="badge badge-neutral">TRADE BREAK</span></td>
+                <td><strong>Não comprar a queda ('Stop buying the dip')</strong></td>
+                <td>Quebra confirmada do sinal TRADE em US$ 65,11. Manter tamanho mínimo e aguardar recomposição de sinal.</td>
+                <td>Fechamento confirmado acima de US$ 65,11 reabilita sinal TRADE altista.</td>
+                <td><span class="badge badge-neutral">🟡 Cautela</span></td>
               </tr>
+              <!-- CHAMADAS ANTERIORES -->
               <tr>
                 <td>02/09/2026</td>
                 <td><strong>High Beta & Semis IA (Quad 1)</strong></td>
                 <td>Tasty + Schwab</td>
                 <td><span class="badge badge-tail">TAIL (1–3%)</span></td>
                 <td>Manter estritamente dentro do limite TAIL</td>
-                <td>Cestas de momentum em drawdown de -24%; limitar risco a 1-3% por ativo</td>
-                <td>Quebra simultânea de TRADE e TREND aciona saída total (#OUT)</td>
+                <td>Cestas de momentum em drawdown de -24%; limitar risco a 1-3% por ativo e proteger caixa SGOV.</td>
+                <td>Quebra simultânea de TRADE e TREND aciona saída total (#OUT).</td>
                 <td><span class="badge badge-neutral">Vigente</span></td>
+              </tr>
+              <tr>
+                <td>01/09/2026</td>
+                <td><strong>MercadoLibre (MELI)</strong></td>
+                <td>Ambas</td>
+                <td><span class="badge badge-core">CORE GROWTH</span></td>
+                <td>Manter posição integral</td>
+                <td>Dólar fraco (DXY Bearish) expande margens na América Latina com aceleração de fintech (Mercado Pago).</td>
+                <td>Desaceleração de TPV abaixo de 20% com deterioração de crédito.</td>
+                <td><span class="badge badge-bullish">Vigente</span></td>
               </tr>
             </tbody>
           </table>
