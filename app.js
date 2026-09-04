@@ -86,27 +86,24 @@ const portfolioData = {
   }
 };
 
-// 2. DADOS DE RISK RANGES OFICIAIS (03/09/2026) COM COMPARAÇÃO DIA ANTERIOR
-const riskRangesData = [
-  { ticker: "UST10Y", name: "10Y U.S. Treasury Yield", type: "rates", low: 4.68, high: 4.84, current: 4.76, signal: "BULLISH", prevLow: 4.67, prevHigh: 4.83, prevSignal: "BULLISH" },
-  { ticker: "UST30Y", name: "30Y U.S. Treasury Yield", type: "rates", low: 5.16, high: 5.31, current: 5.24, signal: "BULLISH", prevLow: 5.14, prevHigh: 5.29, prevSignal: "BULLISH" },
-  { ticker: "UST2Y", name: "2Y U.S. Treasury Yield", type: "rates", low: 4.25, high: 4.45, current: 4.38, signal: "BULLISH", prevLow: 4.23, prevHigh: 4.42, prevSignal: "BULLISH" },
-  { ticker: "HYG", name: "High Yield Corporate Bond ETF", type: "rates", low: 78.91, high: 79.50, current: 79.28, signal: "BULLISH", prevLow: 78.90, prevHigh: 79.48, prevSignal: "BULLISH" },
-  { ticker: "LQD", name: "Investment Grade Corp Bond ETF", type: "rates", low: 104.90, high: 106.10, current: 105.40, signal: "BEARISH", prevLow: 104.90, prevHigh: 106.00, prevSignal: "BEARISH" },
-  { ticker: "SPX", name: "S&P 500", type: "indices", low: 7602, high: 7744, current: 7680, signal: "BULLISH", prevLow: 7601, prevHigh: 7745, prevSignal: "BULLISH" },
-  { ticker: "COMPQ", name: "NASDAQ Composite", type: "indices", low: 25825, high: 26590, current: 26210, signal: "BULLISH", prevLow: 25850, prevHigh: 26650, prevSignal: "BULLISH" },
-  { ticker: "RUT", name: "Russell 2000", type: "indices", low: 2910, high: 3016, current: 2957, signal: "BULLISH", prevLow: 2900, prevHigh: 3000, prevSignal: "BULLISH" },
-  { ticker: "XLV", name: "Health Care SPDR", type: "indices", low: 170.00, high: 177.00, current: 173.50, signal: "BULLISH", prevLow: 168.50, prevHigh: 177.50, prevSignal: "BULLISH" },
-  { ticker: "IGV", name: "Tech-Software Sector ETF", type: "indices", low: 101.00, high: 113.00, current: 107.20, signal: "BULLISH", prevLow: 99.00, prevHigh: 111.00, prevSignal: "BULLISH" },
-  { ticker: "OIH", name: "Oil Services ETF", type: "commodities", low: 411.00, high: 441.00, current: 426.00, signal: "BULLISH", prevLow: 405.00, prevHigh: 435.00, prevSignal: "BULLISH" },
-  { ticker: "VIX", name: "Volatility Index (CBOE)", type: "rates", low: 14.01, high: 16.47, current: 15.20, signal: "BEARISH", prevLow: 14.43, prevHigh: 16.99, prevSignal: "BEARISH" },
-  { ticker: "USD", name: "U.S. Dollar Index (DXY)", type: "rates", low: 98.75, high: 99.69, current: 99.15, signal: "BEARISH", prevLow: 98.77, prevHigh: 99.99, prevSignal: "BEARISH" },
-  { ticker: "WTIC", name: "Light Crude Oil (WTI)", type: "commodities", low: 86.13, high: 93.94, current: 89.20, signal: "BULLISH", prevLow: 83.96, prevHigh: 91.98, prevSignal: "BULLISH" },
-  { ticker: "BRENT", name: "Brent Crude Oil", type: "commodities", low: 89.00, high: 101.00, current: 94.50, signal: "BULLISH", prevLow: 87.00, prevHigh: 98.00, prevSignal: "BULLISH" },
-  { ticker: "NATGAS", name: "Natural Gas", type: "commodities", low: 2.81, high: 3.07, current: 2.94, signal: "BULLISH", prevLow: 2.75, prevHigh: 3.05, prevSignal: "BULLISH" },
-  { ticker: "GOLD", name: "Gold Spot", type: "commodities", low: 4292, high: 4698, current: 4480, signal: "BULLISH", prevLow: 4251, prevHigh: 4752, prevSignal: "BULLISH" },
-  { ticker: "COPPER", name: "Copper Spot", type: "commodities", low: 6.40, high: 6.71, current: 6.55, signal: "BULLISH", prevLow: 6.36, prevHigh: 6.71, prevSignal: "BULLISH" },
-  { ticker: "SILVER", name: "Silver Spot", type: "commodities", low: 63.00, high: 69.00, current: 64.50, signal: "NEUTRAL", prevLow: 62.00, prevHigh: 67.00, prevSignal: "NEUTRAL" }
+// 2. DADOS DE RISK RANGES OFICIAIS (04/09/2026) COM COMPARAÇÃO DIA ANTERIOR
+let riskRangesData = [
+  { ticker: "UST10Y", name: "10Y U.S. Treasury Yield", type: "rates", low: 4.63, high: 4.84, current: 4.74, signal: "BULLISH", prevLow: 4.68, prevHigh: 4.84, prevSignal: "BULLISH" },
+  { ticker: "HYG", name: "High Yield Corporate Bond ETF", type: "rates", low: 79.00, high: 79.55, current: 79.35, signal: "BULLISH", prevLow: 78.91, prevHigh: 79.50, prevSignal: "BULLISH" },
+  { ticker: "LQD", name: "Investment Grade Corp Bond ETF", type: "rates", low: 104.90, high: 106.30, current: 105.60, signal: "BEARISH", prevLow: 104.90, prevHigh: 106.10, prevSignal: "BEARISH" },
+  { ticker: "SPX", name: "S&P 500", type: "indices", low: 7632, high: 7781, current: 7710, signal: "BULLISH", prevLow: 7602, prevHigh: 7744, prevSignal: "BULLISH" },
+  { ticker: "COMPQ", name: "NASDAQ Composite", type: "indices", low: 26001, high: 26798, current: 26420, signal: "BULLISH", prevLow: 25825, prevHigh: 26590, prevSignal: "BULLISH" },
+  { ticker: "RUT", name: "Russell 2000", type: "indices", low: 2917, high: 3013, current: 2965, signal: "BULLISH", prevLow: 2910, prevHigh: 3016, prevSignal: "BULLISH" },
+  { ticker: "XLV", name: "Health Care SPDR", type: "indices", low: 169.00, high: 177.00, current: 173.20, signal: "BULLISH", prevLow: 170.00, prevHigh: 177.00, prevSignal: "BULLISH" },
+  { ticker: "IGV", name: "Tech-Software Sector ETF", type: "indices", low: 102.00, high: 113.00, current: 108.40, signal: "BULLISH", prevLow: 101.00, prevHigh: 113.00, prevSignal: "BULLISH" },
+  { ticker: "OIH", name: "Oil Services ETF", type: "commodities", low: 411.00, high: 440.00, current: 425.00, signal: "BULLISH", prevLow: 411.00, prevHigh: 441.00, prevSignal: "BULLISH" },
+  { ticker: "VIX", name: "Volatility Index (CBOE)", type: "rates", low: 13.75, high: 16.33, current: 14.80, signal: "BEARISH", prevLow: 14.01, prevHigh: 16.47, prevSignal: "BEARISH" },
+  { ticker: "USD", name: "U.S. Dollar Index (DXY)", type: "rates", low: 98.51, high: 99.67, current: 99.05, signal: "BEARISH", prevLow: 98.75, prevHigh: 99.69, prevSignal: "BEARISH" },
+  { ticker: "WTIC", name: "Light Crude Oil (WTI)", type: "commodities", low: 84.74, high: 94.63, current: 89.80, signal: "BULLISH", prevLow: 86.13, prevHigh: 93.94, prevSignal: "BULLISH" },
+  { ticker: "NATGAS", name: "Natural Gas", type: "commodities", low: 2.82, high: 3.05, current: 2.93, signal: "BULLISH", prevLow: 2.81, prevHigh: 3.07, prevSignal: "BULLISH" },
+  { ticker: "GOLD", name: "Gold Spot", type: "commodities", low: 4296, high: 4691, current: 4495, signal: "BULLISH", prevLow: 4292, prevHigh: 4698, prevSignal: "BULLISH" },
+  { ticker: "COPPER", name: "Copper Spot", type: "commodities", low: 6.40, high: 6.71, current: 6.56, signal: "BULLISH", prevLow: 6.40, prevHigh: 6.71, prevSignal: "BULLISH" },
+  { ticker: "SILVER", name: "Silver Spot", type: "commodities", low: 63.00, high: 69.00, current: 65.20, signal: "NEUTRAL", prevLow: 63.00, prevHigh: 69.00, prevSignal: "NEUTRAL" }
 ];
 
 let activePortfolioKey = "schwab";
@@ -1193,9 +1190,9 @@ function renderActiveReportView() {
           </div>
         </div>
         <div class="report-brand-meta">
-          <div class="meta-date">03/09/2026 | 09:30 BRT (07:51 EDT)</div>
-          <div class="meta-author">Research: <strong>Keith McCullough & Daryl Jones</strong></div>
-          <div class="meta-quad"><span class="badge badge-bullish">📍 REGIME ATUAL: QUAD 3 (ESTAGFLAÇÃO)</span></div>
+          <div class="meta-date">04/09/2026 | 09:30 BRT (07:41 EDT)</div>
+          <div class="meta-author">Research: <strong>Keith McCullough & Hedgeye Macro Team</strong></div>
+          <div class="meta-quad"><span class="badge badge-bullish" style="background:#F97316; color:#FFF;">📍 REGIME: #QUAD2 THEN #QUAD2 (EXPANSÃO + INFLAÇÃO)</span></div>
         </div>
       </div>
 
@@ -1204,7 +1201,7 @@ function renderActiveReportView() {
         <div class="flex-between">
           <div>
             <h3 class="report-section-title" style="margin-bottom: 0.1rem; border: none; font-size: 1rem;"><span class="icon">💼</span> ${cartTitle}</h3>
-            <span class="text-muted" style="font-size: 0.78rem;">Snapshot auditado com reconciliação de preços e Risk Ranges</span>
+            <span class="text-muted" style="font-size: 0.78rem;">Snapshot auditado com reconciliação de preços e Risk Ranges de hoje</span>
           </div>
           <div class="text-right">
             <div style="font-size: 0.68rem; color: #94A3B8; text-transform: uppercase; font-weight: 700;">Patrimônio Total</div>
@@ -1217,30 +1214,30 @@ function renderActiveReportView() {
 
       <!-- Seção 1: Síntese Macro & Destaques Matinais -->
       <div class="report-section-card" style="margin-bottom: 1rem; padding: 0.85rem 1.25rem;">
-        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">🧭</span> 1. Síntese Executiva & Diagnóstico Macro (GIP Framework)</h3>
+        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">🧭</span> 1. Síntese Executiva & Diagnóstico Macro (EARLY LOOK: #Quad2 Then #Quad2?)</h3>
         <div class="report-quote-banner" style="padding: 0.5rem 0.85rem; margin-bottom: 0.6rem; font-size: 0.82rem;">
-          “You can't stop the waves, but you can learn to surf. Volatility is unavoidable; the edge comes from staying disciplined, sizing risk and reading flows.”
-          <strong style="font-style: normal; font-size: 0.75rem; color: #38BDF8;">— Keith McCullough & Daryl Jones</strong>
+          “Just because people work together doesn’t mean they’re part of a team. Shared goal: #P3 Preserve and Protect The Pile. Role clarity: our team does the research, you execute with discipline.”
+          <strong style="font-style: normal; font-size: 0.75rem; color: #38BDF8;">— Keith McCullough (Super Teams)</strong>
         </div>
         <div class="report-bullets-grid" style="gap: 0.45rem;">
           <div class="report-bullet-item" style="font-size: 0.82rem;">
             <span class="b-icon">📌</span>
-            <div><strong>Regime Nowcast GIP:</strong> Transição consolidada para <strong>Quad 3 (Estagflação: Crescimento Desacelera | Inflação Acelera)</strong>. Chicago PMI despencou para 47,1 (contração manufatureira) enquanto JOLTS saltou para 7,74M (+790k vagas), cimentando inflação salarial persistente.</div>
+            <div><strong>Nowcast de Inflação em Alta & Sequência de Quad 2:</strong> O Nowcast de inflação da Hedgeye subiu para Setembro e Outubro, elevando a probabilidade de <strong>Monthly Quad 2 consecutivo (#Quad2 Then #Quad2)</strong> (Crescimento Acelera + Inflação Acelera).</div>
           </div>
           <div class="report-bullet-item" style="font-size: 0.82rem;">
             <span class="b-icon">📌</span>
-            <div><strong>10Y Yield & Ouro Spot:</strong> O 10Y Yield colado no teto (4,76% vs 4,84%) e VIX calmo (~15) criam fragilidade. Se dados de Payrolls puxarem o yield para 4,68%, <strong>Ouro (AAAU / NEM / GDX) dispara</strong>. Piso do ouro elevado para US$ 4.292/oz.</div>
+            <div><strong>Fatores Vencedores no Quad 2:</strong> Large Caps superam Small Caps, High Beta supera Low Beta, Secular Growth bate Value e Inflação Cíclica bate Defensivas. <strong>Long AI Software vs Short Semis</strong> avançou +17,9% no último mês.</div>
           </div>
           <div class="report-bullet-item" style="font-size: 0.82rem;">
             <span class="b-icon">📌</span>
-            <div><strong>Afunilamento Setorial (Narrowing):</strong> Foco em setores com pricing power: <strong>Healthcare (XLV +1,4% no mês)</strong>, <strong>Energia/Metais (WTI 86,13–93,94)</strong> e Software defensivo de alto FCF (IGV).</div>
+            <div><strong>Yields em Alta & Setores Sob Pressão:</strong> Bond Yields continuam em Bullish TREND (10Y Yield 4,63–4,84%). Setores ultra sensíveis a taxas como <strong>Utilities (Short XLU)</strong> e <strong>U.S. Housing (ITB)</strong> continuam sob pressão vendedora.</div>
           </div>
         </div>
       </div>
 
       <!-- Seção 2: Tabela de Risk Ranges Oficiais -->
       <div class="report-section-card" style="margin-bottom: 0; padding: 0.85rem 1.25rem;">
-        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">🎯</span> 2. Risk Ranges Oficiais (Our Levels — 03/09/2026)</h3>
+        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">🎯</span> 2. Risk Ranges Oficiais (Our Levels — 04/09/2026)</h3>
         <div class="table-responsive">
           <table class="data-table" style="font-size: 0.8rem;">
             <thead>
@@ -1269,19 +1266,19 @@ function renderActiveReportView() {
         <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">📊</span> 3. Diagnóstico de Alocação da Carteira</h3>
         <div class="grid-3-col mb-2" style="gap: 0.5rem;">
           <div class="stat-card" style="padding: 0.6rem;">
-            <div class="stat-label" style="font-size: 0.68rem;">ADERÊNCIA A QUAD 3 (VENTO A FAVOR)</div>
+            <div class="stat-label" style="font-size: 0.68rem;">ALOCAÇÃO OURO & COMMODITIES</div>
             <div class="stat-val text-emerald" style="font-size: 1.15rem;">${quad3Pct}%</div>
-            <div class="stat-desc" style="font-size: 0.7rem;">Ouro, Energia, Defensivos e Caixa SGOV</div>
+            <div class="stat-desc" style="font-size: 0.7rem;">Ouro (4296–4691), Metais, Energia e Caixa SGOV</div>
           </div>
           <div class="stat-card" style="padding: 0.6rem;">
-            <div class="stat-label" style="font-size: 0.68rem;">EXPOSIÇÃO HIGH BETA (QUAD 1)</div>
+            <div class="stat-label" style="font-size: 0.68rem;">EXPOSIÇÃO SECULAR GROWTH / TECH</div>
             <div class="stat-val text-amber" style="font-size: 1.15rem;">${quad1Pct}%</div>
-            <div class="stat-desc" style="font-size: 0.7rem;">Semicondutores e IA (risco TAIL 1-3%)</div>
+            <div class="stat-desc" style="font-size: 0.7rem;">AI Software e Infraestrutura com pricing power</div>
           </div>
           <div class="stat-card" style="padding: 0.6rem;">
             <div class="stat-label" style="font-size: 0.68rem;">CRÉDITO CORPORATIVO (BONDS)</div>
             <div class="stat-val text-rose" style="font-size: 1.15rem;">${creditPct}%</div>
-            <div class="stat-desc" style="font-size: 0.7rem;">Cupons com LQD em Bearish TREND</div>
+            <div class="stat-desc" style="font-size: 0.7rem;">Cupons estáveis com LQD em Bearish TREND</div>
           </div>
         </div>
 
@@ -1311,15 +1308,15 @@ function renderActiveReportView() {
         <div class="report-bullets-grid" style="gap: 0.45rem;">
           <div class="report-bullet-item" style="font-size: 0.82rem;">
             <span class="b-icon">🟢</span>
-            <div><strong>Manter Convicção Máxima em Ouro (AAAU / NEM / GDX):</strong> Principal hedge contra estagflação e recuo de yields. Comprar nos recuos até o piso de 4.292.</div>
+            <div><strong>Manter Convicção em Ouro e Reflação (AAAU / NEM / BE / WTIC):</strong> Ouro com piso elevado para US$ 4.296/oz e Petróleo com teto em 94,63 confirmam o vento reflacionário favorável.</div>
           </div>
           <div class="report-bullet-item" style="font-size: 0.82rem;">
-            <span class="b-icon">🟡</span>
-            <div><strong>Prata (SLV) — Cautela Operacional:</strong> Sinal TRADE quebrado em US$ 65,11. Respeitar a regra de "não comprar a queda" até reabilitação do sinal.</div>
+            <span class="b-icon">🟢</span>
+            <div><strong>Priorizar Large Caps & AI Software (IGV / MELI / GOOG):</strong> No ambiente de Quad 2, empresas de grande porte com alta rentabilidade sobrepujam Small Caps frágeis.</div>
           </div>
           <div class="report-bullet-item" style="font-size: 0.82rem;">
             <span class="b-icon">🔵</span>
-            <div><strong>Preservação de Caixa / SGOV (${cashPct}%):</strong> Manter liquidez disponível para aproveitar assimetrias nos pisos de range.</div>
+            <div><strong>Preservação de Caixa / SGOV (${cashPct}%):</strong> Manter liquidez para comprar nos pisos de Risk Range quando houver correção.</div>
           </div>
         </div>
       </div>
@@ -1333,34 +1330,36 @@ function renderActiveReportView() {
 
   // 2. RENDERIZAÇÃO TEXTO MARKDOWN (RAW)
   const fullRawMarkdown = `RELATÓRIO HEDGEYE RISK MANAGEMENT — RESEARCH EXECUTIVO
-Data: 03/09/2026 | Horário: 09:30 BRT / 07:51 EDT
-Regime: QUAD 3 (ESTAGFLAÇÃO — G↓ | I↑)
+Data: 04/09/2026 | Horário: 09:30 BRT / 07:41 EDT
+Regime: #QUAD2 THEN #QUAD2 (EXPANSÃO + INFLAÇÃO ACELERANDO)
 Carteira: ${cartTitle}
 Patrimônio Total: US$ ${totalCart.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 
 ---
-1. SÍNTESE MACRO (EARLY LOOK & TOP 3 THINGS)
-• Volatilidade é inevitável: a vantagem competitiva decorre do dimensionamento de risco (sizing) e da disciplina operacional.
-• Chicago PMI despencou para 47,1 (contração) enquanto JOLTS saltou para 7,74M (+790k vagas), consolidando Quad 3.
-• UST 10Y a 4,76% colado no teto de 4,84%. Se dados fracos de emprego puxarem para 4,68%, Ouro e Bitcoin disparam. Piso do Ouro elevado para US$ 4.292.
-• Afunilamento setorial: foco em Healthcare (XLV +1,4% no mês), commodities/energia e software seletivo (IGV).
+1. SÍNTESE MACRO (EARLY LOOK & KEY TAKEAWAYS)
+• Nowcast de Inflação da Hedgeye subiu para Setembro e Outubro, elevando probabilidade de back-to-back Monthly Quad 2s.
+• Quad 2 favorece Large Caps vs Small Caps, High Beta vs Low Beta, Secular Growth vs Value e Inflação Cíclica vs Defensivas.
+• Taxas longas em alta (UST10Y 4,63-4,84%) continuam pressionando Utilities (Short XLU) e US Housing (ITB).
+• Long AI Software vs Short Semis subiu +17,9% no último mês.
 
 ---
-2. RISK RANGES OFICIAIS (03/09/2026)
-${riskRangesData.slice(0, 15).map(r => `• ${r.ticker.padEnd(8)}: ${r.low.toString().padEnd(6)} a ${r.high.toString().padEnd(6)} | ${r.signal.padEnd(8)} | ${r.name}`).join("\n")}
+2. RISK RANGES OFICIAIS (04/09/2026)
+${riskRangesData.slice(0, 16).map(r => `• ${r.ticker.padEnd(8)}: ${r.low.toString().padEnd(6)} a ${r.high.toString().padEnd(6)} | ${r.signal.padEnd(8)} | ${r.name}`).join("\n")}
 
 ---
 3. ADERÊNCIA AO REGIME & EXPOSIÇÃO
-• Quad 3 (Ouro, Defensivos, Energia, Caixa): ${quad3Pct}%
-• Quad 1 (Tech / Semicondutores / High Beta): ${quad1Pct}%
+• Ouro, Commodities & Caixa: ${quad3Pct}%
+• Tech / AI Software / Growth: ${quad1Pct}%
 • Crédito Corporativo / Bonds: ${creditPct}%
 • Caixa / SGOV: ${cashPct}%
 
 ---
 4. PLANO DE AÇÃO
-• Ouro (AAAU/NEM/GDX): Posição máxima. Comprar nos recuos com piso em 4.292.
-• Prata (SLV): Não comprar na queda. Sinal TRADE quebrado em 65,11.
-• High Beta: Manter estritamente dentro do limite TAIL (1–3% por ativo).`;
+• Ouro (AAAU/NEM/GDX): Posição sólida de proteção. Piso do ouro subiu para 4.296.
+• Software & Large Caps (IGV/MELI/GOOG): Manter sobreponderação em ativos com pricing power.
+• Utilities & Real Estate: Evitar exposição sensível a juros altos.`;
+
+  rawContainer.innerText = fullRawMarkdown;
 
   rawContainer.innerText = fullRawMarkdown;
 }
@@ -1641,9 +1640,238 @@ Resultado: Alocação em Quad 3 sobe de 38,5% para 62,8%!`;
 // 8. TOAST NOTIFICATION HELPER
 function showToast(msg) {
   const toast = document.getElementById("toastNotification");
+  if (!toast) return;
   toast.innerText = msg;
   toast.style.display = "block";
   setTimeout(() => {
     toast.style.display = "none";
-  }, 3500);
+  }, 4000);
 }
+
+// 9. MOTOR DE SINCRONIZAÇÃO EM TEMPO REAL & BASE DE RELATÓRIOS
+let allReportsCache = [];
+
+async function loadReportsDatabase() {
+  try {
+    let data = null;
+    try {
+      const res = await fetch("/api/reports");
+      if (res.ok) {
+        data = await res.json();
+      }
+    } catch (e) {
+      // Fallback para arquivo JSON estático se não estiver rodando no backend
+      try {
+        const resLocal = await fetch("relatorios_db.json");
+        if (resLocal.ok) {
+          data = await resLocal.json();
+        }
+      } catch (err) {}
+    }
+
+    if (data && data.reports && data.reports.length > 0) {
+      allReportsCache = data.reports;
+      
+      // Atualiza contadores e metadados na tela
+      const totalCountElem = document.getElementById("totalReportsCount");
+      if (totalCountElem) totalCountElem.innerText = `${data.total || data.reports.length} Relatórios`;
+
+      const latest = data.latest || data.reports[0];
+      if (latest) {
+        const elTitle = document.getElementById("elTitle");
+        const elDate = document.getElementById("elDate");
+        const elId = document.getElementById("elId");
+        if (elTitle) elTitle.value = latest.title;
+        if (elDate) elDate.value = `${latest.shortDate || latest.date}`;
+        if (elId) elId.value = latest.id;
+
+        // Se o último relatório possuir Risk Ranges extraídos, podemos sincronizar
+        if (latest.riskRanges && latest.riskRanges.length > 0) {
+          latest.riskRanges.forEach(newR => {
+            const existing = riskRangesData.find(r => r.ticker === newR.ticker);
+            if (existing) {
+              existing.low = newR.low;
+              existing.high = newR.high;
+              existing.signal = newR.signal;
+            }
+          });
+          renderRiskRangesTable("all");
+        }
+      }
+
+      renderReportsHistoryList(allReportsCache);
+    }
+  } catch (err) {
+    console.warn("Aviso ao carregar base de relatórios:", err);
+  }
+}
+
+function renderReportsHistoryList(reports) {
+  const tbody = document.getElementById("earlylookHistoryBody");
+  if (!tbody) return;
+  tbody.innerHTML = "";
+
+  if (!reports || reports.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="3" class="text-center text-muted" style="padding: 1.5rem;">Nenhum relatório encontrado. Clique em "Sincronizar Gmail Agora".</td></tr>`;
+    return;
+  }
+
+  reports.forEach(r => {
+    const tr = document.createElement("tr");
+    tr.style.cursor = "pointer";
+    tr.innerHTML = `
+      <td style="white-space: nowrap; font-size: 0.8rem; font-family: 'JetBrains Mono', monospace;">
+        <strong>${r.shortDate || r.date?.substring(0, 15) || 'Recente'}</strong>
+      </td>
+      <td>
+        <div style="font-weight: 600; color: #F1F5F9; font-size: 0.85rem;">${r.title}</div>
+        <div style="font-size: 0.72rem; color: #94A3B8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 380px;">
+          ${r.summary ? r.summary.replace(/#/g, '').replace(/\*/g, '').substring(0, 90) + '...' : ''}
+        </div>
+      </td>
+      <td style="white-space: nowrap; text-align: right;">
+        <button class="btn btn-outline" style="padding: 0.3rem 0.6rem; font-size: 0.75rem;" onclick="openSpecificReport('${r.id || r.filename}')">
+          <span class="icon">📄</span> Visualizar
+        </button>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function filterReportsList(query) {
+  if (!query || !query.trim()) {
+    renderReportsHistoryList(allReportsCache);
+    return;
+  }
+  const q = query.toLowerCase();
+  const filtered = allReportsCache.filter(r => 
+    (r.title && r.title.toLowerCase().includes(q)) ||
+    (r.content && r.content.toLowerCase().includes(q)) ||
+    (r.date && r.date.toLowerCase().includes(q))
+  );
+  renderReportsHistoryList(filtered);
+}
+
+function openSpecificReport(reportIdOrFile) {
+  const rep = allReportsCache.find(r => r.id === reportIdOrFile || r.filename === reportIdOrFile);
+  if (!rep) {
+    showToast("Relatório não encontrado no cache.");
+    return;
+  }
+
+  // Preenche o modal com o relatório completo
+  const formattedContainer = document.getElementById("reportFormattedView");
+  const rawContainer = document.getElementById("reportRawContent");
+
+  if (rawContainer) {
+    rawContainer.innerText = rep.content || rep.summary || "Sem conteúdo textual.";
+  }
+
+  if (formattedContainer) {
+    // Renderiza uma visualização limpa do markdown
+    let bodyHtml = rep.content
+      .replace(/^#\s+(.+)$/gm, '<h2 style="color:#38BDF8; margin: 1rem 0 0.5rem 0;">$1</h2>')
+      .replace(/\*\*Data:\*\*\s*(.+)$/gm, '<p style="color:#94A3B8; font-size:0.85rem;">📅 <strong>Data:</strong> $1</p>')
+      .replace(/\*\*Remetente:\*\*\s*(.+)$/gm, '<p style="color:#94A3B8; font-size:0.85rem;">👤 <strong>Remetente:</strong> $1</p>')
+      .replace(/\*\*ID:\*\*\s*(.+)$/gm, '<p style="color:#64748B; font-size:0.75rem;">🔑 <strong>ID:</strong> $1</p>')
+      .replace(/\n\n/g, '<br><br>');
+
+    formattedContainer.innerHTML = `
+      <div class="report-section-card highlight" style="padding: 1.25rem; margin-bottom: 1rem;">
+        <h2 style="color: #38BDF8; font-size: 1.2rem; margin-bottom: 0.5rem;">${rep.title}</h2>
+        <div style="font-size: 0.82rem; color: #94A3B8; margin-bottom: 1rem;">
+          Data: <strong>${rep.date}</strong> | ID: <code>${rep.id}</code>
+        </div>
+        <div style="background: rgba(15, 23, 42, 0.7); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); font-size: 0.88rem; line-height: 1.6; white-space: pre-wrap; font-family: 'Inter', sans-serif;">
+${rep.content}
+        </div>
+      </div>
+    `;
+  }
+
+  document.getElementById("reportModal")?.classList.add("active");
+  showToast(`Exibindo: ${rep.title}`);
+}
+
+async function syncReportsOnDemand() {
+  const iconHeader = document.getElementById("syncIconHeader");
+  const iconTab = document.getElementById("syncIconTab");
+  const textHeader = document.getElementById("syncTextHeader");
+  const textTab = document.getElementById("syncTextTab");
+
+  if (iconHeader) iconHeader.classList.add("spin");
+  if (iconTab) iconTab.classList.add("spin");
+  if (textHeader) textHeader.innerText = "Sincronizando...";
+  if (textTab) textTab.innerText = "Buscando no Gmail...";
+
+  showToast("🔄 Conectando ao Gmail (IMAP) e buscando relatórios mais recentes da Hedgeye...");
+
+  try {
+    let synced = false;
+    try {
+      const response = await fetch("/api/sync", { method: "POST" });
+      if (response.ok) {
+        synced = true;
+      }
+    } catch (e) {}
+
+    // Aguardar término do processamento
+    let tries = 0;
+    const checkInterval = setInterval(async () => {
+      tries++;
+      try {
+        const res = await fetch("/api/sync-status");
+        if (res.ok) {
+          const status = await res.json();
+          if (!status.isSyncing || tries >= 8) {
+            clearInterval(checkInterval);
+            finishSync();
+          }
+        } else if (tries >= 4) {
+          clearInterval(checkInterval);
+          finishSync();
+        }
+      } catch (err) {
+        if (tries >= 3) {
+          clearInterval(checkInterval);
+          finishSync();
+        }
+      }
+    }, 1500);
+
+  } catch (err) {
+    setTimeout(finishSync, 2000);
+  }
+}
+
+async function finishSync() {
+  const iconHeader = document.getElementById("syncIconHeader");
+  const iconTab = document.getElementById("syncIconTab");
+  const textHeader = document.getElementById("syncTextHeader");
+  const textTab = document.getElementById("syncTextTab");
+
+  if (iconHeader) iconHeader.classList.remove("spin");
+  if (iconTab) iconTab.classList.remove("spin");
+  if (textHeader) textHeader.innerText = "Sincronizar Relatórios";
+  if (textTab) textTab.innerText = "Sincronizar Gmail Agora";
+
+  await loadReportsDatabase();
+  renderRiskRangesTable("all");
+  showToast("✅ Sincronização concluída com sucesso! Relatórios de hoje já disponíveis.");
+}
+
+// 10. INICIALIZAÇÃO GERAL DO APLICATIVO
+function initApp() {
+  renderPortfolioView(activePortfolioKey);
+  renderRiskRangesTable("all");
+  renderFundamentalsTable("all");
+  loadReportsDatabase();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initApp);
+} else {
+  initApp();
+}
+

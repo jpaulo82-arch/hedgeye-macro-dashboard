@@ -1414,3 +1414,50 @@ body {
   cursor: pointer;
 }
 
+/* Animação Spin para Sincronização */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+.sync-badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34D399;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+}
+
+.report-item-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.report-item-card:hover {
+  background: var(--bg-card-hover);
+  border-color: #38BDF8;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.report-item-card.active {
+  border-color: #38BDF8;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+
