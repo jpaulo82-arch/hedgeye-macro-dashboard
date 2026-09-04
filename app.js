@@ -953,7 +953,7 @@ function runStockAnalysis(customTicker) {
     tese: "Ativo listado em bolsa americana avaliado sob o framework quantitativo e macro Hedgeye.",
     quadFit: "Quad 3 (Estagflação) exige seletividade e alinhamento de TREND.",
     sinal: "BULLISH TREND",
-    rangeInfo: "Range atualizado conforme o EARLYLOOK de 03/09/2026.",
+    rangeInfo: "Range atualizado conforme o EARLYLOOK de 04/09/2026.",
     valuationBlock: fundItem ? `Preço Atual: US$ ${fundItem.currentPrice.toFixed(2)} | Múltiplo Atual: ${fundItem.currentMultiple.toFixed(1)}x vs Múltiplo Justo: ${fundItem.fairMultiple.toFixed(1)}x. <br><strong>Preço-Alvo Fundamentalista:</strong> <span class="text-cyan font-bold">US$ ${fundItem.targetPrice.toFixed(2)}</span> (Upside: <strong class="${fundItem.upsidePct >= 0 ? 'text-emerald' : 'text-rose'}">${fundItem.upsidePct >= 0 ? '+' : ''}${fundItem.upsidePct.toFixed(1)}%</strong>) — Diagnóstico: <strong>${fundItem.valuationStatus}</strong>.` : "Ativo commodity/físico avaliado por métricas de oferta, demanda e paridade monetária.",
     sobreposicao: "Monitorar correlação com carteiras Schwab e Tastyworks.",
     conclusao: "Conduta: Respeitar a disciplina operacional, comprando nos pisos de range de ativos com Bullish TREND.",
@@ -961,19 +961,19 @@ function runStockAnalysis(customTicker) {
   };
 
   if (ticker === "AAAU" || ticker === "GOLD" || ticker === "NEM" || ticker === "GDX") {
-    analysis.tese = "Ouro Spot & Mineradoras: Principal posição de alta convicção macro da Hedgeye. Proteção máxima contra desvalorização monetária, estagflação de Quad 3 e volatilidade de yields.";
-    analysis.quadFit = "🟢 **Favorecido Absoluto em Quad 3 (Estagflação)**. DXY em Bearish TREND (98,75 a 99,69) amplia fluxo comprador.";
-    analysis.sinal = "BULLISH TREND Forte (Range Ouro Hoje: 4.292 a 4.698)";
-    analysis.rangeInfo = "Ouro Spot em 4.480 (Piso elevado para 4.292. Se 10Y Yield recuar para 4,68%, o rali acelera).";
+    analysis.tese = "Ouro Spot & Mineradoras: Principal posição de alta convicção macro da Hedgeye. Proteção máxima contra desvalorização monetária, estagflação de Quad 3 e rotação de Quad 2.";
+    analysis.quadFit = "🟢 **Favorecido em Quad 3 & Quad 2**. DXY em Bearish TREND (98,51 a 99,67) amplia fluxo comprador.";
+    analysis.sinal = "BULLISH TREND Forte (Range Ouro Hoje: 4.296 a 4.691)";
+    analysis.rangeInfo = "Ouro Spot em 4.495 (Piso sustentado em 4.296. Yields em alta e DXY fraco mantêm suporte).";
     if (ticker === "NEM") {
       analysis.valuationBlock = `Preço Atual: US$ 52,30 | P/L Atual: 13,8x vs P/L Justo: 19,0x. <br><strong>Preço-Alvo Fundamentalista:</strong> <span class="text-emerald font-bold">US$ 72,20 (+38,0% Upside)</span>. Alavancagem operacional maciça com o ouro acima de US$ 4.400.`;
     }
     analysis.sobreposicao = "Presente na Schwab (AAAU: US$ 6.460,50 + GDX: US$ 2.904,26) e Tastyworks (NEM: US$ 1.745,10 + GDX: US$ 969,05). Total: US$ 12.078,91 (~4,9% do patrimônio).";
-    analysis.conclusao = "<strong>Conduta:</strong> Manter alocação máxima e comprar recuos. Convicção estrutural no Quad 3.";
+    analysis.conclusao = "<strong>Conduta:</strong> Manter alocação máxima e comprar recuos nos pisos de range.";
     analysis.invalidação = "DXY rompendo forte para cima de 100 com quebra do suporte TREND de 4.204 no ouro.";
   } else if (ticker === "MELI") {
     analysis.tese = "MercadoLibre: Monopólio logístico e fintech líder na América Latina. Crescimento de receitas de +38% com forte poder de precificação.";
-    analysis.quadFit = "🟢 **Favorecida por DXY Bearish** (Alivia moedas latino-americanas e expande consumo).";
+    analysis.quadFit = "🟢 **Favorecida por DXY Bearish & Quad 2** (Alivia moedas latino-americanas e expande consumo).";
     analysis.sinal = "BULLISH TREND";
     analysis.rangeInfo = "Preço Atual: US$ 1.995,50.";
     analysis.valuationBlock = `Preço Atual: US$ 1.995,50 | P/L Atual: 41,5x vs P/L Justo: 51,0x. <br><strong>Preço-Alvo Fundamentalista:</strong> <span class="text-emerald font-bold">US$ 2.453,00 (+22,9% Upside)</span>. 💎 <strong>Oportunidade de Compra com Margem de Segurança</strong>.`;
@@ -984,14 +984,14 @@ function runStockAnalysis(customTicker) {
     analysis.tese = "iShares Silver Trust (Prata Física).";
     analysis.quadFit = "🟡 **Híbrido (Monetário e Industrial)**.";
     analysis.sinal = "NEUTRAL (Quebrou sinal TRADE em US$ 65,11)";
-    analysis.rangeInfo = "Piso: US$ 63,00 | Teto: US$ 69,00 (Preço atual: ~US$ 64,50).";
+    analysis.rangeInfo = "Piso: US$ 63,00 | Teto: US$ 69,00 (Preço atual: ~US$ 65,20).";
     analysis.valuationBlock = `Prata física com suporte quebrado no curto prazo. Manter tamanho mínimo e não comprar na queda até reabilitação de sinal.`;
     analysis.sobreposicao = "Presente na Schwab (US$ 3.520,20 - 1,66%).";
-    analysis.conclusao = "<strong>Alerta Hedgeye de Hoje:</strong> Não comprar a queda ('stop buying the dip'). Manter posição mínima.";
+    analysis.conclusao = "<strong>Alerta Hedgeye:</strong> Não comprar a queda ('stop buying the dip'). Manter posição mínima.";
     analysis.invalidação = "Fechamento consistente acima de US$ 65,11 reabilita o sinal TRADE altista.";
   } else if (ticker === "ALAB" || ticker === "ARM") {
     analysis.tese = `${ticker}: Ativo de hiper momentum em infraestrutura de IA e semicondutores.`;
-    analysis.quadFit = "🔴 **Vento contrário em Quad 3** (Múltiplos esticados sofrem com juros longos de 4,76%).";
+    analysis.quadFit = "🔴 **Atenção à rotação de fatores** (High Beta Momentum caiu -77% das máximas de junho).";
     analysis.sinal = "NEUTRAL / CAUTELA";
     analysis.rangeInfo = "Volatilidade elevada.";
     analysis.valuationBlock = `🚨 <strong>Alerta de Múltiplo Esticado / Risco de Bolha:</strong> Negociando entre 75x e 80x lucros. Downside estimado de -35% a -40% caso haja descompressão de múltiplos macro.`;
@@ -1010,12 +1010,12 @@ function runStockAnalysis(customTicker) {
     </div>
 
     <div class="analyzer-block mt-2">
-      <div class="block-title">2. Enquadramento no Regime Macro (GIP Quad 3)</div>
+      <div class="block-title">2. Enquadramento no Regime Macro (GIP Framework)</div>
       <p class="block-desc">${analysis.quadFit}</p>
     </div>
 
     <div class="analyzer-block mt-2">
-      <div class="block-title">3. Sinal Técnico & Risk Range (03/09/2026)</div>
+      <div class="block-title">3. Sinal Técnico & Risk Range (04/09/2026)</div>
       <p class="block-desc"><strong>Sinal:</strong> ${analysis.sinal}<br><strong>Range:</strong> ${analysis.rangeInfo}</p>
     </div>
 
@@ -1034,35 +1034,32 @@ function runStockAnalysis(customTicker) {
 
 // 4. PROCESSADOR DE EARLYLOOK
 function loadSampleEarlyLook() {
-  document.getElementById("elTitle").value = "Riding The Waves of Volatility";
-  document.getElementById("elDate").value = "2026-09-03";
-  document.getElementById("elTime").value = "07:51 EDT";
+  document.getElementById("elTitle").value = "EARLY LOOK: #Quad2 Then #Quad2?";
+  document.getElementById("elDate").value = "2026-09-04";
+  document.getElementById("elTime").value = "07:41 EDT";
   document.getElementById("elRawContent").value = `KEY TAKEAWAYS:
-1. Volatility is unavoidable; edge comes from staying disciplined, sizing risk, and separating signal from noise.
-2. Economic data sending mixed signals: Chicago PMI fell to 47.1 (contraction) while JOLTS jumped +790k (7.74M).
-3. 10Y yield (4.76%) near top of range (4.84%) + VIX ~15 create a fragile setup vulnerable to shocks.
+1. Hedgeye's Inflation Nowcast ticked higher for both SEP and OCT, raising probability of back-to-back Monthly Quad 2s.
+2. Quad 2 shift favors higher bond yields, large caps, high beta, secular growth, and cyclical inflation, while pressuring Utilities and U.S. Housing.
+3. Factor rotation is confirming shift: High Beta Momentum down -77% from June peak; Long AI Software vs Short Semis gained +17.9% over last month.
 
-OUR LEVELS (03/09/2026):
-UST 10Y: 4.68 - 4.84 (Bullish)
-UST 30Y: 5.16 - 5.31 (Bullish)
-UST 2Y: 4.25 - 4.45 (Bullish)
-HYG: 78.91 - 79.50 (Bullish)
-LQD: 104.90 - 106.10 (Bearish)
-SPX: 7602 - 7744 (Bullish)
-COMPQ: 25825 - 26590 (Bullish)
-RUT: 2910 - 3016 (Bullish)
-XLV: 170.00 - 177.00 (Bullish)
-IGV: 101.00 - 113.00 (Bullish)
-OIH: 411.00 - 441.00 (Bullish)
-VIX: 14.01 - 16.47 (Bearish)
-USD: 98.75 - 99.69 (Bearish)
-WTIC: 86.13 - 93.94 (Bullish)
-BRENT: 89.00 - 101.00 (Bullish)
-NATGAS: 2.81 - 3.07 (Bullish)
-GOLD: 4292 - 4698 (Bullish)
+OUR LEVELS (04/09/2026):
+UST 10Y: 4.63 - 4.84 (Bullish)
+HYG: 79.00 - 79.55 (Bullish)
+LQD: 104.90 - 106.30 (Bearish)
+SPX: 7632 - 7781 (Bullish)
+COMPQ: 26001 - 26798 (Bullish)
+RUT: 2917 - 3013 (Bullish)
+XLV: 169.00 - 177.00 (Bullish)
+IGV: 102.00 - 113.00 (Bullish)
+OIH: 411.00 - 440.00 (Bullish)
+VIX: 13.75 - 16.33 (Bearish)
+USD: 98.51 - 99.67 (Bearish)
+WTIC: 84.74 - 94.63 (Bullish)
+NATGAS: 2.82 - 3.05 (Bullish)
+GOLD: 4296 - 4691 (Bullish)
 COPPER: 6.40 - 6.71 (Bullish)
 SILVER: 63.00 - 69.00 (Neutral)`;
-  showToast("EARLYLOOK 'Riding The Waves of Volatility' (03/09/2026) carregado.");
+  showToast("EARLYLOOK '#Quad2 Then #Quad2?' (04/09/2026) carregado.");
 }
 
 function processEarlyLookText() {
