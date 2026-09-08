@@ -86,24 +86,24 @@ const portfolioData = {
   }
 };
 
-// 2. DADOS DE RISK RANGES OFICIAIS (04/09/2026) COM COMPARAÇÃO DIA ANTERIOR
+// 2. DADOS DE RISK RANGES OFICIAIS (08/09/2026) COM COMPARAÇÃO DIA ANTERIOR
 let riskRangesData = [
-  { ticker: "UST10Y", name: "10Y U.S. Treasury Yield", type: "rates", low: 4.63, high: 4.84, current: 4.74, signal: "BULLISH", prevLow: 4.68, prevHigh: 4.84, prevSignal: "BULLISH" },
-  { ticker: "HYG", name: "High Yield Corporate Bond ETF", type: "rates", low: 79.00, high: 79.55, current: 79.35, signal: "BULLISH", prevLow: 78.91, prevHigh: 79.50, prevSignal: "BULLISH" },
-  { ticker: "LQD", name: "Investment Grade Corp Bond ETF", type: "rates", low: 104.90, high: 106.30, current: 105.60, signal: "BEARISH", prevLow: 104.90, prevHigh: 106.10, prevSignal: "BEARISH" },
-  { ticker: "SPX", name: "S&P 500", type: "indices", low: 7632, high: 7781, current: 7710, signal: "BULLISH", prevLow: 7602, prevHigh: 7744, prevSignal: "BULLISH" },
-  { ticker: "COMPQ", name: "NASDAQ Composite", type: "indices", low: 26001, high: 26798, current: 26420, signal: "BULLISH", prevLow: 25825, prevHigh: 26590, prevSignal: "BULLISH" },
-  { ticker: "RUT", name: "Russell 2000", type: "indices", low: 2917, high: 3013, current: 2965, signal: "BULLISH", prevLow: 2910, prevHigh: 3016, prevSignal: "BULLISH" },
-  { ticker: "XLV", name: "Health Care SPDR", type: "indices", low: 169.00, high: 177.00, current: 173.20, signal: "BULLISH", prevLow: 170.00, prevHigh: 177.00, prevSignal: "BULLISH" },
-  { ticker: "IGV", name: "Tech-Software Sector ETF", type: "indices", low: 102.00, high: 113.00, current: 108.40, signal: "BULLISH", prevLow: 101.00, prevHigh: 113.00, prevSignal: "BULLISH" },
-  { ticker: "OIH", name: "Oil Services ETF", type: "commodities", low: 411.00, high: 440.00, current: 425.00, signal: "BULLISH", prevLow: 411.00, prevHigh: 441.00, prevSignal: "BULLISH" },
-  { ticker: "VIX", name: "Volatility Index (CBOE)", type: "rates", low: 13.75, high: 16.33, current: 14.80, signal: "BEARISH", prevLow: 14.01, prevHigh: 16.47, prevSignal: "BEARISH" },
-  { ticker: "USD", name: "U.S. Dollar Index (DXY)", type: "rates", low: 98.51, high: 99.67, current: 99.05, signal: "BEARISH", prevLow: 98.75, prevHigh: 99.69, prevSignal: "BEARISH" },
-  { ticker: "WTIC", name: "Light Crude Oil (WTI)", type: "commodities", low: 84.74, high: 94.63, current: 89.80, signal: "BULLISH", prevLow: 86.13, prevHigh: 93.94, prevSignal: "BULLISH" },
-  { ticker: "NATGAS", name: "Natural Gas", type: "commodities", low: 2.82, high: 3.05, current: 2.93, signal: "BULLISH", prevLow: 2.81, prevHigh: 3.07, prevSignal: "BULLISH" },
-  { ticker: "GOLD", name: "Gold Spot", type: "commodities", low: 4296, high: 4691, current: 4495, signal: "BULLISH", prevLow: 4292, prevHigh: 4698, prevSignal: "BULLISH" },
-  { ticker: "COPPER", name: "Copper Spot", type: "commodities", low: 6.40, high: 6.71, current: 6.56, signal: "BULLISH", prevLow: 6.40, prevHigh: 6.71, prevSignal: "BULLISH" },
-  { ticker: "SILVER", name: "Silver Spot", type: "commodities", low: 63.00, high: 69.00, current: 65.20, signal: "NEUTRAL", prevLow: 63.00, prevHigh: 69.00, prevSignal: "NEUTRAL" }
+  { ticker: "UST10Y", name: "10Y U.S. Treasury Yield", type: "rates", low: 4.70, high: 4.87, current: 4.78, signal: "BULLISH", prevLow: 4.63, prevHigh: 4.84, prevSignal: "BULLISH" },
+  { ticker: "HYG", name: "High Yield Corporate Bond ETF", type: "rates", low: 78.90, high: 79.47, current: 79.20, signal: "BULLISH", prevLow: 79.00, prevHigh: 79.55, prevSignal: "BULLISH" },
+  { ticker: "LQD", name: "Investment Grade Corp Bond ETF", type: "rates", low: 104.70, high: 106.10, current: 105.40, signal: "BEARISH", prevLow: 104.90, prevHigh: 106.30, prevSignal: "BEARISH" },
+  { ticker: "SPX", name: "S&P 500", type: "indices", low: 7615, high: 7772, current: 7705, signal: "BULLISH", prevLow: 7632, prevHigh: 7781, prevSignal: "BULLISH" },
+  { ticker: "COMPQ", name: "NASDAQ Composite", type: "indices", low: 25917, high: 26709, current: 26380, signal: "BULLISH", prevLow: 26001, prevHigh: 26798, prevSignal: "BULLISH" },
+  { ticker: "RUT", name: "Russell 2000", type: "indices", low: 2912, high: 3014, current: 2940, signal: "NEUTRAL", prevLow: 2917, prevHigh: 3013, prevSignal: "BULLISH" },
+  { ticker: "XLV", name: "Health Care SPDR", type: "indices", low: 168.00, high: 176.00, current: 172.50, signal: "BULLISH", prevLow: 169.00, prevHigh: 177.00, prevSignal: "BULLISH" },
+  { ticker: "IGV", name: "Tech-Software Sector ETF", type: "indices", low: 99.00, high: 112.00, current: 106.80, signal: "BULLISH", prevLow: 102.00, prevHigh: 113.00, prevSignal: "BULLISH" },
+  { ticker: "OIH", name: "Oil Services ETF", type: "commodities", low: 412.00, high: 444.00, current: 432.00, signal: "BULLISH", prevLow: 411.00, prevHigh: 440.00, prevSignal: "BULLISH" },
+  { ticker: "VIX", name: "Volatility Index (CBOE)", type: "rates", low: 13.78, high: 16.31, current: 14.50, signal: "BEARISH", prevLow: 13.75, prevHigh: 16.33, prevSignal: "BEARISH" },
+  { ticker: "USD", name: "U.S. Dollar Index (DXY)", type: "rates", low: 98.60, high: 99.67, current: 99.10, signal: "BEARISH", prevLow: 98.51, prevHigh: 99.67, prevSignal: "BEARISH" },
+  { ticker: "WTIC", name: "Petróleo WTI (Light Crude)", type: "commodities", low: 85.75, high: 96.62, current: 91.20, signal: "BULLISH", prevLow: 84.74, prevHigh: 94.63, prevSignal: "BULLISH" },
+  { ticker: "NATGAS", name: "Gás Natural (Henry Hub)", type: "commodities", low: 2.84, high: 3.03, current: 2.94, signal: "BULLISH", prevLow: 2.82, prevHigh: 3.05, prevSignal: "BULLISH" },
+  { ticker: "GOLD", name: "Ouro Spot (Oz)", type: "commodities", low: 4274, high: 4646, current: 4480, signal: "BULLISH", prevLow: 4296, prevHigh: 4691, prevSignal: "BULLISH" },
+  { ticker: "COPPER", name: "Cobre Spot (HG Continuous)", type: "commodities", low: 6.51, high: 6.75, current: 6.64, signal: "BULLISH", prevLow: 6.40, prevHigh: 6.71, prevSignal: "BULLISH" },
+  { ticker: "SILVER", name: "Prata Spot (Oz)", type: "commodities", low: 63.00, high: 68.00, current: 65.20, signal: "NEUTRAL", prevLow: 63.00, prevHigh: 69.00, prevSignal: "NEUTRAL" }
 ];
 
 let activePortfolioKey = "schwab";
@@ -1187,9 +1187,9 @@ function renderActiveReportView() {
           </div>
         </div>
         <div class="report-brand-meta">
-          <div class="meta-date">04/09/2026 | 09:30 BRT (07:41 EDT)</div>
+          <div class="meta-date">08/09/2026 | 09:30 BRT (07:32 EDT)</div>
           <div class="meta-author">Research: <strong>Keith McCullough & Hedgeye Macro Team</strong></div>
-          <div class="meta-quad"><span class="badge badge-bullish" style="background:#F97316; color:#FFF;">📍 REGIME: #QUAD2 THEN #QUAD2 (EXPANSÃO + INFLAÇÃO)</span></div>
+          <div class="meta-quad"><span class="badge badge-bullish" style="background:#EF4444; color:#FFF;">📍 REGIME: GLOBAL QUAD 3 (#ACCELERATING — REFLAÇÃO & INFLAÇÃO)</span></div>
         </div>
       </div>
 
@@ -1211,30 +1211,30 @@ function renderActiveReportView() {
 
       <!-- Seção 1: Síntese Macro & Destaques Matinais -->
       <div class="report-section-card" style="margin-bottom: 1rem; padding: 0.85rem 1.25rem;">
-        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">🧭</span> 1. Síntese Executiva & Diagnóstico Macro (EARLY LOOK: #Quad2 Then #Quad2?)</h3>
+        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">🧭</span> 1. Síntese Executiva & Diagnóstico Macro (EARLY LOOK: Oil, Rates, Inflation #Accelerating)</h3>
         <div class="report-quote-banner" style="padding: 0.5rem 0.85rem; margin-bottom: 0.6rem; font-size: 0.82rem;">
-          “Just because people work together doesn’t mean they’re part of a team. Shared goal: #P3 Preserve and Protect The Pile. Role clarity: our team does the research, you execute with discipline.”
-          <strong style="font-style: normal; font-size: 0.75rem; color: #38BDF8;">— Keith McCullough (Super Teams)</strong>
+          “We started cherishing what we already had instead of chasing some network TV validation.”
+          <strong style="font-style: normal; font-size: 0.75rem; color: #38BDF8;">— Keith McCullough (Early Look 08/09/2026)</strong>
         </div>
         <div class="report-bullets-grid" style="gap: 0.45rem;">
           <div class="report-bullet-item" style="font-size: 0.82rem;">
             <span class="b-icon">📌</span>
-            <div><strong>Nowcast de Inflação em Alta & Sequência de Quad 2:</strong> O Nowcast de inflação da Hedgeye subiu para Setembro e Outubro, elevando a probabilidade de <strong>Monthly Quad 2 consecutivo (#Quad2 Then #Quad2)</strong> (Crescimento Acelera + Inflação Acelera).</div>
+            <div><strong>Commodities em Global Quad 3 (#Accelerating):</strong> Petróleo WTI subiu +23% no mês (teto em US$ 96,62), CRB Index subiu +11,5% e Cobre atingiu All-Time Highs (6,51–6,75).</div>
           </div>
           <div class="report-bullet-item" style="font-size: 0.82rem;">
             <span class="b-icon">📌</span>
-            <div><strong>Fatores Vencedores no Quad 2:</strong> Large Caps superam Small Caps, High Beta supera Low Beta, Secular Growth bate Value e Inflação Cíclica bate Defensivas. <strong>Long AI Software vs Short Semis</strong> avançou +17,9% no último mês.</div>
+            <div><strong>Higher-for-Longer & Yields em Alta:</strong> Yield 10Y sobe piso para 4,70% e teto para 4,87%. Dólar Bearish (98,60–99,67) reforça aceleração inflacionária.</div>
           </div>
           <div class="report-bullet-item" style="font-size: 0.82rem;">
             <span class="b-icon">📌</span>
-            <div><strong>Yields em Alta & Setores Sob Pressão:</strong> Bond Yields continuam em Bullish TREND (10Y Yield 4,63–4,84%). Setores ultra sensíveis a taxas como <strong>Utilities (Short XLU)</strong> e <strong>U.S. Housing (ITB)</strong> continuam sob pressão vendedora.</div>
+            <div><strong>Small Caps Rebaixadas para Neutral:</strong> Russell 2000 caiu -2% no mês com juros em alta. Shorts em Treasuries (TLT/ZROZ), Crédito (LQD) e Utilities (XLU) continuam gerando forte alpha.</div>
           </div>
         </div>
       </div>
 
       <!-- Seção 2: Tabela de Risk Ranges Oficiais -->
       <div class="report-section-card" style="margin-bottom: 0; padding: 0.85rem 1.25rem;">
-        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">🎯</span> 2. Risk Ranges Oficiais (Our Levels — 04/09/2026)</h3>
+        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">🎯</span> 2. Risk Ranges Oficiais (Our Levels — 08/09/2026)</h3>
         <div class="table-responsive">
           <table class="data-table" style="font-size: 0.8rem;">
             <thead>
@@ -1648,6 +1648,82 @@ function showToast(msg) {
 // 9. MOTOR DE SINCRONIZAÇÃO EM TEMPO REAL & BASE DE RELATÓRIOS
 let allReportsCache = [];
 
+function updateDynamicDashboard(latest) {
+  if (!latest) return;
+
+  const dateStr = latest.shortDate || (latest.date ? latest.date.substring(0, 15) : "08/09/2026");
+  const shortDate = dateStr.includes("/") ? dateStr.substring(0, 5) : "08/09";
+
+  // 1. Top bar e botões de relatório diário
+  const marketTimeElem = document.getElementById("marketTime");
+  if (marketTimeElem) marketTimeElem.innerText = `${dateStr} | NYSE Open`;
+
+  const btnDailyText = document.getElementById("btnDailyReportText");
+  if (btnDailyText) btnDailyText.innerText = `Relatório Diário (${shortDate})`;
+
+  const navDate = document.getElementById("navRiskRangeDate");
+  if (navDate) navDate.innerText = shortDate;
+
+  const riskRangeHeaderDate = document.getElementById("riskRangeHeaderDate");
+  if (riskRangeHeaderDate) riskRangeHeaderDate.innerText = dateStr;
+
+  const riskRangeSubtitle = document.getElementById("riskRangeSubtitle");
+  if (riskRangeSubtitle) riskRangeSubtitle.innerText = `Extraídos automaticamente do EARLYLOOK "${latest.title.replace(/^#\s*/, '').replace('EARLY LOOK: ', '')}"`;
+
+  const earlylookTag = document.getElementById("earlylookTitleTag");
+  if (earlylookTag) earlylookTag.innerText = `"${latest.title}" (${dateStr})`;
+
+  // 2. Regime Badge
+  const headerQuadText = document.getElementById("headerQuadText");
+  const currentQuadBadge = document.getElementById("currentQuadBadge");
+  const titleLower = (latest.title || "").toLowerCase();
+  
+  if (titleLower.includes("quad3") || titleLower.includes("oil") || titleLower.includes("rates") || titleLower.includes("inflation") || titleLower.includes("accelerat")) {
+    if (headerQuadText) headerQuadText.innerText = "REGIME ATUAL: QUAD 3 (#ACCELERATING)";
+    if (currentQuadBadge) {
+      currentQuadBadge.className = "quad-badge quad-3";
+    }
+  } else if (titleLower.includes("quad2")) {
+    if (headerQuadText) headerQuadText.innerText = "REGIME ATUAL: QUAD 2 (#Quad2 Then #Quad2)";
+    if (currentQuadBadge) {
+      currentQuadBadge.className = "quad-badge quad-2";
+    }
+  }
+
+  // 3. Métricas Rápidas do Topo
+  const gold = riskRangesData.find(r => r.ticker === "GOLD");
+  if (gold) {
+    const valGold = document.getElementById("val-gold");
+    const subGold = document.getElementById("sub-gold");
+    if (valGold) valGold.innerHTML = `${gold.current.toLocaleString('pt-BR')} <span class="badge ${gold.signal === 'BULLISH' ? 'badge-bullish' : 'badge-bearish'}">${gold.signal} TREND</span>`;
+    if (subGold) subGold.innerText = `Range: ${gold.low.toLocaleString('pt-BR')} a ${gold.high.toLocaleString('pt-BR')}. Pilar sólido de proteção macro.`;
+  }
+
+  const dxy = riskRangesData.find(r => r.ticker === "USD");
+  if (dxy) {
+    const valDxy = document.getElementById("val-dxy");
+    const subDxy = document.getElementById("sub-dxy");
+    if (valDxy) valDxy.innerHTML = `${dxy.current.toLocaleString('pt-BR')} <span class="badge ${dxy.signal === 'BULLISH' ? 'badge-bullish' : 'badge-bearish'}">${dxy.signal} TREND</span>`;
+    if (subDxy) subDxy.innerText = `Range: ${dxy.low.toLocaleString('pt-BR')} a ${dxy.high.toLocaleString('pt-BR')}. Impulso reflacionário global.`;
+  }
+
+  const wti = riskRangesData.find(r => r.ticker === "WTIC");
+  if (wti) {
+    const valWti = document.getElementById("val-wti");
+    const subWti = document.getElementById("sub-wti");
+    if (valWti) valWti.innerHTML = `${wti.current.toLocaleString('pt-BR')} <span class="badge ${wti.signal === 'BULLISH' ? 'badge-bullish' : 'badge-bearish'}">${wti.signal} TREND</span>`;
+    if (subWti) subWti.innerText = `Range: ${wti.low.toLocaleString('pt-BR')} a ${wti.high.toLocaleString('pt-BR')} (+23% mês). Teto explodiu para ${wti.high.toLocaleString('pt-BR')}.`;
+  }
+
+  const ust10 = riskRangesData.find(r => r.ticker === "UST10Y");
+  if (ust10) {
+    const valUst10 = document.getElementById("val-ust10");
+    const subUst10 = document.getElementById("sub-ust10");
+    if (valUst10) valUst10.innerHTML = `${ust10.current.toLocaleString('pt-BR')}% <span class="badge ${ust10.signal === 'BULLISH' ? 'badge-bullish' : 'badge-bearish'}">${ust10.signal} TREND</span>`;
+    if (subUst10) subUst10.innerText = `Range: ${ust10.low.toLocaleString('pt-BR')}% a ${ust10.high.toLocaleString('pt-BR')}%. Higher-for-longer pressiona Utilities.`;
+  }
+}
+
 async function loadReportsDatabase() {
   try {
     let data = null;
@@ -1692,6 +1768,9 @@ async function loadReportsDatabase() {
           latest.riskRanges.forEach(newR => {
             const existing = riskRangesData.find(r => r.ticker === newR.ticker);
             if (existing) {
+              existing.prevLow = existing.low;
+              existing.prevHigh = existing.high;
+              existing.prevSignal = existing.signal;
               existing.low = newR.low;
               existing.high = newR.high;
               existing.signal = newR.signal;
@@ -1699,6 +1778,9 @@ async function loadReportsDatabase() {
           });
           renderRiskRangesTable("all");
         }
+
+        // Atualiza todos os elementos visuais do Dashboard com o relatório mais recente
+        updateDynamicDashboard(latest);
       }
 
       renderReportsHistoryList(allReportsCache);

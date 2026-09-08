@@ -28,9 +28,9 @@
           <p class="subtitle">SISTEMA MACRO, RISK RANGES & GESTÃO DE PORTFÓLIO</p>
         </div>
       </div>
-      <div class="quad-badge quad-2" id="currentQuadBadge">
+      <div class="quad-badge quad-3" id="currentQuadBadge">
         <span class="pulse-dot"></span>
-        <span id="headerQuadText">REGIME ATUAL: QUAD 2 (#Quad2 Then #Quad2)</span>
+        <span id="headerQuadText">REGIME ATUAL: QUAD 3 (#ACCELERATING)</span>
       </div>
     </div>
 
@@ -49,13 +49,13 @@
     <div class="header-right">
       <div class="market-status">
         <span class="status-indicator online"></span>
-        <span id="marketTime">04/09/2026 | NYSE Open</span>
+        <span id="marketTime">08/09/2026 | NYSE Open</span>
       </div>
       <button class="btn btn-outline" id="btnSyncHeader" onclick="syncReportsOnDemand()" title="Sincronizar novos relatórios com o Gmail agora">
         <span class="icon" id="syncIconHeader">🔄</span> <span id="syncTextHeader">Sincronizar Relatórios</span>
       </button>
-      <button class="btn btn-primary" onclick="openReportModal()">
-        <span class="icon">📄</span> Relatório Diário (04/09)
+      <button class="btn btn-primary" id="btnDailyReportHeader" onclick="openReportModal()">
+        <span class="icon">📄</span> <span id="btnDailyReportText">Relatório Diário (08/09)</span>
       </button>
     </div>
   </header>
@@ -65,8 +65,8 @@
     <button class="nav-tab active" data-tab="dashboard" onclick="setTab('dashboard')">
       📊 Painel Executivo & GIP
     </button>
-    <button class="nav-tab" data-tab="riskranges" onclick="setTab('riskranges')">
-      🎯 Risk Ranges & Sinais (04/09)
+    <button class="nav-tab" data-tab="riskranges" id="navTabRiskRanges" onclick="setTab('riskranges')">
+      🎯 Risk Ranges & Sinais (<span id="navRiskRangeDate">08/09</span>)
     </button>
     <button class="nav-tab" data-tab="portfolio" onclick="setTab('portfolio')">
       💼 Portfólios (Schwab / Tastyworks)
@@ -97,23 +97,23 @@
       <div class="metrics-grid">
         <div class="metric-card">
           <div class="metric-title">OURO SPOT (GOLD)</div>
-          <div class="metric-value text-emerald" id="val-gold">4.495 <span class="badge badge-bullish">Bullish TREND</span></div>
-          <div class="metric-sub">Range Hoje: 4.296 a 4.691 (Piso subiu). Pilar sólido de proteção.</div>
+          <div class="metric-value text-emerald" id="val-gold">4.480 <span class="badge badge-bullish">Bullish TREND</span></div>
+          <div class="metric-sub" id="sub-gold">Range: 4.274 a 4.646. Pilar sólido de proteção macro.</div>
         </div>
         <div class="metric-card">
           <div class="metric-title">DÓLAR INDEX (DXY)</div>
-          <div class="metric-value text-rose" id="val-dxy">99.05 <span class="badge badge-bearish">Bearish TREND</span></div>
-          <div class="metric-sub">Range: 98.51–99.67 (Bearish). Impulso reflacionário global.</div>
+          <div class="metric-value text-rose" id="val-dxy">99.10 <span class="badge badge-bearish">Bearish TREND</span></div>
+          <div class="metric-sub" id="sub-dxy">Range: 98.60–99.67 (Bearish). Impulso reflacionário global.</div>
         </div>
         <div class="metric-card">
           <div class="metric-title">PETRÓLEO (WTI)</div>
-          <div class="metric-value text-emerald" id="val-wti">89.80 <span class="badge badge-bullish">Bullish TREND</span></div>
-          <div class="metric-sub">Range Hoje: 84.74 a 94.63 (Teto subiu). Reforça inflação e Quad 2/3.</div>
+          <div class="metric-value text-emerald" id="val-wti">91.20 <span class="badge badge-bullish">Bullish TREND</span></div>
+          <div class="metric-sub" id="sub-wti">Range: 85.75 a 96.62 (+23% mês). Teto explodiu para 96.62.</div>
         </div>
         <div class="metric-card">
           <div class="metric-title">UST 10Y YIELD</div>
-          <div class="metric-value text-amber" id="val-ust10">4.74% <span class="badge badge-bullish">Bullish TREND</span></div>
-          <div class="metric-sub">Range: 4.63% a 4.84%. Tendência de alta pressiona Utilities & Real Estate.</div>
+          <div class="metric-value text-amber" id="val-ust10">4.78% <span class="badge badge-bullish">Bullish TREND</span></div>
+          <div class="metric-sub" id="sub-ust10">Range: 4.70% a 4.87%. Higher-for-longer pressiona Utilities.</div>
         </div>
       </div>
 
@@ -147,10 +147,10 @@
               <div class="gip-box quad-3 active-quad">
                 <div class="active-beacon">📍 REGIME ATUAL</div>
                 <div class="quad-num">QUAD 3</div>
-                <div class="quad-name">Estagflação</div>
+                <div class="quad-name">Estagflação / Reflação</div>
                 <div class="quad-factors">G ↓ | I ↑</div>
-                <div class="quad-favors">Favorece: OURO (GOLD), Energia, Commodities, Defensivos, SGOV</div>
-                <div class="quad-avoids">Evitar: Crédito High Yield/Corpo, Cíclicos desacelerando, High Beta</div>
+                <div class="quad-favors">Favorece: OURO (GOLD), Energia, Commodities, Cobre (ATH), SGOV</div>
+                <div class="quad-avoids">Evitar: Short Treasuries (TLT/ZROZ), Short LQD, Short Utilities (XLU)</div>
               </div>
 
               <!-- QUAD 4: INFERIOR DIREITO -->
@@ -164,7 +164,7 @@
 
             <!-- Camadas de Diagnóstico -->
             <div class="quad-layers mt-3">
-              <h4>Diagnóstico em Três Camadas (04/09/2026):</h4>
+              <h4 id="gipLayersDateTitle">Diagnóstico em Três Camadas (08/09/2026):</h4>
               <table class="data-table">
                 <thead>
                   <tr>
@@ -174,23 +174,23 @@
                     <th>Confiança</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="gipLayersBody">
                   <tr>
                     <td><strong>1. Vigente por Dados</strong></td>
-                    <td><span class="badge quad-badge-sm q3">Quad 3 → Quad 2</span></td>
-                    <td>Nowcast de Inflação subiu para Setembro e Outubro; alta de Petróleo (WTIC 84,74–94,63) e aceleração de crescimento</td>
+                    <td><span class="badge quad-badge-sm q3">Global Quad 3</span></td>
+                    <td>Petróleo WTI subindo +23% no mês (85,75–96,62); Cobre em Máximas Históricas (ATHs); CRB Index +11,5%</td>
                     <td><span class="text-emerald font-bold">Alta</span></td>
                   </tr>
                   <tr>
                     <td><strong>2. Precificado pelo Mercado</strong></td>
-                    <td><span class="badge quad-badge-sm" style="background:#F97316; color:#FFF;">Rotação de Fatores</span></td>
-                    <td>High Beta Momentum caiu -77% das máximas, enquanto Long AI Software vs Short Semis avançou +17,9% no último mês</td>
+                    <td><span class="badge quad-badge-sm" style="background:#F97316; color:#FFF;">Higher for Longer</span></td>
+                    <td>Bond Yields de 2Y e 10Y (4,70–4,87%) rompem para novas máximas; Russell 2000 (RUT) rebaixado para Neutral (-2% no mês)</td>
                     <td><span class="text-emerald font-bold">Alta</span></td>
                   </tr>
                   <tr>
                     <td><strong>3. Nowcast 1–3 Meses</strong></td>
-                    <td><span class="badge quad-badge-sm" style="background:#F97316; color:#FFF;">#Quad2 Then #Quad2</span></td>
-                    <td>Nowcast aponta probabilidade de meses consecutivos de Quad 2 (Setembro, Outubro, Dezembro e Janeiro)</td>
+                    <td><span class="badge quad-badge-sm q3">#Accelerating</span></td>
+                    <td>Nowcast de Inflação acelerando com repasse de commodities e Dólar fraco sustentando shorts em dívida e utilities</td>
                     <td><span class="text-emerald font-bold">Alta</span></td>
                   </tr>
                 </tbody>
@@ -203,20 +203,20 @@
         <div class="card">
           <div class="card-header">
             <h3><span class="icon">⚡</span> Síntese Matinal: EARLY LOOK + Risk Signals</h3>
-            <span class="tag tag-accent" id="earlylookTitleTag">"EARLY LOOK: #Quad2 Then #Quad2?" (04/09/2026)</span>
+            <span class="tag tag-accent" id="earlylookTitleTag">"EARLY LOOK: Oil, Rates, Inflation #Accelerating" (08/09/2026)</span>
           </div>
           <div class="card-body">
-            <div class="quote-box">
-              <p class="quote-text">“Just because people work together doesn’t mean they’re part of a team. Shared goal = #P3 Preserve and Protect The Pile. Role clarity: our team does the research, you execute with conviction and discipline.”</p>
-              <span class="quote-author">— Keith McCullough (04/09/2026 — Super Teams)</span>
+            <div class="quote-box" id="morningQuoteBox">
+              <p class="quote-text">“We started cherishing what we already had instead of chasing some network TV validation.”</p>
+              <span class="quote-author">— Keith McCullough (08/09/2026 — Early Look)</span>
             </div>
 
             <h4 class="mt-3">Destaques Combinados dos Relatórios de Hoje:</h4>
-            <ul class="bullet-list">
-              <li><strong>Nowcast de Inflação em Alta (#Quad2 Then #Quad2):</strong> O modelo proprietário da Hedgeye elevou o Nowcast de inflação para Setembro e Outubro, aumentando a probabilidade de <strong>Monthly Quad 2s consecutivos</strong> (Crescimento Acelera + Inflação Acelera).</li>
-              <li><strong>Fatores Vencedores no Quad 2:</strong> No regime de Quad 2, <strong>Large Caps batem Small Caps</strong>, <strong>High Beta supera Low Beta</strong>, <strong>Secular Growth bate Value</strong> e <strong>Inflação Cíclica supera Defensivos</strong>.</li>
-              <li><strong>Rotação de Fatores em Andamento:</strong> O fator High Beta Momentum (Long Semis vs Short Software) desabou <strong>-77%</strong> das máximas de junho (#MOAB), enquanto o par <strong>Long AI Software vs Short Semis (SMH)</strong> disparou <strong>+5,1% ontem (+17,9% no último mês)</strong>.</li>
-              <li><strong>Yields Longos & Setores Sensíveis:</strong> Yields de Treasuries continuam em <strong>Bullish TREND</strong> (10Y Yield 4,63%–4,84%). Setores ultra-sensíveis a juros como <strong>Utilities (Short XLU)</strong> e <strong>U.S. Housing (ITB)</strong> continuam sob pressão vendedora.</li>
+            <ul class="bullet-list" id="morningBulletsList">
+              <li><strong>Commodities em Global Quad 3 (#Accelerating):</strong> Petróleo WTI explodiu <strong>+23% no último mês</strong> (teto em <strong>US$ 96,62</strong>), CRB Index subiu <strong>+11,5%</strong> e Cobre atingiu <strong>All-Time Highs (6,51–6,75)</strong>.</li>
+              <li><strong>Higher-for-Longer & Yields em Alta:</strong> Dólar Bearish (98,60–99,67) e commodities reforçam juros altos por mais tempo. Yield 10Y sobe piso para <strong>4,70%</strong> e teto para <strong>4,87%</strong>.</li>
+              <li><strong>Small Caps Rebaixadas para Neutral:</strong> Russell 2000 (RUT) caiu <strong>-2% no mês</strong> perante a alta das taxas. Large Caps mantêm liderança em relação a Small Caps.</li>
+              <li><strong>Shorts Estruturais Mantidos com Alpha:</strong> Hedgeye mantém convicção nos shorts de <strong>Treasuries (TLT/ZROZ)</strong>, <strong>Crédito Investment Grade (LQD)</strong> e <strong>Utilities (Short XLU)</strong>.</li>
             </ul>
 
             <div class="action-box mt-3">
@@ -227,19 +227,19 @@
                 <div class="action-step">
                   <span class="step-num">1</span>
                   <div class="step-content">
-                    <strong>Aproveitar Força em AI Software vs Semis:</strong> Manter convicção no par comprador de AI Software (IGV/empresas com alto FCF) contra semicondutores esticados.
+                    <strong>Aproveitar Força em Energia, Cobre e Ouro:</strong> Manter posições Long em Oil Services (OIH), Cobre, Gás Natural e Ouro (AAAU / NEM / GDX no piso de 4.274).
                   </div>
                 </div>
                 <div class="action-step">
                   <span class="step-num">2</span>
                   <div class="step-content">
-                    <strong>Posicionamento para Quad 2 Sequencial:</strong> Favorecer Large Caps de crescimento secular e proteção contra inflação (Ouro AAAU / NEM / GDX no piso de 4.296).
+                    <strong>Manter Cautela em Small Caps:</strong> Russell 2000 rebaixado para Neutral; não comprar quedas em empresas alavancadas dependentes de crédito.
                   </div>
                 </div>
                 <div class="action-step">
                   <span class="step-num">3</span>
                   <div class="step-content">
-                    <strong>Evitar Sensíveis a Juros:</strong> Manter shorts ou subponderação em Utilities (XLU), US Housing (ITB) e crédito corporativo com yield apertado (LQD).
+                    <strong>Evitar Duração e Sensíveis a Juros:</strong> Subponderar ou manter shorts em Utilities (XLU), US Housing (ITB) e duration corporativa longa (LQD).
                   </div>
                 </div>
               </div>
@@ -323,8 +323,8 @@
       <div class="card">
         <div class="card-header">
           <div>
-            <h3><span class="icon">🎯</span> Risk Ranges Oficiais (Our Levels — 04/09/2026)</h3>
-            <p class="subtitle">Extraídos automaticamente do EARLYLOOK "#Quad2 Then #Quad2?"</p>
+            <h3><span class="icon">🎯</span> Risk Ranges Oficiais (Our Levels — <span id="riskRangeHeaderDate">08/09/2026</span>)</h3>
+            <p class="subtitle" id="riskRangeSubtitle">Extraídos automaticamente do EARLYLOOK "Oil, Rates, Inflation #Accelerating"</p>
           </div>
           <div class="filter-group">
             <button class="btn btn-sm btn-outline active" onclick="filterRiskRanges('all', this)">Todos</button>
