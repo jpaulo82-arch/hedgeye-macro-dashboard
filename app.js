@@ -1651,15 +1651,20 @@ let allReportsCache = [];
 async function loadReportsDatabase() {
   try {
     let data = null;
+    const cacheBuster = `?_t=${Date.now()}`;
+    
+    // Tenta primeiro o endpoint da API se existir
     try {
-      const res = await fetch("/api/reports");
+      const res = await fetch(`/api/reports${cacheBuster}`, { cache: "no-store" });
       if (res.ok) {
         data = await res.json();
       }
-    } catch (e) {
-      // Fallback para arquivo JSON estático se não estiver rodando no backend
+    } catch (e) {}
+
+    // Fallback para arquivo JSON com cache buster
+    if (!data) {
       try {
-        const resLocal = await fetch("relatorios_db.json");
+        const resLocal = await fetch(`relatorios_db.json${cacheBuster}`, { cache: "no-store" });
         if (resLocal.ok) {
           data = await resLocal.json();
         }
@@ -1767,13 +1772,6 @@ function openSpecificReport(reportIdOrFile) {
 
   if (formattedContainer) {
     // Renderiza uma visualização limpa do markdown
-    let bodyHtml = rep.content
-      .replace(/^#\s+(.+)$/gm, '<h2 style="color:#38BDF8; margin: 1rem 0 0.5rem 0;">$1</h2>')
-      .replace(/\*\*Data:\*\*\s*(.+)$/gm, '<p style="color:#94A3B8; font-size:0.85rem;">📅 <strong>Data:</strong> $1</p>')
-      .replace(/\*\*Remetente:\*\*\s*(.+)$/gm, '<p style="color:#94A3B8; font-size:0.85rem;">👤 <strong>Remetente:</strong> $1</p>')
-      .replace(/\*\*ID:\*\*\s*(.+)$/gm, '<p style="color:#64748B; font-size:0.75rem;">🔑 <strong>ID:</strong> $1</p>')
-      .replace(/\n\n/g, '<br><br>');
-
     formattedContainer.innerHTML = `
       <div class="report-section-card highlight" style="padding: 1.25rem; margin-bottom: 1rem;">
         <h2 style="color: #38BDF8; font-size: 1.2rem; margin-bottom: 0.5rem;">${rep.title}</h2>
@@ -1802,18 +1800,24 @@ async function syncReportsOnDemand() {
   if (textHeader) textHeader.innerText = "Sincronizando...";
   if (textTab) textTab.innerText = "Buscando no Gmail...";
 
-  showToast("🔄 Conectando ao Gmail (IMAP) e buscando relatórios mais recentes da Hedgeye...");
+  showToast("🔄 Conectando e atualizando base de relatórios da Hedgeye...");
 
-  try {
-    let synced = false;
+  let syncTriggered = false;
+  
+  // Tenta sincronizar via servidor local
+  const syncEndpoints = ["/api/sync", "http://localhost:8080/api/sync"];
+  for (const ep of syncEndpoints) {
     try {
-      const response = await fetch("/api/sync", { method: "POST" });
-      if (response.ok) {
-        synced = true;
+      const res = await fetch(ep, { method: "POST", headers: { "Content-Type": "application/json" } });
+      if (res.ok) {
+        syncTriggered = true;
+        break;
       }
     } catch (e) {}
+  }
 
-    // Aguardar término do processamento
+  if (syncTriggered) {
+    // Aguarda o backend local processar
     let tries = 0;
     const checkInterval = setInterval(async () => {
       tries++;
@@ -1821,28 +1825,30 @@ async function syncReportsOnDemand() {
         const res = await fetch("/api/sync-status");
         if (res.ok) {
           const status = await res.json();
-          if (!status.isSyncing || tries >= 8) {
+          if (!status.isSyncing || tries >= 10) {
             clearInterval(checkInterval);
-            finishSync();
+            await finishSync(true);
           }
-        } else if (tries >= 4) {
+        } else if (tries >= 6) {
           clearInterval(checkInterval);
-          finishSync();
+          await finishSync(true);
         }
       } catch (err) {
-        if (tries >= 3) {
+        if (tries >= 4) {
           clearInterval(checkInterval);
-          finishSync();
+          await finishSync(true);
         }
       }
     }, 1500);
-
-  } catch (err) {
-    setTimeout(finishSync, 2000);
+  } else {
+    // Se acessando da nuvem ou sem o server.py ativo, recarrega o banco mais recente
+    setTimeout(async () => {
+      await finishSync(false);
+    }, 1200);
   }
 }
 
-async function finishSync() {
+async function finishSync(wasLocalTriggered = true) {
   const iconHeader = document.getElementById("syncIconHeader");
   const iconTab = document.getElementById("syncIconTab");
   const textHeader = document.getElementById("syncTextHeader");
@@ -1855,7 +1861,9 @@ async function finishSync() {
 
   await loadReportsDatabase();
   renderRiskRangesTable("all");
-  showToast("✅ Sincronização concluída com sucesso! Relatórios de hoje já disponíveis.");
+  
+  const latestDate = allReportsCache[0]?.shortDate || "Recente";
+  showToast(`✅ Base atualizada com sucesso! Relatório mais recente: ${latestDate}`);
 }
 
 // 10. INICIALIZAÇÃO GERAL DO APLICATIVO
