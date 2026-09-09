@@ -2657,7 +2657,7 @@ function renderQuadRotationTracker(tracker) {
 
     const datasets = [
       {
-        label: "QUAD 1: Goldilocks (QQQ, XLY, IWM, IGV)",
+        label: "QUAD 1: Goldilocks (QQQ, XLY, XLI, XLB)",
         data: tracker.baskets["QUAD 1"]?.series || [],
         borderColor: "#3B82F6",
         backgroundColor: "rgba(59, 130, 246, 0.05)",
@@ -2667,7 +2667,7 @@ function renderQuadRotationTracker(tracker) {
         pointHoverRadius: 6
       },
       {
-        label: "QUAD 2: Reflação (XLE, CPER, XLI, XLB)",
+        label: "QUAD 2: Reflação (XLK, XLY, XLI, XLB)",
         data: tracker.baskets["QUAD 2"]?.series || [],
         borderColor: "#10B981",
         backgroundColor: "rgba(16, 185, 129, 0.05)",
@@ -2677,7 +2677,7 @@ function renderQuadRotationTracker(tracker) {
         pointHoverRadius: 6
       },
       {
-        label: "QUAD 3: Estagflação (GLD, XLE, XLV, XLP)",
+        label: "QUAD 3: Estagflação (GLD, XLU, XLE, XLK)",
         data: tracker.baskets["QUAD 3"]?.series || [],
         borderColor: "#F59E0B",
         backgroundColor: "rgba(245, 158, 11, 0.12)",
@@ -2688,7 +2688,7 @@ function renderQuadRotationTracker(tracker) {
         fill: true
       },
       {
-        label: "QUAD 4: Deflação (SGOV, IEF, XLV, XLP)",
+        label: "QUAD 4: Deflação (IEF, XLV, XLP, XLU)",
         data: tracker.baskets["QUAD 4"]?.series || [],
         borderColor: "#A855F7",
         backgroundColor: "rgba(168, 85, 247, 0.05)",

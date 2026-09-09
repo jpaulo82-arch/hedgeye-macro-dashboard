@@ -713,11 +713,11 @@
         <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 1.2rem; margin-bottom: 1.2rem;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap;">
             <h4 style="margin: 0; font-size: 0.95rem; color: #E2E8F0;">Trajetória Acumulada das 4 Cestas de Quadrantes (% nos últimos 30 dias)</h4>
-            <div style="display: flex; gap: 1rem; font-size: 0.78rem; font-weight: 600;">
-              <span style="color: #3B82F6;">● Quad 1 (Tech & Consumo: QQQ, XLY, IWM, IGV)</span>
-              <span style="color: #10B981;">● Quad 2 (Reflação & Indústria: XLE, CPER, XLI, XLB)</span>
-              <span style="color: #F59E0B;">● Quad 3 (Estagflação: GLD, XLE, XLV, XLP)</span>
-              <span style="color: #A855F7;">● Quad 4 (Deflação: SGOV, IEF, XLV, XLP)</span>
+            <div style="display: flex; gap: 1rem; font-size: 0.78rem; font-weight: 600; flex-wrap: wrap;">
+              <span style="color: #3B82F6;">● Quad 1 (Goldilocks: QQQ, XLY, XLI, XLB)</span>
+              <span style="color: #10B981;">● Quad 2 (Reflação: XLK, XLY, XLI, XLB)</span>
+              <span style="color: #F59E0B;">● Quad 3 (Estagflação: GLD, XLU, XLE, XLK)</span>
+              <span style="color: #A855F7;">● Quad 4 (Deflação: IEF, XLV, XLP, XLU)</span>
             </div>
           </div>
           <div style="position: relative; height: 280px; width: 100%;">
@@ -755,7 +755,7 @@
         <div class="card-header">
           <div>
             <h3><span class="icon">📖</span> Playbook Histórico Oficial de Quadrantes (Master The Market — Pág. 27)</h3>
-            <p class="subtitle">Back-test histórico de retornos trimestrais por classe de ativos e setores desde 1Q98</p>
+            <p class="subtitle">Back-test histórico de retornos trimestrais por classe de ativos, setores e satélites táticos desde 1Q98</p>
           </div>
         </div>
         <div class="card-body">
@@ -766,10 +766,12 @@
                 <h4>QUAD 1: Goldilocks (G ↑, I ↓)</h4>
               </div>
               <div class="card-body">
-                <p><strong>Melhores Classes de Ativos:</strong> Equities, Crédito, Commodities, FX</p>
+                <p><strong style="color: #38BDF8;">Cesta-Base Fiel ao Manual:</strong> <strong>QQQ, XLY, XLI, XLB</strong></p>
+                <p><strong style="color: #94A3B8;">Satélites com Sinal/Timing:</strong> IGV (Software), IWM (Small Caps), XBI (Biotech), SPMO (Momentum)</p>
+                <p class="mt-2"><strong>Melhores Classes de Ativos:</strong> Equities, Crédito, Commodities, FX</p>
                 <p><strong>Piores Classes de Ativos:</strong> Renda Fixa (Fixed Income), USD</p>
-                <p class="mt-2"><strong>Melhores Setores:</strong> Tech, Consumo Discricionário, Materiais, Industriais</p>
-                <p><strong>Piores Setores:</strong> Utilities, REITs, Consumer Staples, Financials</p>
+                <p class="mt-2"><strong>Melhores Setores:</strong> Tech, Consumo Discricionário, Industriais, Materiais</p>
+                <p><strong>Piores Setores:</strong> Utilities, REITs (XLRE), Consumer Staples, Financials</p>
                 <p class="mt-2"><strong>Fatores Favorecidos:</strong> High Beta, Momentum, Cíclicos, Crescimento Secular</p>
               </div>
             </div>
@@ -780,10 +782,12 @@
                 <h4>QUAD 2: Reflação (G ↑, I ↑)</h4>
               </div>
               <div class="card-body">
-                <p><strong>Melhores Classes de Ativos:</strong> Commodities, Equities, Crédito, FX</p>
+                <p><strong style="color: #10B981;">Cesta-Base Fiel ao Manual:</strong> <strong>XLK/QQQ, XLY, XLI, XLB</strong></p>
+                <p><strong style="color: #94A3B8;">Satélites com Sinal/Timing:</strong> CPER (Cobre), DBC (Commodities), XLE (Energia), AIRR (Industrial), EWZ (Brasil/LatAm)</p>
+                <p class="mt-2"><strong>Melhores Classes de Ativos:</strong> Commodities, Equities, Crédito, FX</p>
                 <p><strong>Piores Classes de Ativos:</strong> Renda Fixa (Fixed Income), USD</p>
                 <p class="mt-2"><strong>Melhores Setores:</strong> Tech, Consumo Discricionário, Industriais, Materiais, Energia</p>
-                <p><strong>Piores Setores:</strong> Telecom, Utilities, REITs, Consumer Staples</p>
+                <p><strong>Piores Setores:</strong> Telecom, Utilities, REITs (XLRE), Consumer Staples</p>
                 <p class="mt-2"><strong>Fatores Favorecidos:</strong> Crescimento Secular, Momentum, Small Caps</p>
               </div>
             </div>
@@ -794,11 +798,14 @@
                 <h4>QUAD 3: Estagflação (G ↓, I ↑) [REGIME VIGENTE]</h4>
               </div>
               <div class="card-body">
-                <p class="text-emerald font-bold"><strong>Melhores Classes de Ativos:</strong> OURO (Gold), Commodities, Energia, SGOV</p>
-                <p class="text-rose font-bold"><strong>Piores Classes de Ativos:</strong> CRÉDITO HIGH YIELD / CORPO (Credit)</p>
-                <p class="mt-2"><strong>Melhores Setores:</strong> Utilities, Tech (selecionada/qualidade), Energia, Industriais</p>
-                <p><strong>Piores Setores:</strong> Financials, REITs, Materiais, Telecom</p>
-                <p class="mt-2"><strong>Fatores Favorecidos:</strong> Crescimento Secular, Low Beta, Opcionalidade</p>
+                <p><strong style="color: #F59E0B;">Cesta-Base Fiel ao Manual:</strong> <strong>GLD/AAAU, XLU, XLE, XLK/QQQ</strong></p>
+                <p><strong style="color: #94A3B8;">Satélites com Sinal/Timing:</strong> GDX (Mineradoras), SLV (Prata), USO (Petróleo), PPA (Aeroespacial/Defesa)</p>
+                <p class="mt-2"><strong class="text-emerald font-bold">Melhores Classes de Ativos:</strong> OURO (Gold), Commodities, Energia, SGOV/Caixa</p>
+                <p><strong class="text-rose font-bold">Piores Classes de Ativos:</strong> CRÉDITO HIGH YIELD / CORPO (Credit)</p>
+                <p class="mt-2"><strong>Melhores Setores:</strong> Utilities, Tech (Qualidade Secular / Pricing Power), Energia, Industriais</p>
+                <p><strong>Piores Setores:</strong> Financials, REITs (XLRE — Pior Setor!), Materiais, Telecom</p>
+                <p class="mt-2"><strong>Fatores Favorecidos:</strong> Crescimento Secular Seletivo, Low Beta, Opcionalidade de Caixa</p>
+                <small class="text-muted" style="display:block; margin-top: 0.4rem;"><em>Nota do Manual: Tech não é eliminada automaticamente em Quad 3; prioriza-se Big Tech de fluxo de caixa livre (FCF) e pricing power, evitando semicondutores cíclicos.</em></small>
               </div>
             </div>
 
@@ -808,9 +815,11 @@
                 <h4>QUAD 4: Deflação / Recessão (G ↓, I ↓)</h4>
               </div>
               <div class="card-body">
-                <p><strong>Melhores Classes de Ativos:</strong> Renda Fixa (Treasuries), OURO, USD, SGOV/Caixa</p>
+                <p><strong style="color: #A855F7;">Cesta-Base Fiel ao Manual:</strong> <strong>IEF, XLV, XLP, XLU</strong></p>
+                <p><strong style="color: #94A3B8;">Satélites com Sinal/Timing:</strong> TLT (Long Duration), LQD (Crédito IG), AAAU/GLD (Ouro), SGOV (Caixa)</p>
+                <p class="mt-2"><strong>Melhores Classes de Ativos:</strong> Renda Fixa (Treasuries), OURO, USD, SGOV/Caixa</p>
                 <p><strong>Piores Classes de Ativos:</strong> Commodities, Equities, Crédito, FX</p>
-                <p class="mt-2"><strong>Melhores Setores:</strong> Consumer Staples, Utilities, REITs, Healthcare</p>
+                <p class="mt-2"><strong>Melhores Setores:</strong> Consumer Staples (XLP), Healthcare (XLV), Utilities (XLU), REITs (XLRE)</p>
                 <p><strong>Piores Setores:</strong> Energia, Tech, Industriais, Financials</p>
                 <p class="mt-2"><strong>Fatores Favorecidos:</strong> Low Beta, Dividend Yield, Qualidade, Defensivos</p>
               </div>
