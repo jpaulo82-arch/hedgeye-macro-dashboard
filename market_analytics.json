@@ -1,10 +1,10 @@
 {
-  "updated_at": "09/09/2026 15:22:51",
+  "updated_at": "09/09/2026 15:32:13",
   "gex": [
     {
       "ticker": "SPY",
-      "current_price": 762.78,
-      "net_gex_million": -5501.43,
+      "current_price": 762.72,
+      "net_gex_million": -5586.12,
       "regime": "SHORT GAMMA",
       "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
       "call_wall": 770.0,
@@ -13,12 +13,12 @@
       "total_call_oi": 357326,
       "total_put_oi": 574306,
       "put_call_ratio": 1.61,
-      "updated_at": "09/09/2026 15:22:29"
+      "updated_at": "09/09/2026 15:31:48"
     },
     {
       "ticker": "QQQ",
       "current_price": 716.29,
-      "net_gex_million": -337.89,
+      "net_gex_million": -276.75,
       "regime": "SHORT GAMMA",
       "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
       "call_wall": 720.0,
@@ -27,12 +27,12 @@
       "total_call_oi": 233461,
       "total_put_oi": 414445,
       "put_call_ratio": 1.78,
-      "updated_at": "09/09/2026 15:22:30"
+      "updated_at": "09/09/2026 15:31:50"
     },
     {
       "ticker": "IWM",
-      "current_price": 290.99,
-      "net_gex_million": -1135.85,
+      "current_price": 291.12,
+      "net_gex_million": -1119.61,
       "regime": "SHORT GAMMA",
       "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
       "call_wall": 295.0,
@@ -41,7 +41,7 @@
       "total_call_oi": 152767,
       "total_put_oi": 333300,
       "put_call_ratio": 2.18,
-      "updated_at": "09/09/2026 15:22:32"
+      "updated_at": "09/09/2026 15:31:51"
     }
   ],
   "fundamentals": [
@@ -49,7 +49,7 @@
       "ticker": "MELI",
       "shortName": "MercadoLibre, Inc.",
       "sector": "Consumer Cyclical",
-      "price": 1873.45,
+      "price": 1873.55,
       "pe": "50.9x",
       "ev_ebitda": "27.0x",
       "net_margin": "5.3%",
@@ -62,12 +62,12 @@
       "ticker": "GOOGL",
       "shortName": "Alphabet Inc.",
       "sector": "Communication Services",
-      "price": 330.46,
+      "price": 330.07,
       "pe": "16.6x",
       "ev_ebitda": "23.3x",
       "net_margin": "54.8%",
       "revenue_growth": "+24.2%",
-      "market_cap": "US$ 4041.6B",
+      "market_cap": "US$ 4036.7B",
       "beta": "1.23",
       "recommendation": "STRONG_BUY"
     },
@@ -75,12 +75,12 @@
       "ticker": "UBER",
       "shortName": "Uber Technologies, Inc.",
       "sector": "Technology",
-      "price": 71.46,
+      "price": 71.62,
       "pe": "15.7x",
       "ev_ebitda": "21.4x",
       "net_margin": "17.3%",
       "revenue_growth": "+12.2%",
-      "market_cap": "US$ 146.0B",
+      "market_cap": "US$ 146.3B",
       "beta": "1.16",
       "recommendation": "BUY"
     },
@@ -88,12 +88,12 @@
       "ticker": "AVGO",
       "shortName": "Broadcom Inc.",
       "sector": "Technology",
-      "price": 363.88,
+      "price": 363.93,
       "pe": "46.4x",
       "ev_ebitda": "34.4x",
       "net_margin": "42.9%",
       "revenue_growth": "+85.5%",
-      "market_cap": "US$ 1731.2B",
+      "market_cap": "US$ 1731.4B",
       "beta": "1.46",
       "recommendation": "STRONG_BUY"
     },
@@ -101,12 +101,12 @@
       "ticker": "ASML",
       "shortName": "ASML Holding N.V. - New York Re",
       "sector": "Technology",
-      "price": 1733.79,
+      "price": 1733.96,
       "pe": "58.8x",
       "ev_ebitda": "2791.6x",
       "net_margin": "30.1%",
       "revenue_growth": "+21.3%",
-      "market_cap": "US$ 665.9B",
+      "market_cap": "US$ 666.0B",
       "beta": "1.36",
       "recommendation": "STRONG_BUY"
     },
@@ -114,12 +114,12 @@
       "ticker": "META",
       "shortName": "Meta Platforms, Inc.",
       "sector": "Communication Services",
-      "price": 651.32,
-      "pe": "24.5x",
+      "price": 653.12,
+      "pe": "24.6x",
       "ev_ebitda": "14.5x",
       "net_margin": "29.8%",
       "revenue_growth": "+28.0%",
-      "market_cap": "US$ 1659.2B",
+      "market_cap": "US$ 1663.8B",
       "beta": "1.24",
       "recommendation": "STRONG_BUY"
     },
@@ -127,7 +127,7 @@
       "ticker": "FN",
       "shortName": "Fabrinet",
       "sector": "Technology",
-      "price": 421.9,
+      "price": 421.82,
       "pe": "32.4x",
       "ev_ebitda": "26.5x",
       "net_margin": "10.2%",
@@ -140,12 +140,12 @@
       "ticker": "ALAB",
       "shortName": "Astera Labs, Inc.",
       "sector": "Technology",
-      "price": 299.85,
-      "pe": "148.4x",
+      "price": 300.45,
+      "pe": "148.8x",
       "ev_ebitda": "171.3x",
       "net_margin": "30.7%",
       "revenue_growth": "+104.5%",
-      "market_cap": "US$ 52.0B",
+      "market_cap": "US$ 52.1B",
       "beta": "3.78",
       "recommendation": "NONE"
     },
@@ -153,12 +153,12 @@
       "ticker": "COHR",
       "shortName": "Coherent Corp.",
       "sector": "Technology",
-      "price": 304.36,
+      "price": 304.71,
       "pe": "74.1x",
       "ev_ebitda": "42.9x",
       "net_margin": "11.3%",
       "revenue_growth": "+33.7%",
-      "market_cap": "US$ 59.6B",
+      "market_cap": "US$ 59.7B",
       "beta": "2.10",
       "recommendation": "BUY"
     },
@@ -166,12 +166,12 @@
       "ticker": "CRDO",
       "shortName": "Credo Technology Group Holding ",
       "sector": "Technology",
-      "price": 167.8,
+      "price": 167.88,
       "pe": "59.3x",
       "ev_ebitda": "56.7x",
       "net_margin": "33.8%",
       "revenue_growth": "+114.7%",
-      "market_cap": "US$ 31.5B",
+      "market_cap": "US$ 31.6B",
       "beta": "3.23",
       "recommendation": "STRONG_BUY"
     },
@@ -179,12 +179,12 @@
       "ticker": "ARM",
       "shortName": "Arm Holdings plc",
       "sector": "Technology",
-      "price": 264.5,
-      "pe": "272.7x",
+      "price": 264.63,
+      "pe": "272.8x",
       "ev_ebitda": "259.4x",
       "net_margin": "20.2%",
       "revenue_growth": "+22.4%",
-      "market_cap": "US$ 282.5B",
+      "market_cap": "US$ 282.6B",
       "beta": "3.89",
       "recommendation": "BUY"
     },
@@ -192,8 +192,8 @@
       "ticker": "MTSI",
       "shortName": "MACOM Technology Solutions Hold",
       "sector": "Technology",
-      "price": 286.57,
-      "pe": "91.6x",
+      "price": 287.2,
+      "pe": "91.8x",
       "ev_ebitda": "75.1x",
       "net_margin": "20.7%",
       "revenue_growth": "+35.8%",
@@ -205,12 +205,12 @@
       "ticker": "AXTI",
       "shortName": "AXT Inc",
       "sector": "Technology",
-      "price": 69.35,
-      "pe": "2311.7x",
+      "price": 69.52,
+      "pe": "2317.2x",
       "ev_ebitda": "313.6x",
       "net_margin": "3.2%",
       "revenue_growth": "+164.8%",
-      "market_cap": "US$ 4.5B",
+      "market_cap": "US$ 4.6B",
       "beta": "1.92",
       "recommendation": "BUY"
     },
@@ -218,8 +218,8 @@
       "ticker": "TSEM",
       "shortName": "Tower Semiconductor Ltd.",
       "sector": "Technology",
-      "price": 217.5,
-      "pe": "86.0x",
+      "price": 217.73,
+      "pe": "86.1x",
       "ev_ebitda": "39.3x",
       "net_margin": "16.9%",
       "revenue_growth": "+23.7%",
@@ -231,12 +231,12 @@
       "ticker": "INTC",
       "shortName": "Intel Corporation",
       "sector": "Technology",
-      "price": 105.64,
-      "pe": "Fwd 51.7x",
+      "price": 105.76,
+      "pe": "Fwd 51.8x",
       "ev_ebitda": "33.5x",
       "net_margin": "-19.8%",
       "revenue_growth": "+25.4%",
-      "market_cap": "US$ 558.5B",
+      "market_cap": "US$ 559.1B",
       "beta": "2.23",
       "recommendation": "BUY"
     },
@@ -244,8 +244,8 @@
       "ticker": "NOK",
       "shortName": "Nokia Corporation Sponsored",
       "sector": "Technology",
-      "price": 10.82,
-      "pe": "77.3x",
+      "price": 10.83,
+      "pe": "77.4x",
       "ev_ebitda": "22.2x",
       "net_margin": "3.5%",
       "revenue_growth": "+8.4%",
@@ -257,12 +257,12 @@
       "ticker": "NEM",
       "shortName": "Newmont Corporation",
       "sector": "Basic Materials",
-      "price": 130.33,
+      "price": 130.18,
       "pe": "16.4x",
       "ev_ebitda": "7.7x",
       "net_margin": "33.4%",
       "revenue_growth": "+15.1%",
-      "market_cap": "US$ 137.3B",
+      "market_cap": "US$ 137.2B",
       "beta": "0.54",
       "recommendation": "BUY"
     },
@@ -270,12 +270,12 @@
       "ticker": "BE",
       "shortName": "Bloom Energy Corporation",
       "sector": "Industrials",
-      "price": 273.55,
-      "pe": "350.7x",
+      "price": 273.08,
+      "pe": "350.1x",
       "ev_ebitda": "195.4x",
       "net_margin": "7.9%",
       "revenue_growth": "+165.5%",
-      "market_cap": "US$ 80.6B",
+      "market_cap": "US$ 80.4B",
       "beta": "3.81",
       "recommendation": "BUY"
     },
@@ -283,7 +283,7 @@
       "ticker": "MLI",
       "shortName": "Mueller Industries, Inc.",
       "sector": "Industrials",
-      "price": 63.6,
+      "price": 63.59,
       "pe": "16.6x",
       "ev_ebitda": "11.7x",
       "net_margin": "18.2%",
@@ -296,7 +296,7 @@
       "ticker": "AAAU",
       "shortName": "Goldman Sachs Physical Gold ETF",
       "sector": "N/A",
-      "price": 43.55,
+      "price": 43.5,
       "pe": "N/D",
       "ev_ebitda": "N/D",
       "net_margin": "N/D",
@@ -309,8 +309,8 @@
       "ticker": "GDX",
       "shortName": "VanEck Gold Miners ETF",
       "sector": "N/A",
-      "price": 100.15,
-      "pe": "12.9x",
+      "price": 99.95,
+      "pe": "12.8x",
       "ev_ebitda": "N/D",
       "net_margin": "N/D",
       "revenue_growth": "N/D",
@@ -322,7 +322,7 @@
       "ticker": "SLV",
       "shortName": "iShares Silver Trust",
       "sector": "N/A",
-      "price": 61.36,
+      "price": 61.19,
       "pe": "N/D",
       "ev_ebitda": "N/D",
       "net_margin": "N/D",
@@ -345,48 +345,607 @@
       "recommendation": "N/A"
     }
   ],
-  "superinvestors_13f": [
+  "superinvestors_13f": null,
+  "dataroma_consensus": [
     {
-      "investor": "Howard Marks (Oaktree Capital Management)",
-      "filing_period": "Período: Q2 2026",
-      "thesis": "Dívida estressada, shipping, energia e assimetria de crédito",
-      "top_holdings": [
-        "TRMD Torm Plc (13.87%)",
-        "EXE Expand Energy Corp. (12.64%)",
-        "GTX Garrett Motion Inc. (7.28%)",
-        "AU AngloGold Ashanti Ltd. (6.81%)",
-        "INDV Indivior Pharmaceuticals Inc. (6.65%)",
-        "TDS Telephone & Data Systems (5.17%)"
-      ],
-      "action_guidance": "Foco em disciplina de ciclo, assimetria em ativos reais e preservação de caixa para compra nos picos de estresse de liquidez."
+      "ticker": "MSFT",
+      "name": "Microsoft Corp.",
+      "sector": "Information Technology",
+      "ownership_count": 37,
+      "hold_price": "$373.02"
     },
     {
-      "investor": "Warren Buffett (Berkshire Hathaway)",
-      "filing_period": "Período: Q2 2026",
-      "thesis": "Acúmulo recorde de Treasury Bills (SGOV/Caixa), energia (Oxy) e defensivos",
-      "top_holdings": [
-        "AAPL Apple Inc. (22.04%)",
-        "AXP American Express (17.14%)",
-        "KO Coca Cola Co. (10.86%)",
-        "GOOGL Alphabet Inc. (9.41%)",
-        "BAC Bank of America Corp. (9.20%)",
-        "CVX Chevron Corp. (4.67%)"
-      ],
-      "action_guidance": "Foco em disciplina de ciclo, assimetria em ativos reais e preservação de caixa para compra nos picos de estresse de liquidez."
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "sector": "Information Technology",
+      "ownership_count": 36,
+      "hold_price": "$357.37"
     },
     {
-      "investor": "Li Lu (Himalaya Capital Management)",
-      "filing_period": "Período: Q2 2026",
-      "thesis": "Monopólios seculares, semicondutores, energia e megacaps de tecnologia",
-      "top_holdings": [
-        "GOOGL Alphabet Inc. (24.55%)",
-        "GOOG Alphabet Inc. CL C (23.39%)",
-        "PDD Pinduoduo Inc. (22.17%)",
-        "BRK.B Berkshire Hathaway CL B (14.98%)",
-        "EWBC East West Bancorp (9.68%)",
-        "CROX Crocs Inc. (2.89%)"
-      ],
-      "action_guidance": "Foco em disciplina de ciclo, assimetria em ativos reais e preservação de caixa para compra nos picos de estresse de liquidez."
+      "ticker": "AMZN",
+      "name": "Amazon.com Inc.",
+      "sector": "Consumer Discretionary",
+      "ownership_count": 34,
+      "hold_price": "$238.34"
+    },
+    {
+      "ticker": "META",
+      "name": "Meta Platforms Inc.",
+      "sector": "Technology",
+      "ownership_count": 31,
+      "hold_price": "$563.30"
+    },
+    {
+      "ticker": "V",
+      "name": "Visa Inc.",
+      "sector": "Services",
+      "ownership_count": 30,
+      "hold_price": "$343.09"
+    },
+    {
+      "ticker": "BRK.B",
+      "name": "Berkshire Hathaway CL B",
+      "sector": "Financials",
+      "ownership_count": 26,
+      "hold_price": "$500.39"
+    },
+    {
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "sector": "Information Technology",
+      "ownership_count": 22,
+      "hold_price": "$289.36"
+    },
+    {
+      "ticker": "MA",
+      "name": "Mastercard Inc.",
+      "sector": "Services",
+      "ownership_count": 22,
+      "hold_price": "$513.60"
+    },
+    {
+      "ticker": "DIS",
+      "name": "Walt Disney Co.",
+      "sector": "Consumer Discretionary",
+      "ownership_count": 20,
+      "hold_price": "$96.25"
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corp.",
+      "sector": "Information Technology",
+      "ownership_count": 18,
+      "hold_price": "$200.09"
+    },
+    {
+      "ticker": "MCO",
+      "name": "Moody's Corp",
+      "sector": "Financials",
+      "ownership_count": 17,
+      "hold_price": "$452.92"
+    },
+    {
+      "ticker": "UNH",
+      "name": "United Health Group Inc.",
+      "sector": "Health Care",
+      "ownership_count": 17,
+      "hold_price": "$415.63"
+    },
+    {
+      "ticker": "AXP",
+      "name": "American Express",
+      "sector": "Financials",
+      "ownership_count": 16,
+      "hold_price": "$338.24"
+    },
+    {
+      "ticker": "COF",
+      "name": "Capital One Financial",
+      "sector": "Financials",
+      "ownership_count": 16,
+      "hold_price": "$200.62"
+    },
+    {
+      "ticker": "BAC",
+      "name": "Bank of America Corp.",
+      "sector": "Financials",
+      "ownership_count": 15,
+      "hold_price": "$56.98"
+    },
+    {
+      "ticker": "JPM",
+      "name": "JPMorgan Chase & Co.",
+      "sector": "Financials",
+      "ownership_count": 15,
+      "hold_price": "$327.33"
+    },
+    {
+      "ticker": "SPGI",
+      "name": "S&P Global Inc.",
+      "sector": "Consumer Discretionary",
+      "ownership_count": 15,
+      "hold_price": "$407.26"
+    },
+    {
+      "ticker": "CMCSA",
+      "name": "Comcast Corp.",
+      "sector": "Consumer Discretionary",
+      "ownership_count": 14,
+      "hold_price": "$24.55"
+    },
+    {
+      "ticker": "ORCL",
+      "name": "Oracle Corp.",
+      "sector": "Information Technology",
+      "ownership_count": 14,
+      "hold_price": "$146.55"
+    },
+    {
+      "ticker": "TXN",
+      "name": "Texas Instruments",
+      "sector": "Information Technology",
+      "ownership_count": 14,
+      "hold_price": "$298.07"
+    },
+    {
+      "ticker": "WFC",
+      "name": "Wells Fargo",
+      "sector": "Financials",
+      "ownership_count": 14,
+      "hold_price": "$82.64"
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "sector": "Technology",
+      "ownership_count": 13,
+      "hold_price": "$377.75"
+    },
+    {
+      "ticker": "ACN",
+      "name": "Accenture",
+      "sector": "Services",
+      "ownership_count": 12,
+      "hold_price": "$124.44"
+    },
+    {
+      "ticker": "AMAT",
+      "name": "Applied Materials",
+      "sector": "Information Technology",
+      "ownership_count": 12,
+      "hold_price": "$723.00"
+    },
+    {
+      "ticker": "DHR",
+      "name": "Danaher Corp.",
+      "sector": "Industrials",
+      "ownership_count": 12,
+      "hold_price": "$190.48"
+    }
+  ],
+  "dataroma_activity": {
+    "top_buys": [
+      {
+        "ticker": "BFAM",
+        "manager": "Abrams Bison Investments",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Bright Horizons Family Solutions Inc.Add 69.37%Change to portfolio: 3.39%"
+      },
+      {
+        "ticker": "URBN",
+        "manager": "Abrams Bison Investments",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Urban Outfitters Inc.Add 0.22%Change to portfolio: 0.02%"
+      },
+      {
+        "ticker": "SUNB",
+        "manager": "AKO Capital",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Sunbelt Rentals Holdings IncAdd 90.72%Change to portfolio: 5.04%"
+      },
+      {
+        "ticker": "APD",
+        "manager": "AKO Capital",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Air Products & ChemicalsAdd 137.13%Change to portfolio: 2.19%"
+      },
+      {
+        "ticker": "ASH",
+        "manager": "Alex Roepers - Atlantic Investment Management",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Ashland Global Holdings Inc.BuyChange to portfolio: 17.47%"
+      },
+      {
+        "ticker": "XRAY",
+        "manager": "Alex Roepers - Atlantic Investment Management",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "DENTSPLY SIRONA Inc.Add 261.15%Change to portfolio: 8.81%"
+      },
+      {
+        "ticker": "PVH",
+        "manager": "Alex Roepers - Atlantic Investment Management",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "PVH Corp.Add 100.33%Change to portfolio: 4.97%"
+      },
+      {
+        "ticker": "APTV",
+        "manager": "Alex Roepers - Atlantic Investment Management",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Aptiv PLCAdd 40.52%Change to portfolio: 4.18%"
+      },
+      {
+        "ticker": "VGNT",
+        "manager": "Alex Roepers - Atlantic Investment Management",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Versigent PlcBuyChange to portfolio: 2.64%"
+      },
+      {
+        "ticker": "MSFT",
+        "manager": "AltaRock Partners",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Microsoft Corp.Add 25.00%Change to portfolio: 4.11%"
+      },
+      {
+        "ticker": "MA",
+        "manager": "AltaRock Partners",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Mastercard Inc.Add 46.22%Change to portfolio: 2.93%"
+      },
+      {
+        "ticker": "V",
+        "manager": "AltaRock Partners",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Visa Inc.Add 67.74%Change to portfolio: 2.73%"
+      },
+      {
+        "ticker": "INTU",
+        "manager": "Arnold Van Den Berg - Century Management",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Intuit Inc.Add 264.25%Change to portfolio: 1.00%"
+      },
+      {
+        "ticker": "APH",
+        "manager": "Arnold Van Den Berg - Century Management",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Amphenol Corp.BuyChange to portfolio: 0.81%"
+      },
+      {
+        "ticker": "MKTX",
+        "manager": "Arnold Van Den Berg - Century Management",
+        "period": "Q2 2026",
+        "action": "COMPRA / APORTE",
+        "details": "MarketAxess Holdings Inc.Add 65.66%Change to portfolio: 0.50%"
+      }
+    ],
+    "top_sells": [
+      {
+        "ticker": "SUNB",
+        "manager": "Abrams Bison Investments",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Sunbelt Rentals Holdings IncReduce -83.61%Change to portfolio: 38.36%"
+      },
+      {
+        "ticker": "SNX",
+        "manager": "Abrams Bison Investments",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "SYNNEX Corp.Reduce -18.88%Change to portfolio: 6.14%"
+      },
+      {
+        "ticker": "AMAT",
+        "manager": "Abrams Bison Investments",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Applied MaterialsReduce -21.59%Change to portfolio: 5.36%"
+      },
+      {
+        "ticker": "TFX",
+        "manager": "Abrams Bison Investments",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "TeleflexReduce -20.70%Change to portfolio: 1.28%"
+      },
+      {
+        "ticker": "ACHC",
+        "manager": "Abrams Bison Investments",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Acadia Healthcare Co.Reduce -4.91%Change to portfolio: 0.31%"
+      },
+      {
+        "ticker": "NYT",
+        "manager": "Abrams Bison Investments",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "New York Times CL AReduce -5.97%Change to portfolio: 0.29%"
+      },
+      {
+        "ticker": "WAT",
+        "manager": "AKO Capital",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Waters Corp.Reduce -75.11%Change to portfolio: 5.37%"
+      },
+      {
+        "ticker": "BKNG",
+        "manager": "AKO Capital",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Booking Holdings Inc.Sell -100.00%Change to portfolio: 4.11%"
+      },
+      {
+        "ticker": "ADI",
+        "manager": "AKO Capital",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Analog DevicesReduce -40.08%Change to portfolio: 3.82%"
+      },
+      {
+        "ticker": "AMZN",
+        "manager": "AKO Capital",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Amazon.com Inc.Reduce -34.04%Change to portfolio: 3.27%"
+      },
+      {
+        "ticker": "CSCO",
+        "manager": "AKO Capital",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Cisco SystemsReduce -35.22%Change to portfolio: 2.94%"
+      },
+      {
+        "ticker": "ICE",
+        "manager": "AKO Capital",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Intercontinental Exchange Inc.Reduce -46.27%Change to portfolio: 2.48%"
+      },
+      {
+        "ticker": "GE",
+        "manager": "AKO Capital",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "GE AerospaceReduce -22.61%Change to portfolio: 1.96%"
+      },
+      {
+        "ticker": "SYK",
+        "manager": "AKO Capital",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Stryker Corp.Reduce -91.75%Change to portfolio: 1.67%"
+      },
+      {
+        "ticker": "DCH",
+        "manager": "Alex Roepers - Atlantic Investment Management",
+        "period": "Q2 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Dauch Corp.Reduce -63.43%Change to portfolio: 6.88%"
+      }
+    ]
+  },
+  "portfolio_dataroma_match": [
+    {
+      "ticker": "GOOGL",
+      "ownership_count": 36,
+      "hold_price": "$357.37",
+      "sector": "Information Technology",
+      "is_top_consensus": true,
+      "recent_activity": "🟢 Alta Convicção Institucional (Top Consenso)",
+      "activity_badge": "badge-bullish"
+    },
+    {
+      "ticker": "META",
+      "ownership_count": 31,
+      "hold_price": "$563.30",
+      "sector": "Technology",
+      "is_top_consensus": true,
+      "recent_activity": "🟢 Alta Convicção Institucional (Top Consenso)",
+      "activity_badge": "badge-bullish"
+    },
+    {
+      "ticker": "AVGO",
+      "ownership_count": 13,
+      "hold_price": "$377.75",
+      "sector": "Technology",
+      "is_top_consensus": true,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "MELI",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "UBER",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "ASML",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "FN",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "ALAB",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "COHR",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "CRDO",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "ARM",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "MTSI",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "AXTI",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "TSEM",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "INTC",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "NOK",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "NEM",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "BE",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "MLI",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "AAAU",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "GDX",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "SLV",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "SGOV",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
     }
   ],
   "factset": {

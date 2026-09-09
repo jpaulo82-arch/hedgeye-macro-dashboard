@@ -2336,7 +2336,72 @@ function renderMarketAnalytics(data) {
     `).join("");
   }
 
-  // 4. Renderiza Tabela Fundamentalista
+  // 4. Renderiza Cruzamento Carteira vs Dataroma
+  const matchTable = document.getElementById("dataromaMatchTableBody");
+  if (matchTable && data.portfolio_dataroma_match) {
+    matchTable.innerHTML = data.portfolio_dataroma_match.map(m => {
+      const isConsensusBadge = m.is_top_consensus 
+        ? `<span class="badge badge-bullish" style="font-size: 0.72rem;">⭐ ALTO CONSENSO (${m.ownership_count} Fundos)</span>`
+        : (m.ownership_count > 0 
+            ? `<span class="badge badge-neutral" style="font-size: 0.72rem;">${m.ownership_count} Fundos</span>` 
+            : `<span class="badge badge-tail" style="font-size: 0.72rem;">Tese Própria / Niche</span>`);
+
+      return `
+        <tr>
+          <td><strong style="color: #60A5FA; font-size: 0.95rem;">${m.ticker}</strong></td>
+          <td><span style="font-size: 0.8rem; color: #94A3B8;">${m.sector}</span></td>
+          <td><strong>${m.ownership_count > 0 ? `${m.ownership_count} Superinvestidores` : 'Exclusivo da Carteira'}</strong></td>
+          <td><span style="font-family: 'JetBrains Mono', monospace; color: #38BDF8; font-weight: 600;">${m.hold_price}</span></td>
+          <td>${isConsensusBadge}</td>
+          <td><span class="badge ${m.activity_badge}" style="font-size: 0.72rem; line-height: 1.3;">${m.recent_activity}</span></td>
+        </tr>
+      `;
+    }).join("");
+  }
+
+  // 5. Renderiza Top Consenso Global (Grand Portfolio)
+  const consensusTable = document.getElementById("dataromaConsensusTableBody");
+  if (consensusTable && data.dataroma_consensus) {
+    consensusTable.innerHTML = data.dataroma_consensus.map((c, idx) => `
+      <tr>
+        <td><strong style="color: #F59E0B;">#${idx + 1} ${c.ticker}</strong></td>
+        <td><span style="font-size: 0.82rem;">${c.name}</span> <br><small style="color: #94A3B8;">${c.sector}</small></td>
+        <td><span class="badge badge-bullish" style="font-size: 0.72rem;">${c.ownership_count} Fundos</span></td>
+        <td><strong style="font-family: 'JetBrains Mono', monospace; color: #60A5FA;">${c.hold_price}</strong></td>
+      </tr>
+    `).join("");
+  }
+
+  // 6. Renderiza Radar de Fluxo (Top Buys & Sells)
+  const buysContainer = document.getElementById("dataromaTopBuysContainer");
+  const sellsContainer = document.getElementById("dataromaTopSellsContainer");
+  if (data.dataroma_activity) {
+    if (buysContainer && data.dataroma_activity.top_buys) {
+      buysContainer.innerHTML = data.dataroma_activity.top_buys.map(b => `
+        <div style="background: rgba(16, 185, 129, 0.08); border-left: 3px solid #10B981; padding: 0.4rem 0.6rem; border-radius: 4px; font-size: 0.76rem;">
+          <div style="display: flex; justify-content: space-between;">
+            <strong style="color: #34D399;">${b.ticker}</strong>
+            <span style="color: #94A3B8;">${b.manager}</span>
+          </div>
+          <div style="color: #CBD5E1; font-size: 0.72rem;">${b.details}</div>
+        </div>
+      `).join("");
+    }
+
+    if (sellsContainer && data.dataroma_activity.top_sells) {
+      sellsContainer.innerHTML = data.dataroma_activity.top_sells.map(s => `
+        <div style="background: rgba(239, 68, 68, 0.08); border-left: 3px solid #EF4444; padding: 0.4rem 0.6rem; border-radius: 4px; font-size: 0.76rem;">
+          <div style="display: flex; justify-content: space-between;">
+            <strong style="color: #F87171;">${s.ticker}</strong>
+            <span style="color: #94A3B8;">${s.manager}</span>
+          </div>
+          <div style="color: #CBD5E1; font-size: 0.72rem;">${s.details}</div>
+        </div>
+      `).join("");
+    }
+  }
+
+  // 7. Renderiza Tabela Fundamentalista
   const fundTable = document.getElementById("analyticsFundamentalsTableBody");
   if (fundTable && data.fundamentals && data.fundamentals.length > 0) {
     if (document.getElementById("fundamentalsCount")) {

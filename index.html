@@ -1590,7 +1590,100 @@
           </div>
         </div>
 
-        <!-- SEÇÃO 3: MÚLTIPLOS FUNDAMENTALISTAS AO VIVO DAS AÇÕES DA CARTEIRA -->
+        <!-- SEÇÃO 3: CRUZAMENTO — NOSSA CARTEIRA VS SUPERINVESTIDORES (DATAROMA MATCH) -->
+        <div class="card mb-4" style="border: 1px solid rgba(16, 185, 129, 0.3); background: rgba(15, 23, 42, 0.75);">
+          <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.3rem;">🎯</span>
+              <h3 style="margin: 0; font-size: 1.15rem; color: #E2E8F0;">Alinhamento da Carteira com Superinvestidores (Dataroma Match)</h3>
+            </div>
+            <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.4);">CONSENSO INSTITUCIONAL</span>
+          </div>
+          <p style="margin: 0 0 1rem; font-size: 0.84rem; color: #94A3B8;">
+            Mapeamento dos ativos da nossa carteira que estão nas mãos dos maiores gestores globais (Howard Marks, Buffett, Li Lu, Ackman, etc.), com o <em>Hold Price</em> médio dos tubarões e o fluxo recente.
+          </p>
+          
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Ticker</th>
+                  <th>Setor / Categoria</th>
+                  <th>Fundos Lendários Detentores</th>
+                  <th>Preço Médio dos Tubarões (Hold Price)</th>
+                  <th>Status de Consenso</th>
+                  <th>Atividade Recente dos Gestores</th>
+                </tr>
+              </thead>
+              <tbody id="dataromaMatchTableBody">
+                <tr><td colspan="6" style="text-align: center; color: #94A3B8; padding: 1.5rem;">Carregando alinhamento institucional...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- SEÇÃO 4: TOP CONSENSO DE MERCADO & FLUXO RECENTE (ENTRADAS VS SAÍDAS) -->
+        <div class="grid-2-col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          
+          <!-- Top Consenso Global (Grand Portfolio) -->
+          <div class="card" style="border: 1px solid rgba(59, 130, 246, 0.3);">
+            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-size: 1.2rem;">🏆</span>
+                <h3 style="margin: 0; font-size: 1.1rem; color: #E2E8F0;">Top Consenso Global (Grand Portfolio)</h3>
+              </div>
+              <span class="badge" style="background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.4);">MAIS DETIDAS</span>
+            </div>
+            <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0.8rem;">
+              As ações com maior presença absoluta nos portfólios dos superinvestidores de Wall Street.
+            </p>
+            <div class="table-responsive" style="max-height: 380px; overflow-y: auto;">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Ticker</th>
+                    <th>Empresa</th>
+                    <th>Superinvestidores</th>
+                    <th>Hold Price Médio</th>
+                  </tr>
+                </thead>
+                <tbody id="dataromaConsensusTableBody">
+                  <tr><td colspan="4" style="text-align: center; color: #94A3B8; padding: 1.5rem;">Carregando consenso...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Fluxo Recente de Compras & Vendas (Top Buys & Sells) -->
+          <div class="card" style="border: 1px solid rgba(245, 158, 11, 0.3);">
+            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-size: 1.2rem;">🔄</span>
+                <h3 style="margin: 0; font-size: 1.1rem; color: #E2E8F0;">Radar de Fluxo: Entradas & Saídas</h3>
+              </div>
+              <span class="badge" style="background: rgba(245, 158, 11, 0.2); color: #FBBF24; border: 1px solid rgba(245, 158, 11, 0.4);">ATIVIDADE 13F</span>
+            </div>
+            
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div>
+                <div style="font-size: 0.84rem; font-weight: 700; color: #10B981; margin-bottom: 0.4rem;">🟢 Maiores Compras & Aportes Recentes:</div>
+                <div id="dataromaTopBuysContainer" style="display: flex; flex-direction: column; gap: 0.4rem; max-height: 180px; overflow-y: auto;">
+                  <div style="font-size: 0.78rem; color: #94A3B8;">Carregando compras...</div>
+                </div>
+              </div>
+
+              <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.8rem;">
+                <div style="font-size: 0.84rem; font-weight: 700; color: #EF4444; margin-bottom: 0.4rem;">🔴 Maiores Vendas & Reduções:</div>
+                <div id="dataromaTopSellsContainer" style="display: flex; flex-direction: column; gap: 0.4rem; max-height: 180px; overflow-y: auto;">
+                  <div style="font-size: 0.78rem; color: #94A3B8;">Carregando vendas...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SEÇÃO 5: MÚLTIPLOS FUNDAMENTALISTAS AO VIVO DAS AÇÕES DA CARTEIRA -->
         <div class="card mb-4" style="border: 1px solid rgba(255, 255, 255, 0.08);">
           <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
             <div style="display: flex; align-items: center; gap: 0.5rem;">
