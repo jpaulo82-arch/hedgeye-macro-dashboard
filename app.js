@@ -479,13 +479,26 @@ function setTab(tabId) {
   });
 
   if (tabId === "portfolio") {
-    setTimeout(updatePortfolioChart, 50);
+    setTimeout(updatePortfolioChart, 60);
+  }
+  if (tabId === "playbook") {
+    if (marketAnalyticsData && marketAnalyticsData.quad_rotation_tracker) {
+      setTimeout(() => renderQuadRotationTracker(marketAnalyticsData.quad_rotation_tracker), 60);
+    } else {
+      fetchMarketAnalyticsData();
+    }
   }
   if (tabId === "analytics") {
     if (marketAnalyticsData) {
-      setTimeout(() => renderMarketAnalytics(marketAnalyticsData), 50);
+      setTimeout(() => renderMarketAnalytics(marketAnalyticsData), 60);
     } else {
       fetchMarketAnalyticsData();
+    }
+  }
+  if (tabId === "earlylook") {
+    if (allReportsCache && allReportsCache.length > 0) {
+      const activeRep = allReportsCache.find(r => r.id === activeTranslatedReportId || r.filename === activeTranslatedReportId) || allReportsCache[0];
+      renderEarlyLookTranslatedView(activeRep);
     }
   }
 }

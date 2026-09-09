@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260903_3">
+  <link rel="stylesheet" href="style.css?v=20260903_4">
   <!-- Chart.js para gráficos dinâmicos -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- html2pdf.js para exportação direta de arquivos PDF de alta fidelidade -->
@@ -54,8 +54,8 @@
       <button class="btn btn-outline" id="btnSyncHeader" onclick="syncReportsOnDemand()" title="Sincronizar novos relatórios com o Gmail agora">
         <span class="icon" id="syncIconHeader">🔄</span> <span id="syncTextHeader">Sincronizar Relatórios</span>
       </button>
-      <button class="btn btn-outline" id="btnEarlyLookTraduzidoHeader" onclick="setTab('earlylook-translated')" title="Ver o Early Look de hoje 100% traduzido">
-        <span class="icon">📑</span> <span>EARLY LOOK Traduzido (09/09)</span>
+      <button class="btn btn-outline" id="btnEarlyLookTraduzidoHeader" onclick="setTab('earlylook')" title="Acessar o EARLY LOOK traduzido na Central de Relatórios">
+        <span class="icon">📑</span> <span>EARLY LOOK (09/09)</span>
       </button>
       <button class="btn btn-primary" id="btnDailyReportHeader" onclick="openReportModal()">
         <span class="icon">📄</span> <span id="btnDailyReportText">Relatório Diário (09/09)</span>
@@ -63,34 +63,28 @@
     </div>
   </header>
 
-  <!-- Navigation Tabs -->
+  <!-- Navigation Tabs (NOVA ORDEM SOLICITADA) -->
   <nav class="nav-tabs">
-    <button class="nav-tab active" data-tab="earlylook-translated" id="navTabEarlylookTranslated" onclick="setTab('earlylook-translated')">
-      📑 EARLY LOOK Traduzido (<span id="navEarlylookDate">09/09</span>) <span class="badge-new-pulsing">HOJE</span>
-    </button>
-    <button class="nav-tab" data-tab="dashboard" onclick="setTab('dashboard')">
-      📊 Painel Executivo & GIP
-    </button>
-    <button class="nav-tab" data-tab="riskranges" id="navTabRiskRanges" onclick="setTab('riskranges')">
-      🎯 Risk Ranges & Sinais (<span id="navRiskRangeDate">09/09</span>)
+    <button class="nav-tab active" data-tab="dashboard" onclick="setTab('dashboard')">
+      📊 Painel Executivo
     </button>
     <button class="nav-tab" data-tab="portfolio" onclick="setTab('portfolio')">
-      💼 Portfólios (Schwab / Tastyworks)
-    </button>
-    <button class="nav-tab" data-tab="analytics" onclick="setTab('analytics')">
-      🌐 Análise Avançada (GEX, FactSet & 13F)
+      💼 Portfólio
     </button>
     <button class="nav-tab" data-tab="decisions" onclick="setTab('decisions')">
-      📝 Log de Decisões & Auditoria
+      📝 Decisões Keith
     </button>
     <button class="nav-tab" data-tab="playbook" onclick="setTab('playbook')">
-      📖 Playbook GIP (Livro Pág. 27)
+      🧭 Sistema GIP
+    </button>
+    <button class="nav-tab" data-tab="analytics" onclick="setTab('analytics')">
+      🏛️ Institucionais
     </button>
     <button class="nav-tab" data-tab="analyzer" onclick="setTab('analyzer')">
-      🔍 Analisador de Ações (5 Passos)
+      🔍 Analisador de Ações
     </button>
     <button class="nav-tab" data-tab="earlylook" onclick="setTab('earlylook')">
-      📥 Base & Sincronizador E-mails
+      📥 Base & Sincronizador
     </button>
   </nav>
 
@@ -98,458 +92,36 @@
   <main class="main-container">
 
     <!-- ========================================================
-         TAB 0: EARLY LOOK DO DIA TRADUZIDO (PORTUGUÊS BRASIL)
+         1. PAINEL EXECUTIVO (COM RISK RANGES INTEGRADO)
          ======================================================== -->
-    <section id="tab-earlylook-translated" class="tab-content active">
-      <div class="earlylook-view-wrapper">
-        
-        <!-- Barra de Controles e Seleção de Relatório -->
-        <div class="earlylook-control-bar">
-          <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-            <label for="selectTranslatedReport" style="font-size: 0.88rem; font-weight: 600; color: #94A3B8;">
-              <span class="icon">📅</span> Selecionar Relatório:
-            </label>
-            <select id="selectTranslatedReport" class="form-select" style="min-width: 340px; font-weight: 600;" onchange="changeTranslatedReport(this.value)">
-              <option value="latest" selected>09/09/2026 — EARLY LOOK: Burning Down The USD House? (Hoje)</option>
-              <option value="08/09/2026">08/09/2026 — EARLY LOOK: Oil, Rates, Inflation #Accelerating</option>
-              <option value="04/09/2026">04/09/2026 — EARLY LOOK: #Quad2 Then #Quad2?</option>
-              <option value="03/09/2026">03/09/2026 — EARLY LOOK: Riding The Waves of Volatility</option>
-              <option value="02/09/2026">02/09/2026 — EARLY LOOK: Bubbles Imploding vs. TRADE Breakouts</option>
-            </select>
-          </div>
-
-          <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
-            <!-- Alternador de Idioma -->
-            <div class="btn-group">
-              <button class="btn btn-sm btn-primary" id="btnLangPt" onclick="setEarlyLookLanguage('pt')">
-                🇧🇷 Tradução (PT-BR)
-              </button>
-              <button class="btn btn-sm btn-outline" id="btnLangEn" onclick="setEarlyLookLanguage('en')">
-                🇺🇸 Original (EN)
-              </button>
-            </div>
-
-            <button class="btn btn-sm btn-outline" onclick="copyEarlyLookTranslation()" title="Copiar texto traduzido completo">
-              <span class="icon">📋</span> Copiar Tradução
-            </button>
-            <button class="btn btn-sm btn-outline" onclick="printEarlyLookReport()" title="Imprimir ou salvar PDF desta tradução">
-              <span class="icon">🖨️</span> Imprimir / PDF
-            </button>
-            <button class="btn btn-sm btn-outline" onclick="syncReportsOnDemand()" title="Buscar novos relatórios no Gmail">
-              <span class="icon">🔄</span> Sincronizar
-            </button>
-          </div>
-        </div>
-
-        <!-- Conteúdo Renderizado da Tradução em Português -->
-        <div id="earlylookTranslatedContainer">
-          
-          <!-- Hero Header Executivo -->
-          <div class="earlylook-hero-header">
-            <div class="hero-meta-row">
-              <div class="quad-badge quad-3">
-                <span class="pulse-dot"></span>
-                <span id="elHeaderRegime">REGIME GIP: QUAD 3 (#ACCELERATING)</span>
-              </div>
-              <div style="font-size: 0.85rem; color: #38BDF8; font-family: 'JetBrains Mono', monospace;">
-                RESEARCH EXCLUSIVO HEDGEYE RISK MANAGEMENT
-              </div>
-            </div>
-
-            <div class="hero-title-group">
-              <h2 id="elMainTitle">EARLY LOOK: <span>Incendiando a "Casa" do Dólar Americano?</span></h2>
-              <div class="hero-subtitle-meta">
-                <span><strong>Data Oficial:</strong> <span id="elDisplayDate">Quarta-feira, 09 de Setembro de 2026 (07:42 EDT)</span></span>
-                <span>•</span>
-                <span><strong>Autor:</strong> Keith McCullough (@keithmccullough)</span>
-                <span>•</span>
-                <span><strong>Status:</strong> <span class="badge badge-bullish">100% Sincronizado & Traduzido</span></span>
-              </div>
-            </div>
-
-            <!-- Citação Filosófica de David Bohm -->
-            <div class="earlylook-quote-banner">
-              <span class="quote-icon">“</span>
-              <div class="quote-text" id="elQuoteText">
-                A Ordem Implicada é particularmente adequada para a compreensão da totalidade ininterrupta em movimento fluente.
-                <span class="quote-author">— David Bohm (Físico Quântico)</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Cards de Key Takeaways (Principais Conclusões) -->
-          <div class="mt-2">
-            <h3 style="font-size: 1.15rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
-              <span class="icon">🎯</span> Principais Destaques Estratégicos (Key Takeaways)
-            </h3>
-            <div class="key-takeaways-grid" id="elTakeawaysGrid">
-              <!-- Card 1: Dólar -->
-              <div class="takeaway-card rose-border">
-                <div class="takeaway-header">
-                  <span class="t-icon">📉</span>
-                  <h4>1. Colapso do Dólar para Mínimas de 3 Meses</h4>
-                </div>
-                <div class="takeaway-body">
-                  O <strong>Dólar Americano (DXY)</strong> rompeu para novas mínimas de 3 meses ($98,77) em Bearish TREND, enquanto o Iene Japonês (+0,4% a 153,51) e as commodities disparam. Essa fraqueza cambial <strong>está realimentando a inflação</strong>, em vez de contê-la.
-                </div>
-              </div>
-
-              <!-- Card 2: Bond Yields -->
-              <div class="takeaway-card amber-border">
-                <div class="takeaway-header">
-                  <span class="t-icon">📈</span>
-                  <h4>2. Juros dos T-Bonds em Novas Máximas de Ciclo</h4>
-                </div>
-                <div class="takeaway-body">
-                  As taxas dos Treasuries permanecem sob forte pressão compradora de yields. O <strong>UST 2Y (topo em 4,50%)</strong> e o <strong>UST 10Y (4,68%–4,86%)</strong> sinalizam novas máximas do ciclo inflacionário, impulsionados por alta em commodities, risco de guerra e Dólar fraco.
-                </div>
-              </div>
-
-              <!-- Card 3: Rotação de Fluxos -->
-              <div class="takeaway-card emerald-border">
-                <div class="takeaway-header">
-                  <span class="t-icon">🔄</span>
-                  <h4>3. Rotação Acelerada para Ativos Reais & Cíclicos</h4>
-                </div>
-                <div class="takeaway-body">
-                  Os fluxos globais não sumiram: estão rotacionando. O setor imobiliário americano (Housing ITB) está derretendo (-10,1% no mês), enquanto o capital migra agressivamente para <strong>Commodities Físicas (CRB +11,5%, Cobre em ATHs, Ouro)</strong> e Semicondutores cíclicos.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tese Central Macroeconômica & Macro Grind Traduzida -->
-          <div class="thesis-article-card mt-2">
-            <div class="thesis-article-header">
-              <h3><span class="icon">📖</span> Tese Macroeconômica Completa & The Macro Grind (Traduzido)</h3>
-              <span class="tag tag-info">Análise Quantitativa Fractal & Teoria dos Sistemas</span>
-            </div>
-
-            <!-- Bloco 1: A Grande Imagem (The Big Picture) -->
-            <div class="thesis-section-block">
-              <h4 class="thesis-section-title"><span class="icon">🧭</span> 1. A Grande Imagem: A Física Quântica dos Mercados (The Big Picture)</h4>
-              <p class="thesis-paragraph">
-                David Bohm foi um físico quântico que argumentou que a <strong>realidade é fundamentalmente uma totalidade contínua e ininterrupta</strong> (e não uma coleção de objetos isolados), e que o que percebemos como coisas distintas são apenas padrões temporários abstraídos dessa ordem implicada mais profunda.
-              </p>
-              <p class="thesis-paragraph">
-                A menos que você seja um crente cego no "Governo Central" e acredite que os burocratas do Federal Reserve e do Tesouro Americano foram colocados na Terra para dobrar as leis da gravidade econômica e suavizar mercados, você entende uma verdade fundamental: <strong>você não pode manipular uma parte de um sistema sem que o todo reaja</strong>.
-              </p>
-              <p class="thesis-paragraph">
-                Scott Bessent aparentemente perdeu esse capítulo do livro de Bohm ao declarar: <em>"Eu sou a casa agora"</em> ao falar sobre intervenções no Iene e manipulação de mercado. A "casa" de Bessent está se incendiando em termos de Dólar Americano, atingindo novas mínimas de 3 meses esta manhã. Se você é investidor, sua casa foi construída, comprada e precificada em dólares. <strong>A Ordem Implicada não se importa com quem se declarou no comando: ela simplesmente continua fluindo.</strong>
-              </p>
-            </div>
-
-            <!-- Bloco 2: A Mecânica da Destruição do Poder de Compra -->
-            <div class="thesis-section-block">
-              <h4 class="thesis-section-title"><span class="icon">🔥</span> 2. Como a Sua "Casa" Queima em Poder de Compra Real</h4>
-              <p class="thesis-paragraph">
-                Como lembrete essencial aos investidores, é exatamente assim que o seu patrimônio é corroído em termos de poder de compra real:
-              </p>
-              <div style="background: rgba(244, 63, 94, 0.08); border-left: 3px solid #F43F5E; padding: 0.9rem 1.2rem; border-radius: 6px; margin: 0.8rem 0;">
-                <p style="margin: 0; color: #FECDD3; font-weight: 600; font-size: 0.92rem;">
-                  1️⃣ A moeda na qual você é remunerado (USD / Dólar) cai de valor.<br>
-                  2️⃣ O preço real dos bens e insumos que você precisa/deseja comprar com essa moeda suada sobe expressivamente.
-                </p>
-              </div>
-              <p class="thesis-paragraph">
-                As únicas pessoas que "não verão" isso são aquelas que tentarão criar narrativas otimistas e distorcidas sobre os números de inflação do CPI. A população real entende perfeitamente: os preços do mundo real não mentem, os políticos sim.
-              </p>
-            </div>
-
-            <!-- Bloco 3: Cadeia Causal Macroeconômica (Fluxograma) -->
-            <div class="thesis-section-block">
-              <h4 class="thesis-section-title"><span class="icon">⚡</span> 3. A Cadeia Causal da Inflação & Juros (Efeito Dominó Macro)</h4>
-              <p class="thesis-paragraph">
-                Esta é a mecânica matemática inexorável que rege o momento atual dos mercados:
-              </p>
-
-              <div class="causal-chain-grid">
-                <div class="causal-chain-step">
-                  <div class="step-number">PASSO 1</div>
-                  <div class="step-title">Iene Sobe (Up Yen)</div>
-                  <div class="step-desc">+0,4% para 153,51 (Bullish TREND)</div>
-                </div>
-                <div class="causal-chain-step">
-                  <div class="step-number">PASSO 2</div>
-                  <div class="step-title">Dólar Cai (Down USD)</div>
-                  <div class="step-desc">Mínima de 3 meses ($98,77 Bearish)</div>
-                </div>
-                <div class="causal-chain-step">
-                  <div class="step-number">PASSO 3</div>
-                  <div class="step-title">Inflação Acelera</div>
-                  <div class="step-desc">CRB Commodities em Máxima de Ciclo</div>
-                </div>
-                <div class="causal-chain-step">
-                  <div class="step-number">PASSO 4</div>
-                  <div class="step-title">Yields dos Bonds Sobem</div>
-                  <div class="step-desc">UST 10Y em 4,86% (Novas Máximas)</div>
-                </div>
-                <div class="causal-chain-step">
-                  <div class="step-number">PASSO 5</div>
-                  <div class="step-title">Fuga para Ativos Reais</div>
-                  <div class="step-desc">Ouro, Cobre (ATH) & Petróleo WTI</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Bloco 4: Setores em Colapso vs Setores Líderes -->
-            <div class="thesis-section-block">
-              <h4 class="thesis-section-title"><span class="icon">🏗️</span> 4. Diagnóstico Setorial: Housing em Colapso vs Superciclo de Commodities</h4>
-              <p class="thesis-paragraph">
-                O setor imobiliário residencial americano (<strong>Housing / ITB</strong>) liderou as quedas de ontem, caindo <strong>-3,0% em um único pregão</strong> e acumulando um drawdown de <strong>-10,1% no último mês</strong>.
-              </p>
-              <p class="thesis-paragraph">
-                Por outro lado, o fator <strong>High Beta Momentum</strong> (que sinalizamos na semana passada como sobrevendido no curto prazo TRADE) teve um repique de alívio (+6,7% no dia, mas ainda -5,0% no mês).
-              </p>
-              <p class="thesis-paragraph">
-                Bohm estava certo: não é possível manipular uma peça sem que o todo responda. Se o capital não pode comprar Dólares ou Treasuries americanos com rendimentos reais negativos ou juros em alta, <strong>A Máquina dos Algoritmos continua comprando Commodities</strong>. E não se engane: Semicondutores também são commodities cíclicas essenciais. Este é um sistema fechado: o dinheiro desvalorizado precisa fluir para algum lugar.
-              </p>
-            </div>
-          </div>
-
-          <!-- Níveis Oficiais de Risk Ranges de Hoje (09/09/2026) -->
-          <div class="thesis-article-card mt-2">
-            <div class="thesis-article-header">
-              <div>
-                <h3><span class="icon">🎯</span> Níveis Oficiais de Risk Ranges™ Traduzidos (09/09/2026)</h3>
-                <p class="subtitle" style="margin-top: 0.2rem;">Sinais quantitativos e faixas de volatilidade ajustada calculados pelo modelo de Keith McCullough</p>
-              </div>
-              <button class="btn btn-sm btn-outline" onclick="setTab('riskranges')">
-                <span class="icon">📊</span> Ver no Painel Interativo de Ranges
-              </button>
-            </div>
-
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Ativo / Ticker</th>
-                  <th>Nome Completo</th>
-                  <th>Piso (Low)</th>
-                  <th>Teto (High)</th>
-                  <th>Sinal TREND</th>
-                  <th>Interpretação Operacional Hedgeye</th>
-                </tr>
-              </thead>
-              <tbody id="elRiskRangesTableBody">
-                <tr>
-                  <td><strong>UST10Y</strong></td>
-                  <td>10-Year U.S. Treasury Yield</td>
-                  <td><strong>4.68%</strong></td>
-                  <td><strong>4.86%</strong></td>
-                  <td><span class="badge badge-bullish">BULLISH</span></td>
-                  <td>Novas máximas de ciclo de inflação. Manter Shorts em Renda Fixa Longa.</td>
-                </tr>
-                <tr>
-                  <td><strong>USD</strong></td>
-                  <td>U.S. Dollar Index (DXY)</td>
-                  <td><strong>98.41</strong></td>
-                  <td><strong>99.52</strong></td>
-                  <td><span class="badge badge-bearish">BEARISH</span></td>
-                  <td>Mínimas de 3 meses. Combustível principal para o rali de commodities.</td>
-                </tr>
-                <tr>
-                  <td><strong>GOLD</strong></td>
-                  <td>Gold Spot Price (Ouro Físico / Oz)</td>
-                  <td><strong>4.290</strong></td>
-                  <td><strong>4.599</strong></td>
-                  <td><span class="badge badge-bullish">BULLISH</span></td>
-                  <td>Pilar de ouro inabalável no Quad 3. Comprar nos recuos em direção ao piso.</td>
-                </tr>
-                <tr>
-                  <td><strong>COPPER</strong></td>
-                  <td>Copper Spot (Cobre Físico)</td>
-                  <td><strong>6.49</strong></td>
-                  <td><strong>6.75</strong></td>
-                  <td><span class="badge badge-bullish">BULLISH</span></td>
-                  <td>Rompendo para Máximas Históricas (ATHs). Superciclo de demanda física.</td>
-                </tr>
-                <tr>
-                  <td><strong>WTIC</strong></td>
-                  <td>Petróleo WTI (Light Crude)</td>
-                  <td><strong>86.36</strong></td>
-                  <td><strong>97.53</strong></td>
-                  <td><span class="badge badge-bullish">BULLISH</span></td>
-                  <td>Teto explodiu para 97,53. Reflação acelerada favorece energia e serviços (OIH).</td>
-                </tr>
-                <tr>
-                  <td><strong>NATGAS</strong></td>
-                  <td>Gás Natural (Henry Hub)</td>
-                  <td><strong>2.80</strong></td>
-                  <td><strong>3.03</strong></td>
-                  <td><span class="badge badge-bullish">BULLISH</span></td>
-                  <td>Bullish TREND intacto com suporte em 2,80.</td>
-                </tr>
-                <tr>
-                  <td><strong>OIH</strong></td>
-                  <td>VanEck Oil Services ETF</td>
-                  <td><strong>414.00</strong></td>
-                  <td><strong>444.00</strong></td>
-                  <td><span class="badge badge-bullish">BULLISH</span></td>
-                  <td>Piso elevado para 414. Alavancagem operacional ao preço do petróleo.</td>
-                </tr>
-                <tr>
-                  <td><strong>IGV</strong></td>
-                  <td>Tech-Software Sector ETF</td>
-                  <td><strong>99.00</strong></td>
-                  <td><strong>112.00</strong></td>
-                  <td><span class="badge badge-bullish">BULLISH</span></td>
-                  <td>Long AI Software vs Short Semis segue forte. Software enterprise com pricing power.</td>
-                </tr>
-                <tr>
-                  <td><strong>SPX</strong></td>
-                  <td>S&P 500 Index</td>
-                  <td><strong>7.604</strong></td>
-                  <td><strong>7.767</strong></td>
-                  <td><span class="badge badge-bullish">BULLISH</span></td>
-                  <td>Large Caps sustentadas por fluxos institucionais e lucros sólidos.</td>
-                </tr>
-                <tr>
-                  <td><strong>COMPQ</strong></td>
-                  <td>NASDAQ Composite</td>
-                  <td><strong>26.008</strong></td>
-                  <td><strong>26.711</strong></td>
-                  <td><span class="badge badge-bullish">BULLISH</span></td>
-                  <td>Resiliência em Big Techs com fortes fluxos de caixa livre (FCF).</td>
-                </tr>
-                <tr>
-                  <td><strong>RUT</strong></td>
-                  <td>Russell 2000 (Small Caps)</td>
-                  <td><strong>2.912</strong></td>
-                  <td><strong>3.014</strong></td>
-                  <td><span class="badge badge-neutral">NEUTRAL</span></td>
-                  <td>Small Caps sofrem com aperto de juros (UST10Y > 4,70%). Manter neutralidade.</td>
-                </tr>
-                <tr>
-                  <td><strong>LQD</strong></td>
-                  <td>Investment Grade Corporate Bond ETF</td>
-                  <td><strong>104.60</strong></td>
-                  <td><strong>106.10</strong></td>
-                  <td><span class="badge badge-bearish">BEARISH</span></td>
-                  <td>Bearish TREND. Manter Short em crédito de empresas sensíveis à taxa longa.</td>
-                </tr>
-                <tr>
-                  <td><strong>HYG</strong></td>
-                  <td>High Yield Corporate Bond ETF</td>
-                  <td><strong>78.91</strong></td>
-                  <td><strong>79.49</strong></td>
-                  <td><span class="badge badge-bullish">BULLISH</span></td>
-                  <td>Spreads de crédito comprimidos no curto prazo; vigiar teto em 79,49.</td>
-                </tr>
-                <tr>
-                  <td><strong>XLV</strong></td>
-                  <td>Health Care Select Sector SPDR</td>
-                  <td><strong>166.00</strong></td>
-                  <td><strong>175.00</strong></td>
-                  <td><span class="badge badge-bullish">BULLISH</span></td>
-                  <td>Defensiva de alta qualidade e resiliência de fluxo em Quad 3.</td>
-                </tr>
-                <tr>
-                  <td><strong>VIX</strong></td>
-                  <td>CBOE Volatility Index</td>
-                  <td><strong>13.85</strong></td>
-                  <td><strong>16.34</strong></td>
-                  <td><span class="badge badge-bearish">BEARISH</span></td>
-                  <td>Volatilidade implícita em Bearish TREND com teto em 16,34.</td>
-                </tr>
-                <tr>
-                  <td><strong>SILVER</strong></td>
-                  <td>Prata Spot (Oz)</td>
-                  <td><strong>64.00</strong></td>
-                  <td><strong>68.00</strong></td>
-                  <td><span class="badge badge-neutral">NEUTRAL</span></td>
-                  <td>Sinal NEUTRAL no curto prazo. Não comprar a queda até recuperar o sinal TRADE.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Diretrizes Táticas de Alocação de Portfólio -->
-          <div class="thesis-article-card mt-2">
-            <div class="thesis-article-header">
-              <h3><span class="icon">💼</span> Diretrizes Operacionais para as Carteiras (Schwab & Tastyworks)</h3>
-              <span class="tag tag-success">Alinhamento Rigoroso com o Regime Quad 3</span>
-            </div>
-
-            <div class="action-guidelines-grid">
-              <!-- Compras / Manter com Convicção -->
-              <div class="action-box buy-box">
-                <div class="action-box-title">
-                  <span class="icon">🟢</span> COMPRAR NOS RECÚOS & MANTER POSIÇÕES CORE
-                </div>
-                <ul class="action-list">
-                  <li><strong>• Ouro Físico (AAAU) & Mineradoras (NEM / GDX):</strong> Comprar recuos nos pisos de Risk Range. Principal âncora patrimonial contra DXY Bearish.</li>
-                  <li><strong>• Metais Industriais & Cobre (MLI / ICOP):</strong> Cobre em Máximas Históricas (ATHs); demanda secular por infraestrutura elétrica.</li>
-                  <li><strong>• Energia Descentralizada (BE / GRID) & Petróleo (WTIC / OIH):</strong> Favorecidos pelo choque de oferta e inflação em aceleração.</li>
-                  <li><strong>• Monopólios de Fluxo de Caixa (MELI / GOOG / META / AVGO):</strong> Capacidade de repasse inflacionário e margens FCF elevadas.</li>
-                  <li><strong>• Caixa em T-Bills (SGOV / Cash):</strong> Preservar liquidez para executar compras estritamente nos pisos de volatilidade.</li>
-                </ul>
-              </div>
-
-              <!-- Vender nos Topos / Evitar -->
-              <div class="action-box sell-box">
-                <div class="action-box-title">
-                  <span class="icon">🔴</span> VENDER NOS REPIQUES & MANTER SHORTS
-                </div>
-                <ul class="action-list">
-                  <li><strong>• Treasuries Longos (TLT / ZROZ):</strong> Yields dos bonds em novas máximas de ciclo (UST 10Y até 4,86%). Manter short estrutural.</li>
-                  <li><strong>• Crédito Corporativo Longo (LQD):</strong> Bearish TREND (104,60–106,10).</li>
-                  <li><strong>• Setor Imobiliário Residencial (Housing ITB):</strong> Drawdown de -10,1% no mês pelo impacto de juros altos de hipoteca.</li>
-                  <li><strong>• Utilities (XLU):</strong> Recarregar shorts em repiques contra o teto de Risk Range.</li>
-                  <li><strong>• Small Caps Endividadas (RUT):</strong> Rebaixadas para Neutral; custo de rolagem de dívida corrói lucros operacionais.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Visualizador do Texto Original em Inglês (Oculto por padrão, acionado pelo toggle) -->
-        <div id="earlylookOriginalContainer" style="display: none;">
-          <div class="thesis-article-card">
-            <div class="thesis-article-header">
-              <div>
-                <h3 id="elOriginalTitle">EARLY LOOK: Burning Down The USD House? (Original English)</h3>
-                <p class="subtitle" style="margin-top: 0.2rem;">Texto integral bruto capturado diretamente do e-mail da Hedgeye via IMAP</p>
-              </div>
-              <span class="badge badge-accent">Raw E-mail Research</span>
-            </div>
-            <pre id="elOriginalContent" style="background: rgba(15, 23, 42, 0.9); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); color: #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.6; white-space: pre-wrap; overflow-x: auto; max-height: 650px; overflow-y: auto;">
-            </pre>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TAB 1: DASHBOARD EXECUTIVO & GIP -->
-    <section id="tab-dashboard" class="tab-content">
+    <section id="tab-dashboard" class="tab-content active">
       <!-- Métricas Rápidas / Alertas Principais de Hoje -->
       <div class="metrics-grid">
         <div class="metric-card">
           <div class="metric-title">OURO SPOT (GOLD)</div>
           <div class="metric-value text-emerald" id="val-gold">4.480 <span class="badge badge-bullish">Bullish TREND</span></div>
-          <div class="metric-sub" id="sub-gold">Range: 4.274 a 4.646. Pilar sólido de proteção macro.</div>
+          <div class="metric-sub" id="sub-gold">Range: 4.290 a 4.599. Pilar sólido de proteção macro no Quad 3.</div>
         </div>
         <div class="metric-card">
           <div class="metric-title">DÓLAR INDEX (DXY)</div>
-          <div class="metric-value text-rose" id="val-dxy">99.10 <span class="badge badge-bearish">Bearish TREND</span></div>
-          <div class="metric-sub" id="sub-dxy">Range: 98.60–99.67 (Bearish). Impulso reflacionário global.</div>
+          <div class="metric-value text-rose" id="val-dxy">98.77 <span class="badge badge-bearish">Bearish TREND</span></div>
+          <div class="metric-sub" id="sub-dxy">Range: 98.41–99.52 (Bearish). Mínimas de 3 meses alimentam inflação.</div>
         </div>
         <div class="metric-card">
           <div class="metric-title">PETRÓLEO (WTI)</div>
           <div class="metric-value text-emerald" id="val-wti">91.20 <span class="badge badge-bullish">Bullish TREND</span></div>
-          <div class="metric-sub" id="sub-wti">Range: 85.75 a 96.62 (+23% mês). Teto explodiu para 96.62.</div>
+          <div class="metric-sub" id="sub-wti">Range: 86.36 a 97.53 (+23% mês). Teto explodiu para 97.53.</div>
         </div>
         <div class="metric-card">
           <div class="metric-title">UST 10Y YIELD</div>
           <div class="metric-value text-amber" id="val-ust10">4.78% <span class="badge badge-bullish">Bullish TREND</span></div>
-          <div class="metric-sub" id="sub-ust10">Range: 4.70% a 4.87%. Higher-for-longer pressiona Utilities.</div>
+          <div class="metric-sub" id="sub-ust10">Range: 4.68% a 4.86%. Máximas de ciclo pressionam crédito e dívida.</div>
         </div>
       </div>
 
-      <!-- Grid 2 Colunas: Matriz GIP e Diagnóstico Executivo -->
+      <!-- Grid 2 Colunas: Matriz GIP e Síntese Matinal -->
       <div class="grid-2-col">
-        <!-- Card 1: Matriz de 4 Quadrantes Hedgeye (ORDEM RIGOROSA: 1, 2, 3, 4) -->
+        <!-- Card 1: Matriz de 4 Quadrantes Hedgeye -->
         <div class="card">
           <div class="card-header">
             <h3><span class="icon">🧭</span> Matriz de Regime Macro (GIP Framework)</h3>
@@ -557,7 +129,7 @@
           </div>
           <div class="card-body">
             <div class="gip-quad-grid">
-              <!-- QUAD 1: SUPERIOR ESQUERDO -->
+              <!-- QUAD 1 -->
               <div class="gip-box quad-1">
                 <div class="quad-num">QUAD 1</div>
                 <div class="quad-name">Goldilocks</div>
@@ -565,7 +137,7 @@
                 <div class="quad-favors">Favorece: Tech/QQQ, Consumo Discr., Russell (IWM)</div>
               </div>
               
-              <!-- QUAD 2: SUPERIOR DIREITO -->
+              <!-- QUAD 2 -->
               <div class="gip-box quad-2">
                 <div class="quad-num">QUAD 2</div>
                 <div class="quad-name">Reflação / Expansão</div>
@@ -573,17 +145,17 @@
                 <div class="quad-favors">Favorece: Commodities, Energia, Materiais, Industriais</div>
               </div>
 
-              <!-- QUAD 3: INFERIOR ESQUERDO (REGIME ATUAL) -->
+              <!-- QUAD 3 (REGIME ATUAL) -->
               <div class="gip-box quad-3 active-quad">
                 <div class="active-beacon">📍 REGIME ATUAL</div>
                 <div class="quad-num">QUAD 3</div>
                 <div class="quad-name">Estagflação / Reflação</div>
                 <div class="quad-factors">G ↓ | I ↑</div>
                 <div class="quad-favors">Favorece: OURO (GOLD), Energia, Commodities, Cobre (ATH), SGOV</div>
-                <div class="quad-avoids">Evitar: Short Treasuries (TLT/ZROZ), Short LQD, Short Utilities (XLU)</div>
+                <div class="quad-avoids">Evitar: Short Treasuries (TLT/IEF), Short LQD, Short Utilities (XLU)</div>
               </div>
 
-              <!-- QUAD 4: INFERIOR DIREITO -->
+              <!-- QUAD 4 -->
               <div class="gip-box quad-4">
                 <div class="quad-num">QUAD 4</div>
                 <div class="quad-name">Deflação / Recessão</div>
@@ -678,7 +250,44 @@
         </div>
       </div>
 
-      <!-- Card 3: Calendário Econômico & Catalisadores Macro (Nowcast Triggers) -->
+      <!-- SEÇÃO INTEGRADA: RISK RANGES & SINAIS HEDGEYE (OUR LEVELS) -->
+      <div class="card mt-3">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">🎯</span> Risk Ranges Oficiais (Our Levels — <span id="riskRangeHeaderDate">09/09/2026</span>)</h3>
+            <p class="subtitle" id="riskRangeSubtitle">Sinais quantitativos e faixas de volatilidade ajustada calculados pelo modelo de Keith McCullough</p>
+          </div>
+          <div class="filter-group">
+            <button class="btn btn-sm btn-outline active" onclick="filterRiskRanges('all', this)">Todos</button>
+            <button class="btn btn-sm btn-outline" onclick="filterRiskRanges('indices', this)">Índices</button>
+            <button class="btn btn-sm btn-outline" onclick="filterRiskRanges('rates', this)">Taxas & FX</button>
+            <button class="btn btn-sm btn-outline" onclick="filterRiskRanges('commodities', this)">Commodities / Ouro</button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="data-table" id="riskRangeTable">
+              <thead>
+                <tr>
+                  <th>Ativo / Ticker</th>
+                  <th>Tipo</th>
+                  <th>Piso (Low)</th>
+                  <th>Teto (High)</th>
+                  <th>Preço Atual</th>
+                  <th style="min-width: 180px;">Posição no Range</th>
+                  <th>Sinal Hedgeye</th>
+                  <th>Assimetria & Ação Mecânica</th>
+                </tr>
+              </thead>
+              <tbody id="riskRangeTableBody">
+                <!-- Linhas inseridas via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calendário Econômico & Catalisadores Macro (Nowcast Triggers) -->
       <div class="card mt-3">
         <div class="card-header">
           <div>
@@ -780,52 +389,15 @@
       </div>
     </section>
 
-    <!-- TAB 2: RISK RANGES & SINAIS HEDGEYE -->
-    <section id="tab-riskranges" class="tab-content">
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <h3><span class="icon">🎯</span> Risk Ranges Oficiais (Our Levels — <span id="riskRangeHeaderDate">08/09/2026</span>)</h3>
-            <p class="subtitle" id="riskRangeSubtitle">Extraídos automaticamente do EARLYLOOK "Oil, Rates, Inflation #Accelerating"</p>
-          </div>
-          <div class="filter-group">
-            <button class="btn btn-sm btn-outline active" onclick="filterRiskRanges('all', this)">Todos</button>
-            <button class="btn btn-sm btn-outline" onclick="filterRiskRanges('indices', this)">Índices</button>
-            <button class="btn btn-sm btn-outline" onclick="filterRiskRanges('rates', this)">Taxas & FX</button>
-            <button class="btn btn-sm btn-outline" onclick="filterRiskRanges('commodities', this)">Commodities / Ouro</button>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="data-table" id="riskRangeTable">
-              <thead>
-                <tr>
-                  <th>Ativo / Ticker</th>
-                  <th>Tipo</th>
-                  <th>Piso (Low)</th>
-                  <th>Teto (High)</th>
-                  <th>Preço Atual</th>
-                  <th style="min-width: 180px;">Posição no Range</th>
-                  <th>Sinal Hedgeye</th>
-                  <th>Assimetria & Ação Mecânica</th>
-                </tr>
-              </thead>
-              <tbody id="riskRangeTableBody">
-                <!-- Linhas inseridas via JavaScript -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 3: PORTFÓLIOS (SCHWAB & TASTYWORKS) -->
+    <!-- ========================================================
+         2. PORTFÓLIO (SCHWAB, TASTYWORKS & CONSOLIDADO)
+         ======================================================== -->
     <section id="tab-portfolio" class="tab-content">
       <!-- Visão Superior de Portfólio -->
       <div class="portfolio-header-bar">
         <div class="portfolio-info">
           <h2 id="portViewTitle">Carteira: Charles Schwab (US$ 211.922,66)</h2>
-          <span class="badge badge-accent" id="portLastUpdate">Último snapshot: 02/09/2026 | Confirmado</span>
+          <span class="badge badge-accent" id="portLastUpdate">Último snapshot: 09/09/2026 | Confirmado</span>
         </div>
         <div class="portfolio-actions">
           <button class="btn btn-accent" onclick="openRebalanceModal()">
@@ -845,7 +417,7 @@
         <div class="card stat-card">
           <div class="stat-label">PATRIMÔNIO TOTAL ESTIMADO</div>
           <div class="stat-val" id="portTotalValue">US$ 211.922,66</div>
-          <div class="stat-desc">Baseado nas capturas confirmadas de 02/09/2026</div>
+          <div class="stat-desc">Baseado nas capturas confirmadas de 09/09/2026</div>
         </div>
         <div class="card stat-card">
           <div class="stat-label">ALOCAÇÃO DE CAIXA / SGOV</div>
@@ -952,13 +524,238 @@
       </div>
     </section>
 
-    <!-- TAB 4: PLAYBOOK GIP (LIVRO PÁG. 27) -->
+    <!-- ========================================================
+         3. DECISÕES KEITH (LOG DE DECISÕES & AUDITORIA)
+         ======================================================== -->
+    <section id="tab-decisions" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">📝</span> Log de Decisões, Chamadas do Keith & Auditoria de Teses</h3>
+            <p class="subtitle">Registro auditável para separar a qualidade do processo dos resultados de curto prazo</p>
+          </div>
+          <button class="btn btn-primary" onclick="openNewDecisionModal()">
+            <span class="icon">➕</span> Nova Decisão
+          </button>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Ativo / Tema</th>
+                  <th>Carteira</th>
+                  <th>Categoria</th>
+                  <th>Decisão / Conduta</th>
+                  <th>Racional Operacional</th>
+                  <th>Gatilho de Invalidação</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="decisionsTableBody">
+                <!-- CHAMADAS DE HOJE: 09/09/2026 (EARLYLOOK "Burning Down The USD House?") -->
+                <tr style="background: rgba(56, 189, 248, 0.08);">
+                  <td><strong>09/09/2026</strong> <br><span class="badge badge-accent">KM Call (Hoje)</span></td>
+                  <td><strong>Dólar Index (USD / DXY) & Iene (JPY)</strong></td>
+                  <td>Macro Global</td>
+                  <td><span class="badge badge-bearish">CURRENCY DEBASEMENT</span></td>
+                  <td><strong>Bearish TREND / Mínima de 3 Meses ($98,77)</strong></td>
+                  <td>Dólar em colapso com Iene subindo (+0,4% a 153,51) gera choque inflacionário e fuga do poder de compra real para commodities.</td>
+                  <td>Fechamento do DXY acima de 100,00 ou quebra de TREND no Iene.</td>
+                  <td><span class="badge badge-bearish">🔴 Bearish TREND</span></td>
+                </tr>
+                <tr style="background: rgba(56, 189, 248, 0.08);">
+                  <td><strong>09/09/2026</strong> <br><span class="badge badge-accent">KM Call (Hoje)</span></td>
+                  <td><strong>Ouro Spot & Cobre Físico (GOLD / COPPER / NEM)</strong></td>
+                  <td>Ambas</td>
+                  <td><span class="badge badge-core">REAL ASSETS / ATHs</span></td>
+                  <td><strong>Comprar Recuos / Alocação Máxima no Piso</strong></td>
+                  <td>Cobre rompendo para Máximas Históricas (ATHs 6,49–6,75), Ouro sustentado em 4.290–4.599 e CRB Index em nova máxima de ciclo.</td>
+                  <td>Fechamento do Ouro abaixo de US$ 4.204.</td>
+                  <td><span class="badge badge-bullish">🟢 Convicção Máxima</span></td>
+                </tr>
+                <tr style="background: rgba(56, 189, 248, 0.08);">
+                  <td><strong>09/09/2026</strong> <br><span class="badge badge-accent">KM Call (Hoje)</span></td>
+                  <td><strong>Treasuries & Juros Longos (UST10Y / TLT / IEF)</strong></td>
+                  <td>Macro Shorts</td>
+                  <td><span class="badge badge-bearish">SHORT DURATION ESTRUTURAL</span></td>
+                  <td><strong>Manter Shorts / Yields em Novas Máximas de Ciclo</strong></td>
+                  <td>UST 10Y Yield sinaliza topo em 4,86% e 2Y em 4,50%. Expectativas de inflação em alta pressionam a ponta longa.</td>
+                  <td>UST 10Y Yield fechando abaixo de 4,68%.</td>
+                  <td><span class="badge badge-bearish">🔴 Short Estrutural</span></td>
+                </tr>
+                <tr style="background: rgba(56, 189, 248, 0.08);">
+                  <td><strong>09/09/2026</strong> <br><span class="badge badge-accent">KM Call (Hoje)</span></td>
+                  <td><strong>Setor Imobiliário Residencial (Housing / ITB)</strong></td>
+                  <td>Macro Shorts</td>
+                  <td><span class="badge badge-bearish">COLLAPSE / HOUSING</span></td>
+                  <td><strong>Evitar / Subponderar / Short</strong></td>
+                  <td>Cesta de Housing da Goldman Sachs despencou -3,0% ontem e acumula -10,1% no mês devido ao impacto de juros de hipotecas altos.</td>
+                  <td>Rompimento de ITB acima de máximas de 3 meses.</td>
+                  <td><span class="badge badge-bearish">🔴 Setor Frágil</span></td>
+                </tr>
+                <!-- CHAMADAS DE 08/09/2026 -->
+                <tr>
+                  <td>08/09/2026</td>
+                  <td><strong>Petróleo & Oil Services (WTIC / OIH)</strong></td>
+                  <td>Ambas</td>
+                  <td><span class="badge badge-core">REFLAÇÃO QUAD 3</span></td>
+                  <td><strong>Long / Convicção Máxima (#Accelerating)</strong></td>
+                  <td>WTI disparou +23% no mês para teto de US$ 97,53. OIH elevou piso para 414 e teto para 444. Reforça superciclo de commodities.</td>
+                  <td>Quebra de suporte do WTI abaixo de US$ 86,36.</td>
+                  <td><span class="badge badge-bullish">🟢 Ativo (Líder)</span></td>
+                </tr>
+                <tr>
+                  <td>08/09/2026</td>
+                  <td><strong>Russell 2000 vs Large Caps (RUT / SPX)</strong></td>
+                  <td>Global</td>
+                  <td><span class="badge badge-tail">FACTOR REALLOCATION</span></td>
+                  <td><strong>Rebaixar RUT para Neutral / Priorizar Large Caps</strong></td>
+                  <td>Russell acumula -2,0% no mês sob pressão do custo de dívida e aperto financeiro. Large Caps mantêm fluxo comprador com SPX Bullish (7.604–7.767).</td>
+                  <td>RUT rompendo acima de 3.014 com alívio persistente nos bond yields.</td>
+                  <td><span class="badge badge-neutral">🟡 Rebaixado p/ Neutral</span></td>
+                </tr>
+                <tr>
+                  <td>08/09/2026</td>
+                  <td><strong>Utilities (XLU) & Crédito Corporativo (LQD)</strong></td>
+                  <td>Schwab + Shorts</td>
+                  <td><span class="badge badge-bearish">RELOAD SHORTS</span></td>
+                  <td><strong>Recarregar Shorts em XLU e Manter Short LQD</strong></td>
+                  <td>Keith McCullough recarregou posições short em Utilities no repique. LQD Bearish TREND (104,60–106,10) reflete deterioração de crédito longo.</td>
+                  <td>XLU em nova máxima histórica ou LQD sustentado acima de 106,10.</td>
+                  <td><span class="badge badge-bearish">🔴 Alerta Bearish</span></td>
+                </tr>
+                <!-- CHAMADAS ANTERIORES -->
+                <tr>
+                  <td>04/09/2026</td>
+                  <td><strong>AI Software vs Semis (IGV / SMH)</strong></td>
+                  <td>Hedgeye Macro</td>
+                  <td><span class="badge badge-core">LONG SOFTWARE / SHORT SEMIS</span></td>
+                  <td>Manter / Sobreponderar AI Software</td>
+                  <td>Long AI Software vs Short Semis avançou +17,9% no mês, enquanto High Beta Momentum desabou das máximas.</td>
+                  <td>Reversão técnica no par com quebra de fluxo em software enterprise.</td>
+                  <td><span class="badge badge-bullish">Ativo</span></td>
+                </tr>
+                <tr>
+                  <td>02/09/2026</td>
+                  <td><strong>High Beta & Semis IA (Quad 1)</strong></td>
+                  <td>Tasty + Schwab</td>
+                  <td><span class="badge badge-tail">TAIL (1–3%)</span></td>
+                  <td>Manter estritamente dentro do limite TAIL</td>
+                  <td>Cestas de momentum em drawdown de -24%; limitar risco a 1-3% por ativo e proteger caixa SGOV.</td>
+                  <td>Quebra simultânea de TRADE e TREND aciona saída total (#OUT).</td>
+                  <td><span class="badge badge-neutral">Vigente</span></td>
+                </tr>
+                <tr>
+                  <td>01/09/2026</td>
+                  <td><strong>MercadoLibre (MELI)</strong></td>
+                  <td>Ambas</td>
+                  <td><span class="badge badge-core">CORE GROWTH</span></td>
+                  <td>Manter posição integral</td>
+                  <td>Dólar fraco (DXY Bearish) expande margens na América Latina com aceleração de fintech (Mercado Pago).</td>
+                  <td>Desaceleração de TPV abaixo de 20% com deterioração de crédito.</td>
+                  <td><span class="badge badge-bullish">Vigente</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         4. SISTEMA GIP (RADAR DE ROTAÇÃO 30D + PLAYBOOK PÁG. 27)
+         ======================================================== -->
     <section id="tab-playbook" class="tab-content">
+      <!-- BLOCO 1: RADAR DE ROTAÇÃO DE QUADRANTES (SIMULAÇÃO 30D & ACELERAÇÃO) -->
+      <div class="card mb-4" style="border: 1px solid rgba(245, 158, 11, 0.4); background: linear-gradient(180deg, rgba(15, 23, 42, 0.85), rgba(30, 41, 59, 0.6));">
+        <div class="card-header" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.8rem; margin-bottom: 1.2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.4rem;">📈</span>
+              <h3 style="margin: 0; font-size: 1.2rem; color: #F59E0B;">Radar de Rotação de Quadrantes: Carteiras Simuladas (30 Dias)</h3>
+            </div>
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <span class="badge badge-bullish" id="quadLeadingBadge">LÍDER 30D: QUAD 2</span>
+              <span class="badge badge-neutral" style="font-size: 0.75rem;">16 ATIVOS CHAVE</span>
+            </div>
+          </div>
+          <p style="margin: 0.4rem 0 0; font-size: 0.85rem; color: #94A3B8;">
+            Monitoramento diário comparativo das 4 cestas de ativos representativos de cada Quadrante Macro (4 ativos por cesta). Permite identificar qual regime está acelerando no tempo e <strong>antecipar transições de quadrantes</strong> antes do consenso de mercado.
+          </p>
+        </div>
+
+        <!-- Banner de Diagnóstico Preditivo / Early Warning -->
+        <div id="quadTransitionBanner" style="margin-bottom: 1.2rem; padding: 0.85rem 1.1rem; border-radius: 8px; background: rgba(16, 185, 129, 0.12); border-left: 4px solid #10B981; font-size: 0.88rem; line-height: 1.45; color: #F1F5F9;">
+          Carregando diagnóstico preditivo de rotação...
+        </div>
+
+        <!-- Ratios de Aceleração Macro (Growth ROC vs Inflation ROC) -->
+        <div style="margin-bottom: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+            <span style="font-size: 0.88rem; font-weight: 700; color: #38BDF8; letter-spacing: 0.5px;">
+              ⚡ INDICADORES DE ACELERAÇÃO MACRO (RATE OF CHANGE — 2ª DERIVADA HEDGEYE)
+            </span>
+            <span style="font-size: 0.75rem; color: #94A3B8;">Cross-Asset Spreads (ROC 5D)</span>
+          </div>
+          <div class="grid-4-col" id="quadMacroRatiosContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem;">
+            <!-- Preenchido dinamicamente via JS -->
+          </div>
+        </div>
+
+        <!-- Grid dos 4 Quadrantes com Retornos 1D, 5D, 30D e Aceleração -->
+        <div class="grid-4-col" id="quadBasketsCardsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+          <!-- Renderizado dinamicamente via JS -->
+        </div>
+
+        <!-- Gráfico de Linhas Comparativo 30 Dias -->
+        <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 1.2rem; margin-bottom: 1.2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap;">
+            <h4 style="margin: 0; font-size: 0.95rem; color: #E2E8F0;">Trajetória Acumulada das 4 Cestas de Quadrantes (% nos últimos 30 dias)</h4>
+            <div style="display: flex; gap: 1rem; font-size: 0.78rem; font-weight: 600;">
+              <span style="color: #3B82F6;">● Quad 1 (Tech & Consumo: QQQ, XLY, IWM, IGV)</span>
+              <span style="color: #10B981;">● Quad 2 (Reflação & Indústria: XLE, CPER, XLI, XLB)</span>
+              <span style="color: #F59E0B;">● Quad 3 (Estagflação: GLD, XLE, XLV, XLP)</span>
+              <span style="color: #A855F7;">● Quad 4 (Deflação: SGOV, IEF, XLV, XLP)</span>
+            </div>
+          </div>
+          <div style="position: relative; height: 280px; width: 100%;">
+            <canvas id="quadRotationChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Tabela com os 16 Ativos Simulados -->
+        <div style="margin-top: 1rem;">
+          <h4 style="font-size: 0.92rem; color: #CBD5E1; margin-bottom: 0.6rem;">Composição Detalhada dos 16 Ativos das Cestas Simuladas:</h4>
+          <div class="table-responsive">
+            <table class="data-table" style="font-size: 0.82rem;">
+              <thead>
+                <tr>
+                  <th>Quadrante</th>
+                  <th>Tese Macro & Fatores</th>
+                  <th>4 Ativos da Cesta</th>
+                  <th>Retorno Hoje (1D)</th>
+                  <th>Retorno 5 Dias</th>
+                  <th>Retorno 30 Dias</th>
+                  <th>2ª Derivada (ROC 5D)</th>
+                  <th>Status Atual</th>
+                </tr>
+              </thead>
+              <tbody id="quadBasketsTableBody">
+                <!-- Renderizado dinamicamente via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCO 2: PLAYBOOK HISTÓRICO OFICIAL DE QUADRANTES (PÁG. 27) -->
       <div class="card">
         <div class="card-header">
           <div>
             <h3><span class="icon">📖</span> Playbook Histórico Oficial de Quadrantes (Master The Market — Pág. 27)</h3>
-            <p class="subtitle">Back-test histórico de retornos trimestrais por classe de ativos desde 1Q98</p>
+            <p class="subtitle">Back-test histórico de retornos trimestrais por classe de ativos e setores desde 1Q98</p>
           </div>
         </div>
         <div class="card-body">
@@ -1023,7 +820,219 @@
       </div>
     </section>
 
-    <!-- TAB 5: ANALISADOR DE AÇÕES (5 PASSOS HEDGEYE) -->
+    <!-- ========================================================
+         5. INSTITUCIONAIS (GEX, FACTSET, 13F & FUNDAMENTALISTA)
+         ======================================================== -->
+    <section id="tab-analytics" class="tab-content">
+      <div class="analytics-view-wrapper">
+        
+        <!-- Header da Aba Institucional -->
+        <div class="analytics-hero-header" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.95)); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;">
+                <span style="font-size: 1.6rem;">🏛️</span>
+                <h2 style="margin: 0; font-size: 1.4rem; font-weight: 700; color: #F8FAFC;">FLUXO INSTITUCIONAL & POSICIONAMENTO 13F</h2>
+                <span class="badge" style="background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.4);">4 MOTORES ATIVOS</span>
+              </div>
+              <p style="margin: 0; color: #94A3B8; font-size: 0.9rem;">
+                Confluência de <strong>GEX / Dealer Gamma (SpotGamma)</strong>, <strong>FactSet Earnings Insight</strong>, <strong>Múltiplos Fundamentalistas</strong> e <strong>Radar 13F (Superinvestidores)</strong>.
+              </p>
+            </div>
+            <div style="display: flex; gap: 0.6rem;">
+              <button class="btn btn-outline btn-sm" onclick="fetchMarketAnalyticsData()">
+                <span class="icon">🔄</span> Atualizar Dados
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEÇÃO 1: MOTOR GEX & DEALER GAMMA (SPOTGAMMA OPEN MODEL) -->
+        <div class="card mb-4" style="border: 1px solid rgba(139, 92, 246, 0.3); background: rgba(15, 23, 42, 0.7);">
+          <div class="card-header" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.8rem; margin-bottom: 1.2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-size: 1.3rem;">⚡</span>
+                <h3 style="margin: 0; font-size: 1.15rem; color: #E2E8F0;">Motor GEX: Exposição de Gamma dos Dealers & Option Walls</h3>
+              </div>
+              <span class="badge" style="background: rgba(139, 92, 246, 0.2); color: #C084FC; border: 1px solid rgba(139, 92, 246, 0.4);">MODELO SPOTGAMMA</span>
+            </div>
+            <p style="margin: 0.4rem 0 0; font-size: 0.82rem; color: #94A3B8;">
+              As <strong>Call Walls</strong> funcionam como resistência magnética e teto de volatilidade; as <strong>Put Walls</strong> atuam como piso de suporte institucional. Em regime de <em>Short Gamma</em>, a volatilidade intradiária acelera agressivamente.
+            </p>
+          </div>
+
+          <div class="grid-3-col" id="gexCardsContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+            <!-- Renderizado dinamicamente via JS -->
+          </div>
+        </div>
+
+        <!-- SEÇÃO 2: FACTSET EARNINGS INSIGHT & CONSENSO MACRO -->
+        <div class="card mb-4" style="border: 1px solid rgba(59, 130, 246, 0.3); background: rgba(15, 23, 42, 0.7);">
+          <div class="card-header" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.8rem; margin-bottom: 1.2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-size: 1.3rem;">📊</span>
+                <h3 style="margin: 0; font-size: 1.15rem; color: #E2E8F0;">FactSet Earnings Insight: Lucros Corporativos & Margens S&P 500</h3>
+              </div>
+              <span class="badge" style="background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.4);">EARNINGS RESEARCH</span>
+            </div>
+            <p style="margin: 0.4rem 0 0; font-size: 0.82rem; color: #94A3B8;">
+              Estimativas de lucros blended do consenso institucional de Wall Street e identificação de compressão/expansão de margens líquidas.
+            </p>
+          </div>
+
+          <div class="grid-3-col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+            <div class="stat-card" style="padding: 1rem; border: 1px solid rgba(255,255,255,0.06); background: rgba(30, 41, 59, 0.4); border-radius: 8px;">
+              <div style="font-size: 0.78rem; color: #94A3B8; margin-bottom: 0.3rem;">CRESCIMENTO EPS (BLENDED YoY)</div>
+              <div style="font-size: 1.4rem; font-weight: 800; color: #34D399;" id="factsetEpsGrowth">+4.8% YoY</div>
+              <div style="font-size: 0.72rem; color: #64748B; margin-top: 0.2rem;">Projeção do trimestre para o S&P 500</div>
+            </div>
+
+            <div class="stat-card" style="padding: 1rem; border: 1px solid rgba(255,255,255,0.06); background: rgba(30, 41, 59, 0.4); border-radius: 8px;">
+              <div style="font-size: 0.78rem; color: #94A3B8; margin-bottom: 0.3rem;">MARGEM LÍQUIDA S&P 500</div>
+              <div style="font-size: 1.4rem; font-weight: 800; color: #38BDF8;" id="factsetNetMargin">12.1%</div>
+              <div style="font-size: 0.72rem; color: #64748B; margin-top: 0.2rem;">Resiliência de grandes empresas com pricing power</div>
+            </div>
+
+            <div class="stat-card" style="padding: 1rem; border: 1px solid rgba(255,255,255,0.06); background: rgba(30, 41, 59, 0.4); border-radius: 8px;">
+              <div style="font-size: 0.78rem; color: #94A3B8; margin-bottom: 0.3rem;">SETORES LÍDERES (CRESCIMENTO)</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: #F8FAFC;" id="factsetLeadingSectors">Tecnologia (+18%), Telecom (+12%)</div>
+              <div style="font-size: 0.72rem; color: #EF4444; margin-top: 0.2rem;">Defasados: Energia (-15%), Materiais (-11%)</div>
+            </div>
+          </div>
+
+          <div style="background: rgba(30, 41, 59, 0.3); padding: 0.9rem 1.1rem; border-radius: 6px; border-left: 3px solid #38BDF8; font-size: 0.85rem; color: #CBD5E1;">
+            <strong>Diagnóstico Macro FactSet:</strong> <span id="factsetQuadInference">Crescimento de lucros concentrado em Big Tech secular; setores cíclicos e commodities apresentando contração de margens, típico de transição entre Quad 2 e Quad 3.</span>
+          </div>
+        </div>
+
+        <!-- SEÇÃO 3: RADAR 13F SUPERINVESTIDORES (DATAROMA AO VIVO) -->
+        <div class="card mb-4" style="border: 1px solid rgba(16, 185, 129, 0.3); background: rgba(15, 23, 42, 0.7);">
+          <div class="card-header" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.8rem; margin-bottom: 1.2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-size: 1.3rem;">🎯</span>
+                <h3 style="margin: 0; font-size: 1.15rem; color: #E2E8F0;">Radar 13F: Posicionamento dos Maiores Gestores Globais</h3>
+              </div>
+              <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.4);">DATAROMA OFICIAL</span>
+            </div>
+            <p style="margin: 0.4rem 0 0; font-size: 0.82rem; color: #94A3B8;">
+              Mapeamento trimestral dos portfólios institucionais de lendas do mercado: <strong>Howard Marks (Oaktree)</strong>, <strong>Warren Buffett (Berkshire)</strong> e <strong>Li Lu (Himalaya)</strong>.
+            </p>
+          </div>
+
+          <!-- Cards dos Superinvestidores -->
+          <div class="grid-3-col mb-3" id="superinvestorsContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+            <!-- Renderizado dinamicamente via JS -->
+          </div>
+
+          <!-- Tabela de Cruzamento da Carteira vs Consenso Dataroma -->
+          <div style="margin-top: 1.5rem;">
+            <h4 style="font-size: 0.95rem; color: #F8FAFC; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.4rem;">
+              <span>🔍</span> Cruzamento: Suas Ações da Carteira vs Detenção dos Superinvestidores
+            </h4>
+            <div class="table-responsive">
+              <table class="data-table" style="font-size: 0.82rem;">
+                <thead>
+                  <tr>
+                    <th>Ticker</th>
+                    <th>Setor</th>
+                    <th>Presença em Superinvestidores</th>
+                    <th>Preço Médio Estimado (Hold Price)</th>
+                    <th>Status de Consenso</th>
+                    <th>Atividade Recente dos Fundos</th>
+                  </tr>
+                </thead>
+                <tbody id="dataromaMatchTableBody">
+                  <!-- Renderizado dinamicamente via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Top Consenso Global e Radar de Fluxo -->
+          <div class="grid-2-col mt-3" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div style="background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(255,255,255,0.06); padding: 1rem; border-radius: 8px;">
+              <h4 style="font-size: 0.88rem; color: #F59E0B; margin-bottom: 0.6rem;">🏆 Top 10 Ações Mais Detidas pelos Superinvestidores (Grand Portfolio)</h4>
+              <div class="table-responsive" style="max-height: 240px; overflow-y: auto;">
+                <table class="data-table" style="font-size: 0.78rem;">
+                  <thead>
+                    <tr>
+                      <th>Ticker</th>
+                      <th>Empresa</th>
+                      <th>Fundos</th>
+                      <th>Hold Price</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dataromaConsensusTableBody">
+                    <!-- Renderizado dinamicamente via JS -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div style="background: rgba(30, 41, 59, 0.3); border: 1px solid rgba(255,255,255,0.06); padding: 1rem; border-radius: 8px;">
+              <h4 style="font-size: 0.88rem; color: #38BDF8; margin-bottom: 0.6rem;">⚡ Radar de Fluxo Recente: Compras & Desinvestimentos</h4>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; font-size: 0.78rem;">
+                <div>
+                  <strong style="color: #34D399; font-size: 0.8rem;">🟢 Principais Compras Recentes:</strong>
+                  <div id="dataromaTopBuysContainer" style="margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.3rem;">
+                    <!-- Renderizado dinamicamente via JS -->
+                  </div>
+                </div>
+                <div>
+                  <strong style="color: #F87171; font-size: 0.8rem;">🔴 Principais Reduções / Saídas:</strong>
+                  <div id="dataromaTopSellsContainer" style="margin-top: 0.4rem; display: flex; flex-direction: column; gap: 0.3rem;">
+                    <!-- Renderizado dinamicamente via JS -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEÇÃO 4: TABELA FUNDAMENTALISTA DA CARTEIRA -->
+        <div class="card" style="border: 1px solid rgba(255, 255, 255, 0.08);">
+          <div class="card-header">
+            <div>
+              <h3><span class="icon">📑</span> Múltiplos Fundamentalistas & Saúde Financeira das Posições</h3>
+              <p class="subtitle">P/E, EV/EBITDA, Margens Líquidas, Crescimento de Receita e Beta</p>
+            </div>
+            <span class="tag tag-outline" id="fundamentalsCount">23 Ativos Monitorados</span>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Ticker</th>
+                    <th>Nome da Empresa</th>
+                    <th>Setor</th>
+                    <th>Preço Atual</th>
+                    <th>P/E Trailing</th>
+                    <th>EV/EBITDA</th>
+                    <th>Margem Líquida</th>
+                    <th>Cresc. Receita (YoY)</th>
+                    <th>Market Cap</th>
+                    <th>Beta</th>
+                    <th>Recomendação</th>
+                  </tr>
+                </thead>
+                <tbody id="analyticsFundamentalsTableBody">
+                  <!-- Renderizado dinamicamente via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         6. ANALISADOR DE AÇÕES (5 PASSOS HEDGEYE)
+         ======================================================== -->
     <section id="tab-analyzer" class="tab-content">
       <div class="grid-2-col">
         <div class="card">
@@ -1033,7 +1042,7 @@
           <div class="card-body">
             <form id="stockAnalyzerForm" onsubmit="event.preventDefault(); runStockAnalysis();">
               <div class="form-group">
-                <label for="analyzerTicker">Ticker da Ação, ETF ou Commodity (ex: AAAU, NEM, MELI, BE, AVGO, SLV):</label>
+                <label for="analyzerTicker">Ticker da Ação, ETF ou Commodity (ex: AAAU, NEM, MELI, BE, AVGO, MLI):</label>
                 <div class="input-with-button">
                   <input type="text" id="analyzerTicker" class="form-input" placeholder="Digite o ticker..." value="AAAU" required>
                   <button type="submit" class="btn btn-primary">Analisar Ativo</button>
@@ -1058,7 +1067,7 @@
                 <span class="chip" onclick="quickAnalyze('MELI')">MELI (MercadoLibre)</span>
                 <span class="chip" onclick="quickAnalyze('BE')">BE (Bloom Energy)</span>
                 <span class="chip" onclick="quickAnalyze('AVGO')">AVGO (Broadcom)</span>
-                <span class="chip" onclick="quickAnalyze('SLV')">SLV (Prata)</span>
+                <span class="chip" onclick="quickAnalyze('MLI')">MLI (Mueller Industries)</span>
               </div>
             </div>
           </div>
@@ -1077,75 +1086,262 @@
       </div>
     </section>
 
-    <!-- TAB 6: SINCRONIZADOR DE EARLYLOOK -->
+    <!-- ========================================================
+         7. BASE & SINCRONIZADOR (CENTRAL DE RELATÓRIOS & TRADUÇÕES)
+         ======================================================== -->
     <section id="tab-earlylook" class="tab-content">
-      <div class="grid-2-col">
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <h3><span class="icon">📥</span> Central de Sincronização de E-mail (Gmail IMAP)</h3>
-              <p class="subtitle">Captura autônoma matinal e sob demanda de todos os relatórios da Hedgeye</p>
-            </div>
-            <span class="sync-badge-live" id="syncStatusBadge">● Conectado ao Gmail</span>
+      <!-- 1. Central de Conexão IMAP / Gmail -->
+      <div class="card mb-4">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">📥</span> Central de Sincronização de E-mail (Gmail IMAP)</h3>
+            <p class="subtitle">Captura autônoma matinal (09:30 BRT) e sob demanda de todos os relatórios da Hedgeye</p>
           </div>
-          <div class="card-body">
-            <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.2rem; margin-bottom: 1.2rem;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
-                <div>
-                  <div style="font-size: 0.85rem; color: var(--text-muted);">CONTA DE E-MAIL VINCULADA:</div>
-                  <div style="font-size: 1rem; font-weight: 600; color: #38BDF8;">jpaulo82@gmail.com</div>
-                </div>
-                <div>
-                  <div style="font-size: 0.85rem; color: var(--text-muted); text-align: right;">TOTAL DE RELATÓRIOS:</div>
-                  <div style="font-size: 1.2rem; font-weight: 700; color: #34D399; text-align: right;" id="totalReportsCount">74 Relatórios</div>
-                </div>
+          <span class="sync-badge-live" id="syncStatusBadge">● Conectado ao Gmail</span>
+        </div>
+        <div class="card-body">
+          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.2rem; margin-bottom: 1.2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.8rem;">
+              <div>
+                <div style="font-size: 0.82rem; color: var(--text-muted);">CONTA DE E-MAIL VINCULADA:</div>
+                <div style="font-size: 1rem; font-weight: 600; color: #38BDF8;">jpaulo82@gmail.com</div>
               </div>
-              <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 1rem;">
-                A rotina matinal busca automaticamente às 09:30 BRT. Você também pode forçar a sincronização instantânea a qualquer momento clicando no botão abaixo.
-              </p>
-              
-              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                <button class="btn btn-primary" id="btnSyncGmailTab" onclick="syncReportsOnDemand()" style="flex: 1; justify-content: center; font-size: 0.95rem; padding: 0.75rem 1rem;">
-                  <span class="icon" id="syncIconTab">🔄</span> <span id="syncTextTab">Sincronizar Gmail Agora</span>
-                </button>
-                <button class="btn btn-outline" onclick="openReportModal()" style="justify-content: center; padding: 0.75rem 1rem;">
-                  <span class="icon">📄</span> Abrir Relatório Oficial Formatado
-                </button>
+              <div>
+                <div style="font-size: 0.82rem; color: var(--text-muted); text-align: right;">TOTAL DE RELATÓRIOS INDEXADOS:</div>
+                <div style="font-size: 1.2rem; font-weight: 700; color: #34D399; text-align: right;" id="totalReportsCount">74 Relatórios</div>
               </div>
+            </div>
+            <p class="text-muted" style="font-size: 0.85rem; margin-bottom: 1rem;">
+              A rotina matinal busca automaticamente às 09:30 BRT. Você também pode forçar a sincronização instantânea a qualquer momento clicando no botão abaixo.
+            </p>
+            
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <button class="btn btn-primary" id="btnSyncGmailTab" onclick="syncReportsOnDemand()" style="flex: 1; justify-content: center; font-size: 0.95rem; padding: 0.75rem 1rem;">
+                <span class="icon" id="syncIconTab">🔄</span> <span id="syncTextTab">Sincronizar Gmail Agora</span>
+              </button>
+              <button class="btn btn-outline" onclick="openReportModal()" style="justify-content: center; padding: 0.75rem 1rem;">
+                <span class="icon">📄</span> Abrir Relatório Oficial Formatado
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Visualizador Integral do EARLY LOOK do Dia Traduzido -->
+      <div class="card mb-4" style="border: 1px solid rgba(56, 189, 248, 0.3);">
+        <div class="card-header" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.8rem; margin-bottom: 1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+              <label for="selectTranslatedReport" style="font-size: 0.88rem; font-weight: 600; color: #94A3B8;">
+                <span class="icon">📅</span> Selecionar Relatório:
+              </label>
+              <select id="selectTranslatedReport" class="form-select" style="min-width: 320px; font-weight: 600;" onchange="changeTranslatedReport(this.value)">
+                <option value="latest" selected>09/09/2026 — EARLY LOOK: Burning Down The USD House? (Hoje)</option>
+                <option value="08/09/2026">08/09/2026 — EARLY LOOK: Oil, Rates, Inflation #Accelerating</option>
+                <option value="04/09/2026">04/09/2026 — EARLY LOOK: #Quad2 Then #Quad2?</option>
+                <option value="03/09/2026">03/09/2026 — EARLY LOOK: Riding The Waves of Volatility</option>
+                <option value="02/09/2026">02/09/2026 — EARLY LOOK: Bubbles Imploding vs. TRADE Breakouts</option>
+              </select>
             </div>
 
-            <!-- Formulário / Detalhes do Último Relatório Ativo -->
-            <div class="card-header" style="padding-left: 0; padding-right: 0;">
-              <h4><span class="icon">⚡</span> Relatório Ativo Selecionado</h4>
-            </div>
-            <div class="form-group mt-1">
-              <label for="elTitle">Título do EARLYLOOK:</label>
-              <input type="text" id="elTitle" class="form-input" value="EARLY LOOK: #Quad2 Then #Quad2?" readonly>
-            </div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <!-- Alternador de Idioma -->
+              <div class="btn-group">
+                <button class="btn btn-sm btn-primary" id="btnLangPt" onclick="setEarlyLookLanguage('pt')">
+                  🇧🇷 Tradução (PT-BR)
+                </button>
+                <button class="btn btn-sm btn-outline" id="btnLangEn" onclick="setEarlyLookLanguage('en')">
+                  🇺🇸 Original (EN)
+                </button>
+              </div>
 
-            <div class="grid-2-col-nested mt-2">
-              <div class="form-group">
-                <label for="elDate">Data Recebida:</label>
-                <input type="text" id="elDate" class="form-input" value="04/09/2026 (07:41 EDT)" readonly>
-              </div>
-              <div class="form-group">
-                <label for="elId">ID Mensagem:</label>
-                <input type="text" id="elId" class="form-input" value="109783" readonly>
-              </div>
+              <button class="btn btn-sm btn-outline" onclick="copyEarlyLookTranslation()" title="Copiar texto traduzido completo">
+                <span class="icon">📋</span> Copiar
+              </button>
+              <button class="btn btn-sm btn-outline" onclick="printEarlyLookReport()" title="Imprimir ou salvar PDF desta tradução">
+                <span class="icon">🖨️</span> PDF
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Histórico e Navegação de Relatórios Baixados -->
-        <div class="card">
-          <div class="card-header">
-            <div>
-              <h3><span class="icon">📜</span> Base de Relatórios da Hedgeye</h3>
-              <p class="subtitle">Clique em qualquer relatório para visualizar na íntegra ou carregar os níveis</p>
+        <div class="card-body">
+          <!-- Container de Tradução PT-BR -->
+          <div id="earlylookTranslatedContainer">
+            <!-- Hero Header Executivo -->
+            <div class="earlylook-hero-header">
+              <div class="hero-meta-row">
+                <div class="quad-badge quad-3">
+                  <span class="pulse-dot"></span>
+                  <span id="elHeaderRegime">REGIME GIP: QUAD 3 (#ACCELERATING)</span>
+                </div>
+                <div style="font-size: 0.85rem; color: #38BDF8; font-family: 'JetBrains Mono', monospace;">
+                  RESEARCH EXCLUSIVO HEDGEYE RISK MANAGEMENT
+                </div>
+              </div>
+
+              <div class="hero-title-group">
+                <h2 id="elMainTitle">EARLY LOOK: <span>Incendiando a "Casa" do Dólar Americano?</span></h2>
+                <div class="hero-subtitle-meta">
+                  <span><strong>Data Oficial:</strong> <span id="elDisplayDate">Quarta-feira, 09 de Setembro de 2026 (07:42 EDT)</span></span>
+                  <span>•</span>
+                  <span><strong>Autor:</strong> Keith McCullough (@keithmccullough)</span>
+                  <span>•</span>
+                  <span><strong>Status:</strong> <span class="badge badge-bullish">100% Sincronizado & Traduzido</span></span>
+                </div>
+              </div>
+
+              <!-- Citação Filosófica de David Bohm -->
+              <div class="earlylook-quote-banner">
+                <span class="quote-icon">“</span>
+                <div class="quote-text" id="elQuoteText">
+                  A Ordem Implicada é particularmente adequada para a compreensão da totalidade ininterrupta em movimento fluente.
+                  <span class="quote-author">— David Bohm (Físico Quântico)</span>
+                </div>
+              </div>
             </div>
-            <input type="text" id="filterReportsInput" class="form-input" placeholder="🔍 Filtrar relatórios..." style="max-width: 200px; font-size: 0.8rem; padding: 0.4rem 0.6rem;" oninput="filterReportsList(this.value)">
+
+            <!-- Key Takeaways -->
+            <div class="mt-2">
+              <h3 style="font-size: 1.15rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span class="icon">🎯</span> Principais Destaques Estratégicos (Key Takeaways)
+              </h3>
+              <div class="key-takeaways-grid" id="elTakeawaysGrid">
+                <!-- Card 1: Dólar -->
+                <div class="takeaway-card rose-border">
+                  <div class="takeaway-header">
+                    <span class="t-icon">📉</span>
+                    <h4>1. Colapso do Dólar para Mínimas de 3 Meses</h4>
+                  </div>
+                  <div class="takeaway-body">
+                    O <strong>Dólar Americano (DXY)</strong> rompeu para novas mínimas de 3 meses ($98,77) em Bearish TREND, enquanto o Iene Japonês (+0,4% a 153,51) e as commodities disparam. Essa fraqueza cambial <strong>está realimentando a inflação</strong>, em vez de contê-la.
+                  </div>
+                </div>
+
+                <!-- Card 2: Bond Yields -->
+                <div class="takeaway-card amber-border">
+                  <div class="takeaway-header">
+                    <span class="t-icon">📈</span>
+                    <h4>2. Juros dos T-Bonds em Novas Máximas de Ciclo</h4>
+                  </div>
+                  <div class="takeaway-body">
+                    As taxas dos Treasuries permanecem sob forte pressão compradora de yields. O <strong>UST 2Y (topo em 4,50%)</strong> e o <strong>UST 10Y (4,68%–4,86%)</strong> sinalizam novas máximas do ciclo inflacionário, impulsionados por alta em commodities, risco de guerra e Dólar fraco.
+                  </div>
+                </div>
+
+                <!-- Card 3: Rotação de Fluxos -->
+                <div class="takeaway-card emerald-border">
+                  <div class="takeaway-header">
+                    <span class="t-icon">🔄</span>
+                    <h4>3. Rotação Acelerada para Ativos Reais & Cíclicos</h4>
+                  </div>
+                  <div class="takeaway-body">
+                    Os fluxos globais não sumiram: estão rotacionando. O setor imobiliário americano (Housing ITB) está derretendo (-10,1% no mês), enquanto o capital migra agressivamente para <strong>Commodities Físicas (CRB +11,5%, Cobre em ATHs, Ouro)</strong> e Semicondutores cíclicos.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tese Macroeconômica Integral Traduzida -->
+            <div class="thesis-article-card mt-2">
+              <div class="thesis-article-header">
+                <h3><span class="icon">📖</span> Tese Macroeconômica Completa & The Macro Grind (Traduzido)</h3>
+                <span class="tag tag-info">Análise Quantitativa Fractal & Teoria dos Sistemas</span>
+              </div>
+
+              <!-- Bloco 1: A Grande Imagem -->
+              <div class="thesis-section-block">
+                <h4 class="thesis-section-title"><span class="icon">🧭</span> 1. A Grande Imagem: A Física Quântica dos Mercados (The Big Picture)</h4>
+                <p class="thesis-paragraph">
+                  David Bohm foi um físico quântico que argumentou que a <strong>realidade é fundamentalmente uma totalidade contínua e ininterrupta</strong> (e não uma coleção de objetos isolados), e que o que percebemos como coisas distintas são apenas padrões temporários abstraídos dessa ordem implicada mais profunda.
+                </p>
+                <p class="thesis-paragraph">
+                  A menos que você seja um crente cego no "Governo Central" e acredite que os burocratas do Federal Reserve e do Tesouro Americano foram colocados na Terra para dobrar as leis da gravidade econômica e suavizar mercados, você entende uma verdade fundamental: <strong>você não pode manipular uma parte de um sistema sem que o todo reaja</strong>.
+                </p>
+                <p class="thesis-paragraph">
+                  Scott Bessent aparentemente perdeu esse capítulo do livro de Bohm ao declarar: <em>"Eu sou a casa agora"</em> ao falar sobre intervenções no Iene e manipulação de mercado. A "casa" de Bessent está se incendiando em termos de Dólar Americano, atingindo novas mínimas de 3 meses esta manhã. Se você é investidor, sua casa foi construída, comprada e precificada em dólares. <strong>A Ordem Implicada não se importa com quem se declarou no comando: ela simplesmente continua fluindo.</strong>
+                </p>
+              </div>
+
+              <!-- Bloco 2: Destruição do Poder de Compra -->
+              <div class="thesis-section-block">
+                <h4 class="thesis-section-title"><span class="icon">🔥</span> 2. Como a Sua "Casa" Queima em Poder de Compra Real</h4>
+                <p class="thesis-paragraph">
+                  Como lembrete essencial aos investidores, é exatamente assim que o seu patrimônio é corroído em termos de poder de compra real:
+                </p>
+                <div style="background: rgba(244, 63, 94, 0.08); border-left: 3px solid #F43F5E; padding: 0.9rem 1.2rem; border-radius: 6px; margin: 0.8rem 0;">
+                  <p style="margin: 0; color: #FECDD3; font-weight: 600; font-size: 0.92rem;">
+                    1️⃣ A moeda na qual você é remunerado (USD / Dólar) cai de valor.<br>
+                    2️⃣ O preço real dos bens e insumos que você precisa/deseja comprar com essa moeda suada sobe expressivamente.
+                  </p>
+                </div>
+                <p class="thesis-paragraph">
+                  As únicas pessoas que "não verão" isso são aquelas que tentarão criar narrativas otimistas e distorcidas sobre os números de inflação do CPI. A população real entende perfeitamente: os preços do mundo real não mentem, os políticos sim.
+                </p>
+              </div>
+
+              <!-- Bloco 3: Cadeia Causal -->
+              <div class="thesis-section-block">
+                <h4 class="thesis-section-title"><span class="icon">⚡</span> 3. A Cadeia Causal da Inflação & Juros (Efeito Dominó Macro)</h4>
+                <div class="causal-chain-grid">
+                  <div class="causal-chain-step">
+                    <div class="step-number">PASSO 1</div>
+                    <div class="step-title">Iene Sobe (Up Yen)</div>
+                    <div class="step-desc">+0,4% para 153,51 (Bullish TREND)</div>
+                  </div>
+                  <div class="causal-chain-step">
+                    <div class="step-number">PASSO 2</div>
+                    <div class="step-title">Dólar Cai (Down USD)</div>
+                    <div class="step-desc">Mínima de 3 meses ($98,77 Bearish)</div>
+                  </div>
+                  <div class="causal-chain-step">
+                    <div class="step-number">PASSO 3</div>
+                    <div class="step-title">Inflação Acelera</div>
+                    <div class="step-desc">CRB Commodities em Máxima de Ciclo</div>
+                  </div>
+                  <div class="causal-chain-step">
+                    <div class="step-number">PASSO 4</div>
+                    <div class="step-title">Yields dos Bonds Sobem</div>
+                    <div class="step-desc">UST 10Y em 4,86% (Novas Máximas)</div>
+                  </div>
+                  <div class="causal-chain-step">
+                    <div class="step-number">PASSO 5</div>
+                    <div class="step-title">Fuga para Ativos Reais</div>
+                    <div class="step-desc">Ouro, Cobre (ATH) & Petróleo WTI</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="card-body" style="max-height: 520px; overflow-y: auto;">
+
+          <!-- Container do Texto Original em Inglês (Oculto por padrão, acionado pelo toggle) -->
+          <div id="earlylookOriginalContainer" style="display: none;">
+            <div class="thesis-article-card">
+              <div class="thesis-article-header">
+                <div>
+                  <h3 id="elOriginalTitle">EARLY LOOK: Burning Down The USD House? (Original English)</h3>
+                  <p class="subtitle" style="margin-top: 0.2rem;">Texto integral bruto capturado diretamente do e-mail da Hedgeye via IMAP</p>
+                </div>
+                <span class="badge badge-accent">Raw E-mail Research</span>
+              </div>
+              <pre id="elOriginalContent" style="background: rgba(15, 23, 42, 0.9); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); color: #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.6; white-space: pre-wrap; overflow-x: auto; max-height: 650px; overflow-y: auto;">
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Base Histórica de Relatórios Indexados -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">📜</span> Base Completa de Relatórios da Hedgeye</h3>
+            <p class="subtitle">Histórico de e-mails arquivados. Clique em qualquer relatório para visualizar na íntegra</p>
+          </div>
+          <input type="text" id="filterReportsInput" class="form-input" placeholder="🔍 Filtrar relatórios..." style="max-width: 240px; font-size: 0.8rem; padding: 0.4rem 0.6rem;" oninput="filterReportsList(this.value)">
+        </div>
+        <div class="card-body" style="max-height: 520px; overflow-y: auto;">
+          <div class="table-responsive">
             <table class="data-table">
               <thead>
                 <tr>
@@ -1163,633 +1359,164 @@
       </div>
     </section>
 
-    <!-- TAB 7: LOG DE DECISÕES & AUDITORIA -->
-    <section id="tab-decisions" class="tab-content">
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <h3><span class="icon">📝</span> Log de Decisões, Teses & Condições de Invalidação</h3>
-            <p class="subtitle">Registro auditável para separar a qualidade do processo dos resultados de curto prazo</p>
-          </div>
-          <button class="btn btn-primary" onclick="openNewDecisionModal()">
-            <span class="icon">➕</span> Nova Decisão
-          </button>
+  </main>
+
+  <!-- Modais do Sistema -->
+
+  <!-- Modal 1: Relatório Executivo Oficial Formatado & Markdown -->
+  <div class="modal-overlay" id="reportModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h2><span class="icon">📄</span> Relatório Diário Oficial Hedgeye (09/09/2026)</h2>
+          <p class="subtitle">Estratégia Macro & Alocação de Carteira Calibrada</p>
         </div>
-        <div class="card-body">
-          <table class="data-table">
+        <div class="modal-controls">
+          <div class="scope-select-wrap">
+            <label for="reportScopeSelect"><span class="icon">🎯</span> Escopo:</label>
+            <select id="reportScopeSelect" class="form-select-sm" onchange="renderModalReportContent()">
+              <option value="consolidated">Visão Consolidada Global (US$ 245.872,29)</option>
+              <option value="schwab" selected>Charles Schwab (US$ 211.922,66)</option>
+              <option value="tastyworks">Tastyworks (US$ 33.949,63)</option>
+            </select>
+          </div>
+          <div class="btn-group">
+            <button class="btn btn-sm btn-primary" id="btnViewFormatted" onclick="switchReportFormat('formatted')">
+              Formatado
+            </button>
+            <button class="btn btn-sm btn-outline" id="btnViewRaw" onclick="switchReportFormat('raw')">
+              Markdown / Raw
+            </button>
+          </div>
+          <button class="modal-close" onclick="closeReportModal()">&times;</button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div id="reportFormattedView" class="report-content-view active">
+          <!-- Renderizado via JS -->
+        </div>
+        <div id="reportRawView" class="report-content-view">
+          <textarea id="reportRawContent" class="raw-markdown-area" readonly></textarea>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="copyReportMarkdown()">
+          <span class="icon">📋</span> Copiar Texto / Markdown
+        </button>
+        <button class="btn btn-outline" onclick="downloadReportPdf()">
+          <span class="icon">📥</span> Baixar Relatório (PDF / DOC)
+        </button>
+        <button class="btn btn-primary" onclick="printReport()">
+          <span class="icon">🖨️</span> Imprimir Relatório
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Atualização de Portfólio -->
+  <div class="modal-overlay" id="portfolioModal">
+    <div class="modal-container" style="max-width: 600px;">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h2><span class="icon">✏️</span> Atualizar Posições do Portfólio</h2>
+          <p class="subtitle">Adicione ou modifique ativos na carteira selecionada</p>
+        </div>
+        <button class="modal-close" onclick="closePortfolioModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="portfolioUpdateForm" onsubmit="event.preventDefault(); savePortfolioUpdate();">
+          <div class="form-group">
+            <label for="modalBrokerSelect">Corretora de Destino:</label>
+            <select id="modalBrokerSelect" class="form-select">
+              <option value="schwab">Charles Schwab</option>
+              <option value="tastyworks">Tastyworks</option>
+            </select>
+          </div>
+          <div class="form-group mt-2">
+            <label for="portfolioInputText">Posições ou Instruções:</label>
+            <textarea id="portfolioInputText" class="form-textarea" rows="8" placeholder="Cole as posições atualizadas da corretora..."></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closePortfolioModal()">Cancelar</button>
+        <button class="btn btn-primary" onclick="savePortfolioUpdate()">Salvar Posições</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Plano de Rebalanceamento Estratégico (>= 60% Quad 3) -->
+  <div class="modal-overlay" id="rebalanceModal">
+    <div class="modal-container" style="max-width: 850px;">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h2><span class="icon">⚡</span> Plano de Rebalanceamento Estratégico (Alvo: ≥ 60% em Quad 3)</h2>
+          <p class="subtitle">Eliminação de ativos com vento contrário e concentração nos pilares de estagflação</p>
+        </div>
+        <button class="modal-close" onclick="closeRebalanceModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1rem; margin-bottom: 1.2rem;">
+          <h4 style="color: #34D399; margin: 0 0 0.3rem 0;">🎯 Meta do Rebalanceamento:</h4>
+          <p style="margin: 0; font-size: 0.88rem; color: #CBD5E1;">
+            Elevar a alocação em <strong>QUAD 3 (Ouro, Mineradoras, Energia Real e Caixa)</strong> de <strong>38,5% para 62,8%</strong>, desinvestindo de semicondutores cíclicos (INTC, NOK, AXTI, COIN) e reduzindo peso em crédito corporativo longo.
+          </p>
+        </div>
+
+        <h4 style="color: #F87171; margin-bottom: 0.5rem;">1. Desinvestimentos Sugeridos (Vender nos Repiques):</h4>
+        <div class="table-responsive mb-3">
+          <table class="data-table" style="font-size: 0.82rem;">
             <thead>
               <tr>
-                <th>Data</th>
-                <th>Ativo / Tema</th>
-                <th>Carteira</th>
+                <th>Ticker</th>
                 <th>Categoria</th>
-                <th>Decisão / Conduta</th>
-                <th>Racional Operacional</th>
-                <th>Gatilho de Invalidação</th>
-                <th>Status</th>
+                <th>Ação</th>
+                <th>Valor Liberado</th>
+                <th>Racional</th>
               </tr>
             </thead>
-            <tbody id="decisionsTableBody">
-              <!-- CHAMADAS DE HOJE: 09/09/2026 (EARLYLOOK "Burning Down The USD House?") -->
-              <tr style="background: rgba(56, 189, 248, 0.08);">
-                <td><strong>09/09/2026</strong> <br><span class="badge badge-accent">KM Call (Hoje)</span></td>
-                <td><strong>Dólar Index (USD / DXY) & Iene (JPY)</strong></td>
-                <td>Macro Global</td>
-                <td><span class="badge badge-bearish">CURRENCY DEBASEMENT</span></td>
-                <td><strong>Bearish TREND / Mínima de 3 Meses ($98,77)</strong></td>
-                <td>Dólar em colapso com Iene subindo (+0,4% a 153,51) gera choque inflacionário e fuga do poder de compra real para commodities.</td>
-                <td>Fechamento do DXY acima de 100,00 ou quebra de TREND no Iene.</td>
-                <td><span class="badge badge-bearish">🔴 Bearish TREND</span></td>
-              </tr>
-              <tr style="background: rgba(56, 189, 248, 0.08);">
-                <td><strong>09/09/2026</strong> <br><span class="badge badge-accent">KM Call (Hoje)</span></td>
-                <td><strong>Ouro Spot & Cobre Físico (GOLD / COPPER / NEM)</strong></td>
-                <td>Ambas</td>
-                <td><span class="badge badge-core">REAL ASSETS / ATHs</span></td>
-                <td><strong>Comprar Recuos / Alocação Máxima no Piso</strong></td>
-                <td>Cobre rompendo para Máximas Históricas (ATHs 6,49–6,75), Ouro sustentado em 4.290–4.599 e CRB Index em nova máxima de ciclo.</td>
-                <td>Fechamento do Ouro abaixo de US$ 4.204.</td>
-                <td><span class="badge badge-bullish">🟢 Convicção Máxima</span></td>
-              </tr>
-              <tr style="background: rgba(56, 189, 248, 0.08);">
-                <td><strong>09/09/2026</strong> <br><span class="badge badge-accent">KM Call (Hoje)</span></td>
-                <td><strong>Treasuries & Juros Longos (UST10Y / TLT / ZROZ)</strong></td>
-                <td>Macro Shorts</td>
-                <td><span class="badge badge-bearish">SHORT DURATION ESTRUTURAL</span></td>
-                <td><strong>Manter Shorts / Yields em Novas Máximas de Ciclo</strong></td>
-                <td>UST 10Y Yield sinaliza topo em 4,86% e 2Y em 4,50%. Expectativas de inflação em alta pressionam a ponta longa.</td>
-                <td>UST 10Y Yield fechando abaixo de 4,68%.</td>
-                <td><span class="badge badge-bearish">🔴 Short Estrutural</span></td>
-              </tr>
-              <tr style="background: rgba(56, 189, 248, 0.08);">
-                <td><strong>09/09/2026</strong> <br><span class="badge badge-accent">KM Call (Hoje)</span></td>
-                <td><strong>Setor Imobiliário Residencial (Housing / ITB)</strong></td>
-                <td>Macro Shorts</td>
-                <td><span class="badge badge-bearish">COLLAPSE / HOUSING</span></td>
-                <td><strong>Evitar / Subponderar / Short</strong></td>
-                <td>Cesta de Housing da Goldman Sachs despencou -3,0% ontem e acumula -10,1% no mês devido ao impacto de juros de hipotecas altos.</td>
-                <td>Rompimento de ITB acima de máximas de 3 meses.</td>
-                <td><span class="badge badge-bearish">🔴 Setor Frágil</span></td>
-              </tr>
-              <!-- CHAMADAS DE 08/09/2026 -->
+            <tbody id="rebSellTableBody">
+              <!-- Renderizado via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <h4 style="color: #34D399; margin-bottom: 0.5rem;">2. Reinvestimento nos Vencedores de Quad 3 (Comprar nos Pisos):</h4>
+        <div class="table-responsive">
+          <table class="data-table" style="font-size: 0.82rem;">
+            <thead>
               <tr>
-                <td>08/09/2026</td>
-                <td><strong>Petróleo & Oil Services (WTIC / OIH)</strong></td>
-                <td>Ambas</td>
-                <td><span class="badge badge-core">REFLAÇÃO QUAD 3</span></td>
-                <td><strong>Long / Convicção Máxima (#Accelerating)</strong></td>
-                <td>WTI disparou +23% no mês para teto de US$ 97,53. OIH elevou piso para 414 e teto para 444. Reforça superciclo de commodities.</td>
-                <td>Quebra de suporte do WTI abaixo de US$ 86,36.</td>
-                <td><span class="badge badge-bullish">🟢 Ativo (Líder)</span></td>
+                <th>Ativo</th>
+                <th>Regime</th>
+                <th>Aporte Proposto</th>
+                <th>Posição no Range</th>
+                <th>Racional</th>
               </tr>
-              <tr>
-                <td>08/09/2026</td>
-                <td><strong>Russell 2000 vs Large Caps (RUT / SPX)</strong></td>
-                <td>Global</td>
-                <td><span class="badge badge-tail">FACTOR REALLOCATION</span></td>
-                <td><strong>Rebaixar RUT para Neutral / Priorizar Large Caps</strong></td>
-                <td>Russell acumula -2,0% no mês sob pressão do custo de dívida e aperto financeiro. Large Caps mantêm fluxo comprador com SPX Bullish (7.604–7.767).</td>
-                <td>RUT rompendo acima de 3.014 com alívio persistente nos bond yields.</td>
-                <td><span class="badge badge-neutral">🟡 Rebaixado p/ Neutral</span></td>
-              </tr>
-              <tr>
-                <td>08/09/2026</td>
-                <td><strong>Utilities (XLU) & Crédito Corporativo (LQD)</strong></td>
-                <td>Schwab + Shorts</td>
-                <td><span class="badge badge-bearish">RELOAD SHORTS</span></td>
-                <td><strong>Recarregar Shorts em XLU e Manter Short LQD</strong></td>
-                <td>Keith McCullough recarregou posições short em Utilities no repique. LQD Bearish TREND (104,60–106,10) reflete deterioração de crédito longo.</td>
-                <td>XLU em nova máxima histórica ou LQD sustentado acima de 106,10.</td>
-                <td><span class="badge badge-bearish">🔴 Alerta Bearish</span></td>
-              </tr>
-              <!-- CHAMADAS ANTERIORES -->
-              <tr>
-                <td>04/09/2026</td>
-                <td><strong>AI Software vs Semis (IGV / SMH)</strong></td>
-                <td>Hedgeye Macro</td>
-                <td><span class="badge badge-core">LONG SOFTWARE / SHORT SEMIS</span></td>
-                <td>Manter / Sobreponderar AI Software</td>
-                <td>Long AI Software vs Short Semis avançou +17,9% no mês, enquanto High Beta Momentum desabou das máximas.</td>
-                <td>Reversão técnica no par com quebra de fluxo em software enterprise.</td>
-                <td><span class="badge badge-bullish">Ativo</span></td>
-              </tr>
-              <tr>
-                <td>02/09/2026</td>
-                <td><strong>High Beta & Semis IA (Quad 1)</strong></td>
-                <td>Tasty + Schwab</td>
-                <td><span class="badge badge-tail">TAIL (1–3%)</span></td>
-                <td>Manter estritamente dentro do limite TAIL</td>
-                <td>Cestas de momentum em drawdown de -24%; limitar risco a 1-3% por ativo e proteger caixa SGOV.</td>
-                <td>Quebra simultânea de TRADE e TREND aciona saída total (#OUT).</td>
-                <td><span class="badge badge-neutral">Vigente</span></td>
-              </tr>
-              <tr>
-                <td>01/09/2026</td>
-                <td><strong>MercadoLibre (MELI)</strong></td>
-                <td>Ambas</td>
-                <td><span class="badge badge-core">CORE GROWTH</span></td>
-                <td>Manter posição integral</td>
-                <td>Dólar fraco (DXY Bearish) expande margens na América Latina com aceleração de fintech (Mercado Pago).</td>
-                <td>Desaceleração de TPV abaixo de 20% com deterioração de crédito.</td>
-                <td><span class="badge badge-bullish">Vigente</span></td>
-              </tr>
+            </thead>
+            <tbody id="rebBuyTableBody">
+              <!-- Renderizado via JS -->
             </tbody>
           </table>
         </div>
       </div>
-    </section>
-
-    <!-- ========================================================
-         TAB 8: ANÁLISE AVANÇADA (GEX, FACTSET, FUNDAMENTALISTA & 13F)
-         ======================================================== -->
-    <section id="tab-analytics" class="tab-content">
-      <div class="analytics-view-wrapper">
-        
-        <!-- Header da Aba de Análise Avançada -->
-        <div class="analytics-hero-header" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.95)); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-            <div>
-              <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;">
-                <span style="font-size: 1.6rem;">🌐</span>
-                <h2 style="margin: 0; font-size: 1.4rem; font-weight: 700; color: #F8FAFC;">ANÁLISE DE MERCADO INTEGRADA</h2>
-                <span class="badge" style="background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.4);">4 MOTORES ATIVOS</span>
-              </div>
-              <p style="margin: 0; color: #94A3B8; font-size: 0.9rem;">
-                Confluência de <strong>GEX / Dealer Gamma (SpotGamma)</strong>, <strong>FactSet Earnings Insight</strong>, <strong>Múltiplos Fundamentalistas</strong> e <strong>Radar 13F (Howard Marks)</strong>.
-              </p>
-            </div>
-            <div style="display: flex; gap: 0.6rem;">
-              <button class="btn btn-outline btn-sm" onclick="fetchMarketAnalyticsData()">
-                <span class="icon">🔄</span> Atualizar Dados
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- ========================================================
-             NOVA SEÇÃO: RADAR DE ROTAÇÃO DE QUADRANTES (SIMULAÇÃO 30D)
-             ======================================================== -->
-        <div class="card mb-4" style="border: 1px solid rgba(245, 158, 11, 0.4); background: linear-gradient(180deg, rgba(15, 23, 42, 0.85), rgba(30, 41, 59, 0.6));">
-          <div class="card-header" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.8rem; margin-bottom: 1.2rem;">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-              <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <span style="font-size: 1.4rem;">📈</span>
-                <h3 style="margin: 0; font-size: 1.2rem; color: #F59E0B;">Radar de Rotação de Quadrantes: Carteiras Simuladas (30 Dias)</h3>
-              </div>
-              <div style="display: flex; gap: 0.5rem; align-items: center;">
-                <span class="badge badge-bullish" id="quadLeadingBadge">LÍDER 30D: QUAD 3</span>
-                <span class="badge badge-neutral" style="font-size: 0.75rem;">16 ATIVOS CHAVE</span>
-              </div>
-            </div>
-            <p style="margin: 0.4rem 0 0; font-size: 0.85rem; color: #94A3B8;">
-              Monitoramento diário comparativo das 4 cestas de ativos representativos de cada Quadrante Macro (4 ativos por cesta). Permite identificar qual regime está acelerando no tempo e <strong>antecipar transições de quadrantes</strong> antes do consenso de mercado.
-            </p>
-          </div>
-
-          <!-- Banner de Diagnóstico Preditivo / Early Warning -->
-          <div id="quadTransitionBanner" style="margin-bottom: 1.2rem; padding: 0.85rem 1.1rem; border-radius: 8px; background: rgba(16, 185, 129, 0.12); border-left: 4px solid #10B981; font-size: 0.88rem; line-height: 1.45; color: #F1F5F9;">
-            Carregando diagnóstico preditivo de rotação...
-          </div>
-
-          <!-- Ratios de Aceleração Macro (Growth ROC vs Inflation ROC) -->
-          <div style="margin-bottom: 1.5rem;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
-              <span style="font-size: 0.88rem; font-weight: 700; color: #38BDF8; letter-spacing: 0.5px;">
-                ⚡ INDICADORES DE ACELERAÇÃO MACRO (RATE OF CHANGE — 2ª DERIVADA HEDGEYE)
-              </span>
-              <span style="font-size: 0.75rem; color: #94A3B8;">Cross-Asset Spreads (ROC 5D)</span>
-            </div>
-            <div class="grid-4-col" id="quadMacroRatiosContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem;">
-              <!-- Preenchido dinamicamente via JS -->
-            </div>
-          </div>
-
-          <!-- Grid dos 4 Quadrantes com Retornos 1D, 5D, 30D e Aceleração -->
-          <div class="grid-4-col" id="quadBasketsCardsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
-            <!-- Renderizado dinamicamente via JS -->
-          </div>
-
-          <!-- Gráfico de Linhas Comparativo 30 Dias -->
-          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 1.2rem; margin-bottom: 1.2rem;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap;">
-              <h4 style="margin: 0; font-size: 0.95rem; color: #E2E8F0;">Trajetória Acumulada das 4 Cestas de Quadrantes (% nos últimos 30 dias)</h4>
-              <div style="display: flex; gap: 1rem; font-size: 0.78rem; font-weight: 600;">
-                <span style="color: #3B82F6;">● Quad 1 (Tech & Consumo: QQQ, XLY, IWM, IGV)</span>
-                <span style="color: #10B981;">● Quad 2 (Reflação & Indústria: XLE, CPER, XLI, XLB)</span>
-                <span style="color: #F59E0B;">● Quad 3 (Estagflação: GLD, XLE, XLV, XLP)</span>
-                <span style="color: #A855F7;">● Quad 4 (Deflação: SGOV, IEF, XLV, XLP)</span>
-              </div>
-            </div>
-            <div style="position: relative; height: 280px; width: 100%;">
-              <canvas id="quadRotationChart"></canvas>
-            </div>
-          </div>
-
-          <!-- Tabela com os 16 Ativos Simulados -->
-          <div style="margin-top: 1rem;">
-            <h4 style="font-size: 0.92rem; color: #CBD5E1; margin-bottom: 0.6rem;">Composição Detalhada dos 16 Ativos das Cestas Simuladas:</h4>
-            <div class="table-responsive">
-              <table class="data-table" style="font-size: 0.82rem;">
-                <thead>
-                  <tr>
-                    <th>Quadrante</th>
-                    <th>Tese Macro & Fatores</th>
-                    <th>4 Ativos da Cesta</th>
-                    <th>Retorno Hoje (1D)</th>
-                    <th>Retorno 5 Dias</th>
-                    <th>Retorno 30 Dias</th>
-                    <th>2ª Derivada (ROC 5D)</th>
-                    <th>Status Atual</th>
-                  </tr>
-                </thead>
-                <tbody id="quadBasketsTableBody">
-                  <!-- Renderizado dinamicamente via JS -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-
-        <!-- SEÇÃO 1: MOTOR GEX & DEALER GAMMA (SPOTGAMMA OPEN MODEL) -->
-        <div class="card mb-4" style="border: 1px solid rgba(139, 92, 246, 0.3); background: rgba(15, 23, 42, 0.7);">
-          <div class="card-header" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.8rem; margin-bottom: 1.2rem;">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-              <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <span style="font-size: 1.3rem;">⚡</span>
-                <h3 style="margin: 0; font-size: 1.15rem; color: #E2E8F0;">Motor GEX: Exposição de Gamma dos Dealers & Option Walls</h3>
-              </div>
-              <span class="badge" style="background: rgba(139, 92, 246, 0.2); color: #C084FC; border: 1px solid rgba(139, 92, 246, 0.4);">MODELO SPOTGAMMA</span>
-            </div>
-            <p style="margin: 0.4rem 0 0; font-size: 0.82rem; color: #94A3B8;">
-              As <strong>Call Walls</strong> funcionam como resistência magnética e teto de volatilidade; as <strong>Put Walls</strong> atuam como piso de suporte institucional. Em regime de <em>Short Gamma</em>, a volatilidade intradiária acelera agressivamente.
-            </p>
-          </div>
-
-          <div id="gexCardsContainer" class="grid-3-col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.2rem;">
-            <!-- Renderizado dinamicamente via JS -->
-            <div class="stat-card" style="text-align: center; padding: 2rem; color: #94A3B8;">Carregando dados de GEX...</div>
-          </div>
-        </div>
-
-        <!-- SEÇÃO 2: FACTSET EARNINGS INSIGHT & RADAR MACRO -->
-        <div class="grid-2-col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-          
-          <!-- FactSet Card -->
-          <div class="card" style="border: 1px solid rgba(59, 130, 246, 0.3);">
-            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-              <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <span style="font-size: 1.2rem;">📊</span>
-                <h3 style="margin: 0; font-size: 1.1rem; color: #E2E8F0;">FactSet Earnings Insight</h3>
-              </div>
-              <span class="badge badge-bullish">John Butters Research</span>
-            </div>
-            
-            <div id="factsetContent">
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-                <div style="background: rgba(30, 41, 59, 0.5); padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
-                  <div style="font-size: 0.75rem; color: #94A3B8; text-transform: uppercase;">Crescimento EPS S&P 500 (YoY)</div>
-                  <div style="font-size: 1.3rem; font-weight: 700; color: #10B981; margin-top: 0.2rem;" id="factsetEpsGrowth">+4.8% YoY</div>
-                </div>
-                <div style="background: rgba(30, 41, 59, 0.5); padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
-                  <div style="font-size: 0.75rem; color: #94A3B8; text-transform: uppercase;">Margem Líquida Média</div>
-                  <div style="font-size: 1.3rem; font-weight: 700; color: #60A5FA; margin-top: 0.2rem;" id="factsetNetMargin">12.1%</div>
-                </div>
-              </div>
-              
-              <div style="background: rgba(30, 41, 59, 0.4); padding: 1rem; border-radius: 8px; margin-bottom: 0.8rem;">
-                <div style="font-size: 0.82rem; font-weight: 600; color: #10B981; margin-bottom: 0.3rem;">🟢 Setores Líderes em Lucros:</div>
-                <div style="font-size: 0.82rem; color: #CBD5E1;" id="factsetLeadingSectors">Information Technology (+18.2%), Communication Services (+12.5%), Health Care (+9.1%)</div>
-              </div>
-
-              <div style="background: rgba(30, 41, 59, 0.4); padding: 1rem; border-radius: 8px; margin-bottom: 0.8rem;">
-                <div style="font-size: 0.82rem; font-weight: 600; color: #EF4444; margin-bottom: 0.3rem;">🔴 Setores com Contração de Lucros:</div>
-                <div style="font-size: 0.82rem; color: #CBD5E1;" id="factsetLaggingSectors">Energy (-15.4%), Materials (-11.2%), Real Estate (-4.3%)</div>
-              </div>
-
-              <div class="quote-box" style="margin-top: 1rem; padding: 0.8rem; font-size: 0.82rem;">
-                <strong>Leitura de Regime Macro:</strong> <span id="factsetQuadInference" style="color: #E2E8F0;">Crescimento concentrado em Big Tech secular; contração de margens industriais e commodities sinaliza transição entre Quad 2 e Quad 3.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Radar 13F Superinvestidores -->
-          <div class="card" style="border: 1px solid rgba(16, 185, 129, 0.3);">
-            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-              <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <span style="font-size: 1.2rem;">🏛️</span>
-                <h3 style="margin: 0; font-size: 1.1rem; color: #E2E8F0;">Radar 13F: Superinvestidores & Ciclos</h3>
-              </div>
-              <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.4);">SEC EDGAR / DATAROMA</span>
-            </div>
-            
-            <div id="superinvestorsContainer" style="display: flex; flex-direction: column; gap: 0.9rem;">
-              <!-- Renderizado dinamicamente via JS -->
-            </div>
-          </div>
-        </div>
-
-        <!-- SEÇÃO 3: CRUZAMENTO — NOSSA CARTEIRA VS SUPERINVESTIDORES (DATAROMA MATCH) -->
-        <div class="card mb-4" style="border: 1px solid rgba(16, 185, 129, 0.3); background: rgba(15, 23, 42, 0.75);">
-          <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <span style="font-size: 1.3rem;">🎯</span>
-              <h3 style="margin: 0; font-size: 1.15rem; color: #E2E8F0;">Alinhamento da Carteira com Superinvestidores (Dataroma Match)</h3>
-            </div>
-            <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.4);">CONSENSO INSTITUCIONAL</span>
-          </div>
-          <p style="margin: 0 0 1rem; font-size: 0.84rem; color: #94A3B8;">
-            Mapeamento dos ativos da nossa carteira que estão nas mãos dos maiores gestores globais (Howard Marks, Buffett, Li Lu, Ackman, etc.), com o <em>Hold Price</em> médio dos tubarões e o fluxo recente.
-          </p>
-          
-          <div class="table-responsive">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Ticker</th>
-                  <th>Setor / Categoria</th>
-                  <th>Fundos Lendários Detentores</th>
-                  <th>Preço Médio dos Tubarões (Hold Price)</th>
-                  <th>Status de Consenso</th>
-                  <th>Atividade Recente dos Gestores</th>
-                </tr>
-              </thead>
-              <tbody id="dataromaMatchTableBody">
-                <tr><td colspan="6" style="text-align: center; color: #94A3B8; padding: 1.5rem;">Carregando alinhamento institucional...</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <!-- SEÇÃO 4: TOP CONSENSO DE MERCADO & FLUXO RECENTE (ENTRADAS VS SAÍDAS) -->
-        <div class="grid-2-col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-          
-          <!-- Top Consenso Global (Grand Portfolio) -->
-          <div class="card" style="border: 1px solid rgba(59, 130, 246, 0.3);">
-            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-              <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <span style="font-size: 1.2rem;">🏆</span>
-                <h3 style="margin: 0; font-size: 1.1rem; color: #E2E8F0;">Top Consenso Global (Grand Portfolio)</h3>
-              </div>
-              <span class="badge" style="background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.4);">MAIS DETIDAS</span>
-            </div>
-            <p style="font-size: 0.8rem; color: #94A3B8; margin-bottom: 0.8rem;">
-              As ações com maior presença absoluta nos portfólios dos superinvestidores de Wall Street.
-            </p>
-            <div class="table-responsive" style="max-height: 380px; overflow-y: auto;">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>Ticker</th>
-                    <th>Empresa</th>
-                    <th>Superinvestidores</th>
-                    <th>Hold Price Médio</th>
-                  </tr>
-                </thead>
-                <tbody id="dataromaConsensusTableBody">
-                  <tr><td colspan="4" style="text-align: center; color: #94A3B8; padding: 1.5rem;">Carregando consenso...</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- Fluxo Recente de Compras & Vendas (Top Buys & Sells) -->
-          <div class="card" style="border: 1px solid rgba(245, 158, 11, 0.3);">
-            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-              <div style="display: flex; align-items: center; gap: 0.5rem;">
-                <span style="font-size: 1.2rem;">🔄</span>
-                <h3 style="margin: 0; font-size: 1.1rem; color: #E2E8F0;">Radar de Fluxo: Entradas & Saídas</h3>
-              </div>
-              <span class="badge" style="background: rgba(245, 158, 11, 0.2); color: #FBBF24; border: 1px solid rgba(245, 158, 11, 0.4);">ATIVIDADE 13F</span>
-            </div>
-            
-            <div style="display: flex; flex-direction: column; gap: 1rem;">
-              <div>
-                <div style="font-size: 0.84rem; font-weight: 700; color: #10B981; margin-bottom: 0.4rem;">🟢 Maiores Compras & Aportes Recentes:</div>
-                <div id="dataromaTopBuysContainer" style="display: flex; flex-direction: column; gap: 0.4rem; max-height: 180px; overflow-y: auto;">
-                  <div style="font-size: 0.78rem; color: #94A3B8;">Carregando compras...</div>
-                </div>
-              </div>
-
-              <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 0.8rem;">
-                <div style="font-size: 0.84rem; font-weight: 700; color: #EF4444; margin-bottom: 0.4rem;">🔴 Maiores Vendas & Reduções:</div>
-                <div id="dataromaTopSellsContainer" style="display: flex; flex-direction: column; gap: 0.4rem; max-height: 180px; overflow-y: auto;">
-                  <div style="font-size: 0.78rem; color: #94A3B8;">Carregando vendas...</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- SEÇÃO 5: MÚLTIPLOS FUNDAMENTALISTAS AO VIVO DAS AÇÕES DA CARTEIRA -->
-        <div class="card mb-4" style="border: 1px solid rgba(255, 255, 255, 0.08);">
-          <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <span style="font-size: 1.3rem;">🔬</span>
-              <h3 style="margin: 0; font-size: 1.15rem; color: #E2E8F0;">Base Fundamentalista & Múltiplos ao Vivo (OpenBB / Python)</h3>
-            </div>
-            <span class="badge badge-neutral" id="fundamentalsCount">23 Ativos Monitorados</span>
-          </div>
-          
-          <div class="table-responsive">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Ticker</th>
-                  <th>Empresa</th>
-                  <th>Setor</th>
-                  <th>Preço Atual</th>
-                  <th>P/L (P/E)</th>
-                  <th>EV/EBITDA</th>
-                  <th>Margem Líq.</th>
-                  <th>Cresc. Receita</th>
-                  <th>Market Cap</th>
-                  <th>Beta</th>
-                  <th>Consenso</th>
-                </tr>
-              </thead>
-              <tbody id="analyticsFundamentalsTableBody">
-                <tr><td colspan="11" style="text-align: center; color: #94A3B8; padding: 2rem;">Carregando múltiplos fundamentalistas...</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- MODAL: GERADOR DE RELATÓRIO 09:30 (RESEARCH INSTITUCIONAL) -->
-  <div class="modal-backdrop" id="reportModal">
-    <div class="modal-dialog modal-xl">
-      <div class="modal-header">
-        <div>
-          <h3><span class="icon">📑</span> Relatório Diário de Estratégia Macro & Portfólio</h3>
-          <p class="subtitle">Documento executivo formatado para apresentação e tomada de decisão</p>
-        </div>
-        <button class="modal-close" onclick="closeReportModal()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="report-toolbar">
-          <div class="report-options">
-            <label for="reportScopeSelect"><strong>Escopo:</strong></label>
-            <select id="reportScopeSelect" class="form-select" onchange="renderActiveReportView()">
-              <option value="consolidated">Visão Consolidada Global (Charles Schwab + Tastyworks)</option>
-              <option value="schwab" selected>Carteira Principal: Charles Schwab (US$ 211.922,66)</option>
-              <option value="tastyworks">Carteira de Opcionalidade: Tastyworks (US$ 33.949,63)</option>
-            </select>
-          </div>
-          <div class="report-view-toggle">
-            <button class="btn btn-sm btn-outline active" id="btnViewFormatted" onclick="setReportViewMode('formatted')">
-              <span class="icon">👁️</span> Relatório Formatado (Executivo)
-            </button>
-            <button class="btn btn-sm btn-outline" id="btnViewRaw" onclick="setReportViewMode('raw')">
-              <span class="icon">📝</span> Markdown Bruto
-            </button>
-          </div>
-          <div class="report-actions">
-            <button class="btn btn-sm btn-outline" onclick="copyReportToClipboard()">
-              <span class="icon">📋</span> Copiar Texto
-            </button>
-            <button class="btn btn-sm btn-outline" onclick="printReport()">
-              <span class="icon">🖨️</span> Imprimir
-            </button>
-            <button class="btn btn-sm btn-primary" onclick="downloadExecutivePdf()">
-              <span class="icon">📥</span> Baixar PDF Executivo (Arquivo)
-            </button>
-          </div>
-        </div>
-        
-        <!-- Área de Exibição do Relatório (Formatado ou Raw) -->
-        <div id="reportContainer" class="report-display-container">
-          <div id="reportFormattedView" class="executive-report-doc">
-            <!-- Renderizado dinamicamente via JS com template executivo -->
-          </div>
-          <div id="reportRawView" class="report-raw-box" style="display: none;">
-            <pre id="reportRawContent"></pre>
-          </div>
-        </div>
-      </div>
       <div class="modal-footer">
-        <button class="btn btn-outline" onclick="closeReportModal()">Fechar</button>
-        <button class="btn btn-outline" onclick="printReport()">
-          <span class="icon">🖨️</span> Imprimir
+        <button class="btn btn-outline" onclick="copyRebalancePlan()">
+          <span class="icon">📋</span> Copiar Plano
         </button>
-        <button class="btn btn-primary" onclick="downloadExecutivePdf()">
-          <span class="icon">📥</span> Baixar Arquivo PDF (2 Páginas)
-        </button>
+        <button class="btn btn-primary" onclick="closeRebalanceModal()">Entendido</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL: ATUALIZAÇÃO DE PORTFÓLIO -->
-  <div class="modal-backdrop" id="portfolioModal">
-    <div class="modal-dialog">
-      <div class="modal-header">
-        <h3><span class="icon">💼</span> Atualizar Posições do Portfólio</h3>
-        <button class="modal-close" onclick="closePortfolioModal()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p class="text-muted">Selecione a corretora e cole o texto ou captura de ordens confirmadas:</p>
-        <div class="form-group">
-          <label>Corretora:</label>
-          <select id="modalBrokerSelect" class="form-select">
-            <option value="schwab">Charles Schwab</option>
-            <option value="tastyworks">Tastyworks</option>
-          </select>
-        </div>
-        <div class="form-group mt-2">
-          <label>Formato de Entrada (Exemplo):</label>
-          <textarea id="portfolioInputText" class="form-textarea" rows="6" placeholder="Comprei: AAAU, 50 cotas, preço US$ 43.10&#10;Vendi: SLV, 30 cotas, preço US$ 58.50&#10;Mantive: demais posições"></textarea>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-outline" onclick="closePortfolioModal()">Cancelar</button>
-        <button class="btn btn-primary" onclick="savePortfolioUpdate()">Salvar & Reconciliar</button>
-      </div>
-    </div>
-  </div>
+  <!-- Container Oculto para Impressão -->
+  <div id="printReportContainer" style="display: none;"></div>
 
-  <!-- MODAL: REBALANCEAMENTO E ADEQUAÇÃO DE QUADRANTE (>= 60% QUAD 3) -->
-  <div class="modal-backdrop" id="rebalanceModal">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-header">
-        <h3><span class="icon">⚡</span> Plano de Rebalanceamento Estratégico (Alocação ≥ 60% em Quad 3)</h3>
-        <button class="modal-close" onclick="closeRebalanceModal()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="rebalance-summary-box">
-          <div class="grid-3-col">
-            <div class="stat-card">
-              <div class="stat-label">ALOCAÇÃO ATUAL EM QUAD 3</div>
-              <div class="stat-val text-amber" id="rebCurrentQuad3">38.5%</div>
-              <div class="stat-desc">Vulnerável a rotação em High Beta</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-label">META PROPOSTA DE QUAD 3</div>
-              <div class="stat-val text-emerald" id="rebTargetQuad3">62.8%</div>
-              <div class="stat-desc">Alinhamento ótimo com o regime</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-label">VOLUME TOTAL REBALANCEADO</div>
-              <div class="stat-val" id="rebVolumeTotal">~US$ 59.800</div>
-              <div class="stat-desc">Vendas de Quad 1 + Caixa SGOV aplicado</div>
-            </div>
-          </div>
-        </div>
+  <!-- Toast de Notificação -->
+  <div class="toast-notification" id="toastNotification">Notificação</div>
 
-        <h4 class="mt-3">1. Sugestão de Vendas & Desinvestimentos (Sair de Quad 1 / Crédito Frágil):</h4>
-        <table class="data-table mt-1">
-          <thead>
-            <tr>
-              <th>Ativo</th>
-              <th>Categoria / Quad</th>
-              <th>Ação Proposta</th>
-              <th>Volume Liberado</th>
-              <th>Racional Hedgeye</th>
-            </tr>
-          </thead>
-          <tbody id="rebSellTableBody">
-            <!-- Inserido dinamicamente via JS -->
-          </tbody>
-        </table>
-
-        <h4 class="mt-3">2. Sugestão de Compras (Entrar / Aumentar em Quad 3 no LRR):</h4>
-        <table class="data-table mt-1">
-          <thead>
-            <tr>
-              <th>Ativo</th>
-              <th>Classe / Tese</th>
-              <th>Aporte Proposto</th>
-              <th>Posição no Risk Range</th>
-              <th>Racional Hedgeye</th>
-            </tr>
-          </thead>
-          <tbody id="rebBuyTableBody">
-            <!-- Inserido dinamicamente via JS -->
-          </tbody>
-        </table>
-
-        <div class="quote-box mt-3">
-          <p class="quote-text">“Não adicione em ativos em quebra de TRADE. Compre nos pisos de Risk Range dos ativos com Bullish TREND.”</p>
-          <span class="quote-author">— Keith McCullough (*Master The Market*)</span>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-outline" onclick="closeRebalanceModal()">Fechar</button>
-        <button class="btn btn-primary" onclick="copyRebalancePlan()">📋 Copiar Plano de Execução</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Notification Toast -->
-  <div id="toastNotification" class="toast"></div>
-
-  <!-- CONTAINER EXCLUSIVO DE IMPRESSÃO / SALVAR PDF (PRINT ONLY) -->
-  <div id="printReportContainer" class="print-only-container"></div>
-
-  <!-- Script JS -->
-  <script src="app.js?v=20260903_3"></script>
+  <!-- Script Principal da Aplicação -->
+  <script src="app.js?v=20260909_4"></script>
 </body>
 </html>
