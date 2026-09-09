@@ -1351,7 +1351,20 @@
             Carregando diagnóstico preditivo de rotação...
           </div>
 
-          <!-- Grid dos 4 Quadrantes com Retornos 1D, 5D e 30D -->
+          <!-- Ratios de Aceleração Macro (Growth ROC vs Inflation ROC) -->
+          <div style="margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;">
+              <span style="font-size: 0.88rem; font-weight: 700; color: #38BDF8; letter-spacing: 0.5px;">
+                ⚡ INDICADORES DE ACELERAÇÃO MACRO (RATE OF CHANGE — 2ª DERIVADA HEDGEYE)
+              </span>
+              <span style="font-size: 0.75rem; color: #94A3B8;">Cross-Asset Spreads (ROC 5D)</span>
+            </div>
+            <div class="grid-4-col" id="quadMacroRatiosContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem;">
+              <!-- Preenchido dinamicamente via JS -->
+            </div>
+          </div>
+
+          <!-- Grid dos 4 Quadrantes com Retornos 1D, 5D, 30D e Aceleração -->
           <div class="grid-4-col" id="quadBasketsCardsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
             <!-- Renderizado dinamicamente via JS -->
           </div>
@@ -1385,6 +1398,7 @@
                     <th>Retorno Hoje (1D)</th>
                     <th>Retorno 5 Dias</th>
                     <th>Retorno 30 Dias</th>
+                    <th>2ª Derivada (ROC 5D)</th>
                     <th>Status Atual</th>
                   </tr>
                 </thead>

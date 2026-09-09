@@ -2509,7 +2509,7 @@ function renderQuadRotationTracker(tracker) {
     transitionBanner.innerHTML = `
       <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
         <div>
-          <strong style="color: #38BDF8; font-size: 0.95rem;">🎯 DIAGNÓSTICO PREDITIVO DE ROTACÃO (EARLY WARNING):</strong><br>
+          <strong style="color: #38BDF8; font-size: 0.95rem;">🎯 DIAGNÓSTICO PREDITIVO DE ROTAÇÃO (EARLY WARNING & 2ª DERIVADA):</strong><br>
           <span style="font-size: 0.9rem; color: #F8FAFC;">${tracker.transition_signal}</span>
         </div>
         <div style="font-size: 0.76rem; color: #94A3B8; text-align: right;">
@@ -2519,7 +2519,37 @@ function renderQuadRotationTracker(tracker) {
     `;
   }
 
-  // 2. Renderiza os Cards dos 4 Quadrantes
+  // 1.1 Renderiza os Indicadores de Aceleração Macro (Cross-Asset Spreads ROC 5D)
+  const macroRatiosContainer = document.getElementById("quadMacroRatiosContainer");
+  if (macroRatiosContainer && tracker.macro_ratios) {
+    const mr = tracker.macro_ratios;
+    const ratioKeys = ["growth_roc", "inflation_roc", "cyclical_roc", "commodity_roc"];
+    macroRatiosContainer.innerHTML = ratioKeys.map(k => {
+      const r = mr[k];
+      if (!r) return "";
+      const isPos = r.roc_5d_val >= 0;
+      const color = isPos ? "#10B981" : "#EF4444";
+      const bg = isPos ? "rgba(16, 185, 129, 0.08)" : "rgba(239, 68, 68, 0.08)";
+      const border = isPos ? "rgba(16, 185, 129, 0.3)" : "rgba(239, 68, 68, 0.3)";
+
+      return `
+        <div style="background: ${bg}; border: 1px solid ${border}; border-radius: 8px; padding: 0.75rem 0.9rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+            <span style="font-size: 0.76rem; color: #CBD5E1; font-weight: 600;">${r.name}</span>
+            <strong style="font-size: 0.95rem; color: ${color}; font-family: 'JetBrains Mono', monospace;">${r.roc_5d}</strong>
+          </div>
+          <div style="font-size: 0.74rem; font-weight: 700; color: ${color}; margin-bottom: 0.2rem;">
+            ${isPos ? '▲' : '▼'} ${r.status}
+          </div>
+          <div style="font-size: 0.68rem; color: #94A3B8;">
+            Viés de Regime: <strong style="color: #38BDF8;">${r.quad_bias}</strong>
+          </div>
+        </div>
+      `;
+    }).join("");
+  }
+
+  // 2. Renderiza os Cards dos 4 Quadrantes com 2ª Derivada (Aceleração)
   const gridContainer = document.getElementById("quadBasketsCardsGrid");
   if (gridContainer) {
     const qKeys = ["QUAD 1", "QUAD 2", "QUAD 3", "QUAD 4"];
@@ -2530,12 +2560,23 @@ function renderQuadRotationTracker(tracker) {
       const ret1dColor = b.ret_1d_val >= 0 ? "#10B981" : "#EF4444";
       const ret5dColor = b.ret_5d_val >= 0 ? "#10B981" : "#EF4444";
       const ret30dColor = b.ret_30d_val >= 0 ? "#10B981" : "#EF4444";
+      const accelColor = b.acceleration_val >= 0 ? "#10B981" : "#EF4444";
+      const accelBadgeBg = b.acceleration_val >= 0 ? "rgba(16, 185, 129, 0.2)" : "rgba(239, 68, 68, 0.2)";
+      const accelBorder = b.acceleration_val >= 0 ? "rgba(16, 185, 129, 0.4)" : "rgba(239, 68, 68, 0.4)";
 
       return `
         <div class="stat-card" style="border: 1px solid ${isLeader ? b.color : 'rgba(255,255,255,0.08)'}; background: linear-gradient(180deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9)); padding: 1rem; border-radius: 8px; position: relative;">
           ${isLeader ? `<span class="badge" style="position: absolute; top: 0.6rem; right: 0.6rem; background: ${b.color}; color: #000; font-weight: 800; font-size: 0.68rem;">🏆 LÍDER 30D</span>` : ''}
           <div style="font-size: 0.95rem; font-weight: 700; color: ${b.color}; margin-bottom: 0.2rem;">${b.name.split(':')[0]}</div>
-          <div style="font-size: 0.74rem; color: #94A3B8; margin-bottom: 0.8rem; line-height: 1.3;">${b.desc}</div>
+          <div style="font-size: 0.74rem; color: #94A3B8; margin-bottom: 0.6rem; line-height: 1.3;">${b.desc}</div>
+
+          <!-- Pílula de Aceleração (2ª Derivada / ROC Spread) -->
+          <div style="margin-bottom: 0.7rem; background: ${accelBadgeBg}; border: 1px solid ${accelBorder}; padding: 0.35rem 0.5rem; border-radius: 6px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.7rem; color: #CBD5E1; font-weight: 600;">2ª Derivada (ROC):</span>
+            <span style="font-size: 0.75rem; font-weight: 800; color: ${accelColor}; font-family: 'JetBrains Mono', monospace;">
+              ${b.acceleration || '0.00%'} (${b.acceleration_val >= 0 ? 'ACELERANDO' : 'DESACELERANDO'})
+            </span>
+          </div>
           
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.4rem; background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; text-align: center;">
             <div>
@@ -2587,6 +2628,7 @@ function renderQuadRotationTracker(tracker) {
           <td><strong style="color: ${b.ret_1d_val >= 0 ? '#10B981' : '#EF4444'};">${b.ret_1d}</strong></td>
           <td><strong style="color: ${b.ret_5d_val >= 0 ? '#10B981' : '#EF4444'};">${b.ret_5d}</strong></td>
           <td><strong style="font-size: 0.95rem; color: ${b.ret_30d_val >= 0 ? '#10B981' : '#EF4444'};">${b.ret_30d}</strong></td>
+          <td><span style="font-weight: 700; color: ${b.acceleration_val >= 0 ? '#10B981' : '#EF4444'}; font-family: 'JetBrains Mono', monospace;">${b.acceleration || '0.00%'}</span></td>
           <td>${statusBadge}</td>
         </tr>
       `;
