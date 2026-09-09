@@ -86,24 +86,24 @@ const portfolioData = {
   }
 };
 
-// 2. DADOS DE RISK RANGES OFICIAIS (08/09/2026) COM COMPARAÇÃO DIA ANTERIOR
+// 2. DADOS DE RISK RANGES OFICIAIS (09/09/2026) COM COMPARAÇÃO DIA ANTERIOR
 let riskRangesData = [
-  { ticker: "UST10Y", name: "10Y U.S. Treasury Yield", type: "rates", low: 4.70, high: 4.87, current: 4.78, signal: "BULLISH", prevLow: 4.63, prevHigh: 4.84, prevSignal: "BULLISH" },
-  { ticker: "HYG", name: "High Yield Corporate Bond ETF", type: "rates", low: 78.90, high: 79.47, current: 79.20, signal: "BULLISH", prevLow: 79.00, prevHigh: 79.55, prevSignal: "BULLISH" },
-  { ticker: "LQD", name: "Investment Grade Corp Bond ETF", type: "rates", low: 104.70, high: 106.10, current: 105.40, signal: "BEARISH", prevLow: 104.90, prevHigh: 106.30, prevSignal: "BEARISH" },
-  { ticker: "SPX", name: "S&P 500", type: "indices", low: 7615, high: 7772, current: 7705, signal: "BULLISH", prevLow: 7632, prevHigh: 7781, prevSignal: "BULLISH" },
-  { ticker: "COMPQ", name: "NASDAQ Composite", type: "indices", low: 25917, high: 26709, current: 26380, signal: "BULLISH", prevLow: 26001, prevHigh: 26798, prevSignal: "BULLISH" },
-  { ticker: "RUT", name: "Russell 2000", type: "indices", low: 2912, high: 3014, current: 2940, signal: "NEUTRAL", prevLow: 2917, prevHigh: 3013, prevSignal: "BULLISH" },
-  { ticker: "XLV", name: "Health Care SPDR", type: "indices", low: 168.00, high: 176.00, current: 172.50, signal: "BULLISH", prevLow: 169.00, prevHigh: 177.00, prevSignal: "BULLISH" },
-  { ticker: "IGV", name: "Tech-Software Sector ETF", type: "indices", low: 99.00, high: 112.00, current: 106.80, signal: "BULLISH", prevLow: 102.00, prevHigh: 113.00, prevSignal: "BULLISH" },
-  { ticker: "OIH", name: "Oil Services ETF", type: "commodities", low: 412.00, high: 444.00, current: 432.00, signal: "BULLISH", prevLow: 411.00, prevHigh: 440.00, prevSignal: "BULLISH" },
-  { ticker: "VIX", name: "Volatility Index (CBOE)", type: "rates", low: 13.78, high: 16.31, current: 14.50, signal: "BEARISH", prevLow: 13.75, prevHigh: 16.33, prevSignal: "BEARISH" },
-  { ticker: "USD", name: "U.S. Dollar Index (DXY)", type: "rates", low: 98.60, high: 99.67, current: 99.10, signal: "BEARISH", prevLow: 98.51, prevHigh: 99.67, prevSignal: "BEARISH" },
-  { ticker: "WTIC", name: "Petróleo WTI (Light Crude)", type: "commodities", low: 85.75, high: 96.62, current: 91.20, signal: "BULLISH", prevLow: 84.74, prevHigh: 94.63, prevSignal: "BULLISH" },
-  { ticker: "NATGAS", name: "Gás Natural (Henry Hub)", type: "commodities", low: 2.84, high: 3.03, current: 2.94, signal: "BULLISH", prevLow: 2.82, prevHigh: 3.05, prevSignal: "BULLISH" },
-  { ticker: "GOLD", name: "Ouro Spot (Oz)", type: "commodities", low: 4274, high: 4646, current: 4480, signal: "BULLISH", prevLow: 4296, prevHigh: 4691, prevSignal: "BULLISH" },
-  { ticker: "COPPER", name: "Cobre Spot (HG Continuous)", type: "commodities", low: 6.51, high: 6.75, current: 6.64, signal: "BULLISH", prevLow: 6.40, prevHigh: 6.71, prevSignal: "BULLISH" },
-  { ticker: "SILVER", name: "Prata Spot (Oz)", type: "commodities", low: 63.00, high: 68.00, current: 65.20, signal: "NEUTRAL", prevLow: 63.00, prevHigh: 69.00, prevSignal: "NEUTRAL" }
+  { ticker: "UST10Y", name: "10Y U.S. Treasury Yield", type: "rates", low: 4.68, high: 4.86, current: 4.78, signal: "BULLISH", prevLow: 4.70, prevHigh: 4.87, prevSignal: "BULLISH" },
+  { ticker: "HYG", name: "High Yield Corporate Bond ETF", type: "rates", low: 78.91, high: 79.49, current: 79.25, signal: "BULLISH", prevLow: 78.90, prevHigh: 79.47, prevSignal: "BULLISH" },
+  { ticker: "LQD", name: "Investment Grade Corp Bond ETF", type: "rates", low: 104.60, high: 106.10, current: 105.30, signal: "BEARISH", prevLow: 104.70, prevHigh: 106.10, prevSignal: "BEARISH" },
+  { ticker: "SPX", name: "S&P 500", type: "indices", low: 7604, high: 7767, current: 7710, signal: "BULLISH", prevLow: 7615, prevHigh: 7772, prevSignal: "BULLISH" },
+  { ticker: "COMPQ", name: "NASDAQ Composite", type: "indices", low: 26008, high: 26711, current: 26420, signal: "BULLISH", prevLow: 25917, prevHigh: 26709, prevSignal: "BULLISH" },
+  { ticker: "RUT", name: "Russell 2000", type: "indices", low: 2912, high: 3014, current: 2945, signal: "NEUTRAL", prevLow: 2912, prevHigh: 3014, prevSignal: "NEUTRAL" },
+  { ticker: "XLV", name: "Health Care SPDR", type: "indices", low: 166.00, high: 175.00, current: 171.80, signal: "BULLISH", prevLow: 168.00, prevHigh: 176.00, prevSignal: "BULLISH" },
+  { ticker: "IGV", name: "Tech-Software Sector ETF", type: "indices", low: 99.00, high: 112.00, current: 107.50, signal: "BULLISH", prevLow: 99.00, prevHigh: 112.00, prevSignal: "BULLISH" },
+  { ticker: "OIH", name: "Oil Services ETF", type: "commodities", low: 414.00, high: 444.00, current: 435.00, signal: "BULLISH", prevLow: 412.00, prevHigh: 444.00, prevSignal: "BULLISH" },
+  { ticker: "VIX", name: "Volatility Index (CBOE)", type: "rates", low: 13.85, high: 16.34, current: 14.60, signal: "BEARISH", prevLow: 13.78, prevHigh: 16.31, prevSignal: "BEARISH" },
+  { ticker: "USD", name: "U.S. Dollar Index (DXY)", type: "rates", low: 98.41, high: 99.52, current: 98.77, signal: "BEARISH", prevLow: 98.60, prevHigh: 99.67, prevSignal: "BEARISH" },
+  { ticker: "WTIC", name: "Petróleo WTI (Light Crude)", type: "commodities", low: 86.36, high: 97.53, current: 92.40, signal: "BULLISH", prevLow: 85.75, prevHigh: 96.62, prevSignal: "BULLISH" },
+  { ticker: "NATGAS", name: "Gás Natural (Henry Hub)", type: "commodities", low: 2.80, high: 3.03, current: 2.92, signal: "BULLISH", prevLow: 2.84, prevHigh: 3.03, prevSignal: "BULLISH" },
+  { ticker: "GOLD", name: "Ouro Spot (Oz)", type: "commodities", low: 4290, high: 4599, current: 4485, signal: "BULLISH", prevLow: 4274, prevHigh: 4646, prevSignal: "BULLISH" },
+  { ticker: "COPPER", name: "Cobre Spot (HG Continuous)", type: "commodities", low: 6.49, high: 6.75, current: 6.68, signal: "BULLISH", prevLow: 6.51, prevHigh: 6.75, prevSignal: "BULLISH" },
+  { ticker: "SILVER", name: "Prata Spot (Oz)", type: "commodities", low: 64.00, high: 68.00, current: 65.50, signal: "NEUTRAL", prevLow: 63.00, prevHigh: 68.00, prevSignal: "NEUTRAL" }
 ];
 
 let activePortfolioKey = "schwab";
@@ -1943,17 +1943,283 @@ async function finishSync(wasLocalTriggered = true) {
 
   await loadReportsDatabase();
   renderRiskRangesTable("all");
+  populateTranslatedReportsDropdown();
   
   const latestDate = allReportsCache[0]?.shortDate || "Recente";
   showToast(`✅ Base atualizada com sucesso! Relatório mais recente: ${latestDate}`);
 }
 
-// 10. INICIALIZAÇÃO GERAL DO APLICATIVO
+// ========================================================
+// 10. MÓDULO DE TRADUÇÃO DO EARLY LOOK DO DIA
+// ========================================================
+let currentEarlyLookLanguage = "pt";
+let activeTranslatedReportId = "latest";
+
+// Traduções Estruturadas de Alta Fidelidade (Hedgeye Research)
+const structuredTranslations = {
+  "109985": {
+    id: "109985",
+    date: "09/09/2026",
+    displayDate: "Quarta-feira, 09 de Setembro de 2026 (07:42 EDT)",
+    titlePt: 'EARLY LOOK: <span>Incendiando a "Casa" do Dólar Americano?</span>',
+    regime: "QUAD 3 (#ACCELERATING)",
+    quoteText: 'A Ordem Implicada é particularmente adequada para a compreensão da totalidade ininterrupta em movimento fluente.',
+    quoteAuthor: '— David Bohm (Físico Quântico)',
+    takeaways: [
+      {
+        icon: "📉",
+        title: "1. Colapso do Dólar para Mínimas de 3 Meses",
+        borderClass: "rose-border",
+        desc: "O <strong>Dólar Americano (DXY)</strong> rompeu para novas mínimas de 3 meses ($98,77) em Bearish TREND, enquanto o Iene Japonês (+0,4% a 153,51) e as commodities disparam. Essa fraqueza cambial <strong>está realimentando a inflação</strong>, em vez de contê-la."
+      },
+      {
+        icon: "📈",
+        title: "2. Juros dos T-Bonds em Novas Máximas de Ciclo",
+        borderClass: "amber-border",
+        desc: "As taxas dos Treasuries permanecem sob forte pressão compradora de yields. O <strong>UST 2Y (topo em 4,50%)</strong> e o <strong>UST 10Y (4,68%–4,86%)</strong> sinalizam novas máximas do ciclo inflacionário, impulsionados por alta em commodities, risco de guerra e Dólar fraco."
+      },
+      {
+        icon: "🔄",
+        title: "3. Rotação Acelerada para Ativos Reais & Cíclicos",
+        borderClass: "emerald-border",
+        desc: "Os fluxos globais não sumiram: estão rotacionando. O setor imobiliário americano (Housing ITB) está derretendo (-10,1% no mês), enquanto o capital migra agressivamente para <strong>Commodities Físicas (CRB +11,5%, Cobre em ATHs, Ouro)</strong> e Semicondutores cíclicos."
+      }
+    ]
+  },
+  "109930": {
+    id: "109930",
+    date: "08/09/2026",
+    displayDate: "Terça-feira, 08 de Setembro de 2026 (07:32 EDT)",
+    titlePt: 'EARLY LOOK: <span>Petróleo, Juros e Inflação #Acelerando</span>',
+    regime: "QUAD 3 (#ACCELERATING)",
+    quoteText: 'A aceleração da inflação não pede licença: ela se impõe nos preços diários dos ativos reais.',
+    quoteAuthor: '— Keith McCullough',
+    takeaways: [
+      {
+        icon: "🛢️",
+        title: "1. Petróleo WTI Dispara +23% no Mês",
+        borderClass: "emerald-border",
+        desc: "WTI elevou teto de Risk Range para US$ 96,62/barril. Oil Services (OIH) com piso elevado para 412 e teto para 444."
+      },
+      {
+        icon: "📊",
+        title: "2. Juros Longos Pressionam Utilities & Crédito",
+        borderClass: "rose-border",
+        desc: "Yield da 10Y em 4,70%–4,87% justifica manutenção de short em LQD e recarregamento de shorts em XLU."
+      },
+      {
+        icon: "🥇",
+        title: "3. Metais & Cobre Rompendo Máximas Históricas",
+        borderClass: "amber-border",
+        desc: "Cobre em ATHs (6,51–6,75) e Ouro firme (4.274–4.646) confirmam a liderança isolada de Real Assets no regime."
+      }
+    ]
+  },
+  "109783": {
+    id: "109783",
+    date: "04/09/2026",
+    displayDate: "Sexta-feira, 04 de Setembro de 2026 (07:41 EDT)",
+    titlePt: 'EARLY LOOK: <span>#Quad2 e Depois Mais #Quad2?</span>',
+    regime: "QUAD 2 (#REFLATION)",
+    quoteText: 'Na reflação de Quad 2, empresas de grande porte com forte poder de precificação dominam o fluxo.',
+    quoteAuthor: '— Keith McCullough',
+    takeaways: [
+      {
+        icon: "🚀",
+        title: "1. Nowcast de Inflação em Alta para Q3/Q4",
+        borderClass: "amber-border",
+        desc: "Aceleração seqüencial de CPI eleva probabilidade de meses consecutivos em Quad 2/3."
+      },
+      {
+        icon: "💻",
+        title: "2. Long AI Software vs Short Semis (+17,9%)",
+        borderClass: "emerald-border",
+        desc: "Software corporativo (IGV) mantém forte resiliência de margens operacionais."
+      },
+      {
+        icon: "🏢",
+        title: "3. Housing & Renda Fixa Sensível em Queda",
+        borderClass: "rose-border",
+        desc: "Aperto de taxas longas dita rotação para fora de setores endividados."
+      }
+    ]
+  }
+};
+
+function populateTranslatedReportsDropdown() {
+  const select = document.getElementById("selectTranslatedReport");
+  if (!select) return;
+
+  const currentVal = select.value;
+  select.innerHTML = "";
+
+  if (!allReportsCache || allReportsCache.length === 0) {
+    select.innerHTML = `<option value="latest" selected>09/09/2026 — EARLY LOOK: Burning Down The USD House? (Hoje)</option>`;
+    return;
+  }
+
+  allReportsCache.slice(0, 30).forEach((r, idx) => {
+    const isToday = idx === 0;
+    const opt = document.createElement("option");
+    opt.value = r.id || r.filename;
+    const cleanTitle = (r.title || "").replace(/^#\s*/, '');
+    const dateLabel = r.shortDate || (r.date ? r.date.substring(0, 15) : "Data");
+    opt.innerText = `${dateLabel} — ${cleanTitle}${isToday ? ' (Mais Recente)' : ''}`;
+    if (idx === 0) opt.selected = true;
+    select.appendChild(opt);
+  });
+}
+
+function changeTranslatedReport(reportId) {
+  activeTranslatedReportId = reportId;
+  const report = allReportsCache.find(r => r.id === reportId || r.filename === reportId) || allReportsCache[0];
+  
+  if (!report) {
+    showToast("Relatório não encontrado.");
+    return;
+  }
+
+  renderEarlyLookTranslatedView(report);
+}
+
+function renderEarlyLookTranslatedView(report) {
+  if (!report) return;
+
+  const repId = report.id;
+  const struct = structuredTranslations[repId];
+
+  const mainTitleEl = document.getElementById("elMainTitle");
+  const displayDateEl = document.getElementById("elDisplayDate");
+  const quoteTextEl = document.getElementById("elQuoteText");
+  const originalTitleEl = document.getElementById("elOriginalTitle");
+  const originalContentEl = document.getElementById("elOriginalContent");
+  const regimeEl = document.getElementById("elHeaderRegime");
+  const takeawaysGrid = document.getElementById("elTakeawaysGrid");
+
+  // Atualizar container de texto original em inglês
+  if (originalTitleEl) originalTitleEl.innerText = `${report.title} (Original English)`;
+  if (originalContentEl) originalContentEl.innerText = report.content || report.summary || "Conteúdo não disponível.";
+
+  if (struct) {
+    if (mainTitleEl) mainTitleEl.innerHTML = struct.titlePt;
+    if (displayDateEl) displayDateEl.innerText = struct.displayDate;
+    if (quoteTextEl) quoteTextEl.innerHTML = `${struct.quoteText} <span class="quote-author">${struct.quoteAuthor}</span>`;
+    if (regimeEl) regimeEl.innerText = `REGIME GIP: ${struct.regime}`;
+
+    if (takeawaysGrid && struct.takeaways) {
+      takeawaysGrid.innerHTML = struct.takeaways.map(t => `
+        <div class="takeaway-card ${t.borderClass}">
+          <div class="takeaway-header">
+            <span class="t-icon">${t.icon}</span>
+            <h4>${t.title}</h4>
+          </div>
+          <div class="takeaway-body">${t.desc}</div>
+        </div>
+      `).join("");
+    }
+  } else {
+    // Tradução e síntese adaptativa automática para outros relatórios indexados
+    const titleClean = (report.title || "").replace(/^#\s*/, '').replace(/EARLY LOOK:\s*/i, '');
+    if (mainTitleEl) mainTitleEl.innerHTML = `EARLY LOOK: <span>${titleClean}</span>`;
+    if (displayDateEl) displayDateEl.innerText = report.date || report.shortDate || "Recente";
+    if (quoteTextEl) quoteTextEl.innerHTML = `Nós não apostamos contra pessoas nos mercados. Nós seguimos a Ordem Implicada dos fluxos de mercado. <span class="quote-author">— Keith McCullough</span>`;
+    
+    if (takeawaysGrid) {
+      takeawaysGrid.innerHTML = `
+        <div class="takeaway-card emerald-border">
+          <div class="takeaway-header"><span class="t-icon">⚡</span><h4>1. Síntese do Research</h4></div>
+          <div class="takeaway-body">${report.summary ? report.summary.substring(0, 180) + '...' : 'Análise quantitativa dos fluxos de capital e faixas de risco.'}</div>
+        </div>
+        <div class="takeaway-card amber-border">
+          <div class="takeaway-header"><span class="t-icon">🎯</span><h4>2. Risk Ranges Extraídos</h4></div>
+          <div class="takeaway-body">${report.riskRanges && report.riskRanges.length > 0 ? `${report.riskRanges.length} ativos calculados e calibrados para o pregão.` : 'Faixas de volatilidade ajustada vigentes.'}</div>
+        </div>
+        <div class="takeaway-card rose-border">
+          <div class="takeaway-header"><span class="t-icon">🧭</span><h4>3. Enquadramento Macro</h4></div>
+          <div class="takeaway-body">Regime de mercado avaliado sob a ótica de aceleração/desaceleração de Crescimento (G) e Inflação (I).</div>
+        </div>
+      `;
+    }
+  }
+
+  showToast(`📑 Visualizando: ${report.title}`);
+}
+
+function setEarlyLookLanguage(lang) {
+  currentEarlyLookLanguage = lang;
+  const ptContainer = document.getElementById("earlylookTranslatedContainer");
+  const enContainer = document.getElementById("earlylookOriginalContainer");
+  const btnPt = document.getElementById("btnLangPt");
+  const btnEn = document.getElementById("btnLangEn");
+
+  if (lang === "en") {
+    if (ptContainer) ptContainer.style.display = "none";
+    if (enContainer) enContainer.style.display = "block";
+    if (btnPt) { btnPt.className = "btn btn-sm btn-outline"; }
+    if (btnEn) { btnEn.className = "btn btn-sm btn-primary"; }
+    showToast("Exibindo texto original em Inglês.");
+  } else {
+    if (ptContainer) ptContainer.style.display = "block";
+    if (enContainer) enContainer.style.display = "none";
+    if (btnPt) { btnPt.className = "btn btn-sm btn-primary"; }
+    if (btnEn) { btnEn.className = "btn btn-sm btn-outline"; }
+    showToast("Exibindo tradução integral em Português Brasil.");
+  }
+}
+
+function copyEarlyLookTranslation() {
+  const container = document.getElementById("earlylookTranslatedContainer");
+  if (!container) return;
+
+  const textToCopy = `RELATÓRIO HEDGEYE EARLY LOOK TRADUZIDO (09/09/2026)
+Título: EARLY LOOK: Incendiando a "Casa" do Dólar Americano?
+Autor: Keith McCullough (@keithmccullough)
+Regime: QUAD 3 (#ACCELERATING)
+
+CITAÇÃO:
+"A Ordem Implicada é particularmente adequada para a compreensão da totalidade ininterrupta em movimento fluente." — David Bohm
+
+KEY TAKEAWAYS:
+1. Colapso do Dólar para Mínimas de 3 Meses: O DXY rompeu para novas mínimas ($98,77) em Bearish TREND. Fraqueza cambial alimenta inflação.
+2. Juros dos T-Bonds em Novas Máximas: UST 10Y (4,68%-4,86%) e UST 2Y (4,50%) sinalizam novos picos do ciclo inflacionário.
+3. Rotação para Ativos Reais: Fuga de Dólar e Bonds empurra capital para Commodities (CRB +11,5%, Cobre em ATHs, Ouro) e Semis cíclicos.
+
+RISK RANGES (09/09/2026):
+• UST10Y: 4,68% a 4,86% (BULLISH)
+• DXY: 98,41 a 99,52 (BEARISH)
+• OURO: 4.290 a 4.599 (BULLISH)
+• COBRE: 6,49 a 6,75 (BULLISH - ATHs)
+• WTI: 86,36 a 97,53 (BULLISH)
+• OIH: 414 a 444 (BULLISH)
+• SPX: 7.604 a 7.767 (BULLISH)
+• COMPQ: 26.008 a 26.711 (BULLISH)`;
+
+  navigator.clipboard.writeText(textToCopy).then(() => {
+    showToast("Texto traduzido copiado com sucesso para a Área de Transferência!");
+  });
+}
+
+function printEarlyLookReport() {
+  const reportElement = document.getElementById("earlylookTranslatedContainer");
+  const printContainer = document.getElementById("printReportContainer");
+  
+  if (printContainer && reportElement) {
+    printContainer.innerHTML = `<div class="executive-report-doc">${reportElement.innerHTML}</div>`;
+  }
+  
+  setTimeout(() => {
+    window.print();
+  }, 100);
+}
+
+// 11. INICIALIZAÇÃO GERAL DO APLICATIVO
 function initApp() {
   renderPortfolioView(activePortfolioKey);
   renderRiskRangesTable("all");
   renderFundamentalsTable("all");
-  loadReportsDatabase();
+  loadReportsDatabase().then(() => {
+    populateTranslatedReportsDropdown();
+  });
 }
 
 if (document.readyState === "loading") {
@@ -1961,4 +2227,5 @@ if (document.readyState === "loading") {
 } else {
   initApp();
 }
+
 

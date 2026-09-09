@@ -49,24 +49,30 @@
     <div class="header-right">
       <div class="market-status">
         <span class="status-indicator online"></span>
-        <span id="marketTime">08/09/2026 | NYSE Open</span>
+        <span id="marketTime">09/09/2026 | NYSE Open</span>
       </div>
       <button class="btn btn-outline" id="btnSyncHeader" onclick="syncReportsOnDemand()" title="Sincronizar novos relatórios com o Gmail agora">
         <span class="icon" id="syncIconHeader">🔄</span> <span id="syncTextHeader">Sincronizar Relatórios</span>
       </button>
+      <button class="btn btn-outline" id="btnEarlyLookTraduzidoHeader" onclick="setTab('earlylook-translated')" title="Ver o Early Look de hoje 100% traduzido">
+        <span class="icon">📑</span> <span>EARLY LOOK Traduzido (09/09)</span>
+      </button>
       <button class="btn btn-primary" id="btnDailyReportHeader" onclick="openReportModal()">
-        <span class="icon">📄</span> <span id="btnDailyReportText">Relatório Diário (08/09)</span>
+        <span class="icon">📄</span> <span id="btnDailyReportText">Relatório Diário (09/09)</span>
       </button>
     </div>
   </header>
 
   <!-- Navigation Tabs -->
   <nav class="nav-tabs">
-    <button class="nav-tab active" data-tab="dashboard" onclick="setTab('dashboard')">
+    <button class="nav-tab active" data-tab="earlylook-translated" id="navTabEarlylookTranslated" onclick="setTab('earlylook-translated')">
+      📑 EARLY LOOK Traduzido (<span id="navEarlylookDate">09/09</span>) <span class="badge-new-pulsing">HOJE</span>
+    </button>
+    <button class="nav-tab" data-tab="dashboard" onclick="setTab('dashboard')">
       📊 Painel Executivo & GIP
     </button>
     <button class="nav-tab" data-tab="riskranges" id="navTabRiskRanges" onclick="setTab('riskranges')">
-      🎯 Risk Ranges & Sinais (<span id="navRiskRangeDate">08/09</span>)
+      🎯 Risk Ranges & Sinais (<span id="navRiskRangeDate">09/09</span>)
     </button>
     <button class="nav-tab" data-tab="portfolio" onclick="setTab('portfolio')">
       💼 Portfólios (Schwab / Tastyworks)
@@ -81,7 +87,7 @@
       🔍 Analisador de Ações (5 Passos)
     </button>
     <button class="nav-tab" data-tab="earlylook" onclick="setTab('earlylook')">
-      📥 Sincronizador de EARLYLOOK
+      📥 Base & Sincronizador E-mails
     </button>
     <button class="nav-tab" data-tab="decisions" onclick="setTab('decisions')">
       📝 Log de Decisões & Auditoria
@@ -90,9 +96,433 @@
 
   <!-- Main Content Container -->
   <main class="main-container">
-    
+
+    <!-- ========================================================
+         TAB 0: EARLY LOOK DO DIA TRADUZIDO (PORTUGUÊS BRASIL)
+         ======================================================== -->
+    <section id="tab-earlylook-translated" class="tab-content active">
+      <div class="earlylook-view-wrapper">
+        
+        <!-- Barra de Controles e Seleção de Relatório -->
+        <div class="earlylook-control-bar">
+          <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+            <label for="selectTranslatedReport" style="font-size: 0.88rem; font-weight: 600; color: #94A3B8;">
+              <span class="icon">📅</span> Selecionar Relatório:
+            </label>
+            <select id="selectTranslatedReport" class="form-select" style="min-width: 340px; font-weight: 600;" onchange="changeTranslatedReport(this.value)">
+              <option value="latest" selected>09/09/2026 — EARLY LOOK: Burning Down The USD House? (Hoje)</option>
+              <option value="08/09/2026">08/09/2026 — EARLY LOOK: Oil, Rates, Inflation #Accelerating</option>
+              <option value="04/09/2026">04/09/2026 — EARLY LOOK: #Quad2 Then #Quad2?</option>
+              <option value="03/09/2026">03/09/2026 — EARLY LOOK: Riding The Waves of Volatility</option>
+              <option value="02/09/2026">02/09/2026 — EARLY LOOK: Bubbles Imploding vs. TRADE Breakouts</option>
+            </select>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+            <!-- Alternador de Idioma -->
+            <div class="btn-group">
+              <button class="btn btn-sm btn-primary" id="btnLangPt" onclick="setEarlyLookLanguage('pt')">
+                🇧🇷 Tradução (PT-BR)
+              </button>
+              <button class="btn btn-sm btn-outline" id="btnLangEn" onclick="setEarlyLookLanguage('en')">
+                🇺🇸 Original (EN)
+              </button>
+            </div>
+
+            <button class="btn btn-sm btn-outline" onclick="copyEarlyLookTranslation()" title="Copiar texto traduzido completo">
+              <span class="icon">📋</span> Copiar Tradução
+            </button>
+            <button class="btn btn-sm btn-outline" onclick="printEarlyLookReport()" title="Imprimir ou salvar PDF desta tradução">
+              <span class="icon">🖨️</span> Imprimir / PDF
+            </button>
+            <button class="btn btn-sm btn-outline" onclick="syncReportsOnDemand()" title="Buscar novos relatórios no Gmail">
+              <span class="icon">🔄</span> Sincronizar
+            </button>
+          </div>
+        </div>
+
+        <!-- Conteúdo Renderizado da Tradução em Português -->
+        <div id="earlylookTranslatedContainer">
+          
+          <!-- Hero Header Executivo -->
+          <div class="earlylook-hero-header">
+            <div class="hero-meta-row">
+              <div class="quad-badge quad-3">
+                <span class="pulse-dot"></span>
+                <span id="elHeaderRegime">REGIME GIP: QUAD 3 (#ACCELERATING)</span>
+              </div>
+              <div style="font-size: 0.85rem; color: #38BDF8; font-family: 'JetBrains Mono', monospace;">
+                RESEARCH EXCLUSIVO HEDGEYE RISK MANAGEMENT
+              </div>
+            </div>
+
+            <div class="hero-title-group">
+              <h2 id="elMainTitle">EARLY LOOK: <span>Incendiando a "Casa" do Dólar Americano?</span></h2>
+              <div class="hero-subtitle-meta">
+                <span><strong>Data Oficial:</strong> <span id="elDisplayDate">Quarta-feira, 09 de Setembro de 2026 (07:42 EDT)</span></span>
+                <span>•</span>
+                <span><strong>Autor:</strong> Keith McCullough (@keithmccullough)</span>
+                <span>•</span>
+                <span><strong>Status:</strong> <span class="badge badge-bullish">100% Sincronizado & Traduzido</span></span>
+              </div>
+            </div>
+
+            <!-- Citação Filosófica de David Bohm -->
+            <div class="earlylook-quote-banner">
+              <span class="quote-icon">“</span>
+              <div class="quote-text" id="elQuoteText">
+                A Ordem Implicada é particularmente adequada para a compreensão da totalidade ininterrupta em movimento fluente.
+                <span class="quote-author">— David Bohm (Físico Quântico)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cards de Key Takeaways (Principais Conclusões) -->
+          <div class="mt-2">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: #FFFFFF; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span class="icon">🎯</span> Principais Destaques Estratégicos (Key Takeaways)
+            </h3>
+            <div class="key-takeaways-grid" id="elTakeawaysGrid">
+              <!-- Card 1: Dólar -->
+              <div class="takeaway-card rose-border">
+                <div class="takeaway-header">
+                  <span class="t-icon">📉</span>
+                  <h4>1. Colapso do Dólar para Mínimas de 3 Meses</h4>
+                </div>
+                <div class="takeaway-body">
+                  O <strong>Dólar Americano (DXY)</strong> rompeu para novas mínimas de 3 meses ($98,77) em Bearish TREND, enquanto o Iene Japonês (+0,4% a 153,51) e as commodities disparam. Essa fraqueza cambial <strong>está realimentando a inflação</strong>, em vez de contê-la.
+                </div>
+              </div>
+
+              <!-- Card 2: Bond Yields -->
+              <div class="takeaway-card amber-border">
+                <div class="takeaway-header">
+                  <span class="t-icon">📈</span>
+                  <h4>2. Juros dos T-Bonds em Novas Máximas de Ciclo</h4>
+                </div>
+                <div class="takeaway-body">
+                  As taxas dos Treasuries permanecem sob forte pressão compradora de yields. O <strong>UST 2Y (topo em 4,50%)</strong> e o <strong>UST 10Y (4,68%–4,86%)</strong> sinalizam novas máximas do ciclo inflacionário, impulsionados por alta em commodities, risco de guerra e Dólar fraco.
+                </div>
+              </div>
+
+              <!-- Card 3: Rotação de Fluxos -->
+              <div class="takeaway-card emerald-border">
+                <div class="takeaway-header">
+                  <span class="t-icon">🔄</span>
+                  <h4>3. Rotação Acelerada para Ativos Reais & Cíclicos</h4>
+                </div>
+                <div class="takeaway-body">
+                  Os fluxos globais não sumiram: estão rotacionando. O setor imobiliário americano (Housing ITB) está derretendo (-10,1% no mês), enquanto o capital migra agressivamente para <strong>Commodities Físicas (CRB +11,5%, Cobre em ATHs, Ouro)</strong> e Semicondutores cíclicos.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tese Central Macroeconômica & Macro Grind Traduzida -->
+          <div class="thesis-article-card mt-2">
+            <div class="thesis-article-header">
+              <h3><span class="icon">📖</span> Tese Macroeconômica Completa & The Macro Grind (Traduzido)</h3>
+              <span class="tag tag-info">Análise Quantitativa Fractal & Teoria dos Sistemas</span>
+            </div>
+
+            <!-- Bloco 1: A Grande Imagem (The Big Picture) -->
+            <div class="thesis-section-block">
+              <h4 class="thesis-section-title"><span class="icon">🧭</span> 1. A Grande Imagem: A Física Quântica dos Mercados (The Big Picture)</h4>
+              <p class="thesis-paragraph">
+                David Bohm foi um físico quântico que argumentou que a <strong>realidade é fundamentalmente uma totalidade contínua e ininterrupta</strong> (e não uma coleção de objetos isolados), e que o que percebemos como coisas distintas são apenas padrões temporários abstraídos dessa ordem implicada mais profunda.
+              </p>
+              <p class="thesis-paragraph">
+                A menos que você seja um crente cego no "Governo Central" e acredite que os burocratas do Federal Reserve e do Tesouro Americano foram colocados na Terra para dobrar as leis da gravidade econômica e suavizar mercados, você entende uma verdade fundamental: <strong>você não pode manipular uma parte de um sistema sem que o todo reaja</strong>.
+              </p>
+              <p class="thesis-paragraph">
+                Scott Bessent aparentemente perdeu esse capítulo do livro de Bohm ao declarar: <em>"Eu sou a casa agora"</em> ao falar sobre intervenções no Iene e manipulação de mercado. A "casa" de Bessent está se incendiando em termos de Dólar Americano, atingindo novas mínimas de 3 meses esta manhã. Se você é investidor, sua casa foi construída, comprada e precificada em dólares. <strong>A Ordem Implicada não se importa com quem se declarou no comando: ela simplesmente continua fluindo.</strong>
+              </p>
+            </div>
+
+            <!-- Bloco 2: A Mecânica da Destruição do Poder de Compra -->
+            <div class="thesis-section-block">
+              <h4 class="thesis-section-title"><span class="icon">🔥</span> 2. Como a Sua "Casa" Queima em Poder de Compra Real</h4>
+              <p class="thesis-paragraph">
+                Como lembrete essencial aos investidores, é exatamente assim que o seu patrimônio é corroído em termos de poder de compra real:
+              </p>
+              <div style="background: rgba(244, 63, 94, 0.08); border-left: 3px solid #F43F5E; padding: 0.9rem 1.2rem; border-radius: 6px; margin: 0.8rem 0;">
+                <p style="margin: 0; color: #FECDD3; font-weight: 600; font-size: 0.92rem;">
+                  1️⃣ A moeda na qual você é remunerado (USD / Dólar) cai de valor.<br>
+                  2️⃣ O preço real dos bens e insumos que você precisa/deseja comprar com essa moeda suada sobe expressivamente.
+                </p>
+              </div>
+              <p class="thesis-paragraph">
+                As únicas pessoas que "não verão" isso são aquelas que tentarão criar narrativas otimistas e distorcidas sobre os números de inflação do CPI. A população real entende perfeitamente: os preços do mundo real não mentem, os políticos sim.
+              </p>
+            </div>
+
+            <!-- Bloco 3: Cadeia Causal Macroeconômica (Fluxograma) -->
+            <div class="thesis-section-block">
+              <h4 class="thesis-section-title"><span class="icon">⚡</span> 3. A Cadeia Causal da Inflação & Juros (Efeito Dominó Macro)</h4>
+              <p class="thesis-paragraph">
+                Esta é a mecânica matemática inexorável que rege o momento atual dos mercados:
+              </p>
+
+              <div class="causal-chain-grid">
+                <div class="causal-chain-step">
+                  <div class="step-number">PASSO 1</div>
+                  <div class="step-title">Iene Sobe (Up Yen)</div>
+                  <div class="step-desc">+0,4% para 153,51 (Bullish TREND)</div>
+                </div>
+                <div class="causal-chain-step">
+                  <div class="step-number">PASSO 2</div>
+                  <div class="step-title">Dólar Cai (Down USD)</div>
+                  <div class="step-desc">Mínima de 3 meses ($98,77 Bearish)</div>
+                </div>
+                <div class="causal-chain-step">
+                  <div class="step-number">PASSO 3</div>
+                  <div class="step-title">Inflação Acelera</div>
+                  <div class="step-desc">CRB Commodities em Máxima de Ciclo</div>
+                </div>
+                <div class="causal-chain-step">
+                  <div class="step-number">PASSO 4</div>
+                  <div class="step-title">Yields dos Bonds Sobem</div>
+                  <div class="step-desc">UST 10Y em 4,86% (Novas Máximas)</div>
+                </div>
+                <div class="causal-chain-step">
+                  <div class="step-number">PASSO 5</div>
+                  <div class="step-title">Fuga para Ativos Reais</div>
+                  <div class="step-desc">Ouro, Cobre (ATH) & Petróleo WTI</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bloco 4: Setores em Colapso vs Setores Líderes -->
+            <div class="thesis-section-block">
+              <h4 class="thesis-section-title"><span class="icon">🏗️</span> 4. Diagnóstico Setorial: Housing em Colapso vs Superciclo de Commodities</h4>
+              <p class="thesis-paragraph">
+                O setor imobiliário residencial americano (<strong>Housing / ITB</strong>) liderou as quedas de ontem, caindo <strong>-3,0% em um único pregão</strong> e acumulando um drawdown de <strong>-10,1% no último mês</strong>.
+              </p>
+              <p class="thesis-paragraph">
+                Por outro lado, o fator <strong>High Beta Momentum</strong> (que sinalizamos na semana passada como sobrevendido no curto prazo TRADE) teve um repique de alívio (+6,7% no dia, mas ainda -5,0% no mês).
+              </p>
+              <p class="thesis-paragraph">
+                Bohm estava certo: não é possível manipular uma peça sem que o todo responda. Se o capital não pode comprar Dólares ou Treasuries americanos com rendimentos reais negativos ou juros em alta, <strong>A Máquina dos Algoritmos continua comprando Commodities</strong>. E não se engane: Semicondutores também são commodities cíclicas essenciais. Este é um sistema fechado: o dinheiro desvalorizado precisa fluir para algum lugar.
+              </p>
+            </div>
+          </div>
+
+          <!-- Níveis Oficiais de Risk Ranges de Hoje (09/09/2026) -->
+          <div class="thesis-article-card mt-2">
+            <div class="thesis-article-header">
+              <div>
+                <h3><span class="icon">🎯</span> Níveis Oficiais de Risk Ranges™ Traduzidos (09/09/2026)</h3>
+                <p class="subtitle" style="margin-top: 0.2rem;">Sinais quantitativos e faixas de volatilidade ajustada calculados pelo modelo de Keith McCullough</p>
+              </div>
+              <button class="btn btn-sm btn-outline" onclick="setTab('riskranges')">
+                <span class="icon">📊</span> Ver no Painel Interativo de Ranges
+              </button>
+            </div>
+
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Ativo / Ticker</th>
+                  <th>Nome Completo</th>
+                  <th>Piso (Low)</th>
+                  <th>Teto (High)</th>
+                  <th>Sinal TREND</th>
+                  <th>Interpretação Operacional Hedgeye</th>
+                </tr>
+              </thead>
+              <tbody id="elRiskRangesTableBody">
+                <tr>
+                  <td><strong>UST10Y</strong></td>
+                  <td>10-Year U.S. Treasury Yield</td>
+                  <td><strong>4.68%</strong></td>
+                  <td><strong>4.86%</strong></td>
+                  <td><span class="badge badge-bullish">BULLISH</span></td>
+                  <td>Novas máximas de ciclo de inflação. Manter Shorts em Renda Fixa Longa.</td>
+                </tr>
+                <tr>
+                  <td><strong>USD</strong></td>
+                  <td>U.S. Dollar Index (DXY)</td>
+                  <td><strong>98.41</strong></td>
+                  <td><strong>99.52</strong></td>
+                  <td><span class="badge badge-bearish">BEARISH</span></td>
+                  <td>Mínimas de 3 meses. Combustível principal para o rali de commodities.</td>
+                </tr>
+                <tr>
+                  <td><strong>GOLD</strong></td>
+                  <td>Gold Spot Price (Ouro Físico / Oz)</td>
+                  <td><strong>4.290</strong></td>
+                  <td><strong>4.599</strong></td>
+                  <td><span class="badge badge-bullish">BULLISH</span></td>
+                  <td>Pilar de ouro inabalável no Quad 3. Comprar nos recuos em direção ao piso.</td>
+                </tr>
+                <tr>
+                  <td><strong>COPPER</strong></td>
+                  <td>Copper Spot (Cobre Físico)</td>
+                  <td><strong>6.49</strong></td>
+                  <td><strong>6.75</strong></td>
+                  <td><span class="badge badge-bullish">BULLISH</span></td>
+                  <td>Rompendo para Máximas Históricas (ATHs). Superciclo de demanda física.</td>
+                </tr>
+                <tr>
+                  <td><strong>WTIC</strong></td>
+                  <td>Petróleo WTI (Light Crude)</td>
+                  <td><strong>86.36</strong></td>
+                  <td><strong>97.53</strong></td>
+                  <td><span class="badge badge-bullish">BULLISH</span></td>
+                  <td>Teto explodiu para 97,53. Reflação acelerada favorece energia e serviços (OIH).</td>
+                </tr>
+                <tr>
+                  <td><strong>NATGAS</strong></td>
+                  <td>Gás Natural (Henry Hub)</td>
+                  <td><strong>2.80</strong></td>
+                  <td><strong>3.03</strong></td>
+                  <td><span class="badge badge-bullish">BULLISH</span></td>
+                  <td>Bullish TREND intacto com suporte em 2,80.</td>
+                </tr>
+                <tr>
+                  <td><strong>OIH</strong></td>
+                  <td>VanEck Oil Services ETF</td>
+                  <td><strong>414.00</strong></td>
+                  <td><strong>444.00</strong></td>
+                  <td><span class="badge badge-bullish">BULLISH</span></td>
+                  <td>Piso elevado para 414. Alavancagem operacional ao preço do petróleo.</td>
+                </tr>
+                <tr>
+                  <td><strong>IGV</strong></td>
+                  <td>Tech-Software Sector ETF</td>
+                  <td><strong>99.00</strong></td>
+                  <td><strong>112.00</strong></td>
+                  <td><span class="badge badge-bullish">BULLISH</span></td>
+                  <td>Long AI Software vs Short Semis segue forte. Software enterprise com pricing power.</td>
+                </tr>
+                <tr>
+                  <td><strong>SPX</strong></td>
+                  <td>S&P 500 Index</td>
+                  <td><strong>7.604</strong></td>
+                  <td><strong>7.767</strong></td>
+                  <td><span class="badge badge-bullish">BULLISH</span></td>
+                  <td>Large Caps sustentadas por fluxos institucionais e lucros sólidos.</td>
+                </tr>
+                <tr>
+                  <td><strong>COMPQ</strong></td>
+                  <td>NASDAQ Composite</td>
+                  <td><strong>26.008</strong></td>
+                  <td><strong>26.711</strong></td>
+                  <td><span class="badge badge-bullish">BULLISH</span></td>
+                  <td>Resiliência em Big Techs com fortes fluxos de caixa livre (FCF).</td>
+                </tr>
+                <tr>
+                  <td><strong>RUT</strong></td>
+                  <td>Russell 2000 (Small Caps)</td>
+                  <td><strong>2.912</strong></td>
+                  <td><strong>3.014</strong></td>
+                  <td><span class="badge badge-neutral">NEUTRAL</span></td>
+                  <td>Small Caps sofrem com aperto de juros (UST10Y > 4,70%). Manter neutralidade.</td>
+                </tr>
+                <tr>
+                  <td><strong>LQD</strong></td>
+                  <td>Investment Grade Corporate Bond ETF</td>
+                  <td><strong>104.60</strong></td>
+                  <td><strong>106.10</strong></td>
+                  <td><span class="badge badge-bearish">BEARISH</span></td>
+                  <td>Bearish TREND. Manter Short em crédito de empresas sensíveis à taxa longa.</td>
+                </tr>
+                <tr>
+                  <td><strong>HYG</strong></td>
+                  <td>High Yield Corporate Bond ETF</td>
+                  <td><strong>78.91</strong></td>
+                  <td><strong>79.49</strong></td>
+                  <td><span class="badge badge-bullish">BULLISH</span></td>
+                  <td>Spreads de crédito comprimidos no curto prazo; vigiar teto em 79,49.</td>
+                </tr>
+                <tr>
+                  <td><strong>XLV</strong></td>
+                  <td>Health Care Select Sector SPDR</td>
+                  <td><strong>166.00</strong></td>
+                  <td><strong>175.00</strong></td>
+                  <td><span class="badge badge-bullish">BULLISH</span></td>
+                  <td>Defensiva de alta qualidade e resiliência de fluxo em Quad 3.</td>
+                </tr>
+                <tr>
+                  <td><strong>VIX</strong></td>
+                  <td>CBOE Volatility Index</td>
+                  <td><strong>13.85</strong></td>
+                  <td><strong>16.34</strong></td>
+                  <td><span class="badge badge-bearish">BEARISH</span></td>
+                  <td>Volatilidade implícita em Bearish TREND com teto em 16,34.</td>
+                </tr>
+                <tr>
+                  <td><strong>SILVER</strong></td>
+                  <td>Prata Spot (Oz)</td>
+                  <td><strong>64.00</strong></td>
+                  <td><strong>68.00</strong></td>
+                  <td><span class="badge badge-neutral">NEUTRAL</span></td>
+                  <td>Sinal NEUTRAL no curto prazo. Não comprar a queda até recuperar o sinal TRADE.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Diretrizes Táticas de Alocação de Portfólio -->
+          <div class="thesis-article-card mt-2">
+            <div class="thesis-article-header">
+              <h3><span class="icon">💼</span> Diretrizes Operacionais para as Carteiras (Schwab & Tastyworks)</h3>
+              <span class="tag tag-success">Alinhamento Rigoroso com o Regime Quad 3</span>
+            </div>
+
+            <div class="action-guidelines-grid">
+              <!-- Compras / Manter com Convicção -->
+              <div class="action-box buy-box">
+                <div class="action-box-title">
+                  <span class="icon">🟢</span> COMPRAR NOS RECÚOS & MANTER POSIÇÕES CORE
+                </div>
+                <ul class="action-list">
+                  <li><strong>• Ouro Físico (AAAU) & Mineradoras (NEM / GDX):</strong> Comprar recuos nos pisos de Risk Range. Principal âncora patrimonial contra DXY Bearish.</li>
+                  <li><strong>• Metais Industriais & Cobre (MLI / ICOP):</strong> Cobre em Máximas Históricas (ATHs); demanda secular por infraestrutura elétrica.</li>
+                  <li><strong>• Energia Descentralizada (BE / GRID) & Petróleo (WTIC / OIH):</strong> Favorecidos pelo choque de oferta e inflação em aceleração.</li>
+                  <li><strong>• Monopólios de Fluxo de Caixa (MELI / GOOG / META / AVGO):</strong> Capacidade de repasse inflacionário e margens FCF elevadas.</li>
+                  <li><strong>• Caixa em T-Bills (SGOV / Cash):</strong> Preservar liquidez para executar compras estritamente nos pisos de volatilidade.</li>
+                </ul>
+              </div>
+
+              <!-- Vender nos Topos / Evitar -->
+              <div class="action-box sell-box">
+                <div class="action-box-title">
+                  <span class="icon">🔴</span> VENDER NOS REPIQUES & MANTER SHORTS
+                </div>
+                <ul class="action-list">
+                  <li><strong>• Treasuries Longos (TLT / ZROZ):</strong> Yields dos bonds em novas máximas de ciclo (UST 10Y até 4,86%). Manter short estrutural.</li>
+                  <li><strong>• Crédito Corporativo Longo (LQD):</strong> Bearish TREND (104,60–106,10).</li>
+                  <li><strong>• Setor Imobiliário Residencial (Housing ITB):</strong> Drawdown de -10,1% no mês pelo impacto de juros altos de hipoteca.</li>
+                  <li><strong>• Utilities (XLU):</strong> Recarregar shorts em repiques contra o teto de Risk Range.</li>
+                  <li><strong>• Small Caps Endividadas (RUT):</strong> Rebaixadas para Neutral; custo de rolagem de dívida corrói lucros operacionais.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Visualizador do Texto Original em Inglês (Oculto por padrão, acionado pelo toggle) -->
+        <div id="earlylookOriginalContainer" style="display: none;">
+          <div class="thesis-article-card">
+            <div class="thesis-article-header">
+              <div>
+                <h3 id="elOriginalTitle">EARLY LOOK: Burning Down The USD House? (Original English)</h3>
+                <p class="subtitle" style="margin-top: 0.2rem;">Texto integral bruto capturado diretamente do e-mail da Hedgeye via IMAP</p>
+              </div>
+              <span class="badge badge-accent">Raw E-mail Research</span>
+            </div>
+            <pre id="elOriginalContent" style="background: rgba(15, 23, 42, 0.9); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); color: #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.6; white-space: pre-wrap; overflow-x: auto; max-height: 650px; overflow-y: auto;">
+            </pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <!-- TAB 1: DASHBOARD EXECUTIVO & GIP -->
-    <section id="tab-dashboard" class="tab-content active">
+    <section id="tab-dashboard" class="tab-content">
       <!-- Métricas Rápidas / Alertas Principais de Hoje -->
       <div class="metrics-grid">
         <div class="metric-card">

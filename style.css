@@ -1460,4 +1460,308 @@ body {
   background: rgba(56, 189, 248, 0.08);
 }
 
+/* ========================================================
+   ESTILOS EXCLUSIVOS: ABA EARLY LOOK TRADUZIDO
+   ======================================================== */
+.badge-new-pulsing {
+  display: inline-block;
+  background: linear-gradient(135deg, #EC4899, #F43F5E);
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  margin-left: 0.4rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.6);
+  animation: pulseBadge 2s infinite;
+}
+
+@keyframes pulseBadge {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.85; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.earlylook-view-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.earlylook-control-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: rgba(18, 24, 36, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 0.9rem 1.4rem;
+  box-shadow: var(--shadow-main);
+}
+
+.earlylook-hero-header {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.85));
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.earlylook-hero-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #38BDF8, #EC4899, #10B981);
+}
+
+.hero-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-title-group h2 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin-bottom: 0.4rem;
+}
+
+.hero-title-group h2 span {
+  color: #38BDF8;
+}
+
+.hero-subtitle-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 0.88rem;
+  color: #94A3B8;
+  flex-wrap: wrap;
+}
+
+.earlylook-quote-banner {
+  background: rgba(56, 189, 248, 0.07);
+  border-left: 4px solid #38BDF8;
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.4rem;
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.earlylook-quote-banner .quote-icon {
+  font-size: 2rem;
+  line-height: 1;
+  color: #38BDF8;
+  opacity: 0.8;
+}
+
+.earlylook-quote-banner .quote-text {
+  font-style: italic;
+  color: #E2E8F0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.earlylook-quote-banner .quote-author {
+  font-weight: 700;
+  color: #38BDF8;
+  margin-left: 0.5rem;
+  font-style: normal;
+}
+
+.key-takeaways-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+
+.takeaway-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.takeaway-card:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+.takeaway-card.rose-border { border-top: 3px solid #F43F5E; }
+.takeaway-card.amber-border { border-top: 3px solid #F59E0B; }
+.takeaway-card.emerald-border { border-top: 3px solid #10B981; }
+
+.takeaway-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.takeaway-header .t-icon {
+  font-size: 1.3rem;
+}
+
+.takeaway-header h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.takeaway-body {
+  font-size: 0.9rem;
+  color: #CBD5E1;
+  line-height: 1.55;
+}
+
+.thesis-article-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+}
+
+.thesis-article-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
+.thesis-article-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.thesis-section-block {
+  margin-bottom: 1.8rem;
+}
+
+.thesis-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #38BDF8;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.thesis-paragraph {
+  font-size: 0.94rem;
+  color: #E2E8F0;
+  line-height: 1.7;
+  margin-bottom: 0.9rem;
+}
+
+.causal-chain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+}
+
+.causal-chain-step {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.1rem;
+  text-align: center;
+  position: relative;
+}
+
+.causal-chain-step .step-number {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #38BDF8;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+
+.causal-chain-step .step-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.causal-chain-step .step-desc {
+  font-size: 0.78rem;
+  color: #94A3B8;
+  margin-top: 0.2rem;
+}
+
+.action-guidelines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.action-box {
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+}
+
+.action-box.buy-box {
+  background: rgba(16, 185, 129, 0.06);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.action-box.sell-box {
+  background: rgba(244, 63, 94, 0.06);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+}
+
+.action-box-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.action-box.buy-box .action-box-title { color: #34D399; }
+.action-box.sell-box .action-box-title { color: #FB7185; }
+
+.action-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: #E2E8F0;
+}
+
+.action-list li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+
 
