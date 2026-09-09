@@ -939,12 +939,135 @@ function filterFundamentals(cat, btnElement) {
 }
 
 // 3. ANALISADOR DE AÇÕES COM CONFLUÊNCIA VALUATION + RISK RANGE
+const companyBusinessProfiles = {
+  "MLI": {
+    name: "Mueller Industries, Inc.",
+    profile: "Fabricante líder de tubulações de cobre, conexões de latão, componentes de alumínio e produtos plásticos. Opera através dos segmentos: **Sistemas de Tubulação (Piping Systems)**, **Metais Industriais** e **Climatização/Refrigeração (Climate)**. É uma das principais beneficiárias diretas da valorização estrutural do cobre, da demanda por infraestrutura industrial e da modernização de sistemas de climatização em data centers e construção civil."
+  },
+  "MELI": {
+    name: "MercadoLibre, Inc.",
+    profile: "Maior ecossistema de e-commerce e serviços financeiros da América Latina. Opera as plataformas Mercado Livre (marketplace e malha logística própria Meli Delivery) e Mercado Pago (banco digital, pagamentos e crédito). Beneficia-se de escala continental, forte poder de repasse de preços em moedas locais e desvalorização do dólar (DXY Bearish)."
+  },
+  "GOOGL": {
+    name: "Alphabet Inc.",
+    profile: "Conglomerado global de tecnologia que opera o Google Search (monopólio em buscas), YouTube, ecossistema Android, Google Cloud e a divisão de chips aceleradores customizados (TPUs). Possui um dos balanços mais fortes do mundo (US$ 100B+ em caixa) com forte monetização em publicidade digital e pesquisa avançada de IA (Gemini)."
+  },
+  "GOOG": {
+    name: "Alphabet Inc. (Class C)",
+    profile: "Ações classe C da Alphabet (sem direito a voto). Conglomerado líder em inteligência artificial, computação em nuvem (Google Cloud), YouTube e publicidade digital global."
+  },
+  "AVGO": {
+    name: "Broadcom Inc.",
+    profile: "Líder global em semicondutores de alta performance e software corporativo de infraestrutura. Fabrica os switches de rede Ethernet mais avançados do mundo (Tomahawk/Jericho) essenciais para interligar clusters de IA de hyperscalers (Meta, Google), além de chips aceleradores customizados (XPUs) e a plataforma de virtualização VMware."
+  },
+  "ASML": {
+    name: "ASML Holding N.V.",
+    profile: "Detentora do monopólio global absoluto em máquinas de litografia ultravioleta extrema (EUV e High-NA EUV). É a única fornecedora no mundo capaz de produzir os equipamentos que gravam circuitos integrados de 3nm, 2nm e A16 para TSMC, Intel e Samsung. Ninguém fabrica chips avançados sem a ASML."
+  },
+  "UBER": {
+    name: "Uber Technologies, Inc.",
+    profile: "Plataforma líder global em mobilidade urbana sob demanda, entregas de refeições (Uber Eats) e logística de carga (Uber Freight). Converteu sua escala em forte geração de fluxo de caixa livre (FCF) e posiciona-se como a rede de distribuição dominante para frotas comerciais de veículos autônomos (parcerias com Waymo)."
+  },
+  "META": {
+    name: "Meta Platforms, Inc.",
+    profile: "Controladora das maiores redes sociais globais (Instagram, WhatsApp, Facebook e Threads). Monetiza sua base de mais de 3 bilhões de usuários por meio de publicidade digital potencializada por IA e lidera o desenvolvimento de modelos abertos de inteligência artificial com a família Llama."
+  },
+  "BE": {
+    name: "Bloom Energy Corporation",
+    profile: "Desenvolve e comercializa células de combustível de óxido sólido (SOFC) para geração distribuída de eletricidade 'in-loco'. Resolve o maior gargalo da infraestrutura de IA: a falta de capacidade e a lentidão de conexão das concessionárias de energia elétrica, fornecendo energia limpa e ininterrupta para data centers."
+  },
+  "NEM": {
+    name: "Newmont Corporation",
+    profile: "Maior mineradora de ouro do mundo, com reservas de classe mundial e operações na América do Norte, América do Sul, Austrália e África. Oferece alta alavancagem operacional aos preços do ouro físico em regimes de estagflação (Quad 3) e desvalorização cambial."
+  },
+  "AAAU": {
+    name: "Goldman Sachs Physical Gold ETF",
+    profile: "ETF lastreado 100% em barras físicas de ouro alocadas e custodiadas em cofres de segurança máxima. Principal veículo de preservação de poder de compra e hedge clássico contra inflação e perda de confiança em moedas fiduciárias."
+  },
+  "GDX": {
+    name: "VanEck Gold Miners ETF",
+    profile: "ETF que reúne as principais empresas globais de mineração e exploração de ouro (Newmont, Agnico Eagle, Barrick). Proporciona exposição alavancada ao ciclo de alta das commodities metálicas e do ouro."
+  },
+  "SLV": {
+    name: "iShares Silver Trust",
+    profile: "ETF lastreado em barras de prata física. A prata possui duplo vetor de valorização: reserva de valor monetário e insumo industrial crítico para painéis solares, eletrônicos e semicondutores."
+  },
+  "SGOV": {
+    name: "iShares 0-3 Month Treasury Bond ETF",
+    profile: "ETF que investe exclusivamente em títulos da dívida pública dos EUA (T-Bills) com vencimento de até 3 meses. Representa o instrumento de preservação de capital e rendimento livre de risco em dólares (Caixa)."
+  },
+  "FN": {
+    name: "Fabrinet",
+    profile: "Provedora de serviços de manufatura avançada e montagem óptica de altíssima precisão. É a parceira de fabricação exclusiva dos transceivers ópticos de alta velocidade (800G e 1.6T) utilizados nos clusters de GPUs da Nvidia."
+  },
+  "ALAB": {
+    name: "Astera Labs, Inc.",
+    profile: "Líder em semicondutores e circuitos integrados para conectividade de data centers de IA. Produz chips retimers PCIe 5.0/6.0, módulos CXL e soluções de interconexão que eliminam os gargalos de largura de banda entre aceleradores e memórias."
+  },
+  "CRDO": {
+    name: "Credo Technology Group",
+    profile: "Fornecedora de soluções de conectividade de dados de alta velocidade e baixo consumo de energia. Destaca-se pela tecnologia de Cabos Elétricos Ativos (AEC) e DSPs SerDes, reduzindo o peso, diâmetro e consumo elétrico de racks de servidores de IA."
+  },
+  "COHR": {
+    name: "Coherent Corp.",
+    profile: "Líder global em lasers industriais, materiais de carbeto de silício (SiC) e componentes de comunicação óptica para telecomunicações e data centers."
+  },
+  "ARM": {
+    name: "Arm Holdings plc",
+    profile: "Projeta e licencia as arquiteturas de CPUs com a mais alta eficiência energética do planeta. Seus designs estão presentes em quase todos os smartphones do mundo e expandem-se rapidamente para servidores de nuvem de IA (chips Grace da Nvidia e Graviton da AWS)."
+  },
+  "MTSI": {
+    name: "MACOM Technology Solutions",
+    profile: "Projeta e fabrica semicondutores de radiofrequência (RF), micro-ondas e ondas milimétricas para sistemas de defesa aeroespacial, redes industriais e módulos ópticos de alta frequência."
+  },
+  "AXTI": {
+    name: "AXT, Inc.",
+    profile: "Fabricante especializada de substratos compostos semicondutores (fosfeto de índio, arseneto de gálio e germânio) fundamentais para a emissão e recepção de sinais ópticos em data centers e lasers."
+  },
+  "TSEM": {
+    name: "Tower Semiconductor Ltd.",
+    profile: "Fundição especializada (foundry) na manufatura de chips analógicos, sensores de imagem CMOS, circuitos de gerenciamento de energia e radiofrequência SiGe para clientes industriais e automotivos."
+  },
+  "INTC": {
+    name: "Intel Corporation",
+    profile: "Uma das maiores fabricantes de processadores x86 do mundo para computadores pessoais e servidores corporativos. Encontra-se em processo de reestruturação para operar serviços de fundição de semicondutores (Intel Foundry)."
+  },
+  "NOK": {
+    name: "Nokia Oyj",
+    profile: "Multinacional finlandesa líder em infraestrutura de telecomunicações, equipamentos de rádio 5G/6G, roteamento IP de ultra-alta velocidade e redes ópticas submarinas e metropolitanas para operadoras e grandes data centers."
+  },
+  "COIN": {
+    name: "Coinbase Global, Inc.",
+    profile: "Principal plataforma de negociação e infraestrutura de custódia institucional de criptoativos dos EUA, operando serviços de corretagem, staking, custódia de ETFs de Bitcoin/Ethereum e a rede Layer-2 Base."
+  },
+  "INTR": {
+    name: "Inter & Co, Inc.",
+    profile: "Banco digital global e plataforma financeira (Super App) com serviços bancários integrados, crédito imobiliário/pessoal, investimentos, seguros e operações globais em dólares para clientes na América Latina e EUA."
+  },
+  "MSFT": {
+    name: "Microsoft Corporation",
+    profile: "Líder global em computação em nuvem (Azure), software corporativo (Office 365/Microsoft 365), sistemas operacionais (Windows) e pioneira na integração de IA generativa comercial em parceria com a OpenAI."
+  },
+  "AAPL": {
+    name: "Apple Inc.",
+    profile: "Líder em eletrônicos de consumo premium (iPhone, Mac, iPad, Apple Watch) e serviços digitais integrados (App Store, Apple Pay, iCloud), com um dos ecossistemas de clientes mais leais do planeta."
+  },
+  "NVDA": {
+    name: "NVIDIA Corporation",
+    profile: "Monopólio prático em infraestrutura de computação acelerada para Inteligência Artificial. Desenvolve as GPUs mais potentes do mercado (H100, B200 Blackwell) sustentadas pelo ecossistema de software proprietário CUDA."
+  },
+  "AMZN": {
+    name: "Amazon.com, Inc.",
+    profile: "Gigante global de comércio eletrônico, infraestrutura de nuvem líder de mercado (Amazon Web Services - AWS), rede logística própria e publicidade digital de alta margem."
+  }
+};
+
 function quickAnalyze(ticker) {
   document.getElementById("analyzerTicker").value = ticker;
   runStockAnalysis(ticker);
 }
 
-function runStockAnalysis(customTicker) {
+async function runStockAnalysis(customTicker) {
   const inputEl = document.getElementById("analyzerTicker");
   const ticker = (customTicker || (inputEl ? inputEl.value : "AAAU") || "AAAU").toUpperCase().trim();
   const brokerTarget = document.getElementById("analyzerPortSelect")?.value || "both";
@@ -956,17 +1079,35 @@ function runStockAnalysis(customTicker) {
   if (!headerTitle || !resultBody) return;
 
   headerTitle.innerHTML = `<span class="icon">📊</span> Relatório de Análise: <strong>${ticker}</strong>`;
+  resultBody.innerHTML = `<div style="padding: 2rem; text-align: center; color: #94A3B8;"><div class="spin-icon" style="font-size: 2rem; margin-bottom: 0.5rem;">⚙️</div> Consultando base de dados institucional, múltiplos ao vivo e Dataroma para <strong>${ticker}</strong>...</div>`;
 
-  // 1. Busca dados fundamentais nos dados de mercado ou pré-definidos
-  const fundItem = (marketAnalyticsData && marketAnalyticsData.fundamentals)
+  // 1. Busca perfil pré-cadastrado em Português
+  let businessProfile = companyBusinessProfiles[ticker];
+
+  // 2. Busca dados fundamentais nos dados de mercado ou pré-definidos
+  let fundItem = (marketAnalyticsData && marketAnalyticsData.fundamentals)
     ? marketAnalyticsData.fundamentals.find(d => d.ticker === ticker)
     : null;
   const legacyFundItem = fundamentalsData.find(d => d.ticker === ticker);
 
-  // 2. Busca Risk Range do Keith McCullough
+  // Se não estiver em cache, consulta o endpoint dinâmico do servidor
+  let liveApiData = null;
+  if (!fundItem) {
+    try {
+      const resp = await fetch(`/api/stock-info?ticker=${encodeURIComponent(ticker)}`);
+      if (resp.ok) {
+        liveApiData = await resp.json();
+        fundItem = liveApiData;
+      }
+    } catch (e) {
+      console.warn("Consulta à API dinânica falhou:", e);
+    }
+  }
+
+  // 3. Busca Risk Range do Keith McCullough
   const rrItem = riskRangesData.find(r => r.ticker === ticker || (ticker === "GOLD" && r.ticker === "GOLD") || (ticker === "AAAU" && r.ticker === "GOLD"));
 
-  // 3. Busca sobreposição no portfólio real
+  // 4. Busca sobreposição no portfólio real
   let schwabPos = portfolioData.schwab.positions.find(p => p.ticker === ticker);
   let tastyPos = portfolioData.tastyworks.positions.find(p => p.ticker === ticker);
   
@@ -990,13 +1131,13 @@ function runStockAnalysis(customTicker) {
   const globalPortfolioVal = 245872.29;
   const portfolioWeight = totalVal > 0 ? ((totalVal / globalPortfolioVal) * 100).toFixed(2) : 0;
 
-  // 4. Busca dados no Dataroma (Superinvestidores)
+  // 5. Busca dados no Dataroma (Superinvestidores)
   let dataromaInfo = null;
   if (marketAnalyticsData && marketAnalyticsData.dataroma_consensus) {
     dataromaInfo = marketAnalyticsData.dataroma_consensus.find(c => c.ticker === ticker);
   }
 
-  // 5. Determinação de Sinal e Regime
+  // 6. Determinação de Sinal e Regime
   let signal = "BULLISH TREND";
   let signalBadgeClass = "badge-bullish";
   let rangeDesc = "Sinal quantitativo em tendência altista.";
@@ -1006,42 +1147,75 @@ function runStockAnalysis(customTicker) {
     signalBadgeClass = rrItem.signal === "BULLISH" ? "badge-bullish" : (rrItem.signal === "BEARISH" ? "badge-bearish" : "badge-neutral");
     const pct = Math.max(0, Math.min(100, ((rrItem.current - rrItem.low) / (rrItem.high - rrItem.low)) * 100));
     rangeDesc = `Piso: <strong>${rrItem.low}</strong> | Teto: <strong>${rrItem.high}</strong> (Preço atual: <strong>${rrItem.current}</strong> — Posição no Range: <strong>${pct.toFixed(0)}%</strong>).`;
-  } else if (fundItem) {
-    rangeDesc = `Preço de Mercado Atual: <strong>US$ ${fundItem.price.toFixed(2)}</strong>.`;
+  } else if (fundItem && fundItem.price) {
+    if (fundItem.estimatedSignal) {
+      signal = fundItem.estimatedSignal;
+      signalBadgeClass = signal.includes("BULLISH") ? "badge-bullish" : "badge-bearish";
+    }
+    rangeDesc = `Preço de Mercado Atual: <strong>US$ ${Number(fundItem.price).toFixed(2)}</strong> (52w Low: US$ ${Number(fundItem.fiftyTwoWeekLow || 0).toFixed(2)} | 52w High: US$ ${Number(fundItem.fiftyTwoWeekHigh || 0).toFixed(2)}).`;
   }
 
   // Enquadramento de Quadrante
   let quadFitDesc = "Avaliação de regime macro sob o framework GIP (Growth, Inflation, Policy).";
   if (["AAAU", "NEM", "GDX", "GOLD", "SLV", "BE", "GRID", "AIPO", "MLI", "REMX", "MELI", "GOOG", "GOOGL", "UBER", "SGOV"].includes(ticker)) {
     quadFitDesc = "🟢 <strong>Alinhado ao QUAD 3 (#Accelerating / Estagflação)</strong>. Ativo com ventos a favor estruturais (ouro, commodities, energia descentralizada ou liderança secular com geração de FCF e poder de repasse).";
-  } else if (["AVGO", "ASML", "META", "FN", "ALAB", "COHR", "CRDO", "ARM", "MTSI", "AXTI", "TSEM", "INTC", "NOK", "DRAM", "FOTO", "XBI", "COIN", "INTR"].includes(ticker)) {
+  } else if (["AVGO", "ASML", "META", "FN", "ALAB", "COHR", "CRDO", "ARM", "MTSI", "AXTI", "TSEM", "INTC", "NOK", "DRAM", "FOTO", "XBI", "COIN", "INTR", "NVDA", "TSLA", "AMD", "PLTR"].includes(ticker)) {
     quadFitDesc = "🟡 <strong>DNA de QUAD 1 / QUAD 2 (High Beta & Sensível a Taxas)</strong>. Exige disciplina operacional estrita, respeito aos Risk Ranges e monitoramento contra compressão de múltiplos em ambiente de juros altos (10Y em 4,78%).";
   } else if (["SPY", "QQQ", "IWM"].includes(ticker)) {
     quadFitDesc = "📊 <strong>Índice Amplo de Ações</strong>. Depende do regime de Dealer Gamma (GEX) e rotação de fatores macro.";
+  } else {
+    quadFitDesc = `🔍 Ativo de mercado analisado no setor de <strong>${fundItem?.sector || 'Ações Globais'}</strong>. Recomendado acompanhar a relação risco/retorno e correlação com o DXY e juros 10Y.`;
+  }
+
+  // Texto do Mini Resumo em Português
+  let summaryText = "";
+  if (businessProfile) {
+    summaryText = `
+      <div style="background: rgba(30, 41, 59, 0.45); border: 1px solid rgba(255, 255, 255, 0.08); border-left: 4px solid #38BDF8; padding: 0.9rem; border-radius: 6px; margin-top: 0.5rem; line-height: 1.5; font-size: 0.88rem; color: #E2E8F0;">
+        <strong style="color: #60A5FA; font-size: 0.92rem;">🏢 ${businessProfile.name}:</strong><br>
+        ${businessProfile.profile}
+      </div>
+    `;
+  } else if (fundItem) {
+    const rawSummary = fundItem.summary ? `<div style="margin-top: 0.5rem; font-size: 0.82rem; color: #94A3B8; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 0.4rem;"><em>Descrição da Empresa:</em> ${fundItem.summary}</div>` : "";
+    summaryText = `
+      <div style="background: rgba(30, 41, 59, 0.45); border: 1px solid rgba(255, 255, 255, 0.08); border-left: 4px solid #38BDF8; padding: 0.9rem; border-radius: 6px; margin-top: 0.5rem; line-height: 1.5; font-size: 0.88rem; color: #E2E8F0;">
+        <strong style="color: #60A5FA; font-size: 0.92rem;">🏢 ${fundItem.longName || fundItem.shortName}:</strong><br>
+        Empresa atuante no setor de <strong>${fundItem.sector}</strong> (Indústria: <em>${fundItem.industry || 'Geral'}</em>), monitorada sob a metodologia quantitativa da Hedgeye e múltiplos fundamentais em tempo real.
+        ${rawSummary}
+      </div>
+    `;
+  } else {
+    summaryText = `
+      <div style="background: rgba(30, 41, 59, 0.45); border: 1px solid rgba(255, 255, 255, 0.08); border-left: 4px solid #38BDF8; padding: 0.9rem; border-radius: 6px; margin-top: 0.5rem; line-height: 1.5; font-size: 0.88rem; color: #E2E8F0;">
+        Ativo listado no mercado financeiro americano monitorado sob o framework quantitativo e de regime macro Hedgeye.
+      </div>
+    `;
   }
 
   // Bloco de Valuation
   let valuationHtml = "";
-  if (fundItem) {
+  if (fundItem && fundItem.price) {
+    const growthColor = (fundItem.revenue_growth && fundItem.revenue_growth.startsWith('+')) ? '#10B981' : '#EF4444';
     valuationHtml = `
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.6rem; margin-bottom: 0.6rem;">
         <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
-          <small style="color: #94A3B8;">P/L (P/E):</small><br><strong style="color: #60A5FA;">${fundItem.pe}</strong>
+          <small style="color: #94A3B8;">P/L (P/E):</small><br><strong style="color: #60A5FA;">${fundItem.pe || 'N/D'}</strong>
         </div>
         <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
-          <small style="color: #94A3B8;">EV/EBITDA:</small><br><strong style="color: #60A5FA;">${fundItem.ev_ebitda}</strong>
+          <small style="color: #94A3B8;">EV/EBITDA:</small><br><strong style="color: #60A5FA;">${fundItem.ev_ebitda || 'N/D'}</strong>
         </div>
         <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
-          <small style="color: #94A3B8;">Margem Líquida:</small><br><strong style="color: #38BDF8;">${fundItem.net_margin}</strong>
+          <small style="color: #94A3B8;">Margem Líquida:</small><br><strong style="color: #38BDF8;">${fundItem.net_margin || 'N/D'}</strong>
         </div>
         <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
-          <small style="color: #94A3B8;">Cresc. Receita:</small><br><strong style="color: ${fundItem.revenue_growth.startsWith('+') ? '#10B981' : '#EF4444'};">${fundItem.revenue_growth}</strong>
+          <small style="color: #94A3B8;">Cresc. Receita:</small><br><strong style="color: ${growthColor};">${fundItem.revenue_growth || 'N/D'}</strong>
         </div>
         <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
-          <small style="color: #94A3B8;">Beta:</small><br><strong>${fundItem.beta}</strong>
+          <small style="color: #94A3B8;">Beta:</small><br><strong>${fundItem.beta || '1.00'}</strong>
         </div>
       </div>
-      <div><strong>Consenso de Mercado:</strong> <span class="badge badge-neutral">${fundItem.recommendation}</span> • Market Cap: <strong>${fundItem.market_cap}</strong></div>
+      <div><strong>Consenso / Recomendação:</strong> <span class="badge badge-neutral">${fundItem.recommendation || 'N/D'}</span> • Market Cap: <strong>${fundItem.market_cap || 'N/D'}</strong></div>
     `;
   } else if (legacyFundItem) {
     valuationHtml = `Preço Atual: <strong>US$ ${legacyFundItem.currentPrice.toFixed(2)}</strong> | Múltiplo Atual: <strong>${legacyFundItem.currentMultiple.toFixed(1)}x</strong> vs Múltiplo Justo: <strong>${legacyFundItem.fairMultiple.toFixed(1)}x</strong>. <br><strong>Preço-Alvo Fundamentalista:</strong> <span class="text-cyan font-bold">US$ ${legacyFundItem.targetPrice.toFixed(2)}</span> (Upside: <strong>+${legacyFundItem.upsidePct.toFixed(1)}%</strong>) — Diagnóstico: <strong>${legacyFundItem.valuationStatus}</strong>.`;
@@ -1070,10 +1244,11 @@ function runStockAnalysis(customTicker) {
 
   resultBody.innerHTML = `
     <div class="analyzer-block">
-      <div class="block-title">1. Tese & Modelo de Negócio</div>
-      <p class="block-desc">
-        Ativo <strong>${ticker}</strong> ${fundItem ? `(${fundItem.shortName} — Setor: ${fundItem.sector})` : ''} analisado sob a governança quantitativa da Hedgeye, Howard Marks e dados institucionais do Dataroma.
+      <div class="block-title">1. Tese, Modelo de Negócio & O que a Empresa Faz</div>
+      <p class="block-desc" style="margin-bottom: 0.4rem;">
+        Visão estrutural e operacional do ativo <strong>${ticker}</strong>:
       </p>
+      ${summaryText}
     </div>
 
     <div class="analyzer-block mt-2">
@@ -1083,28 +1258,35 @@ function runStockAnalysis(customTicker) {
 
     <div class="analyzer-block mt-2">
       <div class="block-title">3. Sinal Técnico & Risk Range (Hedgeye)</div>
-      <p class="block-desc"><strong>Sinal:</strong> <span class="badge ${signalBadgeClass}">${signal}</span><br>${rangeDesc}</p>
+      <p class="block-desc">
+        <strong>Sinal:</strong> <span class="badge ${signalBadgeClass}">${signal}</span><br>
+        ${rangeDesc}
+      </p>
+      <div style="margin-top: 0.6rem;">
+        <a href="https://www.tradingview.com/chart/?symbol=${encodeURIComponent(ticker)}" target="_blank" class="btn btn-secondary" style="font-size: 0.78rem; padding: 0.35rem 0.7rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;">
+          📈 Abrir Gráfico no TradingView (Sua Assinatura)
+        </a>
+      </div>
     </div>
 
     <div class="analyzer-block mt-2">
       <div class="block-title">4. Valuation, Múltiplos & Dataroma 13F</div>
-      <div class="block-desc">
+      <div style="margin-top: 0.4rem;">
         ${valuationHtml}
-        ${dataromaHtml}
       </div>
+      ${dataromaHtml}
     </div>
 
     <div class="analyzer-block mt-2">
       <div class="block-title">5. Posição na Carteira & Conclusão Operacional</div>
       <p class="block-desc">
         ${portHtml}<br>
-        <strong>Conduta Recomendada:</strong> ${signal.includes("BULLISH") ? "Comprar nos recuos próximos ao piso do Risk Range ('buy the dips') e respeitar limites de exposição." : "Vender nos repiques perto do teto do Risk Range ('sell the rallies') e priorizar proteção de caixa."}<br>
-        <span class="text-rose"><strong>Gatilho de Invalidação:</strong> Quebra simultânea de TRADE e TREND com virada de fluxo e dólar DXY acima do teto de range.</span>
+        <strong>Conduta Recomendada:</strong> ${signal.includes("BULLISH") ? "Comprar nos recuos próximos ao piso do Risk Range ('buy the dips') e respeitar limites de exposição." : "Evitar compras ou reduzir exposição em repiques contra a média de 200 dias."}<br>
+        <span style="color: #EF4444;"><strong>Gatilho de Invalidação:</strong> Quebra simultânea de TRADE e TREND com virada de fluxo e dólar DXY acima do teto de range.</span>
       </p>
     </div>
   `;
 }
-
 
 // 4. PROCESSADOR DE EARLYLOOK
 function loadSampleEarlyLook() {
