@@ -483,6 +483,13 @@ function setTab(tabId) {
   if (tabId === "portfolio") {
     setTimeout(updatePortfolioChart, 50);
   }
+  if (tabId === "analytics") {
+    if (marketAnalyticsData) {
+      renderMarketAnalytics(marketAnalyticsData);
+    } else {
+      fetchMarketAnalyticsData();
+    }
+  }
 }
 
 // TROCA DE PORTFÓLIO ATIVO
