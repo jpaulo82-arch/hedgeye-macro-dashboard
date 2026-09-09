@@ -1187,7 +1187,7 @@ function renderActiveReportView() {
           </div>
         </div>
         <div class="report-brand-meta">
-          <div class="meta-date">08/09/2026 | 09:30 BRT (07:32 EDT)</div>
+          <div class="meta-date">09/09/2026 | 09:30 BRT (07:42 EDT)</div>
           <div class="meta-author">Research: <strong>Keith McCullough & Hedgeye Macro Team</strong></div>
           <div class="meta-quad"><span class="badge badge-bullish" style="background:#EF4444; color:#FFF;">📍 REGIME: GLOBAL QUAD 3 (#ACCELERATING — REFLAÇÃO & INFLAÇÃO)</span></div>
         </div>
@@ -1211,30 +1211,30 @@ function renderActiveReportView() {
 
       <!-- Seção 1: Síntese Macro & Destaques Matinais -->
       <div class="report-section-card" style="margin-bottom: 1rem; padding: 0.85rem 1.25rem;">
-        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">🧭</span> 1. Síntese Executiva & Diagnóstico Macro (EARLY LOOK: Oil, Rates, Inflation #Accelerating)</h3>
+        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">🧭</span> 1. Síntese Executiva & Diagnóstico Macro (EARLY LOOK: Burning Down The USD House?)</h3>
         <div class="report-quote-banner" style="padding: 0.5rem 0.85rem; margin-bottom: 0.6rem; font-size: 0.82rem;">
-          “We started cherishing what we already had instead of chasing some network TV validation.”
-          <strong style="font-style: normal; font-size: 0.75rem; color: #38BDF8;">— Keith McCullough (Early Look 08/09/2026)</strong>
+          “A Ordem Implicada é particularmente adequada para a compreensão da totalidade ininterrupta em movimento fluente.”
+          <strong style="font-style: normal; font-size: 0.75rem; color: #38BDF8;">— Keith McCullough (Early Look 09/09/2026) citando David Bohm</strong>
         </div>
         <div class="report-bullets-grid" style="gap: 0.45rem;">
           <div class="report-bullet-item" style="font-size: 0.82rem;">
             <span class="b-icon">📌</span>
-            <div><strong>Commodities em Global Quad 3 (#Accelerating):</strong> Petróleo WTI subiu +23% no mês (teto em US$ 96,62), CRB Index subiu +11,5% e Cobre atingiu All-Time Highs (6,51–6,75).</div>
+            <div><strong>Colapso do Dólar para Mínimas de 3 Meses ($98,77):</strong> DXY em Bearish TREND (98,41–99,52) e Iene em alta (+0,4% a 153,51) alimentam choque inflacionário e corrida para ativos reais.</div>
           </div>
           <div class="report-bullet-item" style="font-size: 0.82rem;">
             <span class="b-icon">📌</span>
-            <div><strong>Higher-for-Longer & Yields em Alta:</strong> Yield 10Y sobe piso para 4,70% e teto para 4,87%. Dólar Bearish (98,60–99,67) reforça aceleração inflacionária.</div>
+            <div><strong>Yields dos T-Bonds em Novas Máximas de Ciclo:</strong> UST 10Y (4,68%–4,86%) e UST 2Y (topo em 4,50%) sinalizam aceleração contínua de inflação; shorts em TLT/ZROZ e LQD seguem intactos.</div>
           </div>
           <div class="report-bullet-item" style="font-size: 0.82rem;">
             <span class="b-icon">📌</span>
-            <div><strong>Small Caps Rebaixadas para Neutral:</strong> Russell 2000 caiu -2% no mês com juros em alta. Shorts em Treasuries (TLT/ZROZ), Crédito (LQD) e Utilities (XLU) continuam gerando forte alpha.</div>
+            <div><strong>Superciclo de Real Assets & Rotação:</strong> Ouro firme (4.290–4.599), Cobre em All-Time Highs (6,49–6,75) e WTI com teto em US$ 97,53, enquanto Housing (ITB) cai -10,1% no mês.</div>
           </div>
         </div>
       </div>
 
       <!-- Seção 2: Tabela de Risk Ranges Oficiais -->
       <div class="report-section-card" style="margin-bottom: 0; padding: 0.85rem 1.25rem;">
-        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">🎯</span> 2. Risk Ranges Oficiais (Our Levels — 08/09/2026)</h3>
+        <h3 class="report-section-title" style="font-size: 0.95rem;"><span class="icon">🎯</span> 2. Risk Ranges Oficiais (Our Levels — 09/09/2026)</h3>
         <div class="table-responsive">
           <table class="data-table" style="font-size: 0.8rem;">
             <thead>
@@ -1265,7 +1265,7 @@ function renderActiveReportView() {
           <div class="stat-card" style="padding: 0.6rem;">
             <div class="stat-label" style="font-size: 0.68rem;">ALOCAÇÃO OURO & COMMODITIES</div>
             <div class="stat-val text-emerald" style="font-size: 1.15rem;">${quad3Pct}%</div>
-            <div class="stat-desc" style="font-size: 0.7rem;">Ouro (4296–4691), Metais, Energia e Caixa SGOV</div>
+            <div class="stat-desc" style="font-size: 0.7rem;">Ouro (4290–4599), Cobre, Energia e Caixa SGOV</div>
           </div>
           <div class="stat-card" style="padding: 0.6rem;">
             <div class="stat-label" style="font-size: 0.68rem;">EXPOSIÇÃO SECULAR GROWTH / TECH</div>
@@ -1305,15 +1305,15 @@ function renderActiveReportView() {
         <div class="report-bullets-grid" style="gap: 0.45rem;">
           <div class="report-bullet-item" style="font-size: 0.82rem;">
             <span class="b-icon">🟢</span>
-            <div><strong>Manter Convicção em Ouro e Reflação (AAAU / NEM / BE / WTIC):</strong> Ouro com piso elevado para US$ 4.296/oz e Petróleo com teto em 94,63 confirmam o vento reflacionário favorável.</div>
+            <div><strong>Manter Convicção em Ouro e Real Assets (AAAU / NEM / BE / WTIC):</strong> Ouro (4.290–4.599), Cobre em ATHs e Petróleo com teto em 97,53 confirmam o vento reflacionário de Quad 3.</div>
           </div>
           <div class="report-bullet-item" style="font-size: 0.82rem;">
             <span class="b-icon">🟢</span>
-            <div><strong>Priorizar Large Caps & AI Software (IGV / MELI / GOOG):</strong> No ambiente de Quad 2, empresas de grande porte com alta rentabilidade sobrepujam Small Caps frágeis.</div>
+            <div><strong>Priorizar Large Caps & Monopólios FCF (IGV / MELI / GOOG / META):</strong> Empresas com alta geração de caixa e poder de repasse sobrepujam small caps e setores alavancados.</div>
           </div>
           <div class="report-bullet-item" style="font-size: 0.82rem;">
             <span class="b-icon">🔵</span>
-            <div><strong>Preservação de Caixa / SGOV (${cashPct}%):</strong> Manter liquidez para comprar nos pisos de Risk Range quando houver correção.</div>
+            <div><strong>Preservação de Caixa / SGOV (${cashPct}%):</strong> Manter liquidez para comprar nos pisos de Risk Range quando houver recuos técnicos.</div>
           </div>
         </div>
       </div>
@@ -1327,20 +1327,20 @@ function renderActiveReportView() {
 
   // 2. RENDERIZAÇÃO TEXTO MARKDOWN (RAW)
   const fullRawMarkdown = `RELATÓRIO HEDGEYE RISK MANAGEMENT — RESEARCH EXECUTIVO
-Data: 04/09/2026 | Horário: 09:30 BRT / 07:41 EDT
-Regime: #QUAD2 THEN #QUAD2 (EXPANSÃO + INFLAÇÃO ACELERANDO)
+Data: 09/09/2026 | Horário: 09:30 BRT / 07:42 EDT
+Regime: #QUAD3 (#ACCELERATING — REFLAÇÃO & INFLAÇÃO ACELERANDO)
 Carteira: ${cartTitle}
 Patrimônio Total: US$ ${totalCart.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
 
 ---
-1. SÍNTESE MACRO (EARLY LOOK & KEY TAKEAWAYS)
-• Nowcast de Inflação da Hedgeye subiu para Setembro e Outubro, elevando probabilidade de back-to-back Monthly Quad 2s.
-• Quad 2 favorece Large Caps vs Small Caps, High Beta vs Low Beta, Secular Growth vs Value e Inflação Cíclica vs Defensivas.
-• Taxas longas em alta (UST10Y 4,63-4,84%) continuam pressionando Utilities (Short XLU) e US Housing (ITB).
-• Long AI Software vs Short Semis subiu +17,9% no último mês.
+1. SÍNTESE MACRO (EARLY LOOK: Burning Down The USD House?)
+• Dólar rompe para novas mínimas de 3 meses ($98,77) e Iene sobe (+0,4% a 153,51), alimentando choque inflacionário real.
+• Bond Yields em novas máximas de ciclo de inflação: UST 10Y (4,68%-4,86%) e UST 2Y (topo em 4,50%).
+• Real Assets lideram: Ouro (4.290-4.599), Cobre em All-Time Highs (6,49-6,75) e Petróleo WTI (86,36-97,53).
+• US Housing (ITB) em drawdown de -10,1% no mês perante o aperto das taxas longas.
 
 ---
-2. RISK RANGES OFICIAIS (04/09/2026)
+2. RISK RANGES OFICIAIS (09/09/2026)
 ${riskRangesData.slice(0, 16).map(r => `• ${r.ticker.padEnd(8)}: ${r.low.toString().padEnd(6)} a ${r.high.toString().padEnd(6)} | ${r.signal.padEnd(8)} | ${r.name}`).join("\n")}
 
 ---
@@ -1352,9 +1352,9 @@ ${riskRangesData.slice(0, 16).map(r => `• ${r.ticker.padEnd(8)}: ${r.low.toStr
 
 ---
 4. PLANO DE AÇÃO
-• Ouro (AAAU/NEM/GDX): Posição sólida de proteção. Piso do ouro subiu para 4.296.
-• Software & Large Caps (IGV/MELI/GOOG): Manter sobreponderação em ativos com pricing power.
-• Utilities & Real Estate: Evitar exposição sensível a juros altos.`;
+• Ouro & Mineradoras (AAAU/NEM/GDX): Posição prioritária. Comprar nos pisos de range.
+• Software & Large Caps (IGV/MELI/GOOG): Manter posições em empresas com pricing power.
+• Short Treasuries (TLT/ZROZ), Crédito (LQD) e Utilities (XLU): Manter shorts ativos.`;
 
   rawContainer.innerText = fullRawMarkdown;
 
