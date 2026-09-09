@@ -945,95 +945,162 @@ function quickAnalyze(ticker) {
 }
 
 function runStockAnalysis(customTicker) {
-  const ticker = (customTicker || document.getElementById("analyzerTicker").value || "AAAU").toUpperCase().trim();
+  const inputEl = document.getElementById("analyzerTicker");
+  const ticker = (customTicker || (inputEl ? inputEl.value : "AAAU") || "AAAU").toUpperCase().trim();
   const brokerTarget = document.getElementById("analyzerPortSelect")?.value || "both";
   
   const headerTitle = document.getElementById("analysisHeaderTitle");
   const overallTag = document.getElementById("analysisOverallTag");
   const resultBody = document.getElementById("analysisResultBody");
 
+  if (!headerTitle || !resultBody) return;
+
   headerTitle.innerHTML = `<span class="icon">📊</span> Relatório de Análise: <strong>${ticker}</strong>`;
 
-  const fundItem = fundamentalsData.find(d => d.ticker === ticker);
+  // 1. Busca dados fundamentais nos dados de mercado ou pré-definidos
+  const fundItem = (marketAnalyticsData && marketAnalyticsData.fundamentals)
+    ? marketAnalyticsData.fundamentals.find(d => d.ticker === ticker)
+    : null;
+  const legacyFundItem = fundamentalsData.find(d => d.ticker === ticker);
 
-  let analysis = {
-    tese: "Ativo listado em bolsa americana avaliado sob o framework quantitativo e macro Hedgeye.",
-    quadFit: "Quad 3 (Estagflação) exige seletividade e alinhamento de TREND.",
-    sinal: "BULLISH TREND",
-    rangeInfo: "Range atualizado conforme o EARLYLOOK de 04/09/2026.",
-    valuationBlock: fundItem ? `Preço Atual: US$ ${fundItem.currentPrice.toFixed(2)} | Múltiplo Atual: ${fundItem.currentMultiple.toFixed(1)}x vs Múltiplo Justo: ${fundItem.fairMultiple.toFixed(1)}x. <br><strong>Preço-Alvo Fundamentalista:</strong> <span class="text-cyan font-bold">US$ ${fundItem.targetPrice.toFixed(2)}</span> (Upside: <strong class="${fundItem.upsidePct >= 0 ? 'text-emerald' : 'text-rose'}">${fundItem.upsidePct >= 0 ? '+' : ''}${fundItem.upsidePct.toFixed(1)}%</strong>) — Diagnóstico: <strong>${fundItem.valuationStatus}</strong>.` : "Ativo commodity/físico avaliado por métricas de oferta, demanda e paridade monetária.",
-    sobreposicao: "Monitorar correlação com carteiras Schwab e Tastyworks.",
-    conclusao: "Conduta: Respeitar a disciplina operacional, comprando nos pisos de range de ativos com Bullish TREND.",
-    invalidação: "Quebra de TREND com confirmação de volume e virada do DXY."
-  };
+  // 2. Busca Risk Range do Keith McCullough
+  const rrItem = riskRangesData.find(r => r.ticker === ticker || (ticker === "GOLD" && r.ticker === "GOLD") || (ticker === "AAAU" && r.ticker === "GOLD"));
 
-  if (ticker === "AAAU" || ticker === "GOLD" || ticker === "NEM" || ticker === "GDX") {
-    analysis.tese = "Ouro Spot & Mineradoras: Principal posição de alta convicção macro da Hedgeye. Proteção máxima contra desvalorização monetária, estagflação de Quad 3 e rotação de Quad 2.";
-    analysis.quadFit = "🟢 **Favorecido em Quad 3 & Quad 2**. DXY em Bearish TREND (98,51 a 99,67) amplia fluxo comprador.";
-    analysis.sinal = "BULLISH TREND Forte (Range Ouro Hoje: 4.296 a 4.691)";
-    analysis.rangeInfo = "Ouro Spot em 4.495 (Piso sustentado em 4.296. Yields em alta e DXY fraco mantêm suporte).";
-    if (ticker === "NEM") {
-      analysis.valuationBlock = `Preço Atual: US$ 52,30 | P/L Atual: 13,8x vs P/L Justo: 19,0x. <br><strong>Preço-Alvo Fundamentalista:</strong> <span class="text-emerald font-bold">US$ 72,20 (+38,0% Upside)</span>. Alavancagem operacional maciça com o ouro acima de US$ 4.400.`;
-    }
-    analysis.sobreposicao = "Presente na Schwab (AAAU: US$ 6.460,50 + GDX: US$ 2.904,26) e Tastyworks (NEM: US$ 1.745,10 + GDX: US$ 969,05). Total: US$ 12.078,91 (~4,9% do patrimônio).";
-    analysis.conclusao = "<strong>Conduta:</strong> Manter alocação máxima e comprar recuos nos pisos de range.";
-    analysis.invalidação = "DXY rompendo forte para cima de 100 com quebra do suporte TREND de 4.204 no ouro.";
-  } else if (ticker === "MELI") {
-    analysis.tese = "MercadoLibre: Monopólio logístico e fintech líder na América Latina. Crescimento de receitas de +38% com forte poder de precificação.";
-    analysis.quadFit = "🟢 **Favorecida por DXY Bearish & Quad 2** (Alivia moedas latino-americanas e expande consumo).";
-    analysis.sinal = "BULLISH TREND";
-    analysis.rangeInfo = "Preço Atual: US$ 1.995,50.";
-    analysis.valuationBlock = `Preço Atual: US$ 1.995,50 | P/L Atual: 41,5x vs P/L Justo: 51,0x. <br><strong>Preço-Alvo Fundamentalista:</strong> <span class="text-emerald font-bold">US$ 2.453,00 (+22,9% Upside)</span>. 💎 <strong>Oportunidade de Compra com Margem de Segurança</strong>.`;
-    analysis.sobreposicao = "Presente em ambas: Schwab (US$ 5.986,51) e Tastyworks (US$ 1.994,04). Total: US$ 7.980,55 (3,24% global).";
-    analysis.conclusao = "<strong>Conduta:</strong> Manter posição CORE intacta e comprar em pullbacks técnicos.";
-    analysis.invalidação = "Perda do suporte TREND e desaceleração do TPV fintech abaixo de 20%.";
-  } else if (ticker === "SLV") {
-    analysis.tese = "iShares Silver Trust (Prata Física).";
-    analysis.quadFit = "🟡 **Híbrido (Monetário e Industrial)**.";
-    analysis.sinal = "NEUTRAL (Quebrou sinal TRADE em US$ 65,11)";
-    analysis.rangeInfo = "Piso: US$ 63,00 | Teto: US$ 69,00 (Preço atual: ~US$ 65,20).";
-    analysis.valuationBlock = `Prata física com suporte quebrado no curto prazo. Manter tamanho mínimo e não comprar na queda até reabilitação de sinal.`;
-    analysis.sobreposicao = "Presente na Schwab (US$ 3.520,20 - 1,66%).";
-    analysis.conclusao = "<strong>Alerta Hedgeye:</strong> Não comprar a queda ('stop buying the dip'). Manter posição mínima.";
-    analysis.invalidação = "Fechamento consistente acima de US$ 65,11 reabilita o sinal TRADE altista.";
-  } else if (ticker === "ALAB" || ticker === "ARM") {
-    analysis.tese = `${ticker}: Ativo de hiper momentum em infraestrutura de IA e semicondutores.`;
-    analysis.quadFit = "🔴 **Atenção à rotação de fatores** (High Beta Momentum caiu -77% das máximas de junho).";
-    analysis.sinal = "NEUTRAL / CAUTELA";
-    analysis.rangeInfo = "Volatilidade elevada.";
-    analysis.valuationBlock = `🚨 <strong>Alerta de Múltiplo Esticado / Risco de Bolha:</strong> Negociando entre 75x e 80x lucros. Downside estimado de -35% a -40% caso haja descompressão de múltiplos macro.`;
-    analysis.sobreposicao = `Posição TAIL restrita a 1–3% da carteira.`;
-    analysis.conclusao = "<strong>Conduta:</strong> Realizar lucros parciais nos topos de range (Trade) e proteger caixa.";
-    analysis.invalidação = "Quebra simultânea de TRADE e TREND aciona saída total (#OUT).";
+  // 3. Busca sobreposição no portfólio real
+  let schwabPos = portfolioData.schwab.positions.find(p => p.ticker === ticker);
+  let tastyPos = portfolioData.tastyworks.positions.find(p => p.ticker === ticker);
+  
+  let totalShares = 0;
+  let totalVal = 0;
+  let portDetails = [];
+
+  if (schwabPos) {
+    const val = schwabPos.qty * schwabPos.price;
+    totalShares += schwabPos.qty;
+    totalVal += val;
+    portDetails.push(`Schwab: ${schwabPos.qty} ações (US$ ${val.toLocaleString('pt-BR', { minimumFractionDigits: 2 })})`);
+  }
+  if (tastyPos) {
+    const val = tastyPos.qty * tastyPos.price;
+    totalShares += tastyPos.qty;
+    totalVal += val;
+    portDetails.push(`Tastyworks: ${tastyPos.qty} ações (US$ ${val.toLocaleString('pt-BR', { minimumFractionDigits: 2 })})`);
   }
 
-  overallTag.className = `badge ${analysis.sinal.includes("BULLISH") ? "badge-bullish" : (analysis.sinal.includes("BEARISH") ? "badge-bearish" : "badge-neutral")}`;
-  overallTag.innerText = analysis.sinal;
+  const globalPortfolioVal = 245872.29;
+  const portfolioWeight = totalVal > 0 ? ((totalVal / globalPortfolioVal) * 100).toFixed(2) : 0;
+
+  // 4. Busca dados no Dataroma (Superinvestidores)
+  let dataromaInfo = null;
+  if (marketAnalyticsData && marketAnalyticsData.dataroma_consensus) {
+    dataromaInfo = marketAnalyticsData.dataroma_consensus.find(c => c.ticker === ticker);
+  }
+
+  // 5. Determinação de Sinal e Regime
+  let signal = "BULLISH TREND";
+  let signalBadgeClass = "badge-bullish";
+  let rangeDesc = "Sinal quantitativo em tendência altista.";
+
+  if (rrItem) {
+    signal = `${rrItem.signal} TREND`;
+    signalBadgeClass = rrItem.signal === "BULLISH" ? "badge-bullish" : (rrItem.signal === "BEARISH" ? "badge-bearish" : "badge-neutral");
+    const pct = Math.max(0, Math.min(100, ((rrItem.current - rrItem.low) / (rrItem.high - rrItem.low)) * 100));
+    rangeDesc = `Piso: <strong>${rrItem.low}</strong> | Teto: <strong>${rrItem.high}</strong> (Preço atual: <strong>${rrItem.current}</strong> — Posição no Range: <strong>${pct.toFixed(0)}%</strong>).`;
+  } else if (fundItem) {
+    rangeDesc = `Preço de Mercado Atual: <strong>US$ ${fundItem.price.toFixed(2)}</strong>.`;
+  }
+
+  // Enquadramento de Quadrante
+  let quadFitDesc = "Avaliação de regime macro sob o framework GIP (Growth, Inflation, Policy).";
+  if (["AAAU", "NEM", "GDX", "GOLD", "SLV", "BE", "GRID", "AIPO", "MLI", "REMX", "MELI", "GOOG", "GOOGL", "UBER", "SGOV"].includes(ticker)) {
+    quadFitDesc = "🟢 <strong>Alinhado ao QUAD 3 (#Accelerating / Estagflação)</strong>. Ativo com ventos a favor estruturais (ouro, commodities, energia descentralizada ou liderança secular com geração de FCF e poder de repasse).";
+  } else if (["AVGO", "ASML", "META", "FN", "ALAB", "COHR", "CRDO", "ARM", "MTSI", "AXTI", "TSEM", "INTC", "NOK", "DRAM", "FOTO", "XBI", "COIN", "INTR"].includes(ticker)) {
+    quadFitDesc = "🟡 <strong>DNA de QUAD 1 / QUAD 2 (High Beta & Sensível a Taxas)</strong>. Exige disciplina operacional estrita, respeito aos Risk Ranges e monitoramento contra compressão de múltiplos em ambiente de juros altos (10Y em 4,78%).";
+  } else if (["SPY", "QQQ", "IWM"].includes(ticker)) {
+    quadFitDesc = "📊 <strong>Índice Amplo de Ações</strong>. Depende do regime de Dealer Gamma (GEX) e rotação de fatores macro.";
+  }
+
+  // Bloco de Valuation
+  let valuationHtml = "";
+  if (fundItem) {
+    valuationHtml = `
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.6rem; margin-bottom: 0.6rem;">
+        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
+          <small style="color: #94A3B8;">P/L (P/E):</small><br><strong style="color: #60A5FA;">${fundItem.pe}</strong>
+        </div>
+        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
+          <small style="color: #94A3B8;">EV/EBITDA:</small><br><strong style="color: #60A5FA;">${fundItem.ev_ebitda}</strong>
+        </div>
+        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
+          <small style="color: #94A3B8;">Margem Líquida:</small><br><strong style="color: #38BDF8;">${fundItem.net_margin}</strong>
+        </div>
+        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
+          <small style="color: #94A3B8;">Cresc. Receita:</small><br><strong style="color: ${fundItem.revenue_growth.startsWith('+') ? '#10B981' : '#EF4444'};">${fundItem.revenue_growth}</strong>
+        </div>
+        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
+          <small style="color: #94A3B8;">Beta:</small><br><strong>${fundItem.beta}</strong>
+        </div>
+      </div>
+      <div><strong>Consenso de Mercado:</strong> <span class="badge badge-neutral">${fundItem.recommendation}</span> • Market Cap: <strong>${fundItem.market_cap}</strong></div>
+    `;
+  } else if (legacyFundItem) {
+    valuationHtml = `Preço Atual: <strong>US$ ${legacyFundItem.currentPrice.toFixed(2)}</strong> | Múltiplo Atual: <strong>${legacyFundItem.currentMultiple.toFixed(1)}x</strong> vs Múltiplo Justo: <strong>${legacyFundItem.fairMultiple.toFixed(1)}x</strong>. <br><strong>Preço-Alvo Fundamentalista:</strong> <span class="text-cyan font-bold">US$ ${legacyFundItem.targetPrice.toFixed(2)}</span> (Upside: <strong>+${legacyFundItem.upsidePct.toFixed(1)}%</strong>) — Diagnóstico: <strong>${legacyFundItem.valuationStatus}</strong>.`;
+  } else {
+    valuationHtml = `Ativo monitorado por fluxo e paridade de mercado. Preço de referência atualizado no sistema.`;
+  }
+
+  // Bloco Dataroma / Superinvestidores
+  let dataromaHtml = "";
+  if (dataromaInfo) {
+    dataromaHtml = `<div style="margin-top: 0.4rem; padding: 0.5rem 0.8rem; background: rgba(16, 185, 129, 0.1); border-left: 3px solid #10B981; border-radius: 4px;">
+      🏛️ <strong>Convicção Institucional (Dataroma):</strong> Detido por <strong>${dataromaInfo.ownership_count} Superinvestidores</strong> com <em>Hold Price</em> médio de <strong>${dataromaInfo.hold_price}</strong>.
+    </div>`;
+  }
+
+  // Bloco de Sobreposição de Carteira
+  let portHtml = "";
+  if (totalShares > 0) {
+    portHtml = `🟢 <strong>Posição Ativa na Carteira:</strong> ${portDetails.join(" | ")}.<br><strong>Total Investido:</strong> US$ ${totalVal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })} (<strong>${portfolioWeight}%</strong> do patrimônio global).`;
+  } else {
+    portHtml = `⚪ <strong>Não presente na carteira no momento</strong> (Ativo disponível para prospecção tática e monitoramento de confluência).`;
+  }
+
+  overallTag.className = `badge ${signalBadgeClass}`;
+  overallTag.innerText = signal;
 
   resultBody.innerHTML = `
     <div class="analyzer-block">
       <div class="block-title">1. Tese & Modelo de Negócio</div>
-      <p class="block-desc">${analysis.tese}</p>
+      <p class="block-desc">
+        Ativo <strong>${ticker}</strong> ${fundItem ? `(${fundItem.shortName} — Setor: ${fundItem.sector})` : ''} analisado sob a governança quantitativa da Hedgeye, Howard Marks e dados institucionais do Dataroma.
+      </p>
     </div>
 
     <div class="analyzer-block mt-2">
       <div class="block-title">2. Enquadramento no Regime Macro (GIP Framework)</div>
-      <p class="block-desc">${analysis.quadFit}</p>
+      <p class="block-desc">${quadFitDesc}</p>
     </div>
 
     <div class="analyzer-block mt-2">
-      <div class="block-title">3. Sinal Técnico & Risk Range (04/09/2026)</div>
-      <p class="block-desc"><strong>Sinal:</strong> ${analysis.sinal}<br><strong>Range:</strong> ${analysis.rangeInfo}</p>
+      <div class="block-title">3. Sinal Técnico & Risk Range (Hedgeye)</div>
+      <p class="block-desc"><strong>Sinal:</strong> <span class="badge ${signalBadgeClass}">${signal}</span><br>${rangeDesc}</p>
     </div>
 
     <div class="analyzer-block mt-2">
-      <div class="block-title">4. Valuation Fundamentalista & Preço-Alvo (Múltiplos Justos)</div>
-      <p class="block-desc">${analysis.valuationBlock}</p>
+      <div class="block-title">4. Valuation, Múltiplos & Dataroma 13F</div>
+      <div class="block-desc">
+        ${valuationHtml}
+        ${dataromaHtml}
+      </div>
     </div>
 
     <div class="analyzer-block mt-2">
-      <div class="block-title">5. Sobreposição de Carteira & Conclusão Operacional</div>
-      <p class="block-desc"><strong>Posição:</strong> ${analysis.sobreposicao}<br>${analysis.conclusao}<br><span class="text-rose"><strong>Condição de Invalidação:</strong> ${analysis.invalidação}</span></p>
+      <div class="block-title">5. Posição na Carteira & Conclusão Operacional</div>
+      <p class="block-desc">
+        ${portHtml}<br>
+        <strong>Conduta Recomendada:</strong> ${signal.includes("BULLISH") ? "Comprar nos recuos próximos ao piso do Risk Range ('buy the dips') e respeitar limites de exposição." : "Vender nos repiques perto do teto do Risk Range ('sell the rallies') e priorizar proteção de caixa."}<br>
+        <span class="text-rose"><strong>Gatilho de Invalidação:</strong> Quebra simultânea de TRADE e TREND com virada de fluxo e dólar DXY acima do teto de range.</span>
+      </p>
     </div>
   `;
 }
