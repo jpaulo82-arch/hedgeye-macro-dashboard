@@ -466,11 +466,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
   renderRiskRangesTable("all");
   renderPortfolioView(activePortfolioKey);
-  renderFundamentalsTable("all");
-  loadCompanyToSimulator("MELI");
   runStockAnalysis("AAAU");
 });
-
 
 // NAVEGAÇÃO ENTRE ABAS
 function setTab(tabId) {
@@ -486,7 +483,7 @@ function setTab(tabId) {
   }
   if (tabId === "analytics") {
     if (marketAnalyticsData) {
-      renderMarketAnalytics(marketAnalyticsData);
+      setTimeout(() => renderMarketAnalytics(marketAnalyticsData), 50);
     } else {
       fetchMarketAnalyticsData();
     }
@@ -2496,8 +2493,223 @@ async function fetchMarketAnalyticsData() {
   }
 }
 
+let quadChartInstance = null;
+
+function renderQuadRotationTracker(tracker) {
+  if (!tracker || !tracker.baskets) return;
+
+  // 1. Atualiza Badges e Diagnóstico Preditivo
+  const leadingBadge = document.getElementById("quadLeadingBadge");
+  if (leadingBadge) {
+    leadingBadge.innerText = `LÍDER 30D: ${tracker.leading_month}`;
+  }
+
+  const transitionBanner = document.getElementById("quadTransitionBanner");
+  if (transitionBanner) {
+    transitionBanner.innerHTML = `
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+        <div>
+          <strong style="color: #38BDF8; font-size: 0.95rem;">🎯 DIAGNÓSTICO PREDITIVO DE ROTACÃO (EARLY WARNING):</strong><br>
+          <span style="font-size: 0.9rem; color: #F8FAFC;">${tracker.transition_signal}</span>
+        </div>
+        <div style="font-size: 0.76rem; color: #94A3B8; text-align: right;">
+          Líder Hoje (1D): <strong style="color: #34D399;">${tracker.leading_today}</strong> | Líder 30D: <strong style="color: #F59E0B;">${tracker.leading_month}</strong>
+        </div>
+      </div>
+    `;
+  }
+
+  // 2. Renderiza os Cards dos 4 Quadrantes
+  const gridContainer = document.getElementById("quadBasketsCardsGrid");
+  if (gridContainer) {
+    const qKeys = ["QUAD 1", "QUAD 2", "QUAD 3", "QUAD 4"];
+    gridContainer.innerHTML = qKeys.map(k => {
+      const b = tracker.baskets[k];
+      if (!b) return "";
+      const isLeader = k === tracker.leading_month;
+      const ret1dColor = b.ret_1d_val >= 0 ? "#10B981" : "#EF4444";
+      const ret5dColor = b.ret_5d_val >= 0 ? "#10B981" : "#EF4444";
+      const ret30dColor = b.ret_30d_val >= 0 ? "#10B981" : "#EF4444";
+
+      return `
+        <div class="stat-card" style="border: 1px solid ${isLeader ? b.color : 'rgba(255,255,255,0.08)'}; background: linear-gradient(180deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9)); padding: 1rem; border-radius: 8px; position: relative;">
+          ${isLeader ? `<span class="badge" style="position: absolute; top: 0.6rem; right: 0.6rem; background: ${b.color}; color: #000; font-weight: 800; font-size: 0.68rem;">🏆 LÍDER 30D</span>` : ''}
+          <div style="font-size: 0.95rem; font-weight: 700; color: ${b.color}; margin-bottom: 0.2rem;">${b.name.split(':')[0]}</div>
+          <div style="font-size: 0.74rem; color: #94A3B8; margin-bottom: 0.8rem; line-height: 1.3;">${b.desc}</div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.4rem; background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; text-align: center;">
+            <div>
+              <div style="font-size: 0.68rem; color: #94A3B8;">Hoje (1D)</div>
+              <strong style="font-size: 0.85rem; color: ${ret1dColor};">${b.ret_1d}</strong>
+            </div>
+            <div>
+              <div style="font-size: 0.68rem; color: #94A3B8;">5 Dias</div>
+              <strong style="font-size: 0.85rem; color: ${ret5dColor};">${b.ret_5d}</strong>
+            </div>
+            <div>
+              <div style="font-size: 0.68rem; color: #94A3B8;">30 Dias</div>
+              <strong style="font-size: 0.85rem; color: ${ret30dColor};">${b.ret_30d}</strong>
+            </div>
+          </div>
+
+          <div style="margin-top: 0.6rem; font-size: 0.72rem; color: #CBD5E1; display: flex; justify-content: space-between;">
+            <span>Ativos:</span>
+            <span style="font-family: 'JetBrains Mono', monospace; color: ${b.color};">${b.assets.map(a => a.ticker).join(", ")}</span>
+          </div>
+        </div>
+      `;
+    }).join("");
+  }
+
+  // 3. Renderiza a Tabela Detalhada com os 16 Ativos
+  const tableBody = document.getElementById("quadBasketsTableBody");
+  if (tableBody) {
+    const qKeys = ["QUAD 1", "QUAD 2", "QUAD 3", "QUAD 4"];
+    tableBody.innerHTML = qKeys.map(k => {
+      const b = tracker.baskets[k];
+      if (!b) return "";
+      const isLeader = k === tracker.leading_month;
+      const statusBadge = isLeader 
+        ? `<span class="badge badge-bullish" style="font-size: 0.72rem;">🟢 Favorecido (Regime Ativo)</span>`
+        : `<span class="badge badge-neutral" style="font-size: 0.72rem;">⚪ Em Monitoramento</span>`;
+
+      const assetsHtml = b.assets.map(a => `
+        <span style="display: inline-block; background: rgba(255,255,255,0.06); padding: 0.15rem 0.4rem; border-radius: 4px; margin: 0.1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.76rem;">
+          <strong>${a.ticker}</strong>: <span style="color: ${a.ret_30d_val >= 0 ? '#10B981' : '#EF4444'};">${a.ret_30d}</span>
+        </span>
+      `).join(" ");
+
+      return `
+        <tr>
+          <td><strong style="color: ${b.color}; font-size: 0.95rem;">${b.name.split(':')[0]}</strong></td>
+          <td><span style="font-size: 0.8rem; color: #94A3B8;">${b.desc}</span></td>
+          <td>${assetsHtml}</td>
+          <td><strong style="color: ${b.ret_1d_val >= 0 ? '#10B981' : '#EF4444'};">${b.ret_1d}</strong></td>
+          <td><strong style="color: ${b.ret_5d_val >= 0 ? '#10B981' : '#EF4444'};">${b.ret_5d}</strong></td>
+          <td><strong style="font-size: 0.95rem; color: ${b.ret_30d_val >= 0 ? '#10B981' : '#EF4444'};">${b.ret_30d}</strong></td>
+          <td>${statusBadge}</td>
+        </tr>
+      `;
+    }).join("");
+  }
+
+  // 4. Desenha o Gráfico Comparativo de Linhas com Chart.js
+  const canvas = document.getElementById("quadRotationChart");
+  if (canvas && typeof Chart !== "undefined") {
+    if (quadChartInstance) {
+      quadChartInstance.destroy();
+    }
+
+    const datasets = [
+      {
+        label: "QUAD 1: Goldilocks (QQQ, IGV, XLY, XBI)",
+        data: tracker.baskets["QUAD 1"]?.series || [],
+        borderColor: "#3B82F6",
+        backgroundColor: "rgba(59, 130, 246, 0.05)",
+        borderWidth: 2.5,
+        tension: 0.35,
+        pointRadius: 2,
+        pointHoverRadius: 6
+      },
+      {
+        label: "QUAD 2: Reflação (XLE, CPER, AIRR, GSG)",
+        data: tracker.baskets["QUAD 2"]?.series || [],
+        borderColor: "#10B981",
+        backgroundColor: "rgba(16, 185, 129, 0.05)",
+        borderWidth: 2.5,
+        tension: 0.35,
+        pointRadius: 2,
+        pointHoverRadius: 6
+      },
+      {
+        label: "QUAD 3: Estagflação (GLD, GDX, SLV, USO)",
+        data: tracker.baskets["QUAD 3"]?.series || [],
+        borderColor: "#F59E0B",
+        backgroundColor: "rgba(245, 158, 11, 0.12)",
+        borderWidth: 3.5,
+        tension: 0.35,
+        pointRadius: 3,
+        pointHoverRadius: 7,
+        fill: true
+      },
+      {
+        label: "QUAD 4: Deflação (TLT, XLV, XLP, SGOV)",
+        data: tracker.baskets["QUAD 4"]?.series || [],
+        borderColor: "#A855F7",
+        backgroundColor: "rgba(168, 85, 247, 0.05)",
+        borderWidth: 2,
+        tension: 0.35,
+        pointRadius: 2,
+        pointHoverRadius: 6
+      }
+    ];
+
+    quadChartInstance = new Chart(canvas, {
+      type: "line",
+      data: {
+        labels: tracker.dates || [],
+        datasets: datasets
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {
+          mode: "index",
+          intersect: false
+        },
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            backgroundColor: "rgba(15, 23, 42, 0.95)",
+            titleColor: "#F8FAFC",
+            bodyColor: "#CBD5E1",
+            borderColor: "rgba(255,255,255,0.1)",
+            borderWidth: 1,
+            padding: 10,
+            callbacks: {
+              label: function(context) {
+                return ` ${context.dataset.label.split(':')[0]}: ${context.parsed.y >= 0 ? '+' : ''}${context.parsed.y.toFixed(2)}%`;
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: {
+              color: "rgba(255, 255, 255, 0.04)"
+            },
+            ticks: {
+              color: "#94A3B8",
+              font: { size: 11 }
+            }
+          },
+          y: {
+            grid: {
+              color: "rgba(255, 255, 255, 0.06)"
+            },
+            ticks: {
+              color: "#94A3B8",
+              font: { size: 11 },
+              callback: function(value) {
+                return (value >= 0 ? "+" : "") + value + "%";
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+}
+
 function renderMarketAnalytics(data) {
   if (!data) return;
+
+  // 0. Renderiza o Radar de Rotação de Quadrantes (Simulação 30D)
+  if (data.quad_rotation_tracker) {
+    renderQuadRotationTracker(data.quad_rotation_tracker);
+  }
 
   // 1. Renderiza GEX Cards
   const gexContainer = document.getElementById("gexCardsContainer");
@@ -2687,7 +2899,6 @@ function renderMarketAnalytics(data) {
 function initApp() {
   renderPortfolioView(activePortfolioKey);
   renderRiskRangesTable("all");
-  renderFundamentalsTable("all");
   loadReportsDatabase().then(() => {
     populateTranslatedReportsDropdown();
   });

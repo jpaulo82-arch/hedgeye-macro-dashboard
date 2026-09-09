@@ -77,8 +77,11 @@
     <button class="nav-tab" data-tab="portfolio" onclick="setTab('portfolio')">
       💼 Portfólios (Schwab / Tastyworks)
     </button>
-    <button class="nav-tab" data-tab="fundamentals" onclick="setTab('fundamentals')">
-      🔬 Fundamentalista & Tech / IA
+    <button class="nav-tab" data-tab="analytics" onclick="setTab('analytics')">
+      🌐 Análise Avançada (GEX, FactSet & 13F)
+    </button>
+    <button class="nav-tab" data-tab="decisions" onclick="setTab('decisions')">
+      📝 Log de Decisões & Auditoria
     </button>
     <button class="nav-tab" data-tab="playbook" onclick="setTab('playbook')">
       📖 Playbook GIP (Livro Pág. 27)
@@ -88,12 +91,6 @@
     </button>
     <button class="nav-tab" data-tab="earlylook" onclick="setTab('earlylook')">
       📥 Base & Sincronizador E-mails
-    </button>
-    <button class="nav-tab" data-tab="analytics" onclick="setTab('analytics')">
-      🌐 Análise Avançada (GEX, FactSet & 13F)
-    </button>
-    <button class="nav-tab" data-tab="decisions" onclick="setTab('decisions')">
-      📝 Log de Decisões & Auditoria
     </button>
   </nav>
 
@@ -955,189 +952,6 @@
       </div>
     </section>
 
-    <!-- TAB: ANÁLISE FUNDAMENTALISTA, VALUATION & PREÇO-ALVO -->
-    <section id="tab-fundamentals" class="tab-content">
-      
-      <!-- Topo: Metodologia e Critério de Valuation por Múltiplos Justos -->
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <h3><span class="icon">📐</span> Critério Fundamentalista de Múltiplos Justos & Preço-Alvo (Fair Value Engine)</h3>
-            <p class="subtitle">Metodologia quantitativa que cruza crescimento operacional, poder de precificação (Moat), geração de caixa livre (FCF) e regime macro (Quad 3)</p>
-          </div>
-          <span class="tag tag-accent">Modelo GIP-Adjusted Multiples</span>
-        </div>
-        <div class="card-body">
-          <div class="grid-3-col">
-            <div class="stat-card">
-              <div class="stat-label">1. ÂNCORA DE MÚLTIPLO JUSTO (PEG & FCF)</div>
-              <div class="stat-desc">
-                O múltiplo justo (P/L ou EV/FCF) é ancorado na <strong>taxa de crescimento sustentável</strong> ajustada pela <strong>margem FCF</strong>. Empresas com margem FCF > 30% recebem prêmio de qualidade; empresas sem caixa sofrem desconto de até 40% no Quad 3.
-              </div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-label">2. AJUSTE MACRO AO REGIME QUAD 3</div>
-              <div class="stat-desc">
-                Com o <strong>UST 10Y Yield a 4,76%</strong> e inflação persistente, o custo de capital é elevado. O modelo penaliza ativos de crescimento distante ("long duration cash flows") e privilegia <strong>geração de caixa imediata e poder de repasse de preços</strong>.
-              </div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-label">3. TERMÔMETRO DE BOLHA VS OPORTUNIDADE</div>
-              <div class="stat-desc">
-                <span class="badge badge-bearish">🚨 Risco de Bolha</span>: Múltiplo atual > 40% acima do justo (Downside severo). <br>
-                <span class="badge badge-bullish">💎 Oportunidade</span>: Preço atual com > 20% de desconto e alto FCF. <br>
-                <span class="badge badge-neutral">⚖️ Preço Justo</span>: Negociando em equilíbrio (upside -10% a +15%).
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Simulador Interativo de Preço-Alvo & Sensibilidade -->
-      <div class="card mt-3">
-        <div class="card-header">
-          <div>
-            <h3><span class="icon">⚡</span> Simulador Interativo de Preço-Alvo & Análise de Sensibilidade</h3>
-            <p class="subtitle">Selecione uma empresa ou teste hipóteses de crescimento e múltiplos para calcular o valor justo em tempo real</p>
-          </div>
-          <div class="selector-inline">
-            <label for="valCompanySelect"><strong>Ativo:</strong></label>
-            <select id="valCompanySelect" class="form-select" onchange="loadCompanyToSimulator(this.value)">
-              <option value="MELI">MELI — MercadoLibre Inc (E-commerce / Fintech LatAm)</option>
-              <option value="AVGO">AVGO — Broadcom Inc (Switches IA / ASICs / VMware)</option>
-              <option value="ASML">ASML — ASML Holding (Monopólio Máquinas EUV)</option>
-              <option value="GOOGL">GOOGL — Alphabet Inc (Cloud, Gemini AI & TPUs)</option>
-              <option value="META">META — Meta Platforms (Llama AI / Família de Apps)</option>
-              <option value="UBER">UBER — Uber Technologies (Mobilidade & FCF)</option>
-              <option value="BE">BE — Bloom Energy Corp (Energia p/ Data Centers)</option>
-              <option value="FN">FN — Fabrinet (Transceivers Ópticos 800G/1.6T)</option>
-              <option value="ALAB">ALAB — Astera Labs (Conectividade PCIe/CXL IA)</option>
-              <option value="CRDO">CRDO — Credo Technology (Cabos Elétricos AEC)</option>
-              <option value="COHR">COHR — Coherent Corp (Lasers & Transceivers)</option>
-              <option value="ARM">ARM — Arm Holdings (Arquitetura CPUs v9)</option>
-              <option value="INTC">INTC — Intel Corp (CPUs x86 & Foundry 18A)</option>
-              <option value="NOK">NOK — Nokia Oyj (Redes Ópticas & Telecom)</option>
-              <option value="NEM">NEM — Newmont Corp (Mineração de Ouro / Quad 3)</option>
-            </select>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="grid-2-col">
-            <!-- Painel de Entradas e Sliders -->
-            <div class="valuation-inputs-box">
-              <h4 class="mb-2">Premissas Operacionais & Projeções (Próximos 12 Meses):</h4>
-              
-              <div class="form-group mb-2">
-                <div class="flex-between">
-                  <label for="simRevGrowth">Crescimento Esperado de Receita/Lucro (YoY %):</label>
-                  <span class="font-bold text-emerald" id="lblRevGrowth">+38%</span>
-                </div>
-                <input type="range" id="simRevGrowth" class="form-range" min="-10" max="150" value="38" step="1" oninput="updateValuationCalculation()">
-              </div>
-
-              <div class="form-group mb-2">
-                <div class="flex-between">
-                  <label for="simFcfMargin">Margem de Fluxo de Caixa Livre (FCF Margin %):</label>
-                  <span class="font-bold text-emerald" id="lblFcfMargin">25%</span>
-                </div>
-                <input type="range" id="simFcfMargin" class="form-range" min="0" max="60" value="25" step="1" oninput="updateValuationCalculation()">
-              </div>
-
-              <div class="form-group mb-2">
-                <div class="flex-between">
-                  <label for="simFairMultiple">Múltiplo Justo Alvo (P/L ou EV/FCF Justo):</label>
-                  <span class="font-bold text-cyan" id="lblFairMultiple">48.0x</span>
-                </div>
-                <input type="range" id="simFairMultiple" class="form-range" min="5" max="90" value="48" step="0.5" oninput="updateValuationCalculation()">
-              </div>
-
-              <div class="valuation-metric-strip mt-2">
-                <div class="metric-mini">
-                  <span class="mini-label">Preço Atual de Mercado:</span>
-                  <span class="mini-val text-amber" id="simCurrentPrice">US$ 1.995,50</span>
-                </div>
-                <div class="metric-mini">
-                  <span class="mini-label">Múltiplo Atual de Mercado:</span>
-                  <span class="mini-val" id="simCurrentMultiple">P/L 41.5x</span>
-                </div>
-                <div class="metric-mini">
-                  <span class="mini-label">EPS / FCF por Ação Base:</span>
-                  <span class="mini-val" id="simBaseMetric">US$ 48,10</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Painel de Resultado do Valuation & Termômetro de Bolha -->
-            <div class="valuation-output-box">
-              <div class="target-price-card" id="targetPriceCard">
-                <div class="target-top-label">PREÇO-ALVO FUNDAMENTALISTA (VALOR JUSTO)</div>
-                <div class="target-price-display" id="valTargetPriceDisplay">US$ 2.450,00</div>
-                
-                <div class="target-upside-badge" id="valUpsideBadge">
-                  <span class="icon">🚀</span> Potencial (Upside): <strong id="valUpsidePct">+22.8%</strong>
-                </div>
-
-                <div class="valuation-verdict-box mt-3" id="valVerdictBox">
-                  <div class="verdict-title" id="valVerdictTitle">💎 OPORTUNIDADE DE COMPRA (MARGEM DE SEGURANÇA ALTA)</div>
-                  <p class="verdict-desc" id="valVerdictDesc">
-                    A ação negocia com desconto relevante em relação ao seu crescimento e forte geração de caixa livre. O Preço-Alvo oferece margem de segurança favorável no regime de Quad 3.
-                  </p>
-                </div>
-
-                <!-- Barra de Comparação Preço Atual vs Alvo -->
-                <div class="price-comparison-bar mt-3">
-                  <div class="flex-between text-xs text-muted mb-1">
-                    <span>Preço Atual: <strong id="barCurPrice">US$ 1.995,50</strong></span>
-                    <span>Preço-Alvo: <strong id="barTgtPrice">US$ 2.450,00</strong></span>
-                  </div>
-                  <div class="progress-bar"><div class="progress-fill success" id="valProgressBar" style="width: 81%;"></div></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tabela Completa de Valuation & Termômetro de Ativos -->
-      <div class="card mt-3">
-        <div class="card-header">
-          <div>
-            <h3><span class="icon">📊</span> Painel de Valuation & Termômetro de Bolha vs Oportunidade</h3>
-            <p class="subtitle">Visão tabular consolidada com Múltiplos Atuais, Múltiplos Justos, Preço-Alvo e Diagnóstico de Ação</p>
-          </div>
-          <div class="filter-group">
-            <button class="btn btn-sm btn-outline active" onclick="filterFundamentals('all', this)">Todas as Ações</button>
-            <button class="btn btn-sm btn-outline" onclick="filterFundamentals('ai_infra', this)">IA & Conectividade Óptica</button>
-            <button class="btn btn-sm btn-outline" onclick="filterFundamentals('semis', this)">Semicondutores & Monopólios</button>
-            <button class="btn btn-sm btn-outline" onclick="filterFundamentals('core_fcf', this)">Mega-Caps & FCF</button>
-            <button class="btn btn-sm btn-outline" onclick="filterFundamentals('cyclical', this)">Telecom & Cíclicos</button>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Ticker / Empresa</th>
-                  <th>Preço Atual</th>
-                  <th>Crescimento YoY</th>
-                  <th>Múltiplo Atual</th>
-                  <th>Múltiplo Justo</th>
-                  <th>Preço-Alvo</th>
-                  <th>Upside / Downside</th>
-                  <th>Diagnóstico de Valuation</th>
-                  <th>Ação Recomendada (Macro + Micro)</th>
-                </tr>
-              </thead>
-              <tbody id="fundamentalsTableBody">
-                <!-- Preenchido dinamicamente via JavaScript -->
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- TAB 4: PLAYBOOK GIP (LIVRO PÁG. 27) -->
     <section id="tab-playbook" class="tab-content">
       <div class="card">
@@ -1508,6 +1322,76 @@
               <button class="btn btn-outline btn-sm" onclick="fetchMarketAnalyticsData()">
                 <span class="icon">🔄</span> Atualizar Dados
               </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================================
+             NOVA SEÇÃO: RADAR DE ROTAÇÃO DE QUADRANTES (SIMULAÇÃO 30D)
+             ======================================================== -->
+        <div class="card mb-4" style="border: 1px solid rgba(245, 158, 11, 0.4); background: linear-gradient(180deg, rgba(15, 23, 42, 0.85), rgba(30, 41, 59, 0.6));">
+          <div class="card-header" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.8rem; margin-bottom: 1.2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-size: 1.4rem;">📈</span>
+                <h3 style="margin: 0; font-size: 1.2rem; color: #F59E0B;">Radar de Rotação de Quadrantes: Carteiras Simuladas (30 Dias)</h3>
+              </div>
+              <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <span class="badge badge-bullish" id="quadLeadingBadge">LÍDER 30D: QUAD 3</span>
+                <span class="badge badge-neutral" style="font-size: 0.75rem;">16 ATIVOS CHAVE</span>
+              </div>
+            </div>
+            <p style="margin: 0.4rem 0 0; font-size: 0.85rem; color: #94A3B8;">
+              Monitoramento diário comparativo das 4 cestas de ativos representativos de cada Quadrante Macro (4 ativos por cesta). Permite identificar qual regime está acelerando no tempo e <strong>antecipar transições de quadrantes</strong> antes do consenso de mercado.
+            </p>
+          </div>
+
+          <!-- Banner de Diagnóstico Preditivo / Early Warning -->
+          <div id="quadTransitionBanner" style="margin-bottom: 1.2rem; padding: 0.85rem 1.1rem; border-radius: 8px; background: rgba(16, 185, 129, 0.12); border-left: 4px solid #10B981; font-size: 0.88rem; line-height: 1.45; color: #F1F5F9;">
+            Carregando diagnóstico preditivo de rotação...
+          </div>
+
+          <!-- Grid dos 4 Quadrantes com Retornos 1D, 5D e 30D -->
+          <div class="grid-4-col" id="quadBasketsCardsGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+            <!-- Renderizado dinamicamente via JS -->
+          </div>
+
+          <!-- Gráfico de Linhas Comparativo 30 Dias -->
+          <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 1.2rem; margin-bottom: 1.2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap;">
+              <h4 style="margin: 0; font-size: 0.95rem; color: #E2E8F0;">Trajetória Acumulada das 4 Cestas de Quadrantes (% nos últimos 30 dias)</h4>
+              <div style="display: flex; gap: 1rem; font-size: 0.78rem; font-weight: 600;">
+                <span style="color: #3B82F6;">● Quad 1 (Tech/QQQ)</span>
+                <span style="color: #10B981;">● Quad 2 (Reflação/XLE)</span>
+                <span style="color: #F59E0B;">● Quad 3 (Ouro/Commodities)</span>
+                <span style="color: #A855F7;">● Quad 4 (Deflação/TLT)</span>
+              </div>
+            </div>
+            <div style="position: relative; height: 280px; width: 100%;">
+              <canvas id="quadRotationChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Tabela com os 16 Ativos Simulados -->
+          <div style="margin-top: 1rem;">
+            <h4 style="font-size: 0.92rem; color: #CBD5E1; margin-bottom: 0.6rem;">Composição Detalhada dos 16 Ativos das Cestas Simuladas:</h4>
+            <div class="table-responsive">
+              <table class="data-table" style="font-size: 0.82rem;">
+                <thead>
+                  <tr>
+                    <th>Quadrante</th>
+                    <th>Tese Macro & Fatores</th>
+                    <th>4 Ativos da Cesta</th>
+                    <th>Retorno Hoje (1D)</th>
+                    <th>Retorno 5 Dias</th>
+                    <th>Retorno 30 Dias</th>
+                    <th>Status Atual</th>
+                  </tr>
+                </thead>
+                <tbody id="quadBasketsTableBody">
+                  <!-- Renderizado dinamicamente via JS -->
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
