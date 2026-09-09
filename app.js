@@ -2337,7 +2337,7 @@ function renderMarketAnalytics(data) {
   }
 
   // 4. Renderiza Tabela Fundamentalista
-  const fundTable = document.getElementById("fundamentalsTableBody");
+  const fundTable = document.getElementById("analyticsFundamentalsTableBody");
   if (fundTable && data.fundamentals && data.fundamentals.length > 0) {
     if (document.getElementById("fundamentalsCount")) {
       document.getElementById("fundamentalsCount").innerText = `${data.fundamentals.length} Ativos Monitorados`;
