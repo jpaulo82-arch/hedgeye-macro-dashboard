@@ -2212,7 +2212,156 @@ function printEarlyLookReport() {
   }, 100);
 }
 
-// 11. INICIALIZAÇÃO GERAL DO APLICATIVO
+// 11. ANÁLISE AVANÇADA (GEX, FACTSET, FUNDAMENTALISTA & 13F)
+let marketAnalyticsData = null;
+
+async function fetchMarketAnalyticsData() {
+  try {
+    let res = await fetch("/api/market-analytics");
+    if (!res.ok) {
+      res = await fetch("market_analytics.json");
+    }
+    if (res.ok) {
+      marketAnalyticsData = await res.json();
+      renderMarketAnalytics(marketAnalyticsData);
+    }
+  } catch (err) {
+    console.warn("Tentando carregar market_analytics.json local:", err);
+    try {
+      let resLocal = await fetch("market_analytics.json");
+      if (resLocal.ok) {
+        marketAnalyticsData = await resLocal.json();
+        renderMarketAnalytics(marketAnalyticsData);
+      }
+    } catch (e) {
+      console.error("Erro carregando market_analytics:", e);
+    }
+  }
+}
+
+function renderMarketAnalytics(data) {
+  if (!data) return;
+
+  // 1. Renderiza GEX Cards
+  const gexContainer = document.getElementById("gexCardsContainer");
+  if (gexContainer && data.gex && data.gex.length > 0) {
+    gexContainer.innerHTML = data.gex.map(item => {
+      const isShortGamma = item.regime === "SHORT GAMMA";
+      const regimeColor = isShortGamma ? "#EF4444" : "#10B981";
+      const regimeBg = isShortGamma ? "rgba(239, 68, 68, 0.15)" : "rgba(16, 185, 129, 0.15)";
+      const regimeBorder = isShortGamma ? "rgba(239, 68, 68, 0.4)" : "rgba(16, 185, 129, 0.4)";
+
+      // Calcula % do preço no range entre Put Wall e Call Wall
+      const wallRange = (item.call_wall - item.put_wall) || 1;
+      const pricePct = Math.max(0, Math.min(100, ((item.current_price - item.put_wall) / wallRange) * 100));
+
+      return `
+        <div class="stat-card" style="border: 1px solid ${regimeBorder}; background: linear-gradient(180deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.9)); padding: 1.2rem; border-radius: 10px; position: relative;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem;">
+            <div>
+              <span style="font-size: 1.2rem; font-weight: 800; color: #F8FAFC; letter-spacing: 0.5px;">${item.ticker}</span>
+              <div style="font-size: 1.4rem; font-weight: 700; color: #E2E8F0; margin-top: 0.2rem;">US$ ${item.current_price.toFixed(2)}</div>
+            </div>
+            <span class="badge" style="background: ${regimeBg}; color: ${regimeColor}; border: 1px solid ${regimeBorder}; font-weight: 700; font-size: 0.75rem;">
+              ${item.regime}
+            </span>
+          </div>
+
+          <!-- Barra de Gama / Walls -->
+          <div style="margin: 1rem 0;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 600; margin-bottom: 0.3rem;">
+              <span style="color: #EF4444;">Put Wall (Piso): $${item.put_wall}</span>
+              <span style="color: #10B981;">Call Wall (Teto): $${item.call_wall}</span>
+            </div>
+            <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; position: relative; overflow: hidden;">
+              <div style="position: absolute; left: 0; top: 0; bottom: 0; width: ${pricePct}%; background: linear-gradient(90deg, #EF4444, #3B82F6, #10B981); border-radius: 4px;"></div>
+            </div>
+            <div style="text-align: center; font-size: 0.72rem; color: #94A3B8; margin-top: 0.3rem;">
+              Posição no Range de Opções: <strong>${pricePct.toFixed(0)}%</strong> (Perto do ${pricePct > 50 ? "Teto" : "Piso"})
+            </div>
+          </div>
+
+          <!-- Métricas Chave -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; font-size: 0.78rem; background: rgba(0,0,0,0.25); padding: 0.7rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.04);">
+            <div><span style="color: #94A3B8;">Net GEX:</span> <strong style="color: ${regimeColor};">${item.net_gex_million}M</strong></div>
+            <div><span style="color: #94A3B8;">Put/Call Ratio:</span> <strong>${item.put_call_ratio}</strong></div>
+            <div><span style="color: #94A3B8;">Zero Gamma:</span> <strong>$${item.zero_gamma_level}</strong></div>
+            <div><span style="color: #94A3B8;">Total OI Puts:</span> <strong>${(item.total_put_oi / 1000).toFixed(0)}k</strong></div>
+          </div>
+
+          <p style="margin: 0.8rem 0 0; font-size: 0.74rem; color: #94A3B8; line-height: 1.35;">
+            ℹ️ ${item.regime_desc}
+          </p>
+        </div>
+      `;
+    }).join("");
+  }
+
+  // 2. Renderiza FactSet Insight
+  if (data.factset) {
+    const fs = data.factset;
+    if (document.getElementById("factsetEpsGrowth")) document.getElementById("factsetEpsGrowth").innerText = fs.sp500_eps_growth_blended || "+4.8% YoY";
+    if (document.getElementById("factsetNetMargin")) document.getElementById("factsetNetMargin").innerText = fs.net_profit_margin || "12.1%";
+    if (document.getElementById("factsetLeadingSectors")) document.getElementById("factsetLeadingSectors").innerText = (fs.sectors_leading || []).join(", ");
+    if (document.getElementById("factsetLaggingSectors")) document.getElementById("factsetLaggingSectors").innerText = (fs.sectors_lagging || []).join(", ");
+    if (document.getElementById("factsetQuadInference")) document.getElementById("factsetQuadInference").innerText = fs.quad_inference || "";
+  }
+
+  // 3. Renderiza Radar 13F
+  const radarContainer = document.getElementById("superinvestorsContainer");
+  if (radarContainer && data.superinvestors_13f) {
+    radarContainer.innerHTML = data.superinvestors_13f.map(inv => `
+      <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(255, 255, 255, 0.06); padding: 0.9rem; border-radius: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+          <strong style="color: #34D399; font-size: 0.92rem;">${inv.investor}</strong>
+          <span style="font-size: 0.72rem; color: #94A3B8;">${inv.filing_period}</span>
+        </div>
+        <div style="font-size: 0.78rem; color: #CBD5E1; margin-bottom: 0.3rem;">
+          <strong>Tese de Ciclo:</strong> ${inv.thesis}
+        </div>
+        <div style="font-size: 0.78rem; color: #94A3B8; margin-bottom: 0.3rem;">
+          <strong>Destaques:</strong> ${inv.top_holdings.join(" • ")}
+        </div>
+        <div style="font-size: 0.74rem; color: #A7F3D0; background: rgba(16, 185, 129, 0.1); padding: 0.4rem 0.6rem; border-radius: 4px; border-left: 3px solid #10B981; margin-top: 0.3rem;">
+          💡 <em>${inv.action_guidance}</em>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  // 4. Renderiza Tabela Fundamentalista
+  const fundTable = document.getElementById("fundamentalsTableBody");
+  if (fundTable && data.fundamentals && data.fundamentals.length > 0) {
+    if (document.getElementById("fundamentalsCount")) {
+      document.getElementById("fundamentalsCount").innerText = `${data.fundamentals.length} Ativos Monitorados`;
+    }
+
+    fundTable.innerHTML = data.fundamentals.map(stk => {
+      const growthColor = stk.revenue_growth.startsWith("+") ? "#10B981" : (stk.revenue_growth.startsWith("-") ? "#EF4444" : "#E2E8F0");
+      let badgeRec = "badge-neutral";
+      if (stk.recommendation.includes("BUY")) badgeRec = "badge-bullish";
+      else if (stk.recommendation.includes("SELL")) badgeRec = "badge-bearish";
+
+      return `
+        <tr>
+          <td><strong style="color: #60A5FA;">${stk.ticker}</strong></td>
+          <td>${stk.shortName}</td>
+          <td><span style="font-size: 0.8rem; color: #94A3B8;">${stk.sector}</span></td>
+          <td><strong>US$ ${stk.price.toFixed(2)}</strong></td>
+          <td><span style="font-family: 'JetBrains Mono', monospace;">${stk.pe}</span></td>
+          <td><span style="font-family: 'JetBrains Mono', monospace;">${stk.ev_ebitda}</span></td>
+          <td><span style="color: #38BDF8; font-family: 'JetBrains Mono', monospace;">${stk.net_margin}</span></td>
+          <td><span style="color: ${growthColor}; font-weight: 600; font-family: 'JetBrains Mono', monospace;">${stk.revenue_growth}</span></td>
+          <td>${stk.market_cap}</td>
+          <td>${stk.beta}</td>
+          <td><span class="badge ${badgeRec}" style="font-size: 0.72rem;">${stk.recommendation}</span></td>
+        </tr>
+      `;
+    }).join("");
+  }
+}
+
+// 12. INICIALIZAÇÃO GERAL DO APLICATIVO
 function initApp() {
   renderPortfolioView(activePortfolioKey);
   renderRiskRangesTable("all");
@@ -2220,6 +2369,7 @@ function initApp() {
   loadReportsDatabase().then(() => {
     populateTranslatedReportsDropdown();
   });
+  fetchMarketAnalyticsData();
 }
 
 if (document.readyState === "loading") {

@@ -89,6 +89,9 @@
     <button class="nav-tab" data-tab="earlylook" onclick="setTab('earlylook')">
       📥 Base & Sincronizador E-mails
     </button>
+    <button class="nav-tab" data-tab="analytics" onclick="setTab('analytics')">
+      🌐 Análise Avançada (GEX, FactSet & 13F)
+    </button>
     <button class="nav-tab" data-tab="decisions" onclick="setTab('decisions')">
       📝 Log de Decisões & Auditoria
     </button>
@@ -1478,7 +1481,145 @@
               </tr>
             </tbody>
           </table>
+    <!-- ========================================================
+         TAB 8: ANÁLISE AVANÇADA (GEX, FACTSET, FUNDAMENTALISTA & 13F)
+         ======================================================== -->
+    <section id="tab-analytics" class="tab-content">
+      <div class="analytics-view-wrapper">
+        
+        <!-- Header da Aba de Análise Avançada -->
+        <div class="analytics-hero-header" style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.95)); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;">
+                <span style="font-size: 1.6rem;">🌐</span>
+                <h2 style="margin: 0; font-size: 1.4rem; font-weight: 700; color: #F8FAFC;">ANÁLISE DE MERCADO INTEGRADA</h2>
+                <span class="badge" style="background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.4);">4 MOTORES ATIVOS</span>
+              </div>
+              <p style="margin: 0; color: #94A3B8; font-size: 0.9rem;">
+                Confluência de <strong>GEX / Dealer Gamma (SpotGamma)</strong>, <strong>FactSet Earnings Insight</strong>, <strong>Múltiplos Fundamentalistas</strong> e <strong>Radar 13F (Howard Marks)</strong>.
+              </p>
+            </div>
+            <div style="display: flex; gap: 0.6rem;">
+              <button class="btn btn-outline btn-sm" onclick="fetchMarketAnalyticsData()">
+                <span class="icon">🔄</span> Atualizar Dados
+              </button>
+            </div>
+          </div>
         </div>
+
+        <!-- SEÇÃO 1: MOTOR GEX & DEALER GAMMA (SPOTGAMMA OPEN MODEL) -->
+        <div class="card mb-4" style="border: 1px solid rgba(139, 92, 246, 0.3); background: rgba(15, 23, 42, 0.7);">
+          <div class="card-header" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.8rem; margin-bottom: 1.2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-size: 1.3rem;">⚡</span>
+                <h3 style="margin: 0; font-size: 1.15rem; color: #E2E8F0;">Motor GEX: Exposição de Gamma dos Dealers & Option Walls</h3>
+              </div>
+              <span class="badge" style="background: rgba(139, 92, 246, 0.2); color: #C084FC; border: 1px solid rgba(139, 92, 246, 0.4);">MODELO SPOTGAMMA</span>
+            </div>
+            <p style="margin: 0.4rem 0 0; font-size: 0.82rem; color: #94A3B8;">
+              As <strong>Call Walls</strong> funcionam como resistência magnética e teto de volatilidade; as <strong>Put Walls</strong> atuam como piso de suporte institucional. Em regime de <em>Short Gamma</em>, a volatilidade intradiária acelera agressivamente.
+            </p>
+          </div>
+
+          <div id="gexCardsContainer" class="grid-3-col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.2rem;">
+            <!-- Renderizado dinamicamente via JS -->
+            <div class="stat-card" style="text-align: center; padding: 2rem; color: #94A3B8;">Carregando dados de GEX...</div>
+          </div>
+        </div>
+
+        <!-- SEÇÃO 2: FACTSET EARNINGS INSIGHT & RADAR MACRO -->
+        <div class="grid-2-col" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+          
+          <!-- FactSet Card -->
+          <div class="card" style="border: 1px solid rgba(59, 130, 246, 0.3);">
+            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-size: 1.2rem;">📊</span>
+                <h3 style="margin: 0; font-size: 1.1rem; color: #E2E8F0;">FactSet Earnings Insight</h3>
+              </div>
+              <span class="badge badge-bullish">John Butters Research</span>
+            </div>
+            
+            <div id="factsetContent">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: rgba(30, 41, 59, 0.5); padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                  <div style="font-size: 0.75rem; color: #94A3B8; text-transform: uppercase;">Crescimento EPS S&P 500 (YoY)</div>
+                  <div style="font-size: 1.3rem; font-weight: 700; color: #10B981; margin-top: 0.2rem;" id="factsetEpsGrowth">+4.8% YoY</div>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.5); padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+                  <div style="font-size: 0.75rem; color: #94A3B8; text-transform: uppercase;">Margem Líquida Média</div>
+                  <div style="font-size: 1.3rem; font-weight: 700; color: #60A5FA; margin-top: 0.2rem;" id="factsetNetMargin">12.1%</div>
+                </div>
+              </div>
+              
+              <div style="background: rgba(30, 41, 59, 0.4); padding: 1rem; border-radius: 8px; margin-bottom: 0.8rem;">
+                <div style="font-size: 0.82rem; font-weight: 600; color: #10B981; margin-bottom: 0.3rem;">🟢 Setores Líderes em Lucros:</div>
+                <div style="font-size: 0.82rem; color: #CBD5E1;" id="factsetLeadingSectors">Information Technology (+18.2%), Communication Services (+12.5%), Health Care (+9.1%)</div>
+              </div>
+
+              <div style="background: rgba(30, 41, 59, 0.4); padding: 1rem; border-radius: 8px; margin-bottom: 0.8rem;">
+                <div style="font-size: 0.82rem; font-weight: 600; color: #EF4444; margin-bottom: 0.3rem;">🔴 Setores com Contração de Lucros:</div>
+                <div style="font-size: 0.82rem; color: #CBD5E1;" id="factsetLaggingSectors">Energy (-15.4%), Materials (-11.2%), Real Estate (-4.3%)</div>
+              </div>
+
+              <div class="quote-box" style="margin-top: 1rem; padding: 0.8rem; font-size: 0.82rem;">
+                <strong>Leitura de Regime Macro:</strong> <span id="factsetQuadInference" style="color: #E2E8F0;">Crescimento concentrado em Big Tech secular; contração de margens industriais e commodities sinaliza transição entre Quad 2 e Quad 3.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Radar 13F Superinvestidores -->
+          <div class="card" style="border: 1px solid rgba(16, 185, 129, 0.3);">
+            <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="font-size: 1.2rem;">🏛️</span>
+                <h3 style="margin: 0; font-size: 1.1rem; color: #E2E8F0;">Radar 13F: Superinvestidores & Ciclos</h3>
+              </div>
+              <span class="badge" style="background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.4);">SEC EDGAR / DATAROMA</span>
+            </div>
+            
+            <div id="superinvestorsContainer" style="display: flex; flex-direction: column; gap: 0.9rem;">
+              <!-- Renderizado dinamicamente via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- SEÇÃO 3: MÚLTIPLOS FUNDAMENTALISTAS AO VIVO DAS AÇÕES DA CARTEIRA -->
+        <div class="card mb-4" style="border: 1px solid rgba(255, 255, 255, 0.08);">
+          <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <span style="font-size: 1.3rem;">🔬</span>
+              <h3 style="margin: 0; font-size: 1.15rem; color: #E2E8F0;">Base Fundamentalista & Múltiplos ao Vivo (OpenBB / Python)</h3>
+            </div>
+            <span class="badge badge-neutral" id="fundamentalsCount">23 Ativos Monitorados</span>
+          </div>
+          
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Ticker</th>
+                  <th>Empresa</th>
+                  <th>Setor</th>
+                  <th>Preço Atual</th>
+                  <th>P/L (P/E)</th>
+                  <th>EV/EBITDA</th>
+                  <th>Margem Líq.</th>
+                  <th>Cresc. Receita</th>
+                  <th>Market Cap</th>
+                  <th>Beta</th>
+                  <th>Consenso</th>
+                </tr>
+              </thead>
+              <tbody id="fundamentalsTableBody">
+                <tr><td colspan="11" style="text-align: center; color: #94A3B8; padding: 2rem;">Carregando múltiplos fundamentalistas...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </div>
     </section>
 
