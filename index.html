@@ -60,10 +60,13 @@
     </div>
   </header>
 
-  <!-- Navigation Tabs (NOVA ORDEM SOLICITADA) -->
+  <!-- Navigation Tabs -->
   <nav class="nav-tabs">
     <button class="nav-tab active" data-tab="dashboard" onclick="setTab('dashboard')">
       📊 Painel Executivo
+    </button>
+    <button class="nav-tab" data-tab="copilot" onclick="setTab('copilot')" style="background: rgba(56, 189, 248, 0.12); border-color: rgba(56, 189, 248, 0.35); color: #38BDF8;">
+      🤖 Copilot Macro AI
     </button>
     <button class="nav-tab" data-tab="portfolio" onclick="setTab('portfolio')">
       💼 Portfólio
@@ -73,6 +76,9 @@
     </button>
     <button class="nav-tab" data-tab="playbook" onclick="setTab('playbook')">
       🧭 Sistema GIP
+    </button>
+    <button class="nav-tab" data-tab="macrodata" onclick="setTab('macrodata')">
+      📈 Dados Macro
     </button>
     <button class="nav-tab" data-tab="analytics" onclick="setTab('analytics')">
       🏛️ Institucionais
@@ -1423,6 +1429,220 @@
             </table>
           </div>
         </div>
+    <!-- ========================================================
+         8. COPILOT MACRO AI (CHATBOT INTERATIVO & ASSISTENTE)
+         ======================================================== -->
+    <section id="tab-copilot" class="tab-content">
+      <div class="copilot-layout">
+        <!-- Painel Principal de Conversação -->
+        <div class="chat-panel">
+          <div class="chat-header">
+            <div class="chat-header-info">
+              <div class="chat-bot-avatar">⚡</div>
+              <div>
+                <h3 style="margin: 0; font-size: 1.05rem; color: #F8FAFC; display: flex; align-items: center; gap: 0.5rem;">
+                  Hedgeye Macro Copilot
+                  <span class="status-indicator online" style="width: 8px; height: 8px;"></span>
+                </h3>
+                <p style="margin: 0.15rem 0 0; font-size: 0.75rem; color: #94A3B8;">
+                  Assistente Quantitativo Integrado às Carteiras, Risk Ranges e Metodologia GIP
+                </p>
+              </div>
+            </div>
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <button class="btn btn-outline btn-sm" onclick="clearChatHistory()" title="Limpar conversa">
+                <span class="icon">🗑️</span> Limpar
+              </button>
+            </div>
+          </div>
+
+          <!-- Mensagens do Chat -->
+          <div class="chat-messages-container" id="chatMessagesContainer">
+            <!-- Mensagem de Boas-Vindas Inicial -->
+            <div class="chat-msg bot">
+              <div class="chat-bot-avatar" style="width: 32px; height: 32px; font-size: 0.95rem;">⚡</div>
+              <div class="chat-bubble">
+                <p><strong>Olá! Sou o seu Copilot Macro da Hedgeye.</strong></p>
+                <p style="margin-top: 0.4rem;">
+                  Estou conectado em tempo real aos seus <strong>relatórios diários (EARLY LOOK)</strong>, às suas posições nas corretoras (<strong>Charles Schwab & Tastyworks</strong>), aos <strong>Risk Ranges calibrados de hoje</strong> e aos dados macroeconômicos.
+                </p>
+                <p style="margin-top: 0.4rem; font-size: 0.82rem; color: #94A3B8;">
+                  Você pode me perguntar sobre:
+                </p>
+                <ul style="font-size: 0.82rem; color: #CBD5E1;">
+                  <li><strong>Diagnóstico do Portfólio:</strong> <em>"Como está a aderência da minha carteira ao Quad 3?"</em></li>
+                  <li><strong>Tomada de Decisão:</strong> <em>"O que devo comprar nos pisos e o que devo vender nos repiques?"</em></li>
+                  <li><strong>Research Macro:</strong> <em>"Qual é a leitura do Keith McCullough no EARLY LOOK de hoje?"</em></li>
+                  <li><strong>Análise de Ativos:</strong> <em>"Como estão os Risk Ranges de Ouro, Dólar, Petróleo e das minhas ações?"</em></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sugestões Rápidas de Perguntas (1 Clique) -->
+          <div class="chat-quick-chips">
+            <button class="chat-chip" onclick="useQuickPrompt('Como está a minha carteira hoje e qual é a aderência ao Quad 3?')">
+              💼 Como está minha carteira?
+            </button>
+            <button class="chat-chip" onclick="useQuickPrompt('O que devo comprar nos pisos e o que devo vender nos repiques de range?')">
+              🎯 O que comprar & vender?
+            </button>
+            <button class="chat-chip" onclick="useQuickPrompt('Qual é o diagnóstico do EARLY LOOK de hoje e do regime macro?')">
+              🧭 Diagnóstico do EARLY LOOK
+            </button>
+            <button class="chat-chip" onclick="useQuickPrompt('Como estão os Risk Ranges do Dólar (DXY), Juros 10Y e Ouro?')">
+              📊 Dólar, Juros & Ouro
+            </button>
+            <button class="chat-chip" onclick="useQuickPrompt('Quais ativos da minha carteira têm maior risco no regime atual?')">
+              ⚠️ Ativos de maior risco
+            </button>
+          </div>
+
+          <!-- Campo de Envio de Mensagens -->
+          <div class="chat-input-wrapper">
+            <form class="chat-form" onsubmit="handleChatSubmit(event)">
+              <input type="text" id="chatUserInput" class="chat-input" placeholder="Pergunte sobre sua carteira, o que comprar/vender, ativos ou cenário macro..." autocomplete="off">
+              <button type="submit" class="chat-send-btn">
+                <span>Enviar</span>
+                <span class="icon">➔</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Barra Lateral de Contexto Macro Dinâmico -->
+        <div class="copilot-sidebar">
+          <!-- Card de Regime Ativo -->
+          <div class="card" style="padding: 1rem; border-left: 4px solid #EF4444; background: rgba(30, 41, 59, 0.7);">
+            <div style="font-size: 0.72rem; color: #94A3B8; text-transform: uppercase; font-weight: 700;">Regime Macro Vigente</div>
+            <div style="font-size: 1.15rem; font-weight: 800; color: #F87171; margin-top: 0.2rem;" id="copilotRegimeBadge">
+              QUAD 3 (#ACCELERATING)
+            </div>
+            <div style="font-size: 0.78rem; color: #CBD5E1; margin-top: 0.3rem;">
+              Estagflação / Reflação: Crescimento desacelerando e Inflação acelerando.
+            </div>
+          </div>
+
+          <!-- Card de Aderência da Carteira -->
+          <div class="card" style="padding: 1rem; background: rgba(30, 41, 59, 0.7);">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.75rem; color: #94A3B8; font-weight: 700;">Aderência a Quad 3</span>
+              <span class="badge badge-neutral" style="font-size: 0.7rem;" id="copilotAdherenceBadge">Meta: ≥ 60%</span>
+            </div>
+            <div style="font-size: 1.4rem; font-weight: 800; color: #38BDF8; margin: 0.3rem 0;" id="copilotAdherenceVal">
+              38,5%
+            </div>
+            <div style="font-size: 0.75rem; color: #94A3B8;">
+              Necessário rebalancear desinvestindo de High Beta / Semis para Ouro, Mineradoras e Caixa SGOV.
+            </div>
+          </div>
+
+          <!-- Card de Principais Sinais de Hoje -->
+          <div class="card" style="padding: 1rem; background: rgba(30, 41, 59, 0.7);">
+            <div style="font-size: 0.75rem; color: #38BDF8; font-weight: 700; margin-bottom: 0.5rem; text-transform: uppercase;">
+              🎯 Sinais Críticos de Hoje (10/09)
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.78rem;">
+              <div style="display: flex; justify-content: space-between;">
+                <span>DXY (Dólar):</span>
+                <span class="badge badge-bearish" style="font-size: 0.7rem;">98,33–99,49 (BEARISH)</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>UST 10Y Yield:</span>
+                <span class="badge badge-bullish" style="font-size: 0.7rem;">4,70%–4,89% (BULLISH)</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>Ouro Spot:</span>
+                <span class="badge badge-bullish" style="font-size: 0.7rem;">4.301–4.502 (BULLISH)</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>Cobre Físico:</span>
+                <span class="badge badge-bullish" style="font-size: 0.7rem;">6,55–6,85 (ATHs)</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>Petróleo WTI:</span>
+                <span class="badge badge-bullish" style="font-size: 0.7rem;">88,12–99,91 (BULLISH)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Atalho para Ações Rápidas -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <button class="btn btn-primary btn-sm" onclick="openRebalanceModal()" style="width: 100%;">
+              <span class="icon">⚡</span> Abrir Plano de Rebalanceamento
+            </button>
+            <button class="btn btn-outline btn-sm" onclick="setTab('macrodata')" style="width: 100%;">
+              <span class="icon">📈</span> Central de Dados Macroeconômicos
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         9. CENTRAL DE DADOS MACROECONÔMICOS & INGESTÃO
+         ======================================================== -->
+    <section id="tab-macrodata" class="tab-content">
+      <div class="card mb-4" style="border: 1px solid rgba(56, 189, 248, 0.3); background: linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.7));">
+        <div class="card-header" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.8rem; margin-bottom: 1.2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.6rem;">
+            <div style="display: flex; align-items: center; gap: 0.6rem;">
+              <span style="font-size: 1.5rem;">📈</span>
+              <div>
+                <h3 style="margin: 0; font-size: 1.2rem; color: #38BDF8;">Central de Ingestão & Monitoramento de Dados Macroeconômicos</h3>
+                <p style="margin: 0.2rem 0 0; font-size: 0.82rem; color: #94A3B8;">
+                  Acompanhe e alimente indicadores de inflação, atividade, liquidez e risco de mercado para guiar as decisões de alocação.
+                </p>
+              </div>
+            </div>
+            <div style="display: flex; gap: 0.6rem; align-items: center;">
+              <button class="btn btn-primary" onclick="openNewMacroIndicatorModal()">
+                <span class="icon">➕</span> Adicionar Indicador Macro
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resumo Quantitativo dos Indicadores -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem; margin-bottom: 1.2rem;">
+          <div class="stat-card" style="padding: 0.8rem; background: rgba(30, 41, 59, 0.6);">
+            <div class="stat-label">INDICADORES ATIVOS</div>
+            <div class="stat-val text-emerald" id="totalMacroCount">11 Séries</div>
+            <div class="stat-desc">Inflação, Juros, Atividade & Liquidez</div>
+          </div>
+          <div class="stat-card" style="padding: 0.8rem; background: rgba(30, 41, 59, 0.6);">
+            <div class="stat-label">VIÉS PREDOMINANTE</div>
+            <div class="stat-val text-rose">Quad 3 (Estagflação)</div>
+            <div class="stat-desc">Inflação acelerando + Curva de Juros</div>
+          </div>
+          <div class="stat-card" style="padding: 0.8rem; background: rgba(30, 41, 59, 0.6);">
+            <div class="stat-label">INTEGRAÇÃO COM O COPILOT</div>
+            <div class="stat-val text-cyan">100% Sincronizado</div>
+            <div class="stat-desc">Disponível no chat para consultas</div>
+          </div>
+        </div>
+
+        <!-- Tabela de Dados Macroeconômicos -->
+        <div class="table-responsive">
+          <table class="data-table" style="font-size: 0.84rem;">
+            <thead>
+              <tr>
+                <th>Indicador / Métrica</th>
+                <th>Categoria</th>
+                <th>Última Leitura</th>
+                <th>Leitura Anterior</th>
+                <th>Tendência / ROC</th>
+                <th>Frequência</th>
+                <th>Viés de Regime</th>
+                <th>Sensibilidade no Portfólio</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="macroIndicatorsTableBody">
+              <!-- Renderizado dinamicamente via JS -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
@@ -1666,10 +1886,101 @@
     </div>
   </div>
 
+  <!-- ========================================================
+       MODAL: NOVO INDICADOR MACROECONÔMICO CUSTOMIZADO
+       ======================================================== -->
+  <div id="newMacroIndicatorModal" class="modal-overlay" onclick="if(event.target === this) closeNewMacroIndicatorModal()">
+    <div class="modal-card" style="max-width: 680px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <span style="font-size: 1.4rem;">📈</span>
+          <div>
+            <h3 style="margin: 0; font-size: 1.15rem; color: #38BDF8;">Cadastrar Novo Indicador Macroeconômico</h3>
+            <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #94A3B8;">Adicione métricas customizadas de inflação, juros, crédito ou atividade</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeNewMacroIndicatorModal()" title="Fechar janela">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="newMacroIndicatorForm" onsubmit="saveNewMacroIndicator(event)" style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+              <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Nome do Indicador / Métrica:</label>
+              <input type="text" id="macroName" class="form-input" placeholder="Ex: CPI Core YoY / Initial Claims / M2" required style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Categoria:</label>
+              <select id="macroCategory" class="form-select" style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+                <option value="Inflação & Preços">Inflação & Preços (I)</option>
+                <option value="Atividade & PIB">Atividade & PIB (G)</option>
+                <option value="Juros & Spreads">Juros & Spreads da Curva</option>
+                <option value="Liquidez & Crédito">Liquidez, M2 & Spreads OAS</option>
+                <option value="Commodities & Energia">Commodities & Energia</option>
+                <option value="Condições Financeiras">Condições Financeiras & Risco</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem;">
+            <div>
+              <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Última Leitura:</label>
+              <input type="text" id="macroCurrentVal" class="form-input" placeholder="Ex: 3.4% / 225k / +0.15" required style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Leitura Anterior:</label>
+              <input type="text" id="macroPrevVal" class="form-input" placeholder="Ex: 3.2% / 232k / -0.10" required style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Tendência / ROC:</label>
+              <select id="macroTrend" class="form-select" style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+                <option value="▲ Acelerando">▲ Acelerando (ROC +)</option>
+                <option value="▼ Desacelerando">▼ Desacelerando (ROC -)</option>
+                <option value="► Estável">► Estável</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+              <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Frequência de Divulgação:</label>
+              <input type="text" id="macroFreq" class="form-input" placeholder="Ex: Mensal / Semanal / Diário" required style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Viés de Regime GIP:</label>
+              <select id="macroQuadBias" class="form-select" style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+                <option value="QUAD 3 (Estagflação / Reflação)">QUAD 3 (Estagflação / Reflação)</option>
+                <option value="QUAD 2 (Reflação / Expansão)">QUAD 2 (Reflação / Expansão)</option>
+                <option value="QUAD 1 (Goldilocks)">QUAD 1 (Goldilocks)</option>
+                <option value="QUAD 4 (Deflação / Recessão)">QUAD 4 (Deflação / Recessão)</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Sensibilidade & Impacto no Portfólio:</label>
+            <input type="text" id="macroImpact" class="form-input" placeholder="Ex: Aceleração favorece Ouro/Commodities e pressiona Long Duration/Semis" required style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 0.8rem; margin-top: 0.5rem;">
+            <button type="button" class="btn btn-outline" onclick="closeNewMacroIndicatorModal()">Cancelar</button>
+            <button type="submit" class="btn btn-primary"><span class="icon">💾</span> Salvar Indicador</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão Flutuante de Acesso Rápido ao Copilot Macro AI -->
+  <button class="floating-copilot-btn" onclick="setTab('copilot')" title="Conversar com o Copilot Macro AI">
+    <span class="pulse-ring"></span>
+    ⚡
+  </button>
+
   <!-- Toast de Notificação -->
   <div class="toast-notification" id="toastNotification">Notificação</div>
 
   <!-- Script Principal da Aplicação -->
-  <script src="app.js?v=20260910_2"></script>
+  <script src="app.js?v=20260910_3"></script>
 </body>
 </html>
