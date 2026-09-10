@@ -1,5 +1,5 @@
 {
-  "updated_at": "10/09/2026 09:51:37",
+  "updated_at": "10/09/2026 10:16:38",
   "gex": [
     {
       "ticker": "SPY",
@@ -13,7 +13,7 @@
       "total_call_oi": 350163,
       "total_put_oi": 556228,
       "put_call_ratio": 1.59,
-      "updated_at": "10/09/2026 09:51:11"
+      "updated_at": "10/09/2026 10:16:05"
     },
     {
       "ticker": "QQQ",
@@ -27,7 +27,7 @@
       "total_call_oi": 232983,
       "total_put_oi": 411723,
       "put_call_ratio": 1.77,
-      "updated_at": "10/09/2026 09:51:13"
+      "updated_at": "10/09/2026 10:16:07"
     },
     {
       "ticker": "IWM",
@@ -41,7 +41,7 @@
       "total_call_oi": 229580,
       "total_put_oi": 323921,
       "put_call_ratio": 1.41,
-      "updated_at": "10/09/2026 09:51:14"
+      "updated_at": "10/09/2026 10:16:09"
     }
   ],
   "fundamentals": [
@@ -284,7 +284,7 @@
       "shortName": "Mueller Industries, Inc.",
       "sector": "Industrials",
       "price": 63.71,
-      "pe": "16.5x",
+      "pe": "16.6x",
       "ev_ebitda": "11.7x",
       "net_margin": "18.2%",
       "revenue_growth": "+25.5%",
@@ -1349,6 +1349,243 @@
     "leading_month": "QUAD 3",
     "transition_signal": "🟢 QUAD 3 CONFIRMADO (#Accelerating): Cesta de Ouro, Prata e Commodities liderando a tração macro (Aceleração de +1.27% na 2ª derivada). Vento a favor para posições compradas em ouro/energia.",
     "signal_badge": "badge-bullish",
-    "updated_at": "10/09/2026 09:51:37"
-  }
+    "updated_at": "10/09/2026 10:16:33"
+  },
+  "economic_calendar": {
+    "updated_at": "10/09/2026 10:16:33",
+    "current_week": "07/09 a 11/09/2026",
+    "events": [
+      {
+        "date_str": "09/09 (Ontem - Qua) 10:30 EDT",
+        "tag": "CONCLUÍDO",
+        "is_today": false,
+        "indicator": "Crude Oil Inventories (EIA) & Mortgage Demand (MBA)",
+        "consensus": "Estoques de Energia / Demanda Imobiliária",
+        "quad_impact": "Queda em estoques de óleo impulsiona WTI (teto em US$ 97,53); juros de hipoteca em alta mantêm Housing (ITB) em drawdown.",
+        "market_trigger": "Continuidade da rotação para fora de US Housing e Treasuries em direção a Commodities.",
+        "portfolio_sensitivity": "ALTO IMPACTO (WTI / OIH / ITB)",
+        "badge_class": "badge-bullish"
+      },
+      {
+        "date_str": "10/09 (Hoje - Qui) 08:30 EDT",
+        "tag": "HOJE",
+        "is_today": true,
+        "indicator": "Initial Jobless Claims (Pedidos de Seguro-Desemprego)",
+        "consensus": "Consenso: 228k (Mercado de trabalho resiliente)",
+        "quad_impact": "Mercado de trabalho sem sinais de desaquecimento agudo dá suporte para taxas 'Higher for Longer'.",
+        "market_trigger": "Claims controlados sustentam 10Y Yield próximo do teto do range (4,68% - 4,86%).",
+        "portfolio_sensitivity": "Short Treasuries (TLT) / Renda Fixa",
+        "badge_class": "badge-bearish"
+      },
+      {
+        "date_str": "10/09 (Hoje - Qui) 08:30 EDT",
+        "tag": "HOJE",
+        "is_today": true,
+        "indicator": "PPI (Preços ao Produtor - Final Demand)",
+        "consensus": "Consenso: +0,3% MoM | Reaceleração de Atacado",
+        "quad_impact": "Primeiro termômetro do repasse do superciclo de commodities (WTI +23% e Cobre em ATHs).",
+        "market_trigger": "Pressão de insumos no atacado impede arrefecimento da inflação e mantém yields no topo.",
+        "portfolio_sensitivity": "Commodities / OIH / Insumos",
+        "badge_class": "badge-bullish"
+      },
+      {
+        "date_str": "11/09 (Amanhã - Sex) 08:30 EDT",
+        "tag": "AMANHÃ",
+        "is_today": false,
+        "indicator": "CPI (Inflação ao Consumidor Headline & Core)",
+        "consensus": "Headline & Core MoM / YoY",
+        "quad_impact": "Catalisador Decisivo do Mês: Medição do repasse da alta de Petróleo e insumos físicos.",
+        "market_trigger": "Qualquer reaceleração no Core CPI cimenta o Global Quad 3, elimina cortes do Fed e impulsiona Ouro e Commodities.",
+        "portfolio_sensitivity": "ALTO IMPACTO (Ouro / Commodities / SGOV)",
+        "badge_class": "badge-bullish"
+      },
+      {
+        "date_str": "11/09 (Amanhã - Sex) 10:00 EDT",
+        "tag": "AMANHÃ",
+        "is_today": false,
+        "indicator": "Michigan Consumer Sentiment & Inflação 1Y/5Y",
+        "consensus": "Expectativas de Inflação 1Y / 5Y",
+        "quad_impact": "Desancoragem de expectativas inflacionárias dos consumidores confirma percepção de estagflação.",
+        "market_trigger": "Expectativas inflacionárias elevadas sustentam Ouro (AAAU/GDX/NEM) e SGOV.",
+        "portfolio_sensitivity": "SGOV / Ouro Spot",
+        "badge_class": "badge-core"
+      },
+      {
+        "date_str": "15/09 (Ter) 08:30 EDT",
+        "tag": "PRÓXIMO",
+        "is_today": false,
+        "indicator": "Retail Sales & Industrial Production",
+        "consensus": "Consumo Resiliente & Capex Industrial",
+        "quad_impact": "Testa a força da demanda agregada perante a inflação acumulada e custo de crédito elevado.",
+        "market_trigger": "Resiliência do consumidor afasta risco imediato de recessão profunda e mantém Quad 3 ativo.",
+        "portfolio_sensitivity": "Consumo Cíclico / Tech Secular",
+        "badge_class": "badge-macro"
+      },
+      {
+        "date_str": "16/09 (Qua) 14:00 EDT",
+        "tag": "PRÓXIMO",
+        "is_today": false,
+        "indicator": "Decisão de Juros do FOMC (Fed) & Dot Plot",
+        "consensus": "Fed Funds Rate & Projeções Econômicas",
+        "quad_impact": "Definição da taxa terminal e comunicação de Jerome Powell perante a Aceleração Inflacionária (#Accelerating).",
+        "market_trigger": "Postura Hawkish do Fed cimenta o topo dos yields e castiga papéis de múltiplos esticados.",
+        "portfolio_sensitivity": "RISCO MÁXIMO (Bonds / Dólar / Equities)",
+        "badge_class": "badge-bullish"
+      }
+    ]
+  },
+  "portfolio_earnings_calendar": [
+    {
+      "ticker": "ASML",
+      "earnings_date": "14/10/2026",
+      "days_until": 34,
+      "eps_consensus": "US$ 10.58",
+      "revenue_consensus": "US$ 11.66B",
+      "status": "Em 34 dias"
+    },
+    {
+      "ticker": "MLI",
+      "earnings_date": "20/10/2026",
+      "days_until": 40,
+      "eps_consensus": "US$ 1.09",
+      "revenue_consensus": "US$ 1.28B",
+      "status": "Em 40 dias"
+    },
+    {
+      "ticker": "INTC",
+      "earnings_date": "22/10/2026",
+      "days_until": 42,
+      "eps_consensus": "US$ 0.39",
+      "revenue_consensus": "US$ 16.42B",
+      "status": "Em 42 dias"
+    },
+    {
+      "ticker": "NOK",
+      "earnings_date": "22/10/2026",
+      "days_until": 42,
+      "eps_consensus": "US$ 0.07",
+      "revenue_consensus": "US$ 5.06B",
+      "status": "Em 42 dias"
+    },
+    {
+      "ticker": "NEM",
+      "earnings_date": "22/10/2026",
+      "days_until": 42,
+      "eps_consensus": "US$ 1.92",
+      "revenue_consensus": "US$ 6.19B",
+      "status": "Em 42 dias"
+    },
+    {
+      "ticker": "BE",
+      "earnings_date": "27/10/2026",
+      "days_until": 47,
+      "eps_consensus": "US$ 0.67",
+      "revenue_consensus": "US$ 1.06B",
+      "status": "Em 47 dias"
+    },
+    {
+      "ticker": "GOOGL",
+      "earnings_date": "28/10/2026",
+      "days_until": 48,
+      "eps_consensus": "US$ 3.00",
+      "revenue_consensus": "US$ 127.08B",
+      "status": "Em 48 dias"
+    },
+    {
+      "ticker": "META",
+      "earnings_date": "28/10/2026",
+      "days_until": 48,
+      "eps_consensus": "US$ 6.97",
+      "revenue_consensus": "US$ 63.32B",
+      "status": "Em 48 dias"
+    },
+    {
+      "ticker": "AXTI",
+      "earnings_date": "29/10/2026",
+      "days_until": 49,
+      "eps_consensus": "US$ 0.31",
+      "revenue_consensus": "US$ 66.0M",
+      "status": "Em 49 dias"
+    },
+    {
+      "ticker": "FN",
+      "earnings_date": "02/11/2026",
+      "days_until": 53,
+      "eps_consensus": "US$ 4.19",
+      "revenue_consensus": "US$ 1.40B",
+      "status": "Em 53 dias"
+    },
+    {
+      "ticker": "UBER",
+      "earnings_date": "03/11/2026",
+      "days_until": 54,
+      "eps_consensus": "US$ 0.87",
+      "revenue_consensus": "US$ 14.69B",
+      "status": "Em 54 dias"
+    },
+    {
+      "ticker": "ALAB",
+      "earnings_date": "03/11/2026",
+      "days_until": 54,
+      "eps_consensus": "US$ 1.19",
+      "revenue_consensus": "US$ 550.6M",
+      "status": "Em 54 dias"
+    },
+    {
+      "ticker": "MELI",
+      "earnings_date": "04/11/2026",
+      "days_until": 55,
+      "eps_consensus": "US$ 9.67",
+      "revenue_consensus": "US$ 10.57B",
+      "status": "Em 55 dias"
+    },
+    {
+      "ticker": "COHR",
+      "earnings_date": "04/11/2026",
+      "days_until": 55,
+      "eps_consensus": "US$ 1.96",
+      "revenue_consensus": "US$ 2.30B",
+      "status": "Em 55 dias"
+    },
+    {
+      "ticker": "ARM",
+      "earnings_date": "04/11/2026",
+      "days_until": 55,
+      "eps_consensus": "US$ 0.47",
+      "revenue_consensus": "US$ 1.37B",
+      "status": "Em 55 dias"
+    },
+    {
+      "ticker": "MTSI",
+      "earnings_date": "05/11/2026",
+      "days_until": 56,
+      "eps_consensus": "US$ 2.00",
+      "revenue_consensus": "US$ 420.4M",
+      "status": "Em 56 dias"
+    },
+    {
+      "ticker": "TSEM",
+      "earnings_date": "09/11/2026",
+      "days_until": 60,
+      "eps_consensus": "US$ 1.06",
+      "revenue_consensus": "US$ 522.4M",
+      "status": "Em 60 dias"
+    },
+    {
+      "ticker": "CRDO",
+      "earnings_date": "30/11/2026",
+      "days_until": 81,
+      "eps_consensus": "US$ 1.17",
+      "revenue_consensus": "US$ 471.7M",
+      "status": "Próximo Tri"
+    },
+    {
+      "ticker": "AVGO",
+      "earnings_date": "09/12/2026",
+      "days_until": 90,
+      "eps_consensus": "US$ 3.83",
+      "revenue_consensus": "US$ 34.88B",
+      "status": "Próximo Tri"
+    }
+  ]
 }

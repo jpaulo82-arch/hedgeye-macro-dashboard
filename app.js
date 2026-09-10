@@ -1783,17 +1783,20 @@ let originalPortfolioBackup = null;
 function openRebalanceModal() {
   const scopeSelect = document.getElementById("rebScopeSelect");
   if (scopeSelect) {
-    scopeSelect.value = activePortfolioKey;
+    scopeSelect.value = activePortfolioKey === "consolidated" ? "consolidated" : activePortfolioKey;
   }
-  setTab("playbook");
   renderRebalanceModalTables();
-  setTimeout(() => {
-    document.getElementById("gipRebalanceCard")?.scrollIntoView({ behavior: "smooth" });
-  }, 100);
+  const modal = document.getElementById("rebalanceModal");
+  if (modal) {
+    modal.classList.add("active");
+  }
 }
 
 function closeRebalanceModal() {
-  // Mantido para compatibilidade se invocado
+  const modal = document.getElementById("rebalanceModal");
+  if (modal) {
+    modal.classList.remove("active");
+  }
 }
 
 function renderRebalanceModalTables() {
@@ -3031,9 +3034,95 @@ function renderMarketAnalytics(data) {
       `;
     }).join("");
   }
+
+  // 8. Renderiza Calendário Econômico Dinâmico & Catalisadores Macro
+  if (data.economic_calendar) {
+    renderEconomicCalendar(data.economic_calendar);
+  }
+
+  // 9. Renderiza Balanços da Carteira (Earnings)
+  if (data.portfolio_earnings_calendar) {
+    renderPortfolioEarningsCalendar(data.portfolio_earnings_calendar);
+  }
 }
 
-// 12. INICIALIZAÇÃO GERAL DO APLICATIVO
+// 12. FUNÇÕES DO CALENDÁRIO ECONÔMICO & BALANÇOS
+function switchCalendarTab(type) {
+  const btnMacro = document.getElementById("btnCalMacro");
+  const btnEarn = document.getElementById("btnCalEarnings");
+  const macroContainer = document.getElementById("macroCalendarContainer");
+  const earnContainer = document.getElementById("portfolioEarningsCalendarContainer");
+  const subtitle = document.getElementById("calendarSubtitle");
+
+  if (type === "macro") {
+    if (btnMacro) btnMacro.classList.add("active");
+    if (btnEarn) btnEarn.classList.remove("active");
+    if (macroContainer) macroContainer.style.display = "block";
+    if (earnContainer) earnContainer.style.display = "none";
+    if (subtitle) subtitle.innerText = "Eventos que podem confirmar, estender ou invalidar a previsão de Quad 3";
+  } else {
+    if (btnMacro) btnMacro.classList.remove("active");
+    if (btnEarn) btnEarn.classList.add("active");
+    if (macroContainer) macroContainer.style.display = "none";
+    if (earnContainer) earnContainer.style.display = "block";
+    if (subtitle) subtitle.innerText = "Datas de divulgação dos próximos resultados trimestrais (Earnings) e consenso de EPS/Receita";
+  }
+}
+
+function renderEconomicCalendar(calendarData) {
+  const tbody = document.getElementById("economicCalendarBody");
+  if (!tbody || !calendarData || !calendarData.events) return;
+
+  tbody.innerHTML = calendarData.events.map(ev => {
+    const isToday = ev.is_today;
+    const rowClass = isToday ? "row-today" : "";
+    const badgeHtml = isToday 
+      ? `<span class="pulse-badge-today">⚡ ${ev.portfolio_sensitivity}</span>` 
+      : `<span class="badge ${ev.badge_class}">${ev.portfolio_sensitivity}</span>`;
+
+    return `
+      <tr class="${rowClass}">
+        <td><strong>${ev.date_str}</strong></td>
+        <td><strong>${ev.indicator}</strong></td>
+        <td><span class="badge ${ev.badge_class}" style="font-size: 0.76rem;">${ev.consensus}</span></td>
+        <td style="font-size: 0.84rem; color: #CBD5E1;">${ev.quad_impact}</td>
+        <td style="font-size: 0.84rem; color: #94A3B8;">${ev.market_trigger}</td>
+        <td>${badgeHtml}</td>
+      </tr>
+    `;
+  }).join("");
+}
+
+function renderPortfolioEarningsCalendar(earningsList) {
+  const tbody = document.getElementById("portfolioEarningsBody");
+  if (!tbody || !earningsList) return;
+
+  tbody.innerHTML = earningsList.map(item => {
+    let statusBadge = "badge-neutral";
+    if (item.days_until === 0) statusBadge = "badge-bullish";
+    else if (item.days_until <= 15) statusBadge = "badge-tail";
+
+    return `
+      <tr>
+        <td><strong style="color: #60A5FA; font-size: 0.95rem;">${item.ticker}</strong></td>
+        <td><strong>${item.earnings_date}</strong></td>
+        <td><span class="badge ${statusBadge}" style="font-size: 0.72rem;">${item.status}</span></td>
+        <td><span style="font-family: 'JetBrains Mono', monospace; font-weight: 600; color: #34D399;">${item.eps_consensus}</span></td>
+        <td><span style="font-family: 'JetBrains Mono', monospace; font-weight: 600; color: #38BDF8;">${item.revenue_consensus}</span></td>
+        <td style="font-size: 0.82rem; color: #CBD5E1;">Acompanhar número vs. expectativa para calibrar tamanho de posição na carteira.</td>
+      </tr>
+    `;
+  }).join("");
+}
+
+// Fechar modal ao pressionar ESC
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeRebalanceModal();
+  }
+});
+
+// 13. INICIALIZAÇÃO GERAL DO APLICATIVO
 function initApp() {
   renderPortfolioView(activePortfolioKey);
   renderRiskRangesTable("all");
