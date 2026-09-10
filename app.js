@@ -482,6 +482,7 @@ function setTab(tabId) {
     setTimeout(updatePortfolioChart, 60);
   }
   if (tabId === "playbook") {
+    renderRebalanceModalTables();
     if (marketAnalyticsData && marketAnalyticsData.quad_rotation_tracker) {
       setTimeout(() => renderQuadRotationTracker(marketAnalyticsData.quad_rotation_tracker), 60);
     } else {
@@ -1784,12 +1785,15 @@ function openRebalanceModal() {
   if (scopeSelect) {
     scopeSelect.value = activePortfolioKey;
   }
+  setTab("playbook");
   renderRebalanceModalTables();
-  document.getElementById("rebalanceModal").classList.add("active");
+  setTimeout(() => {
+    document.getElementById("gipRebalanceCard")?.scrollIntoView({ behavior: "smooth" });
+  }, 100);
 }
 
 function closeRebalanceModal() {
-  document.getElementById("rebalanceModal").classList.remove("active");
+  // Mantido para compatibilidade se invocado
 }
 
 function renderRebalanceModalTables() {
@@ -3033,6 +3037,7 @@ function renderMarketAnalytics(data) {
 function initApp() {
   renderPortfolioView(activePortfolioKey);
   renderRiskRangesTable("all");
+  renderRebalanceModalTables();
   loadReportsDatabase().then(() => {
     populateTranslatedReportsDropdown();
   });

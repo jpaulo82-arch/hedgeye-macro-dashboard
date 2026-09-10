@@ -862,6 +862,121 @@
             </div>
           </div>
         </div>
+
+        <!-- BLOCO 3: PLANO DE REBALANCEAMENTO ESTRATÉGICO (ALVO: ≥ 60% EM QUAD 3) -->
+        <div class="card mt-4" id="gipRebalanceCard" style="border: 1px solid rgba(16, 185, 129, 0.4); background: linear-gradient(180deg, rgba(15, 23, 42, 0.85), rgba(30, 41, 59, 0.6));">
+          <div class="card-header" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.8rem; margin-bottom: 1.2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem;">
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <span style="font-size: 1.4rem;">⚡</span>
+                <div>
+                  <h3 style="margin: 0; font-size: 1.2rem; color: #34D399;">Plano de Rebalanceamento Estratégico (Alvo: ≥ 60% em Quad 3)</h3>
+                  <p style="margin: 0.2rem 0 0; font-size: 0.82rem; color: #94A3B8;">Eliminação de ativos com vento contrário e concentração nos pilares de estagflação</p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap;">
+                <select id="rebScopeSelect" class="form-select-sm" onchange="renderRebalanceModalTables()">
+                  <option value="consolidated" selected>Visão Consolidada Global</option>
+                  <option value="schwab">Charles Schwab</option>
+                  <option value="tastyworks">Tastyworks</option>
+                </select>
+                <button class="btn btn-outline btn-sm" onclick="copyRebalancePlan()">
+                  <span class="icon">📋</span> Copiar Ordens Home Broker
+                </button>
+                <button class="btn btn-accent btn-sm" id="btnSimulateModal" onclick="togglePortfolioSimulation()">
+                  <span class="icon">🚀</span> Simular Portfólio Rebalanceado
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <!-- Resumo de Impacto Antes vs Depois -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; margin-bottom: 1.2rem;">
+              <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 0.8rem;">
+                <div style="font-size: 0.72rem; color: #6EE7B7; text-transform: uppercase; font-weight: 700;">Alocação em Quad 3</div>
+                <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.2rem;">
+                  <span style="font-size: 1.1rem; color: #94A3B8; text-decoration: line-through;" id="rebBeforeQuad3">38,5%</span>
+                  <span style="font-size: 1.4rem; font-weight: 800; color: #10B981;" id="rebAfterQuad3">63,2%</span>
+                  <span class="badge badge-bullish" style="font-size: 0.7rem;">+24,7%</span>
+                </div>
+                <small class="text-muted">Ouro físico, mineradoras, energia, defensivos e caixa SGOV</small>
+              </div>
+
+              <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 0.8rem;">
+                <div style="font-size: 0.72rem; color: #FCA5A5; text-transform: uppercase; font-weight: 700;">Exposição High Beta / Semis</div>
+                <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.2rem;">
+                  <span style="font-size: 1.1rem; color: #94A3B8; text-decoration: line-through;" id="rebBeforeBeta">24,4%</span>
+                  <span style="font-size: 1.4rem; font-weight: 800; color: #EF4444;" id="rebAfterBeta">7,8%</span>
+                  <span class="badge badge-bearish" style="font-size: 0.7rem;">-16,6%</span>
+                </div>
+                <small class="text-muted">Elimina semicondutores cíclicos e papéis vulneráveis</small>
+              </div>
+
+              <div style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 0.8rem;">
+                <div style="font-size: 0.72rem; color: #7DD3FC; text-transform: uppercase; font-weight: 700;">Liquidez & Caixa SGOV</div>
+                <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.2rem;">
+                  <span style="font-size: 1.1rem; color: #94A3B8; text-decoration: line-through;" id="rebBeforeCash">9,5%</span>
+                  <span style="font-size: 1.4rem; font-weight: 800; color: #38BDF8;" id="rebAfterCash">15,0%</span>
+                  <span class="badge badge-neutral" style="font-size: 0.7rem;">+5,5%</span>
+                </div>
+                <small class="text-muted">Opcionalidade preservada para buy the dips nos pisos</small>
+              </div>
+            </div>
+
+            <!-- 1. Tabela de Desinvestimentos -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <h4 style="color: #F87171; margin: 0; font-size: 0.95rem;">
+                🔴 1. Desinvestimentos Sugeridos (Vender nos Repiques):
+              </h4>
+              <span class="badge badge-bearish" id="rebTotalSellBadge">Liquidez a Liberar: ~US$ 24.472,55</span>
+            </div>
+            <div class="table-responsive mb-4">
+              <table class="data-table" style="font-size: 0.82rem;">
+                <thead>
+                  <tr>
+                    <th>Ticker</th>
+                    <th>Corretora</th>
+                    <th>Qtd Ações</th>
+                    <th>Cotação</th>
+                    <th>Ação Recomendada</th>
+                    <th>Valor Liberado</th>
+                    <th>Racional Hedgeye (Pág. 27)</th>
+                  </tr>
+                </thead>
+                <tbody id="rebSellTableBody">
+                  <!-- Renderizado dinamicamente via JS -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- 2. Tabela de Reinvestimentos -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+              <h4 style="color: #34D399; margin: 0; font-size: 0.95rem;">
+                🟢 2. Reinvestimento nos Vencedores de Quad 3 (Comprar nos Pisos):
+              </h4>
+              <span class="badge badge-bullish" id="rebTotalBuyBadge">Total a Alocar: ~US$ 24.472,55</span>
+            </div>
+            <div class="table-responsive">
+              <table class="data-table" style="font-size: 0.82rem;">
+                <thead>
+                  <tr>
+                    <th>Ativo / Ticker</th>
+                    <th>Corretora</th>
+                    <th>Regime & Tese</th>
+                    <th>Aporte Proposto</th>
+                    <th>Qtd Estimada</th>
+                    <th>Posição no Risk Range</th>
+                    <th>Racional Estratégico</th>
+                  </tr>
+                </thead>
+                <tbody id="rebBuyTableBody">
+                  <!-- Renderizado dinamicamente via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1402,127 +1517,6 @@
     </section>
 
   </main>
-
-  <!-- Modais do Sistema -->
-
-  <!-- Modal: Plano de Rebalanceamento Estratégico (>= 60% Quad 3) -->
-  <div class="modal-overlay" id="rebalanceModal">
-    <div class="modal-container" style="max-width: 920px;">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <h2><span class="icon">⚡</span> Plano de Rebalanceamento Estratégico (Alvo: ≥ 60% em Quad 3)</h2>
-          <p class="subtitle">Eliminação de ativos com vento contrário e concentração nos pilares de estagflação</p>
-        </div>
-        <div style="display: flex; gap: 0.5rem; align-items: center;">
-          <select id="rebScopeSelect" class="form-select-sm" onchange="renderRebalanceModalTables()">
-            <option value="consolidated" selected>Visão Consolidada Global</option>
-            <option value="schwab">Charles Schwab</option>
-            <option value="tastyworks">Tastyworks</option>
-          </select>
-          <button class="modal-close" onclick="closeRebalanceModal()">&times;</button>
-        </div>
-      </div>
-
-      <div class="modal-body">
-        <!-- Resumo de Impacto Antes vs Depois -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; margin-bottom: 1.2rem;">
-          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 0.8rem;">
-            <div style="font-size: 0.72rem; color: #6EE7B7; text-transform: uppercase; font-weight: 700;">Alocação em Quad 3</div>
-            <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.2rem;">
-              <span style="font-size: 1.1rem; color: #94A3B8; text-decoration: line-through;" id="rebBeforeQuad3">38,5%</span>
-              <span style="font-size: 1.4rem; font-weight: 800; color: #10B981;" id="rebAfterQuad3">63,2%</span>
-              <span class="badge badge-bullish" style="font-size: 0.7rem;">+24,7%</span>
-            </div>
-            <small class="text-muted">Ouro físico, mineradoras, energia, defensivos e caixa SGOV</small>
-          </div>
-
-          <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 0.8rem;">
-            <div style="font-size: 0.72rem; color: #FCA5A5; text-transform: uppercase; font-weight: 700;">Exposição High Beta / Semis</div>
-            <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.2rem;">
-              <span style="font-size: 1.1rem; color: #94A3B8; text-decoration: line-through;" id="rebBeforeBeta">24,4%</span>
-              <span style="font-size: 1.4rem; font-weight: 800; color: #EF4444;" id="rebAfterBeta">7,8%</span>
-              <span class="badge badge-bearish" style="font-size: 0.7rem;">-16,6%</span>
-            </div>
-            <small class="text-muted">Elimina semicondutores cíclicos e papéis vulneráveis</small>
-          </div>
-
-          <div style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 0.8rem;">
-            <div style="font-size: 0.72rem; color: #7DD3FC; text-transform: uppercase; font-weight: 700;">Liquidez & Caixa SGOV</div>
-            <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.2rem;">
-              <span style="font-size: 1.1rem; color: #94A3B8; text-decoration: line-through;" id="rebBeforeCash">9,5%</span>
-              <span style="font-size: 1.4rem; font-weight: 800; color: #38BDF8;" id="rebAfterCash">15,0%</span>
-              <span class="badge badge-neutral" style="font-size: 0.7rem;">+5,5%</span>
-            </div>
-            <small class="text-muted">Opcionalidade preservada para buy the dips nos pisos</small>
-          </div>
-        </div>
-
-        <!-- 1. Tabela de Desinvestimentos -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-          <h4 style="color: #F87171; margin: 0; font-size: 0.95rem;">
-            🔴 1. Desinvestimentos Sugeridos (Vender nos Repiques):
-          </h4>
-          <span class="badge badge-bearish" id="rebTotalSellBadge">Liquidez a Liberar: ~US$ 24.472,55</span>
-        </div>
-        <div class="table-responsive mb-3">
-          <table class="data-table" style="font-size: 0.82rem;">
-            <thead>
-              <tr>
-                <th>Ticker</th>
-                <th>Corretora</th>
-                <th>Qtd Ações</th>
-                <th>Cotação</th>
-                <th>Ação Recomendada</th>
-                <th>Valor Liberado</th>
-                <th>Racional Hedgeye (Pág. 27)</th>
-              </tr>
-            </thead>
-            <tbody id="rebSellTableBody">
-              <!-- Renderizado dinamicamente via JS -->
-            </tbody>
-          </table>
-        </div>
-
-        <!-- 2. Tabela de Reinvestimentos -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-          <h4 style="color: #34D399; margin: 0; font-size: 0.95rem;">
-            🟢 2. Reinvestimento nos Vencedores de Quad 3 (Comprar nos Pisos):
-          </h4>
-          <span class="badge badge-bullish" id="rebTotalBuyBadge">Total a Alocar: ~US$ 24.472,55</span>
-        </div>
-        <div class="table-responsive">
-          <table class="data-table" style="font-size: 0.82rem;">
-            <thead>
-              <tr>
-                <th>Ativo / Ticker</th>
-                <th>Corretora</th>
-                <th>Regime & Tese</th>
-                <th>Aporte Proposto</th>
-                <th>Qtd Estimada</th>
-                <th>Posição no Risk Range</th>
-                <th>Racional Estratégico</th>
-              </tr>
-            </thead>
-            <tbody id="rebBuyTableBody">
-              <!-- Renderizado dinamicamente via JS -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-        <div style="display: flex; gap: 0.5rem;">
-          <button class="btn btn-outline" onclick="copyRebalancePlan()">
-            <span class="icon">📋</span> Copiar Ordens para Home Broker
-          </button>
-          <button class="btn btn-accent" id="btnSimulateModal" onclick="togglePortfolioSimulation()">
-            <span class="icon">🚀</span> Simular Portfólio Rebalanceado
-          </button>
-        </div>
-        <button class="btn btn-primary" onclick="closeRebalanceModal()">Fechar</button>
-      </div>
-    </div>
-  </div>
 
   <!-- Container Oculto para Impressão -->
   <div id="printReportContainer" style="display: none;"></div>
