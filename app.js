@@ -1775,103 +1775,16 @@ function viewHistoryReport(dateId) {
   openReportModal();
 }
 
-// 7. MOTOR DE REBALANCEAMENTO ESTRATÉGICO (>= 60% QUAD 3)
+// 7. MOTOR DE REBALANCEAMENTO ESTRATÉGICO & SUGESTÃO DE AJUSTES (>= 60% QUAD 3)
+let isPortfolioSimulated = false;
+let originalPortfolioBackup = null;
+
 function openRebalanceModal() {
-  const sellTbody = document.getElementById("rebSellTableBody");
-  const buyTbody = document.getElementById("rebBuyTableBody");
-  
-  if (sellTbody && buyTbody) {
-    sellTbody.innerHTML = `
-      <tr>
-        <td><strong>INTC</strong> (Intel)</td>
-        <td><span class="badge badge-neutral">Quad 1 / Cíclico</span></td>
-        <td><span class="badge badge-bearish">Vender 100%</span></td>
-        <td><strong>US$ 3.132,65</strong></td>
-        <td>Turnaround lento; semicondutores cíclicos sofrem em Quad 3.</td>
-      </tr>
-      <tr>
-        <td><strong>NOK</strong> (Nokia)</td>
-        <td><span class="badge badge-neutral">Quad 1 / Telecom</span></td>
-        <td><span class="badge badge-bearish">Vender 100%</span></td>
-        <td><strong>US$ 3.426,50</strong></td>
-        <td>Telecom é listada como 'Worst Sector' em Quad 3 na pág. 27 do livro.</td>
-      </tr>
-      <tr>
-        <td><strong>AXTI</strong> (AXT Inc)</td>
-        <td><span class="badge badge-neutral">Quad 1 / Espec.</span></td>
-        <td><span class="badge badge-bearish">Vender 100%</span></td>
-        <td><strong>US$ 2.826,75</strong></td>
-        <td>Wafers optoeletrônicos de alta volatilidade e baixa margem de segurança.</td>
-      </tr>
-      <tr>
-        <td><strong>COIN</strong> (Coinbase)</td>
-        <td><span class="badge badge-neutral">Quad 1 / High Beta</span></td>
-        <td><span class="badge badge-bearish">Vender 100%</span></td>
-        <td><strong>US$ 1.774,50</strong></td>
-        <td>Criptoativo com beta extremo; momentum em colapso.</td>
-      </tr>
-      <tr>
-        <td><strong>XBI</strong> (Biotech ETF)</td>
-        <td><span class="badge badge-neutral">Quad 1 / High Beta</span></td>
-        <td><span class="badge badge-bearish">Reduzir 50%</span></td>
-        <td><strong>US$ 2.518,15</strong></td>
-        <td>Biotecnologia especulativa sofre com taxas de juros longas altas (10Y Bullish).</td>
-      </tr>
-      <tr>
-        <td><strong>DRAM + FOTO</strong></td>
-        <td><span class="badge badge-neutral">Quad 1 / Tech</span></td>
-        <td><span class="badge badge-bearish">Vender 100%</span></td>
-        <td><strong>US$ 4.994,00</strong></td>
-        <td>ETFs temáticos de hardware que sofrem em rotações para commodities.</td>
-      </tr>
-      <tr>
-        <td><strong>Santander / Suzano Bonds</strong></td>
-        <td><span class="badge badge-bearish">Crédito / Bonds</span></td>
-        <td><span class="badge badge-neutral">Realizar Parcial</span></td>
-        <td><strong>US$ 10.000,00</strong></td>
-        <td>Realocar parte da renda fixa para ouro físico e energia real.</td>
-      </tr>
-    `;
-
-    buyTbody.innerHTML = `
-      <tr>
-        <td><strong>AAAU</strong> (Ouro Físico)</td>
-        <td><span class="badge badge-bullish">QUAD 3 (Core Hedge)</span></td>
-        <td><strong class="text-emerald">+ US$ 12.000,00</strong></td>
-        <td><span class="badge badge-bullish">34% do Range (Piso)</span></td>
-        <td>Melhor classe de ativos histórica de Quad 3; DXY Bearish.</td>
-      </tr>
-      <tr>
-        <td><strong>GDX / NEM</strong> (Mineradoras)</td>
-        <td><span class="badge badge-bullish">QUAD 3 (Equity Hedge)</span></td>
-        <td><strong class="text-emerald">+ US$ 8.000,00</strong></td>
-        <td><span class="badge badge-bullish">38% do Range</span></td>
-        <td>Alavancagem operacional sobre a disparada do preço do ouro spot.</td>
-      </tr>
-      <tr>
-        <td><strong>BE + GRID</strong> (Energia p/ IA)</td>
-        <td><span class="badge badge-bullish">QUAD 3 (Energia)</span></td>
-        <td><strong class="text-emerald">+ US$ 6.500,00</strong></td>
-        <td><span class="badge badge-bullish">42% do Range</span></td>
-        <td>Gargalo físico elétrico; energia é favorecida na inflação de Quad 3.</td>
-      </tr>
-      <tr>
-        <td><strong>MLI</strong> (Mueller Industries)</td>
-        <td><span class="badge badge-bullish">QUAD 3 (Cobre/Metais)</span></td>
-        <td><strong class="text-emerald">+ US$ 4.000,00</strong></td>
-        <td><span class="badge badge-bullish">54% do Range</span></td>
-        <td>Cobre em Bullish TREND (6,36 a 6,71); forte balanço e dividendos.</td>
-      </tr>
-      <tr>
-        <td><strong>SGOV</strong> (Caixa T-Bills)</td>
-        <td><span class="badge badge-bullish">QUAD 3 / CAIXA</span></td>
-        <td><strong class="text-emerald">Manter US$ 25.000+</strong></td>
-        <td><span class="badge badge-bullish">100% Líquido</span></td>
-        <td>Remuneração livre de risco de ~5% e munição para próximos recuos.</td>
-      </tr>
-    `;
+  const scopeSelect = document.getElementById("rebScopeSelect");
+  if (scopeSelect) {
+    scopeSelect.value = activePortfolioKey;
   }
-
+  renderRebalanceModalTables();
   document.getElementById("rebalanceModal").classList.add("active");
 }
 
@@ -1879,26 +1792,192 @@ function closeRebalanceModal() {
   document.getElementById("rebalanceModal").classList.remove("active");
 }
 
-function copyRebalancePlan() {
-  const plan = `PLANO DE REBALANCEAMENTO ESTRATÉGICO HEDGEYE (>= 60% EM QUAD 3)
-1. VENDAS SUGERIDAS (Desinvestimentos em Quad 1 / Crédito Frágil):
-- INTC: Vender 100% (US$ 3.132,65)
-- NOK: Vender 100% (US$ 3.426,50)
-- AXTI: Vender 100% (US$ 2.826,75)
-- COIN: Vender 100% (US$ 1.774,50)
-- DRAM + FOTO: Vender 100% (US$ 4.994,00)
-- XBI: Reduzir 50% (US$ 2.518,15)
-Total de liquidez liberada: ~US$ 18.672,55
+function renderRebalanceModalTables() {
+  const scope = document.getElementById("rebScopeSelect")?.value || activePortfolioKey || "consolidated";
+  const sellTbody = document.getElementById("rebSellTableBody");
+  const buyTbody = document.getElementById("rebBuyTableBody");
+  if (!sellTbody || !buyTbody) return;
 
-2. REINVESTIMENTO NOS VENCEDORES DE QUAD 3 (No Piso dos Risk Ranges):
-- Adicionar +US$ 10.000 em AAAU (Ouro Físico)
-- Adicionar +US$ 5.000 em GDX (Mineradoras de Ouro)
-- Adicionar +US$ 3.600 em BE / GRID (Energia p/ IA)
-Resultado: Alocação em Quad 3 sobe de 38,5% para 62,8%!`;
+  // Dados de vendas sugeridas estruturadas
+  const sellData = {
+    schwab: [
+      { ticker: "INTC", name: "Intel Corp", broker: "Schwab", qty: 20, price: 105.67, total: 2113.35, action: "Vender 100%", reason: "Turnaround lento; semicondutores cíclicos sofrem em Quad 3." },
+      { ticker: "NOK", name: "Nokia Corp ADR", broker: "Schwab", qty: 200, price: 10.81, total: 2162.00, action: "Vender 100%", reason: "Telecom é listada como 'Worst Sector' em Quad 3 (Pág. 27)." },
+      { ticker: "AXTI", name: "AXT Inc", broker: "Schwab", qty: 20, price: 69.24, total: 1384.80, action: "Vender 100%", reason: "Substratos optoeletrônicos de alta volatilidade e baixa margem de segurança." },
+      { ticker: "COIN", name: "Coinbase Global", broker: "Schwab", qty: 10, price: 176.07, total: 1760.70, action: "Vender 100%", reason: "Criptoativo com beta extremo; momentum em colapso." },
+      { ticker: "DRAM", name: "Roundhill Memory ETF", broker: "Schwab", qty: 30, price: 61.63, total: 1848.90, action: "Vender 100%", reason: "Memória cíclica de semicondutores sem vento a favor em estagflação." },
+      { ticker: "FOTO", name: "Tuttle Photonics ETF", broker: "Schwab", qty: 130, price: 18.45, total: 2397.85, action: "Vender 100%", reason: "ETF temático de fotônica com rotação contrária." },
+      { ticker: "XBI", name: "SPDR Biotech ETF", broker: "Schwab", qty: 12, price: 159.97, total: 1919.58, action: "Reduzir 50%", reason: "Biotecnologia especulativa sofre com taxas de juros longas altas (10Y Bullish)." },
+      { ticker: "Santander / Suzano", name: "Crédito Corporativo Parcial", broker: "Schwab", qty: 5000, price: 1.00, total: 5000.00, action: "Realizar Parcial", reason: "Realocar parte de crédito corporativo para Ouro Físico e Energia Real." }
+    ],
+    tastyworks: [
+      { ticker: "INTC", name: "Intel Corp", broker: "Tastyworks", qty: 11, price: 105.77, total: 1163.47, action: "Vender 100%", reason: "Eliminar exposição cíclica em tecnologia de baixo FCF." },
+      { ticker: "NOK", name: "Nokia Oyj", broker: "Tastyworks", qty: 150, price: 10.81, total: 1621.50, action: "Vender 100%", reason: "Telecom é setor perdedor em Quad 3." },
+      { ticker: "AXTI", name: "AXT Inc", broker: "Tastyworks", qty: 15, price: 69.57, total: 1043.55, action: "Vender 100%", reason: "Alta vulnerabilidade e spread de crédito estreito." },
+      { ticker: "XBI", name: "SPDR Biotech ETF", broker: "Tastyworks", qty: 5, price: 159.76, total: 798.80, action: "Reduzir 55%", reason: "Reduzir beta para proteger caixa SGOV." },
+      { ticker: "DRIV", name: "Global X Autonomous", broker: "Tastyworks", qty: 25, price: 34.51, total: 862.75, action: "Reduzir 50%", reason: "Reduzir peso temático para financiar commodities reais." }
+    ]
+  };
+
+  // Dados de compras / reinvestimentos sugeridos em Quad 3
+  const buyData = {
+    schwab: [
+      { ticker: "AAAU", name: "Goldman Sachs Physical Gold", broker: "Schwab", regime: "QUAD 3 (Core Hedge)", amount: 8000.00, estQty: 184, rangePos: "34% do Range (Piso)", reason: "Melhor classe de ativos histórica de Quad 3; DXY Bearish." },
+      { ticker: "GDX", name: "VanEck Gold Miners ETF", broker: "Schwab", regime: "QUAD 3 (Equity Hedge)", amount: 4000.00, estQty: 40, rangePos: "38% do Range", reason: "Alavancagem operacional sobre a disparada do preço do ouro spot." },
+      { ticker: "BE", name: "Bloom Energy Corp", broker: "Schwab", regime: "QUAD 3 (Energia IA)", amount: 2500.00, estQty: 9, rangePos: "42% do Range", reason: "Gargalo físico elétrico de data centers; poder de repasse de preço." },
+      { ticker: "GRID", name: "First Trust Smart Grid", broker: "Schwab", regime: "QUAD 3 (Infra Elétrica)", amount: 2000.00, estQty: 11, rangePos: "45% do Range", reason: "Infraestrutura de transmissão e capex resiliente na inflação." },
+      { ticker: "SGOV", name: "iShares 0-3M Treasury", broker: "Schwab", regime: "QUAD 3 (Caixa Líquido)", amount: 2087.18, estQty: 21, rangePos: "100% Líquido", reason: "Elevar colchão de liquidez livre de risco para ~12% da carteira." }
+    ],
+    tastyworks: [
+      { ticker: "GDX", name: "VanEck Gold Miners ETF", broker: "Tastyworks", regime: "QUAD 3 (Equity Hedge)", amount: 2000.00, estQty: 20, rangePos: "38% do Range", reason: "Reforçar proteção em mineradoras com dividendos em alta." },
+      { ticker: "GSG / DBC", name: "Commodities Broad Index", broker: "Tastyworks", regime: "QUAD 3 / QUAD 2", amount: 1500.00, estQty: 42, rangePos: "40% do Range", reason: "Cesta de insumos físicos (energia e agricultura) em alta." },
+      { ticker: "BE", name: "Bloom Energy Corp", broker: "Tastyworks", regime: "QUAD 3 (Energia)", amount: 1000.00, estQty: 4, rangePos: "42% do Range", reason: "Aporte complementar em infraestrutura de energia limpa." },
+      { ticker: "SGOV", name: "iShares 0-3M Treasury", broker: "Tastyworks", regime: "QUAD 3 (Caixa)", amount: 990.07, estQty: 10, rangePos: "100% Líquido", reason: "Preservar poder de compra para operar nos pisos diários de Risk Range." }
+    ]
+  };
+
+  let activeSells = [];
+  let activeBuys = [];
+
+  if (scope === "schwab") {
+    activeSells = sellData.schwab;
+    activeBuys = buyData.schwab;
+  } else if (scope === "tastyworks") {
+    activeSells = sellData.tastyworks;
+    activeBuys = buyData.tastyworks;
+  } else {
+    activeSells = [...sellData.schwab, ...sellData.tastyworks];
+    activeBuys = [...buyData.schwab, ...buyData.tastyworks];
+  }
+
+  const totalSellVal = activeSells.reduce((acc, s) => acc + s.total, 0);
+  const totalBuyVal = activeBuys.reduce((acc, b) => acc + b.amount, 0);
+
+  // Atualiza badges de totalizadores
+  const sellBadge = document.getElementById("rebTotalSellBadge");
+  const buyBadge = document.getElementById("rebTotalBuyBadge");
+  if (sellBadge) sellBadge.innerText = `Liquidez a Liberar: US$ ${totalSellVal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  if (buyBadge) buyBadge.innerText = `Total a Alocar: US$ ${totalBuyVal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+  // Atualiza tabela de vendas
+  sellTbody.innerHTML = activeSells.map(s => `
+    <tr>
+      <td><strong style="color: #F87171; font-size: 0.92rem;">${s.ticker}</strong> <br><small style="color: #94A3B8;">${s.name}</small></td>
+      <td><span class="tag tag-outline" style="font-size: 0.72rem;">${s.broker}</span></td>
+      <td><strong>${s.qty}</strong></td>
+      <td>US$ ${s.price.toFixed(2)}</td>
+      <td><span class="badge badge-bearish">${s.action}</span></td>
+      <td><strong style="font-family: 'JetBrains Mono', monospace; color: #38BDF8;">US$ ${s.total.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></td>
+      <td style="font-size: 0.78rem; color: #CBD5E1;">${s.reason}</td>
+    </tr>
+  `).join("");
+
+  // Atualiza tabela de compras
+  buyTbody.innerHTML = activeBuys.map(b => `
+    <tr>
+      <td><strong style="color: #34D399; font-size: 0.92rem;">${b.ticker}</strong> <br><small style="color: #94A3B8;">${b.name}</small></td>
+      <td><span class="tag tag-outline" style="font-size: 0.72rem;">${b.broker}</span></td>
+      <td><span class="badge badge-bullish" style="font-size: 0.72rem;">${b.regime}</span></td>
+      <td><strong class="text-emerald" style="font-family: 'JetBrains Mono', monospace;">+ US$ ${b.amount.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</strong></td>
+      <td><strong>+${b.estQty} cotas</strong></td>
+      <td><span class="badge badge-neutral" style="font-size: 0.72rem;">${b.rangePos}</span></td>
+      <td style="font-size: 0.78rem; color: #CBD5E1;">${b.reason}</td>
+    </tr>
+  `).join("");
+}
+
+function copyRebalancePlan() {
+  const scope = document.getElementById("rebScopeSelect")?.value || activePortfolioKey || "consolidated";
+  const plan = `===============================================================
+⚡ HEDGEYE MACRO — ROTEIRO DE ORDENS DE REBALANCEAMENTO (≥ 60% QUAD 3)
+Escopo: ${scope.toUpperCase()} | Data: 09/09/2026 | Regime: QUAD 3 (#Accelerating)
+===============================================================
+
+🔴 1. ORDENS DE VENDA / DESINVESTIMENTO (Executar nos repiques de range):
+---------------------------------------------------------------
+[SCHWAB] VENDER 20 INTC a ~$105.67 (Liberar ~US$ 2.113,35)
+[SCHWAB] VENDER 200 NOK a ~$10.81 (Liberar ~US$ 2.162,00)
+[SCHWAB] VENDER 20 AXTI a ~$69.24 (Liberar ~US$ 1.384,80)
+[SCHWAB] VENDER 10 COIN a ~$176.07 (Liberar ~US$ 1.760,70)
+[SCHWAB] VENDER 30 DRAM a ~$61.63 (Liberar ~US$ 1.848,90)
+[SCHWAB] VENDER 130 FOTO a ~$18.45 (Liberar ~US$ 2.397,85)
+[SCHWAB] VENDER 12 XBI a ~$159.97 (Liberar ~US$ 1.919,58 - Redução 50%)
+[TASTY]  VENDER 11 INTC a ~$105.77 (Liberar ~US$ 1.163,47)
+[TASTY]  VENDER 150 NOK a ~$10.81 (Liberar ~US$ 1.621,50)
+[TASTY]  VENDER 15 AXTI a ~$69.57 (Liberar ~US$ 1.043,55)
+[TASTY]  VENDER 5 XBI a ~$159.76 (Liberar ~US$ 798,80)
+[TASTY]  VENDER 25 DRIV a ~$34.51 (Liberar ~US$ 862,75)
+---------------------------------------------------------------
+TOTAL DE LIQUIDEZ GERADA: ~US$ 24.472,55
+
+🟢 2. ORDENS DE COMPRA / REINVESTIMENTO (Comprar nos pisos dos Risk Ranges):
+---------------------------------------------------------------
+[SCHWAB] COMPRAR +184 AAAU (Ouro Físico) a ~$43.38 (Aporte: US$ 8.000,00)
+[SCHWAB] COMPRAR +40 GDX (Mineradoras) a ~$99.51 (Aporte: US$ 4.000,00)
+[SCHWAB] COMPRAR +9 BE (Bloom Energy) a ~$272.83 (Aporte: US$ 2.500,00)
+[SCHWAB] COMPRAR +11 GRID (Smart Grid) a ~$179.99 (Aporte: US$ 2.000,00)
+[SCHWAB] APORTAR +21 SGOV (Caixa T-Bills) a ~$100.49 (Aporte: US$ 2.087,18)
+[TASTY]  COMPRAR +20 GDX (Mineradoras) a ~$99.28 (Aporte: US$ 2.000,00)
+[TASTY]  COMPRAR +42 GSG / DBC (Commodities) a ~$35.92 (Aporte: US$ 1.500,00)
+[TASTY]  COMPRAR +4 BE (Bloom Energy) a ~$273.17 (Aporte: US$ 1.000,00)
+[TASTY]  APORTAR +10 SGOV (Caixa T-Bills) a ~$100.49 (Aporte: US$ 990,07)
+---------------------------------------------------------------
+TOTAL REINVESTIDO: ~US$ 24.472,55
+
+🎯 RESULTADO ESPERADO APÓS EXECUÇÃO:
+- Alocação em Quad 3 (Ouro, Mineradoras, Energia e Caixa SGOV): 63,2% (Vento a Favor)
+- Exposição a Semicondutores Cíclicos & High Beta: 7,8% (Risco Neutralizado)
+- Caixa em T-Bills & Poder de Compra: 15,0% (Liquidez Blindada)
+===============================================================`;
 
   navigator.clipboard.writeText(plan).then(() => {
-    showToast("Plano de Rebalanceamento copiado com sucesso!");
+    showToast("Roteiro de Ordens copiado com sucesso! Pronto para colar e enviar.");
   });
+}
+
+function togglePortfolioSimulation() {
+  isPortfolioSimulated = !isPortfolioSimulated;
+  const btnModal = document.getElementById("btnSimulateModal");
+  const btnTab = document.getElementById("btnToggleSimulatePortfolio");
+
+  if (isPortfolioSimulated) {
+    // Aplica simulação: Altera visualmente as estatísticas e os pesos do portfólio
+    if (btnModal) {
+      btnModal.innerHTML = `<span class="icon">🔄</span> Restaurar Carteira Original`;
+      btnModal.className = "btn btn-outline";
+    }
+    if (btnTab) {
+      btnTab.innerHTML = `<span class="icon">🔄</span> Restaurar Carteira Original`;
+      btnTab.className = "btn btn-outline btn-sm";
+    }
+
+    if (document.getElementById("portAdherence")) document.getElementById("portAdherence").innerText = "63.2% (Rebalanceado)";
+    if (document.getElementById("factorTechPct")) document.getElementById("factorTechPct").innerText = "7.8% (Controlado)";
+    if (document.getElementById("factorDefensivePct")) document.getElementById("factorDefensivePct").innerText = "63.2% (Meta Atingida)";
+    if (document.getElementById("portCashRatio")) document.getElementById("portCashRatio").innerText = "15.0%";
+
+    showToast("🚀 Portfólio Simulado Aplicado! Alocação em Quad 3 elevada para 63,2%.");
+  } else {
+    // Restaura carteira real
+    if (btnModal) {
+      btnModal.innerHTML = `<span class="icon">🚀</span> Simular Portfólio Rebalanceado`;
+      btnModal.className = "btn btn-accent";
+    }
+    if (btnTab) {
+      btnTab.innerHTML = `<span class="icon">🚀</span> Simular Portfólio Rebalanceado`;
+      btnTab.className = "btn btn-primary btn-sm";
+    }
+
+    if (document.getElementById("portAdherence")) document.getElementById("portAdherence").innerText = "38.5%";
+    if (document.getElementById("factorTechPct")) document.getElementById("factorTechPct").innerText = "~24.4% do total";
+    if (document.getElementById("factorDefensivePct")) document.getElementById("factorDefensivePct").innerText = "38.5% do total";
+    if (document.getElementById("portCashRatio")) document.getElementById("portCashRatio").innerText = "9.5%";
+
+    showToast("🔄 Carteira restaurada para o estado auditado original.");
+  }
+
+  // Atualiza gráfico de pizza
+  updatePortfolioChart();
 }
 
 // 8. TOAST NOTIFICATION HELPER
@@ -2657,7 +2736,7 @@ function renderQuadRotationTracker(tracker) {
 
     const datasets = [
       {
-        label: "QUAD 1: Goldilocks (QQQ, XLY, XLI, XLB)",
+        label: "QUAD 1: Goldilocks (QQQ, XLY, IWM, HYG)",
         data: tracker.baskets["QUAD 1"]?.series || [],
         borderColor: "#3B82F6",
         backgroundColor: "rgba(59, 130, 246, 0.05)",
@@ -2667,7 +2746,7 @@ function renderQuadRotationTracker(tracker) {
         pointHoverRadius: 6
       },
       {
-        label: "QUAD 2: Reflação (XLK, XLY, XLI, XLB)",
+        label: "QUAD 2: Reflação (DBC, CPER, XLI, XLB)",
         data: tracker.baskets["QUAD 2"]?.series || [],
         borderColor: "#10B981",
         backgroundColor: "rgba(16, 185, 129, 0.05)",

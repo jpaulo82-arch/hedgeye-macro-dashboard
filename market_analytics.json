@@ -1,10 +1,10 @@
 {
-  "updated_at": "09/09/2026 17:27:28",
+  "updated_at": "09/09/2026 17:36:36",
   "gex": [
     {
       "ticker": "SPY",
       "current_price": 762.4,
-      "net_gex_million": -5825.3,
+      "net_gex_million": -5786.83,
       "regime": "SHORT GAMMA",
       "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
       "call_wall": 770.0,
@@ -13,12 +13,12 @@
       "total_call_oi": 357326,
       "total_put_oi": 574306,
       "put_call_ratio": 1.61,
-      "updated_at": "09/09/2026 17:27:02"
+      "updated_at": "09/09/2026 17:36:11"
     },
     {
       "ticker": "QQQ",
       "current_price": 716.31,
-      "net_gex_million": -346.67,
+      "net_gex_million": -345.24,
       "regime": "SHORT GAMMA",
       "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
       "call_wall": 720.0,
@@ -27,12 +27,12 @@
       "total_call_oi": 233461,
       "total_put_oi": 414445,
       "put_call_ratio": 1.78,
-      "updated_at": "09/09/2026 17:27:04"
+      "updated_at": "09/09/2026 17:36:12"
     },
     {
       "ticker": "IWM",
-      "current_price": 290.65,
-      "net_gex_million": -1157.77,
+      "current_price": 290.64,
+      "net_gex_million": -1156.35,
       "regime": "SHORT GAMMA",
       "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
       "call_wall": 295.0,
@@ -41,7 +41,7 @@
       "total_call_oi": 152767,
       "total_put_oi": 333300,
       "put_call_ratio": 2.18,
-      "updated_at": "09/09/2026 17:27:05"
+      "updated_at": "09/09/2026 17:36:14"
     }
   ],
   "fundamentals": [
@@ -1036,42 +1036,42 @@
     "baskets": {
       "QUAD 1": {
         "name": "QUAD 1: Goldilocks (G ↑, I ↓)",
-        "desc": "Tech Líder (QQQ), Consumo Discricionário (XLY), Industriais (XLI), Materiais (XLB)",
+        "desc": "Tech Líder (QQQ), Consumo Discricionário (XLY), Small Caps / High Beta (IWM), Crédito High Yield (HYG)",
         "color": "#3B82F6",
-        "ret_1d": "-1.05%",
-        "ret_1d_val": -1.05,
-        "ret_5d": "-1.15%",
-        "ret_5d_val": -1.15,
-        "ret_prev_5d_val": -1.95,
-        "acceleration": "+0.80%",
-        "acceleration_val": 0.8,
+        "ret_1d": "-0.79%",
+        "ret_1d_val": -0.79,
+        "ret_5d": "-0.60%",
+        "ret_5d_val": -0.6,
+        "ret_prev_5d_val": -1.09,
+        "acceleration": "+0.49%",
+        "acceleration_val": 0.49,
         "accel_state": "#ACCELERATING (Ganhando Força)",
         "accel_badge": "badge-bullish",
-        "ret_30d": "-4.24%",
-        "ret_30d_val": -4.24,
+        "ret_30d": "-2.46%",
+        "ret_30d_val": -2.46,
         "series": [
           0.0,
-          0.0,
-          -0.38,
-          -0.11,
-          0.0,
-          -0.51,
-          -1.61,
-          -1.06,
-          -1.98,
-          -1.02,
+          -0.08,
+          -0.01,
+          0.52,
+          0.54,
+          0.08,
+          -0.77,
+          -0.17,
+          -1.14,
+          -0.56,
+          -0.89,
+          -0.64,
+          -0.81,
+          -0.67,
+          -0.94,
+          -1.19,
+          -2.29,
+          -1.89,
+          -1.13,
           -1.36,
-          -1.36,
-          -1.2,
-          -1.55,
-          -1.68,
-          -2.3,
-          -3.65,
-          -3.12,
-          -2.4,
-          -2.67,
-          -3.24,
-          -4.24
+          -1.69,
+          -2.46
         ],
         "assets": [
           {
@@ -1089,74 +1089,74 @@
             "ret_30d_val": -6.02
           },
           {
-            "ticker": "XLI",
-            "price": 171.7899932861328,
-            "ret_1d": "-1.51%",
-            "ret_30d": "-6.94%",
-            "ret_30d_val": -6.94
+            "ticker": "IWM",
+            "price": 290.6400146484375,
+            "ret_1d": "-1.37%",
+            "ret_30d": "-3.11%",
+            "ret_30d_val": -3.11
           },
           {
-            "ticker": "XLB",
-            "price": 51.38999938964844,
-            "ret_1d": "-1.06%",
-            "ret_30d": "-3.37%",
-            "ret_30d_val": -3.37
+            "ticker": "HYG",
+            "price": 78.9800033569336,
+            "ret_1d": "-0.18%",
+            "ret_30d": "-0.08%",
+            "ret_30d_val": -0.08
           }
         ]
       },
       "QUAD 2": {
         "name": "QUAD 2: Reflação (G ↑, I ↑)",
-        "desc": "Tecnologia (XLK), Consumo Discricionário (XLY), Industriais (XLI), Materiais Básicos (XLB)",
+        "desc": "Commodities Amplas (DBC), Cobre Físico (CPER), Industriais (XLI), Materiais Básicos (XLB)",
         "color": "#10B981",
-        "ret_1d": "-0.98%",
-        "ret_1d_val": -0.98,
-        "ret_5d": "-0.82%",
-        "ret_5d_val": -0.82,
-        "ret_prev_5d_val": -1.77,
-        "acceleration": "+0.95%",
-        "acceleration_val": 0.95,
+        "ret_1d": "+0.00%",
+        "ret_1d_val": 0.0,
+        "ret_5d": "+0.80%",
+        "ret_5d_val": 0.8,
+        "ret_prev_5d_val": -0.54,
+        "acceleration": "+1.34%",
+        "acceleration_val": 1.34,
         "accel_state": "#ACCELERATING (Ganhando Força)",
         "accel_badge": "badge-bullish",
-        "ret_30d": "-3.87%",
-        "ret_30d_val": -3.87,
+        "ret_30d": "+0.40%",
+        "ret_30d_val": 0.4,
         "series": [
           0.0,
-          0.06,
-          -0.14,
-          0.09,
-          0.15,
-          -0.28,
-          -1.58,
-          -1.25,
-          -2.07,
-          -1.17,
-          -1.7,
-          -1.63,
-          -1.34,
-          -1.25,
-          -1.61,
-          -2.13,
-          -3.55,
-          -3.08,
-          -2.34,
-          -2.48,
-          -2.94,
-          -3.87
+          0.24,
+          -0.06,
+          -0.58,
+          -0.09,
+          0.29,
+          -0.96,
+          -0.47,
+          -0.54,
+          0.57,
+          0.2,
+          0.13,
+          0.05,
+          -0.11,
+          -0.61,
+          -0.48,
+          -1.15,
+          -0.44,
+          -0.1,
+          -0.11,
+          0.34,
+          0.4
         ],
         "assets": [
           {
-            "ticker": "XLK",
-            "price": 187.8699951171875,
-            "ret_1d": "+0.00%",
-            "ret_30d": "+0.83%",
-            "ret_30d_val": 0.83
+            "ticker": "DBC",
+            "price": 32.849998474121094,
+            "ret_1d": "+1.39%",
+            "ret_30d": "+9.76%",
+            "ret_30d_val": 9.76
           },
           {
-            "ticker": "XLY",
-            "price": 112.45999908447266,
-            "ret_1d": "-1.34%",
-            "ret_30d": "-6.02%",
-            "ret_30d_val": -6.02
+            "ticker": "CPER",
+            "price": 41.04999923706055,
+            "ret_1d": "+1.18%",
+            "ret_30d": "+2.17%",
+            "ret_30d_val": 2.17
           },
           {
             "ticker": "XLI",
@@ -1349,6 +1349,6 @@
     "leading_month": "QUAD 3",
     "transition_signal": "🟢 QUAD 3 CONFIRMADO (#Accelerating): Cesta de Ouro, Prata e Commodities liderando a tração macro (Aceleração de +1.27% na 2ª derivada). Vento a favor para posições compradas em ouro/energia.",
     "signal_badge": "badge-bullish",
-    "updated_at": "09/09/2026 17:27:28"
+    "updated_at": "09/09/2026 17:36:36"
   }
 }

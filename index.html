@@ -57,9 +57,6 @@
       <button class="btn btn-outline" id="btnEarlyLookTraduzidoHeader" onclick="setTab('earlylook')" title="Acessar o EARLY LOOK traduzido na Central de Relatórios">
         <span class="icon">📑</span> <span>EARLY LOOK (09/09)</span>
       </button>
-      <button class="btn btn-primary" id="btnDailyReportHeader" onclick="openReportModal()">
-        <span class="icon">📄</span> <span id="btnDailyReportText">Relatório Diário (09/09)</span>
-      </button>
     </div>
   </header>
 
@@ -403,12 +400,6 @@
           <button class="btn btn-accent" onclick="openRebalanceModal()">
             <span class="icon">⚡</span> Otimizar p/ ≥ 60% no Quad 3
           </button>
-          <button class="btn btn-outline" onclick="openPortfolioModal()">
-            <span class="icon">✏️</span> Atualizar Posições
-          </button>
-          <button class="btn btn-primary" onclick="generatePortfolioReport()">
-            <span class="icon">📑</span> Gerar Relatório Deste Portfólio
-          </button>
         </div>
       </div>
 
@@ -487,6 +478,49 @@
                 </div>
                 <div class="progress-bar"><div class="progress-fill info" style="width: 35%;"></div></div>
                 <small class="text-muted">Posição CORE favorecida pelo Dólar fraco (DXY Bearish).</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card de Destaque: Roteiro Prático de Ajustes Quad 3 -->
+      <div class="card mt-3" style="border: 1px solid rgba(245, 158, 11, 0.4); background: linear-gradient(180deg, rgba(15, 23, 42, 0.85), rgba(30, 41, 59, 0.6));">
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 1.3rem;">⚡</span>
+            <div>
+              <h3 style="margin: 0; font-size: 1.1rem; color: #F59E0B;">Roteiro Prático de Ajustes: Transição para ≥ 60% no Quad 3</h3>
+              <small class="text-muted">Sugestões de ordens para desinvestir de vento contrário e aportar nos líderes macro</small>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="btn btn-accent btn-sm" onclick="openRebalanceModal()">
+              <span class="icon">⚡</span> Abrir Plano Completo & Ordens
+            </button>
+            <button class="btn btn-primary btn-sm" id="btnToggleSimulatePortfolio" onclick="togglePortfolioSimulation()">
+              <span class="icon">🚀</span> Simular Portfólio Rebalanceado
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="grid-3-col" style="gap: 0.8rem; margin-bottom: 0.8rem;">
+            <div style="background: rgba(239, 68, 68, 0.08); border-left: 3px solid #EF4444; padding: 0.65rem 0.85rem; border-radius: 6px;">
+              <div style="font-size: 0.75rem; color: #F87171; font-weight: 700; text-transform: uppercase;">1. Vender nos Repiques (Liberar Caixa)</div>
+              <div style="font-size: 0.82rem; color: #CBD5E1; margin-top: 0.2rem;">
+                Liquidar posições fracas em semicondutores e hardware (<strong>INTC, NOK, AXTI, COIN, DRAM, FOTO</strong>) e reduzir <strong>XBI</strong> em 50%.
+              </div>
+            </div>
+            <div style="background: rgba(16, 185, 129, 0.08); border-left: 3px solid #10B981; padding: 0.65rem 0.85rem; border-radius: 6px;">
+              <div style="font-size: 0.75rem; color: #34D399; font-weight: 700; text-transform: uppercase;">2. Comprar nos Pisos (Aportar em Quad 3)</div>
+              <div style="font-size: 0.82rem; color: #CBD5E1; margin-top: 0.2rem;">
+                Concentrar liquidez em <strong>Ouro Físico (AAAU)</strong>, <strong>Mineradoras (GDX/NEM)</strong>, <strong>Energia Real (BE/GRID/XLE)</strong> e <strong>Cobre (MLI/CPER)</strong>.
+              </div>
+            </div>
+            <div style="background: rgba(56, 189, 248, 0.08); border-left: 3px solid #38BDF8; padding: 0.65rem 0.85rem; border-radius: 6px;">
+              <div style="font-size: 0.75rem; color: #38BDF8; font-weight: 700; text-transform: uppercase;">3. Meta Pós-Ajustes</div>
+              <div style="font-size: 0.82rem; color: #CBD5E1; margin-top: 0.2rem;">
+                Alocação em Quad 3 salta para <strong>63,2%</strong>, risco high beta cai para <strong>7,8%</strong> e o caixa livre em <strong>SGOV</strong> sobe para <strong>15%</strong>.
               </div>
             </div>
           </div>
@@ -714,8 +748,8 @@
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap;">
             <h4 style="margin: 0; font-size: 0.95rem; color: #E2E8F0;">Trajetória Acumulada das 4 Cestas de Quadrantes (% nos últimos 30 dias)</h4>
             <div style="display: flex; gap: 1rem; font-size: 0.78rem; font-weight: 600; flex-wrap: wrap;">
-              <span style="color: #3B82F6;">● Quad 1 (Goldilocks: QQQ, XLY, XLI, XLB)</span>
-              <span style="color: #10B981;">● Quad 2 (Reflação: XLK, XLY, XLI, XLB)</span>
+              <span style="color: #3B82F6;">● Quad 1 (Goldilocks: QQQ, XLY, IWM, HYG)</span>
+              <span style="color: #10B981;">● Quad 2 (Reflação: DBC, CPER, XLI, XLB)</span>
               <span style="color: #F59E0B;">● Quad 3 (Estagflação: GLD, XLU, XLE, XLK)</span>
               <span style="color: #A855F7;">● Quad 4 (Deflação: IEF, XLV, XLP, XLU)</span>
             </div>
@@ -766,13 +800,14 @@
                 <h4>QUAD 1: Goldilocks (G ↑, I ↓)</h4>
               </div>
               <div class="card-body">
-                <p><strong style="color: #38BDF8;">Cesta-Base Fiel ao Manual:</strong> <strong>QQQ, XLY, XLI, XLB</strong></p>
-                <p><strong style="color: #94A3B8;">Satélites com Sinal/Timing:</strong> IGV (Software), IWM (Small Caps), XBI (Biotech), SPMO (Momentum)</p>
-                <p class="mt-2"><strong>Melhores Classes de Ativos:</strong> Equities, Crédito, Commodities, FX</p>
-                <p><strong>Piores Classes de Ativos:</strong> Renda Fixa (Fixed Income), USD</p>
-                <p class="mt-2"><strong>Melhores Setores:</strong> Tech, Consumo Discricionário, Industriais, Materiais</p>
-                <p><strong>Piores Setores:</strong> Utilities, REITs (XLRE), Consumer Staples, Financials</p>
-                <p class="mt-2"><strong>Fatores Favorecidos:</strong> High Beta, Momentum, Cíclicos, Crescimento Secular</p>
+                <p><strong style="color: #38BDF8;">Cesta-Base de ETFs:</strong> <strong>QQQ, XLY, IWM, HYG</strong></p>
+                <p><small style="color: #94A3B8;"><em>O que captura: Tecnologia e discricionário, high beta/small caps e crédito high yield. Materiais (XLB) e industriais (XLI) entram como satélites se tiverem sinal.</em></small></p>
+                <p class="mt-2"><strong>Satélites com Sinal/Timing:</strong> IGV (Software), XBI (Biotech), SPMO (Momentum), XLI, XLB</p>
+                <p class="mt-2"><strong>Melhores Classes de Ativos:</strong> Equities, Crédito High Yield, High Beta</p>
+                <p><strong>Piores Classes de Ativos:</strong> Renda Fixa (Treasuries), USD</p>
+                <p class="mt-2"><strong>Melhores Setores:</strong> Tech, Consumo Discricionário, Small Caps, High Yield</p>
+                <p><strong>Piores Setores:</strong> Utilities, REITs (XLRE), Consumer Staples</p>
+                <p class="mt-2"><strong>Fatores Favorecidos:</strong> High Beta, Momentum, Small Caps, Crescimento Secular</p>
               </div>
             </div>
 
@@ -782,13 +817,14 @@
                 <h4>QUAD 2: Reflação (G ↑, I ↑)</h4>
               </div>
               <div class="card-body">
-                <p><strong style="color: #10B981;">Cesta-Base Fiel ao Manual:</strong> <strong>XLK/QQQ, XLY, XLI, XLB</strong></p>
-                <p><strong style="color: #94A3B8;">Satélites com Sinal/Timing:</strong> CPER (Cobre), DBC (Commodities), XLE (Energia), AIRR (Industrial), EWZ (Brasil/LatAm)</p>
-                <p class="mt-2"><strong>Melhores Classes de Ativos:</strong> Commodities, Equities, Crédito, FX</p>
+                <p><strong style="color: #10B981;">Cesta-Base de ETFs:</strong> <strong>DBC, CPER, XLI, XLB</strong></p>
+                <p><small style="color: #94A3B8;"><em>O que captura: Commodities amplas, cobre físico, industriais e materiais básicos — a expressão mais direta de crescimento nominal e inflação acelerando simultaneamente.</em></small></p>
+                <p class="mt-2"><strong>Satélites com Sinal/Timing:</strong> XLE (Energia), HYG (Crédito), AIRR (Industrial), EWZ (Brasil/LatAm), XLK/QQQ</p>
+                <p class="mt-2"><strong>Melhores Classes de Ativos:</strong> Commodities, Recursos Naturais, Cobre, Equities Cíclicos, Crédito</p>
                 <p><strong>Piores Classes de Ativos:</strong> Renda Fixa (Fixed Income), USD</p>
-                <p class="mt-2"><strong>Melhores Setores:</strong> Tech, Consumo Discricionário, Industriais, Materiais, Energia</p>
+                <p class="mt-2"><strong>Melhores Setores:</strong> Materiais Básicos, Industriais, Energia, Commodities Físicas</p>
                 <p><strong>Piores Setores:</strong> Telecom, Utilities, REITs (XLRE), Consumer Staples</p>
-                <p class="mt-2"><strong>Fatores Favorecidos:</strong> Crescimento Secular, Momentum, Small Caps</p>
+                <p class="mt-2"><strong>Fatores Favorecidos:</strong> Reflação, Cíclicos, Inflação Tangível, Capex</p>
               </div>
             </div>
 
@@ -1128,9 +1164,6 @@
               <button class="btn btn-primary" id="btnSyncGmailTab" onclick="syncReportsOnDemand()" style="flex: 1; justify-content: center; font-size: 0.95rem; padding: 0.75rem 1rem;">
                 <span class="icon" id="syncIconTab">🔄</span> <span id="syncTextTab">Sincronizar Gmail Agora</span>
               </button>
-              <button class="btn btn-outline" onclick="openReportModal()" style="justify-content: center; padding: 0.75rem 1rem;">
-                <span class="icon">📄</span> Abrir Relatório Oficial Formatado
-              </button>
             </div>
           </div>
         </div>
@@ -1372,149 +1405,121 @@
 
   <!-- Modais do Sistema -->
 
-  <!-- Modal 1: Relatório Executivo Oficial Formatado & Markdown -->
-  <div class="modal-overlay" id="reportModal">
-    <div class="modal-container">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <h2><span class="icon">📄</span> Relatório Diário Oficial Hedgeye (09/09/2026)</h2>
-          <p class="subtitle">Estratégia Macro & Alocação de Carteira Calibrada</p>
-        </div>
-        <div class="modal-controls">
-          <div class="scope-select-wrap">
-            <label for="reportScopeSelect"><span class="icon">🎯</span> Escopo:</label>
-            <select id="reportScopeSelect" class="form-select-sm" onchange="renderModalReportContent()">
-              <option value="consolidated">Visão Consolidada Global (US$ 245.872,29)</option>
-              <option value="schwab" selected>Charles Schwab (US$ 211.922,66)</option>
-              <option value="tastyworks">Tastyworks (US$ 33.949,63)</option>
-            </select>
-          </div>
-          <div class="btn-group">
-            <button class="btn btn-sm btn-primary" id="btnViewFormatted" onclick="switchReportFormat('formatted')">
-              Formatado
-            </button>
-            <button class="btn btn-sm btn-outline" id="btnViewRaw" onclick="switchReportFormat('raw')">
-              Markdown / Raw
-            </button>
-          </div>
-          <button class="modal-close" onclick="closeReportModal()">&times;</button>
-        </div>
-      </div>
-
-      <div class="modal-body">
-        <div id="reportFormattedView" class="report-content-view active">
-          <!-- Renderizado via JS -->
-        </div>
-        <div id="reportRawView" class="report-content-view">
-          <textarea id="reportRawContent" class="raw-markdown-area" readonly></textarea>
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <button class="btn btn-outline" onclick="copyReportMarkdown()">
-          <span class="icon">📋</span> Copiar Texto / Markdown
-        </button>
-        <button class="btn btn-outline" onclick="downloadReportPdf()">
-          <span class="icon">📥</span> Baixar Relatório (PDF / DOC)
-        </button>
-        <button class="btn btn-primary" onclick="printReport()">
-          <span class="icon">🖨️</span> Imprimir Relatório
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 2: Atualização de Portfólio -->
-  <div class="modal-overlay" id="portfolioModal">
-    <div class="modal-container" style="max-width: 600px;">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <h2><span class="icon">✏️</span> Atualizar Posições do Portfólio</h2>
-          <p class="subtitle">Adicione ou modifique ativos na carteira selecionada</p>
-        </div>
-        <button class="modal-close" onclick="closePortfolioModal()">&times;</button>
-      </div>
-      <div class="modal-body">
-        <form id="portfolioUpdateForm" onsubmit="event.preventDefault(); savePortfolioUpdate();">
-          <div class="form-group">
-            <label for="modalBrokerSelect">Corretora de Destino:</label>
-            <select id="modalBrokerSelect" class="form-select">
-              <option value="schwab">Charles Schwab</option>
-              <option value="tastyworks">Tastyworks</option>
-            </select>
-          </div>
-          <div class="form-group mt-2">
-            <label for="portfolioInputText">Posições ou Instruções:</label>
-            <textarea id="portfolioInputText" class="form-textarea" rows="8" placeholder="Cole as posições atualizadas da corretora..."></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-outline" onclick="closePortfolioModal()">Cancelar</button>
-        <button class="btn btn-primary" onclick="savePortfolioUpdate()">Salvar Posições</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 3: Plano de Rebalanceamento Estratégico (>= 60% Quad 3) -->
+  <!-- Modal: Plano de Rebalanceamento Estratégico (>= 60% Quad 3) -->
   <div class="modal-overlay" id="rebalanceModal">
-    <div class="modal-container" style="max-width: 850px;">
+    <div class="modal-container" style="max-width: 920px;">
       <div class="modal-header">
         <div class="modal-title-group">
           <h2><span class="icon">⚡</span> Plano de Rebalanceamento Estratégico (Alvo: ≥ 60% em Quad 3)</h2>
           <p class="subtitle">Eliminação de ativos com vento contrário e concentração nos pilares de estagflação</p>
         </div>
-        <button class="modal-close" onclick="closeRebalanceModal()">&times;</button>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <select id="rebScopeSelect" class="form-select-sm" onchange="renderRebalanceModalTables()">
+            <option value="consolidated" selected>Visão Consolidada Global</option>
+            <option value="schwab">Charles Schwab</option>
+            <option value="tastyworks">Tastyworks</option>
+          </select>
+          <button class="modal-close" onclick="closeRebalanceModal()">&times;</button>
+        </div>
       </div>
+
       <div class="modal-body">
-        <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1rem; margin-bottom: 1.2rem;">
-          <h4 style="color: #34D399; margin: 0 0 0.3rem 0;">🎯 Meta do Rebalanceamento:</h4>
-          <p style="margin: 0; font-size: 0.88rem; color: #CBD5E1;">
-            Elevar a alocação em <strong>QUAD 3 (Ouro, Mineradoras, Energia Real e Caixa)</strong> de <strong>38,5% para 62,8%</strong>, desinvestindo de semicondutores cíclicos (INTC, NOK, AXTI, COIN) e reduzindo peso em crédito corporativo longo.
-          </p>
+        <!-- Resumo de Impacto Antes vs Depois -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; margin-bottom: 1.2rem;">
+          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 0.8rem;">
+            <div style="font-size: 0.72rem; color: #6EE7B7; text-transform: uppercase; font-weight: 700;">Alocação em Quad 3</div>
+            <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.2rem;">
+              <span style="font-size: 1.1rem; color: #94A3B8; text-decoration: line-through;" id="rebBeforeQuad3">38,5%</span>
+              <span style="font-size: 1.4rem; font-weight: 800; color: #10B981;" id="rebAfterQuad3">63,2%</span>
+              <span class="badge badge-bullish" style="font-size: 0.7rem;">+24,7%</span>
+            </div>
+            <small class="text-muted">Ouro físico, mineradoras, energia, defensivos e caixa SGOV</small>
+          </div>
+
+          <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 8px; padding: 0.8rem;">
+            <div style="font-size: 0.72rem; color: #FCA5A5; text-transform: uppercase; font-weight: 700;">Exposição High Beta / Semis</div>
+            <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.2rem;">
+              <span style="font-size: 1.1rem; color: #94A3B8; text-decoration: line-through;" id="rebBeforeBeta">24,4%</span>
+              <span style="font-size: 1.4rem; font-weight: 800; color: #EF4444;" id="rebAfterBeta">7,8%</span>
+              <span class="badge badge-bearish" style="font-size: 0.7rem;">-16,6%</span>
+            </div>
+            <small class="text-muted">Elimina semicondutores cíclicos e papéis vulneráveis</small>
+          </div>
+
+          <div style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 8px; padding: 0.8rem;">
+            <div style="font-size: 0.72rem; color: #7DD3FC; text-transform: uppercase; font-weight: 700;">Liquidez & Caixa SGOV</div>
+            <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.2rem;">
+              <span style="font-size: 1.1rem; color: #94A3B8; text-decoration: line-through;" id="rebBeforeCash">9,5%</span>
+              <span style="font-size: 1.4rem; font-weight: 800; color: #38BDF8;" id="rebAfterCash">15,0%</span>
+              <span class="badge badge-neutral" style="font-size: 0.7rem;">+5,5%</span>
+            </div>
+            <small class="text-muted">Opcionalidade preservada para buy the dips nos pisos</small>
+          </div>
         </div>
 
-        <h4 style="color: #F87171; margin-bottom: 0.5rem;">1. Desinvestimentos Sugeridos (Vender nos Repiques):</h4>
+        <!-- 1. Tabela de Desinvestimentos -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+          <h4 style="color: #F87171; margin: 0; font-size: 0.95rem;">
+            🔴 1. Desinvestimentos Sugeridos (Vender nos Repiques):
+          </h4>
+          <span class="badge badge-bearish" id="rebTotalSellBadge">Liquidez a Liberar: ~US$ 24.472,55</span>
+        </div>
         <div class="table-responsive mb-3">
           <table class="data-table" style="font-size: 0.82rem;">
             <thead>
               <tr>
                 <th>Ticker</th>
-                <th>Categoria</th>
-                <th>Ação</th>
+                <th>Corretora</th>
+                <th>Qtd Ações</th>
+                <th>Cotação</th>
+                <th>Ação Recomendada</th>
                 <th>Valor Liberado</th>
-                <th>Racional</th>
+                <th>Racional Hedgeye (Pág. 27)</th>
               </tr>
             </thead>
             <tbody id="rebSellTableBody">
-              <!-- Renderizado via JS -->
+              <!-- Renderizado dinamicamente via JS -->
             </tbody>
           </table>
         </div>
 
-        <h4 style="color: #34D399; margin-bottom: 0.5rem;">2. Reinvestimento nos Vencedores de Quad 3 (Comprar nos Pisos):</h4>
+        <!-- 2. Tabela de Reinvestimentos -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+          <h4 style="color: #34D399; margin: 0; font-size: 0.95rem;">
+            🟢 2. Reinvestimento nos Vencedores de Quad 3 (Comprar nos Pisos):
+          </h4>
+          <span class="badge badge-bullish" id="rebTotalBuyBadge">Total a Alocar: ~US$ 24.472,55</span>
+        </div>
         <div class="table-responsive">
           <table class="data-table" style="font-size: 0.82rem;">
             <thead>
               <tr>
-                <th>Ativo</th>
-                <th>Regime</th>
+                <th>Ativo / Ticker</th>
+                <th>Corretora</th>
+                <th>Regime & Tese</th>
                 <th>Aporte Proposto</th>
-                <th>Posição no Range</th>
-                <th>Racional</th>
+                <th>Qtd Estimada</th>
+                <th>Posição no Risk Range</th>
+                <th>Racional Estratégico</th>
               </tr>
             </thead>
             <tbody id="rebBuyTableBody">
-              <!-- Renderizado via JS -->
+              <!-- Renderizado dinamicamente via JS -->
             </tbody>
           </table>
         </div>
       </div>
-      <div class="modal-footer">
-        <button class="btn btn-outline" onclick="copyRebalancePlan()">
-          <span class="icon">📋</span> Copiar Plano
-        </button>
-        <button class="btn btn-primary" onclick="closeRebalanceModal()">Entendido</button>
+
+      <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+        <div style="display: flex; gap: 0.5rem;">
+          <button class="btn btn-outline" onclick="copyRebalancePlan()">
+            <span class="icon">📋</span> Copiar Ordens para Home Broker
+          </button>
+          <button class="btn btn-accent" id="btnSimulateModal" onclick="togglePortfolioSimulation()">
+            <span class="icon">🚀</span> Simular Portfólio Rebalanceado
+          </button>
+        </div>
+        <button class="btn btn-primary" onclick="closeRebalanceModal()">Fechar</button>
       </div>
     </div>
   </div>
