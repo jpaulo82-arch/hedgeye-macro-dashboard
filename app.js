@@ -1738,27 +1738,21 @@ function printReport() {
   }, 100);
 }
 
-function generatePortfolioReport() {
-  const scopeSelect = document.getElementById("reportScopeSelect");
-  if (scopeSelect) scopeSelect.value = activePortfolioKey;
-  openReportModal();
-}
-
-
 // 6. MODAL DE PORTFÓLIO & ATUALIZAÇÃO
 function openPortfolioModal() {
-  document.getElementById("modalBrokerSelect").value = activePortfolioKey === "consolidated" ? "schwab" : activePortfolioKey;
-  document.getElementById("portfolioModal").classList.add("active");
+  const brokerSelect = document.getElementById("modalBrokerSelect");
+  if (brokerSelect) brokerSelect.value = activePortfolioKey === "consolidated" ? "schwab" : activePortfolioKey;
+  document.getElementById("portfolioModal")?.classList.add("active");
 }
 
 function closePortfolioModal() {
-  document.getElementById("portfolioModal").classList.remove("active");
+  document.getElementById("portfolioModal")?.classList.remove("active");
 }
 
 function savePortfolioUpdate() {
-  const broker = document.getElementById("modalBrokerSelect").value;
-  const text = document.getElementById("portfolioInputText").value;
-  if (!text.trim()) {
+  const broker = document.getElementById("modalBrokerSelect")?.value;
+  const text = document.getElementById("portfolioInputText")?.value;
+  if (!text || !text.trim()) {
     showToast("Por favor, insira as operações ou captura.");
     return;
   }
@@ -1767,8 +1761,298 @@ function savePortfolioUpdate() {
   closePortfolioModal();
 }
 
+// 6.1 MODAL DE RELATÓRIO EXECUTIVO & PESQUISA
+function openReportModal() {
+  const reportModal = document.getElementById("reportModal");
+  if (reportModal) {
+    reportModal.classList.add("active");
+  }
+}
+
+function closeReportModal() {
+  const reportModal = document.getElementById("reportModal");
+  if (reportModal) {
+    reportModal.classList.remove("active");
+  }
+}
+
+// 6.2 GERENCIAMENTO DINÂMICO DE DECISÕES DO KEITH & AUDITORIA
+const defaultDecisionsList = [
+  {
+    date: "10/09/2026",
+    isToday: true,
+    author: "KM Call (Hoje)",
+    asset: "Dólar Index (USD / DXY) & Treasuries (UST10Y/UST2Y)",
+    portfolio: "Macro Global",
+    category: "CURRENCY & RATES",
+    badgeClass: "badge-bearish",
+    action: "Bearish USD ($98.33–$99.49) / Bullish UST10Y Yield (4.70%–4.89%)",
+    reason: "Dólar testa mínimas de 3 meses e rendimentos dos T-Bonds rompem para novas máximas do ciclo de inflação, rejeitando o pacote fiscal de US$ 1T.",
+    invalidation: "Fechamento do DXY acima de 100,20 ou recuo sustentado da 10Y abaixo de 4,65%.",
+    statusBadge: "badge-bearish",
+    statusText: "🔴 Bearish USD / Bullish 10Y"
+  },
+  {
+    date: "10/09/2026",
+    isToday: true,
+    author: "KM Call (Hoje)",
+    asset: "Nowcast de Inflação Hedgeye (Quad 3)",
+    portfolio: "Macro Global",
+    category: "NOWCAST ROC",
+    badgeClass: "badge-bullish",
+    action: "Sobreponderar Real Assets / Inflação em 3,76% no 4T26",
+    reason: "Modelo proprietário da Hedgeye aponta reaceleração contínua da inflação em agosto e setembro, projetando CPI trimestral em 3,76% a/a no 4T26.",
+    invalidation: "Desaceleração sequencial dos números de CPI/PPI por 2 meses consecutivos.",
+    statusBadge: "badge-bullish",
+    statusText: "🟢 Quad 3 Acelerando"
+  },
+  {
+    date: "10/09/2026",
+    isToday: true,
+    author: "KM Call (Hoje)",
+    asset: "Russell 2000 vs Large Caps (RUT / SPX / COMPQ)",
+    portfolio: "Global",
+    category: "EQUITY ROTATION",
+    badgeClass: "badge-bearish",
+    action: "Russell 2000 em Bearish TREND (2.901–2.988) / Manter Large Caps",
+    reason: "Small caps endividadas sofrem com o custo financeiro elevado, enquanto Large Caps de alta margem mantêm liquidez e fluxo comprador.",
+    invalidation: "RUT rompendo acima de 3.015 com alívio do spread de crédito.",
+    statusBadge: "badge-bearish",
+    statusText: "🔴 Short RUT / Long SPX"
+  },
+  {
+    date: "10/09/2026",
+    isToday: true,
+    author: "KM Call (Hoje)",
+    asset: "Commodities & Real Assets (GOLD, COPPER, WTIC, OIH)",
+    portfolio: "Ambas",
+    category: "REAL ASSETS / ATHs",
+    badgeClass: "badge-core",
+    action: "Comprar nos Pisos de Range / Máxima Convicção",
+    reason: "WTI com teto em US$ 99,91, Cobre em ATHs (6,55–6,85), Ouro sustentado em 4.301–4.502 e OIH forte em 415–442.",
+    invalidation: "Quebra de suporte do WTI abaixo de US$ 86,00 ou Ouro abaixo de US$ 4.250.",
+    statusBadge: "badge-bullish",
+    statusText: "🟢 Convicção Máxima"
+  },
+  {
+    date: "09/09/2026",
+    isToday: false,
+    author: "KM Call",
+    asset: "Dólar Index (USD / DXY) & Iene (JPY)",
+    portfolio: "Macro Global",
+    category: "CURRENCY DEBASEMENT",
+    badgeClass: "badge-bearish",
+    action: "Bearish TREND / Mínima de 3 Meses ($98,77)",
+    reason: "Dólar em colapso com Iene subindo (+0,4% a 153,51) gera choque inflacionário e fuga do poder de compra real para commodities.",
+    invalidation: "Fechamento do DXY acima de 100,00 ou quebra de TREND no Iene.",
+    statusBadge: "badge-bearish",
+    statusText: "🔴 Bearish TREND"
+  },
+  {
+    date: "09/09/2026",
+    isToday: false,
+    author: "KM Call",
+    asset: "Treasuries & Juros Longos (UST10Y / TLT / IEF)",
+    portfolio: "Macro Shorts",
+    category: "SHORT DURATION",
+    badgeClass: "badge-bearish",
+    action: "Manter Shorts / Yields em Novas Máximas de Ciclo",
+    reason: "UST 10Y Yield sinaliza topo em 4,86% e 2Y em 4,50%. Expectativas de inflação em alta pressionam a ponta longa.",
+    invalidation: "UST 10Y Yield fechando abaixo de 4,68%.",
+    statusBadge: "badge-bearish",
+    statusText: "🔴 Short Estrutural"
+  },
+  {
+    date: "09/09/2026",
+    isToday: false,
+    author: "KM Call",
+    asset: "Setor Imobiliário Residencial (Housing / ITB)",
+    portfolio: "Macro Shorts",
+    category: "COLLAPSE / HOUSING",
+    badgeClass: "badge-bearish",
+    action: "Evitar / Subponderar / Short",
+    reason: "Cesta de Housing da Goldman Sachs despencou -3,0% ontem e acumula -10,1% no mês devido ao impacto de juros de hipotecas altos.",
+    invalidation: "Rompimento de ITB acima de máximas de 3 meses.",
+    statusBadge: "badge-bearish",
+    statusText: "🔴 Setor Frágil"
+  },
+  {
+    date: "08/09/2026",
+    isToday: false,
+    author: "KM Call",
+    asset: "Petróleo & Oil Services (WTIC / OIH)",
+    portfolio: "Ambas",
+    category: "REFLAÇÃO QUAD 3",
+    badgeClass: "badge-core",
+    action: "Long / Convicção Máxima (#Accelerating)",
+    reason: "WTI disparou +23% no mês para teto de US$ 97,53. OIH elevou piso para 414 e teto para 444. Reforça superciclo de commodities.",
+    invalidation: "Quebra de suporte do WTI abaixo de US$ 86,36.",
+    statusBadge: "badge-bullish",
+    statusText: "🟢 Ativo (Líder)"
+  },
+  {
+    date: "08/09/2026",
+    isToday: false,
+    author: "KM Call",
+    asset: "Utilities (XLU) & Crédito Corporativo (LQD)",
+    portfolio: "Schwab + Shorts",
+    category: "RELOAD SHORTS",
+    badgeClass: "badge-bearish",
+    action: "Recarregar Shorts em XLU e Manter Short LQD",
+    reason: "Keith McCullough recarregou posições short em Utilities no repique. LQD Bearish TREND reflete deterioração de crédito longo.",
+    invalidation: "XLU em nova máxima histórica ou LQD sustentado acima de 106,10.",
+    statusBadge: "badge-bearish",
+    statusText: "🔴 Alerta Bearish"
+  },
+  {
+    date: "04/09/2026",
+    isToday: false,
+    author: "KM Call",
+    asset: "AI Software vs Semis (IGV / SMH)",
+    portfolio: "Hedgeye Macro",
+    category: "LONG SOFTWARE / SHORT SEMIS",
+    badgeClass: "badge-core",
+    action: "Manter / Sobreponderar AI Software",
+    reason: "Long AI Software vs Short Semis avançou +17,9% no mês, enquanto High Beta Momentum desabou das máximas.",
+    invalidation: "Reversão técnica no par com quebra de fluxo em software enterprise.",
+    statusBadge: "badge-bullish",
+    statusText: "🟢 Ativo"
+  },
+  {
+    date: "01/09/2026",
+    isToday: false,
+    author: "KM Call",
+    asset: "MercadoLibre (MELI)",
+    portfolio: "Ambas",
+    category: "CORE GROWTH",
+    badgeClass: "badge-core",
+    action: "Manter posição integral",
+    reason: "Dólar fraco (DXY Bearish) expande margens na América Latina com aceleração de fintech (Mercado Pago).",
+    invalidation: "Desaceleração de TPV abaixo de 20% com deterioração de crédito.",
+    statusBadge: "badge-bullish",
+    statusText: "🟢 Vigente"
+  }
+];
+
+function getDecisions() {
+  try {
+    const stored = localStorage.getItem("hedgeye_decisions_list_v2");
+    if (stored) {
+      return JSON.parse(stored);
+    }
+  } catch (e) {
+    console.warn("Erro ao ler localStorage de decisões:", e);
+  }
+  return defaultDecisionsList;
+}
+
+function setDecisions(list) {
+  try {
+    localStorage.setItem("hedgeye_decisions_list_v2", JSON.stringify(list));
+  } catch (e) {
+    console.warn("Erro ao salvar localStorage de decisões:", e);
+  }
+}
+
+function renderDecisionsTable() {
+  const tbody = document.getElementById("decisionsTableBody");
+  if (!tbody) return;
+
+  const list = getDecisions();
+  tbody.innerHTML = list.map((d, index) => {
+    const isTodayRow = d.isToday ? 'style="background: rgba(56, 189, 248, 0.08);"' : '';
+    const badgeAccent = d.isToday ? '<span class="badge badge-accent">Hoje (10/09)</span>' : '';
+    const isCustom = d.isCustom ? `<button class="btn btn-outline" style="padding: 0.15rem 0.4rem; font-size: 0.68rem; margin-top: 0.2rem; color: #EF4444;" onclick="deleteDecision(${index})">✕ Excluir</button>` : '';
+
+    return `
+      <tr ${isTodayRow}>
+        <td style="white-space: nowrap;">
+          <strong>${d.date}</strong> <br>${badgeAccent} ${isCustom}
+        </td>
+        <td><strong>${d.asset}</strong></td>
+        <td><span class="tag tag-outline" style="font-size: 0.72rem;">${d.portfolio}</span></td>
+        <td><span class="badge ${d.badgeClass || 'badge-neutral'}" style="font-size: 0.72rem;">${d.category}</span></td>
+        <td><strong>${d.action}</strong></td>
+        <td style="font-size: 0.82rem; color: #CBD5E1;">${d.reason}</td>
+        <td style="font-size: 0.78rem; color: #94A3B8;">${d.invalidation}</td>
+        <td><span class="badge ${d.statusBadge || 'badge-neutral'}" style="font-size: 0.72rem;">${d.statusText}</span></td>
+      </tr>
+    `;
+  }).join("");
+}
+
 function openNewDecisionModal() {
-  showToast("Para registrar uma nova decisão, ela será vinculada ao log auditável.");
+  const modal = document.getElementById("newDecisionModal");
+  if (modal) {
+    modal.classList.add("active");
+  }
+}
+
+function closeNewDecisionModal() {
+  const modal = document.getElementById("newDecisionModal");
+  if (modal) {
+    modal.classList.remove("active");
+  }
+}
+
+function saveNewDecision(event) {
+  event.preventDefault();
+  const asset = document.getElementById("decAsset")?.value?.trim();
+  const portfolio = document.getElementById("decPortfolio")?.value;
+  const category = document.getElementById("decCategory")?.value?.trim() || "PERSONAL THESIS";
+  const status = document.getElementById("decStatus")?.value;
+  const action = document.getElementById("decAction")?.value?.trim();
+  const reason = document.getElementById("decReason")?.value?.trim();
+  const invalidation = document.getElementById("decInvalidation")?.value?.trim();
+
+  if (!asset || !action || !reason) {
+    showToast("Por favor preencha os campos obrigatórios.");
+    return;
+  }
+
+  const now = new Date();
+  const dateStr = `${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()}`;
+
+  let statusBadge = "badge-neutral";
+  let statusText = status;
+  if (status.includes("Bullish")) { statusBadge = "badge-bullish"; }
+  else if (status.includes("Bearish")) { statusBadge = "badge-bearish"; }
+
+  const newEntry = {
+    date: dateStr,
+    isToday: true,
+    isCustom: true,
+    author: "Usuário (Auditado)",
+    asset: asset,
+    portfolio: portfolio,
+    category: category.toUpperCase(),
+    badgeClass: "badge-core",
+    action: action,
+    reason: reason,
+    invalidation: invalidation || "Definido pelo gestor.",
+    statusBadge: statusBadge,
+    statusText: statusText
+  };
+
+  const list = getDecisions();
+  list.unshift(newEntry);
+  setDecisions(list);
+  renderDecisionsTable();
+  closeNewDecisionModal();
+
+  // Limpa formulário
+  document.getElementById("newDecisionForm")?.reset();
+  showToast(`✅ Nova decisão para "${asset}" registrada no log auditável!`);
+}
+
+function deleteDecision(index) {
+  const list = getDecisions();
+  if (index >= 0 && index < list.length) {
+    list.splice(index, 1);
+    setDecisions(list);
+    renderDecisionsTable();
+    showToast("Decisão removida do log.");
+  }
 }
 
 function viewHistoryReport(dateId) {
@@ -2190,6 +2474,9 @@ function filterReportsList(query) {
   renderReportsHistoryList(filtered);
 }
 
+let currentModalReport = null;
+let currentModalLang = "pt";
+
 function openSpecificReport(reportIdOrFile) {
   const rep = allReportsCache.find(r => r.id === reportIdOrFile || r.filename === reportIdOrFile);
   if (!rep) {
@@ -2197,31 +2484,168 @@ function openSpecificReport(reportIdOrFile) {
     return;
   }
 
-  // Preenche o modal com o relatório completo
-  const formattedContainer = document.getElementById("reportFormattedView");
-  const rawContainer = document.getElementById("reportRawContent");
+  currentModalReport = rep;
+  currentModalLang = "pt";
 
-  if (rawContainer) {
-    rawContainer.innerText = rep.content || rep.summary || "Sem conteúdo textual.";
+  // Atualiza título e cabeçalho do Modal
+  const modalTitle = document.getElementById("modalReportTitle");
+  const modalMeta = document.getElementById("modalReportMeta");
+  if (modalTitle) modalTitle.innerText = rep.title;
+  if (modalMeta) modalMeta.innerText = `Data: ${rep.date || rep.shortDate} | Remetente: ${rep.sender || 'Hedgeye Research'} | ID: ${rep.id || rep.filename}`;
+
+  // Sincroniza o dropdown da central de relatórios
+  const selectElem = document.getElementById("selectTranslatedReport");
+  if (selectElem && rep.id) {
+    selectElem.value = rep.id;
+    activeTranslatedReportId = rep.id;
+    renderEarlyLookTranslatedView(rep);
   }
 
-  if (formattedContainer) {
-    // Renderiza uma visualização limpa do markdown
+  // Renderiza a visualização do modal no idioma padrão (PT)
+  renderModalReportContent();
+
+  const modal = document.getElementById("reportModal");
+  if (modal) {
+    modal.classList.add("active");
+  }
+  showToast(`📄 Abrindo: ${rep.title}`);
+}
+
+function setModalReportLang(lang) {
+  currentModalLang = lang;
+  const btnPt = document.getElementById("btnModalLangPt");
+  const btnEn = document.getElementById("btnModalLangEn");
+
+  if (lang === "en") {
+    if (btnPt) btnPt.className = "btn btn-sm btn-outline";
+    if (btnEn) btnEn.className = "btn btn-sm btn-primary";
+    showToast("Exibindo texto original em Inglês.");
+  } else {
+    if (btnPt) btnPt.className = "btn btn-sm btn-primary";
+    if (btnEn) btnEn.className = "btn btn-sm btn-outline";
+    showToast("Exibindo relatório traduzido em Português Brasil.");
+  }
+
+  renderModalReportContent();
+}
+
+function renderModalReportContent() {
+  if (!currentModalReport) return;
+  const rep = currentModalReport;
+  const formattedContainer = document.getElementById("reportFormattedView");
+  const rawContainer = document.getElementById("reportRawContent");
+  const rawViewWrapper = document.getElementById("reportRawView");
+
+  const struct = structuredTranslations[rep.id];
+
+  if (currentModalLang === "en") {
+    if (formattedContainer) formattedContainer.style.display = "none";
+    if (rawViewWrapper) rawViewWrapper.style.display = "block";
+    if (rawContainer) rawContainer.innerText = rep.content || rep.summary || "No raw text available.";
+    return;
+  }
+
+  // Modo Português (Formatado & Traduzido)
+  if (rawViewWrapper) rawViewWrapper.style.display = "none";
+  if (!formattedContainer) return;
+  formattedContainer.style.display = "block";
+
+  if (struct) {
+    const takeawaysHtml = (struct.takeaways || []).map(t => `
+      <div class="takeaway-card ${t.borderClass}" style="margin-bottom: 0.75rem; padding: 1rem; background: rgba(30, 41, 59, 0.6); border-radius: 8px; border-left: 4px solid var(--border-color);">
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+          <span style="font-size: 1.2rem;">${t.icon}</span>
+          <h4 style="margin: 0; font-size: 0.95rem; color: #F8FAFC;">${t.title}</h4>
+        </div>
+        <div style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.5;">${t.desc}</div>
+      </div>
+    `).join("");
+
+    const riskRowsHtml = (rep.riskRanges || []).map(r => `
+      <tr>
+        <td style="font-weight: 700; color: #60A5FA;">${r.ticker}</td>
+        <td>${r.name || r.ticker}</td>
+        <td style="font-family: 'JetBrains Mono', monospace; font-weight: 700;">${r.low} — ${r.high}</td>
+        <td><span class="badge ${r.signal === 'BULLISH' ? 'badge-bullish' : (r.signal === 'BEARISH' ? 'badge-bearish' : 'badge-neutral')}">${r.signal}</span></td>
+      </tr>
+    `).join("");
+
     formattedContainer.innerHTML = `
-      <div class="report-section-card highlight" style="padding: 1.25rem; margin-bottom: 1rem;">
-        <h2 style="color: #38BDF8; font-size: 1.2rem; margin-bottom: 0.5rem;">${rep.title}</h2>
-        <div style="font-size: 0.82rem; color: #94A3B8; margin-bottom: 1rem;">
-          Data: <strong>${rep.date}</strong> | ID: <code>${rep.id}</code>
+      <div class="report-brand-header" style="border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 0.8rem; margin-bottom: 1.2rem; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.8rem;">
+        <div>
+          <div style="font-size: 1.25rem; font-weight: 800; color: #38BDF8; margin-bottom: 0.2rem;">${struct.titlePt}</div>
+          <div style="font-size: 0.82rem; color: #94A3B8;">${struct.displayDate} | Autor: <strong>Keith McCullough (@keithmccullough)</strong></div>
         </div>
-        <div style="background: rgba(15, 23, 42, 0.7); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); font-size: 0.88rem; line-height: 1.6; white-space: pre-wrap; font-family: 'Inter', sans-serif;">
-${rep.content}
+        <div>
+          <span class="badge badge-bullish" style="background: #EF4444; color: #FFF; font-size: 0.78rem; font-weight: 700;">📍 ${struct.regime}</span>
         </div>
+      </div>
+
+      <div class="report-quote-banner" style="background: rgba(56, 189, 248, 0.08); border-left: 4px solid #38BDF8; padding: 0.8rem 1rem; border-radius: 6px; margin-bottom: 1.2rem; font-style: italic; color: #E0F2FE; font-size: 0.92rem;">
+        “${struct.quoteText}” <br><strong style="font-style: normal; font-size: 0.8rem; color: #38BDF8;">${struct.quoteAuthor}</strong>
+      </div>
+
+      <h4 style="color: #38BDF8; font-size: 1rem; margin-bottom: 0.8rem;"><span class="icon">🎯</span> Principais Destaques & Teses Executivas (Key Takeaways):</h4>
+      <div style="margin-bottom: 1.5rem;">
+        ${takeawaysHtml}
+      </div>
+
+      ${riskRowsHtml ? `
+        <h4 style="color: #38BDF8; font-size: 1rem; margin-bottom: 0.6rem;"><span class="icon">📊</span> Risk Ranges Oficiais Extraídos do Relatório:</h4>
+        <div class="table-responsive" style="margin-bottom: 1.2rem;">
+          <table class="data-table" style="font-size: 0.82rem;">
+            <thead>
+              <tr>
+                <th>Ticker</th>
+                <th>Ativo</th>
+                <th>Risk Range Calibrado</th>
+                <th>Sinal TREND</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${riskRowsHtml}
+            </tbody>
+          </table>
+        </div>
+      ` : ''}
+
+      <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 0.8rem; font-size: 0.75rem; color: #64748B; text-align: center;">
+        Tradução institucional estruturada com terminologia Hedgeye Risk Management.
+      </div>
+    `;
+  } else {
+    // Formatação genérica inteligente para qualquer relatório arquivado
+    const cleanContent = (rep.content || rep.summary || "")
+      .replace(/^#\s+.+/m, '')
+      .replace(/\*\*Data:\*\*.+/g, '')
+      .replace(/\*\*Remetente:\*\*.+/g, '')
+      .replace(/\*\*ID:\*\*.+/g, '')
+      .replace(/This research was prepared exclusively.+/g, '')
+      .replace(/Having trouble viewing this email\?.+/g, '')
+      .trim();
+
+    formattedContainer.innerHTML = `
+      <div class="report-brand-header" style="border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 0.8rem; margin-bottom: 1.2rem;">
+        <h2 style="font-size: 1.25rem; color: #38BDF8; margin: 0 0 0.3rem 0;">${rep.title}</h2>
+        <div style="font-size: 0.82rem; color: #94A3B8;">Data: <strong>${rep.date || rep.shortDate}</strong> | ID: <code>${rep.id || rep.filename}</code></div>
+      </div>
+      <div style="background: rgba(15, 23, 42, 0.7); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--border-color); font-size: 0.9rem; line-height: 1.7; white-space: pre-wrap; font-family: 'Inter', sans-serif;">
+${cleanContent}
       </div>
     `;
   }
+}
 
-  document.getElementById("reportModal")?.classList.add("active");
-  showToast(`Exibindo: ${rep.title}`);
+function copyModalReportContent() {
+  const formattedContainer = document.getElementById("reportFormattedView");
+  const rawContainer = document.getElementById("reportRawContent");
+
+  const textToCopy = (currentModalLang === "en" ? rawContainer?.innerText : formattedContainer?.innerText) || "";
+  if (textToCopy) {
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      showToast("Texto do relatório copiado com sucesso!");
+    });
+  }
 }
 
 async function syncReportsOnDemand() {
@@ -2310,6 +2734,35 @@ let activeTranslatedReportId = "latest";
 
 // Traduções Estruturadas de Alta Fidelidade (Hedgeye Research)
 const structuredTranslations = {
+  "110057": {
+    id: "110057",
+    date: "10/09/2026",
+    displayDate: "Quinta-feira, 10 de Setembro de 2026 (07:39 EDT)",
+    titlePt: 'EARLY LOOK: <span>Apostando US$ 1 Trilhão na Aceleração da Inflação</span>',
+    regime: "QUAD 3 (#ACCELERATING)",
+    quoteText: 'Todo mundo é um gênio em um bull market... até a gravidade econômica e a ordem implícita cobrarem a conta.',
+    quoteAuthor: '— Keith McCullough citando Davey Day Trader',
+    takeaways: [
+      {
+        icon: "📉",
+        title: "1. Dólar em Mínimas de 3 Meses e Yields em Máximas de Ciclo",
+        borderClass: "rose-border",
+        desc: "O <strong>Dólar (DXY $98,33–$99,49)</strong> testa mínimas de 3 meses em Bearish TREND, enquanto os rendimentos dos T-Bonds (UST 2Y a 4,44% e UST 10Y a 4,86%–4,89%) rompem para novas máximas do ciclo inflacionário, rejeitando a narrativa fiscal."
+      },
+      {
+        icon: "📊",
+        title: "2. Nowcast de Inflação Acelerando para 3,76% no 4T26",
+        borderClass: "amber-border",
+        desc: "O modelo quantitativo proprietário da Hedgeye aponta reaceleração contínua da inflação em agosto e setembro, projetando CPI trimestral em direção a <strong>3,76% a/a no 4T26</strong>, confirmando a permanência em Quad 3."
+      },
+      {
+        icon: "⚡",
+        title: "3. Longs em Real Assets & Shorts Estruturais em TLT/LQD/XLU",
+        borderClass: "emerald-border",
+        desc: "O playbook quantitativo dita posição comprada em <strong>BUXX, CLOX, Ouro (4.301–4.502), Cobre (6,55–6,85) e Petróleo WTI (teto em 99,91)</strong>, enquanto <strong>TLT, ZROZ, LQD, Utilities e Russell 2000 (RUT Bearish 2.901–2.988)</strong> seguem como maiores shorts."
+      }
+    ]
+  },
   "109985": {
     id: "109985",
     date: "09/09/2026",
@@ -3115,10 +3568,13 @@ function renderPortfolioEarningsCalendar(earningsList) {
   }).join("");
 }
 
-// Fechar modal ao pressionar ESC
+// Fechar modais ao pressionar ESC
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     closeRebalanceModal();
+    closeReportModal();
+    closeNewDecisionModal();
+    closePortfolioModal();
   }
 });
 
@@ -3126,6 +3582,7 @@ document.addEventListener("keydown", (e) => {
 function initApp() {
   renderPortfolioView(activePortfolioKey);
   renderRiskRangesTable("all");
+  renderDecisionsTable();
   renderRebalanceModalTables();
   loadReportsDatabase().then(() => {
     populateTranslatedReportsDropdown();

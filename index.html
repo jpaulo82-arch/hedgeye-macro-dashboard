@@ -679,13 +679,17 @@
               <span style="font-size: 1.4rem;">📈</span>
               <h3 style="margin: 0; font-size: 1.2rem; color: #F59E0B;">Radar de Rotação de Quadrantes: Carteiras Simuladas (30 Dias)</h3>
             </div>
-            <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
               <span class="badge badge-bullish" id="quadLeadingBadge">LÍDER 30D: QUAD 2</span>
               <span class="badge badge-neutral" style="font-size: 0.75rem;">16 ATIVOS CHAVE</span>
+              <span class="tag tag-outline" style="font-size: 0.72rem; color: #38BDF8;" id="gipCadenceTag">Cadência: Fechamento Diário + Intraday</span>
+              <button class="btn btn-outline btn-sm" onclick="fetchMarketAnalyticsData(); showToast('🔄 Recalculando rotação de quadrantes e Rate of Change...');" title="Recalcular métricas de ROC e 2ª derivada">
+                <span class="icon">🔄</span> Atualizar GIP
+              </button>
             </div>
           </div>
           <p style="margin: 0.4rem 0 0; font-size: 0.85rem; color: #94A3B8;">
-            Monitoramento diário comparativo das 4 cestas de ativos representativos de cada Quadrante Macro (4 ativos por cesta). Permite identificar qual regime está acelerando no tempo e <strong>antecipar transições de quadrantes</strong> antes do consenso de mercado.
+            Monitoramento diário comparativo das 4 cestas de ativos representativos de cada Quadrante Macro (4 ativos por cesta). Permite identificar qual regime está acelerando no tempo e <strong>antecipar transições de quadrantes</strong> antes do consenso de mercado. (Calculado diariamente e atualizado via rotina matinal ou sob demanda).
           </p>
         </div>
 
@@ -1545,10 +1549,127 @@
     </div>
   </div>
 
+  <!-- ========================================================
+       MODAL: VISUALIZADOR DE RELATÓRIO COMPLETO & RESEARCH (TRADUZIDO / ORIGINAL)
+       ======================================================== -->
+  <div id="reportModal" class="modal-overlay" onclick="if(event.target === this) closeReportModal()">
+    <div class="modal-card" style="max-width: 1100px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <span style="font-size: 1.4rem;">📑</span>
+          <div>
+            <h3 id="modalReportTitle" style="margin: 0; font-size: 1.15rem; color: #38BDF8;">Relatório de Research Hedgeye</h3>
+            <p id="modalReportMeta" style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #94A3B8;">Texto integral arquivado & tradução em Português Brasil</p>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+          <div class="btn-group" style="display: flex; gap: 0.3rem;">
+            <button class="btn btn-sm btn-primary" id="btnModalLangPt" onclick="setModalReportLang('pt')">
+              🇧🇷 Português
+            </button>
+            <button class="btn btn-sm btn-outline" id="btnModalLangEn" onclick="setModalReportLang('en')">
+              🇺🇸 English
+            </button>
+          </div>
+          <button class="btn btn-outline btn-sm" onclick="copyModalReportContent()">
+            <span class="icon">📋</span> Copiar
+          </button>
+          <button class="btn btn-outline btn-sm" onclick="printReport()">
+            <span class="icon">🖨️</span> Imprimir / PDF
+          </button>
+          <button class="modal-close-btn" onclick="closeReportModal()" title="Fechar janela">✕</button>
+        </div>
+      </div>
+
+      <div class="modal-body" id="modalReportBody">
+        <div id="reportFormattedView" style="background: rgba(15, 23, 42, 0.9); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); color: #E2E8F0; font-size: 0.92rem; line-height: 1.7; white-space: pre-wrap; font-family: 'Inter', sans-serif;">
+          <!-- Preenchido dinamicamente via JS -->
+        </div>
+        <div id="reportRawView" style="display: none;">
+          <pre id="reportRawContent" style="background: rgba(15, 23, 42, 0.9); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); color: #E2E8F0; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.6; white-space: pre-wrap; max-height: 600px; overflow-y: auto;"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MODAL: NOVA DECISÃO MACRO / AUDITORIA DE TESE
+       ======================================================== -->
+  <div id="newDecisionModal" class="modal-overlay" onclick="if(event.target === this) closeNewDecisionModal()">
+    <div class="modal-card" style="max-width: 680px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <span style="font-size: 1.4rem;">📝</span>
+          <div>
+            <h3 style="margin: 0; font-size: 1.15rem; color: #60A5FA;">Registrar Nova Decisão / Tese de Auditoria</h3>
+            <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #94A3B8;">Vincule suas decisões a regras objetivas e gatilhos de invalidação</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeNewDecisionModal()" title="Fechar janela">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <form id="newDecisionForm" onsubmit="saveNewDecision(event)" style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+              <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Ativo / Tema:</label>
+              <input type="text" id="decAsset" class="form-input" placeholder="Ex: Ouro (AAAU) / WTI / MELI" required style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Carteira:</label>
+              <select id="decPortfolio" class="form-select" style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+                <option value="Ambas">Consolidado (Ambas)</option>
+                <option value="Schwab">Charles Schwab</option>
+                <option value="Tastyworks">Tastyworks</option>
+                <option value="Macro Global">Macro Global</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+              <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Categoria / Tag:</label>
+              <input type="text" id="decCategory" class="form-input" placeholder="Ex: REAL ASSETS / CORE / HEDGE" required style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Status / Conduta:</label>
+              <select id="decStatus" class="form-select" style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+                <option value="🟢 Bullish TREND (Comprar Dips)">🟢 Bullish TREND (Comprar Dips)</option>
+                <option value="🔴 Bearish TREND (Vender Rallies)">🔴 Bearish TREND (Vender Rallies)</option>
+                <option value="🟡 Neutral / Monitorar">🟡 Neutral / Monitorar</option>
+                <option value="⚡ Posição Ativa">⚡ Posição Ativa</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Decisão / Conduta Operacional:</label>
+            <input type="text" id="decAction" class="form-input" placeholder="Ex: Aumentar alocação no piso do Risk Range" required style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+          </div>
+
+          <div>
+            <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Racional Operacional (Por que entrar/manter):</label>
+            <textarea id="decReason" class="form-textarea" rows="2" placeholder="Ex: Inflação acelerando com DXY em mínimas favorece commodities reais..." required style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;"></textarea>
+          </div>
+
+          <div>
+            <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Gatilho de Invalidação (Quando sair):</label>
+            <input type="text" id="decInvalidation" class="form-input" placeholder="Ex: Fechamento abaixo de US$ 4.204 ou quebra de TREND" required style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; gap: 0.8rem; margin-top: 0.5rem;">
+            <button type="button" class="btn btn-outline" onclick="closeNewDecisionModal()">Cancelar</button>
+            <button type="submit" class="btn btn-primary"><span class="icon">💾</span> Salvar Decisão</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast de Notificação -->
   <div class="toast-notification" id="toastNotification">Notificação</div>
 
   <!-- Script Principal da Aplicação -->
-  <script src="app.js?v=20260910_1"></script>
+  <script src="app.js?v=20260910_2"></script>
 </body>
 </html>
