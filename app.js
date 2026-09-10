@@ -3806,56 +3806,102 @@ A metodologia Hedgeye orienta **comprar nos pisos** de Risk Range dos ativos com
    **Ouro (4.301–4.502)**, **Cobre em All-Time Highs (6,55–6,85)** e **Petróleo WTI (88,12–99,91)** lideram os ganhos. Por outro lado, **TLT, ZROZ, LQD, Utilities (XLU) e Russell 2000 (RUT Bearish)** seguem como as maiores posições short recomendadas.`;
   }
 
-  // 4. Análise de Ticker Específico
-  const tickerMatch = query.match(/\b(AAAU|GOLD|NEM|GDX|BE|GRID|MELI|GOOG|META|INTC|NOK|AXTI|COIN|DRAM|FOTO|XBI|WTIC|OIH|SPX|COMPQ|RUT|TLT|LQD|XLU|DXY|USD)\b/i);
+  // 4. Análise de Ticker Específico ou Símbolo da Watchlist TradingView
+  const tickerMatch = query.match(/\b(ES1!?|NQ1!?|SPX|QQQ|DJI|RUT|SPMO|DX1!?|DXY|RX1!?|VIX|MOVE|CPC|CPCI|BTCUSD|BTC|ETHUSD|ETH|SOLUSDC|SOL|TLT|TMF|TIP|US02|US05|US10|US20|EU05|EU10|EU20|GOLD|AAAU|SLV|SILVER|COPPER|WTI1!?|WTIC|POILBREUSDM|BRENT|PALUMUSDM|ALUMINIO|DBA|DBB|FEF1!?|MINERIO|BGI1!?|BOI|URTH|EMXC|SX5E|EWG|EWQ|EWA|EWC|EWJ|NIKKEI|HSI|MCHI|EWW|EZA|EIS|EWZ|IBOV|WIN1!?|WDO1!?|DOLAR|VALE3|PETR4|ITUB4|SMAL|BR02Y|BR05Y|BR10Y|NEM|GDX|BE|GRID|MELI|GOOG|GOOGL|META|INTC|NOK|AXTI|COIN|DRAM|FOTO|XBI|OIH|LQD|XLU)\b/i);
+  
   if (tickerMatch) {
-    const t = tickerMatch[1].toUpperCase();
-    const risk = riskRangesData.find(r => r.ticker === t || r.ticker.includes(t));
-    const pos = [...portfolioPositions.schwab, ...portfolioPositions.tastyworks].find(p => p.ticker === t);
+    const rawSym = tickerMatch[1].toUpperCase();
+    const sym = rawSym.replace("!", "");
+    
+    // Busca na Watchlist do TradingView
+    const tvItem = tradingviewWatchlistData.find(item => 
+      item.symbol.toUpperCase() === rawSym || 
+      item.symbol.replace("!", "").toUpperCase() === sym ||
+      (rawSym === "DXY" && item.symbol === "DX1!") ||
+      (rawSym === "BRENT" && item.symbol === "POILBREUSDM") ||
+      (rawSym === "MINERIO" && item.symbol === "FEF1!") ||
+      (rawSym === "BOI" && item.symbol === "BGI1!") ||
+      (rawSym === "DOLAR" && item.symbol === "WDO1!") ||
+      (rawSym === "BTC" && item.symbol === "BTCUSD") ||
+      (rawSym === "ETH" && item.symbol === "ETHUSD") ||
+      (rawSym === "SOL" && item.symbol === "SOLUSDC")
+    );
 
-    let details = `### 🔍 Análise do Ativo: **${t}**\n\n`;
+    const risk = riskRangesData.find(r => r.ticker === sym || r.ticker === rawSym || r.ticker.includes(sym));
+    const pos = [...portfolioPositions.schwab, ...portfolioPositions.tastyworks].find(p => p.ticker === sym || p.ticker === rawSym);
+
+    let details = `### 🔍 Diagnóstico do Ativo: **${tvItem ? tvItem.symbol + ' — ' + tvItem.name : rawSym}**\n\n`;
+
+    if (tvItem) {
+      details += `- **Pilar Macro (TradingView):** ${tvItem.categoryName}\n`;
+      details += `- **Nível / Cotação de Referência:** \`${tvItem.current}\`\n`;
+      details += `- **Sinal / Regime Quantitativo:** **${tvItem.signal}**\n`;
+      details += `- **Viés no GIP Framework:** <span class="badge ${tvItem.quadBias.includes('QUAD 3') ? 'badge-bullish' : (tvItem.quadBias.includes('QUAD 1') ? 'badge-neutral' : 'badge-bearish')}">${tvItem.quadBias}</span>\n`;
+      details += `- **Papel Macroeconômico:** ${tvItem.roleInQuad}\n\n`;
+    }
+
     if (risk) {
-      details += `- **Risk Range Diário:** \`${risk.low}\` a \`${risk.high}\`\n`;
-      details += `- **Sinal Quantitativo:** **${risk.signal} TREND**\n`;
-      details += `- **Preço / Nível Atual:** ${risk.current}\n`;
-    }
-    if (pos) {
-      details += `- **Na Sua Carteira:** ${pos.qty} cotas na corretora **${pos.broker}** (Valor: US$ ${(pos.qty * pos.price).toFixed(2)})\n`;
-      details += `- **Quadrante Nativo:** \`${pos.nativeQuad}\` (${pos.typeGroup})\n`;
-      details += `- **Conduta Recomendada:** ${pos.actionRec}\n`;
-    } else {
-      details += `- **Status na Carteira:** Não alocado atualmente.\n`;
+      details += `- **Risk Range Diário:** \`${risk.low}\` a \`${risk.high}\` (${risk.signal} TREND)\n`;
     }
 
-    if (["AAAU", "GOLD", "NEM", "GDX", "BE", "GRID", "MELI", "WTIC", "OIH"].includes(t)) {
-      details += `\n💡 **Veredito Macro:** **Ativo com vento a favor em Quad 3.** Recomendado manter e comprar exclusivamente nos recuos em direção ao piso do range.`;
-    } else if (["INTC", "NOK", "AXTI", "COIN", "DRAM", "FOTO", "TLT", "LQD", "XLU", "RUT"].includes(t)) {
-      details += `\n⚠️ **Veredito Macro:** **Ativo com vento contrário em Quad 3 (Bearish TREND).** Recomendado vender/reduzir nos repiques para liberar liquidez e reduzir risco.`;
+    if (pos) {
+      details += `- **Status na Sua Carteira:** ${pos.qty} cotas na corretora **${pos.broker}** (US$ ${(pos.qty * pos.price).toFixed(2)})\n`;
+      details += `- **Conduta Operacional:** ${pos.actionRec}\n\n`;
+    } else if (!tvItem) {
+      details += `- **Status na Carteira:** Não alocado atualmente.\n\n`;
+    }
+
+    // Racional do Regime
+    if (tvItem) {
+      if (tvItem.signal.includes("BULLISH") || tvItem.signal.includes("COMPRAR")) {
+        details += `💡 **Veredito Hedgeye:** **Ativo com forte vento a favor em Quad 3.** Alinhado com aceleração inflacionária e enfraquecimento do dólar. Comprar exclusivamente nos recuos em direção ao piso do range.`;
+      } else if (tvItem.signal.includes("BEARISH") || tvItem.signal.includes("VENDER") || tvItem.signal.includes("EVITAR")) {
+        details += `⚠️ **Veredito Hedgeye:** **Ativo com forte vento contrário em Quad 3 (Bearish TREND).** Evitar posições compradas; preferência por manter vendido ou vender nos repiques de topo.`;
+      } else {
+        details += `⚖️ **Veredito Hedgeye:** **Ativo em zona de transição / Neutral.** Respeitar limites estritos de alocação tática.`;
+      }
     }
 
     return details;
   }
 
-  // 5. Dados Macroeconômicos e Indicadores
-  if (q.includes("cpi") || q.includes("pce") || q.includes("ppi") || q.includes("juros") || q.includes("curva") || q.includes("yield") || q.includes("ouro") || q.includes("dolar") || q.includes("dólar") || q.includes("macro") || q.includes("indicador")) {
-    return `### 📊 Painel de Indicadores Macroeconômicos & Sinais
+  // 5. Perguntas sobre indicadores de volatilidade e sentimento (MOVE, VIX, CPC)
+  if (q.includes("move") || q.includes("vix") || q.includes("put call") || q.includes("cpc") || q.includes("sentimento")) {
+    return `### 📊 Termômetros de Volatilidade & Sentimento Institucional
+    
+- **ICE BofA MOVE Index (98.50 | Bullish TREND):** Mede a volatilidade implícita do mercado de Treasuries. A alta do MOVE sinaliza que os fundos institucionais exigem maior prêmio para carregar títulos longos do governo dos EUA devido à incerteza inflacionária e fiscal.
+- **CBOE VIX (14.60 | Bearish TREND):** Volatilidade implícita do S&P 500 comprimida. Historicamente, baixa volatilidade no equity combinada com alta no MOVE antecede repiques de estresse ou rotação setorial violenta.
+- **Equity Put/Call Ratio CPCI (0.58 | Complacência):** Indica excesso de compra de calls pelo varejo em ações de tecnologia. Sinal de cautela para não comprar topos.`;
+  }
 
-**1. Inflação & Preços (I):**
-- **CPI YoY:** 3,4% (Leitura anterior: 3,2% — ▲ Acelerando). Nowcast projeta 3,76% no 4T26.
+  // 6. Perguntas sobre Curva de Juros e Bonds (US vs BR)
+  if (q.includes("curva") || q.includes("juros") || q.includes("di") || q.includes("us10") || q.includes("br10y") || q.includes("tlt") || q.includes("tip")) {
+    return `### 🏛️ Diagnóstico da Renda Fixa Soberana & Curvas de Rendimento
+
+- **EUA (UST 10Y a 4,78% / UST 2Y a 4,44%):** A curva americana está em *Bear Steepening* (taxas longas subindo com força). Isso destrói o valor patrimonial de ETFs de duration longa (**TLT e TMF em Bearish TREND**).
+- **Proteção TIPS (TIP $107,50 | Bullish):** Títulos indexados à inflação nos EUA continuam superando Treasuries nominais.
+- **Brasil (Curva DI: BR02Y a 12,85% / BR10Y a 13,45%):** A curva de juros brasileira precifica taxa Selic elevada para conter repasse cambial e choque de commodities. Renda fixa local oferece retorno real elevado (>6,5% a.a.), mas comprime os múltiplos do índice de Small Caps (**SMAL Bearish**).`;
+  }
+
+  // 7. Dados Macroeconômicos e Indicadores Gerais
+  if (q.includes("cpi") || q.includes("pce") || q.includes("ppi") || q.includes("ouro") || q.includes("dolar") || q.includes("dólar") || q.includes("macro") || q.includes("indicador") || q.includes("watchlist")) {
+    return `### 📊 Painel de Indicadores Macroeconômicos & Sinais da Watchlist
+    
+**1. Inflação & Preços:**
+- **CPI YoY:** 3,4% (▲ Acelerando). Nowcast da Hedgeye projeta 3,76% no 4T26.
 - **Core PCE YoY:** 3,1% (Acima da meta de 2,0% do Fed).
-- **Petróleo WTI:** US$ 91,20 (Risk Range: 88,12–99,91 em Bullish TREND).
+- **Petróleo WTI (WTI1!):** US$ 91,20 (Risk Range: 88,12–99,91 em Bullish TREND).
 
-**2. Juros & Curva de Rendimentos:**
-- **UST 10Y Yield:** 4,78% (Range: 4,70%–4,89% Bullish — Novas máximas do ciclo).
-- **UST 2Y Yield:** 4,44% (Topo do range em 4,50%).
-- **Curva 10Y-2Y:** Desinvertendo em *Bear Steepening* inflacionário.
+**2. Juros & Moedas Globais:**
+- **UST 10Y Yield (US10):** 4,78% (Range: 4,70%–4,89% Bullish — Novas máximas do ciclo).
+- **Dólar Index (DX1! / DXY):** 98,77 (Range: 98,33–99,49 Bearish — Mínimas de 3 meses).
 
-**3. Ativos de Proteção & Câmbio:**
-- **Ouro Spot:** US$ 4.480 (Range: 4.301–4.502 Bullish).
-- **Cobre Spot:** US$ 6,68 (Range: 6,55–6,85 — Máximas Históricas).
-- **Dólar Index (DXY):** 98,77 (Range: 98,33–99,49 Bearish).
+**3. Ativos Reais & Commodities da Lista:**
+- **Ouro Spot (GOLD):** US$ 4.480 (Range: 4.301–4.502 Bullish).
+- **Cobre Spot (COPPER):** US$ 6,68 (Range: 6,55–6,85 — Máximas Históricas).
+- **Minério de Ferro SGX (FEF1!):** US$ 104,50/t (Neutral/Bullish).
 
-Você pode adicionar novos indicadores customizados na aba **"Dados Macro"**!`;
+Você pode explorar todos os 50+ ativos divididos por pilares na aba **"Dados Macro"**!`;
   }
 
   // Resposta padrão inteligente
@@ -3870,7 +3916,7 @@ Com base no **EARLY LOOK de 10/09/2026** e no seu portfólio atual:
   2. **Vender nos Repiques:** Semicondutores cíclicos (INTC/AXTI), Telecom (NOK) e Crypto (COIN).
   3. **Manter Shorts:** Treasuries longos (TLT), Crédito corporativo (LQD) e Utilities (XLU).
 
-Gostaria que eu detalhasse alguma posição específica da sua carteira ou fizesse uma simulação de ordens?`;
+Você pode me perguntar sobre qualquer ativo específico da sua carteira ou da sua **Watchlist do TradingView** (ex: *MOVE, TLT, Cobre, Vale, Petróleo, EMXC*)!`;
 }
 
 // ========================================================
@@ -3989,110 +4035,230 @@ const defaultMacroIndicatorsList = [
   }
 ];
 
-function getMacroIndicators() {
-  try {
-    const stored = localStorage.getItem("hedgeye_macro_indicators_v1");
-    if (stored) {
-      return JSON.parse(stored);
-    }
-  } catch (e) {}
-  return defaultMacroIndicatorsList;
+// ========================================================
+// 15.1 WATCHLIST MACRO DO TRADINGVIEW (OFICIAL)
+// ========================================================
+const tradingviewWatchlistData = [
+  // 1. ÍNDICES, VOLATILIDADE & SENTIMENTO
+  { symbol: "ES1!", name: "S&P 500 E-mini Futures", category: "indices", categoryName: "📊 Índices & Sentimento", current: "5.890,25", signal: "🟢 BULLISH TREND", quadBias: "QUAD 1 / QUAD 2", roleInQuad: "Termômetro primário de liquidez e apetite a risco no equity global." },
+  { symbol: "NQ1!", name: "Nasdaq 100 E-mini Futures", category: "indices", categoryName: "📊 Índices & Sentimento", current: "20.450,00", signal: "🟢 BULLISH TREND", quadBias: "QUAD 1 / QUAD 2", roleInQuad: "Mega Caps de tecnologia e IA; sensível a compressão de múltiplos em Quad 3." },
+  { symbol: "SPX", name: "S&P 500 Index", category: "indices", categoryName: "📊 Índices & Sentimento", current: "5.864,12", signal: "🟢 BULLISH TREND", quadBias: "QUAD 1 / QUAD 2", roleInQuad: "Benchmark geral acionário norte-americano." },
+  { symbol: "QQQ", name: "Invesco QQQ Trust", category: "indices", categoryName: "📊 Índices & Sentimento", current: "$492,50", signal: "🟢 BULLISH TREND", quadBias: "QUAD 1 / QUAD 2", roleInQuad: "Veículo de liquidez para alocação passiva em tecnologia." },
+  { symbol: "DJI", name: "Dow Jones Industrial Average", category: "indices", categoryName: "📊 Índices & Sentimento", current: "43.120,00", signal: "🟢 BULLISH TREND", quadBias: "QUAD 2 / QUAD 3", roleInQuad: "Composto por empresas industriais, financeiras e da economia real." },
+  { symbol: "RUT", name: "Russell 2000 Index", category: "indices", categoryName: "📊 Índices & Sentimento", current: "2.240,50", signal: "🔴 BEARISH TREND", quadBias: "SHORT QUAD 3", roleInQuad: "Small Caps endividadas a taxas flutuantes; sofre em ambiente de juros altos." },
+  { symbol: "SPMO", name: "Invesco S&P 500 Momentum ETF", category: "indices", categoryName: "📊 Índices & Sentimento", current: "$92,40", signal: "🟢 BULLISH TREND", quadBias: "QUAD 1 / QUAD 2", roleInQuad: "Concentra os papéis com maior força relativa recente do mercado." },
+  { symbol: "DX1!", name: "US Dollar Index Futures (DXY)", category: "indices", categoryName: "📊 Índices & Sentimento", current: "98,77", signal: "🔴 BEARISH TREND", quadBias: "QUAD 3 (#Accelerating)", roleInQuad: "Dólar em colapso alimenta inflação importada e impulsiona commodities físicas." },
+  { symbol: "RX1!", name: "Euro-Bund Futures", category: "indices", categoryName: "📊 Índices & Sentimento", current: "131,20", signal: "🔴 BEARISH TREND", quadBias: "SHORT QUAD 3", roleInQuad: "Títulos da dívida soberana alemã; reflete aperto e desvalorização na Europa." },
+  { symbol: "VIX", name: "CBOE Volatility Index", category: "indices", categoryName: "📊 Índices & Sentimento", current: "14,60", signal: "🔴 BEARISH TREND", quadBias: "COMPLACÊNCIA", roleInQuad: "Volatilidade comprimida no equity sustenta o rali até que ocorra reversão abrupta." },
+  { symbol: "MOVE", name: "ICE BofA MOVE Index", category: "indices", categoryName: "📊 Índices & Sentimento", current: "98,50", signal: "🟢 BULLISH TREND", quadBias: "ALERTA QUAD 3", roleInQuad: "Volatilidade implícita da renda fixa americana; termômetro de liquidez soberana." },
+  { symbol: "CPC", name: "CBOE Total Put/Call Ratio", category: "indices", categoryName: "📊 Índices & Sentimento", current: "0,85", signal: "🟡 NEUTRAL", quadBias: "SENTIMENTO", roleInQuad: "Relação total de opções de venda vs compra em todo o mercado norte-americano." },
+  { symbol: "CPCI", name: "CBOE Equity Put/Call Ratio", category: "indices", categoryName: "📊 Índices & Sentimento", current: "0,58", signal: "🟢 GANÂNCIA / BULL", quadBias: "SENTIMENTO", roleInQuad: "Put/Call exclusivo de ações; leituras baixas indicam complacência do investidor." },
+  { symbol: "BTCUSD", name: "Bitcoin / US Dollar", category: "indices", categoryName: "📊 Índices & Sentimento", current: "$91.400", signal: "🟢 BULLISH TREND", quadBias: "QUAD 2 / LIQUIDEZ", roleInQuad: "Ativo de liquidez digital de alta sensibilidade à expansão da massa monetária M2." },
+  { symbol: "ETHUSD", name: "Ethereum / US Dollar", category: "indices", categoryName: "📊 Índices & Sentimento", current: "$2.750", signal: "🟡 NEUTRAL / BULL", quadBias: "QUAD 2 / LIQUIDEZ", roleInQuad: "Infraestrutura de contratos inteligentes e ecossistema DeFi." },
+  { symbol: "SOLUSDC", name: "Solana / USD Coin", category: "indices", categoryName: "📊 Índices & Sentimento", current: "$185,00", signal: "🟢 BULLISH TREND", quadBias: "QUAD 2 / ALTA VELOC.", roleInQuad: "Blockchain de alta vazão transacional com forte volume on-chain." },
+
+  // 2. BONDS & CURVAS DE JUROS
+  { symbol: "TLT", name: "iShares 20+ Year Treasury Bond ETF", category: "bonds", categoryName: "🏛️ Bonds & Juros", current: "$87,20", signal: "🔴 BEARISH TREND", quadBias: "SHORT ESTRUTURAL", roleInQuad: "Títulos longos sofrem severamente em Quad 3 devido a taxas longas crescentes." },
+  { symbol: "TMF", name: "Direxion Daily 20+Y Treasury Bull 3X", category: "bonds", categoryName: "🏛️ Bonds & Juros", current: "$42,10", signal: "🔴 BEARISH TREND", quadBias: "EVITAR / SHORT", roleInQuad: "ETF alavancado 3x; sofre forte decaimento em regime de juros em alta." },
+  { symbol: "TIP", name: "iShares TIPS Bond ETF (Inflação)", category: "bonds", categoryName: "🏛️ Bonds & Juros", current: "$107,50", signal: "🟢 BULLISH TREND", quadBias: "QUAD 3 (Proteção)", roleInQuad: "Treasuries protegidos contra inflação real (TIPS); preserva poder de compra." },
+  { symbol: "US02", name: "US Treasury 2 Year Yield", category: "bonds", categoryName: "🏛️ Bonds & Juros", current: "4,44%", signal: "🟢 BULLISH TREND", quadBias: "HIGHER FOR LONGER", roleInQuad: "Reflete a taxa de curto prazo esperada e a política monetária do Fed." },
+  { symbol: "US05", name: "US Treasury 5 Year Yield", category: "bonds", categoryName: "🏛️ Bonds & Juros", current: "4,58%", signal: "🟢 BULLISH TREND", quadBias: "QUAD 3 / QUAD 2", roleInQuad: "Ponto intermediário da curva soberana norte-americana." },
+  { symbol: "US10", name: "US Treasury 10 Year Yield", category: "bonds", categoryName: "🏛️ Bonds & Juros", current: "4,78%", signal: "🟢 BULLISH TREND", quadBias: "MÁXIMAS DE CICLO", roleInQuad: "Benchmark global de custo de capital; rompe máximas inflacionárias em Quad 3." },
+  { symbol: "US20", name: "US Treasury 20 Year Yield", category: "bonds", categoryName: "🏛️ Bonds & Juros", current: "4,95%", signal: "🟢 BULLISH TREND", quadBias: "PRÊMIO DE RISCO", roleInQuad: "Ponta ultra-longa dos EUA; pressionada pelo déficit fiscal trilionário." },
+  { symbol: "EU05", name: "Eurozone 5 Year Government Bond", category: "bonds", categoryName: "🏛️ Bonds & Juros", current: "2,38%", signal: "🟢 BULLISH TREND", quadBias: "APERTO MONETÁRIO", roleInQuad: "Juro intermediário soberano da Zona do Euro." },
+  { symbol: "EU10", name: "Eurozone 10 Year Government Bond", category: "bonds", categoryName: "🏛️ Bonds & Juros", current: "2,62%", signal: "🟢 BULLISH TREND", quadBias: "PRESSÃO DE CUSTO", roleInQuad: "Benchmark europeu de taxas soberanas a 10 anos." },
+  { symbol: "EU20", name: "Eurozone 20 Year Government Bond", category: "bonds", categoryName: "🏛️ Bonds & Juros", current: "2,85%", signal: "🟢 BULLISH TREND", quadBias: "CURVA LONGA EU", roleInQuad: "Ponta longa europeia; aumento contínuo no custo de rolagem da dívida pública." },
+
+  // 3. COMMODITIES & METAIS
+  { symbol: "GOLD", name: "Ouro Spot Oz", category: "commodities", categoryName: "🛢️ Commodities & Metais", current: "US$ 4.480", signal: "🟢 BULLISH TREND", quadBias: "QUAD 3 (LÍDER ABSOLUTO)", roleInQuad: "Melhor ativo histórico em regimes de estagflação e desvalorização cambial do USD." },
+  { symbol: "SLV", name: "iShares Silver Trust (Prata)", category: "commodities", categoryName: "🛢️ Commodities & Metais", current: "$65,50", signal: "🟢 BULLISH TREND", quadBias: "QUAD 3 / QUAD 2", roleInQuad: "Duplo motor: reserva de valor monetário e insumo industrial em painéis solares/IA." },
+  { symbol: "COPPER", name: "Cobre Spot HG Continuous", category: "commodities", categoryName: "🛢️ Commodities & Metais", current: "US$ 6,68", signal: "🟢 BULLISH TREND", quadBias: "ALL-TIME HIGHS (ATH)", roleInQuad: "Doutor Cobre em máximas históricas; reflete gargalos estruturais de eletrificação." },
+  { symbol: "WTI1!", name: "Petróleo WTI Futuro", category: "commodities", categoryName: "🛢️ Commodities & Metais", current: "US$ 91,20", signal: "🟢 BULLISH TREND", quadBias: "QUAD 3 (#ACCELERATING)", roleInQuad: "Choque de energia primária com repasse direto para os índices de preços ao consumidor." },
+  { symbol: "POILBREUSDM", name: "Petróleo Brent Global", category: "commodities", categoryName: "🛢️ Commodities & Metais", current: "US$ 94,80", signal: "🟢 BULLISH TREND", quadBias: "QUAD 3 (ENERGIA)", roleInQuad: "Referência de óleo bruto marítimo e precificação internacional de combustíveis." },
+  { symbol: "PALUMUSDM", name: "Alumínio Global LME", category: "commodities", categoryName: "🛢️ Commodities & Metais", current: "US$ 2.640/t", signal: "🟢 BULLISH TREND", quadBias: "METAIS INDUSTRIAIS", roleInQuad: "Metal chave para transição energética, infraestrutura de transmissão e transporte." },
+  { symbol: "DBA", name: "Invesco DB Agriculture Fund", category: "commodities", categoryName: "🛢️ Commodities & Metais", current: "$26,80", signal: "🟢 BULLISH TREND", quadBias: "AGRO / INFLAÇÃO", roleInQuad: "Cesta de grãos e soft commodities; proteção contra inflação de alimentos." },
+  { symbol: "DBB", name: "Invesco DB Base Metals Fund", category: "commodities", categoryName: "🛢️ Commodities & Metais", current: "$21,40", signal: "🟢 BULLISH TREND", quadBias: "METAIS BÁSICOS", roleInQuad: "Cesta diversificada de Cobre, Alumínio e Zinco para ciclo de capex." },
+  { symbol: "FEF1!", name: "Minério de Ferro 62% SGX Futures", category: "commodities", categoryName: "🛢️ Commodities & Metais", current: "US$ 104,50/t", signal: "🟡 NEUTRAL / BULL", quadBias: "SIDERRURGIA & VALE", roleInQuad: "Insumo essencial para a produção de aço; direcionador dos lucros da Vale (VALE3)." },
+  { symbol: "BGI1!", name: "Boi Gordo Futuro B3", category: "commodities", categoryName: "🛢️ Commodities & Metais", current: "R$ 318,50/@", signal: "🟢 BULLISH TREND", quadBias: "AGRO BRASIL", roleInQuad: "Ciclo pecuário brasileiro impulsionado por exportações recordes de proteína animal." },
+
+  // 4. BOLSAS GLOBAIS & MERCADOS INTERNACIONAIS
+  { symbol: "URTH", name: "iShares MSCI World ETF", category: "global", categoryName: "🌍 Bolsas Globais", current: "$168,20", signal: "🟢 BULLISH TREND", quadBias: "MERCADOS DESENV.", roleInQuad: "Exposição ampla aos maiores mercados acionários desenvolvidos do globo." },
+  { symbol: "EMXC", name: "iShares MSCI Emerging ex-China", category: "global", categoryName: "🌍 Bolsas Globais", current: "$64,10", signal: "🟢 BULLISH TREND", quadBias: "EMERGENTES SEM CHINA", roleInQuad: "Captura crescimento emergente (Índia, Taiwan, Brasil) sem o risco regulatório chinês." },
+  { symbol: "SX5E", name: "Euro Stoxx 50 Index", category: "global", categoryName: "🌍 Bolsas Globais", current: "4.980 pts", signal: "🟢 BULLISH TREND", quadBias: "EUROPA EQUITY", roleInQuad: "Principais 50 blue chips corporativas da Zona do Euro." },
+  { symbol: "EWG", name: "iShares MSCI Germany ETF", category: "global", categoryName: "🌍 Bolsas Globais", current: "$34,50", signal: "🟡 NEUTRAL / BEAR", quadBias: "ALEMANHA", roleInQuad: "Indústria alemã sob pressão de custos energéticos e desaceleração manufatureira." },
+  { symbol: "EWQ", name: "iShares MSCI France ETF", category: "global", categoryName: "🌍 Bolsas Globais", current: "$39,80", signal: "🟡 NEUTRAL", quadBias: "FRANÇA", roleInQuad: "Exposição ao setor de luxo (LVMH, Hermès), aeroespacial e bancos franceses." },
+  { symbol: "EWA", name: "iShares MSCI Australia ETF", category: "global", categoryName: "🌍 Bolsas Globais", current: "$26,20", signal: "🟢 BULLISH TREND", quadBias: "COMMODITIES / RECURSOS", roleInQuad: "Economia rica em mineração e gás; excelente proxy para superciclo de real assets." },
+  { symbol: "EWC", name: "iShares MSCI Canada ETF", category: "global", categoryName: "🌍 Bolsas Globais", current: "$41,30", signal: "🟢 BULLISH TREND", quadBias: "CANADÁ / ÓLEO & MINÉRIOS", roleInQuad: "Forte correlação com a alta de petróleo WTI e metais industriais." },
+  { symbol: "EWJ", name: "iShares MSCI Japan ETF", category: "global", categoryName: "🌍 Bolsas Globais", current: "$72,40", signal: "🟢 BULLISH TREND", quadBias: "JAPÃO REINFLAÇÃO", roleInQuad: "Reforma de governança no Japão e apreciação do Iene frente ao Dólar fraco." },
+  { symbol: "NIKKEI", name: "Nikkei 225 Index Japão", category: "global", categoryName: "🌍 Bolsas Globais", current: "38.600 pts", signal: "🟢 BULLISH TREND", quadBias: "TÓQUIO EQUITY", roleInQuad: "Exportadoras japonesas e conglomerados industriais." },
+  { symbol: "HSI", name: "Hang Seng Index Hong Kong", category: "global", categoryName: "🌍 Bolsas Globais", current: "19.850 pts", signal: "🔴 BEARISH TREND", quadBias: "CHINA RISK", roleInQuad: "Ações de Hong Kong e gigantes de tecnologia chinesas cotadas internacionalmente." },
+  { symbol: "MCHI", name: "iShares MSCI China ETF", category: "global", categoryName: "🌍 Bolsas Globais", current: "$46,80", signal: "🔴 BEARISH TREND", quadBias: "SUBPONDERAR / EVITAR", roleInQuad: "Deflação interna na China e fragilidade do setor imobiliário pesam no valuation." },
+  { symbol: "EWW", name: "iShares MSCI Mexico ETF", category: "global", categoryName: "🌍 Bolsas Globais", current: "$58,20", signal: "🟡 NEUTRAL / BEAR", quadBias: "MÉXICO NEARSHORING", roleInQuad: "Vulnerabilidade à volatilidade do Peso Mexicano e tarifas comerciais." },
+  { symbol: "EZA", name: "iShares MSCI South Africa ETF", category: "global", categoryName: "🌍 Bolsas Globais", current: "$47,50", signal: "🟢 BULLISH TREND", quadBias: "METAIS PRECIOSOS", roleInQuad: "Líder em extração de platina, ouro e minerais estratégicos em moeda forte." },
+  { symbol: "EIS", name: "iShares MSCI Israel ETF", category: "global", categoryName: "🌍 Bolsas Globais", current: "$68,90", signal: "🟢 BULLISH TREND", quadBias: "TECH & DEFESA", roleInQuad: "Polo global de cibersegurança, semicondutores e tecnologia militar." },
+  { symbol: "EWZ", name: "iShares MSCI Brazil ETF (USD)", category: "global", categoryName: "🌍 Bolsas Globais", current: "$28,40", signal: "🟢 BULLISH TREND", quadBias: "BRASIL EM DÓLAR", roleInQuad: "Atraído pelo carry trade de juros reais e valorização de commodities de exportação." },
+
+  // 5. BRASIL & MERCADO LOCAL B3
+  { symbol: "IBOV", name: "Índice Bovespa (B3)", category: "brazil", categoryName: "🇧🇷 Brasil & B3", current: "134.500 pts", signal: "🟢 BULLISH TREND", quadBias: "COMMODITIES & BANCOS", roleInQuad: "Composição pesada em Vale, Petrobras e grandes bancos favorecidos por spreads." },
+  { symbol: "WIN1!", name: "Mini Índice Futuro B3", category: "brazil", categoryName: "🇧🇷 Brasil & B3", current: "135.200 pts", signal: "🟢 BULLISH TREND", quadBias: "FUTUROS B3", roleInQuad: "Instrumento derivativo para posicionamento ágil e proteção de carteira em ações locais." },
+  { symbol: "WDO1!", name: "Mini Dólar Futuro B3", category: "brazil", categoryName: "🇧🇷 Brasil & B3", current: "R$ 5,48", signal: "🔴 BEARISH TREND", quadBias: "DESVALORIZAÇÃO DO USD", roleInQuad: "DXY fraco e diferencial Selic vs Fed Funds sustentam o Real no curto prazo." },
+  { symbol: "VALE3", name: "Vale S.A. ON", category: "brazil", categoryName: "🇧🇷 Brasil & B3", current: "R$ 61,80", signal: "🟡 NEUTRAL / BULL", quadBias: "DIVIDENDOS & MINÉRIO", roleInQuad: "Geração massiva de fluxo de caixa livre e pagamento de proventos elevados." },
+  { symbol: "PETR4", name: "Petrobras PN", category: "brazil", categoryName: "🇧🇷 Brasil & B3", current: "R$ 38,90", signal: "🟢 BULLISH TREND", quadBias: "ENERGIA & PRÉ-SAL", roleInQuad: "Custo de extração de pré-sal competitivo (< US$ 35/barril) e dividendo robusto." },
+  { symbol: "ITUB4", name: "Itaú Unibanco PN", category: "brazil", categoryName: "🇧🇷 Brasil & B3", current: "R$ 36,40", signal: "🟢 BULLISH TREND", quadBias: "ROE ELEVADO", roleInQuad: "ROE superior a 21% com carteira de crédito defensiva e margem financeira em expansão." },
+  { symbol: "SMAL", name: "iShares Small Cap B3 ETF", category: "brazil", categoryName: "🇧🇷 Brasil & B3", current: "R$ 98,50", signal: "🔴 BEARISH TREND", quadBias: "SENSIBILIDADE A JUROS", roleInQuad: "Empresas com maior endividamento atrelado ao CDI sofrem com Selic alta." },
+  { symbol: "BR02Y", name: "Curva DI Futuro Brasil 2 Anos", category: "brazil", categoryName: "🇧🇷 Brasil & B3", current: "12,85%", signal: "🟢 BULLISH TREND", quadBias: "JURO CURTO BR", roleInQuad: "Precifica o ciclo de juros do Copom e taxa Selic terminal." },
+  { symbol: "BR05Y", name: "Curva DI Futuro Brasil 5 Anos", category: "brazil", categoryName: "🇧🇷 Brasil & B3", current: "13,20%", signal: "🟢 BULLISH TREND", quadBias: "JURO INTERMEDIÁRIO", roleInQuad: "Reflete a taxa de desconto para valuation de empresas domésticas brasileiras." },
+  { symbol: "BR10Y", name: "Curva DI Futuro Brasil 10 Anos", category: "brazil", categoryName: "🇧🇷 Brasil & B3", current: "13,45%", signal: "🟢 BULLISH TREND", quadBias: "RISCO FISCAL BR", roleInQuad: "Exige taxa de retorno real elevada para títulos NTN-B / Tesouro IPCA+ longo." }
+];
+
+let activeTradingViewCategory = "all";
+
+function filterTradingViewWatchlist(cat, btnElem) {
+  activeTradingViewCategory = cat;
+  
+  // Atualiza botões ativos
+  const buttons = document.querySelectorAll(".tv-filter-btn");
+  buttons.forEach(b => {
+    b.classList.remove("active");
+    b.classList.remove("btn-primary");
+    b.classList.add("btn-outline");
+  });
+
+  if (btnElem) {
+    btnElem.classList.add("active");
+    btnElem.classList.remove("btn-outline");
+    btnElem.classList.add("btn-primary");
+  }
+
+  renderTradingViewWatchlistTable();
 }
 
-function setMacroIndicators(list) {
-  try {
-    localStorage.setItem("hedgeye_macro_indicators_v1", JSON.stringify(list));
-  } catch (e) {}
-}
-
-function renderMacroIndicatorsTable() {
-  const tbody = document.getElementById("macroIndicatorsTableBody");
+function renderTradingViewWatchlistTable() {
+  const tbody = document.getElementById("tradingviewWatchlistBody");
   if (!tbody) return;
 
-  const list = getMacroIndicators();
-  const countElem = document.getElementById("totalMacroCount");
-  if (countElem) countElem.innerText = `${list.length} Séries`;
+  // Atualiza contadores
+  const countAll = document.getElementById("tvCountAll");
+  const countIndices = document.getElementById("tvCountIndices");
+  const countBonds = document.getElementById("tvCountBonds");
+  const countCommodities = document.getElementById("tvCountCommodities");
+  const countGlobal = document.getElementById("tvCountGlobal");
+  const countBrazil = document.getElementById("tvCountBrazil");
 
-  tbody.innerHTML = list.map((m, index) => {
-    const isAccelerating = m.trend.includes("▲") || m.trend.includes("Bullish");
-    const trendColor = isAccelerating ? "#10B981" : (m.trend.includes("▼") ? "#EF4444" : "#94A3B8");
-    const isCustom = m.isCustom ? `<button class="btn btn-outline" style="padding: 0.15rem 0.4rem; font-size: 0.68rem; color: #EF4444;" onclick="deleteMacroIndicator(${index})">✕ Excluir</button>` : '';
+  if (countAll) countAll.innerText = tradingviewWatchlistData.length;
+  if (countIndices) countIndices.innerText = tradingviewWatchlistData.filter(i => i.category === "indices").length;
+  if (countBonds) countBonds.innerText = tradingviewWatchlistData.filter(i => i.category === "bonds").length;
+  if (countCommodities) countCommodities.innerText = tradingviewWatchlistData.filter(i => i.category === "commodities").length;
+  if (countGlobal) countGlobal.innerText = tradingviewWatchlistData.filter(i => i.category === "global").length;
+  if (countBrazil) countBrazil.innerText = tradingviewWatchlistData.filter(i => i.category === "brazil").length;
+
+  const filtered = activeTradingViewCategory === "all" 
+    ? tradingviewWatchlistData 
+    : tradingviewWatchlistData.filter(i => i.category === activeTradingViewCategory);
+
+  tbody.innerHTML = filtered.map(item => {
+    const isBull = item.signal.includes("BULLISH") || item.signal.includes("GANÂNCIA");
+    const isBear = item.signal.includes("BEARISH") || item.signal.includes("EVITAR") || item.signal.includes("SHORT");
+    const signalClass = isBull ? "badge-bullish" : (isBear ? "badge-bearish" : "badge-neutral");
 
     return `
       <tr>
-        <td><strong style="color: #F8FAFC; font-size: 0.9rem;">${m.name}</strong></td>
-        <td><span class="tag tag-outline" style="font-size: 0.72rem;">${m.category}</span></td>
-        <td><strong style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; color: #38BDF8;">${m.currentVal}</strong></td>
-        <td><span style="font-family: 'JetBrains Mono', monospace; color: #94A3B8; font-size: 0.82rem;">${m.prevVal}</span></td>
-        <td><strong style="color: ${trendColor}; font-size: 0.82rem;">${m.trend}</strong></td>
-        <td><span style="font-size: 0.75rem; color: #94A3B8;">${m.freq}</span></td>
-        <td><span class="badge ${m.quadBias.includes('QUAD 3') ? 'badge-bullish' : 'badge-neutral'}" style="font-size: 0.72rem;">${m.quadBias}</span></td>
-        <td style="font-size: 0.8rem; color: #CBD5E1;">${m.impact}</td>
-        <td>${isCustom}</td>
+        <td>
+          <strong style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; color: #38BDF8;">
+            ${item.symbol}
+          </strong>
+        </td>
+        <td>
+          <strong style="color: #F8FAFC; font-size: 0.88rem;">${item.name}</strong>
+        </td>
+        <td>
+          <span class="tag tag-outline" style="font-size: 0.72rem;">${item.categoryName}</span>
+        </td>
+        <td>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.92rem; color: #F1F5F9; font-weight: 600;">
+            ${item.current}
+          </span>
+        </td>
+        <td>
+          <span class="badge ${signalClass}" style="font-size: 0.72rem;">
+            ${item.signal}
+          </span>
+        </td>
+        <td style="font-size: 0.8rem; color: #CBD5E1; max-width: 320px;">
+          ${item.roleInQuad}
+        </td>
+        <td>
+          <button class="btn btn-outline" style="padding: 0.2rem 0.5rem; font-size: 0.72rem; color: #38BDF8;" onclick="askCopilotAboutSymbol('${item.symbol}')">
+            ⚡ Perguntar AI
+          </button>
+        </td>
       </tr>
     `;
   }).join("");
 }
 
-function openNewMacroIndicatorModal() {
-  const modal = document.getElementById("newMacroIndicatorModal");
-  if (modal) {
-    modal.classList.add("active");
+function askCopilotAboutSymbol(symbol) {
+  setTab('copilot');
+  const input = document.getElementById("chatUserInput");
+  if (input) {
+    input.value = `Qual é o diagnóstico e o papel de ${symbol} no regime atual de Quad 3?`;
+    handleChatSubmit(new Event('submit'));
   }
 }
 
-function closeNewMacroIndicatorModal() {
-  const modal = document.getElementById("newMacroIndicatorModal");
-  if (modal) {
-    modal.classList.remove("active");
-  }
-}
+async function fetchLiveMarketQuotes() {
+  try {
+    const res = await fetch("/api/live-quotes");
+    if (!res.ok) return;
+    const quotes = await res.json();
 
-function saveNewMacroIndicator(event) {
-  event.preventDefault();
-  const name = document.getElementById("macroName")?.value?.trim();
-  const category = document.getElementById("macroCategory")?.value;
-  const currentVal = document.getElementById("macroCurrentVal")?.value?.trim();
-  const prevVal = document.getElementById("macroPrevVal")?.value?.trim();
-  const trend = document.getElementById("macroTrend")?.value;
-  const freq = document.getElementById("macroFreq")?.value?.trim() || "Mensal";
-  const quadBias = document.getElementById("macroQuadBias")?.value;
-  const impact = document.getElementById("macroImpact")?.value?.trim();
+    if (!quotes || typeof quotes !== "object") return;
 
-  if (!name || !currentVal || !impact) {
-    showToast("Por favor preencha os campos obrigatórios.");
-    return;
-  }
+    // 1. Atualiza dados na Watchlist do TradingView
+    tradingviewWatchlistData.forEach(item => {
+      const q = quotes[item.symbol];
+      if (q && q.price && q.price > 0) {
+        const sign = q.change_pct >= 0 ? "+" : "";
+        const formattedPct = `${sign}${q.change_pct.toFixed(2)}%`;
+        const formattedPrice = item.category === "bonds" && item.symbol.startsWith("US") 
+          ? `${q.price.toFixed(2)}%` 
+          : (q.price >= 1000 ? q.price.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : q.price.toFixed(2));
+        
+        item.current = `${formattedPrice} (${formattedPct})`;
+        item.livePrice = q.price;
+        item.changePct = q.change_pct;
+      }
+    });
 
-  const newEntry = {
-    name: name,
-    category: category,
-    currentVal: currentVal,
-    prevVal: prevVal || "-",
-    trend: trend,
-    freq: freq,
-    quadBias: quadBias,
-    impact: impact,
-    isCustom: true
-  };
+    // 2. Atualiza os cards métricos de topo do Painel Executivo se os elementos existirem
+    const goldQ = quotes["GOLD"];
+    if (goldQ && goldQ.price > 0) {
+      const elem = document.getElementById("val-gold");
+      if (elem) elem.innerHTML = `${goldQ.price.toLocaleString('pt-BR', {minimumFractionDigits: 2})} <span class="badge ${goldQ.change_pct >= 0 ? 'badge-bullish' : 'badge-bearish'}">${goldQ.change_pct >= 0 ? '+' : ''}${goldQ.change_pct.toFixed(2)}% Live</span>`;
+    }
 
-  const list = getMacroIndicators();
-  list.unshift(newEntry);
-  setMacroIndicators(list);
-  renderMacroIndicatorsTable();
-  closeNewMacroIndicatorModal();
+    const dxyQ = quotes["DX1!"] || quotes["DXY"];
+    if (dxyQ && dxyQ.price > 0) {
+      const elem = document.getElementById("val-dxy");
+      if (elem) elem.innerHTML = `${dxyQ.price.toFixed(2)} <span class="badge ${dxyQ.change_pct <= 0 ? 'badge-bearish' : 'badge-bullish'}">${dxyQ.change_pct >= 0 ? '+' : ''}${dxyQ.change_pct.toFixed(2)}% Live</span>`;
+    }
 
-  document.getElementById("newMacroIndicatorForm")?.reset();
-  showToast(`✅ Novo indicador "${name}" cadastrado com sucesso!`);
-}
+    const wtiQ = quotes["WTI1!"] || quotes["WTIC"];
+    if (wtiQ && wtiQ.price > 0) {
+      const elem = document.getElementById("val-wti");
+      if (elem) elem.innerHTML = `${wtiQ.price.toFixed(2)} <span class="badge ${wtiQ.change_pct >= 0 ? 'badge-bullish' : 'badge-bearish'}">${wtiQ.change_pct >= 0 ? '+' : ''}${wtiQ.change_pct.toFixed(2)}% Live</span>`;
+    }
 
-function deleteMacroIndicator(index) {
-  const list = getMacroIndicators();
-  if (index >= 0 && index < list.length) {
-    list.splice(index, 1);
-    setMacroIndicators(list);
-    renderMacroIndicatorsTable();
-    showToast("Indicador macroeconômico removido.");
+    const us10Q = quotes["US10"];
+    if (us10Q && us10Q.price > 0) {
+      const elem = document.getElementById("val-ust10");
+      if (elem) elem.innerHTML = `${us10Q.price.toFixed(2)}% <span class="badge ${us10Q.change_pct >= 0 ? 'badge-bullish' : 'badge-bearish'}">${us10Q.change_pct >= 0 ? '+' : ''}${us10Q.change_pct.toFixed(2)}% Live</span>`;
+    }
+
+    // 3. Re-renderiza a tabela com os preços em tempo real
+    renderTradingViewWatchlistTable();
+  } catch (e) {
+    console.warn("Falha ao atualizar cotações ao vivo:", e);
   }
 }
 
@@ -4115,10 +4281,15 @@ function initApp() {
   renderRebalanceModalTables();
   renderChatMessages();
   renderMacroIndicatorsTable();
+  renderTradingViewWatchlistTable();
   loadReportsDatabase().then(() => {
     populateTranslatedReportsDropdown();
   });
   fetchMarketAnalyticsData();
+  
+  // Inicia cotações em tempo real e agenda polling a cada 30s
+  fetchLiveMarketQuotes();
+  setInterval(fetchLiveMarketQuotes, 30000);
 }
 
 if (document.readyState === "loading") {

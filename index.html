@@ -1622,8 +1622,8 @@
           </div>
         </div>
 
-        <!-- Tabela de Dados Macroeconômicos -->
-        <div class="table-responsive">
+        <!-- Tabela de Dados Macroeconômicos Customizados -->
+        <div class="table-responsive mb-4">
           <table class="data-table" style="font-size: 0.84rem;">
             <thead>
               <tr>
@@ -1639,6 +1639,71 @@
               </tr>
             </thead>
             <tbody id="macroIndicatorsTableBody">
+              <!-- Renderizado dinamicamente via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- CARD 2: RADAR DA WATCHLIST TRADINGVIEW (LISTA MACRO OFICIAL) -->
+      <div class="card mb-4" style="border: 1px solid rgba(52, 211, 153, 0.3); background: linear-gradient(180deg, rgba(15, 23, 42, 0.9), rgba(6, 78, 59, 0.15));">
+        <div class="card-header" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 0.8rem; margin-bottom: 1.2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.6rem;">
+            <div style="display: flex; align-items: center; gap: 0.6rem;">
+              <span style="font-size: 1.5rem;">🌐</span>
+              <div>
+                <h3 style="margin: 0; font-size: 1.2rem; color: #34D399;">Radar da Watchlist TradingView (Lista Macro)</h3>
+                <p style="margin: 0.2rem 0 0; font-size: 0.82rem; color: #94A3B8;">
+                  Sincronizado diretamente com a sua lista do TradingView (<a href="https://br.tradingview.com/watchlists/346281773/" target="_blank" style="color: #38BDF8; text-decoration: underline;">Watchlist #346281773</a>). Organizado pelos 5 pilares macroeconômicos.
+                </p>
+              </div>
+            </div>
+            <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
+              <a href="https://br.tradingview.com/watchlists/346281773/" target="_blank" class="btn btn-outline btn-sm" style="color: #34D399; border-color: rgba(52, 211, 153, 0.4);">
+                <span class="icon">↗</span> Abrir no TradingView
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filtros por Categoria dos Ativos do TradingView -->
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; align-items: center;">
+          <span style="font-size: 0.78rem; color: #94A3B8; font-weight: 700; text-transform: uppercase;">Filtrar Pilar:</span>
+          <button class="btn btn-sm btn-primary tv-filter-btn active" onclick="filterTradingViewWatchlist('all', this)">
+            Todos (<span id="tvCountAll">50</span>)
+          </button>
+          <button class="btn btn-sm btn-outline tv-filter-btn" onclick="filterTradingViewWatchlist('indices', this)">
+            📊 Índices & Sentimento (<span id="tvCountIndices">16</span>)
+          </button>
+          <button class="btn btn-sm btn-outline tv-filter-btn" onclick="filterTradingViewWatchlist('bonds', this)">
+            🏛️ Bonds & Juros (<span id="tvCountBonds">10</span>)
+          </button>
+          <button class="btn btn-sm btn-outline tv-filter-btn" onclick="filterTradingViewWatchlist('commodities', this)">
+            🛢️ Commodities & Metais (<span id="tvCountCommodities">10</span>)
+          </button>
+          <button class="btn btn-sm btn-outline tv-filter-btn" onclick="filterTradingViewWatchlist('global', this)">
+            🌍 Bolsas Globais (<span id="tvCountGlobal">15</span>)
+          </button>
+          <button class="btn btn-sm btn-outline tv-filter-btn" onclick="filterTradingViewWatchlist('brazil', this)">
+            🇧🇷 Brasil & B3 (<span id="tvCountBrazil">10</span>)
+          </button>
+        </div>
+
+        <!-- Tabela da Watchlist TradingView -->
+        <div class="table-responsive">
+          <table class="data-table" style="font-size: 0.84rem;">
+            <thead>
+              <tr>
+                <th>Ticker / Símbolo</th>
+                <th>Nome do Ativo / Índice</th>
+                <th>Pilar Macro</th>
+                <th>Leitura / Nível</th>
+                <th>Sinal / Regime</th>
+                <th>Papel no Ciclo Macro (GIP Framework)</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tradingviewWatchlistBody">
               <!-- Renderizado dinamicamente via JS -->
             </tbody>
           </table>
