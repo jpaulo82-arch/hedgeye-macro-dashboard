@@ -94,6 +94,8 @@ async function handleAuthSubmit(event) {
       userEmailSpan.innerText = data.user.email;
     }
 
+    fetchPortfolioDataFromApi();
+
     setTimeout(() => {
       document.getElementById("authOverlayModal").style.display = "none";
       if (submitBtn) {
@@ -140,33 +142,6 @@ async function handleSignOut() {
   }
 }
 
-// 0. CONTROLE GLOBAL DE NAVEGAÇÃO E ABAS
-function setTab(tabName) {
-  const navTabs = document.querySelectorAll(".nav-tab");
-  navTabs.forEach(tab => {
-    if (tab.getAttribute("data-tab") === tabName) {
-      tab.classList.add("active");
-    } else {
-      tab.classList.remove("active");
-    }
-  });
-
-  const tabSections = document.querySelectorAll(".tab-content");
-  tabSections.forEach(section => {
-    if (section.id === `tab-${tabName}`) {
-      section.classList.add("active");
-    } else {
-      section.classList.remove("active");
-    }
-  });
-
-  if (tabName === "macrodata") {
-    renderMacroIndicatorsTable();
-    renderTradingViewWatchlistTable();
-  } else if (tabName === "copilot") {
-    renderChatMessages();
-    setTimeout(() => {
-      const container = document.getElementById("chatMessagesContainer");
 async function authedFetch(url, options = {}) {
   const headers = options.headers ? { ...options.headers } : {};
   if (supabaseClient) {
@@ -197,13 +172,45 @@ async function fetchPortfolioDataFromApi() {
         portfolioData.schwab.cashAvailable = data.cash_total ? data.cash_total * 0.47 : 8000;
         portfolioData.tastyworks.cashAvailable = data.cash_total ? data.cash_total * 0.53 : 9000;
         
-        renderPortfolioTable();
+        renderPortfolioView(activePortfolioKey);
         renderRebalanceModalTables();
         console.log("[+] Carteira sincronizada da fonte canônica com sucesso.");
       }
     }
   } catch (e) {
     console.warn("Falha ao carregar carteira via API:", e);
+  }
+}
+
+// 0. CONTROLE GLOBAL DE NAVEGAÇÃO E ABAS
+function setTab(tabName) {
+  const navTabs = document.querySelectorAll(".nav-tab");
+  navTabs.forEach(tab => {
+    if (tab.getAttribute("data-tab") === tabName) {
+      tab.classList.add("active");
+    } else {
+      tab.classList.remove("active");
+    }
+  });
+
+  const tabSections = document.querySelectorAll(".tab-content");
+  tabSections.forEach(section => {
+    if (section.id === `tab-${tabName}`) {
+      section.classList.add("active");
+    } else {
+      section.classList.remove("active");
+    }
+  });
+
+  if (tabName === "macrodata") {
+    renderMacroIndicatorsTable();
+    renderTradingViewWatchlistTable();
+  } else if (tabName === "copilot") {
+    renderChatMessages();
+    setTimeout(() => {
+      const container = document.getElementById("chatMessagesContainer");
+      if (container) container.scrollTop = container.scrollHeight;
+    }, 100);
   }
 }
 
@@ -4710,8 +4717,13 @@ function initApp() {
   renderRebalanceModalTables();
   renderChatMessages();
   renderMacroIndicatorsTable();
+  
   // 0. Verifica Autenticação Supabase
-  checkAuthSession();
+  checkAuthSession().then(isAuth => {
+    if (isAuth) {
+      fetchPortfolioDataFromApi();
+    }
+  });
 
   renderTradingViewWatchlistTable();
   loadReportsDatabase().then(() => {
