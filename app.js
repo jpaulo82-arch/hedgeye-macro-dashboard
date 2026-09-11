@@ -2660,8 +2660,10 @@ async function loadReportsDatabase() {
 
         // Atualiza todos os elementos visuais do Dashboard com o relatório mais recente
         updateDynamicDashboard(latest);
+        renderEarlyLookTranslatedView(latest);
       }
 
+      populateTranslatedReportsDropdown();
       renderReportsHistoryList(allReportsCache);
     }
   } catch (err) {
@@ -2976,6 +2978,71 @@ let activeTranslatedReportId = "latest";
 
 // Traduções Estruturadas de Alta Fidelidade (Hedgeye Research)
 const structuredTranslations = {
+  "110123": {
+    id: "110123",
+    date: "11/09/2026",
+    displayDate: "Sexta-feira, 11 de Setembro de 2026 (08:05 EDT)",
+    titlePt: 'EARLY LOOK: <span>Antecipando o Problema de Inflação do Fed</span>',
+    regime: "QUAD 3 (#ACCELERATING)",
+    quoteText: 'O pêndulo do mercado está quase sempre oscilando em direção ou afastando-se dos extremos do seu arco.',
+    quoteAuthor: '— Howard Marks',
+    takeaways: [
+      {
+        icon: "📈",
+        title: "1. Nowcast de Inflação Acelerando para 3,5% em Agosto",
+        borderClass: "amber-border",
+        desc: "A Hedgeye projeta aceleração do CPI para <strong>3,5% em agosto</strong>, subindo novamente em setembro e mantendo-se resistente até o final do ano, aumentando a probabilidade de novas altas de juros pelo Fed."
+      },
+      {
+        icon: "📊",
+        title: "2. Rendimentos de 2 Anos em Máximas de Ciclo (UST 2Y & 10Y)",
+        borderClass: "rose-border",
+        desc: "Os mercados já precificam o risco de inflação com o <strong>UST 2Y em máximas de ciclo</strong> em tendência de alta (Bullish TREND), enquanto o <strong>UST 10Y (4,75%–4,98%)</strong> dita pressão contínua."
+      },
+      {
+        icon: "⚡",
+        title: "3. Long Inflação & Commodities vs Short Ações de Crescimento",
+        borderClass: "emerald-border",
+        desc: "Playbook quantitativo: <strong>Long Commodities (Petróleo WTI, Ouro 4.275–4.503, Cobre 6,35–6,84)</strong> e Energia vs <strong>Short Russell 2000 (RUT 2.875–2.970), Bonds (HYG, LQD) e Utilities</strong>."
+      }
+    ],
+    thesisSections: [
+      {
+        icon: "🕊️",
+        title: "1. A Grande Imagem: 25 Anos do 11 de Setembro e a Gravidade dos Fatos (The Big Picture)",
+        paragraphs: [
+          "Vinte e cinco anos se passaram. Quase 3.000 pessoas foram trabalhar em uma terça-feira que parecia idêntica a qualquer outra. Beijaram seus filhos ou nem tiveram essa chance. Assumiram, da forma que precisamos assumir para viver, que teriam a versão comum do dia.",
+          "O mercado também opera sob a ilusão de normalidade linear até que as forças inexoráveis da realidade econômica se impõem. Recordar o custo real das coisas nos ancora no que realmente importa: <strong>respeitar o risco antes que ele se materialize</strong>."
+        ]
+      },
+      {
+        icon: "🎯",
+        title: "2. The Macro Grind: O Fed de Kevin Warsh e a Cegueira de Wall Street",
+        paragraphs: [
+          "Estamos em uma fase fascinante do mercado. O novo presidente do Fed, Kevin Warsh, foi categórico ao afirmar que não dará guidance prévio e que ouvirá os mercados, com uma ressalva vital: <em>'Devemos ter certeza de que a inflação subjacente está convergindo para a nossa meta, de forma clara e com velocidade suficiente. Caso contrário, temos trabalho a fazer.'</em>",
+          "Isso É um guidance explícito. Warsh está avisando que a progressão da inflação ditará as taxas de juros. <strong>O problema central: Wall Street não sabe modelar a inflação.</strong>"
+        ]
+      },
+      {
+        icon: "⚡",
+        title: "3. O Nowcast da Hedgeye: Acelerando Enquanto o Consenso Permanece Cego",
+        paragraphs: [
+          "Nosso modelo preditivo Nowcast aponta a inflação de agosto em aceleração para <strong>3,5%</strong> (enquanto o consenso de Wall Street está em 3,4%). Para setembro, nosso modelo projeta <strong>mais 10 bps de aceleração</strong>, e permanência em patamar elevado no 4T26.",
+          "Como o mercado não tem um nowcast calibrado, ele reage com atraso a cada dado divulgado. Nós antecipamos a política monetária: maior probabilidade de aperto de juros até o final do ano."
+        ],
+        highlight: "💡 A curva curta de juros (UST 2Y) está fazendo novas máximas de ciclo em Bullish TREND — um dos sinais macro mais altistas para rendimentos que existem."
+      },
+      {
+        icon: "🧭",
+        title: "4. Posicionamento Tático & Sinais de Range",
+        paragraphs: [
+          "O que tem funcionado: <strong>Commodities (Petróleo e Agrícolas), Ações de Energia, Posições Longas em Taxas, Exposições Internacionais Seletas</strong>.",
+          "O que tem falhado severamente: <strong>Russell 2000, Growth, Momentum, Industriais, Bonds, Utilities</strong>.",
+          "O pêndulo do mercado oscila entre precificar cortes demais ou altas demais. Por enquanto, <strong>Long Inflação é onde o Alpha reside</strong>."
+        ]
+      }
+    ]
+  },
   "110057": {
     id: "110057",
     date: "10/09/2026",
@@ -3002,6 +3069,24 @@ const structuredTranslations = {
         title: "3. Longs em Real Assets & Shorts Estruturais em TLT/LQD/XLU",
         borderClass: "emerald-border",
         desc: "O playbook quantitativo dita posição comprada em <strong>BUXX, CLOX, Ouro (4.301–4.502), Cobre (6,55–6,85) e Petróleo WTI (teto em 99,91)</strong>, enquanto <strong>TLT, ZROZ, LQD, Utilities e Russell 2000 (RUT Bearish 2.901–2.988)</strong> seguem como maiores shorts."
+      }
+    ],
+    thesisSections: [
+      {
+        icon: "🧭",
+        title: "1. A Grande Imagem: O Teste de Realidade de US$ 1 Trilhão",
+        paragraphs: [
+          "O capital global está sendo forçado a encarar a física dos fluxos monetários. A aposta de US$ 1 trilhão em desinflação rápida colidiu com a resistência dos preços de commodities e custos salariais.",
+          "A liquidez não desaparece: ela rotaciona dos papéis que dependem de juros baratos para ativos que possuem valor intrínseco e capacidade de repassar preços."
+        ]
+      },
+      {
+        icon: "⚡",
+        title: "2. The Macro Grind: A Reaceleração de Inflação em Quad 3",
+        paragraphs: [
+          "Nosso modelo de Nowcast confirmou aceleração seqüencial em agosto e setembro. O 4T26 aponta CPI médio de 3,76% a/a.",
+          "Isso desfaz a premissa de cortes agressivos de juros e força os investidores institucionais a comprar proteção em Real Assets."
+        ]
       }
     ]
   },
@@ -3032,6 +3117,33 @@ const structuredTranslations = {
         borderClass: "emerald-border",
         desc: "Os fluxos globais não sumiram: estão rotacionando. O setor imobiliário americano (Housing ITB) está derretendo (-10,1% no mês), enquanto o capital migra agressivamente para <strong>Commodities Físicas (CRB +11,5%, Cobre em ATHs, Ouro)</strong> e Semicondutores cíclicos."
       }
+    ],
+    thesisSections: [
+      {
+        icon: "🧭",
+        title: "1. A Grande Imagem: A Física Quântica dos Mercados (The Big Picture)",
+        paragraphs: [
+          "David Bohm foi um físico quântico que argumentou que a <strong>realidade é fundamentalmente uma totalidade contínua e ininterrupta</strong> (e não uma coleção de objetos isolados), e que o que percebemos como coisas distintas são apenas padrões temporários abstraídos dessa ordem implicada mais profunda.",
+          "A menos que você seja um crente cego no 'Governo Central' e acredite que os burocratas do Federal Reserve e do Tesouro Americano foram colocados na Terra para dobrar as leis da gravidade econômica e suavizar mercados, você entende uma verdade fundamental: <strong>você não pode manipular uma parte de um sistema sem que o todo reaja</strong>.",
+          "Scott Bessent aparentemente perdeu esse capítulo do livro de Bohm ao declarar: <em>'Eu sou a casa agora'</em> ao falar sobre intervenções no Iene e manipulação de mercado. A 'casa' de Bessent está se incendiando em termos de Dólar Americano, atingindo novas mínimas de 3 meses esta manhã. <strong>A Ordem Implicada não se importa com quem se declarou no comando: ela simplesmente continua fluindo.</strong>"
+        ]
+      },
+      {
+        icon: "🔥",
+        title: "2. Como a Sua 'Casa' Queima em Poder de Compra Real",
+        paragraphs: [
+          "Como lembrete essencial aos investidores, é exatamente assim que o seu patrimônio é corroído em termos de poder de compra real:",
+          "1️⃣ A moeda na qual você é remunerado (USD / Dólar) cai de valor.<br>2️⃣ O preço real dos bens e insumos que você precisa/deseja comprar com essa moeda sobe expressivamente.",
+          "As únicas pessoas que 'não verão' isso são aquelas que tentarão criar narrativas otimistas e distorcidas sobre os números de inflação do CPI. A população real entende perfeitamente: os preços do mundo real não mentem, os políticos sim."
+        ]
+      },
+      {
+        icon: "⚡",
+        title: "3. A Cadeia Causal da Inflação & Juros (Efeito Dominó Macro)",
+        paragraphs: [
+          "<strong>Passo 1:</strong> Iene Sobe (+0,4% para 153,51 Bullish TREND).<br><strong>Passo 2:</strong> Dólar Cai (Mínima de 3 meses $98,77 Bearish).<br><strong>Passo 3:</strong> Inflação Acelera (CRB Commodities em Máxima de Ciclo).<br><strong>Passo 4:</strong> Yields dos Bonds Sobem (UST 10Y em 4,86%).<br><strong>Passo 5:</strong> Fuga para Ativos Reais (Ouro, Cobre em ATHs, Petróleo WTI)."
+        ]
+      }
     ]
   },
   "109930": {
@@ -3060,6 +3172,16 @@ const structuredTranslations = {
         title: "3. Metais & Cobre Rompendo Máximas Históricas",
         borderClass: "amber-border",
         desc: "Cobre em ATHs (6,51–6,75) e Ouro firme (4.274–4.646) confirmam a liderança isolada de Real Assets no regime."
+      }
+    ],
+    thesisSections: [
+      {
+        icon: "🛢️",
+        title: "1. A Dinâmica dos Combustíveis e a Pressão nos Custos",
+        paragraphs: [
+          "O Petróleo WTI rompeu resistências importantes e elevou sua faixa de negociação para até US$ 96,62. O choque energético afeta toda a cadeia de suprimentos e impede qualquer convergência rápida do CPI para a meta do Fed.",
+          "Empresas de serviços de petróleo (OIH) e energia descentralizada ganham poder de precificação imediato."
+        ]
       }
     ]
   },
@@ -3090,9 +3212,78 @@ const structuredTranslations = {
         borderClass: "rose-border",
         desc: "Aperto de taxas longas dita rotação para fora de setores endividados."
       }
+    ],
+    thesisSections: [
+      {
+        icon: "🚀",
+        title: "1. O Ambiente de Reflação e Crescimento Acelerando",
+        paragraphs: [
+          "Em regimes onde o Crescimento e a Inflação aceleram conjuntamente, o posicionamento favorece empresas de tecnologia de software empresarial com alta margem de fluxo de caixa livre.",
+          "Setores de capital intensivo e dependentes de dívida longa sofrem com a elevação da curva de juros."
+        ]
+      }
     ]
   }
 };
+
+function buildThesisHtml(report, struct) {
+  if (struct && struct.thesisSections && struct.thesisSections.length > 0) {
+    return struct.thesisSections.map(sec => `
+      <div class="thesis-section-block">
+        <h4 class="thesis-section-title"><span class="icon">${sec.icon || '📌'}</span> ${sec.title}</h4>
+        ${sec.paragraphs.map(p => `<p class="thesis-paragraph">${p}</p>`).join("")}
+        ${sec.highlight ? `
+          <div style="background: rgba(56, 189, 248, 0.08); border-left: 3px solid #38BDF8; padding: 0.9rem 1.2rem; border-radius: 6px; margin: 0.8rem 0; color: #E0F2FE; font-weight: 500;">
+            ${sec.highlight}
+          </div>
+        ` : ''}
+      </div>
+    `).join("");
+  }
+
+  // Geração adaptativa inteligente para qualquer relatório da base indexada
+  const content = report.content || report.summary || "";
+  if (!content) {
+    return `<div class="thesis-section-block"><p class="thesis-paragraph">Conteúdo da tese em processamento.</p></div>`;
+  }
+
+  // Divide o texto em blocos significativos
+  const lines = content.split("\n").map(l => l.trim()).filter(l => l.length > 0);
+  const sections = [];
+  let currentSection = { title: "1. Síntese Executiva & The Macro Grind", paragraphs: [] };
+
+  lines.forEach(line => {
+    if (line.startsWith("###") || line.startsWith("##") || line.startsWith("#")) {
+      const cleanTitle = line.replace(/^#+\s*/, "");
+      if (currentSection.paragraphs.length > 0) {
+        sections.push(currentSection);
+      }
+      currentSection = { title: cleanTitle, paragraphs: [] };
+    } else if (line.startsWith("Our Levels") || line.startsWith("Key Takeaways") || line.startsWith("The Big Picture") || line.startsWith("Macro Grind")) {
+      if (currentSection.paragraphs.length > 0) {
+        sections.push(currentSection);
+      }
+      currentSection = { title: line, paragraphs: [] };
+    } else if (line.length > 25 && !line.startsWith("http") && !line.includes("©") && !line.includes("redistribution")) {
+      currentSection.paragraphs.push(line);
+    }
+  });
+
+  if (currentSection.paragraphs.length > 0) {
+    sections.push(currentSection);
+  }
+
+  if (sections.length === 0) {
+    return `<div class="thesis-section-block"><p class="thesis-paragraph">${content.substring(0, 800)}...</p></div>`;
+  }
+
+  return sections.slice(0, 5).map((sec, idx) => `
+    <div class="thesis-section-block">
+      <h4 class="thesis-section-title"><span class="icon">📌</span> ${sec.title}</h4>
+      ${sec.paragraphs.slice(0, 4).map(p => `<p class="thesis-paragraph">${p}</p>`).join("")}
+    </div>
+  `).join("");
+}
 
 function populateTranslatedReportsDropdown() {
   const select = document.getElementById("selectTranslatedReport");
@@ -3102,15 +3293,15 @@ function populateTranslatedReportsDropdown() {
   select.innerHTML = "";
 
   if (!allReportsCache || allReportsCache.length === 0) {
-    select.innerHTML = `<option value="latest" selected>09/09/2026 — EARLY LOOK: Burning Down The USD House? (Hoje)</option>`;
+    select.innerHTML = `<option value="110123" selected>11/09/2026 — EARLY LOOK: Front-Running the Fed’s Inflation Problem (Hoje)</option>`;
     return;
   }
 
-  allReportsCache.slice(0, 30).forEach((r, idx) => {
+  allReportsCache.slice(0, 45).forEach((r, idx) => {
     const isToday = idx === 0;
     const opt = document.createElement("option");
     opt.value = r.id || r.filename;
-    const cleanTitle = (r.title || "").replace(/^#\s*/, '');
+    const cleanTitle = (r.title || "").replace(/^#\s*/, '').replace(/EARLY LOOK:\s*/i, 'EARLY LOOK: ');
     const dateLabel = r.shortDate || (r.date ? r.date.substring(0, 15) : "Data");
     opt.innerText = `${dateLabel} — ${cleanTitle}${isToday ? ' (Mais Recente)' : ''}`;
     if (idx === 0) opt.selected = true;
@@ -3120,6 +3311,11 @@ function populateTranslatedReportsDropdown() {
 
 function changeTranslatedReport(reportId) {
   activeTranslatedReportId = reportId;
+  const selectElem = document.getElementById("selectTranslatedReport");
+  if (selectElem && selectElem.value !== reportId) {
+    selectElem.value = reportId;
+  }
+
   const report = allReportsCache.find(r => r.id === reportId || r.filename === reportId) || allReportsCache[0];
   
   if (!report) {
@@ -3143,6 +3339,7 @@ function renderEarlyLookTranslatedView(report) {
   const originalContentEl = document.getElementById("elOriginalContent");
   const regimeEl = document.getElementById("elHeaderRegime");
   const takeawaysGrid = document.getElementById("elTakeawaysGrid");
+  const thesisBodyContainer = document.getElementById("elThesisBodyContainer");
 
   // Atualizar container de texto original em inglês
   if (originalTitleEl) originalTitleEl.innerText = `${report.title} (Original English)`;
@@ -3169,18 +3366,19 @@ function renderEarlyLookTranslatedView(report) {
     // Tradução e síntese adaptativa automática para outros relatórios indexados
     const titleClean = (report.title || "").replace(/^#\s*/, '').replace(/EARLY LOOK:\s*/i, '');
     if (mainTitleEl) mainTitleEl.innerHTML = `EARLY LOOK: <span>${titleClean}</span>`;
-    if (displayDateEl) displayDateEl.innerText = report.date || report.shortDate || "Recente";
+    if (displayDateEl) displayDateEl.innerText = report.date || report.shortDate || "Data de Publicação";
     if (quoteTextEl) quoteTextEl.innerHTML = `Nós não apostamos contra pessoas nos mercados. Nós seguimos a Ordem Implicada dos fluxos de mercado. <span class="quote-author">— Keith McCullough</span>`;
+    if (regimeEl) regimeEl.innerText = `REGIME GIP: QUAD 3 (#ACCELERATING)`;
     
     if (takeawaysGrid) {
       takeawaysGrid.innerHTML = `
         <div class="takeaway-card emerald-border">
           <div class="takeaway-header"><span class="t-icon">⚡</span><h4>1. Síntese do Research</h4></div>
-          <div class="takeaway-body">${report.summary ? report.summary.substring(0, 180) + '...' : 'Análise quantitativa dos fluxos de capital e faixas de risco.'}</div>
+          <div class="takeaway-body">${report.summary ? report.summary.substring(0, 220) + '...' : 'Análise quantitativa dos fluxos de capital e faixas de risco.'}</div>
         </div>
         <div class="takeaway-card amber-border">
           <div class="takeaway-header"><span class="t-icon">🎯</span><h4>2. Risk Ranges Extraídos</h4></div>
-          <div class="takeaway-body">${report.riskRanges && report.riskRanges.length > 0 ? `${report.riskRanges.length} ativos calculados e calibrados para o pregão.` : 'Faixas de volatilidade ajustada vigentes.'}</div>
+          <div class="takeaway-body">${report.riskRanges && report.riskRanges.length > 0 ? `${report.riskRanges.length} ativos calculados e calibrados para o pregão.` : 'Faixas de volatilidade ajustada vigentes para o pregão.'}</div>
         </div>
         <div class="takeaway-card rose-border">
           <div class="takeaway-header"><span class="t-icon">🧭</span><h4>3. Enquadramento Macro</h4></div>
@@ -3188,6 +3386,11 @@ function renderEarlyLookTranslatedView(report) {
         </div>
       `;
     }
+  }
+
+  // Renderiza o corpo integral da tese traduzida de forma 100% dinâmica!
+  if (thesisBodyContainer) {
+    thesisBodyContainer.innerHTML = buildThesisHtml(report, struct);
   }
 
   showToast(`📑 Visualizando: ${report.title}`);
@@ -3219,28 +3422,15 @@ function copyEarlyLookTranslation() {
   const container = document.getElementById("earlylookTranslatedContainer");
   if (!container) return;
 
-  const textToCopy = `RELATÓRIO HEDGEYE EARLY LOOK TRADUZIDO (09/09/2026)
-Título: EARLY LOOK: Incendiando a "Casa" do Dólar Americano?
-Autor: Keith McCullough (@keithmccullough)
-Regime: QUAD 3 (#ACCELERATING)
+  const currentReport = allReportsCache.find(r => r.id === activeTranslatedReportId || r.filename === activeTranslatedReportId) || allReportsCache[0];
+  const title = currentReport ? currentReport.title : "Early Look Hedgeye";
+  const date = currentReport ? (currentReport.shortDate || currentReport.date) : "Hoje";
 
-CITAÇÃO:
-"A Ordem Implicada é particularmente adequada para a compreensão da totalidade ininterrupta em movimento fluente." — David Bohm
+  const textToCopy = `RELATÓRIO HEDGEYE EARLY LOOK TRADUZIDO (${date})
+Título: ${title}
+Autor: Keith McCullough / Hedgeye Research
 
-KEY TAKEAWAYS:
-1. Colapso do Dólar para Mínimas de 3 Meses: O DXY rompeu para novas mínimas ($98,77) em Bearish TREND. Fraqueza cambial alimenta inflação.
-2. Juros dos T-Bonds em Novas Máximas: UST 10Y (4,68%-4,86%) e UST 2Y (4,50%) sinalizam novos picos do ciclo inflacionário.
-3. Rotação para Ativos Reais: Fuga de Dólar e Bonds empurra capital para Commodities (CRB +11,5%, Cobre em ATHs, Ouro) e Semis cíclicos.
-
-RISK RANGES (09/09/2026):
-• UST10Y: 4,68% a 4,86% (BULLISH)
-• DXY: 98,41 a 99,52 (BEARISH)
-• OURO: 4.290 a 4.599 (BULLISH)
-• COBRE: 6,49 a 6,75 (BULLISH - ATHs)
-• WTI: 86,36 a 97,53 (BULLISH)
-• OIH: 414 a 444 (BULLISH)
-• SPX: 7.604 a 7.767 (BULLISH)
-• COMPQ: 26.008 a 26.711 (BULLISH)`;
+${container.innerText}`;
 
   navigator.clipboard.writeText(textToCopy).then(() => {
     showToast("Texto traduzido copiado com sucesso para a Área de Transferência!");
