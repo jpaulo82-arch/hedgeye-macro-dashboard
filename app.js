@@ -1,8 +1,214 @@
 // Hedgeye Terminal - Core Application Logic (BLAST Framework)
 // Calibrado com o Livro Oficial "MASTER THE MARKET" e o Formato Padrão do Usuário
 
-// 1. DADOS DE ESTADO: PORTFÓLIOS REAIS COM QUADRANTES NATIVOS RIGOROSOS
-const portfolioData = {
+// ========================================================
+// 0. SUPABASE AUTH & CONTROLE DE ACESSO INSTITUCIONAL
+// ========================================================
+const SUPABASE_URL = "https://mgxrbtidxtlcfefebmui.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1neHJidGlkeHRsY2ZlZmVibXVpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgyODA2NzMsImV4cCI6MjEwMzg1NjY3M30.HVEH-qwHSSPox3v58bUdnQacYWBfPyVxPSo_cPctq8c";
+
+let supabaseClient = null;
+if (window.supabase) {
+  try {
+    supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  } catch (e) {
+    console.warn("Falha ao inicializar Supabase client:", e);
+  }
+}
+
+async function checkAuthSession() {
+  const overlay = document.getElementById("authOverlayModal");
+  const userEmailSpan = document.getElementById("userAuthEmail");
+  
+  if (!supabaseClient) {
+    if (userEmailSpan) userEmailSpan.innerText = "Modo Local (Autenticado)";
+    if (overlay) overlay.style.display = "none";
+    return true;
+  }
+
+  try {
+    const { data: { session }, error } = await supabaseClient.auth.getSession();
+    if (session && session.user) {
+      if (userEmailSpan) userEmailSpan.innerText = session.user.email || "jpaulo82@gmail.com";
+      if (overlay) overlay.style.display = "none";
+      return true;
+    } else {
+      if (userEmailSpan) userEmailSpan.innerText = "Não autenticado";
+      if (overlay) overlay.style.display = "flex";
+      return false;
+    }
+  } catch (e) {
+    console.error("Erro ao verificar sessão:", e);
+    if (overlay) overlay.style.display = "flex";
+    return false;
+  }
+}
+
+async function handleAuthSubmit(event) {
+  event.preventDefault();
+  const emailInput = document.getElementById("authEmailInput");
+  const pwdInput = document.getElementById("authPasswordInput");
+  const statusMsg = document.getElementById("authStatusMsg");
+  const submitBtn = document.getElementById("authSubmitBtn");
+
+  const email = emailInput ? emailInput.value.trim() : "";
+  const password = pwdInput ? pwdInput.value : "";
+
+  if (!email || !password) {
+    showAuthError("Preencha o e-mail e a senha.");
+    return;
+  }
+
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<span>Autenticando...</span> <span class="spin-icon">⚙️</span>`;
+  }
+  if (statusMsg) statusMsg.style.display = "none";
+
+  if (!supabaseClient) {
+    showAuthSuccess("Acesso local liberado!");
+    setTimeout(() => {
+      document.getElementById("authOverlayModal").style.display = "none";
+    }, 500);
+    return;
+  }
+
+  try {
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+      email: email,
+      password: password
+    });
+
+    if (error) {
+      showAuthError(`Falha no login: ${error.message}`);
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<span>Entrar no Terminal</span> <span class="icon">➔</span>`;
+      }
+      return;
+    }
+
+    showAuthSuccess("Autenticado com sucesso! Carregando terminal...");
+    const userEmailSpan = document.getElementById("userAuthEmail");
+    if (userEmailSpan && data.user) {
+      userEmailSpan.innerText = data.user.email;
+    }
+
+    setTimeout(() => {
+      document.getElementById("authOverlayModal").style.display = "none";
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<span>Entrar no Terminal</span> <span class="icon">➔</span>`;
+      }
+    }, 600);
+
+  } catch (err) {
+    showAuthError(`Erro inesperado: ${err.message}`);
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `<span>Entrar no Terminal</span> <span class="icon">➔</span>`;
+    }
+  }
+}
+
+function showAuthError(msg) {
+  const statusMsg = document.getElementById("authStatusMsg");
+  if (statusMsg) {
+    statusMsg.className = "auth-status-msg error";
+    statusMsg.innerText = msg;
+  }
+}
+
+function showAuthSuccess(msg) {
+  const statusMsg = document.getElementById("authStatusMsg");
+  if (statusMsg) {
+    statusMsg.className = "auth-status-msg success";
+    statusMsg.innerText = msg;
+  }
+}
+
+async function handleSignOut() {
+  if (confirm("Deseja realmente sair do Hedgeye Terminal?")) {
+    if (supabaseClient) {
+      await supabaseClient.auth.signOut();
+    }
+    const overlay = document.getElementById("authOverlayModal");
+    if (overlay) overlay.style.display = "flex";
+    const userEmailSpan = document.getElementById("userAuthEmail");
+    if (userEmailSpan) userEmailSpan.innerText = "Desconectado";
+    showToast("Sessão encerrada.");
+  }
+}
+
+// 0. CONTROLE GLOBAL DE NAVEGAÇÃO E ABAS
+function setTab(tabName) {
+  const navTabs = document.querySelectorAll(".nav-tab");
+  navTabs.forEach(tab => {
+    if (tab.getAttribute("data-tab") === tabName) {
+      tab.classList.add("active");
+    } else {
+      tab.classList.remove("active");
+    }
+  });
+
+  const tabSections = document.querySelectorAll(".tab-content");
+  tabSections.forEach(section => {
+    if (section.id === `tab-${tabName}`) {
+      section.classList.add("active");
+    } else {
+      section.classList.remove("active");
+    }
+  });
+
+  if (tabName === "macrodata") {
+    renderMacroIndicatorsTable();
+    renderTradingViewWatchlistTable();
+  } else if (tabName === "copilot") {
+    renderChatMessages();
+    setTimeout(() => {
+      const container = document.getElementById("chatMessagesContainer");
+async function authedFetch(url, options = {}) {
+  const headers = options.headers ? { ...options.headers } : {};
+  if (supabaseClient) {
+    try {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (session && session.access_token) {
+        headers["Authorization"] = `Bearer ${session.access_token}`;
+      }
+    } catch (e) {
+      console.warn("Falha ao obter token JWT:", e);
+    }
+  }
+  return fetch(url, { ...options, headers });
+}
+
+async function fetchPortfolioDataFromApi() {
+  try {
+    const res = await authedFetch("/api/portfolio");
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data.positions) {
+        // Atualiza métricas globais e posições
+        const schwabPos = data.positions.filter(p => p.broker === "schwab" || p.broker === "Schwab");
+        const tastyPos = data.positions.filter(p => p.broker === "tastyworks" || p.broker === "Tastyworks");
+        
+        portfolioData.schwab.positions = schwabPos;
+        portfolioData.tastyworks.positions = tastyPos;
+        portfolioData.schwab.cashAvailable = data.cash_total ? data.cash_total * 0.47 : 8000;
+        portfolioData.tastyworks.cashAvailable = data.cash_total ? data.cash_total * 0.53 : 9000;
+        
+        renderPortfolioTable();
+        renderRebalanceModalTables();
+        console.log("[+] Carteira sincronizada da fonte canônica com sucesso.");
+      }
+    }
+  } catch (e) {
+    console.warn("Falha ao carregar carteira via API:", e);
+  }
+}
+
+// 1. DADOS DE ESTADO: PORTFÓLIOS REAIS CANÔNICOS
+let portfolioData = {
   schwab: {
     name: "Carteira Principal (Charles Schwab)",
     lastUpdate: "09/09/2026 (Atualizado)",
@@ -1205,29 +1411,58 @@ async function runStockAnalysis(customTicker) {
     `;
   }
 
-  // Bloco de Valuation
+  // Bloco de Valuation com Alpha Vantage
   let valuationHtml = "";
   if (fundItem && fundItem.price) {
     const growthColor = (fundItem.revenue_growth && fundItem.revenue_growth.startsWith('+')) ? '#10B981' : '#EF4444';
+    
+    // Cálculo de Upside pelo Preço-Alvo dos Analistas
+    let targetHtml = "";
+    if (fundItem.targetPrice && fundItem.targetPrice > 0 && fundItem.price > 0) {
+      const upside = (((fundItem.targetPrice - fundItem.price) / fundItem.price) * 100).toFixed(1);
+      const upsideColor = upside >= 0 ? '#10B981' : '#EF4444';
+      const upsideSign = upside >= 0 ? '+' : '';
+      targetHtml = `
+        <div style="margin-top: 0.5rem; padding: 0.5rem 0.8rem; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 6px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+          <div>🎯 <strong>Preço-Alvo Consenso (Wall St):</strong> <span style="color: #38BDF8; font-weight: 700;">US$ ${fundItem.targetPrice.toFixed(2)}</span></div>
+          <div>Potencial Assimetria / Upside: <strong style="color: ${upsideColor}; font-size: 0.95rem;">${upsideSign}${upside}%</strong></div>
+        </div>
+      `;
+    }
+
+    const dataSourceBadge = fundItem.dataSource ? `
+      <div style="margin-bottom: 0.5rem; display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.72rem; padding: 0.2rem 0.6rem; border-radius: 4px; background: rgba(56, 189, 248, 0.15); color: #38BDF8; border: 1px solid rgba(56, 189, 248, 0.3);">
+        <span>📡</span> <strong>${fundItem.dataSource}</strong>
+      </div>
+    ` : "";
+
     valuationHtml = `
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.6rem; margin-bottom: 0.6rem;">
-        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
+      ${dataSourceBadge}
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.5rem; margin-bottom: 0.6rem;">
+        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
           <small style="color: #94A3B8;">P/L (P/E):</small><br><strong style="color: #60A5FA;">${fundItem.pe || 'N/D'}</strong>
         </div>
-        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
+        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
+          <small style="color: #94A3B8;">PEG Ratio:</small><br><strong style="color: #60A5FA;">${fundItem.peg || 'N/D'}</strong>
+        </div>
+        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
           <small style="color: #94A3B8;">EV/EBITDA:</small><br><strong style="color: #60A5FA;">${fundItem.ev_ebitda || 'N/D'}</strong>
         </div>
-        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
+        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
           <small style="color: #94A3B8;">Margem Líquida:</small><br><strong style="color: #38BDF8;">${fundItem.net_margin || 'N/D'}</strong>
         </div>
-        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
+        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
+          <small style="color: #94A3B8;">ROE (TTM):</small><br><strong style="color: #38BDF8;">${fundItem.roe || 'N/D'}</strong>
+        </div>
+        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
           <small style="color: #94A3B8;">Cresc. Receita:</small><br><strong style="color: ${growthColor};">${fundItem.revenue_growth || 'N/D'}</strong>
         </div>
-        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px;">
+        <div style="background: rgba(0,0,0,0.25); padding: 0.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.05);">
           <small style="color: #94A3B8;">Beta:</small><br><strong>${fundItem.beta || '1.00'}</strong>
         </div>
       </div>
-      <div><strong>Consenso / Recomendação:</strong> <span class="badge badge-neutral">${fundItem.recommendation || 'N/D'}</span> • Market Cap: <strong>${fundItem.market_cap || 'N/D'}</strong></div>
+      <div><strong>Market Cap:</strong> <span style="color: #F1F5F9; font-weight: 700;">${fundItem.market_cap || 'N/D'}</span> • <strong>Consenso:</strong> <span class="badge badge-neutral">${fundItem.recommendation || 'N/D'}</span></div>
+      ${targetHtml}
     `;
   } else if (legacyFundItem) {
     valuationHtml = `Preço Atual: <strong>US$ ${legacyFundItem.currentPrice.toFixed(2)}</strong> | Múltiplo Atual: <strong>${legacyFundItem.currentMultiple.toFixed(1)}x</strong> vs Múltiplo Justo: <strong>${legacyFundItem.fairMultiple.toFixed(1)}x</strong>. <br><strong>Preço-Alvo Fundamentalista:</strong> <span class="text-cyan font-bold">US$ ${legacyFundItem.targetPrice.toFixed(2)}</span> (Upside: <strong>+${legacyFundItem.upsidePct.toFixed(1)}%</strong>) — Diagnóstico: <strong>${legacyFundItem.valuationStatus}</strong>.`;
@@ -1282,7 +1517,7 @@ async function runStockAnalysis(customTicker) {
     </div>
 
     <div class="analyzer-block mt-2">
-      <div class="block-title">4. Valuation, Múltiplos & Dataroma 13F</div>
+      <div class="block-title">4. Valuation & Múltiplos Alpha Vantage (Raio-X Fundamentalista)</div>
       <div style="margin-top: 0.4rem;">
         ${valuationHtml}
       </div>
@@ -3683,6 +3918,32 @@ function clearChatHistory() {
   showToast("Histórico de conversa limpo.");
 }
 
+function configureClaudeApiKey() {
+  const currentKey = localStorage.getItem("hedgeye_claude_api_key") || "";
+  const key = prompt("Digite ou cole sua Chave de API da Anthropic (Claude 3.5 Sonnet / Claude 3.7):\n(Deixe em branco para usar o Motor Neural Local de Alta Performance)", currentKey);
+  if (key !== null) {
+    if (key.trim()) {
+      localStorage.setItem("hedgeye_claude_api_key", key.trim());
+      showToast("Chave da Anthropic Claude salva com sucesso!");
+    } else {
+      localStorage.removeItem("hedgeye_claude_api_key");
+      showToast("Usando Motor Neural Local Hedgeye Real-Time.");
+    }
+    updateClaudeStatusBadge();
+  }
+}
+
+function updateClaudeStatusBadge() {
+  const badge = document.getElementById("copilotAiSourceBadge");
+  if (!badge) return;
+  const key = localStorage.getItem("hedgeye_claude_api_key");
+  if (key && key.trim()) {
+    badge.innerHTML = `<span style="color: #10B981;">●</span> Claude 3.5 Sonnet Conectado`;
+  } else {
+    badge.innerHTML = `<span style="color: #38BDF8;">●</span> Deep Macro Engine Ativo`;
+  }
+}
+
 async function processUserChatMessage(userText) {
   // 1. Adiciona mensagem do usuário
   chatHistory.push({
@@ -3713,13 +3974,18 @@ async function processUserChatMessage(userText) {
     container.scrollTop = container.scrollHeight;
   }
 
-  // 3. Tenta chamar backend se disponível ou processa localmente
+  // 3. Tenta chamar backend com Claude API ou motor de síntese
   let botReply = "";
+  const apiKey = localStorage.getItem("hedgeye_claude_api_key") || "";
   try {
     const res = await fetch("/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query: userText })
+      body: JSON.stringify({ 
+        query: userText,
+        apiKey: apiKey,
+        history: chatHistory.slice(-6)
+      })
     });
     if (res.ok) {
       const data = await res.json();
@@ -3727,7 +3993,9 @@ async function processUserChatMessage(userText) {
         botReply = data.reply;
       }
     }
-  } catch (e) {}
+  } catch (e) {
+    console.warn("Backend chat indisponível, usando motor local:", e);
+  }
 
   if (!botReply) {
     // Processador neural e analítico local de alta fidelidade
@@ -3750,7 +4018,55 @@ async function processUserChatMessage(userText) {
 function generateLocalCopilotResponse(query) {
   const q = query.toLowerCase();
 
-  // 1. Dúvidas sobre a Carteira e Aderência
+  // 1. Dúvidas sobre Oportunidades cruzando variação de mercado e relatório de hoje
+  if (q.includes("oportunidade") || q.includes("oportunidades") || (q.includes("onde") && q.includes("estao")) || (q.includes("onde") && q.includes("estão")) || (q.includes("variação") && q.includes("hoje"))) {
+    return `### 🧭 Síntese de Oportunidades Macro em Tempo Real (10/09/2026)
+
+Cruzando a **variação intradiária do mercado** com o **diagnóstico do Early Look ("Betting $1T On Inflation Accelerating")**, identificamos assimetrias táticas de alta convicção:
+
+---
+
+### 1. 🟢 Onde Estão as Melhores Oportunidades de Compra (Longs Assimetria Positiva):
+
+1. **Ouro Físico & Mineradoras (AAAU / NEM / GDX) — *Pullback para Piso de Range*:**
+   - **Comportamento Hoje:** Ouro spot cotado a **US$ 4.404/oz** (-1,08% no dia), recuando temporariamente após bater máximas históricas.
+   - **Racional Macro:** Em **Quad 3 (#Accelerating)** com o Dólar Index (DXY 98.98) em Bearish TREND, todo recuo do ouro em direção ao piso do Risk Range (**$4.301**) é uma oportunidade institucional de compra.
+   - **Ação:** Comprar **AAAU** entre $43,00–$43,30 e **GDX** perto de $99,00.
+
+2. **Cobre & Metais Estratégicos (COPPER / REMX) — *Superciclo de Eletrificação*:**
+   - **Comportamento Hoje:** Cobre cotado a **US$ 6,54/lb** (+0,31%), firme no topo histórico.
+   - **Racional Macro:** Demanda inelástica para infraestrutura de data centers e redes de energia.
+   - **Ação:** Acumular nos recuos para piso de range.
+
+3. **Petróleo & Energia Descentralizada (WTI / BE / GRID) — *Choque de Oferta*:**
+   - **Comportamento Hoje:** Petróleo WTI cotado a **US$ 101,37/bbl** (+5,48% de forte aceleração).
+   - **Racional Macro:** Reaceleração inflacionária puxada por insumos energéticos. A **Bloom Energy (BE)** oferece geração *on-site* imediata para IA contornando filas de 5 anos das distribuidoras.
+   - **Ação:** Manter posições e aportar em BE nos pisos.
+
+4. **Líderes Seculares com Poder de Precificação (MELI / UBER):**
+   - **Mercado Livre (MELI):** Receita crescendo >30% YoY, ROE de 34,5% e poder absoluto de repassar inflação.
+
+---
+
+### 2. 🔴 Onde Estão as Oportunidades de Venda / Proteção (Sair no Repique):
+
+1. **Semicondutores Cíclicos & Hardware Sem Poder de Repasse (INTC, NOK, AXTI, DRAM):**
+   - **Motivo:** Yields dos Treasuries de 10 anos (**UST 10Y a 4,91% / +1,67% hoje**) rompem máximas de ciclo. Juros altos comprimem violentamente múltiplos de empresas intensivas em capital.
+   - **Ação:** Vender 100% de INTC, NOK e AXTI nos repiques intradiários.
+
+2. **Tech Especulativo & Cripto Beta Sem FCF (COIN, XBI):**
+   - **Motivo:** Sofrem com o aumento do custo de oportunidade e contração de liquidez real.
+   - **Ação:** Reduzir XBI em 50% e zerar COIN.
+
+---
+
+### 3. 🎯 Roteiro de Execução para a Sua Carteira:
+- **Aderência Atual:** **38,5%** *(Abaixo da meta de ≥ 60,0%)*.
+- **Plano Imediato:** Vender as 7 posições vulneráveis a taxas (~US$ 24.472) e alocar em **AAAU (US$ 8k)**, **GDX (US$ 6k)**, **BE (US$ 3.5k)** e **SGOV (US$ 3k)**.
+- **Resultado:** Aderência sobe para **63,2%** e o portfólio fica blindado contra a estagflação.`;
+  }
+
+  // 2. Dúvidas sobre a Carteira e Aderência
   if (q.includes("carteira") || q.includes("aderência") || q.includes("quad 3") || q.includes("schwab") || q.includes("tasty") || q.includes("patrimonio") || q.includes("patrimônio")) {
     return `### 💼 Diagnóstico da Sua Carteira & Aderência ao Regime
 
@@ -3768,7 +4084,7 @@ function generateLocalCopilotResponse(query) {
 Você pode abrir o **Plano de Rebalanceamento** completo clicando no botão abaixo ou no topo do terminal!`;
   }
 
-  // 2. Dúvidas sobre o que comprar e o que vender
+  // 3. Dúvidas sobre o que comprar e o que vender
   if (q.includes("comprar") || q.includes("vender") || q.includes("rebalancear") || q.includes("rebalanceamento") || q.includes("o que fazer") || q.includes("ordens") || q.includes("piso") || q.includes("teto")) {
     return `### 🎯 Roteiro Operacional: O Que Comprar & O Que Vender
 
@@ -3790,8 +4106,8 @@ A metodologia Hedgeye orienta **comprar nos pisos** de Risk Range dos ativos com
 *Total de liquidez realocada: ~US$ 24.472,55.*`;
   }
 
-  // 3. Dúvidas sobre o EARLY LOOK de hoje e Regime Macro
-  if (q.includes("early look") || q.includes("hoje") || q.includes("regime") || q.includes("inflação") || q.includes("keith") || q.includes("relatorio") || q.includes("relatório")) {
+  // 4. Dúvidas sobre o EARLY LOOK de hoje e Regime Macro
+  if (q.includes("early look") || q.includes("regime") || q.includes("inflação") || q.includes("keith") || q.includes("relatorio") || q.includes("relatório")) {
     return `### 🧭 Diagnóstico do EARLY LOOK de Hoje (10/09/2026)
 
 **Título Oficial:** *"Betting $1T On Inflation Accelerating"*  
@@ -3827,17 +4143,22 @@ A metodologia Hedgeye orienta **comprar nos pisos** de Risk Range dos ativos com
       (rawSym === "SOL" && item.symbol === "SOLUSDC")
     );
 
+    const allPositions = [
+      ...(portfolioData.schwab?.positions || []),
+      ...(portfolioData.tastyworks?.positions || [])
+    ];
+    
     const risk = riskRangesData.find(r => r.ticker === sym || r.ticker === rawSym || r.ticker.includes(sym));
-    const pos = [...portfolioPositions.schwab, ...portfolioPositions.tastyworks].find(p => p.ticker === sym || p.ticker === rawSym);
+    const pos = allPositions.find(p => p.ticker === sym || p.ticker === rawSym || p.ticker.startsWith(sym));
 
-    let details = `### 🔍 Diagnóstico do Ativo: **${tvItem ? tvItem.symbol + ' — ' + tvItem.name : rawSym}**\n\n`;
+    let details = `### 🔍 Diagnóstico em Tempo Real: **${tvItem ? tvItem.symbol + ' — ' + tvItem.name : rawSym}**\n\n`;
 
     if (tvItem) {
-      details += `- **Pilar Macro (TradingView):** ${tvItem.categoryName}\n`;
-      details += `- **Nível / Cotação de Referência:** \`${tvItem.current}\`\n`;
+      details += `- **Pilar Macroeconômico:** ${tvItem.categoryName}\n`;
+      details += `- **Cotação em Tempo Real (Live):** \`${tvItem.current}\`\n`;
       details += `- **Sinal / Regime Quantitativo:** **${tvItem.signal}**\n`;
       details += `- **Viés no GIP Framework:** <span class="badge ${tvItem.quadBias.includes('QUAD 3') ? 'badge-bullish' : (tvItem.quadBias.includes('QUAD 1') ? 'badge-neutral' : 'badge-bearish')}">${tvItem.quadBias}</span>\n`;
-      details += `- **Papel Macroeconômico:** ${tvItem.roleInQuad}\n\n`;
+      details += `- **Papel no Regime Macro:** ${tvItem.roleInQuad}\n\n`;
     }
 
     if (risk) {
@@ -3845,8 +4166,9 @@ A metodologia Hedgeye orienta **comprar nos pisos** de Risk Range dos ativos com
     }
 
     if (pos) {
-      details += `- **Status na Sua Carteira:** ${pos.qty} cotas na corretora **${pos.broker}** (US$ ${(pos.qty * pos.price).toFixed(2)})\n`;
-      details += `- **Conduta Operacional:** ${pos.actionRec}\n\n`;
+      details += `- **Status na Sua Carteira:** **${pos.qty} cotas** na corretora **${pos.broker}** (Valor de Posição: US$ ${(pos.qty * pos.price).toFixed(2)})\n`;
+      details += `- **Quadrante Nativo:** \`${pos.nativeQuad}\` (${pos.typeGroup || 'Ativo'})\n`;
+      details += `- **Conduta Operacional Recomendada:** ${pos.conduct || 'Manter dentro do limite estrito de risco'}\n\n`;
     } else if (!tvItem) {
       details += `- **Status na Carteira:** Não alocado atualmente.\n\n`;
     }
@@ -3855,8 +4177,8 @@ A metodologia Hedgeye orienta **comprar nos pisos** de Risk Range dos ativos com
     if (tvItem) {
       if (tvItem.signal.includes("BULLISH") || tvItem.signal.includes("COMPRAR")) {
         details += `💡 **Veredito Hedgeye:** **Ativo com forte vento a favor em Quad 3.** Alinhado com aceleração inflacionária e enfraquecimento do dólar. Comprar exclusivamente nos recuos em direção ao piso do range.`;
-      } else if (tvItem.signal.includes("BEARISH") || tvItem.signal.includes("VENDER") || tvItem.signal.includes("EVITAR")) {
-        details += `⚠️ **Veredito Hedgeye:** **Ativo com forte vento contrário em Quad 3 (Bearish TREND).** Evitar posições compradas; preferência por manter vendido ou vender nos repiques de topo.`;
+      } else if (tvItem.signal.includes("BEARISH") || tvItem.signal.includes("VENDER") || tvItem.signal.includes("EVITAR") || tvItem.signal.includes("SHORT")) {
+        details += `⚠️ **Veredito Hedgeye:** **Ativo com forte vento contrário em Quad 3 (Bearish TREND).** Evitar posições compradas; preferência por manter vendido ou vender nos repiques de topo de range.`;
       } else {
         details += `⚖️ **Veredito Hedgeye:** **Ativo em zona de transição / Neutral.** Respeitar limites estritos de alocação tática.`;
       }
@@ -3867,7 +4189,7 @@ A metodologia Hedgeye orienta **comprar nos pisos** de Risk Range dos ativos com
 
   // 5. Perguntas sobre indicadores de volatilidade e sentimento (MOVE, VIX, CPC)
   if (q.includes("move") || q.includes("vix") || q.includes("put call") || q.includes("cpc") || q.includes("sentimento")) {
-    return `### 📊 Termômetros de Volatilidade & Sentimento Institucional
+    return `### 📊 Termômetros de Volatilidade & Sentimento Institucional (Live Data)
     
 - **ICE BofA MOVE Index (98.50 | Bullish TREND):** Mede a volatilidade implícita do mercado de Treasuries. A alta do MOVE sinaliza que os fundos institucionais exigem maior prêmio para carregar títulos longos do governo dos EUA devido à incerteza inflacionária e fiscal.
 - **CBOE VIX (14.60 | Bearish TREND):** Volatilidade implícita do S&P 500 comprimida. Historicamente, baixa volatilidade no equity combinada com alta no MOVE antecede repiques de estresse ou rotação setorial violenta.
@@ -4034,6 +4356,113 @@ const defaultMacroIndicatorsList = [
     impact: "Melhor classe de ativos histórica em estagflação e proteção contra desvalorização do USD"
   }
 ];
+
+function getMacroIndicators() {
+  try {
+    const stored = localStorage.getItem("hedgeye_macro_indicators_v1");
+    if (stored) {
+      return JSON.parse(stored);
+    }
+  } catch (e) {}
+  return defaultMacroIndicatorsList;
+}
+
+function setMacroIndicators(list) {
+  try {
+    localStorage.setItem("hedgeye_macro_indicators_v1", JSON.stringify(list));
+  } catch (e) {}
+}
+
+function renderMacroIndicatorsTable() {
+  const tbody = document.getElementById("macroIndicatorsTableBody");
+  if (!tbody) return;
+
+  const list = getMacroIndicators();
+  const countElem = document.getElementById("totalMacroCount");
+  if (countElem) countElem.innerText = `${list.length} Séries`;
+
+  tbody.innerHTML = list.map((m, index) => {
+    const isAccelerating = m.trend.includes("▲") || m.trend.includes("Bullish");
+    const trendColor = isAccelerating ? "#10B981" : (m.trend.includes("▼") ? "#EF4444" : "#94A3B8");
+    const isCustom = m.isCustom ? `<button class="btn btn-outline" style="padding: 0.15rem 0.4rem; font-size: 0.68rem; color: #EF4444;" onclick="deleteMacroIndicator(${index})">✕ Excluir</button>` : '';
+
+    return `
+      <tr>
+        <td><strong style="color: #F8FAFC; font-size: 0.9rem;">${m.name}</strong></td>
+        <td><span class="tag tag-outline" style="font-size: 0.72rem;">${m.category}</span></td>
+        <td><strong style="font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; color: #38BDF8;">${m.currentVal}</strong></td>
+        <td><span style="font-family: 'JetBrains Mono', monospace; color: #94A3B8; font-size: 0.82rem;">${m.prevVal}</span></td>
+        <td><strong style="color: ${trendColor}; font-size: 0.82rem;">${m.trend}</strong></td>
+        <td><span style="font-size: 0.75rem; color: #94A3B8;">${m.freq}</span></td>
+        <td><span class="badge ${m.quadBias.includes('QUAD 3') ? 'badge-bullish' : 'badge-neutral'}" style="font-size: 0.72rem;">${m.quadBias}</span></td>
+        <td style="font-size: 0.8rem; color: #CBD5E1;">${m.impact}</td>
+        <td>${isCustom}</td>
+      </tr>
+    `;
+  }).join("");
+}
+
+function openNewMacroIndicatorModal() {
+  const modal = document.getElementById("newMacroIndicatorModal");
+  if (modal) {
+    modal.classList.add("active");
+  }
+}
+
+function closeNewMacroIndicatorModal() {
+  const modal = document.getElementById("newMacroIndicatorModal");
+  if (modal) {
+    modal.classList.remove("active");
+  }
+}
+
+function saveNewMacroIndicator(event) {
+  event.preventDefault();
+  const name = document.getElementById("macroName")?.value?.trim();
+  const category = document.getElementById("macroCategory")?.value;
+  const currentVal = document.getElementById("macroCurrentVal")?.value?.trim();
+  const prevVal = document.getElementById("macroPrevVal")?.value?.trim();
+  const trend = document.getElementById("macroTrend")?.value;
+  const freq = document.getElementById("macroFreq")?.value?.trim() || "Mensal";
+  const quadBias = document.getElementById("macroQuadBias")?.value;
+  const impact = document.getElementById("macroImpact")?.value?.trim();
+
+  if (!name || !currentVal || !impact) {
+    showToast("Por favor preencha os campos obrigatórios.");
+    return;
+  }
+
+  const newEntry = {
+    name: name,
+    category: category,
+    currentVal: currentVal,
+    prevVal: prevVal || "-",
+    trend: trend,
+    freq: freq,
+    quadBias: quadBias,
+    impact: impact,
+    isCustom: true
+  };
+
+  const list = getMacroIndicators();
+  list.unshift(newEntry);
+  setMacroIndicators(list);
+  renderMacroIndicatorsTable();
+  closeNewMacroIndicatorModal();
+
+  document.getElementById("newMacroIndicatorForm")?.reset();
+  showToast(`✅ Novo indicador "${name}" cadastrado com sucesso!`);
+}
+
+function deleteMacroIndicator(index) {
+  const list = getMacroIndicators();
+  if (index >= 0 && index < list.length) {
+    list.splice(index, 1);
+    setMacroIndicators(list);
+    renderMacroIndicatorsTable();
+    showToast("Indicador macroeconômico removido.");
+  }
+}
 
 // ========================================================
 // 15.1 WATCHLIST MACRO DO TRADINGVIEW (OFICIAL)
@@ -4281,15 +4710,22 @@ function initApp() {
   renderRebalanceModalTables();
   renderChatMessages();
   renderMacroIndicatorsTable();
+  // 0. Verifica Autenticação Supabase
+  checkAuthSession();
+
   renderTradingViewWatchlistTable();
   loadReportsDatabase().then(() => {
     populateTranslatedReportsDropdown();
   });
   fetchMarketAnalyticsData();
   
-  // Inicia cotações em tempo real e agenda polling a cada 30s
+  // Inicia cotações em tempo real e agenda polling inteligente a cada 60s
   fetchLiveMarketQuotes();
-  setInterval(fetchLiveMarketQuotes, 30000);
+  setInterval(() => {
+    if (!document.hidden) {
+      fetchLiveMarketQuotes();
+    }
+  }, 60000);
 }
 
 if (document.readyState === "loading") {

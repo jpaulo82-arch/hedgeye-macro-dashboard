@@ -2191,5 +2191,176 @@ body {
   40% { transform: scale(1); }
 }
 
+/* ========================================================
+   15. SUPABASE AUTH MODAL & OVERLAY DE LOGIN
+   ======================================================== */
+.auth-overlay-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, rgba(15, 23, 42, 0.98) 0%, rgba(3, 7, 18, 0.99) 100%);
+  backdrop-filter: blur(16px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.auth-card {
+  background: #111827;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(56, 189, 248, 0.15);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 440px;
+  padding: 2.2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #38BDF8, #818CF8, #EC4899);
+}
+
+.auth-logo-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.auth-logo-box .icon {
+  font-size: 2rem;
+  color: #38BDF8;
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.6));
+}
+
+.auth-logo-box h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.auth-logo-box h2 span {
+  color: #38BDF8;
+}
+
+.auth-logo-box p {
+  margin: 0.15rem 0 0;
+  font-size: 0.7rem;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.auth-input-group {
+  margin-bottom: 1.1rem;
+}
+
+.auth-input-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #CBD5E1;
+  margin-bottom: 0.4rem;
+}
+
+.auth-input-group input {
+  width: 100%;
+  background: #0B0F19;
+  border: 1px solid #1E293B;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: #F8FAFC;
+  font-size: 0.92rem;
+  transition: all 0.2s ease;
+}
+
+.auth-input-group input:focus {
+  outline: none;
+  border-color: #38BDF8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+.auth-btn-primary {
+  width: 100%;
+  background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.85rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.3rem;
+}
+
+.auth-btn-primary:hover {
+  background: linear-gradient(135deg, #0369A1 0%, #075985 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+}
+
+.auth-status-msg {
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  text-align: center;
+  padding: 0.6rem;
+  border-radius: 6px;
+  display: none;
+}
+
+.auth-status-msg.error {
+  display: block;
+  background: rgba(239, 68, 68, 0.15);
+  color: #F87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.auth-status-msg.success {
+  display: block;
+  background: rgba(16, 185, 129, 0.15);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.auth-user-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  color: #E2E8F0;
+}
+
+.auth-user-badge .avatar-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 6px #10B981;
+}
+
 
 

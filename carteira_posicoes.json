@@ -1,0 +1,47 @@
+{
+  "lastUpdate": "10/09/2026 (Reconciliado)",
+  "schwab": {
+    "name": "Charles Schwab",
+    "cashAvailable": 8000.00,
+    "positions": [
+      { "ticker": "MELI", "name": "MercadoLibre Inc", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad3", "qty": 3, "cat": "CORE", "minSize": "1-3%", "conduct": "Manter posição CORE de equity" },
+      { "ticker": "FN", "name": "Fabrinet", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad1", "qty": 9, "cat": "TAIL", "minSize": "1-3%", "conduct": "Manter tamanho reduzido; não comprar quedas" },
+      { "ticker": "GOOG", "name": "Alphabet Inc Class C", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad3", "qty": 11, "cat": "CORE", "minSize": "1-3%", "conduct": "Manter; base sólida de geração de caixa" },
+      { "ticker": "BE", "name": "Bloom Energy Corp", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad3", "qty": 13, "cat": "TAIL", "minSize": "1-3%", "conduct": "Manter tese de energia descentralizada" },
+      { "ticker": "ASML", "name": "ASML Holding NV ADR", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad1", "qty": 2, "cat": "CORE/TAIL", "minSize": "1-3%", "conduct": "Manter; fosso competitivo secular" },
+      { "ticker": "META", "name": "Meta Platforms Inc", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad1", "qty": 5, "cat": "CORE", "minSize": "1-3%", "conduct": "Manter; margens elevadas" },
+      { "ticker": "ALAB", "name": "Astera Labs Inc", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad1", "qty": 10, "cat": "TAIL/ESPEC.", "minSize": "1-3%", "conduct": "Respeitar limite estrito TAIL" },
+      { "ticker": "AVGO", "name": "Broadcom Inc", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad1", "qty": 8, "cat": "CORE/TAIL", "minSize": "1-3%", "conduct": "Manter; vigiar compressão de múltiplos" },
+      { "ticker": "INTR", "name": "Inter & Co Inc", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad1", "qty": 400, "cat": "CORE/TRADE", "minSize": "1-3%", "conduct": "Manter pelo crescimento de ROE" },
+      { "ticker": "NOK", "name": "Nokia Corp ADR", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad1", "qty": 200, "cat": "TRADE/TAIL", "minSize": "1-3%", "conduct": "Manter posição tática controlada" },
+      { "ticker": "INTC", "name": "Intel Corp", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad1", "qty": 20, "cat": "TRADE", "minSize": "1-3%", "conduct": "Vender nos repiques; semicondutor cíclico" },
+      { "ticker": "MTSI", "name": "MACOM Technology Solutions", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad1", "qty": 7, "cat": "TAIL", "minSize": "1-3%", "conduct": "Manter pequena" },
+      { "ticker": "COIN", "name": "Coinbase Global Inc", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad1", "qty": 10, "cat": "TAIL/ESPEC.", "minSize": "1-3%", "conduct": "Zerar no repique; momentum quebrado" },
+      { "ticker": "TSEM", "name": "Tower Semiconductor", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad1", "qty": 17, "cat": "TAIL", "minSize": "1-3%", "conduct": "Manter sob controle" },
+      { "ticker": "CRDO", "name": "Credo Technology Group", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad1", "qty": 10, "cat": "TAIL", "minSize": "1-3%", "conduct": "Manter sob controle" },
+      { "ticker": "AXTI", "name": "AXT Inc", "broker": "Schwab", "typeGroup": "Acao", "quad": "Quad1", "qty": 20, "cat": "TAIL/ESPEC.", "minSize": "1-3%", "conduct": "Vender no repique; beta excessivo" },
+      { "ticker": "AAAU", "name": "Goldman Sachs Physical Gold", "broker": "Schwab", "typeGroup": "Commodities", "quad": "Quad3", "qty": 200, "cat": "CORE", "minSize": "2-6%", "conduct": "Comprar nos recuos em direção ao piso" },
+      { "ticker": "SGOV", "name": "iShares 0-3 Month Treasury", "broker": "Schwab", "typeGroup": "Renda Fixa", "quad": "Quad3", "qty": 320, "cat": "CORE/CAIXA", "minSize": "3-15%", "conduct": "Reserva de liquidez livre de risco" },
+      { "ticker": "GDX", "name": "VanEck Gold Miners ETF", "broker": "Schwab", "typeGroup": "Commodities", "quad": "Quad3", "qty": 30, "cat": "TRADE", "minSize": "1-3%", "conduct": "Alavancagem no ouro spot" },
+      { "ticker": "BE_BOND", "name": "Bloom Energy Bond", "broker": "Schwab", "typeGroup": "Renda Fixa", "quad": "Quad3", "qty": 1, "fixed_value": 7991.67, "cat": "CORE", "minSize": "1-4%", "conduct": "Rendimento previsível de energia" },
+      { "ticker": "HCA_BOND", "name": "HCA Inc Bond 7.5%", "broker": "Schwab", "typeGroup": "Renda Fixa", "quad": "Quad4", "qty": 1, "fixed_value": 9999.33, "cat": "CORE", "minSize": "1-4%", "conduct": "Healthcare defensivo" }
+    ]
+  },
+  "tastyworks": {
+    "name": "Tastyworks",
+    "cashAvailable": 9000.00,
+    "positions": [
+      { "ticker": "SGOV", "name": "iShares 0-3 Month Treasury", "broker": "Tastyworks", "typeGroup": "Renda Fixa", "quad": "Quad3", "qty": 50, "cat": "CORE/CAIXA", "minSize": "3-15%", "conduct": "Reserva de liquidez" },
+      { "ticker": "GDX", "name": "VanEck Gold Miners ETF", "broker": "Tastyworks", "typeGroup": "Commodities", "quad": "Quad3", "qty": 10, "cat": "TRADE", "minSize": "1-3%", "conduct": "Aporte no piso" },
+      { "ticker": "NEM", "name": "Newmont Corp", "broker": "Tastyworks", "typeGroup": "Commodities", "quad": "Quad3", "qty": 20, "cat": "CORE", "minSize": "1-3%", "conduct": "Mineração de ouro" },
+      { "ticker": "MELI", "name": "MercadoLibre Inc", "broker": "Tastyworks", "typeGroup": "Acao", "quad": "Quad3", "qty": 1, "cat": "CORE", "minSize": "1-3%", "conduct": "Poder de precificação" },
+      { "ticker": "GOOGL", "name": "Alphabet Inc Class A", "broker": "Tastyworks", "typeGroup": "Acao", "quad": "Quad3", "qty": 4, "cat": "CORE", "minSize": "1-3%", "conduct": "Geração de caixa" },
+      { "ticker": "INTC", "name": "Intel Corp", "broker": "Tastyworks", "typeGroup": "Acao", "quad": "Quad1", "qty": 11, "cat": "TRADE", "minSize": "1-3%", "conduct": "Vender no repique" },
+      { "ticker": "NOK", "name": "Nokia Corp ADR", "broker": "Tastyworks", "typeGroup": "Acao", "quad": "Quad1", "qty": 150, "cat": "TRADE", "minSize": "1-3%", "conduct": "Vender no repique" },
+      { "ticker": "AXTI", "name": "AXT Inc", "broker": "Tastyworks", "typeGroup": "Acao", "quad": "Quad1", "qty": 15, "cat": "TAIL", "minSize": "1-3%", "conduct": "Vender no repique" },
+      { "ticker": "MU", "name": "Micron Technology (AI Capex Longo Prazo)", "broker": "Tastyworks", "typeGroup": "Acao", "quad": "Quad1", "qty": 10, "cat": "HOLDS_ESTRUTURAIS", "minSize": "1-3%", "conduct": "HOLD ESTRUTURAL — Sem stop/venda automática" },
+      { "ticker": "TSM", "name": "Taiwan Semiconductor (AI Capex Longo Prazo)", "broker": "Tastyworks", "typeGroup": "Acao", "quad": "Quad1", "qty": 8, "cat": "HOLDS_ESTRUTURAIS", "minSize": "1-3%", "conduct": "HOLD ESTRUTURAL — Sem stop/venda automática" },
+      { "ticker": "ETN", "name": "Eaton Corp (AI Capex Longo Prazo)", "broker": "Tastyworks", "typeGroup": "Acao", "quad": "Quad2", "qty": 6, "cat": "HOLDS_ESTRUTURAIS", "minSize": "1-3%", "conduct": "HOLD ESTRUTURAL — Sem stop/venda automática" }
+    ]
+  }
+}

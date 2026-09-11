@@ -1,0 +1,63 @@
+{
+  "entradas": [
+    {
+      "data": "2026-09-11",
+      "timestamp": "2026-09-11T09:37:33.734226",
+      "regime": "QUAD 3",
+      "nav_total": 34991.0,
+      "adherence_pct": 71.4,
+      "cash_pct": 48.6,
+      "our_levels_count": 0,
+      "sinais_count": 32,
+      "sinais_destaque": [
+        {
+          "ticker": "HCA_BOND",
+          "broker": "Schwab",
+          "tipo": "observar",
+          "quad": "Quad4",
+          "portfolioWeight": 28.58,
+          "motivo": "Dentro das bandas operacionais",
+          "fonte": "Our Levels + Feed Real"
+        },
+        {
+          "ticker": "BE_BOND",
+          "broker": "Schwab",
+          "tipo": "observar",
+          "quad": "Quad3",
+          "portfolioWeight": 22.84,
+          "motivo": "Dentro das bandas operacionais",
+          "fonte": "Our Levels + Feed Real"
+        },
+        {
+          "ticker": "MELI",
+          "broker": "Schwab",
+          "tipo": "observar",
+          "quad": "Quad3",
+          "portfolioWeight": 0.0,
+          "motivo": "Dentro das bandas operacionais",
+          "fonte": "Our Levels + Feed Real"
+        },
+        {
+          "ticker": "FN",
+          "broker": "Schwab",
+          "tipo": "observar",
+          "quad": "Quad1",
+          "portfolioWeight": 0.0,
+          "motivo": "Dentro das bandas operacionais",
+          "fonte": "Our Levels + Feed Real"
+        },
+        {
+          "ticker": "GOOG",
+          "broker": "Schwab",
+          "tipo": "observar",
+          "quad": "Quad3",
+          "portfolioWeight": 0.0,
+          "motivo": "Dentro das bandas operacionais",
+          "fonte": "Our Levels + Feed Real"
+        }
+      ],
+      "auditoria_status": "VALIDADO_DETERMINISTICO"
+    }
+  ],
+  "ultima_atualizacao": "2026-09-11T09:37:33.734524"
+}

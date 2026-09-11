@@ -16,6 +16,8 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- html2pdf.js para exportação direta de arquivos PDF de alta fidelidade -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <!-- Supabase JS Client v2 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body class="dark-theme">
   <!-- Header / Top Bar -->
@@ -47,16 +49,22 @@
     </div>
 
     <div class="header-right">
+      <div class="market-status" style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); color: #34D399; font-size: 0.78rem; padding: 0.35rem 0.75rem; border-radius: 6px; display: flex; align-items: center; gap: 0.4rem;">
+        <span class="status-indicator online" style="background: #10B981; box-shadow: 0 0 8px #10B981;"></span>
+        <span id="liveFeedStatusText">🟢 Live Real-Time Feed</span>
+      </div>
       <div class="market-status">
         <span class="status-indicator online"></span>
         <span id="marketTime">09/09/2026 | NYSE Open</span>
       </div>
       <button class="btn btn-outline" id="btnSyncHeader" onclick="syncReportsOnDemand()" title="Sincronizar novos relatórios com o Gmail agora">
-        <span class="icon" id="syncIconHeader">🔄</span> <span id="syncTextHeader">Sincronizar Relatórios</span>
+        <span class="icon" id="syncIconHeader">🔄</span> <span id="syncTextHeader">Sincronizar</span>
       </button>
-      <button class="btn btn-outline" id="btnEarlyLookTraduzidoHeader" onclick="setTab('earlylook')" title="Acessar o EARLY LOOK traduzido na Central de Relatórios">
-        <span class="icon">📑</span> <span>EARLY LOOK (09/09)</span>
-      </button>
+      <div id="userAuthHeader" class="auth-user-badge">
+        <span class="avatar-dot"></span>
+        <span id="userAuthEmail">Autenticando...</span>
+        <button onclick="handleSignOut()" style="background: none; border: none; color: #F87171; cursor: pointer; font-size: 0.75rem; padding: 0 0.2rem;" title="Sair do Terminal">🚪 Sair</button>
+      </div>
     </div>
   </header>
 
@@ -1429,6 +1437,9 @@
             </table>
           </div>
         </div>
+      </div>
+    </section>
+
     <!-- ========================================================
          8. COPILOT MACRO AI (CHATBOT INTERATIVO & ASSISTENTE)
          ======================================================== -->
@@ -1449,7 +1460,13 @@
                 </p>
               </div>
             </div>
-            <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+              <span id="copilotAiSourceBadge" class="badge" style="background: rgba(56, 189, 248, 0.15); color: #38BDF8; font-size: 0.72rem; border: 1px solid rgba(56, 189, 248, 0.3);">
+                <span style="color: #38BDF8;">●</span> Deep Macro Engine Ativo
+              </span>
+              <button class="btn btn-outline btn-sm" onclick="configureClaudeApiKey()" title="Configurar Claude API Key (Anthropic)">
+                <span class="icon">🔑</span> Claude API
+              </button>
               <button class="btn btn-outline btn-sm" onclick="clearChatHistory()" title="Limpar conversa">
                 <span class="icon">🗑️</span> Limpar
               </button>
@@ -1464,16 +1481,16 @@
               <div class="chat-bubble">
                 <p><strong>Olá! Sou o seu Copilot Macro da Hedgeye.</strong></p>
                 <p style="margin-top: 0.4rem;">
-                  Estou conectado em tempo real aos seus <strong>relatórios diários (EARLY LOOK)</strong>, às suas posições nas corretoras (<strong>Charles Schwab & Tastyworks</strong>), aos <strong>Risk Ranges calibrados de hoje</strong> e aos dados macroeconômicos.
+                  Estou conectado em tempo real aos seus <strong>relatórios diários (EARLY LOOK)</strong>, às suas posições nas corretoras (<strong>Charles Schwab & Tastyworks</strong>), aos <strong>Risk Ranges calibrados de hoje</strong>, às <strong>cotações intradiárias live</strong> e à <strong>Alpha Vantage Enterprise</strong>.
                 </p>
                 <p style="margin-top: 0.4rem; font-size: 0.82rem; color: #94A3B8;">
                   Você pode me perguntar sobre:
                 </p>
                 <ul style="font-size: 0.82rem; color: #CBD5E1;">
+                  <li><strong>Oportunidades em Tempo Real:</strong> <em>"Considerando a variação do mercado de hoje e o diagnóstico no relatório, onde estão as oportunidades?"</em></li>
                   <li><strong>Diagnóstico do Portfólio:</strong> <em>"Como está a aderência da minha carteira ao Quad 3?"</em></li>
                   <li><strong>Tomada de Decisão:</strong> <em>"O que devo comprar nos pisos e o que devo vender nos repiques?"</em></li>
                   <li><strong>Research Macro:</strong> <em>"Qual é a leitura do Keith McCullough no EARLY LOOK de hoje?"</em></li>
-                  <li><strong>Análise de Ativos:</strong> <em>"Como estão os Risk Ranges de Ouro, Dólar, Petróleo e das minhas ações?"</em></li>
                 </ul>
               </div>
             </div>
@@ -1481,6 +1498,9 @@
 
           <!-- Sugestões Rápidas de Perguntas (1 Clique) -->
           <div class="chat-quick-chips">
+            <button class="chat-chip" onclick="useQuickPrompt('Considerando a variação do mercado de hoje e o diagnóstico no relatório, onde estão as oportunidades?')">
+              🔥 Onde estão as oportunidades hoje?
+            </button>
             <button class="chat-chip" onclick="useQuickPrompt('Como está a minha carteira hoje e qual é a aderência ao Quad 3?')">
               💼 Como está minha carteira?
             </button>
@@ -1664,6 +1684,17 @@
               </a>
             </div>
           </div>
+        </div>
+
+        <!-- Banner de Status de Feed em Tempo Real -->
+        <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 8px; padding: 0.6rem 1rem; margin-bottom: 1rem; font-size: 0.82rem; color: #A7F3D0; flex-wrap: wrap; gap: 0.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span class="status-indicator online" style="background: #10B981; box-shadow: 0 0 6px #10B981;"></span>
+            <span><strong>Feed em Tempo Real Ativo:</strong> Cotações ao vivo integradas ao Yahoo Finance / Bolsas Globais (atualização automática a cada 30 segundos).</span>
+          </div>
+          <button class="btn btn-outline btn-sm" onclick="fetchLiveMarketQuotes()" style="color: #34D399; border-color: rgba(52, 211, 153, 0.4); padding: 0.2rem 0.6rem; font-size: 0.75rem;">
+            🔄 Sincronizar Cotações Agora
+          </button>
         </div>
 
         <!-- Filtros por Categoria dos Ativos do TradingView -->
@@ -2042,10 +2073,46 @@
     ⚡
   </button>
 
+  <!-- Modal / Overlay de Autenticação Supabase -->
+  <div id="authOverlayModal" class="auth-overlay-backdrop" style="display: none;">
+    <div class="auth-card">
+      <div class="auth-logo-box">
+        <span class="icon">⚡</span>
+        <div>
+          <h2>HEDGEYE <span>TERMINAL</span></h2>
+          <p>Acesso Restrito & Autenticação Institucional</p>
+        </div>
+      </div>
+
+      <form id="authLoginForm" onsubmit="handleAuthSubmit(event)">
+        <div class="auth-input-group">
+          <label for="authEmailInput">E-mail Institucional</label>
+          <input type="email" id="authEmailInput" placeholder="seu.email@exemplo.com" required value="jpaulo82@gmail.com">
+        </div>
+
+        <div class="auth-input-group">
+          <label for="authPasswordInput">Senha de Acesso</label>
+          <input type="password" id="authPasswordInput" placeholder="••••••••" required>
+        </div>
+
+        <div id="authStatusMsg" class="auth-status-msg"></div>
+
+        <button type="submit" class="auth-btn-primary" id="authSubmitBtn">
+          <span>Entrar no Terminal</span>
+          <span class="icon">➔</span>
+        </button>
+      </form>
+
+      <div style="margin-top: 1.2rem; text-align: center; font-size: 0.72rem; color: #64748B;">
+        🔒 Sessão protegida por criptografia de ponta a ponta e Supabase Auth.
+      </div>
+    </div>
+  </div>
+
   <!-- Toast de Notificação -->
   <div class="toast-notification" id="toastNotification">Notificação</div>
 
   <!-- Script Principal da Aplicação -->
-  <script src="app.js?v=20260910_3"></script>
+  <script src="app.js?v=20260910_FINAL_V2"></script>
 </body>
 </html>

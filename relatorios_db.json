@@ -1,60 +1,60 @@
 {
-  "updatedAt": "10/09/2026 14:02:49",
-  "total": 84,
+  "updatedAt": "11/09/2026 09:37:23",
+  "total": 86,
   "latest": {
-    "id": "110057",
-    "filename": "hedgeye_110057_EARLY_LOOK__Betting__1T_On_Inflation_Accelera.md",
-    "title": "EARLY LOOK: Betting $1T On Inflation Accelerating",
-    "date": "Thu, 10 Sep 2026 07:39:58 -0400 (EDT)",
-    "shortDate": "10/09/2026",
+    "id": "110123",
+    "filename": "hedgeye_110123_EARLY_LOOK__Front-Running_the_Fed_s_Inflation.md",
+    "title": "EARLY LOOK: Front-Running the Fed’s Inflation Problem",
+    "date": "Fri, 11 Sep 2026 08:05:23 -0400 (EDT)",
+    "shortDate": "11/09/2026",
     "sender": "Hedgeye <info@hedgeye.com>",
     "riskRanges": [
       {
-        "name": "s running.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+        "name": "of inflation.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
         "ticker": "UST10Y",
-        "low": 4.7,
-        "high": 4.89,
+        "low": 4.75,
+        "high": 4.98,
         "signal": "BULLISH"
       },
       {
         "name": "High Yield",
         "ticker": "HYG",
-        "low": 78.91,
-        "high": 79.49,
-        "signal": "NEUTRAL"
+        "low": 78.25,
+        "high": 79.2,
+        "signal": "BEARISH"
       },
       {
         "name": "Investment Grade Corporate Bond ETF",
         "ticker": "LQD",
-        "low": 104.8,
-        "high": 106.1,
+        "low": 104.1,
+        "high": 105.8,
         "signal": "BEARISH"
       },
       {
         "name": "S&P 500",
         "ticker": "SPX",
-        "low": 7601.0,
-        "high": 7757.0,
+        "low": 7565.0,
+        "high": 7730.0,
         "signal": "BULLISH"
       },
       {
         "name": "NASDAQ Composite",
         "ticker": "COMPQ",
-        "low": 26014.0,
-        "high": 26683.0,
+        "low": 25799.0,
+        "high": 26501.0,
         "signal": "BULLISH"
       },
       {
         "name": "Russell 2000",
         "ticker": "RUT",
-        "low": 2901.0,
-        "high": 2988.0,
+        "low": 2875.0,
+        "high": 2970.0,
         "signal": "BEARISH"
       },
       {
         "name": "Health Care Select Sector SPDR Fund",
         "ticker": "XLV",
-        "low": 165.0,
+        "low": 163.0,
         "high": 175.0,
         "signal": "BULLISH"
       },
@@ -62,70 +62,205 @@
         "name": "iShares Expanded Tech-Software Sector ETF",
         "ticker": "IGV",
         "low": 99.0,
-        "high": 112.0,
+        "high": 111.0,
         "signal": "BULLISH"
       },
       {
         "name": "VanEck Oil Services ETF",
         "ticker": "OIH",
         "low": 415.0,
-        "high": 442.0,
+        "high": 440.0,
         "signal": "BULLISH"
       },
       {
         "name": "Volatility Index",
         "ticker": "VIX",
-        "low": 14.25,
-        "high": 17.01,
-        "signal": "BEARISH"
+        "low": 14.33,
+        "high": 18.77,
+        "signal": "NEUTRAL"
       },
       {
         "name": "U.S. Dollar Index",
         "ticker": "USD",
-        "low": 98.33,
-        "high": 99.49,
+        "low": 98.4,
+        "high": 99.67,
         "signal": "BEARISH"
       },
       {
         "name": "Light Crude Oil Continuous Contract",
         "ticker": "WTIC",
-        "low": 88.12,
-        "high": 99.91,
+        "low": 88.51,
+        "high": 102.99,
         "signal": "BULLISH"
       },
       {
         "name": "Natural Gas Continuous Contract",
         "ticker": "NATGAS",
-        "low": 2.75,
-        "high": 3.03,
+        "low": 2.71,
+        "high": 2.99,
         "signal": "BULLISH"
       },
       {
         "name": "Gold Spot Price",
         "ticker": "GOLD",
-        "low": 4301.0,
-        "high": 4502.0,
+        "low": 4275.0,
+        "high": 4503.0,
         "signal": "BULLISH"
       },
       {
         "name": "Copper Spot Price",
         "ticker": "COPPER",
-        "low": 6.55,
-        "high": 6.85,
+        "low": 6.35,
+        "high": 6.84,
         "signal": "BULLISH"
       },
       {
         "name": "Silver Spot Price",
         "ticker": "SILVER",
-        "low": 64.0,
-        "high": 68.0,
-        "signal": "NEUTRAL"
+        "low": 61.0,
+        "high": 66.0,
+        "signal": "BEARISH"
       }
     ],
-    "content": "# EARLY LOOK: Betting $1T On Inflation Accelerating\n**Data:** Thu, 10 Sep 2026 07:39:58 -0400 (EDT)\n**Remetente:** Hedgeye <info@hedgeye.com>\n**ID:** 110057\n\n---\n\nThis research was prepared exclusively for jpaulo82@gmail.com as a subscriber of Hedgeye Risk Management and may not be forwarded or otherwise provided to any unauthorized party. If you have received this transmission in error, please notify Hedgeye Risk Management <mailto:support@hedgeye.com>.\n\nHaving trouble viewing this email? View it in your browser <https://model2.hedgeye.com/click/47432025.1232/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcwMDU/65561052a51cff3724ccb7dfD7260562b>\n\n\n\n \n\n\n\n09/10/2026 07:39 AM EDT Betting $1T On Inflation Accelerating\n\n“Everyone’s a genius in a bull market.” -Davey Day Trader\n\n \n\n\n\nKeith McCullough\n\n\n\n@keithmccullough\n\n\n\nKey Takeaways\n\n\n\nThe U.S. Dollar is near 3-month lows while 2-year and 10-year Treasury yields push to new inflation-cycle highs, signaling that markets are rejecting the deficit-driven policy narrative.\n\n\n\nHedgeye’s Inflation Nowcast has inflation re-accelerating through August and September, with quarterly inflation tracking toward 3.76% y/y in Q4 2026.\n\n\n\nThe setup continues to favor BUXX and CLOX over long-duration bonds, while TLT, ZROZ, LQD, and rate-sensitive Utilities remain shorts as inflation and yields move higher.\n\n\n\nThe Big Picture\n\n\n\nThat's Dave Portnoy's self-appointed nickname from COVID (when he live-streamed stock trading after sports betting shut down, rode the pandemic bull market, declared himself a genius, and then lost millions publicly when the market crashed).\n\n\n\nPump makes Portnoy's bets look like chump change. Forget millions. We're now talking a $1 TRILLION US Taxpayer funded deficit spend bet that pays out $5,000 per American. Davey Day Trader with tweets and a printing press.\n\n\n\nI'll let the political math geniuses at Fox explain why this is \"the art of the deal.\" With the US Dollar hitting 3-month purchasing power lows, some Americans might need that $5,000 just to cover what the $1 trillion that printed it cost them at the grocery store.\n\n\n\nNo worries, Bros. Next to the “house” Bessy thinks he's running, there's the Big House - the US Treasury Bond Market. And it's burning as this proposed $1T deficit ramp hits the tape while inflation keeps accelerating.\n\n\n\nMacro Grind\n\n\n\n(VIEW LARGER IMAGE <https://model2.hedgeye.com/click/47432025.1232/aHR0cHM6Ly9kMXloaWxzNml3aDVsNS5jbG91ZGZyb250Lm5ldC9jaGFydHMvcmVzaXplZC8xNjAwODgvb3JpZ2luYWwvMDkuMTAuMjAyNl9BLkkuX2NhcnRvb24ucG5nP3NyYz1lbWFpbCZlbWFpbD1qcGF1bG84MkBnbWFpbC5jb20/65561052a51cff3724ccb7dfC1d9a6113>)\n\n\n\nI'm a Portnoy fan. If you love the American Dream (and the New England Patriots!), how can you not be? He started Barstool Sports as a newspaper in Boston but \"the website changed everything instantly.\"\n\n\n\n\"They didn't have to wait for their morning commute and be done with the entire paper before they reached work. Now they could sit in their office and refresh all day long…\" -Cancel Me If You Can (pg 35)\n\n\n\nDo you know any serious Macro Investor still reading \"the papers\" on their morning commute PE Powell style? Do you know anyone who’s good at this who waits for a Fed Economist to give them a Bond Yield and inflation read?\n\n\n\nThere's definitely a retired Old Wall guy reading the Old Wall Journal on the beach in West Palm right now. He’s all over his local political hero’s Pump headlines. Enjoying his coffee. Waving at nice boats.\n\n\n\nAll the while, this is what the Big House and USD are signaling this morning:\n\n\n\nUS Dollar Index = $98.91 (right around 3-month lows with Japanese Yen still signaling Bullish TREND)\n\n\n\nUST 2yr Yield ramping to new Inflation Cycle Highs at 4.44% with the TRR up at 4.50%\n\n\n\nUST10yr Yield ramping to new Inflation Cycle Highs at 4.86% with the TRR up at 4.89% \n\n\n\n*TRR = Top-End of the Risk Range™ Signal\n\n\n\nImagine NOT having an accurate Inflation Nowcast and/or daily Risk Range™ Signals. No real-time calibration. No fractal dimensions. Just vibes and bets.\n\n\n\nThat's the equivalent of sending our Navy SEALs into Abbottabad with a 2001 flip phone and a compass. Instead, Americans are supposed to trust a Government Guy who declared \"I am the house\"?\n\n\n\nIf you want to be Macro Aware, keep doing what hundreds of thousands of investors are already doing. Keep reading the Hedgeye numbers. Follow the Signals. Trust the process.\n\n\n\nROC Numbers > Political Narratives. 100% of the time.\n\n\n\nBack to the ROC numbers, let’s refresh our real-time US Inflation Nowcast (published to subs yesterday):\n\n\n\nMonthly, we have inflation re-accelerating from July’s #Quad4 slowdown in July\n\n\n\nMonthly, we have inflation re-accelerating from July’s 3.36% y/y for both August and September\n\n\n\nQuarterly, we have inflation re-accelerating towards 3.76% y/y in Q4 of 2026\n\n\n\nIf you know where the direction of inflation is heading … and the Bond Market agrees with that, you’re good. In your hard-earned retirement accounts, that means you’re really good.\n\n\n\nThat means being long BUXX and CLOX instead of long-term Treasuries (TLT). As a reminder, TLT remains one of The Fam's biggest shorts alongside ZROZ, LQD, and Rate Sensitive Utilities (XLU).\n\n\n\nNo Bessy Buds, that's not “personal” or betting against the house you claim to be running. After 27 years of doing this, I still have the humility to bet alongside economic gravity instead of politicians.\n\n\n\nDavey Day Trader learned that lesson on camera, in real time, with real capital, in front of millions of people. The Implicate Order didn't care about his followers. It doesn't care about Pump’s title either. It just keeps flowing.\n\n\n\nThe house always wins. Just not the one Bessy thinks he's running.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield (UST10Y) 4.70-4.89 (bullish)\n\nHigh Yield (HYG) 78.91-79.49 (neutral)\n\nInvestment Grade Corporate Bond ETF (LQD) 104.8-106.1 (bearish)\n\nS&P 500 (SPX) 7601-7757 (bullish)\n\nNASDAQ Composite (COMPQ) 26014-26683 (bullish)\n\nRussell 2000 (RUT) 2901-2988 (bearish)\n\nHealth Care Select Sector SPDR Fund (XLV) 165-175 (bullish)\n\niShares Expanded Tech-Software Sector ETF (IGV) 99-112 (bullish)\n\nVanEck Oil Services ETF (OIH) 415-442 (bullish)\n\nVolatility Index (VIX) 14.25-17.01 (bearish)\n\nU.S. Dollar Index (USD) 98.33-99.49 (bearish)\n\nLight Crude Oil Continuous Contract (WTIC) 88.12-99.91 (bullish)\n\nNatural Gas Continuous Contract (NATGAS) 2.75-3.03 (bullish)\n\nGold Spot Price (GOLD) 4301-4502 (bullish)\n\nCopper Spot Price (COPPER) 6.55-6.85 (bullish)\n\nSilver Spot Price (SILVER) 64-68 (neutral)\n\n\n\nBest of luck out there today,\n\nKM\n\n\n\n(VIEW LARGER IMAGE <https://model2.hedgeye.com/click/47432025.1232/aHR0cHM6Ly9kMXloaWxzNml3aDVsNS5jbG91ZGZyb250Lm5ldC9jaGFydHMvcmVzaXplZC8xNjAwODgvb3JpZ2luYWwvYThkMWJlMGFfYzc2Y180MTFhXzhmOGZfOTA1NTgxNWU2NDQwLnBuZz9zcmM9ZW1haWwmZW1haWw9anBhdWxvODJAZ21haWwuY29t/65561052a51cff3724ccb7dfC14490a7b>)\n\n\n\n \n\nPlease visit https://model2.hedgeye.com/click/47432025.1232/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcwMDU/65561052a51cff3724ccb7dfE7260562b <https://model2.hedgeye.com/click/47432025.1232/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcwMDU/65561052a51cff3724ccb7dfF7260562b> for more information.\n\n© 2026 Hedgeye Risk Management LLC, all rights reserved. Redistribution of any part of this information is prohibited without the express written consent of Hedgeye. Hedgeye is not responsible for any errors in or omissions to this information, or for any consequences that may result from the use of this information. Hedgeye® is a registered trademark of Hedgeye Risk Management, LLC.\n\n\n\nIf you believe this has been sent to you in error, please safely unsubscribe <https://model2.hedgeye.com/oc/65561052a51cff3724ccb7dfs8ms9.y8/a5f313ea>.\n\n\n\n<https://model2.hedgeye.com/click/47432025.1232/aHR0cDovL3d3dy5oZWRnZXllLmNvbQ/65561052a51cff3724ccb7dfC2b03fc4e>",
-    "summary": "# EARLY LOOK: Betting $1T On Inflation Accelerating\n**Data:** Thu, 10 Sep 2026 07:39:58 -0400 (EDT)\n**Remetente:** Hedgeye <info@hedgeye.com>\n**ID:** 110057\n\n---\n\nThis research was prepared exclusively for jpaulo82@gmail.com as a subscriber of Hedgeye Risk Management and may not be forwarded or otherwise provided to any unauthorized party. If you have received this transmission in error, please no..."
+    "content": "# EARLY LOOK: Front-Running the Fed’s Inflation Problem\n**Data:** Fri, 11 Sep 2026 08:05:23 -0400 (EDT)\n**Remetente:** Hedgeye <info@hedgeye.com>\n**ID:** 110123\n\n---\n\nThis research was prepared exclusively for jpaulo82@gmail.com as a subscriber of Hedgeye Risk Management and may not be forwarded or otherwise provided to any unauthorized party. If you have received this transmission in error, please notify Hedgeye Risk Management <mailto:support@hedgeye.com>.\n\nHaving trouble viewing this email? View it in your browser <https://model2.hedgeye.com/click/47448694.302/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcwNjY/65561052a51cff3724ccb7dfDef0a405a>\n\n\n\n \n\n\n\n09/11/2026 08:04 AM EDT Front-Running the Fed’s Inflation Problem\n\n“It is almost always swinging toward or away from the extremes of its arc.” -Howard Marks\n\n \n\n\n\nRyan Ricci\n\n\n\n@HedgeyeAI\n\n\n\nKey Takeaways\n\n\n\nHedgeye sees inflation accelerating to roughly 3.5% in August, rising again in September, and staying sticky through year-end, increasing the probability of additional Fed rate hikes.\n\n\n\nMarkets are already pricing that inflation risk through higher 2-year yields, while commodities, energy, higher rates, and select international exposures outperform growth, momentum, bonds, utilities, and other rate-sensitive assets.\n\n\n\nThe market tends to swing between pricing too many hikes and too many cuts, so Hedgeye remains positioned long inflation for now while waiting for the signals to show when that pendulum starts moving the other way.\n\n\n\nThe Big Picture\n\n\n\nTwenty-five years today.\n\n\n\nI was three. No memory of towers or flight numbers, just one scene: my parents pulling me out of school early, no explanation given.\n\n\n\nSo I won't pretend to remember something I don't. But I've done the math on it since, and the math is what got me. Almost 3,000 people went to work on a Tuesday that looked exactly like every other Tuesday. Kissed their kid goodbye, or didn't even get the chance to. Assumed, the way you have to assume to function, that the ordinary version of the day was the one they'd get.\n\n\n\nI've got a toddler now, and that's the part that sticks with me on this day.\n\n\n\nI don't remember 9/11. But I do remember what it cost people, and I remember to take a moment for the ones who ran toward it that day instead of away.\n\n\n\nMacro Grind\n\n\n\n(VIEW LARGER IMAGE <https://model2.hedgeye.com/click/47448694.302/aHR0cHM6Ly9kMXloaWxzNml3aDVsNS5jbG91ZGZyb250Lm5ldC9jaGFydHMvcmVzaXplZC8xNjAxNDcvb3JpZ2luYWwvMDkuMTEuMjAyNl9hbHdheXNfcmVtZW1iZXJfY2FydG9vbi5wbmc_c3JjPWVtYWlsJmVtYWlsPWpwYXVsbzgyQGdtYWlsLmNvbQ/65561052a51cff3724ccb7dfCf974af2f>)\n\n\n\nWe are in a very interesting part of the market (it’s always interesting that’s why we do this). With our new Fed Chair Kevin Warsh, he has been very adamant that he will give no guidance and that he will listen to the markets. With the caveat that he is very serious about inflation. \"We must be confident that underlying inflation is moving to our objective, clearly and at sufficient speed. Otherwise, we have work to do.”\n\n\n\nWhich is guidance…\n\n\n\nBut let’s move past that point real quick.\n\n\n\nEssentially Warsh is telling the market that he is watching inflation, and he is telling the market that the forward progression of inflation will dictate rates.\n\n\n\nNOW the market does not know how to model inflation.\n\n\n\nLuckily everyone reading this right now is subscribed to Hedgeye. Our macro policy is Growth + Inflation = policy. AND we have the streets best inflation forecast…\n\n\n\nThat puts us at a special spot in this market. Others are reacting to something they don’t know what the direction is.\n\n\n\nSo, let’s get to the numbers.\n\n\n\nOur nowcast, which comes out weekly AND projects out inflation a full month ahead of the print, has inflation for August as an acceleration. We actually have it at 3.5%. The market is at low 3.4% (meaning somewhere between 3.36% - 3.43%). Previous month inflation was 3.36%. So, both Hedgeye and the market have an acceleration, Hedgeye is seeing a larger acceleration than the street, but importantly an acceleration. THEN we have to look one month out to September, Hedgeye has another acceleration of ~10bps from the August number. The street: has inflation flat. THEN looking at the Q4/December inflation, Hedgeye has inflation essentially flat from there (sticky high). The street: has no forecast.\n\n\n\nWhich means we have to remember, since the market does not have an accurate nowcast they are reacting to whatever just happens. They are blind. We at Hedgeye have a sneak peek at what they are going to see. Which is: accelerating and sticky high inflation for the rest of the year.\n\n\n\nNow, we use that to front run fed policy. Which is pretty simple, a higher probability of rate hikes into the end of the year.\n\n\n\nYou don’t have to listen to me on that, listen to the market. The 2yr yield (the fed front runner) has been making cycle highs and higher highs within a bullish trend and trade. One of the most bullish signals you can have in macro (bullish from a yield perspective).\n\n\n\nWe have to remember though that the market isn’t really looking much further than past this next inflation print and the Fed meeting next week. That is where you at Hedgeye can front run the market.\n\n\n\nBut what is important is to listen to the market while it continues to price in more rate hikes due to their perception of higher inflation. What has worked very well from a performance standpoint: Commodities (Oil and Agg), Energy stocks, Long rates (short bonds), select international exposures.\n\n\n\nWhat has worked very poorly: Russell, Growth, Momentum, Industrials, Retail, China Technology, Bonds, Utilities.\n\n\n\nIt is no coincidence that this is what our positioning is. We have been getting longer of inflation, select intl. exposures (like Colombia COLO). While getting shorter of momentum, growth, Bonds, and Utes.\n\n\n\nAlways remember, this is a pendulum that swings. The market loves to price in more rate hikes than what will actually happen and then swing back to the other side and price in more rate cuts than will actually happen. Why is it a pendulum? Because the market doesn’t actually have a model, it is going off of what happened last and projecting out that as the future.\n\n\n\nWhen this pendulum swings in the other direction we will tell you, the market signals will change, and we will change alongside it. But for now, long inflation is where the alpha is and what we are currently riding.\n\n\n\nWe will follow the process. Going into today’s inflation print, Crude Oil and Rates were at the top ends of their ranges. Meaning we already got paid shorting bonds and XLU going into today already. We sold some at the top end of the range and Keith currently has these positions at his min. Now we are in wait and watch mode to see what yields signal on the leaked “news” of inflation.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield (UST10Y) 4.75-4.98 (bullish)\n\nHigh Yield (HYG) 78.25-79.20 (bearish)\n\nInvestment Grade Corporate Bond ETF (LQD) 104.1-105.8 (bearish)\n\nS&P 500 (SPX) 7565-7730 (bullish)\n\nNASDAQ Composite (COMPQ) 25799-26501 (bullish)\n\nRussell 2000 (RUT) 2875-2970 (bearish)\n\nHealth Care Select Sector SPDR Fund (XLV) 163-175 (bullish)\n\niShares Expanded Tech-Software Sector ETF (IGV) 99-111 (bullish)\n\nVanEck Oil Services ETF (OIH) 415-440 (bullish)\n\nVolatility Index (VIX) 14.33-18.77 (neutral)\n\nU.S. Dollar Index (USD) 98.40-99.67 (bearish)\n\nLight Crude Oil Continuous Contract (WTIC) 88.51-102.99 (bullish)\n\nNatural Gas Continuous Contract (NATGAS) 2.71-2.99 (bullish)\n\nGold Spot Price (GOLD) 4275-4503 (bullish)\n\nCopper Spot Price (COPPER) 6.35-6.84 (bullish)\n\nSilver Spot Price (SILVER) 61-66 (bearish)\n\n\n\n(VIEW LARGER IMAGE <https://model2.hedgeye.com/click/47448694.302/aHR0cHM6Ly9kMXloaWxzNml3aDVsNS5jbG91ZGZyb250Lm5ldC9jaGFydHMvcmVzaXplZC8xNjAxNDcvb3JpZ2luYWwvUGljdHVyZTEucG5nP3NyYz1lbWFpbCZlbWFpbD1qcGF1bG84MkBnbWFpbC5jb20/65561052a51cff3724ccb7dfC9b6f00a0>)  \n\n\n\n \n\nPlease visit https://model2.hedgeye.com/click/47448694.302/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcwNjY/65561052a51cff3724ccb7dfEef0a405a <https://model2.hedgeye.com/click/47448694.302/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcwNjY/65561052a51cff3724ccb7dfFef0a405a> for more information.\n\n© 2026 Hedgeye Risk Management LLC, all rights reserved. Redistribution of any part of this information is prohibited without the express written consent of Hedgeye. Hedgeye is not responsible for any errors in or omissions to this information, or for any consequences that may result from the use of this information. Hedgeye® is a registered trademark of Hedgeye Risk Management, LLC.\n\n\n\nIf you believe this has been sent to you in error, please safely unsubscribe <https://model2.hedgeye.com/oc/65561052a51cff3724ccb7dfs8zna.8e/00dfb8fe>.\n\n\n\n<https://model2.hedgeye.com/click/47448694.302/aHR0cDovL3d3dy5oZWRnZXllLmNvbQ/65561052a51cff3724ccb7dfC705242b9>",
+    "summary": "# EARLY LOOK: Front-Running the Fed’s Inflation Problem\n**Data:** Fri, 11 Sep 2026 08:05:23 -0400 (EDT)\n**Remetente:** Hedgeye <info@hedgeye.com>\n**ID:** 110123\n\n---\n\nThis research was prepared exclusively for jpaulo82@gmail.com as a subscriber of Hedgeye Risk Management and may not be forwarded or otherwise provided to any unauthorized party. If you have received this transmission in error, pleas..."
   },
   "reports": [
+    {
+      "id": "110123",
+      "filename": "hedgeye_110123_EARLY_LOOK__Front-Running_the_Fed_s_Inflation.md",
+      "title": "EARLY LOOK: Front-Running the Fed’s Inflation Problem",
+      "date": "Fri, 11 Sep 2026 08:05:23 -0400 (EDT)",
+      "shortDate": "11/09/2026",
+      "sender": "Hedgeye <info@hedgeye.com>",
+      "riskRanges": [
+        {
+          "name": "of inflation.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "ticker": "UST10Y",
+          "low": 4.75,
+          "high": 4.98,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "High Yield",
+          "ticker": "HYG",
+          "low": 78.25,
+          "high": 79.2,
+          "signal": "BEARISH"
+        },
+        {
+          "name": "Investment Grade Corporate Bond ETF",
+          "ticker": "LQD",
+          "low": 104.1,
+          "high": 105.8,
+          "signal": "BEARISH"
+        },
+        {
+          "name": "S&P 500",
+          "ticker": "SPX",
+          "low": 7565.0,
+          "high": 7730.0,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "NASDAQ Composite",
+          "ticker": "COMPQ",
+          "low": 25799.0,
+          "high": 26501.0,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "Russell 2000",
+          "ticker": "RUT",
+          "low": 2875.0,
+          "high": 2970.0,
+          "signal": "BEARISH"
+        },
+        {
+          "name": "Health Care Select Sector SPDR Fund",
+          "ticker": "XLV",
+          "low": 163.0,
+          "high": 175.0,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "iShares Expanded Tech-Software Sector ETF",
+          "ticker": "IGV",
+          "low": 99.0,
+          "high": 111.0,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "VanEck Oil Services ETF",
+          "ticker": "OIH",
+          "low": 415.0,
+          "high": 440.0,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "Volatility Index",
+          "ticker": "VIX",
+          "low": 14.33,
+          "high": 18.77,
+          "signal": "NEUTRAL"
+        },
+        {
+          "name": "U.S. Dollar Index",
+          "ticker": "USD",
+          "low": 98.4,
+          "high": 99.67,
+          "signal": "BEARISH"
+        },
+        {
+          "name": "Light Crude Oil Continuous Contract",
+          "ticker": "WTIC",
+          "low": 88.51,
+          "high": 102.99,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "Natural Gas Continuous Contract",
+          "ticker": "NATGAS",
+          "low": 2.71,
+          "high": 2.99,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "Gold Spot Price",
+          "ticker": "GOLD",
+          "low": 4275.0,
+          "high": 4503.0,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "Copper Spot Price",
+          "ticker": "COPPER",
+          "low": 6.35,
+          "high": 6.84,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "Silver Spot Price",
+          "ticker": "SILVER",
+          "low": 61.0,
+          "high": 66.0,
+          "signal": "BEARISH"
+        }
+      ],
+      "content": "# EARLY LOOK: Front-Running the Fed’s Inflation Problem\n**Data:** Fri, 11 Sep 2026 08:05:23 -0400 (EDT)\n**Remetente:** Hedgeye <info@hedgeye.com>\n**ID:** 110123\n\n---\n\nThis research was prepared exclusively for jpaulo82@gmail.com as a subscriber of Hedgeye Risk Management and may not be forwarded or otherwise provided to any unauthorized party. If you have received this transmission in error, please notify Hedgeye Risk Management <mailto:support@hedgeye.com>.\n\nHaving trouble viewing this email? View it in your browser <https://model2.hedgeye.com/click/47448694.302/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcwNjY/65561052a51cff3724ccb7dfDef0a405a>\n\n\n\n \n\n\n\n09/11/2026 08:04 AM EDT Front-Running the Fed’s Inflation Problem\n\n“It is almost always swinging toward or away from the extremes of its arc.” -Howard Marks\n\n \n\n\n\nRyan Ricci\n\n\n\n@HedgeyeAI\n\n\n\nKey Takeaways\n\n\n\nHedgeye sees inflation accelerating to roughly 3.5% in August, rising again in September, and staying sticky through year-end, increasing the probability of additional Fed rate hikes.\n\n\n\nMarkets are already pricing that inflation risk through higher 2-year yields, while commodities, energy, higher rates, and select international exposures outperform growth, momentum, bonds, utilities, and other rate-sensitive assets.\n\n\n\nThe market tends to swing between pricing too many hikes and too many cuts, so Hedgeye remains positioned long inflation for now while waiting for the signals to show when that pendulum starts moving the other way.\n\n\n\nThe Big Picture\n\n\n\nTwenty-five years today.\n\n\n\nI was three. No memory of towers or flight numbers, just one scene: my parents pulling me out of school early, no explanation given.\n\n\n\nSo I won't pretend to remember something I don't. But I've done the math on it since, and the math is what got me. Almost 3,000 people went to work on a Tuesday that looked exactly like every other Tuesday. Kissed their kid goodbye, or didn't even get the chance to. Assumed, the way you have to assume to function, that the ordinary version of the day was the one they'd get.\n\n\n\nI've got a toddler now, and that's the part that sticks with me on this day.\n\n\n\nI don't remember 9/11. But I do remember what it cost people, and I remember to take a moment for the ones who ran toward it that day instead of away.\n\n\n\nMacro Grind\n\n\n\n(VIEW LARGER IMAGE <https://model2.hedgeye.com/click/47448694.302/aHR0cHM6Ly9kMXloaWxzNml3aDVsNS5jbG91ZGZyb250Lm5ldC9jaGFydHMvcmVzaXplZC8xNjAxNDcvb3JpZ2luYWwvMDkuMTEuMjAyNl9hbHdheXNfcmVtZW1iZXJfY2FydG9vbi5wbmc_c3JjPWVtYWlsJmVtYWlsPWpwYXVsbzgyQGdtYWlsLmNvbQ/65561052a51cff3724ccb7dfCf974af2f>)\n\n\n\nWe are in a very interesting part of the market (it’s always interesting that’s why we do this). With our new Fed Chair Kevin Warsh, he has been very adamant that he will give no guidance and that he will listen to the markets. With the caveat that he is very serious about inflation. \"We must be confident that underlying inflation is moving to our objective, clearly and at sufficient speed. Otherwise, we have work to do.”\n\n\n\nWhich is guidance…\n\n\n\nBut let’s move past that point real quick.\n\n\n\nEssentially Warsh is telling the market that he is watching inflation, and he is telling the market that the forward progression of inflation will dictate rates.\n\n\n\nNOW the market does not know how to model inflation.\n\n\n\nLuckily everyone reading this right now is subscribed to Hedgeye. Our macro policy is Growth + Inflation = policy. AND we have the streets best inflation forecast…\n\n\n\nThat puts us at a special spot in this market. Others are reacting to something they don’t know what the direction is.\n\n\n\nSo, let’s get to the numbers.\n\n\n\nOur nowcast, which comes out weekly AND projects out inflation a full month ahead of the print, has inflation for August as an acceleration. We actually have it at 3.5%. The market is at low 3.4% (meaning somewhere between 3.36% - 3.43%). Previous month inflation was 3.36%. So, both Hedgeye and the market have an acceleration, Hedgeye is seeing a larger acceleration than the street, but importantly an acceleration. THEN we have to look one month out to September, Hedgeye has another acceleration of ~10bps from the August number. The street: has inflation flat. THEN looking at the Q4/December inflation, Hedgeye has inflation essentially flat from there (sticky high). The street: has no forecast.\n\n\n\nWhich means we have to remember, since the market does not have an accurate nowcast they are reacting to whatever just happens. They are blind. We at Hedgeye have a sneak peek at what they are going to see. Which is: accelerating and sticky high inflation for the rest of the year.\n\n\n\nNow, we use that to front run fed policy. Which is pretty simple, a higher probability of rate hikes into the end of the year.\n\n\n\nYou don’t have to listen to me on that, listen to the market. The 2yr yield (the fed front runner) has been making cycle highs and higher highs within a bullish trend and trade. One of the most bullish signals you can have in macro (bullish from a yield perspective).\n\n\n\nWe have to remember though that the market isn’t really looking much further than past this next inflation print and the Fed meeting next week. That is where you at Hedgeye can front run the market.\n\n\n\nBut what is important is to listen to the market while it continues to price in more rate hikes due to their perception of higher inflation. What has worked very well from a performance standpoint: Commodities (Oil and Agg), Energy stocks, Long rates (short bonds), select international exposures.\n\n\n\nWhat has worked very poorly: Russell, Growth, Momentum, Industrials, Retail, China Technology, Bonds, Utilities.\n\n\n\nIt is no coincidence that this is what our positioning is. We have been getting longer of inflation, select intl. exposures (like Colombia COLO). While getting shorter of momentum, growth, Bonds, and Utes.\n\n\n\nAlways remember, this is a pendulum that swings. The market loves to price in more rate hikes than what will actually happen and then swing back to the other side and price in more rate cuts than will actually happen. Why is it a pendulum? Because the market doesn’t actually have a model, it is going off of what happened last and projecting out that as the future.\n\n\n\nWhen this pendulum swings in the other direction we will tell you, the market signals will change, and we will change alongside it. But for now, long inflation is where the alpha is and what we are currently riding.\n\n\n\nWe will follow the process. Going into today’s inflation print, Crude Oil and Rates were at the top ends of their ranges. Meaning we already got paid shorting bonds and XLU going into today already. We sold some at the top end of the range and Keith currently has these positions at his min. Now we are in wait and watch mode to see what yields signal on the leaked “news” of inflation.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield (UST10Y) 4.75-4.98 (bullish)\n\nHigh Yield (HYG) 78.25-79.20 (bearish)\n\nInvestment Grade Corporate Bond ETF (LQD) 104.1-105.8 (bearish)\n\nS&P 500 (SPX) 7565-7730 (bullish)\n\nNASDAQ Composite (COMPQ) 25799-26501 (bullish)\n\nRussell 2000 (RUT) 2875-2970 (bearish)\n\nHealth Care Select Sector SPDR Fund (XLV) 163-175 (bullish)\n\niShares Expanded Tech-Software Sector ETF (IGV) 99-111 (bullish)\n\nVanEck Oil Services ETF (OIH) 415-440 (bullish)\n\nVolatility Index (VIX) 14.33-18.77 (neutral)\n\nU.S. Dollar Index (USD) 98.40-99.67 (bearish)\n\nLight Crude Oil Continuous Contract (WTIC) 88.51-102.99 (bullish)\n\nNatural Gas Continuous Contract (NATGAS) 2.71-2.99 (bullish)\n\nGold Spot Price (GOLD) 4275-4503 (bullish)\n\nCopper Spot Price (COPPER) 6.35-6.84 (bullish)\n\nSilver Spot Price (SILVER) 61-66 (bearish)\n\n\n\n(VIEW LARGER IMAGE <https://model2.hedgeye.com/click/47448694.302/aHR0cHM6Ly9kMXloaWxzNml3aDVsNS5jbG91ZGZyb250Lm5ldC9jaGFydHMvcmVzaXplZC8xNjAxNDcvb3JpZ2luYWwvUGljdHVyZTEucG5nP3NyYz1lbWFpbCZlbWFpbD1qcGF1bG84MkBnbWFpbC5jb20/65561052a51cff3724ccb7dfC9b6f00a0>)  \n\n\n\n \n\nPlease visit https://model2.hedgeye.com/click/47448694.302/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcwNjY/65561052a51cff3724ccb7dfEef0a405a <https://model2.hedgeye.com/click/47448694.302/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcwNjY/65561052a51cff3724ccb7dfFef0a405a> for more information.\n\n© 2026 Hedgeye Risk Management LLC, all rights reserved. Redistribution of any part of this information is prohibited without the express written consent of Hedgeye. Hedgeye is not responsible for any errors in or omissions to this information, or for any consequences that may result from the use of this information. Hedgeye® is a registered trademark of Hedgeye Risk Management, LLC.\n\n\n\nIf you believe this has been sent to you in error, please safely unsubscribe <https://model2.hedgeye.com/oc/65561052a51cff3724ccb7dfs8zna.8e/00dfb8fe>.\n\n\n\n<https://model2.hedgeye.com/click/47448694.302/aHR0cDovL3d3dy5oZWRnZXllLmNvbQ/65561052a51cff3724ccb7dfC705242b9>",
+      "summary": "# EARLY LOOK: Front-Running the Fed’s Inflation Problem\n**Data:** Fri, 11 Sep 2026 08:05:23 -0400 (EDT)\n**Remetente:** Hedgeye <info@hedgeye.com>\n**ID:** 110123\n\n---\n\nThis research was prepared exclusively for jpaulo82@gmail.com as a subscriber of Hedgeye Risk Management and may not be forwarded or otherwise provided to any unauthorized party. If you have received this transmission in error, pleas..."
+    },
+    {
+      "id": "110119",
+      "filename": "hedgeye_110119_KM_s_Top_3_Things__Rates_Gold_VIX_.md",
+      "title": "KM's Top 3 Things (Rates/Gold/VIX)",
+      "date": "Fri, 11 Sep 2026 07:26:50 -0400 (EDT)",
+      "shortDate": "11/09/2026",
+      "sender": "Hedgeye <info@hedgeye.com>",
+      "riskRanges": [],
+      "content": "# KM's Top 3 Things (Rates/Gold/VIX)\n**Data:** Fri, 11 Sep 2026 07:26:50 -0400 (EDT)\n**Remetente:** Hedgeye <info@hedgeye.com>\n**ID:** 110119\n\n---\n\nThis research was prepared exclusively for jpaulo82@gmail.com as a subscriber of Hedgeye Risk Management and may not be forwarded or otherwise provided to any unauthorized party. If you have received this transmission in error, please notify Hedgeye Risk Management <mailto:support@hedgeye.com>.\n\nHaving trouble viewing this email? View it in your browser <https://model2.hedgeye.com/click/47448146.1310/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcwNjE/65561052a51cff3724ccb7dfD4a208115>\n\n\n\n \n\n09/11/2026 07:25 AM EDT KM's Top 3 Things (Rates/Gold/VIX)\n\n \n\n\n\nKeith McCullough\n\n\n\n@keithmccullough\n\n\n\n \n\nTakeaway: Top 3 Things today: Rates, Gold, VIX\n\n \n\nEvery Macro Tourist on the planet is now “worried” about inflation and Bond Yields – thanks for coming out…\n\n\n\nRATES – Bond Yields have been signaling this Bullish TRADE and TREND breakout for a long time – our Street High CPI Nowcasts have been in print for a while too. Now we get to see what yields do on the leaked “news” with the TRR (top-end of the Risk Range™ Signal) for the UST 10yr = 4.98% (which is where it stopped going up in 2023 – if it closes at a higher-high than that, the 5.29% level of 2007 that got me calling for the 2008 stock market crash is in play); I’ve covered my Core Rate Senstive Short Positions (TLT, ZROZ, LQD, JOJO, XLU) down to their MIN position sizes with Bond Yields signaling short-term #overbought; as opposed to Bessy’s dreams, The Bond Market is the real “house”  \n\n\n\nGOLD – the primary risk management concern for Gold (Bond Yields ripping higher into an accelerating CPI report) is now rear-view looking – looking forward, to get my Gold position up from its MIN position size I need Gold to recapture its immediate-term TRADE Momentum Signal Level of $4380; textbook signaling process got us out of Silver (SLV) on time and it kept us in Gold Miners (GDX) which have stronger Signal Strength than Gold itself\n\n\n\nVIX – during the 4th straight down day for CPI into a Macro Event Risk (CPI) that everyone in our community saw coming, Macro Tourists decided to panic-buy SPY puts yesterday, taking short-dated Cal Vol (see Tier1 Alpha report) straight up from 10 to 20 and implied vol on SPX straight up to a +58% PREMIUM vs. 30-day realized vol; SPX immediate-term TRADE Signal Resistance = 7670 so we’ll be watching that level as closely as The Machine does today; Russell 2000 (IWM) remains Bearish TRADE and TREND\n\n\n\nImmediate-term @Hedgeye Risk Ranges : SP500 = 7565-7730; UST 10yr Yield = 4.75-4.98%\n\n\n\nKM\n\n\n\n(VIEW LARGER IMAGE <https://model2.hedgeye.com/click/47448146.1310/aHR0cHM6Ly9kMXloaWxzNml3aDVsNS5jbG91ZGZyb250Lm5ldC9jaGFydHMvcmVzaXplZC8xNjAxNDIvb3JpZ2luYWwvZG93bmxvYWRfXzE0Xy5wbmc_c3JjPWVtYWlsJmVtYWlsPWpwYXVsbzgyQGdtYWlsLmNvbQ/65561052a51cff3724ccb7dfC180e65d4>)\n\n\n\n \n\nPlease visit https://model2.hedgeye.com/click/47448146.1310/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcwNjE/65561052a51cff3724ccb7dfE4a208115 <https://model2.hedgeye.com/click/47448146.1310/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcwNjE/65561052a51cff3724ccb7dfF4a208115> for more information.\n\n© 2026 Hedgeye Risk Management LLC, all rights reserved. Redistribution of any part of this information is prohibited without the express written consent of Hedgeye. Hedgeye is not responsible for any errors in or omissions to this information, or for any consequences that may result from the use of this information. Hedgeye® is a registered trademark of Hedgeye Risk Management, LLC.\n\n\n\nIf you believe this has been sent to you in error, please safely unsubscribe <https://model2.hedgeye.com/oc/65561052a51cff3724ccb7dfs8z82.10e/19d853f0>.\n\n\n\n<https://model2.hedgeye.com/click/47448146.1310/aHR0cDovL3d3dy5oZWRnZXllLmNvbQ/65561052a51cff3724ccb7dfCe6fe463e>",
+      "summary": "# KM's Top 3 Things (Rates/Gold/VIX)\n**Data:** Fri, 11 Sep 2026 07:26:50 -0400 (EDT)\n**Remetente:** Hedgeye <info@hedgeye.com>\n**ID:** 110119\n\n---\n\nThis research was prepared exclusively for jpaulo82@gmail.com as a subscriber of Hedgeye Risk Management and may not be forwarded or otherwise provided to any unauthorized party. If you have received this transmission in error, please notify Hedgeye Ri..."
+    },
     {
       "id": "110057",
       "filename": "hedgeye_110057_EARLY_LOOK__Betting__1T_On_Inflation_Accelera.md",
