@@ -229,30 +229,30 @@
               <li><strong>Nowcast de Inflação Acelerando para 3,5% em Agosto:</strong> A Hedgeye projeta aceleração do CPI para 3,5% em agosto, subindo novamente em setembro e mantendo-se resistente até o final do ano.</li>
               <li><strong>Yields dos T-Bonds em Novas Máximas de Ciclo:</strong> O UST 2Y rompe para máximas de ciclo em Bullish TREND e o UST 10Y (4,75%–4,98%) dita pressão contínua em ativos sensíveis a juros.</li>
               <li><strong>Long Inflação & Commodities vs Short Ações de Crescimento:</strong> Playbook quantitativo comprado em Petróleo WTI (88,51–102,99), Ouro (4.275–4.503), Cobre (6,35–6,84) e vendido em Russell 2000 (RUT 2.875–2.970), HYG, LQD e Utilities.</li>
-              <li><strong>Disciplina de Ranges & Proteção de Holds:</strong> Vender nos topos de range e manter posições estruturais seculares (MU, TSM, ETN) protegidas.</li>
+              <li><strong>Disciplina de Ranges & Controle de Risco:</strong> Vender nos topos de range ativos de vento contrário e aportar nos pisos de range dos líderes de Quad 3.</li>
             </ul>
 
             <div class="action-box mt-3">
               <div class="action-header">
                 <span class="icon">🎯</span> <strong>O QUE FAZER AGORA (AÇÕES PRIORITÁRIAS DE HOJE):</strong>
               </div>
-              <div class="action-steps">
+              <div class="action-steps" id="morningActionSteps">
                 <div class="action-step">
                   <span class="step-num">1</span>
                   <div class="step-content">
-                    <strong>Comprar Recuos em Ouro, Cobre e Energia:</strong> Manter posições Long em AAAU, NEM, GDX, Petróleo (WTIC/OIH) e Energia p/ IA (BE).
+                    <strong>Comprar Recuos em Ativos Reais e Inflação (Quad 3):</strong> Manter e aportar em dips de Ouro (AAAU, GDX, NEM), Cobre (6,35–6,84), Petróleo/Energia (WTIC, OIH, BE) e exposições internacionais seletivas (ex: COLO, LatAm).
                   </div>
                 </div>
                 <div class="action-step">
                   <span class="step-num">2</span>
                   <div class="step-content">
-                    <strong>Manter Shorts em Treasuries e Crédito Longo:</strong> Manter posições vendidas em TLT/ZROZ, HYG (78,25–79,20) e LQD (104,10–105,80 Bearish).
+                    <strong>Manter Shorts em Treasuries, Crédito Corporativo e Utilities:</strong> Posições vendidas em Bonds/Crédito (HYG 78,25–79,20 Bearish, LQD 104,10–105,80 Bearish) e Utilities (XLU) com UST 10Y (4,75–4,98%) em tendência de alta.
                   </div>
                 </div>
                 <div class="action-step">
                   <span class="step-num">3</span>
                   <div class="step-content">
-                    <strong>Evitar Russell 2000 (RUT) e Utilities (XLU):</strong> Não tentar adivinhar fundo em setores intensivos em capital e dívida.
+                    <strong>Evitar e Reduzir Russell 2000 (RUT), Growth e Momentum:</strong> Não tentar adivinhar fundo em setores intensivos em capital, dívida e duration longa (RUT 2.875–2.970 Bearish); respeitar os tetos de range para reduzir posições fora de Quad 3.
                   </div>
                 </div>
               </div>
@@ -265,7 +265,7 @@
       <div class="card mt-3">
         <div class="card-header">
           <div>
-            <h3><span class="icon">🎯</span> Risk Ranges Oficiais (Our Levels — <span id="riskRangeHeaderDate">09/09/2026</span>)</h3>
+            <h3><span class="icon">🎯</span> Risk Ranges Oficiais (Our Levels — <span id="riskRangeHeaderDate">11/09/2026</span>)</h3>
             <p class="subtitle" id="riskRangeSubtitle">Sinais quantitativos e faixas de volatilidade ajustada calculados pelo modelo de Keith McCullough</p>
           </div>
           <div class="filter-group">
@@ -376,8 +376,8 @@
       <!-- Visão Superior de Portfólio -->
       <div class="portfolio-header-bar">
         <div class="portfolio-info">
-          <h2 id="portViewTitle">Carteira: Charles Schwab (US$ 211.922,66)</h2>
-          <span class="badge badge-accent" id="portLastUpdate">Último snapshot: 09/09/2026 | Confirmado</span>
+          <h2 id="portViewTitle">Carteira: Charles Schwab (US$ 221.782,14)</h2>
+          <span class="badge badge-accent" id="portLastUpdate">Último snapshot: 11/09/2026 | Confirmado</span>
         </div>
         <div class="portfolio-actions">
           <button class="btn btn-accent" onclick="openRebalanceModal()">
@@ -390,18 +390,18 @@
       <div class="grid-3-col mt-3">
         <div class="card stat-card">
           <div class="stat-label">PATRIMÔNIO TOTAL ESTIMADO</div>
-          <div class="stat-val" id="portTotalValue">US$ 211.922,66</div>
-          <div class="stat-desc">Baseado nas capturas confirmadas de 09/09/2026</div>
+          <div class="stat-val" id="portTotalValue">US$ 221.782,14</div>
+          <div class="stat-desc">Baseado no fechamento e snapshot de 11/09/2026</div>
         </div>
         <div class="card stat-card">
           <div class="stat-label">ALOCAÇÃO DE CAIXA / SGOV</div>
-          <div class="stat-val text-emerald" id="portCashRatio">9.5%</div>
+          <div class="stat-val text-emerald" id="portCashRatio">18.1%</div>
           <div class="stat-desc">Opcionalidade para buy the dips nos pisos de range</div>
         </div>
         <div class="card stat-card">
           <div class="stat-label">ALOCAÇÃO EM QUAD 3 (VENTO A FAVOR)</div>
-          <div class="stat-val text-emerald" id="portAdherence">38.5%</div>
-          <div class="stat-desc">Ouro, Energia, Defensivos, Cobre e Caixa SGOV</div>
+          <div class="stat-val text-emerald" id="portAdherence">73.5% (Alocado em Quad 3)</div>
+          <div class="stat-desc">Ouro, Energia, Defensivos, Cobre, Renda Fixa e Caixa SGOV</div>
         </div>
       </div>
 
@@ -2053,6 +2053,6 @@
   <div class="toast-notification" id="toastNotification">Notificação</div>
 
   <!-- Script Principal da Aplicação -->
-  <script src="app.js?v=20260911_V4_FIX"></script>
+  <script src="app.js?v=20260911_V6_PROD"></script>
 </body>
 </html>

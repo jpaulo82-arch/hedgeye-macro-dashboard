@@ -159,23 +159,51 @@ async function authedFetch(url, options = {}) {
 
 async function fetchPortfolioDataFromApi() {
   try {
-    const res = await authedFetch("/api/portfolio");
-    if (res.ok) {
-      const data = await res.json();
-      if (data && data.positions) {
-        // Atualiza métricas globais e posições
-        const schwabPos = data.positions.filter(p => p.broker === "schwab" || p.broker === "Schwab");
-        const tastyPos = data.positions.filter(p => p.broker === "tastyworks" || p.broker === "Tastyworks");
-        
-        portfolioData.schwab.positions = schwabPos;
-        portfolioData.tastyworks.positions = tastyPos;
-        portfolioData.schwab.cashAvailable = data.cash_total ? data.cash_total * 0.47 : 8000;
-        portfolioData.tastyworks.cashAvailable = data.cash_total ? data.cash_total * 0.53 : 9000;
-        
-        renderPortfolioView(activePortfolioKey);
-        renderRebalanceModalTables();
-        console.log("[+] Carteira sincronizada da fonte canônica com sucesso.");
+    let data = null;
+    const cacheBuster = `?_t=${Date.now()}`;
+    
+    // Tenta primeiro o endpoint da API
+    try {
+      const res = await authedFetch(`/api/portfolio${cacheBuster}`, { cache: "no-store" });
+      if (res.ok) {
+        data = await res.json();
       }
+    } catch (e) {}
+
+    // Fallback para arquivo JSON direto se offline ou sem servidor
+    if (!data) {
+      try {
+        const resLocal = await fetch(`carteira_posicoes.json${cacheBuster}`, { cache: "no-store" });
+        if (resLocal.ok) {
+          const raw = await resLocal.json();
+          const allPos = [];
+          if (raw.schwab && raw.schwab.positions) {
+            raw.schwab.positions.forEach(p => allPos.push({ ...p, broker: "Schwab" }));
+          }
+          if (raw.tastyworks && raw.tastyworks.positions) {
+            raw.tastyworks.positions.forEach(p => allPos.push({ ...p, broker: "Tastyworks" }));
+          }
+          data = {
+            positions: allPos,
+            cash_total: (raw.schwab?.cashAvailable || 8000) + (raw.tastyworks?.cashAvailable || 9000)
+          };
+        }
+      } catch (err) {}
+    }
+
+    if (data && data.positions) {
+      // Atualiza métricas globais e posições
+      const schwabPos = data.positions.filter(p => p.broker === "schwab" || p.broker === "Schwab");
+      const tastyPos = data.positions.filter(p => p.broker === "tastyworks" || p.broker === "Tastyworks");
+      
+      portfolioData.schwab.positions = schwabPos;
+      portfolioData.tastyworks.positions = tastyPos;
+      portfolioData.schwab.cashAvailable = data.cash_total ? data.cash_total * 0.47 : 8000;
+      portfolioData.tastyworks.cashAvailable = data.cash_total ? data.cash_total * 0.53 : 9000;
+      
+      renderPortfolioView(activePortfolioKey);
+      renderRebalanceModalTables();
+      console.log("[+] Carteira sincronizada da fonte canônica com sucesso.");
     }
   } catch (e) {
     console.warn("Falha ao carregar carteira via API:", e);
@@ -214,89 +242,19 @@ function setTab(tabName) {
   }
 }
 
-// 1. DADOS DE ESTADO: PORTFÓLIOS REAIS CANÔNICOS
+// 1. DADOS DE ESTADO: PORTFÓLIOS REAIS CANÔNICOS (CARREGADOS DINAMICAMENTE DE CARTEIRA_POSICOES.JSON)
 let portfolioData = {
   schwab: {
     name: "Carteira Principal (Charles Schwab)",
-    lastUpdate: "09/09/2026 (Atualizado)",
+    lastUpdate: "11/09/2026 (Atualizado)",
     cashAvailable: 8000.00,
-    positions: [
-      // STOCKS
-      { ticker: "MELI", name: "MercadoLibre Inc", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad3", quadKey: "QUAD 3", qty: 3, price: 1868.97, cat: "CORE", minSize: "1-3%", conduct: "Manter posição CORE de equity" },
-      { ticker: "FN", name: "Fabrinet", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 9, price: 419.6214, cat: "TAIL", minSize: "1-3%", conduct: "Manter tamanho reduzido; não comprar quedas" },
-      { ticker: "GOOG", name: "Alphabet Inc Class C", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad3", quadKey: "QUAD 3", qty: 11, price: 327.99, cat: "CORE", minSize: "1-3%", conduct: "Manter; base sólida de geração de caixa" },
-      { ticker: "BE", name: "Bloom Energy Corp", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad3", quadKey: "QUAD 3", qty: 13, price: 272.83, cat: "TAIL", minSize: "1-3%", conduct: "Manter tese de energia descentralizada" },
-      { ticker: "ASML", name: "ASML Holding NV ADR", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 2, price: 1729.215, cat: "CORE/TAIL", minSize: "1-3%", conduct: "Manter; fosso competitivo secular" },
-      { ticker: "META", name: "Meta Platforms Inc", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 5, price: 653.57, cat: "CORE", minSize: "1-3%", conduct: "Manter; margens elevadas" },
-      { ticker: "ALAB", name: "Astera Labs Inc", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 10, price: 299.49, cat: "TAIL/ESPEC.", minSize: "1-3%", conduct: "Respeitar limite estrito TAIL" },
-      { ticker: "AVGO", name: "Broadcom Inc", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 8, price: 363.5087, cat: "CORE/TAIL", minSize: "1-3%", conduct: "Manter; vigiar compressão de múltiplos" },
-      { ticker: "INTR", name: "Inter & Co Inc", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 400, price: 5.50, cat: "CORE/TRADE", minSize: "1-3%", conduct: "Manter pelo crescimento intrínseco de ROE" },
-      { ticker: "NOK", name: "Nokia Corp ADR", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 200, price: 10.81, cat: "TRADE/TAIL", minSize: "1-3%", conduct: "Manter posição tática controlada" },
-      { ticker: "INTC", name: "Intel Corp", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 20, price: 105.6675, cat: "TRADE", minSize: "1-3%", conduct: "Trade tático com stop rigoroso" },
-      { ticker: "MTSI", name: "MACOM Technology Solutions", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 7, price: 285.0875, cat: "TAIL", minSize: "1-3%", conduct: "Manter pequena" },
-      { ticker: "COIN", name: "Coinbase Global Inc", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 10, price: 176.07, cat: "TRADE/TAIL", minSize: "1-3%", conduct: "Manter dentro do limite de risco" },
-      { ticker: "TSEM", name: "Tower Semiconductor", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 8, price: 217.8133, cat: "TAIL", minSize: "1-3%", conduct: "Manter" },
-      { ticker: "CRDO", name: "Credo Technology Group", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 10, price: 167.42, cat: "TAIL/ESPEC.", minSize: "1-3%", conduct: "Vigiar suporte de TRADE" },
-      { ticker: "AXTI", name: "AXT Inc", broker: "Schwab", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 20, price: 69.24, cat: "TAIL/ESPEC.", minSize: "1-3%", conduct: "Manter posição mínima" },
-      
-      // ETFS & FUNDS
-      { ticker: "SGOV", name: "iShares 0-3M Treasury", broker: "Schwab", typeGroup: "Renda Fixa / Caixa", nativeQuad: "Caixa", quadKey: "QUAD 3", qty: 320, price: 100.4899, cat: "CAIXA", minSize: "10-30%", conduct: "Preservar liquidez para compras nos pisos" },
-      { ticker: "AAAU", name: "Goldman Sachs Physical Gold", broker: "Schwab", typeGroup: "ETF", nativeQuad: "Quad3", quadKey: "QUAD 3", qty: 200, price: 43.385, cat: "CORE/TRADE", minSize: "2-6%", conduct: "Posição prioritária de alta convicção em Quad 3" },
-      { ticker: "HUMN", name: "Roundhill Humanoid Robotics", broker: "Schwab", typeGroup: "ETF", nativeQuad: "Quad1", quadKey: "TAIL", qty: 170, price: 30.05, cat: "TAIL", minSize: "2-6%", conduct: "Manter tamanho reduzido (1–3%)" },
-      { ticker: "XBI", name: "SPDR S&P Biotech ETF", broker: "Schwab", typeGroup: "ETF", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 25, price: 159.965, cat: "TRADE", minSize: "2-6%", conduct: "Trade tático; monitorar liquidez" },
-      { ticker: "GDX", name: "VanEck Gold Miners ETF", broker: "Schwab", typeGroup: "ETF", nativeQuad: "Quad3", quadKey: "QUAD 3", qty: 40, price: 99.51, cat: "CORE/TRADE", minSize: "2-6%", conduct: "Manter hedge; ouro em forte alta" },
-      { ticker: "AIPO", name: "Defiance AI & Power Infra", broker: "Schwab", typeGroup: "ETF", nativeQuad: "Quad1", quadKey: "QUAD 3", qty: 125, price: 29.265, cat: "TAIL", minSize: "2-6%", conduct: "Manter alinhamento com energia de IA" },
-      { ticker: "GRID", name: "First Trust Smart Grid Infra", broker: "Schwab", typeGroup: "ETF", nativeQuad: "Quad2", quadKey: "QUAD 3", qty: 20, price: 179.995, cat: "TAIL", minSize: "2-6%", conduct: "Manter tese de infra de energia" },
-      { ticker: "DRIV", name: "Global X Autonomous & EV", broker: "Schwab", typeGroup: "ETF", nativeQuad: "Quad1", quadKey: "TAIL", qty: 100, price: 34.60, cat: "TAIL", minSize: "2-6%", conduct: "Manter tese de 3+ anos" },
-      { ticker: "FOTO", name: "Tuttle Capital Photonics", broker: "Schwab", typeGroup: "ETF", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 130, price: 18.445, cat: "TAIL", minSize: "2-6%", conduct: "Manter posição temática" },
-      { ticker: "DRAM", name: "Roundhill Memory ETF", broker: "Schwab", typeGroup: "ETF", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 30, price: 61.63, cat: "TAIL/ESPEC.", minSize: "2-6%", conduct: "Manter" },
-      { ticker: "SLV", name: "iShares Silver Trust", broker: "Schwab", typeGroup: "ETF", nativeQuad: "Quad2", quadKey: "QUAD 3", qty: 30, price: 60.885, cat: "TRADE/TAIL", minSize: "2-6%", conduct: "Não comprar a queda; manter tamanho mínimo" },
-
-      // FIXED INCOME (CREDIT)
-      { ticker: "453258AP0", name: "Vale Canada Ltd 7.2% 32F", broker: "Schwab", typeGroup: "Renda Fixa", nativeQuad: "Credito", quadKey: "CRÉDITO", qty: 10000, price: 1.08142, cat: "CORE RENDA", minSize: "3-10%", conduct: "Manter fluxo de cupons de 7.2%" },
-      { ticker: "SAN/29", name: "Santander UK GR 7.95% 29F", broker: "Schwab", typeGroup: "Renda Fixa", qty: 10000, price: 1.047567, cat: "CORE RENDA", nativeQuad: "Credito", quadKey: "CRÉDITO", minSize: "3-10%", conduct: "Manter fluxo de cupons de 7.95%" },
-      { ticker: "86964WAL6", name: "Suzano Austria 2.5% 28F", broker: "Schwab", typeGroup: "Renda Fixa", qty: 11000, price: 0.947011, cat: "CORE RENDA", nativeQuad: "Credito", quadKey: "CRÉDITO", minSize: "3-10%", conduct: "Manter até vencimento 2028" },
-      { ticker: "36966TKD3", name: "General Electric 4.25% 34", broker: "Schwab", typeGroup: "Renda Fixa", qty: 11000, price: 0.916917, cat: "CORE RENDA", nativeQuad: "Credito", quadKey: "CRÉDITO", minSize: "3-10%", conduct: "Manter fluxo até 2034" },
-      { ticker: "404119AJ8", name: "HCA Inc 7.5% 33", broker: "Schwab", typeGroup: "Renda Fixa", qty: 9000, price: 1.111037, cat: "CORE RENDA", nativeQuad: "Quad3", quadKey: "QUAD 3", minSize: "3-10%", conduct: "Manter cupom de 7.5%" },
-      { ticker: "VALE/39", name: "Vale Overseas 6.875% 39F", broker: "Schwab", typeGroup: "Renda Fixa", qty: 9000, price: 1.078192, cat: "CORE RENDA", nativeQuad: "Credito", quadKey: "CRÉDITO", minSize: "3-10%", conduct: "Manter cupom de 6.875%" },
-      { ticker: "681936BF6", name: "Omega Healthcare 4.5% 27", broker: "Schwab", typeGroup: "Renda Fixa", qty: 8000, price: 0.998959, cat: "CORE RENDA", nativeQuad: "Quad3", quadKey: "QUAD 3", minSize: "3-10%", conduct: "Manter vencimento 2027" },
-      { ticker: "345370CX6", name: "Ford Motor Co 9.625% 30", broker: "Schwab", typeGroup: "Renda Fixa", qty: 6000, price: 1.116911, cat: "TRADE RENDA", nativeQuad: "Credito", quadKey: "CRÉDITO", minSize: "3-10%", conduct: "Monitorar spreads de crédito" },
-      { ticker: "279158AN9", name: "Ecopetrol SA 6.875% 30F", broker: "Schwab", typeGroup: "Renda Fixa", qty: 6000, price: 1.0107, cat: "CORE RENDA", nativeQuad: "Quad3", quadKey: "QUAD 3", minSize: "3-10%", conduct: "Manter cupom de 6.875%" },
-      { ticker: "382550AD3", name: "Goodyear Tire 7% 28", broker: "Schwab", typeGroup: "Renda Fixa", qty: 6000, price: 1.0100, cat: "TRADE RENDA", nativeQuad: "Credito", quadKey: "CRÉDITO", minSize: "3-10%", conduct: "Manter até 2028" },
-      { ticker: "88167AAE1", name: "Teva Pharmaceutical 3.15% 26F", broker: "Schwab", typeGroup: "Renda Fixa", qty: 6000, price: 0.9975, cat: "CORE RENDA", nativeQuad: "Quad3", quadKey: "QUAD 3", minSize: "3-10%", conduct: "Manter até vencimento" }
-    ]
+    positions: []
   },
   tastyworks: {
-    name: "Tastyworks (Conectividade IA, Temáticas, Commodities & Hedges)",
-    lastUpdate: "09/09/2026 (Atualizado — NetLiq US$ 35k)",
+    name: "Tastyworks",
+    lastUpdate: "11/09/2026 (Atualizado — NetLiq US$ 35k)",
     cashAvailable: 4040.42,
-    positions: [
-      { ticker: "CAIXA", name: "Dólar em Caixa / Poder de Compra", broker: "Tastyworks", typeGroup: "Caixa", nativeQuad: "Caixa", quadKey: "QUAD 3", qty: 1, price: 4040.42, cat: "CAIXA", minSize: "10-30%", conduct: "Manter para buy the dips nos pisos de Risk Range" },
-      { ticker: "SGOV", name: "iShares 0-3M Treasury Bond ETF", broker: "Tastyworks", typeGroup: "Renda Fixa / Caixa", nativeQuad: "Caixa", quadKey: "QUAD 3", qty: 50, price: 100.49, cat: "CAIXA", minSize: "10-30%", conduct: "Reserva de liquidez e rendimento livre de risco" },
-      { ticker: "GOOGL", name: "Alphabet Inc Class A", broker: "Tastyworks", typeGroup: "Acao", nativeQuad: "Quad3", quadKey: "QUAD 3", qty: 7, price: 330.36, cat: "CORE", minSize: "1-3%", conduct: "Manter; balanço de fortaleza e alto FCF" },
-      { ticker: "FN", name: "Fabrinet", broker: "Tastyworks", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 5, price: 419.63, cat: "TAIL", minSize: "1-3%", conduct: "Acompanhar capex óptico de data centers" },
-      { ticker: "GDX", name: "VanEck Gold Miners ETF", broker: "Tastyworks", typeGroup: "ETF", nativeQuad: "Quad3", quadKey: "QUAD 3", qty: 20, price: 99.28, cat: "CORE/TRADE", minSize: "2-6%", conduct: "Proteção contra inflação e desvalorização cambial" },
-      { ticker: "BE", name: "Bloom Energy Corp", broker: "Tastyworks", typeGroup: "Acao", nativeQuad: "Quad3", quadKey: "QUAD 3", qty: 7, price: 273.17, cat: "TAIL", minSize: "1-3%", conduct: "Manter tese secular de energia p/ IA" },
-      { ticker: "MELI", name: "MercadoLibre Inc", broker: "Tastyworks", typeGroup: "Acao", nativeQuad: "Quad3", quadKey: "QUAD 3", qty: 1, price: 1867.76, cat: "CORE", minSize: "1-3%", conduct: "Manter; líder em e-commerce e fintech LatAm" },
-      { ticker: "NEM", name: "Newmont Corporation", broker: "Tastyworks", typeGroup: "Acao", nativeQuad: "Quad3", quadKey: "QUAD 3", qty: 14, price: 129.32, cat: "CORE", minSize: "1-3%", conduct: "Manter; mineradora de ouro de alta qualidade" },
-      { ticker: "DRIV", name: "Global X Autonomous & EV ETF", broker: "Tastyworks", typeGroup: "ETF", nativeQuad: "Quad1", quadKey: "TAIL", qty: 50, price: 34.51, cat: "TAIL", minSize: "2-6%", conduct: "Manter posição estrutural 3+ anos" },
-      { ticker: "CRDO", name: "Credo Technology Group", broker: "Tastyworks", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 10, price: 167.32, cat: "TAIL/ESPEC.", minSize: "1-3%", conduct: "Acompanhar suporte de TRADE" },
-      { ticker: "HUMN", name: "Humanoid Robotics ETF", broker: "Tastyworks", typeGroup: "ETF", nativeQuad: "Quad1", quadKey: "TAIL", qty: 55, price: 30.07, cat: "TAIL", minSize: "2-6%", conduct: "Manter tamanho reduzido (1–3%)" },
-      { ticker: "NOK", name: "Nokia Oyj", broker: "Tastyworks", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 150, price: 10.81, cat: "TRADE/TAIL", minSize: "1-3%", conduct: "Acompanhar ciclo de conectividade 5G/6G" },
-      { ticker: "AVGO", name: "Broadcom Inc", broker: "Tastyworks", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 4, price: 363.63, cat: "CORE/TAIL", minSize: "1-3%", conduct: "Manter; excelente fluxo de caixa" },
-      { ticker: "XBI", name: "SPDR S&P Biotech ETF", broker: "Tastyworks", typeGroup: "ETF", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 9, price: 159.76, cat: "TRADE", minSize: "2-6%", conduct: "Posição tática sensível a liquidez" },
-      { ticker: "ARM", name: "Arm Holdings plc", broker: "Tastyworks", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 5, price: 263.76, cat: "TAIL", minSize: "1-3%", conduct: "Manter tese de arquitetura para IA" },
-      { ticker: "COHR", name: "Coherent Corp", broker: "Tastyworks", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 4, price: 304.86, cat: "TAIL/ESPEC.", minSize: "1-3%", conduct: "Acompanhar expansão de demanda óptica" },
-      { ticker: "SLV", name: "iShares Silver Trust", broker: "Tastyworks", typeGroup: "ETF", nativeQuad: "Quad2", quadKey: "QUAD 3", qty: 20, price: 60.78, cat: "TRADE/TAIL", minSize: "2-6%", conduct: "Manter posição tática em prata" },
-      { ticker: "ALAB", name: "Astera Labs Inc", broker: "Tastyworks", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 4, price: 299.98, cat: "TAIL/ESPEC.", minSize: "1-3%", conduct: "Monitorar volatilidade de múltiplos" },
-      { ticker: "INTC", name: "Intel Corp", broker: "Tastyworks", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 11, price: 105.77, cat: "TRADE", minSize: "1-3%", conduct: "Trade tático com stop definido" },
-      { ticker: "APH", name: "Amphenol Corporation", broker: "Tastyworks", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 14, price: 81.00, cat: "CORE/TAIL", minSize: "1-3%", conduct: "Manter; infraestrutura de conectores para data centers" },
-      { ticker: "GSG", name: "iShares S&P GSCI Commodity ETF", broker: "Tastyworks", typeGroup: "ETF", nativeQuad: "Quad3", quadKey: "QUAD 3", qty: 30, price: 35.92, cat: "CORE/TRADE", minSize: "2-6%", conduct: "Cesta de commodities; vento a favor em Quad 3" },
-      { ticker: "AIRR", name: "First Trust RBA American Industrial", broker: "Tastyworks", typeGroup: "ETF", nativeQuad: "Quad2", quadKey: "QUAD 2", qty: 10, price: 106.78, cat: "CORE", minSize: "2-6%", conduct: "Exposição a manufatura e reshoring dos EUA" },
-      { ticker: "AXTI", name: "AXT Inc", broker: "Tastyworks", typeGroup: "Acao", nativeQuad: "Quad1", quadKey: "QUAD 1", qty: 15, price: 69.57, cat: "TAIL/ESPEC.", minSize: "1-3%", conduct: "Manter posição pequena especulativa" },
-      { ticker: "XLU (SHORT)", name: "Utilities Select Sector SPDR (Short)", broker: "Tastyworks", typeGroup: "Hedge / Short", nativeQuad: "Short Quad3", quadKey: "QUAD 3", qty: -50, price: 43.03, cat: "SHORT / HEDGE", minSize: "1-3%", conduct: "Posição vendida em Utilities (#ShortUtilities)" },
-      { ticker: "IWM (SHORT)", name: "iShares Russell 2000 ETF (Short)", broker: "Tastyworks", typeGroup: "Hedge / Short", nativeQuad: "Short Quad3", quadKey: "QUAD 3", qty: -10, price: 290.69, cat: "SHORT / HEDGE", minSize: "1-3%", conduct: "Posição vendida em Small Caps (#ShortRussell)" }
-    ]
+    positions: []
   }
 };
 
@@ -809,18 +767,22 @@ function renderPortfolioView(key) {
   let updateDate = "";
 
   if (key === "consolidated") {
-    positions = [...portfolioData.schwab.positions, ...portfolioData.tastyworks.positions];
+    positions = [...(portfolioData.schwab?.positions || []), ...(portfolioData.tastyworks?.positions || [])];
     title = "Patrimônio Consolidado Global (Charles Schwab + Tastyworks)";
-    updateDate = "Snapshot combinado: 02/09/2026 | 100% Confirmado";
+    updateDate = "Snapshot combinado: 11/09/2026 | 100% Confirmado";
   } else {
-    positions = portfolioData[key].positions;
-    title = `Carteira: ${portfolioData[key].name}`;
-    updateDate = `Último snapshot: ${portfolioData[key].lastUpdate}`;
+    const portObj = portfolioData[key] || portfolioData.schwab;
+    positions = portObj.positions || [];
+    title = `Carteira: ${portObj.name || key}`;
+    updateDate = `Último snapshot: ${portObj.lastUpdate || "11/09/2026"}`;
   }
 
-  document.getElementById("portViewTitle").innerText = title;
-  document.getElementById("portLastUpdate").innerText = updateDate;
-  document.getElementById("positionsCountTag").innerText = `${positions.length} Posições`;
+  const elTitle = document.getElementById("portViewTitle");
+  if (elTitle) elTitle.innerText = title;
+  const elDate = document.getElementById("portLastUpdate");
+  if (elDate) elDate.innerText = updateDate;
+  const elCount = document.getElementById("positionsCountTag");
+  if (elCount) elCount.innerText = `${positions.length} Posições`;
 
   // Calcular totais e alocação por Quadrante
   let totalVal = 0;
@@ -830,74 +792,97 @@ function renderPortfolioView(key) {
   let quad2Val = 0;
   let creditVal = 0;
   let tailVal = 0;
+  let meliVal = 0;
 
   positions.forEach(p => {
-    const val = p.qty * p.price;
+    const qty = parseFloat(p.qty) || 0;
+    const price = parseFloat(p.price) || 0;
+    const val = p.marketValue ? parseFloat(p.marketValue) : (qty * price);
     totalVal += val;
-    if (p.ticker === "SGOV" || p.cat === "CAIXA" || p.ticker === "CAIXA") {
+
+    const ticker = (p.ticker || "").toUpperCase();
+    const typeGrp = p.typeGroup || "";
+    const cat = (p.cat || "").toUpperCase();
+    const nativeQuad = p.nativeQuad || p.quad || (typeGrp.includes("Renda") ? "Credito" : "Quad1");
+
+    const isQuad3 = nativeQuad.includes("3") || ["SGOV", "AAAU", "GDX", "NEM", "BE", "GOOG", "GOOGL", "SLV", "GRID", "AIPO", "404119AJ8"].includes(ticker) || cat === "CAIXA" || ticker === "CAIXA";
+    const isCredit = (typeGrp.includes("Renda") || nativeQuad.includes("Credito")) && ticker !== "SGOV";
+    const isTail = cat.includes("TAIL") || ["HUMN", "DRIV", "FOTO", "ALAB", "CRDO", "MTSI", "AXTI"].includes(ticker);
+
+    if (ticker === "MELI") meliVal += val;
+
+    if (isQuad3) quad3Val += val;
+    else if (isCredit) creditVal += val;
+    else if (isTail) tailVal += val;
+    else quad1Val += val;
+
+    if (ticker === "SGOV" || cat === "CAIXA" || ticker === "CAIXA") {
       cashVal += val;
     }
-
-    if (p.quadKey === "QUAD 3") quad3Val += val;
-    else if (p.quadKey === "QUAD 1") quad1Val += val;
-    else if (p.quadKey === "QUAD 2") quad2Val += val;
-    else if (p.quadKey === "CRÉDITO") creditVal += val;
-    else if (p.quadKey === "TAIL") tailVal += val;
   });
 
   const cashPct = totalVal > 0 ? (cashVal / totalVal) * 100 : 0;
   const quad3Pct = totalVal > 0 ? (quad3Val / totalVal) * 100 : 0;
 
-  document.getElementById("portTotalValue").innerText = `US$ ${totalVal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-  document.getElementById("portCashRatio").innerText = `${cashPct.toFixed(1)}%`;
-  document.getElementById("portAdherence").innerText = `${quad3Pct.toFixed(1)}% (Alocado em Quad 3)`;
+  const elTotal = document.getElementById("portTotalValue");
+  if (elTotal) elTotal.innerText = `US$ ${totalVal.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  const elCash = document.getElementById("portCashRatio");
+  if (elCash) elCash.innerText = `${cashPct.toFixed(1)}%`;
+  const elAdh = document.getElementById("portAdherence");
+  if (elAdh) elAdh.innerText = `${quad3Pct.toFixed(1)}% (Alocado em Quad 3)`;
 
-  // Fatores de Risco
-  if (key === "schwab") {
-    document.getElementById("factorTechPct").innerText = "~23.5% (High Beta / Semis / IA)";
-    document.getElementById("factorCreditPct").innerText = "44.5% (Bonds Corporativos - Alerta Quad 3)";
-    document.getElementById("factorDefensivePct").innerText = "~37.8% (Ouro AAAU + GDX + SGOV + BE)";
-    document.getElementById("factorMeliPct").innerText = "2.82% (MELI)";
-  } else if (key === "tastyworks") {
-    document.getElementById("factorTechPct").innerText = "~30.2% (Conectividade & Chips IA)";
-    document.getElementById("factorCreditPct").innerText = "0.0% (Sem Bonds na Tasty)";
-    document.getElementById("factorDefensivePct").innerText = "~43.1% (Caixa US$ 9k + Ouro NEM/GDX + BE)";
-    document.getElementById("factorMeliPct").innerText = "5.87% (MELI)";
-  } else {
-    document.getElementById("factorTechPct").innerText = "~24.4% (Global Tech / High Beta)";
-    document.getElementById("factorCreditPct").innerText = "27.9% (Bonds Corporativos Schwab)";
-    document.getElementById("factorDefensivePct").innerText = "38.5% (Ouro, Energia, Defensivos & Caixa)";
-    document.getElementById("factorMeliPct").innerText = "3.24% (MELI Consolidado)";
+  // Fatores de Risco Dinâmicos
+  if (totalVal > 0) {
+    const techVal = totalVal - quad3Val - creditVal;
+    const techPct = Math.max(0, (techVal / totalVal) * 100).toFixed(1);
+    const creditPct = ((creditVal / totalVal) * 100).toFixed(1);
+    const defPct = ((quad3Val / totalVal) * 100).toFixed(1);
+    const meliPct = ((meliVal / totalVal) * 100).toFixed(2);
+
+    const elTech = document.getElementById("factorTechPct");
+    if (elTech) elTech.innerText = `~${techPct}% (High Beta / Semis / IA)`;
+    const elCred = document.getElementById("factorCreditPct");
+    if (elCred) elCred.innerText = `${creditPct}% (Bonds Corporativos)`;
+    const elDef = document.getElementById("factorDefensivePct");
+    if (elDef) elDef.innerText = `~${defPct}% (Ouro, Energia, Defensivos & Caixa)`;
+    const elMeli = document.getElementById("factorMeliPct");
+    if (elMeli) elMeli.innerText = `${meliPct}% (MELI)`;
   }
 
   // Renderizar Tabela
   const tbody = document.getElementById("portfolioTableBody");
-  tbody.innerHTML = "";
+  if (tbody) {
+    tbody.innerHTML = "";
 
-  positions.forEach(p => {
-    const val = p.qty * p.price;
-    const weight = totalVal > 0 ? (val / totalVal) * 100 : 0;
-    
-    let catBadge = "badge-core";
-    if (p.cat.includes("TRADE")) catBadge = "badge-trade";
-    if (p.cat.includes("TAIL")) catBadge = "badge-tail";
-    if (p.cat.includes("CAIXA")) catBadge = "badge-caixa";
-    if (p.cat.includes("RENDA")) catBadge = "badge-macro";
+    positions.forEach(p => {
+      const qty = parseFloat(p.qty) || 0;
+      const price = parseFloat(p.price) || 0;
+      const val = p.marketValue ? parseFloat(p.marketValue) : (qty * price);
+      const weight = totalVal > 0 ? (val / totalVal) * 100 : 0;
+      const nativeQuad = p.nativeQuad || p.quad || (p.typeGroup === 'Renda Fixa' ? 'Credito' : 'Quad1');
+      const cat = p.cat || 'CORE';
 
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td><strong>${p.ticker}</strong> <br><small class="text-muted">${p.typeGroup || 'Ativo'}</small></td>
-      <td>${p.name}</td>
-      <td><span class="tag tag-outline">${p.broker}</span></td>
-      <td><strong>${p.qty === 1 && p.ticker === 'CAIXA' ? '-' : p.qty.toLocaleString('pt-BR')}</strong></td>
-      <td><span class="badge ${catBadge}">${p.cat}</span></td>
-      <td class="font-bold">US$ ${val.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-      <td><strong>${weight.toFixed(2)}%</strong></td>
-      <td><span class="badge ${p.nativeQuad.includes('Quad3') ? 'badge-bullish' : (p.nativeQuad.includes('Credito') ? 'badge-bearish' : 'badge-neutral')}">${p.nativeQuad}</span></td>
-      <td><small>${p.conduct}</small></td>
-    `;
-    tbody.appendChild(tr);
-  });
+      let catBadge = "badge-core";
+      if (cat.includes("TRADE")) catBadge = "badge-trade";
+      if (cat.includes("TAIL")) catBadge = "badge-tail";
+      if (cat.includes("CAIXA")) catBadge = "badge-caixa";
+      if (cat.includes("RENDA")) catBadge = "badge-macro";
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td><strong>${p.ticker}</strong> <br><small class="text-muted">${p.typeGroup || 'Ativo'}</small></td>
+        <td>${p.name || p.ticker}</td>
+        <td><span class="tag tag-outline">${p.broker || 'Schwab'}</span></td>
+        <td><strong>${qty === 1 && p.ticker === 'CAIXA' ? '-' : qty.toLocaleString('pt-BR')}</strong></td>
+        <td><span class="badge ${catBadge}">${cat}</span></td>
+        <td class="font-bold">US$ ${val.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+        <td><strong>${weight.toFixed(2)}%</strong></td>
+        <td><span class="badge ${nativeQuad.includes('3') || nativeQuad.includes('Quad3') ? 'badge-bullish' : (nativeQuad.includes('Credito') ? 'badge-bearish' : 'badge-neutral')}">${nativeQuad}</span></td>
+        <td><small>${p.conduct || '-'}</small></td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
 
   updatePortfolioChart(positions, totalVal);
 }
@@ -906,11 +891,18 @@ function renderPortfolioView(key) {
 function updatePortfolioChart(positions, totalVal) {
   if (!positions) {
     if (activePortfolioKey === "consolidated") {
-      positions = [...portfolioData.schwab.positions, ...portfolioData.tastyworks.positions];
+      positions = [...(portfolioData.schwab?.positions || []), ...(portfolioData.tastyworks?.positions || [])];
     } else {
-      positions = portfolioData[activePortfolioKey].positions;
+      positions = portfolioData[activePortfolioKey]?.positions || [];
     }
-    totalVal = positions.reduce((acc, p) => acc + (p.qty * p.price), 0);
+  }
+  
+  if (!totalVal) {
+    totalVal = positions.reduce((acc, p) => {
+      const qty = parseFloat(p.qty) || 0;
+      const price = parseFloat(p.price) || 0;
+      return acc + (p.marketValue ? parseFloat(p.marketValue) : (qty * price));
+    }, 0);
   }
 
   let quadTotals = {
@@ -922,12 +914,22 @@ function updatePortfolioChart(positions, totalVal) {
   };
 
   positions.forEach(p => {
-    const val = p.qty * p.price;
-    if (p.quadKey === "QUAD 3") quadTotals.quad3 += val;
-    else if (p.quadKey === "QUAD 1") quadTotals.quad1 += val;
-    else if (p.quadKey === "QUAD 2") quadTotals.quad2 += val;
-    else if (p.quadKey === "CRÉDITO") quadTotals.credit += val;
-    else if (p.quadKey === "TAIL") quadTotals.tail += val;
+    const qty = parseFloat(p.qty) || 0;
+    const price = parseFloat(p.price) || 0;
+    const val = p.marketValue ? parseFloat(p.marketValue) : (qty * price);
+    const ticker = (p.ticker || "").toUpperCase();
+    const typeGrp = p.typeGroup || "";
+    const cat = (p.cat || "").toUpperCase();
+    const nativeQuad = p.nativeQuad || p.quad || (typeGrp.includes("Renda") ? "Credito" : "Quad1");
+
+    const isQuad3 = nativeQuad.includes("3") || ["SGOV", "AAAU", "GDX", "NEM", "BE", "GOOG", "GOOGL", "SLV", "GRID", "AIPO", "404119AJ8"].includes(ticker) || cat === "CAIXA" || ticker === "CAIXA";
+    const isCredit = (typeGrp.includes("Renda") || nativeQuad.includes("Credito")) && ticker !== "SGOV";
+    const isTail = cat.includes("TAIL") || ["HUMN", "DRIV", "FOTO", "ALAB", "CRDO", "MTSI", "AXTI"].includes(ticker);
+
+    if (isQuad3) quadTotals.quad3 += val;
+    else if (isCredit) quadTotals.credit += val;
+    else if (isTail) quadTotals.tail += val;
+    else quadTotals.quad1 += val;
   });
 
   const ctx = document.getElementById("portfolioChart");
@@ -943,66 +945,63 @@ function updatePortfolioChart(positions, totalVal) {
 
   if (quadTotals.quad3 > 0) {
     const pct = totalVal > 0 ? (quadTotals.quad3 / totalVal) * 100 : 0;
-    labels.push(`Quad 3 (Estagflação / Ouro / Caixa) - ${pct.toFixed(1)}%`);
+    labels.push(`Quad 3 (Ouro / Energia / Caixa) - ${pct.toFixed(1)}%`);
     data.push(quadTotals.quad3);
     bgColors.push('#10B981'); // Esmeralda
   }
 
-  if (quadTotals.quad1 > 0) {
-    const pct = totalVal > 0 ? (quadTotals.quad1 / totalVal) * 100 : 0;
-    labels.push(`Quad 1 (Tech / Semicondutores / High Beta) - ${pct.toFixed(1)}%`);
-    data.push(quadTotals.quad1);
-    bgColors.push('#38BDF8'); // Ciano
-  }
-
   if (quadTotals.credit > 0) {
     const pct = totalVal > 0 ? (quadTotals.credit / totalVal) * 100 : 0;
-    labels.push(`Crédito / Bonds (Renda Fixa Schwab) - ${pct.toFixed(1)}%`);
+    labels.push(`Crédito / Bonds - ${pct.toFixed(1)}%`);
     data.push(quadTotals.credit);
     bgColors.push('#F43F5E'); // Rubi
   }
 
+  if (quadTotals.quad1 > 0) {
+    const pct = totalVal > 0 ? (quadTotals.quad1 / totalVal) * 100 : 0;
+    labels.push(`Quad 1 (Tech / High Beta) - ${pct.toFixed(1)}%`);
+    data.push(quadTotals.quad1);
+    bgColors.push('#38BDF8'); // Ciano
+  }
+
   if (quadTotals.tail > 0) {
     const pct = totalVal > 0 ? (quadTotals.tail / totalVal) * 100 : 0;
-    labels.push(`Teses TAIL 3+ Anos (Robótica & Autônomos) - ${pct.toFixed(1)}%`);
+    labels.push(`Teses TAIL 3+ Anos - ${pct.toFixed(1)}%`);
     data.push(quadTotals.tail);
     bgColors.push('#A855F7'); // Roxo
   }
 
-  if (quadTotals.quad2 > 0) {
-    const pct = totalVal > 0 ? (quadTotals.quad2 / totalVal) * 100 : 0;
-    labels.push(`Quad 2 (Industriais XLI) - ${pct.toFixed(1)}%`);
-    data.push(quadTotals.quad2);
-    bgColors.push('#F97316'); // Laranja
-  }
-
-  portfolioChartInstance = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: labels,
-      datasets: [{
-        data: data,
-        backgroundColor: bgColors,
-        borderColor: '#121824',
-        borderWidth: 2
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false }
+  try {
+    portfolioChartInstance = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: labels,
+        datasets: [{
+          data: data,
+          backgroundColor: bgColors,
+          borderColor: '#121824',
+          borderWidth: 2
+        }]
       },
-      cutout: '68%'
-    }
-  });
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        },
+        cutout: '68%'
+      }
+    });
+  } catch (err) {
+    console.warn("Aviso ao renderizar gráfico de portfólio:", err);
+  }
 
   const legendDiv = document.getElementById("quadChartLegend");
   if (legendDiv) {
     legendDiv.innerHTML = labels.map((lbl, idx) => `
-      <div class="legend-item">
-        <span class="legend-color" style="background: ${bgColors[idx]};"></span>
-        <span><strong>${lbl}</strong></span>
+      <div class="legend-item" style="display:inline-flex; align-items:center; gap:6px; margin:4px 8px;">
+        <span class="legend-color" style="display:inline-block; width:12px; height:12px; border-radius:3px; background: ${bgColors[idx]};"></span>
+        <span style="font-size:0.85rem;"><strong>${lbl}</strong></span>
       </div>
     `).join("");
   }
@@ -2021,9 +2020,51 @@ function closeReportModal() {
 // 6.2 GERENCIAMENTO DINÂMICO DE DECISÕES DO KEITH & AUDITORIA
 const defaultDecisionsList = [
   {
-    date: "10/09/2026",
+    date: "11/09/2026",
     isToday: true,
     author: "KM Call (Hoje)",
+    asset: "Inflação, Nowcast & Taxas Curtas (UST 2Y / UST 10Y / Warsh Fed)",
+    portfolio: "Macro Global / Shorts",
+    category: "INFLATION NOWCAST",
+    badgeClass: "badge-bearish",
+    action: "Long Yields / Venda nos Repiques de Bonds (HYG / LQD)",
+    reason: "Nowcast de CPI acelerando para 3,5% em agosto e nova alta em setembro. Kevin Warsh avisa que inflação ditará as taxas. UST 2Y em máximas de ciclo em Bullish TREND.",
+    invalidation: "UST 2Y quebrando suporte abaixo de 4,30% ou CPI desacelerando abaixo de 3,2%.",
+    statusBadge: "badge-bearish",
+    statusText: "🔴 Short Duration / Long Yields"
+  },
+  {
+    date: "11/09/2026",
+    isToday: true,
+    author: "KM Call (Hoje)",
+    asset: "Real Assets & Commodities Físicas (GOLD, COPPER, WTIC, OIH, BE)",
+    portfolio: "Ambas",
+    category: "REAL ASSETS / ATHs",
+    badgeClass: "badge-core",
+    action: "Comprar nos Pisos de Range / Máxima Convicção",
+    reason: "Ouro sustentado em US$ 4.275–4.503, Cobre em US$ 6,35–6,84, Petróleo WTI em US$ 88,51–102,99 e Bloom Energy (BE) com energia para IA.",
+    invalidation: "Fechamento do Ouro abaixo de US$ 4.200 ou WTI abaixo de US$ 85.",
+    statusBadge: "badge-bullish",
+    statusText: "🟢 Convicção Máxima"
+  },
+  {
+    date: "11/09/2026",
+    isToday: true,
+    author: "KM Call (Hoje)",
+    asset: "Russell 2000 vs Large Caps (RUT / SPX / COMPQ)",
+    portfolio: "Macro Shorts",
+    category: "BEARISH ROTATION",
+    badgeClass: "badge-bearish",
+    action: "Short RUT (2.875–2.970) / Evitar Small Caps Endividadas",
+    reason: "Pêndulo do mercado penaliza empresas de capital intensivo e balanços alavancados enquanto inflação resiste alta.",
+    invalidation: "RUT fechando acima de 2.990 com queda dos rendimentos dos Treasuries.",
+    statusBadge: "badge-bearish",
+    statusText: "🔴 Short RUT / Long SPX"
+  },
+  {
+    date: "10/09/2026",
+    isToday: false,
+    author: "KM Call",
     asset: "Dólar Index (USD / DXY) & Treasuries (UST10Y/UST2Y)",
     portfolio: "Macro Global",
     category: "CURRENCY & RATES",
@@ -2036,8 +2077,8 @@ const defaultDecisionsList = [
   },
   {
     date: "10/09/2026",
-    isToday: true,
-    author: "KM Call (Hoje)",
+    isToday: false,
+    author: "KM Call",
     asset: "Nowcast de Inflação Hedgeye (Quad 3)",
     portfolio: "Macro Global",
     category: "NOWCAST ROC",
@@ -2178,7 +2219,7 @@ const defaultDecisionsList = [
 
 function getDecisions() {
   try {
-    const stored = localStorage.getItem("hedgeye_decisions_list_v2");
+    const stored = localStorage.getItem("hedgeye_decisions_list_v4");
     if (stored) {
       return JSON.parse(stored);
     }
@@ -2190,7 +2231,7 @@ function getDecisions() {
 
 function setDecisions(list) {
   try {
-    localStorage.setItem("hedgeye_decisions_list_v2", JSON.stringify(list));
+    localStorage.setItem("hedgeye_decisions_list_v4", JSON.stringify(list));
   } catch (e) {
     console.warn("Erro ao salvar localStorage de decisões:", e);
   }
@@ -2527,11 +2568,13 @@ function showToast(msg) {
 // 9. MOTOR DE SINCRONIZAÇÃO EM TEMPO REAL & BASE DE RELATÓRIOS
 let allReportsCache = [];
 
-function updateDynamicDashboard(latest) {
-  if (!latest) return;
+function updateDynamicDashboard(report) {
+  if (!report) return;
 
-  const dateStr = latest.shortDate || (latest.date ? latest.date.substring(0, 15) : "08/09/2026");
-  const shortDate = dateStr.includes("/") ? dateStr.substring(0, 5) : "08/09";
+  const dateStr = report.shortDate || (report.date ? report.date.substring(0, 15) : "11/09/2026");
+  const shortDate = dateStr.includes("/") ? dateStr.substring(0, 5) : "11/09";
+  const repId = report.id || "";
+  const struct = structuredTranslations[repId];
 
   // 1. Top bar e botões de relatório diário
   const marketTimeElem = document.getElementById("marketTime");
@@ -2547,17 +2590,20 @@ function updateDynamicDashboard(latest) {
   if (riskRangeHeaderDate) riskRangeHeaderDate.innerText = dateStr;
 
   const riskRangeSubtitle = document.getElementById("riskRangeSubtitle");
-  if (riskRangeSubtitle) riskRangeSubtitle.innerText = `Extraídos automaticamente do EARLYLOOK "${latest.title.replace(/^#\s*/, '').replace('EARLY LOOK: ', '')}"`;
+  if (riskRangeSubtitle) riskRangeSubtitle.innerText = `Extraídos automaticamente do EARLYLOOK "${report.title.replace(/^#\s*/, '').replace('EARLY LOOK: ', '')}"`;
 
   const earlylookTag = document.getElementById("earlylookTitleTag");
-  if (earlylookTag) earlylookTag.innerText = `"${latest.title}" (${dateStr})`;
+  if (earlylookTag) earlylookTag.innerText = `"${report.title}" (${dateStr})`;
+
+  const gipDateTitle = document.getElementById("gipLayersDateTitle");
+  if (gipDateTitle) gipDateTitle.innerText = `Diagnóstico em Três Camadas (${dateStr}):`;
 
   // 2. Regime Badge
   const headerQuadText = document.getElementById("headerQuadText");
   const currentQuadBadge = document.getElementById("currentQuadBadge");
-  const titleLower = (latest.title || "").toLowerCase();
+  const titleLower = (report.title || "").toLowerCase();
   
-  if (titleLower.includes("quad3") || titleLower.includes("oil") || titleLower.includes("rates") || titleLower.includes("inflation") || titleLower.includes("accelerat")) {
+  if (titleLower.includes("quad3") || titleLower.includes("oil") || titleLower.includes("rates") || titleLower.includes("inflation") || titleLower.includes("accelerat") || titleLower.includes("problem")) {
     if (headerQuadText) headerQuadText.innerText = "REGIME ATUAL: QUAD 3 (#ACCELERATING)";
     if (currentQuadBadge) {
       currentQuadBadge.className = "quad-badge quad-3";
@@ -2600,6 +2646,122 @@ function updateDynamicDashboard(latest) {
     const subUst10 = document.getElementById("sub-ust10");
     if (valUst10) valUst10.innerHTML = `${ust10.current.toLocaleString('pt-BR')}% <span class="badge ${ust10.signal === 'BULLISH' ? 'badge-bullish' : 'badge-bearish'}">${ust10.signal} TREND</span>`;
     if (subUst10) subUst10.innerText = `Range: ${ust10.low.toLocaleString('pt-BR')}% a ${ust10.high.toLocaleString('pt-BR')}%. Higher-for-longer pressiona Utilities.`;
+  }
+
+  // 4. Atualizar Citação Matinal
+  const quoteBox = document.getElementById("morningQuoteBox");
+  if (quoteBox) {
+    if (struct && struct.quoteText) {
+      quoteBox.innerHTML = `
+        <p class="quote-text">“${struct.quoteText}”</p>
+        <span class="quote-author">${struct.quoteAuthor} (${dateStr} — Early Look)</span>
+      `;
+    } else {
+      quoteBox.innerHTML = `
+        <p class="quote-text">“Nós não apostamos contra pessoas nos mercados. Nós seguimos a Ordem Implicada dos fluxos de mercado.”</p>
+        <span class="quote-author">— Keith McCullough (${dateStr} — Early Look)</span>
+      `;
+    }
+  }
+
+  // 5. Atualizar Destaques (Bullets) Combinados de Hoje
+  const bulletsList = document.getElementById("morningBulletsList");
+  if (bulletsList) {
+    if (struct && struct.takeaways && struct.takeaways.length > 0) {
+      bulletsList.innerHTML = struct.takeaways.map(t => `
+        <li><strong>${t.title}:</strong> ${t.desc}</li>
+      `).join("");
+    } else {
+      bulletsList.innerHTML = `
+        <li><strong>Síntese do Research (${dateStr}):</strong> ${report.summary ? report.summary.substring(0, 200) + '...' : 'Análise quantitativa dos fluxos de capital e faixas de risco.'}</li>
+        <li><strong>Risk Ranges Oficiais:</strong> ${report.riskRanges ? `${report.riskRanges.length} faixas de volatilidade ajustada calibradas.` : 'Sinais TREND vigentes.'}</li>
+        <li><strong>Playbook Quantitativo:</strong> Manter posições alinhadas ao regime macro vigente e respeitar os pisos de range para aportes.</li>
+      `;
+    }
+  }
+
+  // 6. Atualizar Ações Prioritárias de Hoje
+  const actionStepsContainer = document.getElementById("morningActionSteps");
+  if (actionStepsContainer) {
+    if (struct && struct.actionSteps && struct.actionSteps.length > 0) {
+      actionStepsContainer.innerHTML = struct.actionSteps.map(s => `
+        <div class="action-step">
+          <span class="step-num">${s.num}</span>
+          <div class="step-content">
+            <strong>${s.title}:</strong> ${s.desc}
+          </div>
+        </div>
+      `).join("");
+    } else if (repId === "110123" || dateStr.includes("11/09")) {
+      actionStepsContainer.innerHTML = `
+        <div class="action-step">
+          <span class="step-num">1</span>
+          <div class="step-content">
+            <strong>Comprar Recuos em Ativos Reais e Inflação (Quad 3):</strong> Manter e aportar em dips de Ouro (AAAU, GDX, NEM), Cobre (6,35–6,84), Petróleo/Energia (WTIC, OIH, BE) e exposições internacionais seletivas (ex: COLO, LatAm).
+          </div>
+        </div>
+        <div class="action-step">
+          <span class="step-num">2</span>
+          <div class="step-content">
+            <strong>Manter Shorts em Treasuries, Crédito Corporativo e Utilities:</strong> Posições vendidas em Bonds/Crédito (HYG 78,25–79,20 Bearish, LQD 104,10–105,80 Bearish) e Utilities (XLU) com UST 10Y (4,75–4,98%) em tendência de alta.
+          </div>
+        </div>
+        <div class="action-step">
+          <span class="step-num">3</span>
+          <div class="step-content">
+            <strong>Evitar e Reduzir Russell 2000 (RUT), Growth e Momentum:</strong> Não tentar adivinhar fundo em setores intensivos em capital, dívida e duration longa (RUT 2.875–2.970 Bearish); respeitar os tetos de range para reduzir posições fora de Quad 3.
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  // 7. Atualizar Tabela de Camadas GIP
+  const gipBody = document.getElementById("gipLayersBody");
+  if (gipBody) {
+    if (repId === "110123" || dateStr.includes("11/09")) {
+      gipBody.innerHTML = `
+        <tr>
+          <td><strong>1. Vigente por Dados</strong></td>
+          <td><span class="badge quad-badge-sm q3">Global Quad 3</span></td>
+          <td>Dólar (USD 98,40–99,67 Bearish); Petróleo WTI (88,51–102,99 Bullish); Ouro (4.275–4.503 Bullish); Cobre (6,35–6,84 Bullish)</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+        <tr>
+          <td><strong>2. Precificado pelo Mercado</strong></td>
+          <td><span class="badge quad-badge-sm" style="background:#F97316; color:#FFF;">Higher for Longer</span></td>
+          <td>Bond Yields UST 2Y e 10Y (4,75%–4,98%) rompem para novas máximas do ciclo de inflação; Russell 2000 (RUT 2.875–2.970) em Bearish TREND</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+        <tr>
+          <td><strong>3. Nowcast 1–3 Meses</strong></td>
+          <td><span class="badge quad-badge-sm q3">#Accelerating</span></td>
+          <td>Nowcast de Inflação acelerando para 3,5% em agosto e nova alta em setembro; Fed sob pressão de novas altas de juros</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+      `;
+    } else if (repId === "110057" || dateStr.includes("10/09")) {
+      gipBody.innerHTML = `
+        <tr>
+          <td><strong>1. Vigente por Dados</strong></td>
+          <td><span class="badge quad-badge-sm q3">Global Quad 3</span></td>
+          <td>Dólar (DXY $98,33–$99,49 Bearish); Petróleo WTI (teto em $99,91); Cobre (6,55–6,85); Ouro (4.301–4.502)</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+        <tr>
+          <td><strong>2. Precificado pelo Mercado</strong></td>
+          <td><span class="badge quad-badge-sm" style="background:#F97316; color:#FFF;">Higher for Longer</span></td>
+          <td>Bond Yields UST 2Y (4,44%) e 10Y (4,86%–4,89%) rompem para novas máximas de ciclo de inflação</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+        <tr>
+          <td><strong>3. Nowcast 1–3 Meses</strong></td>
+          <td><span class="badge quad-badge-sm q3">#Accelerating</span></td>
+          <td>Nowcast de Inflação projetando CPI trimestral em direção a 3,76% a/a no 4T26 confirmando permanência em Quad 3</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+      `;
+    }
   }
 }
 
@@ -2668,110 +2830,6 @@ async function loadReportsDatabase() {
     }
   } catch (err) {
     console.warn("Aviso ao carregar base de relatórios:", err);
-  }
-}
-
-function updateDynamicDashboard(report) {
-  if (!report) return;
-
-  const dateStr = report.shortDate || (report.date ? report.date.substring(0, 15) : "Hoje");
-  const repId = report.id || "";
-  const struct = structuredTranslations[repId];
-
-  // 1. Atualizar Título da Tag e Data dos Risk Ranges no topo
-  const earlylookTag = document.getElementById("earlylookTitleTag");
-  if (earlylookTag) {
-    earlylookTag.innerText = `"${report.title}" (${dateStr})`;
-  }
-
-  const rrHeaderDate = document.getElementById("riskRangeHeaderDate");
-  if (rrHeaderDate) {
-    rrHeaderDate.innerText = dateStr;
-  }
-
-  const gipDateTitle = document.getElementById("gipLayersDateTitle");
-  if (gipDateTitle) {
-    gipDateTitle.innerText = `Diagnóstico em Três Camadas (${dateStr}):`;
-  }
-
-  // 2. Atualizar Citação Matinal
-  const quoteBox = document.getElementById("morningQuoteBox");
-  if (quoteBox) {
-    if (struct) {
-      quoteBox.innerHTML = `
-        <p class="quote-text">“${struct.quoteText}”</p>
-        <span class="quote-author">${struct.quoteAuthor} (${dateStr} — Early Look)</span>
-      `;
-    } else {
-      quoteBox.innerHTML = `
-        <p class="quote-text">“Nós não apostamos contra pessoas nos mercados. Nós seguimos a Ordem Implicada dos fluxos de mercado.”</p>
-        <span class="quote-author">— Keith McCullough (${dateStr} — Early Look)</span>
-      `;
-    }
-  }
-
-  // 3. Atualizar Destaques (Bullets) Combinados de Hoje
-  const bulletsList = document.getElementById("morningBulletsList");
-  if (bulletsList) {
-    if (struct && struct.takeaways && struct.takeaways.length > 0) {
-      bulletsList.innerHTML = struct.takeaways.map(t => `
-        <li><strong>${t.title}:</strong> ${t.desc}</li>
-      `).join("");
-    } else {
-      bulletsList.innerHTML = `
-        <li><strong>Síntese do Research (${dateStr}):</strong> ${report.summary ? report.summary.substring(0, 200) + '...' : 'Análise quantitativa dos fluxos de capital e faixas de risco.'}</li>
-        <li><strong>Risk Ranges Oficiais:</strong> ${report.riskRanges ? `${report.riskRanges.length} faixas de volatilidade ajustada calibradas.` : 'Sinais TREND vigentes.'}</li>
-        <li><strong>Playbook Quantitativo:</strong> Manter posições alinhadas ao regime macro vigente e respeitar os pisos de range para aportes.</li>
-      `;
-    }
-  }
-
-  // 4. Atualizar Tabela de Camadas GIP
-  const gipBody = document.getElementById("gipLayersBody");
-  if (gipBody) {
-    if (repId === "110123" || dateStr.includes("11/09")) {
-      gipBody.innerHTML = `
-        <tr>
-          <td><strong>1. Vigente por Dados</strong></td>
-          <td><span class="badge quad-badge-sm q3">Global Quad 3</span></td>
-          <td>Dólar (USD 98,40–99,67 Bearish); Petróleo WTI (88,51–102,99 Bullish); Ouro (4.275–4.503 Bullish); Cobre (6,35–6,84 Bullish)</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-        <tr>
-          <td><strong>2. Precificado pelo Mercado</strong></td>
-          <td><span class="badge quad-badge-sm" style="background:#F97316; color:#FFF;">Higher for Longer</span></td>
-          <td>Bond Yields UST 2Y e 10Y (4,75%–4,98%) rompem para novas máximas do ciclo de inflação; Russell 2000 (RUT 2.875–2.970) em Bearish TREND</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-        <tr>
-          <td><strong>3. Nowcast 1–3 Meses</strong></td>
-          <td><span class="badge quad-badge-sm q3">#Accelerating</span></td>
-          <td>Nowcast de Inflação acelerando para 3,5% em agosto e nova alta em setembro; Fed sob pressão de novas altas de juros</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-      `;
-    } else if (repId === "110057" || dateStr.includes("10/09")) {
-      gipBody.innerHTML = `
-        <tr>
-          <td><strong>1. Vigente por Dados</strong></td>
-          <td><span class="badge quad-badge-sm q3">Global Quad 3</span></td>
-          <td>Dólar (DXY $98,33–$99,49 Bearish); Petróleo WTI (teto em $99,91); Cobre (6,55–6,85); Ouro (4.301–4.502)</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-        <tr>
-          <td><strong>2. Precificado pelo Mercado</strong></td>
-          <td><span class="badge quad-badge-sm" style="background:#F97316; color:#FFF;">Higher for Longer</span></td>
-          <td>Bond Yields UST 2Y (4,44%) e 10Y (4,86%–4,89%) rompem para novas máximas de ciclo de inflação</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-        <tr>
-          <td><strong>3. Nowcast 1–3 Meses</strong></td>
-          <td><span class="badge quad-badge-sm q3">#Accelerating</span></td>
-          <td>Nowcast de Inflação projetando CPI trimestral em direção a 3,76% a/a no 4T26 confirmando permanência em Quad 3</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-      `;
-    }
   }
 }
 
@@ -5012,12 +5070,9 @@ function initApp() {
   renderChatMessages();
   renderMacroIndicatorsTable();
   
-  // 0. Verifica Autenticação Supabase
-  checkAuthSession().then(isAuth => {
-    if (isAuth) {
-      fetchPortfolioDataFromApi();
-    }
-  });
+  // 0. Verifica Autenticação Supabase e carrega carteira canônica
+  checkAuthSession();
+  fetchPortfolioDataFromApi();
 
   renderTradingViewWatchlistTable();
   loadReportsDatabase().then(() => {

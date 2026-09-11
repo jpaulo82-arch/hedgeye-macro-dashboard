@@ -1,5 +1,5 @@
 {
-  "updatedAt": "11/09/2026 10:04:23",
+  "updatedAt": "11/09/2026 11:07:26",
   "total": 86,
   "latest": {
     "id": "110123",
@@ -10,7 +10,7 @@
     "sender": "Hedgeye <info@hedgeye.com>",
     "riskRanges": [
       {
-        "name": "of inflation.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+        "name": "10-Year U.S. Treasury Yield",
         "ticker": "UST10Y",
         "low": 4.75,
         "high": 4.98,
@@ -135,7 +135,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "of inflation.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.75,
           "high": 4.98,
@@ -270,7 +270,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "s running.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.7,
           "high": 4.89,
@@ -394,7 +394,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "t leak. The devalued money has to flow somewhere.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.68,
           "high": 4.86,
@@ -529,7 +529,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "Our Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.7,
           "high": 4.87,
@@ -653,7 +653,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "Our Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.7,
           "high": 4.87,
@@ -777,7 +777,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "Our Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.7,
           "high": 4.87,
@@ -945,7 +945,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "s the championship team standard. Everyone knows their role. Everyone champions it.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.63,
           "high": 4.84,
@@ -1069,7 +1069,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "or after.\n\n\n\nOur Levels\n\n\n\n30-Year U.S. Treasury Yield",
+          "name": "30-Year U.S. Treasury Yield",
           "ticker": "UST30Y",
           "low": 5.16,
           "high": 5.31,
@@ -1344,7 +1344,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "Hedgeye TREND Signal in bracket\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.67,
           "high": 4.83,
@@ -1468,7 +1468,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "Hedgeye TREND Signal in bracket\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.67,
           "high": 4.81,
@@ -1613,7 +1613,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "Hedgeye TREND Signal in bracket\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.63,
           "high": 4.74,
@@ -1791,7 +1791,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "Hedgeye TREND Signal in bracket\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.6,
           "high": 4.76,
@@ -1980,7 +1980,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "Hedgeye TREND Signal in bracket\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.61,
           "high": 4.74,
@@ -2136,7 +2136,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "Hedgeye TREND Signal in bracket\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.6,
           "high": 4.73,
@@ -2292,7 +2292,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "Hedgeye TREND Signal in bracket\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.63,
           "high": 4.74,
@@ -2423,7 +2423,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "and Russel Vol.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.65,
           "high": 4.75,
@@ -2558,7 +2558,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "I hope you enjoy the rest of the your summer.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.64,
           "high": 4.74,
@@ -2682,7 +2682,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "m forever grateful for that.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.61,
           "high": 4.74,
@@ -2806,7 +2806,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "re watching the treetops.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.63,
           "high": 4.74,
@@ -2930,7 +2930,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "or timing.\n\n\n\nOne of them harpooned a whale and sank the ship. The other bought the dip.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.63,
           "high": 4.75,
@@ -3054,7 +3054,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "it either. You just need to position for it.\n\n\n\nThe cerebrum handles the math. The cerebellum handles the execution. The brainstem can panic. Let the first two run the portfolio.\n\n\n\nI took an 85 MPH clapper off the skull and still figured this out. My two-and-a-half-pound organ works fine. You just have to stop letting the wrong part of it make the decisions.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.61,
           "high": 4.73,
@@ -3178,7 +3178,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "t have seen any of this coming either.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.6,
           "high": 4.74,
@@ -3302,7 +3302,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "t figured that out yet. The Machine already has. You already have.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.57,
           "high": 4.75,
@@ -3426,7 +3426,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "someone needs to have a real belief in a better way for the future to do that.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.61,
           "high": 4.76,
@@ -3550,7 +3550,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "ll have the humility to listen.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.57,
           "high": 4.74,
@@ -3674,7 +3674,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "35 AM.\n\n\n\nGrateful for another day of being able to move at all.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.59,
           "high": 4.74,
@@ -3809,7 +3809,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "not the reverse. Keep the why.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.57,
           "high": 4.74,
@@ -3933,7 +3933,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "t go how the CNBC and Consensus Hedge Fund Drawdown crowd rolls. It never does.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.58,
           "high": 4.74,
@@ -4057,7 +4057,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "s worked for the last 2 trading days.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.6,
           "high": 4.75,
@@ -4181,7 +4181,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "Our Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.61,
           "high": 4.75,
@@ -4305,7 +4305,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "depending entirely on which process you were running.\n\n\n\nThe threat and the value were in the same market. Same noise. Different signal. Different score.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.54,
           "high": 4.72,
@@ -4436,7 +4436,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "CARZ keep collapsing\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.55,
           "high": 4.72,
@@ -4567,7 +4567,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "up this morning.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.55,
           "high": 4.71,
@@ -4698,7 +4698,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "have a talk with him.\n\n\n\nOur Levels\n\n\n\n30-Year U.S. Treasury Yield",
+          "name": "30-Year U.S. Treasury Yield",
           "ticker": "UST30Y",
           "low": 5.08,
           "high": 5.18,
@@ -4899,7 +4899,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "s covering.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.53,
           "high": 4.71,
@@ -5030,7 +5030,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "s WHEN the Signaling Process says buy more. Not panic. Not sell. Buy. Kurzweil called it reinventing intelligence. We call it Wednesday.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.52,
           "high": 4.65,
@@ -5161,7 +5161,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "that way.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.51,
           "high": 4.62,
@@ -5292,7 +5292,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "ll do. The hidden order was always there. The constraint of a increasingly levered closed market system revealed it.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.49,
           "high": 4.62,
@@ -5423,7 +5423,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "love your ability to change. Same switch. Different portfolio.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.46,
           "high": 4.62,
@@ -5554,7 +5554,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": ".  \n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.44,
           "high": 4.63,
@@ -5678,7 +5678,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "the dip is gone and the position is crowded. Your brain is capable of better than that. So is The Machine.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.42,
           "high": 4.62,
@@ -5802,7 +5802,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "s a much better life. Friston proved it mathematically. The timestamps prove it empirically.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.41,
           "high": 4.65,
@@ -5926,7 +5926,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "s how a Macro Aware player plays a Quad Shift from INFLATION accelerating to decelerating.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.37,
           "high": 4.6,
@@ -6050,7 +6050,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "utilities XLU.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.35,
           "high": 4.57,
@@ -6174,7 +6174,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "so be prepared to be nimble.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.37,
           "high": 4.61,
@@ -6298,7 +6298,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "t require wearing Orange Jump Suit Risk. No insider information necessary. Just a Fractal Signaling Process and a Canadian who showed up at 3AM Vegas time.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.37,
           "high": 4.59,
@@ -6422,7 +6422,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "s also the one that wins.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.35,
           "high": 4.52,
@@ -6546,7 +6546,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "Our Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.31,
           "high": 4.51,
@@ -6670,7 +6670,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "t happen.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.31,
           "high": 4.55,
@@ -6801,7 +6801,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "ve never managed a stop loss in their life.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.31,
           "high": 4.49,
@@ -6932,7 +6932,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "waiting for a note that already played decades ago.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.31,
           "high": 4.46,
@@ -7063,7 +7063,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "them.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.33,
           "high": 4.49,
@@ -7194,7 +7194,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "without CNBC narratives attached.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.35,
           "high": 4.5,
@@ -7325,7 +7325,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "s seat.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.37,
           "high": 4.51,
@@ -7456,7 +7456,7 @@
       "sender": "Hedgeye <info@hedgeye.com>",
       "riskRanges": [
         {
-          "name": "Hedgeye TREND Signal in bracket\n\n\n\n10-Year U.S. Treasury Yield",
+          "name": "10-Year U.S. Treasury Yield",
           "ticker": "UST10Y",
           "low": 4.4,
           "high": 4.54,
