@@ -2671,6 +2671,110 @@ async function loadReportsDatabase() {
   }
 }
 
+function updateDynamicDashboard(report) {
+  if (!report) return;
+
+  const dateStr = report.shortDate || (report.date ? report.date.substring(0, 15) : "Hoje");
+  const repId = report.id || "";
+  const struct = structuredTranslations[repId];
+
+  // 1. Atualizar Título da Tag e Data dos Risk Ranges no topo
+  const earlylookTag = document.getElementById("earlylookTitleTag");
+  if (earlylookTag) {
+    earlylookTag.innerText = `"${report.title}" (${dateStr})`;
+  }
+
+  const rrHeaderDate = document.getElementById("riskRangeHeaderDate");
+  if (rrHeaderDate) {
+    rrHeaderDate.innerText = dateStr;
+  }
+
+  const gipDateTitle = document.getElementById("gipLayersDateTitle");
+  if (gipDateTitle) {
+    gipDateTitle.innerText = `Diagnóstico em Três Camadas (${dateStr}):`;
+  }
+
+  // 2. Atualizar Citação Matinal
+  const quoteBox = document.getElementById("morningQuoteBox");
+  if (quoteBox) {
+    if (struct) {
+      quoteBox.innerHTML = `
+        <p class="quote-text">“${struct.quoteText}”</p>
+        <span class="quote-author">${struct.quoteAuthor} (${dateStr} — Early Look)</span>
+      `;
+    } else {
+      quoteBox.innerHTML = `
+        <p class="quote-text">“Nós não apostamos contra pessoas nos mercados. Nós seguimos a Ordem Implicada dos fluxos de mercado.”</p>
+        <span class="quote-author">— Keith McCullough (${dateStr} — Early Look)</span>
+      `;
+    }
+  }
+
+  // 3. Atualizar Destaques (Bullets) Combinados de Hoje
+  const bulletsList = document.getElementById("morningBulletsList");
+  if (bulletsList) {
+    if (struct && struct.takeaways && struct.takeaways.length > 0) {
+      bulletsList.innerHTML = struct.takeaways.map(t => `
+        <li><strong>${t.title}:</strong> ${t.desc}</li>
+      `).join("");
+    } else {
+      bulletsList.innerHTML = `
+        <li><strong>Síntese do Research (${dateStr}):</strong> ${report.summary ? report.summary.substring(0, 200) + '...' : 'Análise quantitativa dos fluxos de capital e faixas de risco.'}</li>
+        <li><strong>Risk Ranges Oficiais:</strong> ${report.riskRanges ? `${report.riskRanges.length} faixas de volatilidade ajustada calibradas.` : 'Sinais TREND vigentes.'}</li>
+        <li><strong>Playbook Quantitativo:</strong> Manter posições alinhadas ao regime macro vigente e respeitar os pisos de range para aportes.</li>
+      `;
+    }
+  }
+
+  // 4. Atualizar Tabela de Camadas GIP
+  const gipBody = document.getElementById("gipLayersBody");
+  if (gipBody) {
+    if (repId === "110123" || dateStr.includes("11/09")) {
+      gipBody.innerHTML = `
+        <tr>
+          <td><strong>1. Vigente por Dados</strong></td>
+          <td><span class="badge quad-badge-sm q3">Global Quad 3</span></td>
+          <td>Dólar (USD 98,40–99,67 Bearish); Petróleo WTI (88,51–102,99 Bullish); Ouro (4.275–4.503 Bullish); Cobre (6,35–6,84 Bullish)</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+        <tr>
+          <td><strong>2. Precificado pelo Mercado</strong></td>
+          <td><span class="badge quad-badge-sm" style="background:#F97316; color:#FFF;">Higher for Longer</span></td>
+          <td>Bond Yields UST 2Y e 10Y (4,75%–4,98%) rompem para novas máximas do ciclo de inflação; Russell 2000 (RUT 2.875–2.970) em Bearish TREND</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+        <tr>
+          <td><strong>3. Nowcast 1–3 Meses</strong></td>
+          <td><span class="badge quad-badge-sm q3">#Accelerating</span></td>
+          <td>Nowcast de Inflação acelerando para 3,5% em agosto e nova alta em setembro; Fed sob pressão de novas altas de juros</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+      `;
+    } else if (repId === "110057" || dateStr.includes("10/09")) {
+      gipBody.innerHTML = `
+        <tr>
+          <td><strong>1. Vigente por Dados</strong></td>
+          <td><span class="badge quad-badge-sm q3">Global Quad 3</span></td>
+          <td>Dólar (DXY $98,33–$99,49 Bearish); Petróleo WTI (teto em $99,91); Cobre (6,55–6,85); Ouro (4.301–4.502)</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+        <tr>
+          <td><strong>2. Precificado pelo Mercado</strong></td>
+          <td><span class="badge quad-badge-sm" style="background:#F97316; color:#FFF;">Higher for Longer</span></td>
+          <td>Bond Yields UST 2Y (4,44%) e 10Y (4,86%–4,89%) rompem para novas máximas de ciclo de inflação</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+        <tr>
+          <td><strong>3. Nowcast 1–3 Meses</strong></td>
+          <td><span class="badge quad-badge-sm q3">#Accelerating</span></td>
+          <td>Nowcast de Inflação projetando CPI trimestral em direção a 3,76% a/a no 4T26 confirmando permanência em Quad 3</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+      `;
+    }
+  }
+}
+
 function renderReportsHistoryList(reports) {
   const tbody = document.getElementById("earlylookHistoryBody");
   if (!tbody) return;
