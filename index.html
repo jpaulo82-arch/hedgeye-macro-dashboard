@@ -697,8 +697,8 @@
               <span class="badge badge-bullish" id="quadLeadingBadge">LÍDER 30D: QUAD 2</span>
               <span class="badge badge-neutral" style="font-size: 0.75rem;">16 ATIVOS CHAVE</span>
               <span class="tag tag-outline" style="font-size: 0.72rem; color: #38BDF8;" id="gipCadenceTag">Cadência: Fechamento Diário + Intraday</span>
-              <button class="btn btn-outline btn-sm" onclick="fetchMarketAnalyticsData(); showToast('🔄 Recalculando rotação de quadrantes e Rate of Change...');" title="Recalcular métricas de ROC e 2ª derivada">
-                <span class="icon">🔄</span> Atualizar GIP
+              <button class="btn btn-outline btn-sm" id="gipRefreshBtn" onclick="refreshGipData()" title="Recalcular GEX, rotação de quadrantes, 13F e cotações ao vivo da aba">
+                <span class="icon" id="gipRefreshIcon">🔄</span> <span id="gipRefreshText">Atualizar GIP</span>
               </button>
             </div>
           </div>
@@ -767,6 +767,22 @@
                 <!-- Renderizado dinamicamente via JS -->
               </tbody>
             </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- BLOCO 1.5: INDICADORES MACRO OFICIAIS (ALPHA VANTAGE / BLS-BEA-FED) -->
+      <div class="card mb-4" style="border: 1px solid rgba(56, 189, 248, 0.3);">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">📡</span> Indicadores Macro Oficiais (Alpha Vantage / BLS-BEA-Fed)</h3>
+            <p class="subtitle">Cross-check objetivo do regime com dado oficial — não substitui os Risk Ranges do Early Look</p>
+          </div>
+          <span class="tag tag-outline" style="font-size: 0.72rem;" id="macroOfficialUpdatedTag">Atualiza junto com "Atualizar GIP"</span>
+        </div>
+        <div class="card-body">
+          <div class="grid-4-col" id="macroOfficialIndicatorsContainer" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.8rem;">
+            <span style="font-size: 0.82rem; color: #94A3B8;">Clique em "Atualizar GIP" acima para carregar os indicadores oficiais.</span>
           </div>
         </div>
       </div>
@@ -1404,8 +1420,8 @@
               <span id="copilotAiSourceBadge" class="badge" style="background: rgba(56, 189, 248, 0.15); color: #38BDF8; font-size: 0.72rem; border: 1px solid rgba(56, 189, 248, 0.3);">
                 <span style="color: #38BDF8;">●</span> Deep Macro Engine Ativo
               </span>
-              <button class="btn btn-outline btn-sm" onclick="configureClaudeApiKey()" title="Configurar Claude API Key (Anthropic)">
-                <span class="icon">🔑</span> Claude API
+              <button class="btn btn-outline btn-sm" onclick="configureGeminiApiKey()" title="Configurar Gemini API Key (Google)">
+                <span class="icon">🔑</span> Gemini API
               </button>
               <button class="btn btn-outline btn-sm" onclick="clearChatHistory()" title="Limpar conversa">
                 <span class="icon">🗑️</span> Limpar
@@ -1994,17 +2010,18 @@
     ⚡
   </button>
 
-  <!-- Modal / Overlay de Autenticação Supabase -->
+  <!-- Modal / Overlay de Autenticação Supabase & Backend -->
   <div id="authOverlayModal" class="auth-overlay-backdrop" style="display: none;">
     <div class="auth-card">
       <div class="auth-logo-box">
         <span class="icon">⚡</span>
         <div>
           <h2>HEDGEYE <span>TERMINAL</span></h2>
-          <p>Acesso Restrito & Autenticação Institucional</p>
+          <p id="authCardSubtitle">Acesso Restrito & Autenticação Institucional</p>
         </div>
       </div>
 
+      <!-- VIEW 1: FORMULÁRIO DE LOGIN -->
       <form id="authLoginForm" onsubmit="handleAuthSubmit(event)">
         <div class="auth-input-group">
           <label for="authEmailInput">E-mail Institucional</label>
@@ -2012,7 +2029,10 @@
         </div>
 
         <div class="auth-input-group">
-          <label for="authPasswordInput">Senha de Acesso</label>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <label for="authPasswordInput" style="margin-bottom: 0;">Senha de Acesso</label>
+            <button type="button" class="auth-link-btn" onclick="toggleAuthView('reset')">Esqueceu a senha?</button>
+          </div>
           <input type="password" id="authPasswordInput" placeholder="••••••••" required>
         </div>
 
@@ -2024,8 +2044,57 @@
         </button>
       </form>
 
+      <!-- VIEW 2: FORMULÁRIO DE RESET DE SENHA -->
+      <form id="authResetForm" onsubmit="handleResetPasswordSubmit(event)" style="display: none;">
+        <p style="font-size: 0.82rem; color: #94A3B8; margin-bottom: 1.2rem; line-height: 1.45;">
+          Informe o e-mail cadastrado. Enviaremos um link seguro para você cadastrar sua nova senha no Supabase Auth.
+        </p>
+
+        <div class="auth-input-group">
+          <label for="authResetEmailInput">E-mail para Recuperação</label>
+          <input type="email" id="authResetEmailInput" placeholder="seu.email@exemplo.com" required value="jpaulo82@gmail.com">
+        </div>
+
+        <div id="authResetStatusMsg" class="auth-status-msg"></div>
+
+        <button type="submit" class="auth-btn-primary" id="authResetSubmitBtn" style="background: linear-gradient(135deg, #0284C7, #0369A1);">
+          <span>Enviar Link de Recuperação</span>
+          <span class="icon">✉️</span>
+        </button>
+
+        <div style="margin-top: 1rem; text-align: center;">
+          <button type="button" class="auth-link-btn" onclick="toggleAuthView('login')" style="font-size: 0.85rem; color: #38BDF8;">
+            ← Voltar para a tela de login
+          </button>
+        </div>
+      </form>
+
+      <!-- VIEW 3: FORMULÁRIO DE DEFINIÇÃO DE NOVA SENHA (APÓS CLIQUE NO EMAIL) -->
+      <form id="authUpdatePasswordForm" onsubmit="handleUpdatePasswordSubmit(event)" style="display: none;">
+        <p style="font-size: 0.82rem; color: #34D399; margin-bottom: 1.2rem; line-height: 1.45;">
+          ✓ Link de recuperação validado! Digite sua nova senha de acesso abaixo:
+        </p>
+
+        <div class="auth-input-group">
+          <label for="authNewPasswordInput">Nova Senha</label>
+          <input type="password" id="authNewPasswordInput" placeholder="Mínimo 6 caracteres" required minlength="6">
+        </div>
+
+        <div class="auth-input-group">
+          <label for="authConfirmPasswordInput">Confirmar Nova Senha</label>
+          <input type="password" id="authConfirmPasswordInput" placeholder="Repita a nova senha" required minlength="6">
+        </div>
+
+        <div id="authUpdateStatusMsg" class="auth-status-msg"></div>
+
+        <button type="submit" class="auth-btn-primary" id="authUpdateSubmitBtn" style="background: linear-gradient(135deg, #10B981, #059669);">
+          <span>Salvar Nova Senha</span>
+          <span class="icon">💾</span>
+        </button>
+      </form>
+
       <div style="margin-top: 1.2rem; text-align: center; font-size: 0.72rem; color: #64748B;">
-        🔒 Sessão protegida por criptografia de ponta a ponta e Supabase Auth.
+        🔒 Conectado ao Supabase Cloud Database & Backend de Autenticação.
       </div>
     </div>
   </div>
@@ -2034,6 +2103,6 @@
   <div class="toast-notification" id="toastNotification">Notificação</div>
 
   <!-- Script Principal da Aplicação -->
-  <script src="app.js?v=20260911_V6_PROD"></script>
+  <script src="app.js?v=20260911_V10_RECOVERY_FORM"></script>
 </body>
 </html>

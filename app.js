@@ -19,6 +19,18 @@ if (window.supabase) {
 async function checkAuthSession() {
   const overlay = document.getElementById("authOverlayModal");
   const userEmailSpan = document.getElementById("userAuthEmail");
+
+  // 1. Verifica se o usuário chegou clicando no link de recuperação de senha por e-mail
+  const hash = window.location.hash || "";
+  const search = window.location.search || "";
+  const isRecovery = hash.includes("type=recovery") || search.includes("type=recovery");
+
+  if (isRecovery) {
+    console.log("[Auth] Link de recuperação de senha detectado no carregamento.");
+    if (overlay) overlay.style.display = "flex";
+    toggleAuthView("update_password");
+    return false;
+  }
   
   if (!supabaseClient) {
     if (userEmailSpan) userEmailSpan.innerText = "Modo Local (Autenticado)";
@@ -44,6 +56,51 @@ async function checkAuthSession() {
   }
 }
 
+// Ouve eventos de autenticação do Supabase (incluindo PASSWORD_RECOVERY)
+if (supabaseClient) {
+  try {
+    supabaseClient.auth.onAuthStateChange((event, session) => {
+      console.log("[Auth Event]:", event);
+      if (event === "PASSWORD_RECOVERY") {
+        const overlay = document.getElementById("authOverlayModal");
+        if (overlay) overlay.style.display = "flex";
+        toggleAuthView("update_password");
+      }
+    });
+  } catch (e) {}
+}
+
+function toggleAuthView(view) {
+  const loginForm = document.getElementById("authLoginForm");
+  const resetForm = document.getElementById("authResetForm");
+  const updateForm = document.getElementById("authUpdatePasswordForm");
+  const subtitle = document.getElementById("authCardSubtitle");
+  const statusMsg = document.getElementById("authStatusMsg");
+  const resetStatusMsg = document.getElementById("authResetStatusMsg");
+  const updateStatusMsg = document.getElementById("authUpdateStatusMsg");
+
+  if (statusMsg) statusMsg.style.display = "none";
+  if (resetStatusMsg) resetStatusMsg.style.display = "none";
+  if (updateStatusMsg) updateStatusMsg.style.display = "none";
+
+  if (view === "reset") {
+    if (loginForm) loginForm.style.display = "none";
+    if (resetForm) resetForm.style.display = "block";
+    if (updateForm) updateForm.style.display = "none";
+    if (subtitle) subtitle.innerText = "Redefinição de Senha & Acesso";
+  } else if (view === "update_password") {
+    if (loginForm) loginForm.style.display = "none";
+    if (resetForm) resetForm.style.display = "none";
+    if (updateForm) updateForm.style.display = "block";
+    if (subtitle) subtitle.innerText = "Cadastrar Nova Senha";
+  } else {
+    if (loginForm) loginForm.style.display = "block";
+    if (resetForm) resetForm.style.display = "none";
+    if (updateForm) updateForm.style.display = "none";
+    if (subtitle) subtitle.innerText = "Acesso Restrito & Autenticação Institucional";
+  }
+}
+
 async function handleAuthSubmit(event) {
   event.preventDefault();
   const emailInput = document.getElementById("authEmailInput");
@@ -65,51 +122,146 @@ async function handleAuthSubmit(event) {
   }
   if (statusMsg) statusMsg.style.display = "none";
 
-  if (!supabaseClient) {
-    showAuthSuccess("Acesso local liberado!");
-    setTimeout(() => {
-      document.getElementById("authOverlayModal").style.display = "none";
-    }, 500);
-    return;
+  let authSuccess = false;
+  let userEmail = email;
+
+  // 1. Tenta autenticação direta via Supabase SDK no frontend
+  if (supabaseClient) {
+    try {
+      const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: password
+      });
+      if (!error && data && data.user) {
+        authSuccess = true;
+        userEmail = data.user.email || email;
+      }
+    } catch (e) {
+      console.warn("Falha no client SDK Supabase, tentando backend API:", e);
+    }
   }
 
-  try {
-    const { data, error } = await supabaseClient.auth.signInWithPassword({
-      email: email,
-      password: password
-    });
-
-    if (error) {
-      showAuthError(`Falha no login: ${error.message}`);
+  // 2. Se falhar ou sem SDK, valida via Backend API (/api/auth/login)
+  if (!authSuccess) {
+    try {
+      const resp = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password })
+      });
+      const data = await resp.json();
+      if (resp.ok && data.success) {
+        authSuccess = true;
+        if (data.user && data.user.email) userEmail = data.user.email;
+        if (data.access_token) {
+          localStorage.setItem("hedgeye_supabase_token", data.access_token);
+        }
+      } else {
+        const errorMsg = data.error || "Credenciais inválidas. Verifique seu e-mail e senha.";
+        showAuthError(`Falha no login: ${errorMsg}`);
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `<span>Entrar no Terminal</span> <span class="icon">➔</span>`;
+        }
+        return;
+      }
+    } catch (err) {
+      showAuthError(`Erro de comunicação com o servidor: ${err.message}`);
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.innerHTML = `<span>Entrar no Terminal</span> <span class="icon">➔</span>`;
       }
       return;
     }
+  }
 
-    showAuthSuccess("Autenticado com sucesso! Carregando terminal...");
-    const userEmailSpan = document.getElementById("userAuthEmail");
-    if (userEmailSpan && data.user) {
-      userEmailSpan.innerText = data.user.email;
-    }
+  // Login bem sucedido
+  showAuthSuccess("Autenticado com sucesso! Carregando terminal...");
+  const userEmailSpan = document.getElementById("userAuthEmail");
+  if (userEmailSpan) {
+    userEmailSpan.innerText = userEmail;
+  }
 
-    fetchPortfolioDataFromApi();
+  fetchPortfolioDataFromApi();
 
-    setTimeout(() => {
-      document.getElementById("authOverlayModal").style.display = "none";
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = `<span>Entrar no Terminal</span> <span class="icon">➔</span>`;
-      }
-    }, 600);
-
-  } catch (err) {
-    showAuthError(`Erro inesperado: ${err.message}`);
+  setTimeout(() => {
+    document.getElementById("authOverlayModal").style.display = "none";
     if (submitBtn) {
       submitBtn.disabled = false;
       submitBtn.innerHTML = `<span>Entrar no Terminal</span> <span class="icon">➔</span>`;
     }
+  }, 600);
+}
+
+async function handleResetPasswordSubmit(event) {
+  event.preventDefault();
+  const emailInput = document.getElementById("authResetEmailInput");
+  const resetBtn = document.getElementById("authResetSubmitBtn");
+  const statusMsg = document.getElementById("authResetStatusMsg");
+
+  const email = emailInput ? emailInput.value.trim() : "";
+  if (!email) {
+    showAuthResetError("Informe seu e-mail de acesso.");
+    return;
+  }
+
+  if (resetBtn) {
+    resetBtn.disabled = true;
+    resetBtn.innerHTML = `<span>Enviando link...</span> <span class="spin-icon">⚙️</span>`;
+  }
+  if (statusMsg) statusMsg.style.display = "none";
+
+  let resetSuccess = false;
+  let successMsg = `E-mail de recuperação enviado para ${email}!`;
+
+  // 1. Tenta Supabase SDK frontend
+  if (supabaseClient) {
+    try {
+      const { data, error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+        redirectTo: window.location.origin
+      });
+      if (!error) {
+        resetSuccess = true;
+      }
+    } catch (e) {
+      console.warn("Falha no client SDK Supabase reset, tentando backend:", e);
+    }
+  }
+
+  // 2. Tenta Backend API (/api/auth/reset-password)
+  if (!resetSuccess) {
+    try {
+      const resp = await fetch("/api/auth/reset-password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email })
+      });
+      const data = await resp.json();
+      if (resp.ok && data.success) {
+        resetSuccess = true;
+        if (data.message) successMsg = data.message;
+      } else {
+        showAuthResetError(data.error || "Não foi possível enviar o e-mail de recuperação.");
+        if (resetBtn) {
+          resetBtn.disabled = false;
+          resetBtn.innerHTML = `<span>Enviar Link de Recuperação</span> <span class="icon">✉️</span>`;
+        }
+        return;
+      }
+    } catch (err) {
+      showAuthResetError(`Erro de conexão: ${err.message}`);
+      if (resetBtn) {
+        resetBtn.disabled = false;
+        resetBtn.innerHTML = `<span>Enviar Link de Recuperação</span> <span class="icon">✉️</span>`;
+      }
+      return;
+    }
+  }
+
+  showAuthResetSuccess(successMsg);
+  if (resetBtn) {
+    resetBtn.disabled = false;
+    resetBtn.innerHTML = `<span>Enviar Link de Recuperação</span> <span class="icon">✉️</span>`;
   }
 }
 
@@ -118,6 +270,7 @@ function showAuthError(msg) {
   if (statusMsg) {
     statusMsg.className = "auth-status-msg error";
     statusMsg.innerText = msg;
+    statusMsg.style.display = "block";
   }
 }
 
@@ -126,20 +279,124 @@ function showAuthSuccess(msg) {
   if (statusMsg) {
     statusMsg.className = "auth-status-msg success";
     statusMsg.innerText = msg;
+    statusMsg.style.display = "block";
+  }
+}
+
+function showAuthResetError(msg) {
+  const statusMsg = document.getElementById("authResetStatusMsg");
+  if (statusMsg) {
+    statusMsg.className = "auth-status-msg error";
+    statusMsg.innerText = msg;
+    statusMsg.style.display = "block";
+  }
+}
+
+function showAuthResetSuccess(msg) {
+  const statusMsg = document.getElementById("authResetStatusMsg");
+  if (statusMsg) {
+    statusMsg.className = "auth-status-msg success";
+    statusMsg.innerText = msg;
+    statusMsg.style.display = "block";
+  }
+}
+
+async function handleUpdatePasswordSubmit(event) {
+  event.preventDefault();
+  const newPwdInput = document.getElementById("authNewPasswordInput");
+  const confirmPwdInput = document.getElementById("authConfirmPasswordInput");
+  const submitBtn = document.getElementById("authUpdateSubmitBtn");
+  const statusMsg = document.getElementById("authUpdateStatusMsg");
+
+  const newPassword = newPwdInput ? newPwdInput.value : "";
+  const confirmPassword = confirmPwdInput ? confirmPwdInput.value : "";
+
+  if (!newPassword || newPassword.length < 6) {
+    showAuthUpdateError("A nova senha deve ter no mínimo 6 caracteres.");
+    return;
+  }
+  if (newPassword !== confirmPassword) {
+    showAuthUpdateError("As senhas digitadas não coincidem. Digite novamente.");
+    return;
+  }
+
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<span>Salvando nova senha...</span> <span class="spin-icon">⚙️</span>`;
+  }
+  if (statusMsg) statusMsg.style.display = "none";
+
+  let updated = false;
+  let errMsg = "";
+
+  // 1. Atualiza via Supabase SDK (o usuário já está com sessão ativa pelo token de recovery)
+  if (supabaseClient) {
+    try {
+      const { data, error } = await supabaseClient.auth.updateUser({ password: newPassword });
+      if (!error && data && data.user) {
+        updated = true;
+      } else if (error) {
+        errMsg = error.message;
+      }
+    } catch (e) {
+      errMsg = e.message;
+    }
+  }
+
+  if (updated) {
+    showAuthUpdateSuccess("✓ Nova senha cadastrada com sucesso! Entrando no terminal...");
+    // Remove o fragmento #access_token=...&type=recovery da barra de endereço
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+    setTimeout(() => {
+      document.getElementById("authOverlayModal").style.display = "none";
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `<span>Salvar Nova Senha</span> <span class="icon">💾</span>`;
+      }
+      showToast("Senha redefinida e salva com sucesso!");
+    }, 1400);
+  } else {
+    showAuthUpdateError(`Falha ao salvar nova senha: ${errMsg || "Sessão expirada. Solicite um novo link."}`);
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `<span>Salvar Nova Senha</span> <span class="icon">💾</span>`;
+    }
+  }
+}
+
+function showAuthUpdateError(msg) {
+  const statusMsg = document.getElementById("authUpdateStatusMsg");
+  if (statusMsg) {
+    statusMsg.className = "auth-status-msg error";
+    statusMsg.innerText = msg;
+    statusMsg.style.display = "block";
+  }
+}
+
+function showAuthUpdateSuccess(msg) {
+  const statusMsg = document.getElementById("authUpdateStatusMsg");
+  if (statusMsg) {
+    statusMsg.className = "auth-status-msg success";
+    statusMsg.innerText = msg;
+    statusMsg.style.display = "block";
   }
 }
 
 async function handleSignOut() {
-  if (confirm("Deseja realmente sair do Hedgeye Terminal?")) {
-    if (supabaseClient) {
+  if (supabaseClient) {
+    try {
       await supabaseClient.auth.signOut();
-    }
-    const overlay = document.getElementById("authOverlayModal");
-    if (overlay) overlay.style.display = "flex";
-    const userEmailSpan = document.getElementById("userAuthEmail");
-    if (userEmailSpan) userEmailSpan.innerText = "Desconectado";
-    showToast("Sessão encerrada.");
+    } catch (e) {}
   }
+  localStorage.removeItem("hedgeye_supabase_token");
+  toggleAuthView("login");
+  const overlay = document.getElementById("authOverlayModal");
+  if (overlay) overlay.style.display = "flex";
+  const userEmailSpan = document.getElementById("userAuthEmail");
+  if (userEmailSpan) userEmailSpan.innerText = "Desconectado";
+  showToast("Sessão encerrada com sucesso.");
 }
 
 async function authedFetch(url, options = {}) {
@@ -3686,6 +3943,71 @@ async function fetchMarketAnalyticsData() {
   }
 }
 
+async function refreshGipData() {
+  const btn = document.getElementById("gipRefreshBtn");
+  const icon = document.getElementById("gipRefreshIcon");
+  const text = document.getElementById("gipRefreshText");
+  if (btn) btn.disabled = true;
+  if (icon) icon.classList.add("spin");
+  if (text) text.innerText = "Atualizando...";
+
+  // 1. Atualiza na hora as cotações ao vivo já visíveis na aba (rápido)
+  try { await fetchLiveMarketQuotes(); } catch (e) {}
+
+  showToast("🔄 Recalculando GEX, rotação de quadrantes, 13F e Rate of Change...");
+
+  // 2. Dispara o recálculo real do GIP no backend (sem tocar Gmail nem git)
+  let refreshTriggered = false;
+  const refreshEndpoints = ["/api/refresh-gip", "http://localhost:8080/api/refresh-gip"];
+  for (const ep of refreshEndpoints) {
+    try {
+      const res = await fetch(ep, { method: "POST", headers: { "Content-Type": "application/json" } });
+      if (res.ok) {
+        refreshTriggered = true;
+        break;
+      }
+    } catch (e) {}
+  }
+
+  const finishGipRefresh = async (success) => {
+    if (btn) btn.disabled = false;
+    if (icon) icon.classList.remove("spin");
+    if (text) text.innerText = "Atualizar GIP";
+    await fetchMarketAnalyticsData();
+    await fetchLiveMarketQuotes();
+    showToast(success ? "✅ GIP e cotações da aba atualizados!" : "⚠️ Não foi possível recalcular agora — mostrando o último dado salvo.");
+  };
+
+  if (!refreshTriggered) {
+    // Sem server.py local (ex.: acessando a versão publicada no Vercel) — só recarrega o JSON existente
+    await finishGipRefresh(false);
+    return;
+  }
+
+  let tries = 0;
+  const checkInterval = setInterval(async () => {
+    tries++;
+    try {
+      const res = await fetch("/api/refresh-gip-status");
+      if (res.ok) {
+        const status = await res.json();
+        if (!status.isRefreshing || tries >= 40) {
+          clearInterval(checkInterval);
+          await finishGipRefresh(true);
+        }
+      } else if (tries >= 6) {
+        clearInterval(checkInterval);
+        await finishGipRefresh(false);
+      }
+    } catch (err) {
+      if (tries >= 4) {
+        clearInterval(checkInterval);
+        await finishGipRefresh(false);
+      }
+    }
+  }, 1500);
+}
+
 let quadChartInstance = null;
 
 function renderQuadRotationTracker(tracker) {
@@ -3938,6 +4260,45 @@ function renderQuadRotationTracker(tracker) {
   }
 }
 
+function renderMacroIndicatorsOfficial(list) {
+  const container = document.getElementById("macroOfficialIndicatorsContainer");
+  const tag = document.getElementById("macroOfficialUpdatedTag");
+  if (!container) return;
+
+  if (!list || list.length === 0) {
+    container.innerHTML = `<span style="font-size: 0.82rem; color: #94A3B8;">Clique em "Atualizar GIP" acima para carregar os indicadores oficiais.</span>`;
+    return;
+  }
+
+  if (tag) tag.innerText = `Alpha Vantage — atualizado`;
+
+  container.innerHTML = list.map(m => {
+    if (m.status !== "ok") {
+      return `
+        <div style="background: rgba(148, 163, 184, 0.08); border: 1px solid rgba(148, 163, 184, 0.25); border-radius: 8px; padding: 0.8rem 0.9rem;">
+          <div style="font-size: 0.78rem; color: #CBD5E1; font-weight: 600; margin-bottom: 0.35rem;">${m.label}</div>
+          <div style="font-size: 0.74rem; color: #94A3B8;">⚠️ Indisponível agora${m.reason ? ` — ${m.reason}` : ""}</div>
+        </div>`;
+    }
+
+    const isUp = m.direction === "alta";
+    const isDown = m.direction === "queda";
+    const color = isUp ? "#10B981" : (isDown ? "#EF4444" : "#94A3B8");
+    const arrow = isUp ? "▲" : (isDown ? "▼" : "→");
+
+    return `
+      <div style="background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 8px; padding: 0.8rem 0.9rem;">
+        <div style="font-size: 0.78rem; color: #CBD5E1; font-weight: 600; margin-bottom: 0.35rem;">${m.label}</div>
+        <div style="font-size: 1.15rem; font-weight: 700; color: #F8FAFC; font-family: 'JetBrains Mono', monospace;">
+          ${m.value}${m.unit ? ` ${m.unit}` : ""} <span style="color: ${color}; font-size: 0.95rem;">${arrow}</span>
+        </div>
+        <div style="font-size: 0.7rem; color: #94A3B8; margin-top: 0.2rem;">
+          Ref: ${m.date || "N/D"} ${m.prev_value !== null && m.prev_value !== undefined ? `(vs ${m.prev_value} em ${m.prev_date || "N/D"})` : ""}
+        </div>
+      </div>`;
+  }).join("");
+}
+
 function renderMarketAnalytics(data) {
   if (!data) return;
 
@@ -3945,6 +4306,9 @@ function renderMarketAnalytics(data) {
   if (data.quad_rotation_tracker) {
     renderQuadRotationTracker(data.quad_rotation_tracker);
   }
+
+  // 0.1 Renderiza os Indicadores Macro Oficiais (Alpha Vantage / BLS-BEA-Fed)
+  renderMacroIndicatorsOfficial(data.macro_indicators_official);
 
   // 1. Renderiza GEX Cards
   const gexContainer = document.getElementById("gexCardsContainer");
@@ -4400,31 +4764,44 @@ function clearChatHistory() {
   showToast("Histórico de conversa limpo.");
 }
 
-async function configureClaudeApiKey() {
-  const currentKey = localStorage.getItem("hedgeye_claude_api_key") || "";
-  const key = prompt("Digite ou cole sua Chave de API de Inteligência Artificial:\n- Google Gemini (gratuita em aistudio.google.com/apikey)\n- OpenAI GPT-4o (platform.openai.com)\n- Anthropic Claude 3.5 (console.anthropic.com)\n\n(Deixe em branco para usar o Motor Local)", currentKey);
+function getStoredAiKey() {
+  // Migração automática de chaves salvas sob o nome antigo (hedgeye_claude_api_key)
+  let key = localStorage.getItem("hedgeye_gemini_api_key");
+  if (!key) {
+    const legacy = localStorage.getItem("hedgeye_claude_api_key");
+    if (legacy) {
+      localStorage.setItem("hedgeye_gemini_api_key", legacy);
+      localStorage.removeItem("hedgeye_claude_api_key");
+      key = legacy;
+    }
+  }
+  return key || "";
+}
+
+async function configureGeminiApiKey() {
+  const currentKey = getStoredAiKey();
+  const key = prompt("Digite ou cole sua Chave de API do Google Gemini (gratuita em aistudio.google.com/apikey).\nTambém aceita uma chave OpenAI GPT-4o (platform.openai.com) como fallback secundário.\n\n(Deixe em branco para usar o Motor Local)", currentKey);
   if (key !== null) {
     const trimmed = key.trim();
     if (trimmed) {
-      localStorage.setItem("hedgeye_claude_api_key", trimmed);
+      localStorage.setItem("hedgeye_gemini_api_key", trimmed);
       try {
-        await fetch("/api/config/anthropic_key", {
+        await fetch("/api/config/gemini_key", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ apiKey: trimmed })
         });
       } catch (e) {}
-      
+
       let provName = "IA";
-      if (trimmed.startsWith("AIzaSy")) provName = "Google Gemini 2.0 Flash / 1.5 Pro";
+      if (trimmed.startsWith("AIzaSy") || trimmed.startsWith("AQ.")) provName = "Google Gemini";
       else if (trimmed.startsWith("sk-proj-") || trimmed.startsWith("sk-")) provName = "OpenAI GPT-4o";
-      else if (trimmed.startsWith("sk-ant-")) provName = "Anthropic Claude 3.5 Sonnet";
-      
+
       showToast(`Chave ${provName} salva e conectada com sucesso!`);
     } else {
-      localStorage.removeItem("hedgeye_claude_api_key");
+      localStorage.removeItem("hedgeye_gemini_api_key");
       try {
-        await fetch("/api/config/anthropic_key", {
+        await fetch("/api/config/gemini_key", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ apiKey: "" })
@@ -4432,19 +4809,19 @@ async function configureClaudeApiKey() {
       } catch (e) {}
       showToast("Usando Motor Neural Local Hedgeye Real-Time.");
     }
-    updateClaudeStatusBadge();
+    updateAiStatusBadge();
   }
 }
 
-async function updateClaudeStatusBadge() {
+async function updateAiStatusBadge() {
   const badge = document.getElementById("copilotAiSourceBadge");
   if (!badge) return;
-  
-  let key = localStorage.getItem("hedgeye_claude_api_key");
+
+  let key = getStoredAiKey();
   let masked = "";
   if (!key) {
     try {
-      const res = await fetch("/api/config/anthropic_key");
+      const res = await fetch("/api/config/gemini_key");
       if (res.ok) {
         const data = await res.json();
         if (data && data.configured) {
@@ -4456,12 +4833,10 @@ async function updateClaudeStatusBadge() {
   }
 
   if (key && key.trim()) {
-    if (key.startsWith("AIzaSy")) {
-      badge.innerHTML = `<span style="color: #10B981;">●</span> Google Gemini Conectado`;
-    } else if (key.startsWith("sk-proj-") || (key.startsWith("sk-") && !key.startsWith("sk-ant-"))) {
+    if (key.startsWith("sk-proj-") || (key.startsWith("sk-") && !key.startsWith("sk-ant-"))) {
       badge.innerHTML = `<span style="color: #10B981;">●</span> OpenAI GPT-4o Conectado`;
     } else {
-      badge.innerHTML = `<span style="color: #10B981;">●</span> Claude / Gemini IA Conectada`;
+      badge.innerHTML = `<span style="color: #10B981;">●</span> Google Gemini Conectado`;
     }
   } else {
     badge.innerHTML = `<span style="color: #38BDF8;">●</span> Deep Macro Engine Ativo (RAG)`;
@@ -4498,9 +4873,9 @@ async function processUserChatMessage(userText) {
     container.scrollTop = container.scrollHeight;
   }
 
-  // 3. Tenta chamar backend com Claude API ou motor de síntese
+  // 3. Tenta chamar backend com Gemini API ou motor de síntese
   let botReply = "";
-  const apiKey = localStorage.getItem("hedgeye_claude_api_key") || "";
+  const apiKey = getStoredAiKey();
   try {
     const res = await fetch("/api/chat", {
       method: "POST",
