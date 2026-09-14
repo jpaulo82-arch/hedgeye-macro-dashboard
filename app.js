@@ -2321,12 +2321,239 @@ function closeReportModal() {
   }
 }
 
+// 6.1 DICIONÁRIO DE TRADUÇÕES ESTRUTURADAS & ANÁLISES PROFUNDAS DOS RELATÓRIOS
+const structuredTranslations = {
+  "110258": {
+    id: "110258",
+    titlePt: "EARLY LOOK: A Bolha #MOAB em IA vs. O Ciclo Macro",
+    displayDate: "14/09/2026 (Segunda-feira)",
+    regime: "QUAD 3 (#ACCELERATING)",
+    quoteText: "Aproximadamente 10 anos de trabalho se transformaram em 77 páginas de teoria da informação.",
+    quoteAuthor: "— Sonni & Goodman sobre Claude Shannon citado por Keith McCullough",
+    takeaways: [
+      {
+        icon: "🧠",
+        title: "A Bolha #MOAB é de Avaliação e Dívida, não de Tecnologia",
+        desc: "A inteligência artificial não é novidade: Claude Shannon formulou as 77 páginas fundamentais da Era da Informação em 1948 aos 32 anos sem precisar de valuation de US$ 900 bilhões. O perigo real para o mercado hoje não é o avanço técnico, mas o endividamento corporativo e os múltiplos estratosféricos precificando um ritmo de crescimento (ROC) que não pode desacelerar.",
+        borderClass: "takeaway-accent"
+      },
+      {
+        icon: "📉",
+        title: "Sinais Técnicos em Deterioração: QQQ e SPY em Bearish TRADE",
+        desc: "Deterioração generalizada nos índices acionários. QQQ e SPY acionaram sinal Bearish TRADE (Keith McCullough vendeu praticamente todos os Longs em Real-Time Alerts na sexta-feira), enquanto o Russell 2000 (IWM) já rompeu o suporte de TREND. O Alpha Code do QQQ é 720/705 (TRADE = 720, TREND = 705) com a volatilidade do Nasdaq (#NazVol / VXN) rompendo o sinal crítico em 22,14.",
+        borderClass: "takeaway-rose"
+      },
+      {
+        icon: "🔥",
+        title: "Inflação em Aceleração e Yields dos Treasuries em Máximas do Ciclo",
+        desc: "O Nowcast proprietário da Hedgeye continua com viés de alta na segunda derivada da inflação. O mercado de títulos soberanos confirma: o yield do UST 2Y disparou +26 bps e o UST 10Y subiu +19 bps para novas máximas do ciclo (range 4,75%–5,01%), achatando a curva em mais 7 bps e encarecendo drasticamente o custo de capital das empresas alavancadas.",
+        borderClass: "takeaway-amber"
+      },
+      {
+        icon: "🛢️",
+        title: "Superciclo em Commodities Reais & Rotação Seletiva em FX",
+        desc: "O Petróleo WTI explodiu +9,4% na semana e acumula +20,7% em 3 meses (teto em US$ 105,74 Bullish), sustentando forte alta nos serviços petrolíferos (OIH 415–438). No câmbio, o Dólar Index permanece em Bearish TREND (-0,7% no mês), beneficiando posições em moedas e mercados atrelados a commodities (Long Colômbia / COLO +13,3% em 3 meses) e punindo importadores de energia (Short Índia / INDA).",
+        borderClass: "takeaway-emerald"
+      },
+      {
+        icon: "🛡️",
+        title: "Disciplina em Metais: Redução do Ouro para o Mínimo e Saída de Prata",
+        desc: "Ouro não tolera a violência da subida de curto prazo dos yields reais, justificando a redução de posição para o tamanho MÍNIMO (MIN) da carteira (range 4.247–4.473 Neutral). Já a Prata (SLV) foi zerada rigorosamente no tempo do sinal antes da queda de -2,3% na semana, caindo para sinal Bearish TREND (60–65).",
+        borderClass: "takeaway-amber"
+      }
+    ],
+    actionSteps: [
+      {
+        num: 1,
+        title: "Defender Capital em Big Tech / AI e Respeitar Bearish TRADE (QQQ 720 / SPY / IWM)",
+        desc: "Não comprar quedas em empresas de semicondutores e IA alavancadas em múltiplos extremos. Com QQQ e SPY em Bearish TRADE e VXN rompendo 22,14, realizar lucros residuais, elevar caixa defensivo e manter hedges ativos."
+      },
+      {
+        num: 2,
+        title: "Manter Long Convicção Máxima em Energia e Petróleo (WTIC 90,44–105,74 / OIH 415–438)",
+        desc: "Aportar nos pisos de range das commodities energéticas e serviços de exploração, que são os líderes indiscutíveis do regime de inflação acelerando (Quad 3)."
+      },
+      {
+        num: 3,
+        title: "Manter Shorts em Renda Fixa Soberana, Crédito (HYG / LQD) e Utilities (XLU)",
+        desc: "Evitar qualquer duration longa. Com UST 10Y (4,75%–5,01%) e 2Y em máximas do ciclo, crédito corporativo e setores intensivos em dívida continuarão sofrendo desvalorização constante."
+      },
+      {
+        num: 4,
+        title: "Disciplina Tática em Metais (Ouro no Mínimo / Zerar Prata)",
+        desc: "Manter Ouro apenas no tamanho mínimo de segurança até que os juros reais estabilizem; não reabrir posições em Prata enquanto permanecer abaixo de 65 em Bearish TREND."
+      },
+      {
+        num: 5,
+        title: "Explorar Assimetrias Globais de Câmbio & Emergentes (Long COLO / Short INDA)",
+        desc: "Manter exposição comprada no mercado acionário da Colômbia (COLO / Peso COP forte) e vendida na Índia (INDA / Rupia sob pressão do choque de petróleo)."
+      }
+    ],
+    thesisSections: [
+      {
+        icon: "⚡",
+        title: "1. The Big Picture: A Bolha #MOAB vs. A História da Inovação",
+        paragraphs: [
+          "A inteligência artificial não nasceu no Vale do Silício na década atual. Em 1948, aos 32 anos, Claude Shannon publicou suas célebres 77 páginas estabelecendo a Teoria Matemática da Comunicação — a pedra fundamental de toda a Era da Informação. Ele não precisou de um valuation de 900 bilhões de dólares nem de dívidas corporativas trilionárias para revolucionar a civilização humana.",
+          "O que o mercado enfrenta hoje não é um risco tecnológico, mas um risco clássico de financiamento e avaliação. A história ensina: a ideia nunca é a bolha; a bolha é sempre a estrutura de financiamento alavancado criada ao redor da ideia. Quando o custo de capital sobe, narrativas de crescimento infinito colapsam diante da matemática dos fluxos de caixa descontados."
+        ],
+        highlight: "“A ideia nunca foi a bolha. A bolha é sempre o financiamento da ideia. Entenda essa diferença crucial.” — Keith McCullough"
+      },
+      {
+        icon: "📉",
+        title: "2. The Macro Grind: Rompimentos de TRADE e Alertas de Volatilidade",
+        paragraphs: [
+          "Em mais uma 'Macro Monday', a preparação proativa separa os executores disciplinados dos 'turistas macro' que continuam correndo atrás de semicondutores após os repiques. QQQ e SPY confirmaram fechamentos em sinal Bearish TRADE na sexta-feira, o que acionou a liquidação de quase todas as posições compradas do Keith em Real-Time Alerts.",
+          "A grande questão agora é se o QQQ romperá o suporte de TREND (705), repetindo o que o Russell 2000 (IWM) já fez. O Alpha Code do QQQ é 720 no TRADE e 705 no TREND, com o índice de volatilidade do Nasdaq (#NazVol / VXN) já rompendo o gatilho de breakout em 22,14."
+        ]
+      },
+      {
+        icon: "🔥",
+        title: "3. Inflação e Curva de Juros: A Casa Real Precifica o Choque",
+        paragraphs: [
+          "A taxa de variação (ROC) do Nowcast de Inflação da Hedgeye continua em plena aceleração. E a verdadeira Casa que comanda os mercados globais — o mercado de títulos dos EUA — concorda integralmente: o yield do UST 2 anos disparou +26 pontos-base na semana, enquanto o UST 10 anos saltou +19 pontos-base para novas máximas do ciclo.",
+          "A curva de juros continuou se achatando (-7 bps na semana). O mercado está precificando uma taxa terminal muito mais alta por muito mais tempo (higher-for-longer), o que destrói o modelo financeiro de empresas que queimam caixa na esperança de monetização futura de IA."
+        ]
+      },
+      {
+        icon: "🌐",
+        title: "4. Global FX e Commodities: Onde o Capital Está Fluindo",
+        paragraphs: [
+          "No universo cambial, o Dólar Index (DXY) acumula queda de -0,7% no último mês e permanece em Bearish TREND. O Iene Japonês teve uma semana forte de +1,7% contra o USD em Bullish TRADE e TREND, enquanto o Peso Colombiano avançou +1,3% (acumulando +13,3% em 3 meses). Em contraste, a Rupia Indiana recuou -1,1% em Bearish TREND.",
+          "Essa dinâmica macro dita nossa carteira: somos comprados em ações da Colômbia (COLO) e vendidos na Índia (INDA), que sofre severamente por ser dependente de importação de energia. Enquanto isso, o Petróleo WTI (+9,4% na semana e +20,7% em 3 meses) e o índice de commodities CRB (+14,4% em 3 meses) continuam premiando investidores fiéis ao regime Quad 3."
+        ]
+      }
+    ]
+  },
+  "110123": {
+    id: "110123",
+    titlePt: "EARLY LOOK: Antecipando o Problema de Inflação do Fed",
+    displayDate: "11/09/2026 (Sexta-feira)",
+    regime: "QUAD 3 (#ACCELERATING)",
+    quoteText: "O pêndulo do mercado está quase sempre oscilando em direção ou afastando-se dos extremos do seu arco.",
+    quoteAuthor: "— Howard Marks citado por Ryan Ricci / Keith McCullough",
+    takeaways: [
+      {
+        icon: "📈",
+        title: "Nowcast de Inflação Acelerando para 3,5% em Agosto",
+        desc: "A Hedgeye projeta aceleração do CPI para 3,5% em agosto, subindo novamente em setembro e mantendo-se resistente até o final do ano.",
+        borderClass: "takeaway-accent"
+      },
+      {
+        icon: "🏛️",
+        title: "Yields dos T-Bonds em Novas Máximas de Ciclo",
+        desc: "O UST 2Y rompe para máximas de ciclo em Bullish TREND e o UST 10Y (4,75%–4,98%) dita pressão contínua em ativos sensíveis a juros.",
+        borderClass: "takeaway-rose"
+      },
+      {
+        icon: "🛢️",
+        title: "Long Inflação & Commodities vs Short Ações de Crescimento",
+        desc: "Playbook quantitativo comprado em Petróleo WTI, Ouro, Cobre e vendido em Russell 2000, HYG, LQD e Utilities.",
+        borderClass: "takeaway-emerald"
+      },
+      {
+        icon: "🎯",
+        title: "Disciplina de Ranges & Controle de Risco",
+        desc: "Vender nos topos de range ativos de vento contrário e aportar nos pisos de range dos líderes de Quad 3.",
+        borderClass: "takeaway-amber"
+      }
+    ],
+    actionSteps: [
+      {
+        num: 1,
+        title: "Comprar Recuos em Ativos Reais e Inflação (Quad 3)",
+        desc: "Manter e aportar em dips de Ouro (AAAU, GDX, NEM), Cobre (6,35–6,84), Petróleo/Energia (WTIC, OIH, BE) e exposições internacionais seletivas (ex: COLO, LatAm)."
+      },
+      {
+        num: 2,
+        title: "Manter Shorts em Treasuries, Crédito Corporativo e Utilities",
+        desc: "Posições vendidas em Bonds/Crédito (HYG 78,25–79,20 Bearish, LQD 104,10–105,80 Bearish) e Utilities (XLU) com UST 10Y (4,75–4,98%) em tendência de alta."
+      },
+      {
+        num: 3,
+        title: "Evitar e Reduzir Russell 2000 (RUT), Growth e Momentum",
+        desc: "Não tentar adivinhar fundo em setores intensivos em capital, dívida e duration longa (RUT 2.875–2.970 Bearish); respeitar os tetos de range para reduzir posições fora de Quad 3."
+      }
+    ]
+  }
+};
+
 // 6.2 GERENCIAMENTO DINÂMICO DE DECISÕES DO KEITH & AUDITORIA
 const defaultDecisionsList = [
   {
-    date: "11/09/2026",
+    date: "14/09/2026",
     isToday: true,
     author: "KM Call (Hoje)",
+    asset: "Big Tech & AI Stocks (QQQ / SPY / IWM / Semis)",
+    portfolio: "Macro Global / Hedges",
+    category: "BEARISH TRADE / #MOAB",
+    badgeClass: "badge-bearish",
+    action: "Venda de Longs / Bearish TRADE / Alerta de Quebra de TREND",
+    reason: "Bolha #MOAB inflada por dívida e múltiplos extremos. QQQ e SPY romperam para Bearish TRADE (Keith vendeu quase todos os longs em Real-Time Alerts na sexta). VXN rompendo 22,14 e IWM já quebrou suporte de TREND.",
+    invalidation: "QQQ recuperar sinal de TRADE acima de 720 com contração do VXN abaixo de 22,14.",
+    statusBadge: "badge-bearish",
+    statusText: "🔴 Alerta Bearish TRADE"
+  },
+  {
+    date: "14/09/2026",
+    isToday: true,
+    author: "KM Call (Hoje)",
+    asset: "Petróleo Contínuo & Serviços de Energia (WTIC / OIH)",
+    portfolio: "Ambas",
+    category: "REFLAÇÃO QUAD 3",
+    badgeClass: "badge-core",
+    action: "Long Convicção Máxima / Comprar Recuos nos Pisos",
+    reason: "WTI inflou +9,4% na semana e +20,7% em 3 meses (range 90,44–105,74 Bullish). OIH Bullish (415–438). Choque de oferta e demanda reflacionária tornam energia o ativo líder absoluto de Quad 3.",
+    invalidation: "Fechamento do WTI abaixo de US$ 90,44.",
+    statusBadge: "badge-bullish",
+    statusText: "🟢 Líder Absoluto Quad 3"
+  },
+  {
+    date: "14/09/2026",
+    isToday: true,
+    author: "KM Call (Hoje)",
+    asset: "Rendimentos dos T-Bonds & Inflação (UST 2Y / UST 10Y)",
+    portfolio: "Macro Shorts",
+    category: "SHORT DURATION",
+    badgeClass: "badge-bearish",
+    action: "Manter Shorts em Títulos Soberanos / Yields em Novas Máximas",
+    reason: "UST 2Y (+26 bps) e UST 10Y (+19 bps a 4,75%–5,01%) em máximas do ciclo. Aceleração da inflação no Nowcast impõe reprecificação para cima das taxas de juros e eleva custo de capital corporativo.",
+    invalidation: "UST 10Y recuar abaixo de 4,75%.",
+    statusBadge: "badge-bearish",
+    statusText: "🔴 Short Duration"
+  },
+  {
+    date: "14/09/2026",
+    isToday: true,
+    author: "KM Call (Hoje)",
+    asset: "Metais Preciosos (GOLD / SLV)",
+    portfolio: "Ambas",
+    category: "TÁTICO / CONTROLE DE RISCO",
+    badgeClass: "badge-neutral",
+    action: "Reduzir Ouro ao Mínimo (MIN) / Zerar Posição em Prata (SLV)",
+    reason: "Ouro não tolera a violência da alta dos yields de curto prazo e foi reduzido ao tamanho mínimo (range 4.247–4.473 Neutral). Prata virou Bearish TREND (range 60–65) e teve saída total na hora do sinal.",
+    invalidation: "Ouro superar 4.473 retomando viés Bullish.",
+    statusBadge: "badge-neutral",
+    statusText: "🟡 Ouro no Mínimo / SLV Zerada"
+  },
+  {
+    date: "14/09/2026",
+    isToday: true,
+    author: "KM Call (Hoje)",
+    asset: "FX Global & Mercados Emergentes (COLO / INDA)",
+    portfolio: "Global Equities / FX",
+    category: "EM ROTATION",
+    badgeClass: "badge-core",
+    action: "Long Colômbia (COLO) / Manter Short Índia (INDA)",
+    reason: "Peso Colombiano subiu +1,3% na semana (+13,3% em 3 meses) surfando o petróleo. Índia é vulnerável por déficit de petróleo caro e sua moeda (INR) segue em Bearish TREND.",
+    invalidation: "Inversão de fluxo no par COP/USD ou WTI colapsar.",
+    statusBadge: "badge-bullish",
+    statusText: "🟢 Long COLO / Short INDA"
+  },
+  {
+    date: "11/09/2026",
+    isToday: false,
+    author: "KM Call",
     asset: "Inflação, Nowcast & Taxas Curtas (UST 2Y / UST 10Y / Warsh Fed)",
     portfolio: "Macro Global / Shorts",
     category: "INFLATION NOWCAST",
@@ -2339,8 +2566,8 @@ const defaultDecisionsList = [
   },
   {
     date: "11/09/2026",
-    isToday: true,
-    author: "KM Call (Hoje)",
+    isToday: false,
+    author: "KM Call",
     asset: "Real Assets & Commodities Físicas (GOLD, COPPER, WTIC, OIH, BE)",
     portfolio: "Ambas",
     category: "REAL ASSETS / ATHs",
@@ -2353,8 +2580,8 @@ const defaultDecisionsList = [
   },
   {
     date: "11/09/2026",
-    isToday: true,
-    author: "KM Call (Hoje)",
+    isToday: false,
+    author: "KM Call",
     asset: "Russell 2000 vs Large Caps (RUT / SPX / COMPQ)",
     portfolio: "Macro Shorts",
     category: "BEARISH ROTATION",
@@ -2523,7 +2750,7 @@ const defaultDecisionsList = [
 
 function getDecisions() {
   try {
-    const stored = localStorage.getItem("hedgeye_decisions_list_v4");
+    const stored = localStorage.getItem("hedgeye_decisions_list_v5");
     if (stored) {
       return JSON.parse(stored);
     }
@@ -2535,7 +2762,7 @@ function getDecisions() {
 
 function setDecisions(list) {
   try {
-    localStorage.setItem("hedgeye_decisions_list_v4", JSON.stringify(list));
+    localStorage.setItem("hedgeye_decisions_list_v5", JSON.stringify(list));
   } catch (e) {
     console.warn("Erro ao salvar localStorage de decisões:", e);
   }
@@ -2548,7 +2775,7 @@ function renderDecisionsTable() {
   const list = getDecisions();
   tbody.innerHTML = list.map((d, index) => {
     const isTodayRow = d.isToday ? 'style="background: rgba(56, 189, 248, 0.08);"' : '';
-    const badgeAccent = d.isToday ? '<span class="badge badge-accent">Hoje (10/09)</span>' : '';
+    const badgeAccent = d.isToday ? `<span class="badge badge-accent">Hoje (${d.date})</span>` : '';
     const isCustom = d.isCustom ? `<button class="btn btn-outline" style="padding: 0.15rem 0.4rem; font-size: 0.68rem; margin-top: 0.2rem; color: #EF4444;" onclick="deleteDecision(${index})">✕ Excluir</button>` : '';
 
     return `
@@ -2969,6 +3196,11 @@ function updateDynamicDashboard(report) {
   }
 
   // 5. Atualizar Destaques (Bullets) Combinados de Hoje
+  const bulletsTitle = document.getElementById("morningBulletsTitle");
+  if (bulletsTitle) {
+    bulletsTitle.innerText = `Destaques Combinados dos Relatórios de Hoje (${dateStr}):`;
+  }
+
   const bulletsList = document.getElementById("morningBulletsList");
   if (bulletsList) {
     if (struct && struct.takeaways && struct.takeaways.length > 0) {
@@ -2977,7 +3209,7 @@ function updateDynamicDashboard(report) {
       `).join("");
     } else {
       bulletsList.innerHTML = `
-        <li><strong>Síntese do Research (${dateStr}):</strong> ${report.summary ? report.summary.substring(0, 200) + '...' : 'Análise quantitativa dos fluxos de capital e faixas de risco.'}</li>
+        <li><strong>Síntese do Research (${dateStr}):</strong> ${report.summary ? report.summary.replace(/#+/g, '').replace(/\*+/g, '').substring(0, 250) + '...' : 'Análise quantitativa dos fluxos de capital e faixas de risco.'}</li>
         <li><strong>Risk Ranges Oficiais:</strong> ${report.riskRanges ? `${report.riskRanges.length} faixas de volatilidade ajustada calibradas.` : 'Sinais TREND vigentes.'}</li>
         <li><strong>Playbook Quantitativo:</strong> Manter posições alinhadas ao regime macro vigente e respeitar os pisos de range para aportes.</li>
       `;
@@ -2996,6 +3228,33 @@ function updateDynamicDashboard(report) {
           </div>
         </div>
       `).join("");
+    } else if (repId === "110258" || dateStr.includes("14/09")) {
+      actionStepsContainer.innerHTML = `
+        <div class="action-step">
+          <span class="step-num">1</span>
+          <div class="step-content">
+            <strong>Defender Capital em Big Tech / AI e Respeitar Bearish TRADE (QQQ 720 / SPY / IWM):</strong> Não comprar quedas em semicondutores e IA alavancadas em múltiplos extremos; com QQQ e SPY em Bearish TRADE e VXN rompendo 22,14, realizar lucros residuais e proteger carteira.
+          </div>
+        </div>
+        <div class="action-step">
+          <span class="step-num">2</span>
+          <div class="step-content">
+            <strong>Manter Long Convicção Máxima em Energia e Petróleo (WTIC 90,44–105,74 / OIH 415–438):</strong> Aportar nos pisos de range das commodities energéticas e serviços, líderes absolutos do regime Quad 3.
+          </div>
+        </div>
+        <div class="action-step">
+          <span class="step-num">3</span>
+          <div class="step-content">
+            <strong>Manter Shorts em Renda Fixa Soberana, Crédito (HYG / LQD) e Utilities (XLU):</strong> Evitar qualquer duration longa com UST 10Y (4,75%–5,01%) e 2Y em máximas do ciclo.
+          </div>
+        </div>
+        <div class="action-step">
+          <span class="step-num">4</span>
+          <div class="step-content">
+            <strong>Disciplina Tática em Metais (Ouro no Mínimo / Zerar Prata):</strong> Reduzir Ouro para tamanho mínimo de segurança até que os juros reais estabilizem; não reabrir posições em Prata abaixo de 65.
+          </div>
+        </div>
+      `;
     } else if (repId === "110123" || dateStr.includes("11/09")) {
       actionStepsContainer.innerHTML = `
         <div class="action-step">
@@ -3023,7 +3282,28 @@ function updateDynamicDashboard(report) {
   // 7. Atualizar Tabela de Camadas GIP
   const gipBody = document.getElementById("gipLayersBody");
   if (gipBody) {
-    if (repId === "110123" || dateStr.includes("11/09")) {
+    if (repId === "110258" || dateStr.includes("14/09")) {
+      gipBody.innerHTML = `
+        <tr>
+          <td><strong>1. Vigente por Dados</strong></td>
+          <td><span class="badge quad-badge-sm q3">Global Quad 3</span></td>
+          <td>Dólar (USD 98,50–99,78 Bearish); Petróleo WTI (90,44–105,74 Bullish); Ouro (4.247–4.473 Neutral); Cobre (6,24–6,80 Neutral)</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+        <tr>
+          <td><strong>2. Precificado pelo Mercado</strong></td>
+          <td><span class="badge quad-badge-sm" style="background:#EF4444; color:#FFF;">Bearish Tech & Higher Rates</span></td>
+          <td>QQQ e SPY em Bearish TRADE; Russell 2000 quebrou TREND; Yields UST 2Y e 10Y (4,75%–5,01%) em máximas do ciclo de inflação</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+        <tr>
+          <td><strong>3. Nowcast 1–3 Meses</strong></td>
+          <td><span class="badge quad-badge-sm q3">#Accelerating</span></td>
+          <td>Nowcast de Inflação acelerando com alta de commodities; juros elevados penalizam a bolha de IA financiada por dívida (#MOAB)</td>
+          <td><span class="text-emerald font-bold">Alta</span></td>
+        </tr>
+      `;
+    } else if (repId === "110123" || dateStr.includes("11/09")) {
       gipBody.innerHTML = `
         <tr>
           <td><strong>1. Vigente por Dados</strong></td>
@@ -3442,8 +3722,8 @@ async function finishSync(wasLocalTriggered = true) {
 let currentEarlyLookLanguage = "pt";
 let activeTranslatedReportId = "latest";
 
-// Traduções Estruturadas de Alta Fidelidade (Hedgeye Research)
-const structuredTranslations = {
+// Traduções Estruturadas de Alta Fidelidade (Hedgeye Research) - Histórico
+Object.assign(structuredTranslations, {
   "110123": {
     id: "110123",
     date: "11/09/2026",
@@ -3690,7 +3970,7 @@ const structuredTranslations = {
       }
     ]
   }
-};
+});
 
 function buildThesisHtml(report, struct) {
   if (struct && struct.thesisSections && struct.thesisSections.length > 0) {
