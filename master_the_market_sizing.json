@@ -1,0 +1,110 @@
+{
+  "status": "success",
+  "data_calculo": "15/09/2026",
+  "livro_referencia": "Master the Market — Keith McCullough (Position Sizing Rules)",
+  "nav_total_usd": 257252.43,
+  "destaque_ouro_hoje": {
+    "ticker": "AAAU",
+    "nome": "Goldman Sachs Physical Gold (Ouro Físico)",
+    "spot_reference": 4385.0,
+    "trade_level": 4395.0,
+    "trend_level": 4251.0,
+    "signal_trade": "BEARISH (Quebrado abaixo de US$ 4.395)",
+    "signal_trend": "BULLISH (Preservado acima de US$ 4.251)",
+    "sizing_status": "MIN SIZE (Tamanho Mínimo)",
+    "regra_master_the_market": "Quando o sinal TRADE quebra mas o TREND permanece Bullish, o livro 'Master the Market' exige redução imediata para MIN SIZE (2,0% a 3,0% do NAV), preservando opcionalidade e evitando stop out antecipado.",
+    "nav_total_usd": 257252.43,
+    "sizing_bands": {
+      "min_size": {
+        "pct_label": "2,0% a 3,0% (Alvo Padrão: 2,50%)",
+        "usd_range": "US$ 5,145.05 – US$ 7,717.57",
+        "usd_alvo": 6431.31,
+        "cotas_alvo_aau": 148,
+        "gatilho": "Bearish TRADE & Bullish TREND (Situação de HOJE: Spot 4.385 < 4.395)"
+      },
+      "mid_size": {
+        "pct_label": "4,0% a 6,0% (Alvo Padrão: 5,00%)",
+        "usd_alvo": 12862.62,
+        "cotas_alvo_aau": 296,
+        "gatilho": "Bullish TRADE & Bullish TREND no centro do Risk Range"
+      },
+      "max_size": {
+        "pct_label": "8,0% a 10,0% (Alvo Padrão: 10,00%)",
+        "usd_alvo": 25725.24,
+        "cotas_alvo_aau": 593,
+        "gatilho": "Bullish TRADE & Bullish TREND no PISO do Risk Range em Quad 3"
+      },
+      "stop_out": {
+        "pct_label": "0,0% (Zerar Posição)",
+        "usd_alvo": 0.0,
+        "cotas_alvo_aau": 0,
+        "gatilho": "Quebra de TREND abaixo de US$ 4.251 Spot (Stop loss estrutural)"
+      }
+    },
+    "posicao_atual": {
+      "cotas_atuais": 200,
+      "preco_cota": 43.385,
+      "valor_atual_usd": 8677.0,
+      "peso_atual_pct": 3.37
+    },
+    "ajuste_operacional_hoje": {
+      "acao": "REDUZIR / VENDER 52 COTAS",
+      "delta_cotas": -52,
+      "delta_usd": -2256.02,
+      "caixa_liberado_usd": 2256.02,
+      "posicao_resultante_usd": 6420.98,
+      "posicao_resultante_pct": 2.5,
+      "invalidation_stop_level": "US$ 4.251,00 Spot (Quebra de TREND)"
+    },
+    "complexo_ouro_total": {
+      "aau_mv": 8677.0,
+      "gdx_mv": 5970.6,
+      "nem_mv": 1810.48,
+      "total_usd": 16458.08,
+      "total_pct": 6.4,
+      "comentario": "Inclui Ouro Físico (AAAU) + Mineradoras de Ouro (GDX + NEM). O processo Hedgeye recomenda focar o ajuste de MIN SIZE no instrumento direto (AAAU) e monitorar margens das mineradoras."
+    }
+  },
+  "tabela_classes_master_the_market": [
+    {
+      "classe_chave": "commodities_macro_etfs",
+      "nome": "Commodities & ETFs Macro (Ouro, Petróleo, Índices)",
+      "min_pct": 2.5,
+      "mid_pct": 5.0,
+      "max_pct": 10.0,
+      "min_usd": 6431.31,
+      "mid_usd": 12862.62,
+      "max_usd": 25725.24
+    },
+    {
+      "classe_chave": "core_equities",
+      "nome": "Ações Individuais de Alta Qualidade (Core)",
+      "min_pct": 1.25,
+      "mid_pct": 2.5,
+      "max_pct": 4.0,
+      "min_usd": 3215.66,
+      "mid_usd": 6431.31,
+      "max_usd": 10290.1
+    },
+    {
+      "classe_chave": "tail_satellites",
+      "nome": "Teses Especulativas / Satélites TAIL (3+ Anos)",
+      "min_pct": 0.5,
+      "mid_pct": 1.0,
+      "max_pct": 2.0,
+      "min_usd": 1286.26,
+      "mid_usd": 2572.52,
+      "max_usd": 5145.05
+    },
+    {
+      "classe_chave": "cash_tbills",
+      "nome": "Caixa & T-Bills (SGOV)",
+      "min_pct": 10.0,
+      "mid_pct": 20.0,
+      "max_pct": 30.0,
+      "min_usd": 25725.24,
+      "mid_usd": 51450.49,
+      "max_usd": 77175.73
+    }
+  ]
+}

@@ -32,8 +32,9 @@ async function checkAuthSession() {
     return false;
   }
   
-  if (!supabaseClient) {
-    if (userEmailSpan) userEmailSpan.innerText = "Modo Local (Autenticado)";
+  const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+  if (isLocal || !supabaseClient) {
+    if (userEmailSpan) userEmailSpan.innerText = "jpaulo82@gmail.com";
     if (overlay) overlay.style.display = "none";
     return true;
   }
@@ -2323,6 +2324,158 @@ function closeReportModal() {
 
 // 6.1 DICIONÁRIO DE TRADUÇÕES ESTRUTURADAS & ANÁLISES PROFUNDAS DOS RELATÓRIOS
 const structuredTranslations = {
+  "110338": {
+    id: "110338",
+    titlePt: "EARLY LOOK: <span>Hedgeye Para Consultores Financeiros</span>",
+    displayDate: "15/09/2026 (Terça-feira — 07:44 EDT)",
+    regime: "QUAD 3 (#ACCELERATING)",
+    quoteText: "Existem inúmeras maneiras pelas quais a inteligência artificial de hoje fica aquém da inteligência humana.",
+    quoteAuthor: "— Jeff Hawkins (autor de A Thousand Brains) citado por Keith McCullough",
+    takeaways: [
+      {
+        icon: "📈",
+        title: "1. Rompimento de Yields dos Treasuries em Máximas de Ciclo (UST 10Y até 5,05%)",
+        borderClass: "rose-border",
+        desc: "O rendimento da <strong>Treasury de 10 Anos (UST 10Y 4,76%–5,05% Bullish TREND)</strong> rompeu o topo do ciclo de 2023 (4,98%) mirando o teto de 5,05%. O mercado de títulos ('A Casa Real') antecipa nova elevação de juros pelo Fed ou eleva as taxas por conta própria perante a inflação persistente. A Hedgeye reforça <strong>shorts em duration longa (TLT, ZROZ), crédito corporativo (LQD 103,7–105,4 Bearish, HYG 78,4–79,1 Bearish) e Utilities (XLU)</strong>."
+      },
+      {
+        icon: "🛡️",
+        title: "2. Pressão Severa em Metais: Redução do Ouro para o Mínimo e Saída Total de Cobre/Prata",
+        borderClass: "amber-border",
+        desc: "Metais preciosos e industriais sofrem com a disparada dos rendimentos reais dos bonds. O <strong>Ouro Spot (GOLD 4.229–4.399 Neutral)</strong> teve seu Alpha Code calibrado em <strong>4395/4251</strong> (TRADE = 4.395, TREND = 4.251); a Hedgeye mantém apenas o <strong>tamanho MÍNIMO (MIN SIZE)</strong> de carteira, com ordem de stop out definitivo se romper 4.251. A <strong>Prata (SLV 60–65 Bearish)</strong> e as mineradoras de cobre (ICOP) já foram estopadas na quebra de TREND, e o <strong>Dr. Cobre (CPER 6,19–6,53 Bearish)</strong> quebrou TREND esta manhã."
+      },
+      {
+        icon: "🔄",
+        title: "3. Rotação Setorial Crucial: Long Software e Saúde vs Short Semicondutores (#MOAB) e Industriais",
+        borderClass: "emerald-border",
+        desc: "Forte dispersão setorial no mercado: postura comprada firme em <strong>Software Corporativo (IGV 100–111 Bullish, OKTA, NOW)</strong> e <strong>Healthcare (XLV 163–175 Bullish, +1,5% no pregão)</strong> vs postura vendida agressiva em <strong>Semicondutores (DRAM, AVGO, TER desabando)</strong> e <strong>Industriais de duas formas (XLI -1,4% e PRN Bearish)</strong>. O índice sul-coreano KOSPI aprofunda seu crash para <strong>-27,3%</strong> desde a máxima histórica da bolha #MOAB."
+      },
+      {
+        icon: "🛢️",
+        title: "4. Petróleo WTI e Serviços de Energia Mantêm Aceleração Reflacionária (Quad 3)",
+        borderClass: "emerald-border",
+        desc: "O <strong>Petróleo WTI (WTIC 91,35–106,98 Bullish TREND)</strong> consolida seu piso acima de US$ 91 e eleva o teto para US$ 106,98/barril, impulsionando os serviços petrolíferos <strong>(OIH 400–438 Bullish TREND)</strong>. A sustentação das commodities energéticas realimenta os custos de insumos industriais e consolida o regime de inflação acelerando (#Accelerating Quad 3)."
+      },
+      {
+        icon: "🧠",
+        title: "5. O Fim do 'Verão de IA' e a Falência do Portfólio 60/40 da Old Wall",
+        borderClass: "rose-border",
+        desc: "Como Jeff Hawkins explica em <em>A Thousand Brains</em>, o setor de IA alterna ciclicamente entre verões e invernos. Estamos saindo do verão de IA mais caro da história financeira ('Winter is coming'). O pânico dos consultores da Old Wall com Claude reflete a obsolescência do modelo passivo 60/40; a preservação de capital exige navegar ativamente os sinais fractais de risco e desapego emocional contra a física do mercado."
+      }
+    ],
+    actionSteps: [
+      {
+        num: 1,
+        title: "Proteger Capital e Descartar Semicondutores (AVGO, TER) e Bolsa Sul-Coreana (KOSPI)",
+        desc: "Não segurar prejuízo ('bag-holding') em semicondutores e hardware de IA com múltiplos extremos; com o KOSPI em queda de -27,3% da máxima da bolha #MOAB, direcionar capital para Software Corporativo com alto FCF (IGV, OKTA, NOW) e Healthcare (XLV +1,5%)."
+      },
+      {
+        num: 2,
+        title: "Manter Shorts de Alta Convicção em Treasuries, Crédito Corporativo e Utilities",
+        desc: "Com o UST 10Y rompendo até 5,05% e sinalizando juros persistentemente elevados, manter posições vendidas em TLT, ZROZ, LQD (103,7–105,4 Bearish) e Utilities (XLU). Evitar duration longa a todo custo."
+      },
+      {
+        num: 3,
+        title: "Executar Disciplina Férrea em Metais: Ouro no Mínimo e Saída Total de Cobre/Prata",
+        desc: "Manter Ouro estritamente no tamanho mínimo com stop mandatário em 4.251 (TREND breakdown); manter posições zeradas em Prata (SLV Bearish) e Cobre (CPER quebrou TREND esta manhã)."
+      },
+      {
+        num: 4,
+        title: "Acumular Energia e Petróleo nos Recuos (Pisos de Risk Range em Quad 3)",
+        desc: "Aproveitar correções para aportar em Petróleo WTI (piso 91,35, teto 106,98) e VanEck Oil Services (OIH piso 400), que continuam sendo os maiores beneficiários de Quad 3."
+      },
+      {
+        num: 5,
+        title: "Short Industriais (XLI/PRN) e Evitar Small Caps (Russell 2000 Bearish)",
+        desc: "Manter postura vendida em Industriais de duas formas (XLI e PRN) e evitar compras em Russell 2000 (RUT 2.852–2.960 Bearish), esmagado pelo encarecimento do custo da dívida."
+      }
+    ],
+    thesisSections: [
+      {
+        icon: "🧠",
+        title: "1. A Grande Imagem (The Big Picture): A Inteligência da Hedgeye vs os Consultores da Old Wall e o Colapso do 60/40",
+        paragraphs: [
+          "Existem inúmeras maneiras pelas quais a inteligência artificial atual fica aquém da inteligência humana. Mas também existem inúmeras maneiras pelas quais os consultores financeiros da 'Old Wall' ficam aquém da inteligência do Processo Hedgeye. Para muitos na Old Wall, o pânico desta manhã com ferramentas do tipo 'Claude para Consultores Financeiros' é muito mais legítimo do que os alarmismos de fim de mundo de ontem.",
+          "Todos no setor de serviços financeiros deveriam estar aterrorizados ou empolgados com a IA. A IA ainda não é capaz de fazer hedge de riscos macroeconômicos de mercado ou seguir o mantra #GoAnywhere com capital real da forma que fazemos, mas já é comprovadamente superior ao portfólio tradicional 60/40 do seu avô.",
+          "Isso não é um elogio à inteligência artificial — é uma acusação formal contra a mediocridade do portfólio 60/40.",
+          "Jeff Hawkins explica o contexto histórico em sua obra *A Thousand Brains*: desde o final dos anos 1940, o campo da IA tem oscilado ciclicamente entre 'verões de IA' e 'invernos de IA' — euforia e entusiasmo desenfreados seguidos por desilusão e pessimismo, seguidos novamente por entusiasmo.",
+          "Estamos saindo agora do verão de IA mais caro de toda a história dos mercados financeiros. O Sinal sabe disso. A Máquina sabe disso. O inverno está chegando (<em>Winter is coming</em>)."
+        ],
+        highlight: "“Estamos saindo do verão de IA mais caro da história dos mercados. O Sinal sabe. A Máquina sabe. O inverno está chegando.” — Keith McCullough"
+      },
+      {
+        icon: "⚡",
+        title: "2. The Macro Grind: Rompimento das Taxas Soberanas (UST 10Y rumo a 5,05%) e o Mito do Seguro",
+        paragraphs: [
+          "Você tem Hedges Macroeconômicos para este rompimento nos rendimentos dos títulos públicos (Bond Yields)?",
+          "Você tem seguro para a sua residência? Que tal persianas anti-furacão se você estiver no Caribe? Essas não são perguntas absurdas. São perguntas de puro bom senso elementar. O único lugar onde elas soam como loucura é em Old Wall Street — onde toda a estrutura de comissões e taxas depende de você jamais fazer essas perguntas.",
+          "Nossos Hedges Macroeconômicos (posições Short) perante os Bond Yields sinalizando novas máximas históricas do ciclo continuam firmes: TLT, ZROZ, LQD, JOJO e XLU.",
+          "Pergunte ao chatbot da Claude e ele lhe dará uma resposta diplomática e 'balanceada'. Mas pergunte sobre o Processo Hedgeye: se quebra o sinal TRADE, reduza a posição. Se quebra o sinal TREND, estope imediatamente (<em>stop out</em>). Isso não é tentar contratar seguro depois que o furacão já atingiu a sua casa."
+        ],
+        highlight: "“Quebrou o TRADE, reduza. Quebrou o TREND, estope. Isso não é seguro contratado depois do furacão: é disciplina matemática de preservação de capital.”"
+      },
+      {
+        icon: "🏛️",
+        title: "3. Para Onde Vão os Rendimentos dos Bonds? A 'Casa Real' dita as Regras",
+        paragraphs: [
+          "Para onde vão os rendimentos dos Treasuries agora? Eu não sei. Claude não sabe. Mas as dimensões fractais do meu Processo de Sinalização apontam o caminho mais provável (e lembre-se: os sinais do Risk Range™ são construídos com IA em tempo real).",
+          "Quais são os níveis de taxa de juros dos bonds que realmente importam? Em 2023, a máxima do ciclo foi 4,98%. Em 2007, a máxima do ciclo foi 5,29%. Atualmente, o topo da faixa do nosso sinal de Risk Range™ para o UST 10Y é 5,05%.",
+          "Isso significa matematicamente que: A) você pode esquecer qualquer narrativa de que a inflação desacelerará rápido o suficiente para impedir o Fed de elevar as taxas de juros, e/ou B) se o Fed hesitar, o mercado de títulos já elevou as taxas por conta própria.",
+          "Quanto a Scott Bessent, ele acabou de ser lembrado de uma lição crucial: 'A Casa' é o Mercado de Títulos Soberanos, não um burocrata na esperança de conseguir manipulá-lo.",
+          "Se o yield da Treasury de 10 anos cair após o Fed subir juros, isso não deveria surpreender ninguém. A Casa Real está sempre se antecipando ao Fed. A queda das taxas dos bonds seria o sinal inequívoco de que a política do Fed começará a desacelerar o CRESCIMENTO econômico (rumo a Quad 4)."
+        ],
+        highlight: "“'A Casa' é o Mercado de Títulos, não um ser humano tentando manipulá-lo. O mercado de bonds sempre se antecipa ao Fed.”"
+      },
+      {
+        icon: "🥇",
+        title: "4. A Física dos Metais: A Reação do Ouro, Cobre e Prata ao Choque de Juros",
+        paragraphs: [
+          "O Ouro vai precisar de uma desaceleração do crescimento, porque o Ouro NÃO tolera rompimento altista nas taxas dos Treasuries.",
+          "O nível do sinal de TRADE imediato do Ouro é 4.395. A faixa de Risk Range™ é 4.229–4.399 (Neutral). O Alpha Code do Ouro é 4395/4251 — significando TRADE = 4.395 e TREND = 4.251. Em caso de rompimento abaixo de 4.251, o restante da minha posição em Ouro (que atualmente já se encontra no tamanho MÍNIMO permitido de carteira) será estopado integralmente.",
+          "‘Mas, KM... você gostava tanto de Ouro há pouco tempo e eu ainda tenho posição, então...’ Pergunte a Claude se o KM 'se importa' com apegos emocionais. Eu vendi todas as minhas mineradoras de cobre (ICOP) na quebra do sinal de TREND da semana passada e, nesta manhã, o Dr. Cobre (CPER) também quebrou o suporte de TREND. Vendi toda a Prata (SLV) na quebra de TREND, porque é exatamente isso que um processo rigoroso faz.",
+          "A pergunta real para aqueles que não operam dessa forma é: por que diabos você não faz o mesmo?"
+        ],
+        highlight: "“Alpha Code do Ouro: 4395/4251. Abaixo de 4.251 o restante da posição será estopado. Não há espaço para apego emocional contra a física do mercado.”"
+      },
+      {
+        icon: "💻",
+        title: "5. Rotação Setorial: O Crash dos Semicondutores vs Resiliência de Software e Saúde",
+        paragraphs: [
+          "Se você comprou o topo da bolha do mercado de ações da Coreia do Sul em junho de 2026, por que você continua segurando esse prejuízo (<em>bag-holding</em>)? O índice Dr. KOSPI caiu mais -0,9% durante a madrugada, acumulando um crash de -27,3% desde a máxima histórica da bolha #MOAB.",
+          "Por quanto tempo mais você está disposto a segurar ações de semicondutores que estão desabando, como Broadcom (AVGO) ou Teradyne (TER)?",
+          "A nossa carteira está posicionada: estamos comprados (Long) em Software Corporativo (IGV, OKTA, NOW, etc.) e NÃO em Semicondutores (DRAM). Estamos comprados em Saúde (XLV), que subiu mais +1,5% ontem, e NÃO em Industriais (XLI), que caíram -1,4%. E estamos vendidos (Short) no setor Industrial de duas maneiras diferentes: via XLI e PRN."
+        ],
+        highlight: "“Comprados em Software (IGV) e Saúde (XLV); vendidos em Semicondutores e Industriais (XLI/PRN). KOSPI crashando -27,3% da máxima.”"
+      },
+      {
+        icon: "🎯",
+        title: "6. As Três Metas Inegociáveis de um Consultor Financeiro & Níveis Técnicos Oficiais",
+        paragraphs: [
+          "Se os objetivos do seu consultor financeiro não forem estritamente: A) Preservar e proteger o SEU capital duramente conquistado; B) Reduzir o risco de Drawdowns severos e Crashes nas SUAS contas; C) Compostar retornos consistentes sobre o SEU patrimônio ao longo do tempo...",
+          "...então demita-o imediatamente. Peça alternativas a Claude — e não me refiro ao chatbot.",
+          "Hawkins afirmou com precisão que a IA fica aquém da inteligência humana em diversos pontos. Mas seu consultor da Old Wall fica aquém de ambas. O verão de IA não durará para sempre — e a estrutura de comissões que depende de você não perceber nada disso também não.",
+          "<strong>Níveis Técnicos Oficiais do Pregão (Risk Ranges Hedgeye):</strong><br>" +
+          "• <strong>UST 10Y:</strong> 4,76% – 5,05% (BULLISH TREND)<br>" +
+          "• <strong>Petróleo WTI (WTIC):</strong> US$ 91,35 – US$ 106,98 (BULLISH TREND)<br>" +
+          "• <strong>VanEck Oil Services (OIH):</strong> 400,00 – 438,00 (BULLISH TREND)<br>" +
+          "• <strong>Software ETF (IGV):</strong> 100,00 – 111,00 (BULLISH TREND)<br>" +
+          "• <strong>Health Care ETF (XLV):</strong> 163,00 – 175,00 (BULLISH TREND)<br>" +
+          "• <strong>S&P 500 (SPX):</strong> 7.551 – 7.750 (BULLISH TREND)<br>" +
+          "• <strong>NASDAQ (COMPQ):</strong> 25.915 – 26.613 (NEUTRAL)<br>" +
+          "• <strong>Russell 2000 (RUT):</strong> 2.852 – 2.960 (BEARISH TREND)<br>" +
+          "• <strong>Volatilidade (VIX):</strong> 14,44 – 18,30 (BULLISH)<br>" +
+          "• <strong>Dólar Index (USD):</strong> 98,78 – 99,81 (NEUTRAL)<br>" +
+          "• <strong>Ouro Spot (GOLD):</strong> 4.229 – 4.399 (NEUTRAL)<br>" +
+          "• <strong>Prata Spot (SILVER):</strong> 60,00 – 65,00 (BEARISH TREND)<br>" +
+          "• <strong>Cobre Spot (COPPER):</strong> 6,19 – 6,53 (BEARISH TREND)<br>" +
+          "• <strong>High Yield (HYG):</strong> 78,40 – 79,12 (BEARISH TREND)<br>" +
+          "• <strong>Investment Grade (LQD):</strong> 103,70 – 105,40 (BEARISH TREND)<br>" +
+          "• <strong>Gás Natural (NATGAS):</strong> 2,74 – 2,98 (NEUTRAL)"
+        ],
+        highlight: "“Desejo a todos a melhor sorte nos mercados hoje. Sigam o Processo. — Keith McCullough (KM)”"
+      }
+    ]
+  },
   "110258": {
     id: "110258",
     titlePt: "EARLY LOOK: A Bolha #MOAB em IA vs. O Ciclo Macro",
@@ -2477,12 +2630,69 @@ const structuredTranslations = {
     ]
   }
 };
+structuredTranslations["hedgeye_110338_EARLY_LOOK__Hedgeye_For_Financial_Advisors.md"] = structuredTranslations["110338"];
 
 // 6.2 GERENCIAMENTO DINÂMICO DE DECISÕES DO KEITH & AUDITORIA
 const defaultDecisionsList = [
   {
-    date: "14/09/2026",
+    date: "15/09/2026",
     isToday: true,
+    author: "KM Call (Hoje)",
+    asset: "Semicondutores (AVGO / TER / DRAM) & KOSPI",
+    portfolio: "Macro Global / Hedges",
+    category: "BEARISH TREND / DESCARTE",
+    badgeClass: "badge-bearish",
+    action: "Descarte de Semicondutores / Não Segurar Prejuízo / KOSPI Crash -27,3%",
+    reason: "Bolha #MOAB em hardware e semicondutores desinflando; Dr. KOSPI despencando -27,3% da máxima. Rotação expressiva de capital saindo de hardware para Software Corporativo (IGV) e Healthcare (XLV).",
+    invalidation: "Recuperação do KOSPI acima da TREND e reversão de baixa dos rendimentos dos Treasuries.",
+    statusBadge: "badge-bearish",
+    statusText: "🔴 Descarte / Bearish"
+  },
+  {
+    date: "15/09/2026",
+    isToday: true,
+    author: "KM Call (Hoje)",
+    asset: "Ouro (GOLD 4.229–4.399) / Cobre / Prata",
+    portfolio: "Ambas",
+    category: "DISCIPLINA DE TREND",
+    badgeClass: "badge-amber",
+    action: "Redução do Ouro para MIN SIZE / Stop 4.251 / Cobre e Prata Zerados",
+    reason: "Ouro não tolera disparada dos juros reais; Alpha Code 4395/4251 (stop mandatário em 4.251). Dr. Cobre quebrou suporte de TREND esta manhã e Prata já havia quebrado na semana passada.",
+    invalidation: "Ouro retomar acima de 4.395 no fechamento ou yields dos bonds caírem forte.",
+    statusBadge: "badge-amber",
+    statusText: "⚠️ Ouro Tamanho Mínimo"
+  },
+  {
+    date: "15/09/2026",
+    isToday: true,
+    author: "KM Call (Hoje)",
+    asset: "Treasuries (UST 10Y 4,76%–5,05%) & Utilities (XLU)",
+    portfolio: "Macro Shorts",
+    category: "SHORT DURATION",
+    badgeClass: "badge-bearish",
+    action: "Manter Shorts Firmes em TLT, ZROZ, LQD e Utilities (XLU)",
+    reason: "Rendimento da 10Y rompeu máxima de 2023 (4,98%) mirando o teto de 5,05%. A Casa Real antecipa juros altos por mais tempo ou aperto independente do Fed.",
+    invalidation: "UST 10Y recuar de forma sustentada abaixo de 4,76%.",
+    statusBadge: "badge-bearish",
+    statusText: "🔴 Short Duration"
+  },
+  {
+    date: "15/09/2026",
+    isToday: true,
+    author: "KM Call (Hoje)",
+    asset: "Software Corporativo (IGV / OKTA / NOW) & Saúde (XLV)",
+    portfolio: "Ações / Core",
+    category: "LIDERANÇA DE FLUXO",
+    badgeClass: "badge-core",
+    action: "Long Convicção Alta em Software de Alto FCF e Defensivos de Saúde",
+    reason: "Dispersão setorial premiando empresas com poder de precificação e margens resilientes. XLV subiu +1,5% e IGV sustenta range 100–111 Bullish.",
+    invalidation: "IGV perder piso de 100 ou quebrar sinal TRADE.",
+    statusBadge: "badge-bullish",
+    statusText: "🟢 Long Liderança"
+  },
+  {
+    date: "14/09/2026",
+    isToday: false,
     author: "KM Call (Hoje)",
     asset: "Big Tech & AI Stocks (QQQ / SPY / IWM / Semis)",
     portfolio: "Macro Global / Hedges",
@@ -3105,7 +3315,7 @@ function updateDynamicDashboard(report) {
   const dateStr = report.shortDate || (report.date ? report.date.substring(0, 15) : "11/09/2026");
   const shortDate = dateStr.includes("/") ? dateStr.substring(0, 5) : "11/09";
   const repId = report.id || "";
-  const struct = structuredTranslations[repId];
+  const struct = structuredTranslations[repId] || structuredTranslations[report.filename] || (report.structured || null);
 
   // 1. Top bar e botões de relatório diário
   const marketTimeElem = document.getElementById("marketTime");
@@ -3526,7 +3736,7 @@ function renderModalReportContent() {
   const rawContainer = document.getElementById("reportRawContent");
   const rawViewWrapper = document.getElementById("reportRawView");
 
-  const struct = structuredTranslations[rep.id];
+  const struct = structuredTranslations[rep.id] || structuredTranslations[rep.filename] || (rep.structured || null);
 
   if (currentModalLang === "en") {
     if (formattedContainer) formattedContainer.style.display = "none";
@@ -3993,24 +4203,49 @@ function buildThesisHtml(report, struct) {
     return `<div class="thesis-section-block"><p class="thesis-paragraph">Conteúdo da tese em processamento.</p></div>`;
   }
 
-  // Divide o texto em blocos significativos
+  // Divide o texto em blocos significativos com tradução de cabeçalhos
   const lines = content.split("\n").map(l => l.trim()).filter(l => l.length > 0);
   const sections = [];
   let currentSection = { title: "1. Síntese Executiva & The Macro Grind", paragraphs: [] };
 
+  const sectionTitleMap = {
+    "key takeaways": "🎯 Principais Destaques Estratégicos (Key Takeaways)",
+    "the big picture": "🧠 A Grande Imagem (The Big Picture)",
+    "macro grind": "⚡ The Macro Grind & Análise Quantitativa",
+    "our levels": "📊 Níveis Técnicos & Risk Ranges Oficiais",
+    "got macro hedges": "🛡️ Hedges Macroeconômicos & Gestão de Risco",
+    "where are bond yields going next": "📈 Trajetória dos Rendimentos dos Títulos Soberanos"
+  };
+
   lines.forEach(line => {
-    if (line.startsWith("###") || line.startsWith("##") || line.startsWith("#")) {
-      const cleanTitle = line.replace(/^#+\s*/, "");
+    const lineLower = line.toLowerCase();
+    
+    // Ignora disclaimers, copyrights, e-mails e metadados brutos
+    if (
+      line.startsWith("http") || line.startsWith("VIEW LARGER") || line.startsWith("Please visit") ||
+      line.startsWith("©") || line.startsWith("Redistribution") || line.includes("redistribution") ||
+      line.startsWith("This research was prepared") || line.startsWith("Having trouble viewing") ||
+      line.startsWith("**Data:") || line.startsWith("**Remetente:") || line.startsWith("**ID:") ||
+      line.startsWith("#") || line === "Keith McCullough" || line === "@keithmccullough" ||
+      line.includes("subscribe") || line.includes("mailto:")
+    ) {
+      return;
+    }
+
+    let matchedHeader = null;
+    for (const [key, translated] of Object.entries(sectionTitleMap)) {
+      if (lineLower.startsWith(key) || lineLower === key) {
+        matchedHeader = translated;
+        break;
+      }
+    }
+
+    if (matchedHeader) {
       if (currentSection.paragraphs.length > 0) {
         sections.push(currentSection);
       }
-      currentSection = { title: cleanTitle, paragraphs: [] };
-    } else if (line.startsWith("Our Levels") || line.startsWith("Key Takeaways") || line.startsWith("The Big Picture") || line.startsWith("Macro Grind")) {
-      if (currentSection.paragraphs.length > 0) {
-        sections.push(currentSection);
-      }
-      currentSection = { title: line, paragraphs: [] };
-    } else if (line.length > 25 && !line.startsWith("http") && !line.includes("©") && !line.includes("redistribution")) {
+      currentSection = { title: matchedHeader, paragraphs: [] };
+    } else if (line.length > 20) {
       currentSection.paragraphs.push(line);
     }
   });
@@ -4023,10 +4258,10 @@ function buildThesisHtml(report, struct) {
     return `<div class="thesis-section-block"><p class="thesis-paragraph">${content.substring(0, 800)}...</p></div>`;
   }
 
-  return sections.slice(0, 5).map((sec, idx) => `
+  return sections.slice(0, 6).map((sec, idx) => `
     <div class="thesis-section-block">
       <h4 class="thesis-section-title"><span class="icon">📌</span> ${sec.title}</h4>
-      ${sec.paragraphs.slice(0, 4).map(p => `<p class="thesis-paragraph">${p}</p>`).join("")}
+      ${sec.paragraphs.slice(0, 5).map(p => `<p class="thesis-paragraph">${p}</p>`).join("")}
     </div>
   `).join("");
 }
@@ -4075,8 +4310,8 @@ function changeTranslatedReport(reportId) {
 function renderEarlyLookTranslatedView(report) {
   if (!report) return;
 
-  const repId = report.id;
-  const struct = structuredTranslations[repId];
+  const repId = report.id || "";
+  const struct = structuredTranslations[repId] || structuredTranslations[report.filename] || (report.structured || null);
 
   const mainTitleEl = document.getElementById("elMainTitle");
   const displayDateEl = document.getElementById("elDisplayDate");
@@ -4120,7 +4355,7 @@ function renderEarlyLookTranslatedView(report) {
       takeawaysGrid.innerHTML = `
         <div class="takeaway-card emerald-border">
           <div class="takeaway-header"><span class="t-icon">⚡</span><h4>1. Síntese do Research</h4></div>
-          <div class="takeaway-body">${report.summary ? report.summary.substring(0, 220) + '...' : 'Análise quantitativa dos fluxos de capital e faixas de risco.'}</div>
+          <div class="takeaway-body">${report.summary ? report.summary : 'Análise quantitativa dos fluxos de capital e faixas de risco.'}</div>
         </div>
         <div class="takeaway-card amber-border">
           <div class="takeaway-header"><span class="t-icon">🎯</span><h4>2. Risk Ranges Extraídos</h4></div>

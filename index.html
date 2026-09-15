@@ -130,6 +130,31 @@
         </div>
       </div>
 
+      <!-- ALERTA OPERACIONAL MASTER THE MARKET (OURO HOJE) -->
+      <div class="card mt-2 mb-3" style="background: linear-gradient(90deg, rgba(245, 158, 11, 0.12), rgba(15, 23, 42, 0.95)); border-left: 4px solid #F59E0B; border-top: 1px solid rgba(245, 158, 11, 0.3); border-right: 1px solid rgba(245, 158, 11, 0.3); border-bottom: 1px solid rgba(245, 158, 11, 0.3); padding: 0.85rem 1.1rem; border-radius: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <span style="font-size: 1.5rem;">🥇</span>
+            <div>
+              <div style="font-size: 0.75rem; color: #F59E0B; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+                Módulo Master the Market — Dimensionamento Diário de Posições (15/09/2026)
+              </div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: #F8FAFC; margin-top: 0.1rem;">
+                Ouro Spot (US$ 4.385): Quebrou TRADE (< 4.395) | Sustenta TREND (> 4.251) &rarr; Enquadrar em <span style="color: #F59E0B;">POSIÇÃO MÍNIMA (MIN SIZE: 2,50% do NAV)</span>
+              </div>
+              <div style="font-size: 0.82rem; color: #94A3B8; margin-top: 0.15rem;">
+                NAV Consolidado: <strong>US$ 257.252,43</strong> | Posição Mínima Alvo: <strong>US$ 6.431,31 (148 cotas AAAU)</strong> | Atual: <strong>200 cotas (US$ 8.677,00)</strong> | Ajuste: <strong style="color: #F87171;">Vender 52 cotas de AAAU</strong> (libera +US$ 2.256 em caixa).
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-accent btn-sm" onclick="switchTab('portfolio')" style="white-space: nowrap;">
+              <span class="icon">🔍</span> Ver Detalhes no Portfólio
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- Grid 2 Colunas: Matriz GIP e Síntese Matinal -->
       <div class="grid-2-col">
         <!-- Card 1: Matriz de 4 Quadrantes Hedgeye -->
@@ -402,6 +427,132 @@
           <div class="stat-label">ALOCAÇÃO EM QUAD 3 (VENTO A FAVOR)</div>
           <div class="stat-val text-emerald" id="portAdherence">73.5% (Alocado em Quad 3)</div>
           <div class="stat-desc">Ouro, Energia, Defensivos, Cobre, Renda Fixa e Caixa SGOV</div>
+        </div>
+      </div>
+
+      <!-- ========================================================
+           MÓDULO MASTER THE MARKET: DIMENSIONAMENTO DE POSIÇÕES
+           ======================================================== -->
+      <div class="card mt-3" style="border: 1px solid rgba(245, 158, 11, 0.4); background: linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.75)); box-shadow: 0 8px 24px rgba(0,0,0,0.35);">
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem; border-bottom: 1px solid rgba(245, 158, 11, 0.2); padding-bottom: 0.75rem;">
+          <div>
+            <h3 style="margin: 0; font-size: 1.15rem; color: #F59E0B; display: flex; align-items: center; gap: 0.5rem;">
+              <span>📖</span> Módulo Master the Market: Dimensionamento de Posições (Position Sizing Rules)
+            </h3>
+            <p class="subtitle" style="margin: 0.2rem 0 0 0; color: #94A3B8;">
+              Regras oficiais do processo de Keith McCullough (Hedgeye) para tamanhos <strong>MÍNIMO</strong>, <strong>MÉDIO</strong> e <strong>MÁXIMO</strong> de posições calibradas no NAV real de hoje (<strong>US$ 257.252,43</strong>).
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <span class="badge" style="background: rgba(245, 158, 11, 0.2); color: #F59E0B; border: 1px solid #F59E0B; font-weight: 700; padding: 0.35rem 0.65rem; border-radius: 6px;">Ouro Hoje: MIN SIZE</span>
+            <span class="badge" style="background: rgba(56, 189, 248, 0.15); color: #38BDF8; border: 1px solid #38BDF8; font-weight: 700; padding: 0.35rem 0.65rem; border-radius: 6px;">Alpha Code: 4395 / 4251</span>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <!-- CARD DE DESTAQUE: OURO HOJE -->
+          <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 8px; padding: 1.1rem; margin-bottom: 1.2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.6rem;">
+              <div>
+                <span class="badge" style="background: #F59E0B; color: #0F172A; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;">Ajuste Tático Urgente de Hoje (15/09/2026)</span>
+                <h4 style="margin: 0.4rem 0 0.2rem 0; font-size: 1.25rem; color: #F8FAFC;">
+                  🥇 Ouro Físico (AAAU) — Enquadramento em Posição MÍNIMA (MIN SIZE)
+                </h4>
+                <p style="margin: 0; font-size: 0.85rem; color: #94A3B8;">
+                  Keith McCullough confirmou no Early Look de hoje: O Ouro rompeu o sinal <strong>TRADE</strong> (fechou a US$ 4.385, abaixo do suporte de US$ 4.395), porém a tendência <strong>TREND</strong> de US$ 4.251 permanece intacta. No processo <em>Master the Market</em>, esse gatilho técnico exige <strong>redução imediata para MIN SIZE (2,0% a 3,0% do NAV)</strong>, preservando a opcionalidade de caixa sem stop out total.
+                </p>
+              </div>
+            </div>
+
+            <!-- Grid de Métricas do Ouro Hoje -->
+            <div class="grid-4-col mt-3" style="gap: 0.75rem;">
+              <div style="background: rgba(30, 41, 59, 0.7); padding: 0.75rem; border-radius: 6px; border-left: 3px solid #38BDF8;">
+                <div style="font-size: 0.72rem; color: #94A3B8; text-transform: uppercase; font-weight: 700;">Preço Spot & Níveis</div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #F8FAFC; margin-top: 0.2rem;">US$ 4.385,00</div>
+                <div style="font-size: 0.75rem; color: #F87171;">TRADE: US$ 4.395 (Quebrou)</div>
+                <div style="font-size: 0.75rem; color: #34D399;">TREND: US$ 4.251 (Intacto)</div>
+              </div>
+
+              <div style="background: rgba(30, 41, 59, 0.7); padding: 0.75rem; border-radius: 6px; border-left: 3px solid #F59E0B;">
+                <div style="font-size: 0.72rem; color: #94A3B8; text-transform: uppercase; font-weight: 700;">Posição Mínima Alvo (Hoje)</div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #F59E0B; margin-top: 0.2rem;">US$ 6.431,31</div>
+                <div style="font-size: 0.75rem; color: #CBD5E1;">Alvo Padrão: <strong>2,50% do NAV</strong></div>
+                <div style="font-size: 0.75rem; color: #94A3B8;">Faixa: US$ 5.145 a US$ 7.718</div>
+              </div>
+
+              <div style="background: rgba(30, 41, 59, 0.7); padding: 0.75rem; border-radius: 6px; border-left: 3px solid #64748B;">
+                <div style="font-size: 0.72rem; color: #94A3B8; text-transform: uppercase; font-weight: 700;">Posição Atual em AAAU</div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #F8FAFC; margin-top: 0.2rem;">US$ 8.677,00</div>
+                <div style="font-size: 0.75rem; color: #CBD5E1;">Cotas Atuais: <strong>200 cotas</strong></div>
+                <div style="font-size: 0.75rem; color: #F59E0B;">Peso Atual: <strong>3,37% do NAV</strong></div>
+              </div>
+
+              <div style="background: rgba(239, 68, 68, 0.12); padding: 0.75rem; border-radius: 6px; border-left: 3px solid #EF4444;">
+                <div style="font-size: 0.72rem; color: #F87171; text-transform: uppercase; font-weight: 700;">Ajuste Operacional Recomendado</div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #F87171; margin-top: 0.2rem;">VENDER 52 COTAS</div>
+                <div style="font-size: 0.75rem; color: #34D399; font-weight: 600;">Libera +US$ 2.256,02 em Caixa</div>
+                <div style="font-size: 0.75rem; color: #CBD5E1;">Posição Final: 148 cotas (2,50%)</div>
+              </div>
+            </div>
+
+            <!-- Invalidação e Complexo Total -->
+            <div style="margin-top: 0.9rem; padding: 0.65rem 0.85rem; background: rgba(0, 0, 0, 0.3); border-radius: 6px; font-size: 0.82rem; color: #CBD5E1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+              <div>
+                <strong style="color: #EF4444;">🛑 Linha na Areia (Stop Out Definitivo):</strong> Fechamento diário abaixo de <strong>US$ 4.251 Spot</strong> quebra o TREND de médio prazo e aciona o <strong>Stop Out Total (0 cotas / 0,0%)</strong>.
+              </div>
+              <div>
+                <strong style="color: #F59E0B;">Complexo Total de Ouro na Carteira:</strong> AAAU (US$ 8.677) + GDX (US$ 5.961) + NEM (US$ 1.815) = <strong>US$ 16.453,48 (6,40% do NAV)</strong>.
+              </div>
+            </div>
+          </div>
+
+          <!-- TABELA DE REGRAS DE DIMENSIONAMENTO MASTER THE MARKET -->
+          <h4 style="margin: 0.8rem 0 0.5rem 0; font-size: 0.95rem; color: #E2E8F0; text-transform: uppercase; letter-spacing: 0.5px;">
+            📊 Tabela Oficial de Bandas de Alocação (Master the Market)
+          </h4>
+          <div class="table-responsive">
+            <table class="data-table" style="font-size: 0.83rem;">
+              <thead>
+                <tr>
+                  <th>Classe de Ativo / Instrumento</th>
+                  <th style="color: #F59E0B;">MIN SIZE (Tamanho Mínimo)</th>
+                  <th style="color: #38BDF8;">MID SIZE (Tamanho Médio)</th>
+                  <th style="color: #10B981;">MAX SIZE (Tamanho Máximo)</th>
+                  <th>Gatilho Operacional do Processo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background: rgba(245, 158, 11, 0.06);">
+                  <td><strong>🥇 Commodities & ETFs Macro</strong><br><small class="text-muted">Ouro (AAAU), Petróleo (USO/WTI), Índices</small></td>
+                  <td><strong style="color: #F59E0B;">2,0% – 3,0%</strong><br><small>Alvo: US$ 6.431 (2,5%)</small></td>
+                  <td><strong style="color: #38BDF8;">4,0% – 6,0%</strong><br><small>Alvo: US$ 12.863 (5,0%)</small></td>
+                  <td><strong style="color: #10B981;">8,0% – 10,0%</strong><br><small>Alvo: US$ 25.725 (10,0%)</small></td>
+                  <td><small>MIN em Bearish TRADE / Bullish TREND; MID em consolidação; MAX no piso do range em Quad favorável.</small></td>
+                </tr>
+                <tr>
+                  <td><strong>🏢 Ações Core de Alta Qualidade</strong><br><small class="text-muted">MELI, GOOGL, META, Broadcom</small></td>
+                  <td><strong style="color: #F59E0B;">1,0% – 1,5%</strong><br><small>Alvo: US$ 3.215 (1,25%)</small></td>
+                  <td><strong style="color: #38BDF8;">2,0% – 2,5%</strong><br><small>Alvo: US$ 6.431 (2,5%)</small></td>
+                  <td><strong style="color: #10B981;">3,5% – 4,0%</strong><br><small>Alvo: US$ 10.290 (4,0%)</small></td>
+                  <td><small>Nunca ultrapassar 4,0–5,0% em ações individuais para evitar risco não-sistemático de cauda.</small></td>
+                </tr>
+                <tr>
+                  <td><strong>🚀 Teses Satélites & TAIL (3+ Anos)</strong><br><small class="text-muted">HUMN (Robótica), DRIV, FOTO, ALAB, CRDO</small></td>
+                  <td><strong style="color: #F59E0B;">0,5%</strong><br><small>Alvo: US$ 1.286 (0,5%)</small></td>
+                  <td><strong style="color: #38BDF8;">1,0%</strong><br><small>Alvo: US$ 2.573 (1,0%)</small></td>
+                  <td><strong style="color: #10B981;">2,0%</strong><br><small>Alvo: US$ 5.145 (2,0%)</small></td>
+                  <td><small>Teses de alta convexidade mantidas em tamanho pequeno para não contaminar a volatilidade do portfólio.</small></td>
+                </tr>
+                <tr>
+                  <td><strong>🛡️ Caixa & T-Bills (SGOV)</strong><br><small class="text-muted">Preservação de capital e poder de compra</small></td>
+                  <td><strong style="color: #F59E0B;">10,0%</strong><br><small>US$ 25.725 (10,0%)</small></td>
+                  <td><strong style="color: #38BDF8;">20,0%</strong><br><small>US$ 51.450 (20,0%)</small></td>
+                  <td><strong style="color: #10B981;">30,0%</strong><br><small>US$ 77.176 (30,0%)</small></td>
+                  <td><small>Aumentar em regimes de desaceleração (Quad 3/Quad 4) para garantir liquidez na hora de comprar os pisos de Risk Range.</small></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 
