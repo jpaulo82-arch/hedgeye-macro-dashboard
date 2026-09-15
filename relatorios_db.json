@@ -1,118 +1,118 @@
 {
-  "updatedAt": "14/09/2026 10:02:32",
-  "total": 88,
+  "updatedAt": "15/09/2026 09:36:35",
+  "total": 90,
   "latest": {
-    "id": "110258",
-    "filename": "hedgeye_110258_EARLY_LOOK___MOAB_In_AI_vs__The_Cycle.md",
-    "title": "EARLY LOOK: #MOAB In AI vs. The Cycle",
-    "date": "Mon, 14 Sep 2026 07:31:50 -0400 (EDT)",
-    "shortDate": "14/09/2026",
+    "id": "110338",
+    "filename": "hedgeye_110338_EARLY_LOOK__Hedgeye_For_Financial_Advisors.md",
+    "title": "EARLY LOOK: Hedgeye For Financial Advisors",
+    "date": "Tue, 15 Sep 2026 07:44:14 -0400 (EDT)",
+    "shortDate": "15/09/2026",
     "sender": "Hedgeye <info@hedgeye.com>",
     "riskRanges": [
       {
         "name": "10-Year U.S. Treasury Yield",
         "ticker": "UST10Y",
-        "low": 4.75,
-        "high": 5.01,
+        "low": 4.76,
+        "high": 5.05,
         "signal": "BULLISH"
       },
       {
         "name": "High Yield",
         "ticker": "HYG",
-        "low": 78.3,
-        "high": 79.16,
+        "low": 78.4,
+        "high": 79.12,
         "signal": "BEARISH"
       },
       {
         "name": "Investment Grade Corporate Bond ETF",
         "ticker": "LQD",
-        "low": 104.0,
-        "high": 105.6,
+        "low": 103.7,
+        "high": 105.4,
         "signal": "BEARISH"
       },
       {
         "name": "S&P 500",
         "ticker": "SPX",
-        "low": 7569.0,
-        "high": 7747.0,
+        "low": 7551.0,
+        "high": 7750.0,
         "signal": "BULLISH"
       },
       {
         "name": "NASDAQ Composite",
         "ticker": "COMPQ",
-        "low": 25710.0,
-        "high": 26512.0,
+        "low": 25915.0,
+        "high": 26613.0,
         "signal": "NEUTRAL"
       },
       {
         "name": "Russell 2000",
         "ticker": "RUT",
-        "low": 2868.0,
+        "low": 2852.0,
         "high": 2960.0,
         "signal": "BEARISH"
       },
       {
         "name": "Health Care Select Sector SPDR Fund",
         "ticker": "XLV",
-        "low": 162.0,
+        "low": 163.0,
         "high": 175.0,
         "signal": "BULLISH"
       },
       {
         "name": "iShares Expanded Tech-Software Sector ETF",
         "ticker": "IGV",
-        "low": 98.0,
-        "high": 110.0,
+        "low": 100.0,
+        "high": 111.0,
         "signal": "BULLISH"
       },
       {
         "name": "VanEck Oil Services ETF",
         "ticker": "OIH",
-        "low": 415.0,
+        "low": 400.0,
         "high": 438.0,
         "signal": "BULLISH"
       },
       {
         "name": "Volatility Index",
         "ticker": "VIX",
-        "low": 14.43,
-        "high": 18.76,
-        "signal": "NEUTRAL"
+        "low": 14.44,
+        "high": 18.3,
+        "signal": "BULLISH"
       },
       {
         "name": "U.S. Dollar Index",
         "ticker": "USD",
-        "low": 98.5,
-        "high": 99.78,
-        "signal": "BEARISH"
+        "low": 98.78,
+        "high": 99.81,
+        "signal": "NEUTRAL"
       },
       {
         "name": "Light Crude Oil Continuous Contract",
         "ticker": "WTIC",
-        "low": 90.44,
-        "high": 105.74,
+        "low": 91.35,
+        "high": 106.98,
         "signal": "BULLISH"
       },
       {
         "name": "Natural Gas Continuous Contract",
         "ticker": "NATGAS",
-        "low": 2.75,
-        "high": 3.01,
+        "low": 2.74,
+        "high": 2.98,
         "signal": "NEUTRAL"
       },
       {
         "name": "Gold Spot Price",
         "ticker": "GOLD",
-        "low": 4247.0,
-        "high": 4473.0,
+        "low": 4229.0,
+        "high": 4399.0,
         "signal": "NEUTRAL"
       },
       {
         "name": "Copper Spot Price",
         "ticker": "COPPER",
-        "low": 6.24,
-        "high": 6.8,
-        "signal": "NEUTRAL"
+        "low": 6.19,
+        "high": 6.53,
+        "signal": "BEARISH"
       },
       {
         "name": "Silver Spot Price",
@@ -122,10 +122,145 @@
         "signal": "BEARISH"
       }
     ],
-    "content": "# EARLY LOOK: #MOAB In AI vs. The Cycle\n**Data:** Mon, 14 Sep 2026 07:31:50 -0400 (EDT)\n**Remetente:** Hedgeye <info@hedgeye.com>\n**ID:** 110258\n\n---\n\nThis research was prepared exclusively for jpaulo82@gmail.com as a subscriber of Hedgeye Risk Management and may not be forwarded or otherwise provided to any unauthorized party. If you have received this transmission in error, please notify Hedgeye Risk Management <mailto:support@hedgeye.com>.\n\nHaving trouble viewing this email? View it in your browser <https://model2.hedgeye.com/click/47471377.319/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcxMzY/65561052a51cff3724ccb7dfDb66f6c84>\n\n\n\n \n\n\n\n09/14/2026 07:31 AM EDT #MOAB In AI vs. The Cycle\n\n“Roughly 10 years of work had become 77 pages of information theory.” -Sonni & Goodman on Claude Shannon\n\n \n\n\n\nKeith McCullough\n\n\n\n@keithmccullough\n\n\n\nKey Takeaways\n\n\n\nAI itself is not new, but the scale of today’s AI valuations and debt-fueled financing is, making the #MOAB bubble a market risk rather than a technological one.\n\n\n\nRisk signals are deteriorating across equities, with QQQ and SPY turning Bearish TRADE while IWM has already broken TREND support, reinforcing a more defensive positioning.\n\n\n\nInflation continues to accelerate as oil, commodities, and Treasury yields surge, raising the cost of capital and creating an increasingly hostile backdrop for highly valued, heavily financed AI stocks.\n\n\n\nThe Big Picture\n\n\n\nYou know AI isn't new, right?\n\n\n\nClaude (as in The Guy, not the chatbot) wrote those 77 pages in 1948. He was 32 years old. Ten years of work. Seventy-seven pages. The foundation of the entire Information Age built before most of the people currently explaining AI to you were born.\n\n\n\nNow we need a dude named Dario to tell us what the \"pace\" of the “frontier” looks like? If the words coming out of their almighty mouths imply any ROC slowing of anything, that's not good for their stocks.\n\n\n\nThe Machine already knows that.\n\n\n\nHistorical context is one of the most important things books give me. In A Mind At Play, Shannon's story makes it clear: the #MOAB (Mother of All Bubbles) in AI stocks is unlike anything markets have ever seen. The idea isn't new. The bubble is. Know the difference.\n\n\n\nMacro Grind\n\n\n\n(VIEW LARGER IMAGE <https://model2.hedgeye.com/click/47471377.319/aHR0cHM6Ly9kMXloaWxzNml3aDVsNS5jbG91ZGZyb250Lm5ldC9jaGFydHMvcmVzaXplZC8xNjAyMTQvb3JpZ2luYWwvMDkuMTQuMjAyNl9qdXN0X3BvdW5kZWRfY2FydG9vbi5wbmc_c3JjPWVtYWlsJmVtYWlsPWpwYXVsbzgyQGdtYWlsLmNvbQ/65561052a51cff3724ccb7dfC8efe432f>)\n\n\n\nWelcome to another Macro Monday @Hedgeye where the proactively prepared will execute while Macro Tourists who were chasing Semis (again) last week will panic.\n\n\n\nFor those of you looking for the Alpha Code for QQQ, this is from this morning’s Top 3 Things (Macro Show Notes):\n\n\n\nQQQ – fortunately, we’re not long what the crowd is – QQQ was already signaling Bearish TRADE (so was SPY on Friday – that’s why I sold every Long but 1 in Real-Time Alerts), so now The Question is does it break @Hedgeye TREND Signal Support like the Russell (IWM) already did? Alpha Code for QQQ = 720705 (TRADE = 720, TREND = 705) with #NazVol’s (VXN) Breakout Signal Level = 22.14\n\n\n\nFor those of you looking for the wholeness and implicate order of Macro Markets, here’s the Global FX Update:\n\n\n\nUS Dollar Index was -0.1% last week to -0.7% in the last month and remains Bearish TREND @Hedgeye\n\n\n\nEUR/USD was flat last week but is breaking bad to Bearish TRADE and Neutral TREND this morning\n\n\n\nJapanese Yen had a big +1.7% week vs. USD and remains Bullish TRADE and TREND\n\n\n\nCanadian Dollar was -0.2% vs. USD but also remains Bullish TREND (TRADE there is Neutral)\n\n\n\nColombia’s Peso was up another +1.3% vs. USD taking its TRENDING 3-month Return to +13.3%\n\n\n\nIndia’s Rupee was down -1.1% vs. USD last week and remains Bearish TRADE and TREND\n\n\n\nWhy do we care about Colombian Pesos and Indian Rupees? A: Because we have positions in their stock markets! Colombia (COLO) has been a home run for us and we’re back to short India in INDA terms.\n\n\n\nKnow what India is short of? A: Oil. We remain long of Oil Services (OIH). Here’s what Commodities did last week:\n\n\n\nCRB Commodities Index inflated another +1.6% last week, taking its TRENDING 3-month Return to +14.4%\n\n\n\nOil (WTI) inflated another +9.4% last week, taking its TRENDING 3-month Return to +20.7%\n\n\n\nCopper corrected -2.0% last week and is breaking bad towards Neutral TREND this morning\n\n\n\nCorn corrected -1.2% last week and remains Bullish TREND, inflating +28.8% in the last 3-months\n\n\n\nThe ROC (Rate of Change) for our Street High INFLATION Nowcast continues to be one of acceleration. The real House (not Bessy), which is the US Bond Market, continues to agree with us on that:\n\n\n\nUST 2yr Yield shot +26 basis points higher to new Inflation Cycle Highs last week\n\n\n\nUST 10yr Yield ramped +19 basis points higher to new Inflation Cycle Highs last week\n\n\n\nYield Curve continued to flatten, -7 basis points flatter, week-over-week\n\n\n\nI’m old enough to remember when we were long a Yield Curve Steepener (via IVOL). That’s at new Cycle Lows now. Who gets you out? Thankfully, we got you out of Silver (SLV) on Signal Time too. It was down -2.3% last week.\n\n\n\nAs we reminded you when we reduced Gold to The Fam’s MIN (minimum position size), Gold doesn't like the pace of inflation's acceleration. Down -1.8% last week. Still +3.2% in the last 3 months.\n\n\n\nThat's the real pace Dario should be worried about. Not the frontier. Not the narrative. The ROC of inflation is going to pace Bond Yields and the cost of capital in a levered world of #MOAB AI debt bubbles.\n\n\n\nShannon wrote 77 pages in 1948 that built the Information Age. He didn't need a $900 billion valuation to do it. The idea was never the bubble. The bubble is always the financing of the idea.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield (UST10Y) 4.75-5.01 (bullish)\n\nHigh Yield (HYG) 78.30-79.16 (bearish)\n\nInvestment Grade Corporate Bond ETF (LQD) 104.0-105.6 (bearish)\n\nS&P 500 (SPX) 7569-7747 (bullish)\n\nNASDAQ Composite (COMPQ) 25710-26512 (neutral)\n\nRussell 2000 (RUT) 2868-2960 (bearish)\n\nHealth Care Select Sector SPDR Fund (XLV) 162-175 (bullish)\n\niShares Expanded Tech-Software Sector ETF (IGV) 98-110 (bullish)\n\nVanEck Oil Services ETF (OIH) 415-438 (bullish)\n\nVolatility Index (VIX) 14.43-18.76 (neutral)\n\nU.S. Dollar Index (USD) 98.50-99.78 (bearish)\n\nLight Crude Oil Continuous Contract (WTIC) 90.44-105.74 (bullish)\n\nNatural Gas Continuous Contract (NATGAS) 2.75-3.01 (neutral)\n\nGold Spot Price (GOLD) 4247-4473 (neutral)\n\nCopper Spot Price (COPPER) 6.24-6.80 (neutral)\n\nSilver Spot Price (SILVER) 60-65 (bearish)\n\n\n\nBest of luck out there this week,\n\nKM\n\n\n\n(VIEW LARGER IMAGE <https://model2.hedgeye.com/click/47471377.319/aHR0cHM6Ly9kMXloaWxzNml3aDVsNS5jbG91ZGZyb250Lm5ldC9jaGFydHMvcmVzaXplZC8xNjAyMTQvb3JpZ2luYWwvNGIyYmM0MjdfZjQ5ZF80MTIxXzlkMjVfMTBhZWZhZTkzZTQzLnBuZz9zcmM9ZW1haWwmZW1haWw9anBhdWxvODJAZ21haWwuY29t/65561052a51cff3724ccb7dfC4c418268>)\n\n\n\n \n\nPlease visit https://model2.hedgeye.com/click/47471377.319/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcxMzY/65561052a51cff3724ccb7dfEb66f6c84 <https://model2.hedgeye.com/click/47471377.319/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcxMzY/65561052a51cff3724ccb7dfFb66f6c84> for more information.\n\n© 2026 Hedgeye Risk Management LLC, all rights reserved. Redistribution of any part of this information is prohibited without the express written consent of Hedgeye. Hedgeye is not responsible for any errors in or omissions to this information, or for any consequences that may result from the use of this information. Hedgeye® is a registered trademark of Hedgeye Risk Management, LLC.\n\n\n\nIf you believe this has been sent to you in error, please safely unsubscribe <https://model2.hedgeye.com/oc/65561052a51cff3724ccb7dfs9h5d.8v/7d38a03d>.\n\n\n\n<https://model2.hedgeye.com/click/47471377.319/aHR0cDovL3d3dy5oZWRnZXllLmNvbQ/65561052a51cff3724ccb7dfC9122ff46>",
-    "summary": "09/14/2026 07:31 AM EDT #MOAB In AI vs. The Cycle “Roughly 10 years of work had become 77 pages of information theory.” -Sonni & Goodman on Claude Shannon Key Takeaways AI itself is not new, but the scale of today’s AI valuations and debt-fueled financing is, making the #MOAB bubble a market risk rather than a technological one. Risk signals are deteriorating across equities, with QQQ and SPY turn..."
+    "content": "# EARLY LOOK: Hedgeye For Financial Advisors\n**Data:** Tue, 15 Sep 2026 07:44:14 -0400 (EDT)\n**Remetente:** Hedgeye <info@hedgeye.com>\n**ID:** 110338\n\n---\n\nThis research was prepared exclusively for jpaulo82@gmail.com as a subscriber of Hedgeye Risk Management and may not be forwarded or otherwise provided to any unauthorized party. If you have received this transmission in error, please notify Hedgeye Risk Management <mailto:support@hedgeye.com>.\n\nHaving trouble viewing this email? View it in your browser <https://model2.hedgeye.com/click/47496199.3170/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcyMDg/65561052a51cff3724ccb7dfD43b46192>\n\n\n\n \n\n\n\n09/15/2026 07:43 AM EDT Hedgeye For Financial Advisors\n\n“There are numerous ways today’s artificial intelligence falls short of human intelligence.” -Jeff Hawkins\n\n \n\n\n\nKeith McCullough\n\n\n\n@keithmccullough\n\n\n\nKey Takeaways\n\n\n\nU.S. 10-Year yields are breaking higher toward key cycle highs, keeping inflation and Fed hike risk elevated while reinforcing Hedgeye’s shorts in long-duration bonds, credit and utilities.\n\n\n\nGold, silver and copper are under pressure as yields rise, with Hedgeye cutting positions as TRADE and TREND signals break rather than holding through drawdowns.\n\n\n\nLeadership continues to shift away from semis and industrials toward software and healthcare, reinforcing the need to follow signals, hedge risk and protect capital as the AI and market cycle changes.\n\n\n\nThe Big Picture\n\n\n\nAnd there are numerous ways today's Old Wall financial advisors fall short of Hedgeye intelligence. For some on the Old Wall, this morning's \"Claude for Financial Advisors\" panic is more legit than yesterday's end-of-world one.\n\n\n\nEveryone in financial services should be either terrified of AI or excited about it. AI still can't hedge macro market risks or #GoAnywhere the way we do with our hard-earned capital, but it's better than your grandfather's 60/40 portfolio.\n\n\n\nThat's not a compliment to AI. That's an indictment of the 60/40.\n\n\n\nHawkins explains the historical context in A Thousand Brains: since the late 1940s the AI field has cycled through \"AI summers and AI winters\" - enthusiasm followed by pessimism, followed by enthusiasm again.\n\n\n\nWe're coming out of the most expensive AI summer in market history. The Signal knows. So does The Machine. Winter is coming.\n\n\n\nMacro Grind\n\n\n\n(VIEW LARGER IMAGE <https://model2.hedgeye.com/click/47496199.3170/aHR0cHM6Ly9kMXloaWxzNml3aDVsNS5jbG91ZGZyb250Lm5ldC9jaGFydHMvcmVzaXplZC8xNjAyODIvb3JpZ2luYWwvMDkuMTUuMjAyNl9idWJibGVfY2FydG9vbi5wbmc_c3JjPWVtYWlsJmVtYWlsPWpwYXVsbzgyQGdtYWlsLmNvbQ/65561052a51cff3724ccb7dfC962a2a1d>)\n\n\n\nGot Macro Hedges for this Bond Yield breakout?\n\n\n\nDo you have insurance on your house? How about hurricane shutters if you're in the Caribbean? These aren't crazy questions. They're common-sense questions.\n\n\n\nThe only place they sound crazy is on Old Wall Street (where the fee structure depends on you not asking them).\n\n\n\nOur Macro Hedges (Shorts) with Bond Yields signaling higher-Cycle-highs remain: TLT, ZROZ, LQD, JOJO, XLU.\n\n\n\nAsk Claude the chatbot and it'll give you a balanced answer. Ask Claude about the Hedgeye Process - TRADE breaks, reduce. TREND breaks, stop out. That's not insurance. That's not paying the premium after the hurricane already hit.\n\n\n\nWhere Are Bond Yields Going Next?\n\n\n\nI don’t know\n\n\n\nClaude doesn’t know\n\n\n\nBut the fractal dimensions in my Signaling Process provide the most probable path\n\n\n\nThe Fractal Dimensions (i.e. Risk Range™ Signals) are built on real-time AI, don’t forget.\n\n\n\nWhat are the Bond Yield Levels that matter most?\n\n\n\n4.98% was The Cycle High in 2023\n\n\n\n5.29% was The Cycle High in 2007\n\n\n\nThe Risk Range™ Signal’s top-end of the Range is currently 5.05%\n\n\n\nThat means that A) you can forget about Inflation Slowing anytime soon enough for the Fed to NOT raise rates and/or B) if the Fed flakes, the Bond Market already raised rates for them.\n\n\n\nAs for Bessy Buds, he was just reminded that “The House” is The Bond Market, not a human hoping to manipulate it.\n\n\n\nIf the UST 10yr Yield were to go down after the Fed hikes, that shouldn’t surprise anyone. The Real House is always front running the Fed. Down Bond Yields would be a signal the Fed is going to contribute to slowing GROWTH.\n\n\n\nGold is going to need that because:\n\n\n\nGold does NOT like Bond Yields breaking out\n\n\n\nGold’s immediate-term TRADE Signal Level = 4395\n\n\n\nGold’s Risk Range™ Signal = 4229-4399\n\n\n\nGold’s Alpha Code = 4395/4251. That means TRADE = 4395, TREND = 4251. On a breakdown below 4251 the last of my Gold position (which is currently at its MIN position SIZE) would be stopped out.\n\n\n\n“But, but… KM… you really liked Gold a while ago and I still have a position so…”\n\n\n\nAsk Claude if KM “cares.” I sold all my Copper Miners (ICOP) on last week’s TREND breakdown and this morning Dr. Copper (CPER) broke TREND too. Sold all my Silver (SLV) on last week’s TREND breakdown because that’s what I do.\n\n\n\nThe Question for those who don’t do it the way we do is, why not?\n\n\n\nIf you bought the South Korean Stock Market Bubble Top of June 2026, why are you still bag-holding that? Dr. KOSPI was down another -0.9% overnight, taking its crash to -27.3% from its #MOAB high.\n\n\n\nHow much longer are you willing to bag-hold “Semis” stocks that are crashing like AVGO or TER?\n\n\n\nWe’re long Software (IGV, OKTA, NOW, etc.), not Semis (DRAM). We’re Long Healthcare (XLV) which was up another +1.5% yesterday, not Industrials (XLI) which were down -1.4%. We’re short Industrials 2-ways: XLI and PRN.\n\n\n\nIf your Financial Advisor's goals aren't:\n\n\n\nA) Preserve and protect YOUR hard-earned capital\n\nB) Reduce the risk of Drawdowns and Crashes in YOUR accounts\n\nC) Compound returns on YOUR hard-earned Pile over time\n\n\n\nThen fire them. Ask Claude for some alternatives. And I don't mean the chatbot.\n\n\n\nHawkins said there are numerous ways AI falls short of human intelligence. There are also numerous ways your Old Wall financial advisor falls short of both.\n\n\n\nThe AI summer won't last forever. Neither will the fee structure that depends on you not noticing.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield (UST10Y) 4.76-5.05 (bullish)\n\nHigh Yield (HYG) 78.40-79.12 (bearish)\n\nInvestment Grade Corporate Bond ETF (LQD) 103.7-105.4 (bearish)\n\nS&P 500 (SPX) 7551-7750 (bullish)\n\nNASDAQ Composite (COMPQ) 25915-26613 (neutral)\n\nRussell 2000 (RUT) 2852-2960 (bearish)\n\nHealth Care Select Sector SPDR Fund (XLV) 163-175 (bullish)\n\niShares Expanded Tech-Software Sector ETF (IGV) 100-111 (bullish)\n\nVanEck Oil Services ETF (OIH) 400-438 (bullish)\n\nVolatility Index (VIX) 14.44-18.30 (bullish)\n\nU.S. Dollar Index (USD) 98.78-99.81 (neutral)\n\nLight Crude Oil Continuous Contract (WTIC) 91.35-106.98 (bullish)\n\nNatural Gas Continuous Contract (NATGAS) 2.74-2.98 (neutral)\n\nGold Spot Price (GOLD) 4229-4399 (neutral)\n\nCopper Spot Price (COPPER) 6.19-6.53 (bearish)\n\nSilver Spot Price (SILVER) 60-65 (bearish)\n\n\n\nBest of luck out there today,\n\nKM\n\n\n\n(VIEW LARGER IMAGE <https://model2.hedgeye.com/click/47496199.3170/aHR0cHM6Ly9kMXloaWxzNml3aDVsNS5jbG91ZGZyb250Lm5ldC9jaGFydHMvcmVzaXplZC8xNjAyODIvb3JpZ2luYWwvMDY4NGEyNjJfMDc5Zl80ZDJlXzgwYWVfODMzZWJhMmFiOGQ5LnBuZz9zcmM9ZW1haWwmZW1haWw9anBhdWxvODJAZ21haWwuY29t/65561052a51cff3724ccb7dfCca9cb410>)\n\n\n\n \n\nPlease visit https://model2.hedgeye.com/click/47496199.3170/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcyMDg/65561052a51cff3724ccb7dfE43b46192 <https://model2.hedgeye.com/click/47496199.3170/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcyMDg/65561052a51cff3724ccb7dfF43b46192> for more information.\n\n© 2026 Hedgeye Risk Management LLC, all rights reserved. Redistribution of any part of this information is prohibited without the express written consent of Hedgeye. Hedgeye is not responsible for any errors in or omissions to this information, or for any consequences that may result from the use of this information. Hedgeye® is a registered trademark of Hedgeye Risk Management, LLC.\n\n\n\nIf you believe this has been sent to you in error, please safely unsubscribe <https://model2.hedgeye.com/oc/65561052a51cff3724ccb7dfsa0av.2g2/0787d7ce>.\n\n\n\n<https://model2.hedgeye.com/click/47496199.3170/aHR0cDovL3d3dy5oZWRnZXllLmNvbQ/65561052a51cff3724ccb7dfC76dc95f2>",
+    "summary": "09/15/2026 07:43 AM EDT Hedgeye For Financial Advisors “There are numerous ways today’s artificial intelligence falls short of human intelligence.” -Jeff Hawkins Key Takeaways U.S. 10-Year yields are breaking higher toward key cycle highs, keeping inflation and Fed hike risk elevated while reinforcing Hedgeye’s shorts in long-duration bonds, credit and utilities. Gold, silver and copper are under ..."
   },
   "reports": [
+    {
+      "id": "110338",
+      "filename": "hedgeye_110338_EARLY_LOOK__Hedgeye_For_Financial_Advisors.md",
+      "title": "EARLY LOOK: Hedgeye For Financial Advisors",
+      "date": "Tue, 15 Sep 2026 07:44:14 -0400 (EDT)",
+      "shortDate": "15/09/2026",
+      "sender": "Hedgeye <info@hedgeye.com>",
+      "riskRanges": [
+        {
+          "name": "10-Year U.S. Treasury Yield",
+          "ticker": "UST10Y",
+          "low": 4.76,
+          "high": 5.05,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "High Yield",
+          "ticker": "HYG",
+          "low": 78.4,
+          "high": 79.12,
+          "signal": "BEARISH"
+        },
+        {
+          "name": "Investment Grade Corporate Bond ETF",
+          "ticker": "LQD",
+          "low": 103.7,
+          "high": 105.4,
+          "signal": "BEARISH"
+        },
+        {
+          "name": "S&P 500",
+          "ticker": "SPX",
+          "low": 7551.0,
+          "high": 7750.0,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "NASDAQ Composite",
+          "ticker": "COMPQ",
+          "low": 25915.0,
+          "high": 26613.0,
+          "signal": "NEUTRAL"
+        },
+        {
+          "name": "Russell 2000",
+          "ticker": "RUT",
+          "low": 2852.0,
+          "high": 2960.0,
+          "signal": "BEARISH"
+        },
+        {
+          "name": "Health Care Select Sector SPDR Fund",
+          "ticker": "XLV",
+          "low": 163.0,
+          "high": 175.0,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "iShares Expanded Tech-Software Sector ETF",
+          "ticker": "IGV",
+          "low": 100.0,
+          "high": 111.0,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "VanEck Oil Services ETF",
+          "ticker": "OIH",
+          "low": 400.0,
+          "high": 438.0,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "Volatility Index",
+          "ticker": "VIX",
+          "low": 14.44,
+          "high": 18.3,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "U.S. Dollar Index",
+          "ticker": "USD",
+          "low": 98.78,
+          "high": 99.81,
+          "signal": "NEUTRAL"
+        },
+        {
+          "name": "Light Crude Oil Continuous Contract",
+          "ticker": "WTIC",
+          "low": 91.35,
+          "high": 106.98,
+          "signal": "BULLISH"
+        },
+        {
+          "name": "Natural Gas Continuous Contract",
+          "ticker": "NATGAS",
+          "low": 2.74,
+          "high": 2.98,
+          "signal": "NEUTRAL"
+        },
+        {
+          "name": "Gold Spot Price",
+          "ticker": "GOLD",
+          "low": 4229.0,
+          "high": 4399.0,
+          "signal": "NEUTRAL"
+        },
+        {
+          "name": "Copper Spot Price",
+          "ticker": "COPPER",
+          "low": 6.19,
+          "high": 6.53,
+          "signal": "BEARISH"
+        },
+        {
+          "name": "Silver Spot Price",
+          "ticker": "SILVER",
+          "low": 60.0,
+          "high": 65.0,
+          "signal": "BEARISH"
+        }
+      ],
+      "content": "# EARLY LOOK: Hedgeye For Financial Advisors\n**Data:** Tue, 15 Sep 2026 07:44:14 -0400 (EDT)\n**Remetente:** Hedgeye <info@hedgeye.com>\n**ID:** 110338\n\n---\n\nThis research was prepared exclusively for jpaulo82@gmail.com as a subscriber of Hedgeye Risk Management and may not be forwarded or otherwise provided to any unauthorized party. If you have received this transmission in error, please notify Hedgeye Risk Management <mailto:support@hedgeye.com>.\n\nHaving trouble viewing this email? View it in your browser <https://model2.hedgeye.com/click/47496199.3170/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcyMDg/65561052a51cff3724ccb7dfD43b46192>\n\n\n\n \n\n\n\n09/15/2026 07:43 AM EDT Hedgeye For Financial Advisors\n\n“There are numerous ways today’s artificial intelligence falls short of human intelligence.” -Jeff Hawkins\n\n \n\n\n\nKeith McCullough\n\n\n\n@keithmccullough\n\n\n\nKey Takeaways\n\n\n\nU.S. 10-Year yields are breaking higher toward key cycle highs, keeping inflation and Fed hike risk elevated while reinforcing Hedgeye’s shorts in long-duration bonds, credit and utilities.\n\n\n\nGold, silver and copper are under pressure as yields rise, with Hedgeye cutting positions as TRADE and TREND signals break rather than holding through drawdowns.\n\n\n\nLeadership continues to shift away from semis and industrials toward software and healthcare, reinforcing the need to follow signals, hedge risk and protect capital as the AI and market cycle changes.\n\n\n\nThe Big Picture\n\n\n\nAnd there are numerous ways today's Old Wall financial advisors fall short of Hedgeye intelligence. For some on the Old Wall, this morning's \"Claude for Financial Advisors\" panic is more legit than yesterday's end-of-world one.\n\n\n\nEveryone in financial services should be either terrified of AI or excited about it. AI still can't hedge macro market risks or #GoAnywhere the way we do with our hard-earned capital, but it's better than your grandfather's 60/40 portfolio.\n\n\n\nThat's not a compliment to AI. That's an indictment of the 60/40.\n\n\n\nHawkins explains the historical context in A Thousand Brains: since the late 1940s the AI field has cycled through \"AI summers and AI winters\" - enthusiasm followed by pessimism, followed by enthusiasm again.\n\n\n\nWe're coming out of the most expensive AI summer in market history. The Signal knows. So does The Machine. Winter is coming.\n\n\n\nMacro Grind\n\n\n\n(VIEW LARGER IMAGE <https://model2.hedgeye.com/click/47496199.3170/aHR0cHM6Ly9kMXloaWxzNml3aDVsNS5jbG91ZGZyb250Lm5ldC9jaGFydHMvcmVzaXplZC8xNjAyODIvb3JpZ2luYWwvMDkuMTUuMjAyNl9idWJibGVfY2FydG9vbi5wbmc_c3JjPWVtYWlsJmVtYWlsPWpwYXVsbzgyQGdtYWlsLmNvbQ/65561052a51cff3724ccb7dfC962a2a1d>)\n\n\n\nGot Macro Hedges for this Bond Yield breakout?\n\n\n\nDo you have insurance on your house? How about hurricane shutters if you're in the Caribbean? These aren't crazy questions. They're common-sense questions.\n\n\n\nThe only place they sound crazy is on Old Wall Street (where the fee structure depends on you not asking them).\n\n\n\nOur Macro Hedges (Shorts) with Bond Yields signaling higher-Cycle-highs remain: TLT, ZROZ, LQD, JOJO, XLU.\n\n\n\nAsk Claude the chatbot and it'll give you a balanced answer. Ask Claude about the Hedgeye Process - TRADE breaks, reduce. TREND breaks, stop out. That's not insurance. That's not paying the premium after the hurricane already hit.\n\n\n\nWhere Are Bond Yields Going Next?\n\n\n\nI don’t know\n\n\n\nClaude doesn’t know\n\n\n\nBut the fractal dimensions in my Signaling Process provide the most probable path\n\n\n\nThe Fractal Dimensions (i.e. Risk Range™ Signals) are built on real-time AI, don’t forget.\n\n\n\nWhat are the Bond Yield Levels that matter most?\n\n\n\n4.98% was The Cycle High in 2023\n\n\n\n5.29% was The Cycle High in 2007\n\n\n\nThe Risk Range™ Signal’s top-end of the Range is currently 5.05%\n\n\n\nThat means that A) you can forget about Inflation Slowing anytime soon enough for the Fed to NOT raise rates and/or B) if the Fed flakes, the Bond Market already raised rates for them.\n\n\n\nAs for Bessy Buds, he was just reminded that “The House” is The Bond Market, not a human hoping to manipulate it.\n\n\n\nIf the UST 10yr Yield were to go down after the Fed hikes, that shouldn’t surprise anyone. The Real House is always front running the Fed. Down Bond Yields would be a signal the Fed is going to contribute to slowing GROWTH.\n\n\n\nGold is going to need that because:\n\n\n\nGold does NOT like Bond Yields breaking out\n\n\n\nGold’s immediate-term TRADE Signal Level = 4395\n\n\n\nGold’s Risk Range™ Signal = 4229-4399\n\n\n\nGold’s Alpha Code = 4395/4251. That means TRADE = 4395, TREND = 4251. On a breakdown below 4251 the last of my Gold position (which is currently at its MIN position SIZE) would be stopped out.\n\n\n\n“But, but… KM… you really liked Gold a while ago and I still have a position so…”\n\n\n\nAsk Claude if KM “cares.” I sold all my Copper Miners (ICOP) on last week’s TREND breakdown and this morning Dr. Copper (CPER) broke TREND too. Sold all my Silver (SLV) on last week’s TREND breakdown because that’s what I do.\n\n\n\nThe Question for those who don’t do it the way we do is, why not?\n\n\n\nIf you bought the South Korean Stock Market Bubble Top of June 2026, why are you still bag-holding that? Dr. KOSPI was down another -0.9% overnight, taking its crash to -27.3% from its #MOAB high.\n\n\n\nHow much longer are you willing to bag-hold “Semis” stocks that are crashing like AVGO or TER?\n\n\n\nWe’re long Software (IGV, OKTA, NOW, etc.), not Semis (DRAM). We’re Long Healthcare (XLV) which was up another +1.5% yesterday, not Industrials (XLI) which were down -1.4%. We’re short Industrials 2-ways: XLI and PRN.\n\n\n\nIf your Financial Advisor's goals aren't:\n\n\n\nA) Preserve and protect YOUR hard-earned capital\n\nB) Reduce the risk of Drawdowns and Crashes in YOUR accounts\n\nC) Compound returns on YOUR hard-earned Pile over time\n\n\n\nThen fire them. Ask Claude for some alternatives. And I don't mean the chatbot.\n\n\n\nHawkins said there are numerous ways AI falls short of human intelligence. There are also numerous ways your Old Wall financial advisor falls short of both.\n\n\n\nThe AI summer won't last forever. Neither will the fee structure that depends on you not noticing.\n\n\n\nOur Levels\n\n\n\n10-Year U.S. Treasury Yield (UST10Y) 4.76-5.05 (bullish)\n\nHigh Yield (HYG) 78.40-79.12 (bearish)\n\nInvestment Grade Corporate Bond ETF (LQD) 103.7-105.4 (bearish)\n\nS&P 500 (SPX) 7551-7750 (bullish)\n\nNASDAQ Composite (COMPQ) 25915-26613 (neutral)\n\nRussell 2000 (RUT) 2852-2960 (bearish)\n\nHealth Care Select Sector SPDR Fund (XLV) 163-175 (bullish)\n\niShares Expanded Tech-Software Sector ETF (IGV) 100-111 (bullish)\n\nVanEck Oil Services ETF (OIH) 400-438 (bullish)\n\nVolatility Index (VIX) 14.44-18.30 (bullish)\n\nU.S. Dollar Index (USD) 98.78-99.81 (neutral)\n\nLight Crude Oil Continuous Contract (WTIC) 91.35-106.98 (bullish)\n\nNatural Gas Continuous Contract (NATGAS) 2.74-2.98 (neutral)\n\nGold Spot Price (GOLD) 4229-4399 (neutral)\n\nCopper Spot Price (COPPER) 6.19-6.53 (bearish)\n\nSilver Spot Price (SILVER) 60-65 (bearish)\n\n\n\nBest of luck out there today,\n\nKM\n\n\n\n(VIEW LARGER IMAGE <https://model2.hedgeye.com/click/47496199.3170/aHR0cHM6Ly9kMXloaWxzNml3aDVsNS5jbG91ZGZyb250Lm5ldC9jaGFydHMvcmVzaXplZC8xNjAyODIvb3JpZ2luYWwvMDY4NGEyNjJfMDc5Zl80ZDJlXzgwYWVfODMzZWJhMmFiOGQ5LnBuZz9zcmM9ZW1haWwmZW1haWw9anBhdWxvODJAZ21haWwuY29t/65561052a51cff3724ccb7dfCca9cb410>)\n\n\n\n \n\nPlease visit https://model2.hedgeye.com/click/47496199.3170/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcyMDg/65561052a51cff3724ccb7dfE43b46192 <https://model2.hedgeye.com/click/47496199.3170/aHR0cHM6Ly9hcHAuaGVkZ2V5ZS5jb20vZmVlZF9pdGVtcy8xODcyMDg/65561052a51cff3724ccb7dfF43b46192> for more information.\n\n© 2026 Hedgeye Risk Management LLC, all rights reserved. Redistribution of any part of this information is prohibited without the express written consent of Hedgeye. Hedgeye is not responsible for any errors in or omissions to this information, or for any consequences that may result from the use of this information. Hedgeye® is a registered trademark of Hedgeye Risk Management, LLC.\n\n\n\nIf you believe this has been sent to you in error, please safely unsubscribe <https://model2.hedgeye.com/oc/65561052a51cff3724ccb7dfsa0av.2g2/0787d7ce>.\n\n\n\n<https://model2.hedgeye.com/click/47496199.3170/aHR0cDovL3d3dy5oZWRnZXllLmNvbQ/65561052a51cff3724ccb7dfC76dc95f2>",
+      "summary": "09/15/2026 07:43 AM EDT Hedgeye For Financial Advisors “There are numerous ways today’s artificial intelligence falls short of human intelligence.” -Jeff Hawkins Key Takeaways U.S. 10-Year yields are breaking higher toward key cycle highs, keeping inflation and Fed hike risk elevated while reinforcing Hedgeye’s shorts in long-duration bonds, credit and utilities. Gold, silver and copper are under ..."
+    },
+    {
+      "id": "110311",
+      "filename": "hedgeye_110311_LIVE_TOMORROW__The_AI_Bubble_and_The_Market_R.md",
+      "title": "LIVE TOMORROW: The AI Bubble and The Market Risks Ahead",
+      "date": "Mon, 14 Sep 2026 12:39:22 -0600",
+      "shortDate": "14 Sep 2026",
+      "sender": "\"Hedgeye\" <Hedgeye@Hedgeye.com>",
+      "riskRanges": [],
+      "content": "# LIVE TOMORROW: The AI Bubble and The Market Risks Ahead\n**Data:** Mon, 14 Sep 2026 12:39:22 -0600\n**Remetente:** \"Hedgeye\" <Hedgeye@Hedgeye.com>\n**ID:** 110311\n\n---\n\nReal Conversation with Mike Taylor: https://info.hedgeye.com/e/764243/sks-ahead-type-market-insights/2sv9cr9/2544141968/h/WQagLjmQOTvWIwqcCV-9iwopqrc5CuHEU3e7LZlHU_8\n\n\n\nArtificial Intelligence is the biggest story in markets. It’s also creating some of the biggest risks.\n\n\n\nJoin us TOMORROW, September 15th at 11:00AM ET for a new Real Conversation as longtime Hedgeye Nation fan favorite and hedge fund manager Mike Taylor joins Hedgeye CEO Keith McCullough.\n\n\n\nThey’ll tackle the elephant in the room: the growing AI bubble and the various risks building beneath the surface.\n\n\n\nTogether they'll dig into:\n\n\n\n\tWhere the boom is most vulnerable\n\n\n\n\tWhat investors may be underestimating\n\n\n\n\tWhere the best risks and opportunities are taking shape\n\n\n\n\t\t\t\t\t\tWatch Here — Live at 11 AM ET or On-Demand → app.hedgeye.com/insights/187027-real-conversation-the-ai-bubble-and-the-market-risks-ahead?type=market-insights\n\n\t\t\t\t\t\tSee All Real Conversations → https://info.hedgeye.com/e/764243/t-type5B5D-5-real-conversation/2sv9crd/2544141968/h/WQagLjmQOTvWIwqcCV-9iwopqrc5CuHEU3e7LZlHU_8\n\n\n\nJoin us live or watch on-demand anytime.\n\n\n\n ABOUT MIKE TAYLOR\n\n\n\nMike Taylor is currently the Portfolio Manager of PINK, the Simplify Health Care ETF known as \"Shares for the Cure,\" which donates all net profits to the Susan G. Komen breast cancer foundation. He has over two decades of experience in the healthcare and biotech sectors from top firms like Citadel and Millennium.\n\n\n\nWatch Here — Live at 11 AM ET or On-Demand → app.hedgeye.com/insights/187027-real-conversation-the-ai-bubble-and-the-market-risks-ahead?type=market-insights\n\n\n\n\t\t\t\t\t\t \n\n\n\nABOUT HEDGEYE\n\n\n\nHedgeye Risk Management is an independent investment research and online financial media company, focused exclusively on generating and delivering thoughtful investment ideas in a proven buy-side process.  The firm combines quantitative, bottom-up and macro analysis with an emphasis on timing.  \n\n\n\nThe Hedgeye team features some of the most highly-regarded research analysts on Wall Street, covering Macro, Financials, Energy, Healthcare, Retail, Gaming, Lodging &amp; Leisure (GLL), Restaurants, Industrials, Consumer Staples, Internet &amp; Media, Housing, Materials, Technology, Demography and Washington policy analysis, including Macro, Energy, Healthcare, Telecom &amp; Media and Defense.\n\n\n\nUse of Hedgeye and any other products available through hedgeye.com\n\n\n\nhttps://info.hedgeye.com/e/764243/2026-09-14/2sv9crh/2544141968/h/WQagLjmQOTvWIwqcCV-9iwopqrc5CuHEU3e7LZlHU_8\n\n\n\n are subject to our Terms of Service: https://info.hedgeye.com/e/764243/t-d-l-xurkuhd-dlykxkyt-o-/2sv9crl/2544141968/h/WQagLjmQOTvWIwqcCV-9iwopqrc5CuHEU3e7LZlHU_8\n\n\n\n and Privacy Policy: https://info.hedgeye.com/e/764243/t-d-l-xurkuhd-dlykxkyt-b-/2sv9crp/2544141968/h/WQagLjmQOTvWIwqcCV-9iwopqrc5CuHEU3e7LZlHU_8\n\n\n\n.\n\n\n\n\t\t\t\t\t\t\t\t\tCopyright © 2026, All rights reserved.\n\n\n\n\t\t\t\t\t\t\t\t\tOur mailing address is:\n\n\n\n\t\t\t\t\t\t\t\t\tHedgeye Risk Management LLC\n\n\n\n\t\t\t\t\t\t\t\t\t1 High Ridge Park\n\n\n\n\t\t\t\t\t\t\t\t\tStamford, CT 06905\n\n\n\n\t\t\t\t\t\t\t\t\tunsubscribe from all emails\n\n\n\nhttps://info.hedgeye.com/unsubscribeConfirm/764243/fd3d09e3d15f5a26142f3d13b593034238062aaf2735f3891e83513eb28da347/2544141968\n\n\n\n   update subscription preferences\n\n\n\nhttps://info.hedgeye.com/emailpreferencecenter?ehash=fd3d09e3d15f5a26142f3d13b593034238062aaf2735f3891e83513eb28da347&amp;email_id=2544141968&amp;epc_hash=HjoBgkOMvUan4Rcwuz-pWlJaFxgzU5IEKrCKxPEg35M\n\n\n\n \n\n\n\n\n\n",
+      "summary": "Artificial Intelligence is the biggest story in markets. It’s also creating some of the biggest risks. Join us TOMORROW, September 15th at 11:00AM ET for a new Real Conversation as longtime Hedgeye Nation fan favorite and hedge fund manager Mike Taylor joins Hedgeye CEO Keith McCullough. They’ll tackle the elephant in the room: the growing AI bubble and the various risks building beneath the surfa..."
+    },
     {
       "id": "110258",
       "filename": "hedgeye_110258_EARLY_LOOK___MOAB_In_AI_vs__The_Cycle.md",
