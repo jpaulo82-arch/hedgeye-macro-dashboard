@@ -459,12 +459,77 @@ async function fetchPortfolioDataFromApi() {
       portfolioData.schwab.cashAvailable = data.cash_total ? data.cash_total * 0.47 : 8000;
       portfolioData.tastyworks.cashAvailable = data.cash_total ? data.cash_total * 0.53 : 9000;
       
+      if (data.master_the_market_sizing) {
+        window.masterTheMarketSizingData = data.master_the_market_sizing;
+        renderMasterTheMarketModule(data.master_the_market_sizing);
+      }
+
       renderPortfolioView(activePortfolioKey);
       renderRebalanceModalTables();
       console.log("[+] Carteira sincronizada da fonte canônica com sucesso.");
     }
   } catch (e) {
     console.warn("Falha ao carregar carteira via API:", e);
+  }
+}
+
+// Bandas por classe de ativo — mesma tabela de master_the_market_rules.py (POSITION_SIZING_BANDS),
+// usada aqui só pra rotular a coluna "% Permitido" na tabela de posições. Não fabrica número:
+// se a categoria da posição não mapear pra nenhuma banda conhecida, mostra "N/D".
+const MASTER_THE_MARKET_BAND_BY_TYPE = {
+  "Renda Fixa": { min: 3.0, mid: 6.5, max: 10.0, label: "Renda Fixa" },
+  "Renda Fixa / Caixa": { min: 10.0, mid: 20.0, max: 30.0, label: "Caixa & T-Bills (extensão da casa)" },
+  "Caixa": { min: 10.0, mid: 20.0, max: 30.0, label: "Caixa & T-Bills (extensão da casa)" },
+  "Commodities": { min: 1.0, mid: 2.5, max: 4.0, label: "Commodities" },
+  "Foreign Currency": { min: 4.0, mid: 8.0, max: 12.0, label: "Moeda Estrangeira / Ouro Físico" },
+  "Foreign Currencies": { min: 4.0, mid: 8.0, max: 12.0, label: "Moeda Estrangeira" },
+  "ETF": { min: 2.0, mid: 4.0, max: 6.0, label: "Equities / ETFs Setoriais" },
+  "Hedge / Short": { min: 1.0, mid: 2.0, max: 3.0, label: "Perna Short (Long/Short Equity)" },
+};
+
+function getAllowedBandForPosition(p) {
+  const typeGrp = p.typeGroup || "";
+  const cat = (p.cat || "").toUpperCase();
+  if (typeGrp === "Acao") {
+    if (cat.includes("SHORT")) return { min: 0.5, mid: 1.25, max: 2.0, label: "Ações — Short" };
+    return { min: 1.0, mid: 2.0, max: 3.0, label: "Ações — Long" };
+  }
+  return MASTER_THE_MARKET_BAND_BY_TYPE[typeGrp] || null;
+}
+
+function renderMasterTheMarketModule(sizing) {
+  if (!sizing) return;
+  const ouro = sizing.destaque_ouro_hoje;
+  if (ouro) {
+    const setText = (id, text) => { const el = document.getElementById(id); if (el) el.innerText = text; };
+    setText("goldSizingStatusBadge", `Ouro Hoje: ${ouro.sizing_status || "N/D"}`);
+    setText("goldMinUsd", `US$ ${(ouro.sizing_bands?.min_size?.usd_alvo || 0).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`);
+    setText("goldMinPctLabel", `Alvo: ${ouro.sizing_bands?.min_size?.pct_label || "N/D"}`);
+    setText("goldCurrentUsd", `US$ ${(ouro.posicao_atual?.valor_atual_usd || 0).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`);
+    setText("goldCurrentQty", `Cotas Atuais: ${ouro.posicao_atual?.cotas_atuais ?? "N/D"}`);
+    setText("goldCurrentPct", `Peso Atual: ${(ouro.posicao_atual?.peso_atual_pct ?? 0).toFixed(2)}%`);
+    setText("goldAction", ouro.ajuste_operacional_hoje?.acao || "N/D");
+    const cashFreed = ouro.ajuste_operacional_hoje?.caixa_liberado_usd || 0;
+    setText("goldCashFreed", cashFreed > 0 ? `Libera +US$ ${cashFreed.toLocaleString('pt-BR', { minimumFractionDigits: 2 })} em Caixa` : "");
+    setText("goldFinalPosition", `Posição Final: US$ ${(ouro.ajuste_operacional_hoje?.posicao_resultante_usd || 0).toLocaleString('pt-BR', { minimumFractionDigits: 2 })} (${(ouro.ajuste_operacional_hoje?.posicao_resultante_pct || 0).toFixed(2)}%)`);
+    const complex = ouro.complexo_ouro_total;
+    if (complex) {
+      setText("goldComplexTotal", `Complexo Total de Ouro na Carteira: AAAU + GDX + NEM = US$ ${complex.total_usd.toLocaleString('pt-BR', { minimumFractionDigits: 2 })} (${complex.total_pct.toFixed(2)}% do NAV)`);
+    }
+  }
+
+  const tbody = document.getElementById("masterTheMarketBandsBody");
+  const classes = sizing.tabela_classes_master_the_market || [];
+  if (tbody && classes.length > 0) {
+    tbody.innerHTML = classes.map(c => `
+      <tr>
+        <td><strong>${c.nome}</strong></td>
+        <td><strong style="color: #F59E0B;">${c.min_pct}%</strong><br><small>US$ ${c.min_usd.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</small></td>
+        <td><strong style="color: #38BDF8;">${c.mid_pct}%</strong><br><small>US$ ${c.mid_usd.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</small></td>
+        <td><strong style="color: #10B981;">${c.max_pct}%</strong><br><small>US$ ${c.max_usd.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</small></td>
+        <td><small>Banda oficial do livro "Master the Market" (pág. 36-37), calibrada no NAV de hoje.</small></td>
+      </tr>
+    `).join("");
   }
 }
 
@@ -931,6 +996,165 @@ function setTab(tabId) {
       renderEarlyLookTranslatedView(activeRep);
     }
   }
+  if (tabId === "etfproplus") {
+    if (etfProPlusDataCache) {
+      renderEtfProPlusTab(etfProPlusDataCache);
+    } else {
+      fetchEtfProPlusData();
+    }
+  }
+}
+
+// ============================================================
+// ETF PRO PLUS — lineup, changes log, simulação de alocação
+// ============================================================
+let etfProPlusDataCache = null;
+
+async function fetchEtfProPlusData() {
+  try {
+    const res = await fetch("/api/etf-pro-plus");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    etfProPlusDataCache = data;
+    renderEtfProPlusTab(data);
+  } catch (e) {
+    const body = document.getElementById("etfProPlusLineupBody");
+    if (body) body.innerHTML = `<tr><td colspan="6">Erro ao carregar dados do ETF Pro Plus: ${e.message}</td></tr>`;
+  }
+}
+
+function renderEtfProPlusTab(data) {
+  const updatedEl = document.getElementById("etfProPlusUpdatedAt");
+  if (updatedEl) updatedEl.textContent = `Atualizado em ${data.updatedAt || "N/D"} — ${(data.currentLineup || []).length} posições ativas`;
+
+  // Lineup atual
+  const lineupBody = document.getElementById("etfProPlusLineupBody");
+  if (lineupBody) {
+    const lineup = data.currentLineup || [];
+    if (lineup.length === 0) {
+      lineupBody.innerHTML = `<tr><td colspan="8">Nenhuma posição reconciliada ainda.</td></tr>`;
+    } else {
+      lineupBody.innerHTML = lineup.map(p => {
+        const entryCell = p.entryPrice != null
+          ? `US$ ${p.entryPrice.toLocaleString('pt-BR', {minimumFractionDigits: 2})}<br><small class="text-muted" style="font-size:0.68rem;">${p.entryPriceSource || ''}</small>`
+          : `<small class="text-muted">N/D</small>`;
+        const band = p.allowedBand;
+        const bandCell = band
+          ? `<strong style="color:#10B981;">${band.minPct}–${band.maxPct}%</strong><br><small class="text-muted" style="font-size:0.68rem;">${band.label} (alvo ${band.midPct}%)</small>`
+          : `<small class="text-muted">N/D</small>`;
+        return `
+        <tr>
+          <td>${p.name || "N/D"}</td>
+          <td><strong>${p.ticker}</strong></td>
+          <td><span class="badge ${p.side === 'long' ? 'badge-bullish' : 'badge-bearish'}">${p.side === 'long' ? '🟢 Long' : '🔴 Short'}</span></td>
+          <td>${p.assetClass || "N/D"}</td>
+          <td>${p.dateAdded || "N/D"}</td>
+          <td>${entryCell}</td>
+          <td>${bandCell}</td>
+          <td style="font-size:0.75rem; opacity:0.7;">${p.sourceOfEntry || "N/D"}</td>
+        </tr>
+      `;
+      }).join("");
+    }
+  }
+
+  // Changes log
+  const logEl = document.getElementById("etfProPlusChangesLog");
+  if (logEl) {
+    const log = data.changesLog || [];
+    if (log.length === 0) {
+      logEl.innerHTML = `<p>Nenhuma mudança registrada ainda.</p>`;
+    } else {
+      logEl.innerHTML = log.slice().reverse().map(item => `
+        <div style="padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.08);">
+          <span class="badge badge-accent">${item.type}</span>
+          <strong style="margin-left: 0.4rem;">${item.date || "N/D"}</strong>
+          <div style="margin-top: 0.3rem; font-size: 0.85rem; opacity: 0.9;">${item.summary}</div>
+        </div>
+      `).join("");
+    }
+  }
+
+  // Simulação de alocação (sizing)
+  const sizingBody = document.getElementById("etfProPlusSizingBody");
+  const sizingSubtitle = document.getElementById("etfProPlusSizingSubtitle");
+  const sizing = data.suggestedSizing;
+  if (sizingBody) {
+    if (!sizing || !sizing.sizing) {
+      sizingBody.innerHTML = `<tr><td colspan="6">Simulação de alocação ainda não gerada (rode etf_pro_plus_sizing.py).</td></tr>`;
+    } else {
+      if (sizingSubtitle) {
+        sizingSubtitle.textContent = `${sizing.methodologyNote || ""} — NAV de referência: US$ ${(sizing.nav || 0).toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+      }
+      const rows = sizing.sizing.slice().sort((a, b) => b.suggestedUsd - a.suggestedUsd);
+      sizingBody.innerHTML = rows.map(r => `
+        <tr>
+          <td>${r.name || "N/D"}</td>
+          <td><strong>${r.ticker}</strong></td>
+          <td>${r.daysHeld}d</td>
+          <td>${r.convictionScore}</td>
+          <td>${r.suggestedPct}%</td>
+          <td>US$ ${r.suggestedUsd.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</td>
+        </tr>
+      `).join("") + `
+        <tr style="font-weight:700; background: rgba(56,189,248,0.08);">
+          <td colspan="4">Total alocado</td>
+          <td>${sizing.totals?.totalPct ?? "-"}%</td>
+          <td>US$ ${(sizing.totals?.totalUsd ?? 0).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</td>
+        </tr>
+      `;
+    }
+  }
+
+  // Track record mensal (calculado a partir das mudanças reais de carteira, não de captura de tela)
+  const trackEl = document.getElementById("etfProPlusTrackRecord");
+  const tr = data.monthlyTrackRecord;
+  if (trackEl) {
+    if (!tr || !tr.monthly || tr.monthly.length === 0) {
+      trackEl.innerHTML = `<p>Track record ainda não calculado (rode etf_pro_plus_track_record.py).</p>`;
+    } else {
+      const cumByMonth = {};
+      (tr.cumulative || []).forEach(c => { cumByMonth[c.month] = c.cumulativeIndex; });
+      const rows = tr.monthly.map(m => {
+        const ret = m.monthlyReturnPct;
+        const retStr = ret === null || ret === undefined ? "N/D" : `${ret >= 0 ? "+" : ""}${ret.toFixed(2)}%`;
+        const retClass = ret === null || ret === undefined ? "" : (ret >= 0 ? "badge-bullish" : "badge-bearish");
+        const cum = cumByMonth[m.month];
+        return `
+          <tr>
+            <td>${m.month}</td>
+            <td>${m.activePositions}</td>
+            <td><span class="badge ${retClass}">${retStr}</span></td>
+            <td>${cum !== undefined ? cum.toFixed(2) : "N/D"}</td>
+          </tr>`;
+      }).join("");
+      trackEl.innerHTML = `
+        <p class="subtitle">${tr.methodologyNote || ""}</p>
+        <div class="table-responsive">
+          <table class="data-table" style="font-size: 0.84rem;">
+            <thead>
+              <tr><th>Mês</th><th>Posições Ativas</th><th>Retorno do Mês</th><th>Índice Acumulado (base 100)</th></tr>
+            </thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+        ${tr.excludedPositions && tr.excludedPositions.length > 0 ? `<p class="subtitle">${tr.excludedPositions.length} posição(ões) fora do cálculo por falta de data de entrada confiável: ${tr.excludedPositions.map(e => e.ticker).join(", ")}</p>` : ""}
+      `;
+    }
+  }
+
+  // Relatórios processados
+  const reportsBody = document.getElementById("etfProPlusReportsBody");
+  if (reportsBody) {
+    const all = [
+      ...(data.reports?.monthly || []).map(r => ({ type: "Mensal", title: r.title || r.sourceFile, date: r.reportDatetime })),
+      ...(data.reports?.weekly || []).map(r => ({ type: "Semanal", title: r.sourceFile, date: r.reportDatetime })),
+      ...(data.reports?.intraday || []).map(r => ({ type: "Diário", title: r.sourceFile, date: r.reportDatetime })),
+    ].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+    reportsBody.innerHTML = all.length === 0
+      ? `<tr><td colspan="3">Nenhum relatório processado ainda.</td></tr>`
+      : all.map(r => `<tr><td>${r.type}</td><td>${r.title}</td><td>${r.date || "N/D"}</td></tr>`).join("");
+  }
 }
 
 // TROCA DE PORTFÓLIO ATIVO
@@ -1173,6 +1397,14 @@ function renderPortfolioView(key) {
       if (cat.includes("CAIXA")) catBadge = "badge-caixa";
       if (cat.includes("RENDA")) catBadge = "badge-macro";
 
+      const band = getAllowedBandForPosition(p);
+      let bandCell = '<small class="text-muted">N/D</small>';
+      if (band) {
+        const over = weight > band.max;
+        const bandColor = over ? '#F87171' : '#94A3B8';
+        bandCell = `<strong style="color: ${over ? '#F87171' : '#10B981'};">${band.min}–${band.max}%</strong><br><small style="color: ${bandColor};">${band.label}${over ? ' — ACIMA DO TETO' : ''}</small>`;
+      }
+
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td><strong>${p.ticker}</strong> <br><small class="text-muted">${p.typeGroup || 'Ativo'}</small></td>
@@ -1182,6 +1414,7 @@ function renderPortfolioView(key) {
         <td><span class="badge ${catBadge}">${cat}</span></td>
         <td class="font-bold">US$ ${val.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
         <td><strong>${weight.toFixed(2)}%</strong></td>
+        <td>${bandCell}</td>
         <td><span class="badge ${nativeQuad.includes('3') || nativeQuad.includes('Quad3') ? 'badge-bullish' : (nativeQuad.includes('Credito') ? 'badge-bearish' : 'badge-neutral')}">${nativeQuad}</span></td>
         <td><small>${p.conduct || '-'}</small></td>
       `;

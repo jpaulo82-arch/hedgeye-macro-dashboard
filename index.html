@@ -97,6 +97,9 @@
     <button class="nav-tab" data-tab="earlylook" onclick="setTab('earlylook')">
       📥 Base & Sincronizador
     </button>
+    <button class="nav-tab" data-tab="etfproplus" onclick="setTab('etfproplus')">
+      📡 ETF Pro Plus
+    </button>
   </nav>
 
   <!-- Main Content Container -->
@@ -444,22 +447,22 @@
             </p>
           </div>
           <div style="display: flex; gap: 0.5rem; align-items: center;">
-            <span class="badge" style="background: rgba(245, 158, 11, 0.2); color: #F59E0B; border: 1px solid #F59E0B; font-weight: 700; padding: 0.35rem 0.65rem; border-radius: 6px;">Ouro Hoje: MIN SIZE</span>
+            <span class="badge" style="background: rgba(245, 158, 11, 0.2); color: #F59E0B; border: 1px solid #F59E0B; font-weight: 700; padding: 0.35rem 0.65rem; border-radius: 6px;" id="goldSizingStatusBadge">Ouro Hoje: —</span>
             <span class="badge" style="background: rgba(56, 189, 248, 0.15); color: #38BDF8; border: 1px solid #38BDF8; font-weight: 700; padding: 0.35rem 0.65rem; border-radius: 6px;">Alpha Code: 4395 / 4251</span>
           </div>
         </div>
 
         <div class="card-body">
-          <!-- CARD DE DESTAQUE: OURO HOJE -->
+          <!-- CARD DE DESTAQUE: OURO HOJE (valores preenchidos via JS a partir de /api/portfolio) -->
           <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(245, 158, 11, 0.35); border-radius: 8px; padding: 1.1rem; margin-bottom: 1.2rem;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.6rem;">
               <div>
-                <span class="badge" style="background: #F59E0B; color: #0F172A; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;">Ajuste Tático Urgente de Hoje (15/09/2026)</span>
+                <span class="badge" style="background: #F59E0B; color: #0F172A; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;">Ajuste Tático — Regra Master the Market</span>
                 <h4 style="margin: 0.4rem 0 0.2rem 0; font-size: 1.25rem; color: #F8FAFC;">
-                  🥇 Ouro Físico (AAAU) — Enquadramento em Posição MÍNIMA (MIN SIZE)
+                  🥇 Ouro Físico (AAAU) — Banda: Moeda Estrangeira / Ouro Físico (4% – 12%)
                 </h4>
                 <p style="margin: 0; font-size: 0.85rem; color: #94A3B8;">
-                  Keith McCullough confirmou no Early Look de hoje: O Ouro rompeu o sinal <strong>TRADE</strong> (fechou a US$ 4.385, abaixo do suporte de US$ 4.395), porém a tendência <strong>TREND</strong> de US$ 4.251 permanece intacta. No processo <em>Master the Market</em>, esse gatilho técnico exige <strong>redução imediata para MIN SIZE (2,0% a 3,0% do NAV)</strong>, preservando a opcionalidade de caixa sem stop out total.
+                  Quando o sinal <strong>TRADE</strong> quebra mas o <strong>TREND</strong> permanece Bullish, o processo <em>Master the Market</em> exige redução para o piso da banda (4% do NAV), preservando opcionalidade sem stop out total. Banda oficial do livro (pág. 37) — não é 8-10% como versões antigas deste módulo mostravam.
                 </p>
               </div>
             </div>
@@ -475,23 +478,22 @@
 
               <div style="background: rgba(30, 41, 59, 0.7); padding: 0.75rem; border-radius: 6px; border-left: 3px solid #F59E0B;">
                 <div style="font-size: 0.72rem; color: #94A3B8; text-transform: uppercase; font-weight: 700;">Posição Mínima Alvo (Hoje)</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #F59E0B; margin-top: 0.2rem;">US$ 6.431,31</div>
-                <div style="font-size: 0.75rem; color: #CBD5E1;">Alvo Padrão: <strong>2,50% do NAV</strong></div>
-                <div style="font-size: 0.75rem; color: #94A3B8;">Faixa: US$ 5.145 a US$ 7.718</div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #F59E0B; margin-top: 0.2rem;" id="goldMinUsd">—</div>
+                <div style="font-size: 0.75rem; color: #CBD5E1;" id="goldMinPctLabel">Alvo Padrão: —</div>
               </div>
 
               <div style="background: rgba(30, 41, 59, 0.7); padding: 0.75rem; border-radius: 6px; border-left: 3px solid #64748B;">
                 <div style="font-size: 0.72rem; color: #94A3B8; text-transform: uppercase; font-weight: 700;">Posição Atual em AAAU</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #F8FAFC; margin-top: 0.2rem;">US$ 8.677,00</div>
-                <div style="font-size: 0.75rem; color: #CBD5E1;">Cotas Atuais: <strong>200 cotas</strong></div>
-                <div style="font-size: 0.75rem; color: #F59E0B;">Peso Atual: <strong>3,37% do NAV</strong></div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #F8FAFC; margin-top: 0.2rem;" id="goldCurrentUsd">—</div>
+                <div style="font-size: 0.75rem; color: #CBD5E1;" id="goldCurrentQty">Cotas Atuais: —</div>
+                <div style="font-size: 0.75rem; color: #F59E0B;" id="goldCurrentPct">Peso Atual: —</div>
               </div>
 
               <div style="background: rgba(239, 68, 68, 0.12); padding: 0.75rem; border-radius: 6px; border-left: 3px solid #EF4444;">
                 <div style="font-size: 0.72rem; color: #F87171; text-transform: uppercase; font-weight: 700;">Ajuste Operacional Recomendado</div>
-                <div style="font-size: 1.1rem; font-weight: 800; color: #F87171; margin-top: 0.2rem;">VENDER 52 COTAS</div>
-                <div style="font-size: 0.75rem; color: #34D399; font-weight: 600;">Libera +US$ 2.256,02 em Caixa</div>
-                <div style="font-size: 0.75rem; color: #CBD5E1;">Posição Final: 148 cotas (2,50%)</div>
+                <div style="font-size: 1.1rem; font-weight: 800; color: #F87171; margin-top: 0.2rem;" id="goldAction">—</div>
+                <div style="font-size: 0.75rem; color: #34D399; font-weight: 600;" id="goldCashFreed"></div>
+                <div style="font-size: 0.75rem; color: #CBD5E1;" id="goldFinalPosition"></div>
               </div>
             </div>
 
@@ -500,56 +502,29 @@
               <div>
                 <strong style="color: #EF4444;">🛑 Linha na Areia (Stop Out Definitivo):</strong> Fechamento diário abaixo de <strong>US$ 4.251 Spot</strong> quebra o TREND de médio prazo e aciona o <strong>Stop Out Total (0 cotas / 0,0%)</strong>.
               </div>
-              <div>
-                <strong style="color: #F59E0B;">Complexo Total de Ouro na Carteira:</strong> AAAU (US$ 8.677) + GDX (US$ 5.961) + NEM (US$ 1.815) = <strong>US$ 16.453,48 (6,40% do NAV)</strong>.
+              <div id="goldComplexTotal">
+                <strong style="color: #F59E0B;">Complexo Total de Ouro na Carteira:</strong> —
               </div>
             </div>
           </div>
 
-          <!-- TABELA DE REGRAS DE DIMENSIONAMENTO MASTER THE MARKET -->
+          <!-- TABELA DE REGRAS DE DIMENSIONAMENTO MASTER THE MARKET (gerada via JS a partir de master_the_market_rules.py) -->
           <h4 style="margin: 0.8rem 0 0.5rem 0; font-size: 0.95rem; color: #E2E8F0; text-transform: uppercase; letter-spacing: 0.5px;">
-            📊 Tabela Oficial de Bandas de Alocação (Master the Market)
+            📊 Tabela Oficial de Bandas de Alocação (Master the Market, Cap. 4)
           </h4>
           <div class="table-responsive">
             <table class="data-table" style="font-size: 0.83rem;">
               <thead>
                 <tr>
                   <th>Classe de Ativo / Instrumento</th>
-                  <th style="color: #F59E0B;">MIN SIZE (Tamanho Mínimo)</th>
-                  <th style="color: #38BDF8;">MID SIZE (Tamanho Médio)</th>
-                  <th style="color: #10B981;">MAX SIZE (Tamanho Máximo)</th>
+                  <th style="color: #F59E0B;">MIN SIZE</th>
+                  <th style="color: #38BDF8;">MID SIZE</th>
+                  <th style="color: #10B981;">MAX SIZE</th>
                   <th>Gatilho Operacional do Processo</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr style="background: rgba(245, 158, 11, 0.06);">
-                  <td><strong>🥇 Commodities & ETFs Macro</strong><br><small class="text-muted">Ouro (AAAU), Petróleo (USO/WTI), Índices</small></td>
-                  <td><strong style="color: #F59E0B;">2,0% – 3,0%</strong><br><small>Alvo: US$ 6.431 (2,5%)</small></td>
-                  <td><strong style="color: #38BDF8;">4,0% – 6,0%</strong><br><small>Alvo: US$ 12.863 (5,0%)</small></td>
-                  <td><strong style="color: #10B981;">8,0% – 10,0%</strong><br><small>Alvo: US$ 25.725 (10,0%)</small></td>
-                  <td><small>MIN em Bearish TRADE / Bullish TREND; MID em consolidação; MAX no piso do range em Quad favorável.</small></td>
-                </tr>
-                <tr>
-                  <td><strong>🏢 Ações Core de Alta Qualidade</strong><br><small class="text-muted">MELI, GOOGL, META, Broadcom</small></td>
-                  <td><strong style="color: #F59E0B;">1,0% – 1,5%</strong><br><small>Alvo: US$ 3.215 (1,25%)</small></td>
-                  <td><strong style="color: #38BDF8;">2,0% – 2,5%</strong><br><small>Alvo: US$ 6.431 (2,5%)</small></td>
-                  <td><strong style="color: #10B981;">3,5% – 4,0%</strong><br><small>Alvo: US$ 10.290 (4,0%)</small></td>
-                  <td><small>Nunca ultrapassar 4,0–5,0% em ações individuais para evitar risco não-sistemático de cauda.</small></td>
-                </tr>
-                <tr>
-                  <td><strong>🚀 Teses Satélites & TAIL (3+ Anos)</strong><br><small class="text-muted">HUMN (Robótica), DRIV, FOTO, ALAB, CRDO</small></td>
-                  <td><strong style="color: #F59E0B;">0,5%</strong><br><small>Alvo: US$ 1.286 (0,5%)</small></td>
-                  <td><strong style="color: #38BDF8;">1,0%</strong><br><small>Alvo: US$ 2.573 (1,0%)</small></td>
-                  <td><strong style="color: #10B981;">2,0%</strong><br><small>Alvo: US$ 5.145 (2,0%)</small></td>
-                  <td><small>Teses de alta convexidade mantidas em tamanho pequeno para não contaminar a volatilidade do portfólio.</small></td>
-                </tr>
-                <tr>
-                  <td><strong>🛡️ Caixa & T-Bills (SGOV)</strong><br><small class="text-muted">Preservação de capital e poder de compra</small></td>
-                  <td><strong style="color: #F59E0B;">10,0%</strong><br><small>US$ 25.725 (10,0%)</small></td>
-                  <td><strong style="color: #38BDF8;">20,0%</strong><br><small>US$ 51.450 (20,0%)</small></td>
-                  <td><strong style="color: #10B981;">30,0%</strong><br><small>US$ 77.176 (30,0%)</small></td>
-                  <td><small>Aumentar em regimes de desaceleração (Quad 3/Quad 4) para garantir liquidez na hora de comprar os pisos de Risk Range.</small></td>
-                </tr>
+              <tbody id="masterTheMarketBandsBody">
+                <tr><td colspan="5">Carregando bandas...</td></tr>
               </tbody>
             </table>
           </div>
@@ -679,6 +654,7 @@
                   <th>Categoria</th>
                   <th>Market Value</th>
                   <th>Peso (%)</th>
+                  <th>% Permitido (Master the Market)</th>
                   <th>Quadrante Nativo</th>
                   <th>Conduta Recomendada</th>
                 </tr>
@@ -1830,6 +1806,121 @@
       </div>
     </section>
 
+    <!-- ========================================================
+         ETF PRO PLUS — Lineup, mudanças, simulação de alocação
+         ======================================================== -->
+    <section id="tab-etfproplus" class="tab-content">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">📡</span> ETF Pro Plus — Lineup Atual</h3>
+            <p class="subtitle" id="etfProPlusUpdatedAt">Carregando...</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="data-table" style="font-size: 0.84rem;">
+              <thead>
+                <tr>
+                  <th>Ativo</th>
+                  <th>Ticker</th>
+                  <th>Lado</th>
+                  <th>Classe de Ativo</th>
+                  <th>Data de Entrada</th>
+                  <th>Preço de Entrada</th>
+                  <th>% Min–Máx Permitido</th>
+                  <th>Fonte</th>
+                </tr>
+              </thead>
+              <tbody id="etfProPlusLineupBody">
+                <tr><td colspan="8">Carregando lineup...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">🔄</span> O Que Mudou</h3>
+            <p class="subtitle">Log cronológico de todo relatório processado (semanal, diário e mensal)</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div id="etfProPlusChangesLog">
+            <p>Carregando changes log...</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">🧮</span> Simulação de Alocação (Referência)</h3>
+            <p class="subtitle" id="etfProPlusSizingSubtitle">Carteira real não é alterada — isto é só uma foto de tamanhos sugeridos.</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="data-table" style="font-size: 0.84rem;">
+              <thead>
+                <tr>
+                  <th>Ativo</th>
+                  <th>Ticker</th>
+                  <th>Dias em Carteira</th>
+                  <th>Conviction</th>
+                  <th>% Sugerido</th>
+                  <th>US$ Sugerido</th>
+                </tr>
+              </thead>
+              <tbody id="etfProPlusSizingBody">
+                <tr><td colspan="6">Carregando simulação de alocação...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">📈</span> Track Record</h3>
+            <p class="subtitle">Baseado em snapshots do Total Return por posição capturados do dashboard da Hedgeye</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div id="etfProPlusTrackRecord">
+            <p>Ainda sem snapshots suficientes para montar a curva de performance. Cada captura nova (exportada como texto/CSV, não print de tela) alimenta esta seção automaticamente.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">📚</span> Relatórios Processados</h3>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="data-table" style="font-size: 0.84rem;">
+              <thead>
+                <tr>
+                  <th>Tipo</th>
+                  <th>Título / Arquivo</th>
+                  <th>Data do Relatório</th>
+                </tr>
+              </thead>
+              <tbody id="etfProPlusReportsBody">
+                <tr><td colspan="3">Carregando...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Container Oculto para Impressão -->
@@ -2254,6 +2345,6 @@
   <div class="toast-notification" id="toastNotification">Notificação</div>
 
   <!-- Script Principal da Aplicação -->
-  <script src="app.js?v=20260911_V10_RECOVERY_FORM"></script>
+  <script src="app.js?v=20260915_V11_MTM_SIZING"></script>
 </body>
 </html>
