@@ -1816,6 +1816,9 @@
             <h3><span class="icon">📡</span> ETF Pro Plus — Lineup Atual</h3>
             <p class="subtitle" id="etfProPlusUpdatedAt">Carregando...</p>
           </div>
+          <button class="btn btn-outline btn-sm" id="etfProPlusSyncBtn" onclick="syncEtfProPlus()" title="Reprocessar os PDFs baixados e recalcular sizing + track record">
+            <span class="icon" id="etfProPlusSyncIcon">🔄</span> <span id="etfProPlusSyncText">Reprocessar Relatórios</span>
+          </button>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -1829,11 +1832,12 @@
                   <th>Data de Entrada</th>
                   <th>Preço de Entrada</th>
                   <th>% Min–Máx Permitido</th>
+                  <th>Quadrante GIP</th>
                   <th>Fonte</th>
                 </tr>
               </thead>
               <tbody id="etfProPlusLineupBody">
-                <tr><td colspan="8">Carregando lineup...</td></tr>
+                <tr><td colspan="9">Carregando lineup...</td></tr>
               </tbody>
             </table>
           </div>
@@ -1869,13 +1873,15 @@
                   <th>Ativo</th>
                   <th>Ticker</th>
                   <th>Dias em Carteira</th>
+                  <th>Posição no Risk Range</th>
                   <th>Conviction</th>
+                  <th>Quadrante GIP</th>
                   <th>% Sugerido</th>
                   <th>US$ Sugerido</th>
                 </tr>
               </thead>
               <tbody id="etfProPlusSizingBody">
-                <tr><td colspan="6">Carregando simulação de alocação...</td></tr>
+                <tr><td colspan="8">Carregando simulação de alocação...</td></tr>
               </tbody>
             </table>
           </div>

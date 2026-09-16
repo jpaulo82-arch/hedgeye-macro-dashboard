@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-15T15:12:51.762161",
+  "generatedAt": "2026-09-15T15:38:47.214208",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -29,7 +29,7 @@
           "periodStart": "2023-11-01",
           "periodEnd": "2023-11-30",
           "priceStart": 17.428,
-          "priceEnd": 17.5503,
+          "priceEnd": 17.5502,
           "returnPct": 0.702
         }
       ]
@@ -125,7 +125,7 @@
           "periodStart": "2024-05-01",
           "periodEnd": "2024-05-31",
           "priceStart": 18.0135,
-          "priceEnd": 18.1134,
+          "priceEnd": 18.1135,
           "returnPct": 0.555
         }
       ]
@@ -1159,7 +1159,7 @@
     {
       "month": "2026-09",
       "activePositions": 40,
-      "monthlyReturnPct": 0.283,
+      "monthlyReturnPct": 0.247,
       "details": [
         {
           "ticker": "BUXX",
@@ -1167,8 +1167,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 20.182,
-          "priceEnd": 20.2,
-          "returnPct": 0.089
+          "priceEnd": 20.205,
+          "returnPct": 0.114
         },
         {
           "ticker": "AAAU",
@@ -1176,8 +1176,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 42.67,
-          "priceEnd": 42.38,
-          "returnPct": -0.68
+          "priceEnd": 42.415,
+          "returnPct": -0.598
         },
         {
           "ticker": "CLOX",
@@ -1185,8 +1185,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 25.525,
-          "priceEnd": 25.56,
-          "returnPct": 0.137
+          "priceEnd": 25.565,
+          "returnPct": 0.157
         },
         {
           "ticker": "CLOZ",
@@ -1194,8 +1194,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 26.052,
-          "priceEnd": 26.1781,
-          "returnPct": 0.484
+          "priceEnd": 26.18,
+          "returnPct": 0.491
         },
         {
           "ticker": "FXH",
@@ -1203,8 +1203,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 133.01,
-          "priceEnd": 131.27,
-          "returnPct": -1.308
+          "priceEnd": 131.15,
+          "returnPct": -1.398
         },
         {
           "ticker": "XLV",
@@ -1212,8 +1212,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 171.67,
-          "priceEnd": 167.76,
-          "returnPct": -2.278
+          "priceEnd": 167.68,
+          "returnPct": -2.324
         },
         {
           "ticker": "COLO",
@@ -1221,8 +1221,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 48.69,
-          "priceEnd": 50.87,
-          "returnPct": 4.477
+          "priceEnd": 50.77,
+          "returnPct": 4.272
         },
         {
           "ticker": "IGV",
@@ -1230,8 +1230,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 106.18,
-          "priceEnd": 106.4799,
-          "returnPct": 0.282
+          "priceEnd": 106.31,
+          "returnPct": 0.122
         },
         {
           "ticker": "LVHI",
@@ -1239,8 +1239,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 42.6593,
-          "priceEnd": 42.445,
-          "returnPct": -0.502
+          "priceEnd": 42.405,
+          "returnPct": -0.596
         },
         {
           "ticker": "OIH",
@@ -1248,8 +1248,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 426.88,
-          "priceEnd": 412.32,
-          "returnPct": -3.411
+          "priceEnd": 411.7,
+          "returnPct": -3.556
         },
         {
           "ticker": "FXC",
@@ -1266,8 +1266,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 163.4,
-          "priceEnd": 153.75,
-          "returnPct": -5.906
+          "priceEnd": 153.67,
+          "returnPct": -5.955
         },
         {
           "ticker": "MSOS",
@@ -1275,8 +1275,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 4.93,
-          "priceEnd": 4.9201,
-          "returnPct": -0.201
+          "priceEnd": 4.8901,
+          "returnPct": -0.809
         },
         {
           "ticker": "IBIT",
@@ -1284,8 +1284,8 @@
           "periodStart": "2026-09-02",
           "periodEnd": "2026-09-15",
           "priceStart": 43.79,
-          "priceEnd": 43.485,
-          "returnPct": -0.697
+          "priceEnd": 43.1903,
+          "returnPct": -1.369
         },
         {
           "ticker": "DBMF",
@@ -1293,8 +1293,8 @@
           "periodStart": "2026-09-03",
           "periodEnd": "2026-09-15",
           "priceStart": 31.41,
-          "priceEnd": 32.26,
-          "returnPct": 2.706
+          "priceEnd": 32.255,
+          "returnPct": 2.69
         },
         {
           "ticker": "WEAT",
@@ -1302,8 +1302,8 @@
           "periodStart": "2026-09-04",
           "periodEnd": "2026-09-15",
           "priceStart": 26.49,
-          "priceEnd": 26.365,
-          "returnPct": -0.472
+          "priceEnd": 26.33,
+          "returnPct": -0.604
         },
         {
           "ticker": "EWS",
@@ -1311,8 +1311,8 @@
           "periodStart": "2026-09-09",
           "periodEnd": "2026-09-15",
           "priceStart": 33.77,
-          "priceEnd": 33.155,
-          "returnPct": -1.821
+          "priceEnd": 33.135,
+          "returnPct": -1.88
         },
         {
           "ticker": "CORN",
@@ -1320,8 +1320,8 @@
           "periodStart": "2026-09-09",
           "periodEnd": "2026-09-15",
           "priceStart": 19.83,
-          "priceEnd": 20.03,
-          "returnPct": 1.009
+          "priceEnd": 20.0476,
+          "returnPct": 1.097
         },
         {
           "ticker": "VFLO",
@@ -1329,8 +1329,8 @@
           "periodStart": "2026-09-11",
           "periodEnd": "2026-09-15",
           "priceStart": 53.88,
-          "priceEnd": 54.645,
-          "returnPct": 1.42
+          "priceEnd": 54.5971,
+          "returnPct": 1.331
         },
         {
           "ticker": "EWZ",
@@ -1338,8 +1338,8 @@
           "periodStart": "2026-09-11",
           "periodEnd": "2026-09-15",
           "priceStart": 38.19,
-          "priceEnd": 37.95,
-          "returnPct": -0.628
+          "priceEnd": 37.88,
+          "returnPct": -0.812
         },
         {
           "ticker": "QAT",
@@ -1356,8 +1356,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 105.22,
-          "priceEnd": 104.215,
-          "returnPct": 0.955
+          "priceEnd": 104.25,
+          "returnPct": 0.922
         },
         {
           "ticker": "TLT",
@@ -1365,8 +1365,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 81.87,
-          "priceEnd": 80.67,
-          "returnPct": 1.466
+          "priceEnd": 80.685,
+          "returnPct": 1.447
         },
         {
           "ticker": "PBD",
@@ -1374,8 +1374,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 17.48,
-          "priceEnd": 17.01,
-          "returnPct": 2.689
+          "priceEnd": 16.995,
+          "returnPct": 2.775
         },
         {
           "ticker": "XLU",
@@ -1383,8 +1383,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 42.56,
-          "priceEnd": 41.51,
-          "returnPct": 2.467
+          "priceEnd": 41.44,
+          "returnPct": 2.632
         },
         {
           "ticker": "ZROZ",
@@ -1392,8 +1392,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 58.45,
-          "priceEnd": 57.58,
-          "returnPct": 1.488
+          "priceEnd": 57.6,
+          "returnPct": 1.454
         },
         {
           "ticker": "JOJO",
@@ -1401,8 +1401,8 @@
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
           "priceStart": 14.949,
-          "priceEnd": 14.829,
-          "returnPct": 0.803
+          "priceEnd": 14.81,
+          "returnPct": 0.93
         },
         {
           "ticker": "JETS",
@@ -1410,8 +1410,8 @@
           "periodStart": "2026-09-03",
           "periodEnd": "2026-09-15",
           "priceStart": 28.42,
-          "priceEnd": 27.99,
-          "returnPct": 1.513
+          "priceEnd": 27.85,
+          "returnPct": 2.006
         },
         {
           "ticker": "PRN",
@@ -1419,8 +1419,8 @@
           "periodStart": "2026-09-04",
           "periodEnd": "2026-09-15",
           "priceStart": 200.35,
-          "priceEnd": 190.73,
-          "returnPct": 4.802
+          "priceEnd": 190.975,
+          "returnPct": 4.679
         },
         {
           "ticker": "JOET",
@@ -1428,8 +1428,8 @@
           "periodStart": "2026-09-04",
           "periodEnd": "2026-09-15",
           "priceStart": 45.73,
-          "priceEnd": 44.87,
-          "returnPct": 1.881
+          "priceEnd": 44.9296,
+          "returnPct": 1.75
         },
         {
           "ticker": "XLI",
@@ -1437,8 +1437,8 @@
           "periodStart": "2026-09-08",
           "periodEnd": "2026-09-15",
           "priceStart": 174.42,
-          "priceEnd": 169.39,
-          "returnPct": 2.884
+          "priceEnd": 169.28,
+          "returnPct": 2.947
         },
         {
           "ticker": "INDA",
@@ -1446,8 +1446,8 @@
           "periodStart": "2026-09-11",
           "periodEnd": "2026-09-15",
           "priceStart": 48.57,
-          "priceEnd": 47.605,
-          "returnPct": 1.987
+          "priceEnd": 47.585,
+          "returnPct": 2.028
         },
         {
           "ticker": "IWM",
@@ -1455,8 +1455,8 @@
           "periodStart": "2026-09-14",
           "periodEnd": "2026-09-15",
           "priceStart": 287.91,
-          "priceEnd": 285.709,
-          "returnPct": 0.764
+          "priceEnd": 285.345,
+          "returnPct": 0.891
         },
         {
           "ticker": "EWA",
@@ -1464,8 +1464,8 @@
           "periodStart": "2026-09-14",
           "periodEnd": "2026-09-15",
           "priceStart": 29.06,
-          "priceEnd": 28.9,
-          "returnPct": 0.551
+          "priceEnd": 28.885,
+          "returnPct": 0.602
         },
         {
           "ticker": "EWL",
@@ -1473,8 +1473,8 @@
           "periodStart": "2026-09-14",
           "periodEnd": "2026-09-15",
           "priceStart": 60.49,
-          "priceEnd": 60.285,
-          "returnPct": 0.339
+          "priceEnd": 60.24,
+          "returnPct": 0.413
         },
         {
           "ticker": "EWP",
@@ -1667,7 +1667,7 @@
     },
     {
       "month": "2026-09",
-      "cumulativeIndex": 135.173
+      "cumulativeIndex": 135.125
     }
   ],
   "excludedPositions": [],

@@ -1,47 +1,47 @@
 {
-  "updated_at": "15/09/2026 15:27:09",
+  "updated_at": "16/09/2026 09:31:14",
   "gex": [
     {
       "ticker": "SPY",
-      "current_price": 757.44,
-      "net_gex_million": -8148.27,
-      "regime": "SHORT GAMMA",
-      "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
-      "call_wall": 760.0,
-      "put_wall": 750.0,
-      "zero_gamma_level": 385.0,
-      "total_call_oi": 1252249,
-      "total_put_oi": 3781163,
-      "put_call_ratio": 3.02,
-      "updated_at": "15/09/2026 15:26:32"
+      "current_price": 757.39,
+      "net_gex_million": 669.79,
+      "regime": "LONG GAMMA",
+      "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
+      "call_wall": 758.0,
+      "put_wall": 755.0,
+      "zero_gamma_level": 390.0,
+      "total_call_oi": 1397220,
+      "total_put_oi": 4038093,
+      "put_call_ratio": 2.89,
+      "updated_at": "16/09/2026 09:30:43"
     },
     {
       "ticker": "QQQ",
-      "current_price": 705.1,
-      "net_gex_million": -2483.4,
-      "regime": "SHORT GAMMA",
-      "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
-      "call_wall": 710.0,
-      "put_wall": 700.0,
-      "zero_gamma_level": 355.0,
-      "total_call_oi": 1203668,
-      "total_put_oi": 1565882,
-      "put_call_ratio": 1.3,
-      "updated_at": "15/09/2026 15:26:34"
+      "current_price": 704.54,
+      "net_gex_million": 642.86,
+      "regime": "LONG GAMMA",
+      "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
+      "call_wall": 705.0,
+      "put_wall": 704.0,
+      "zero_gamma_level": 375.0,
+      "total_call_oi": 1198476,
+      "total_put_oi": 1636948,
+      "put_call_ratio": 1.37,
+      "updated_at": "16/09/2026 09:30:44"
     },
     {
       "ticker": "IWM",
-      "current_price": 285.51,
-      "net_gex_million": -3982.39,
-      "regime": "SHORT GAMMA",
-      "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
-      "call_wall": 290.0,
-      "put_wall": 285.0,
-      "zero_gamma_level": 220.0,
-      "total_call_oi": 627871,
-      "total_put_oi": 1834244,
-      "put_call_ratio": 2.92,
-      "updated_at": "15/09/2026 15:26:35"
+      "current_price": 285.14,
+      "net_gex_million": 0.86,
+      "regime": "LONG GAMMA",
+      "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
+      "call_wall": 286.0,
+      "put_wall": 283.0,
+      "zero_gamma_level": 272.5,
+      "total_call_oi": 638785,
+      "total_put_oi": 1752331,
+      "put_call_ratio": 2.74,
+      "updated_at": "16/09/2026 09:30:46"
     }
   ],
   "fundamentals": [
@@ -49,12 +49,12 @@
       "ticker": "MELI",
       "shortName": "MercadoLibre, Inc.",
       "sector": "Consumer Cyclical",
-      "price": 1852.86,
-      "pe": "50.5x",
-      "ev_ebitda": "26.7x",
+      "price": 1828.94,
+      "pe": "51.8x",
+      "ev_ebitda": "25.7x",
       "net_margin": "5.3%",
       "revenue_growth": "+49.8%",
-      "market_cap": "US$ 93.9B",
+      "market_cap": "US$ 92.7B",
       "beta": "1.31",
       "recommendation": "BUY"
     },
@@ -62,12 +62,12 @@
       "ticker": "GOOGL",
       "shortName": "Alphabet Inc.",
       "sector": "Communication Services",
-      "price": 344.01,
+      "price": 344.98,
       "pe": "17.3x",
-      "ev_ebitda": "24.1x",
+      "ev_ebitda": "23.8x",
       "net_margin": "54.8%",
       "revenue_growth": "+24.2%",
-      "market_cap": "US$ 4207.2B",
+      "market_cap": "US$ 4219.1B",
       "beta": "1.23",
       "recommendation": "STRONG_BUY"
     },
@@ -75,12 +75,12 @@
       "ticker": "UBER",
       "shortName": "Uber Technologies, Inc.",
       "sector": "Technology",
-      "price": 71.73,
+      "price": 71.43,
       "pe": "15.7x",
-      "ev_ebitda": "21.2x",
+      "ev_ebitda": "20.9x",
       "net_margin": "17.3%",
       "revenue_growth": "+12.2%",
-      "market_cap": "US$ 146.5B",
+      "market_cap": "US$ 145.9B",
       "beta": "1.16",
       "recommendation": "BUY"
     },
@@ -88,12 +88,12 @@
       "ticker": "AVGO",
       "shortName": "Broadcom Inc.",
       "sector": "Technology",
-      "price": 339.74,
-      "pe": "43.4x",
-      "ev_ebitda": "32.2x",
+      "price": 339.27,
+      "pe": "43.3x",
+      "ev_ebitda": "31.7x",
       "net_margin": "42.9%",
       "revenue_growth": "+85.5%",
-      "market_cap": "US$ 1621.8B",
+      "market_cap": "US$ 1619.5B",
       "beta": "1.46",
       "recommendation": "STRONG_BUY"
     },
@@ -101,12 +101,12 @@
       "ticker": "ASML",
       "shortName": "ASML Holding N.V. - New York Re",
       "sector": "Technology",
-      "price": 1594.16,
+      "price": 1591.48,
       "pe": "54.1x",
-      "ev_ebitda": "2491.5x",
+      "ev_ebitda": "2517.3x",
       "net_margin": "30.1%",
       "revenue_growth": "+21.3%",
-      "market_cap": "US$ 612.3B",
+      "market_cap": "US$ 611.3B",
       "beta": "1.36",
       "recommendation": "STRONG_BUY"
     },
@@ -114,12 +114,12 @@
       "ticker": "META",
       "shortName": "Meta Platforms, Inc.",
       "sector": "Communication Services",
-      "price": 669.0,
-      "pe": "25.2x",
-      "ev_ebitda": "15.7x",
+      "price": 670.24,
+      "pe": "25.3x",
+      "ev_ebitda": "15.8x",
       "net_margin": "29.8%",
       "revenue_growth": "+28.0%",
-      "market_cap": "US$ 1704.3B",
+      "market_cap": "US$ 1707.4B",
       "beta": "1.24",
       "recommendation": "STRONG_BUY"
     },
@@ -127,12 +127,12 @@
       "ticker": "FN",
       "shortName": "Fabrinet",
       "sector": "Technology",
-      "price": 376.38,
-      "pe": "28.9x",
-      "ev_ebitda": "24.2x",
+      "price": 374.91,
+      "pe": "28.7x",
+      "ev_ebitda": "23.7x",
       "net_margin": "10.2%",
       "revenue_growth": "+44.6%",
-      "market_cap": "US$ 13.5B",
+      "market_cap": "US$ 13.4B",
       "beta": "1.21",
       "recommendation": "BUY"
     },
@@ -140,12 +140,12 @@
       "ticker": "ALAB",
       "shortName": "Astera Labs, Inc.",
       "sector": "Technology",
-      "price": 256.41,
-      "pe": "126.3x",
-      "ev_ebitda": "152.0x",
+      "price": 252.54,
+      "pe": "125.0x",
+      "ev_ebitda": "149.3x",
       "net_margin": "30.7%",
       "revenue_growth": "+104.5%",
-      "market_cap": "US$ 44.5B",
+      "market_cap": "US$ 43.8B",
       "beta": "3.78",
       "recommendation": "BUY"
     },
@@ -153,12 +153,12 @@
       "ticker": "COHR",
       "shortName": "Coherent Corp.",
       "sector": "Technology",
-      "price": 270.52,
-      "pe": "65.5x",
-      "ev_ebitda": "38.0x",
+      "price": 271.17,
+      "pe": "65.8x",
+      "ev_ebitda": "38.6x",
       "net_margin": "11.3%",
       "revenue_growth": "+33.7%",
-      "market_cap": "US$ 53.0B",
+      "market_cap": "US$ 53.1B",
       "beta": "2.10",
       "recommendation": "BUY"
     },
@@ -166,12 +166,12 @@
       "ticker": "CRDO",
       "shortName": "Credo Technology Group Holding ",
       "sector": "Technology",
-      "price": 151.12,
-      "pe": "53.2x",
-      "ev_ebitda": "50.6x",
+      "price": 150.39,
+      "pe": "53.0x",
+      "ev_ebitda": "50.7x",
       "net_margin": "33.8%",
       "revenue_growth": "+114.7%",
-      "market_cap": "US$ 28.4B",
+      "market_cap": "US$ 28.3B",
       "beta": "3.23",
       "recommendation": "STRONG_BUY"
     },
@@ -179,12 +179,12 @@
       "ticker": "ARM",
       "shortName": "Arm Holdings plc",
       "sector": "Technology",
-      "price": 243.71,
-      "pe": "248.7x",
-      "ev_ebitda": "236.8x",
+      "price": 241.83,
+      "pe": "244.3x",
+      "ev_ebitda": "239.6x",
       "net_margin": "20.2%",
       "revenue_growth": "+22.4%",
-      "market_cap": "US$ 260.3B",
+      "market_cap": "US$ 258.3B",
       "beta": "3.89",
       "recommendation": "BUY"
     },
@@ -192,12 +192,12 @@
       "ticker": "MTSI",
       "shortName": "MACOM Technology Solutions Hold",
       "sector": "Technology",
-      "price": 237.92,
-      "pe": "75.8x",
-      "ev_ebitda": "65.4x",
+      "price": 240.02,
+      "pe": "76.4x",
+      "ev_ebitda": "65.5x",
       "net_margin": "20.7%",
       "revenue_growth": "+35.8%",
-      "market_cap": "US$ 18.2B",
+      "market_cap": "US$ 18.3B",
       "beta": "1.71",
       "recommendation": "BUY"
     },
@@ -205,9 +205,9 @@
       "ticker": "AXTI",
       "shortName": "AXT Inc",
       "sector": "Technology",
-      "price": 57.67,
-      "pe": "1922.3x",
-      "ev_ebitda": "254.0x",
+      "price": 57.7,
+      "pe": "1923.3x",
+      "ev_ebitda": "257.0x",
       "net_margin": "3.2%",
       "revenue_growth": "+164.8%",
       "market_cap": "US$ 3.8B",
@@ -218,12 +218,12 @@
       "ticker": "TSEM",
       "shortName": "Tower Semiconductor Ltd.",
       "sector": "Technology",
-      "price": 193.62,
+      "price": 195.12,
       "pe": "76.8x",
-      "ev_ebitda": "33.9x",
+      "ev_ebitda": "34.7x",
       "net_margin": "16.9%",
       "revenue_growth": "+23.7%",
-      "market_cap": "US$ 21.9B",
+      "market_cap": "US$ 22.1B",
       "beta": "0.89",
       "recommendation": "STRONG_BUY"
     },
@@ -231,12 +231,12 @@
       "ticker": "INTC",
       "shortName": "Intel Corporation",
       "sector": "Technology",
-      "price": 97.19,
-      "pe": "Fwd 47.5x",
+      "price": 97.14,
+      "pe": "Fwd 47.1x",
       "ev_ebitda": "31.3x",
       "net_margin": "-19.8%",
       "revenue_growth": "+25.4%",
-      "market_cap": "US$ 513.7B",
+      "market_cap": "US$ 513.5B",
       "beta": "2.23",
       "recommendation": "BUY"
     },
@@ -244,12 +244,12 @@
       "ticker": "NOK",
       "shortName": "Nokia Corporation Sponsored",
       "sector": "Technology",
-      "price": 9.86,
-      "pe": "70.4x",
-      "ev_ebitda": "20.1x",
+      "price": 9.84,
+      "pe": "70.3x",
+      "ev_ebitda": "20.5x",
       "net_margin": "3.5%",
       "revenue_growth": "+8.4%",
-      "market_cap": "US$ 55.2B",
+      "market_cap": "US$ 55.1B",
       "beta": "0.77",
       "recommendation": "BUY"
     },
@@ -257,12 +257,12 @@
       "ticker": "NEM",
       "shortName": "Newmont Corporation",
       "sector": "Basic Materials",
-      "price": 123.2,
-      "pe": "15.5x",
-      "ev_ebitda": "7.4x",
+      "price": 124.19,
+      "pe": "15.6x",
+      "ev_ebitda": "7.5x",
       "net_margin": "33.4%",
       "revenue_growth": "+15.1%",
-      "market_cap": "US$ 129.8B",
+      "market_cap": "US$ 130.9B",
       "beta": "0.54",
       "recommendation": "BUY"
     },
@@ -270,12 +270,12 @@
       "ticker": "BE",
       "shortName": "Bloom Energy Corporation",
       "sector": "Industrials",
-      "price": 259.64,
-      "pe": "337.2x",
-      "ev_ebitda": "181.2x",
+      "price": 259.35,
+      "pe": "332.5x",
+      "ev_ebitda": "182.8x",
       "net_margin": "7.9%",
       "revenue_growth": "+165.5%",
-      "market_cap": "US$ 76.5B",
+      "market_cap": "US$ 76.4B",
       "beta": "3.81",
       "recommendation": "BUY"
     },
@@ -283,9 +283,9 @@
       "ticker": "MLI",
       "shortName": "Mueller Industries, Inc.",
       "sector": "Industrials",
-      "price": 60.6,
-      "pe": "15.8x",
-      "ev_ebitda": "10.9x",
+      "price": 60.53,
+      "pe": "15.6x",
+      "ev_ebitda": "11.0x",
       "net_margin": "18.2%",
       "revenue_growth": "+25.5%",
       "market_cap": "US$ 13.4B",
@@ -296,7 +296,7 @@
       "ticker": "AAAU",
       "shortName": "Goldman Sachs Physical Gold ETF",
       "sector": "N/A",
-      "price": 42.44,
+      "price": 42.36,
       "pe": "N/D",
       "ev_ebitda": "N/D",
       "net_margin": "N/D",
@@ -309,7 +309,7 @@
       "ticker": "GDX",
       "shortName": "VanEck Gold Miners ETF",
       "sector": "N/A",
-      "price": 94.03,
+      "price": 94.13,
       "pe": "12.1x",
       "ev_ebitda": "N/D",
       "net_margin": "N/D",
@@ -322,7 +322,7 @@
       "ticker": "SLV",
       "shortName": "iShares Silver Trust",
       "sector": "N/A",
-      "price": 57.67,
+      "price": 57.53,
       "pe": "N/D",
       "ev_ebitda": "N/D",
       "net_margin": "N/D",
@@ -1037,17 +1037,17 @@
         "name": "QUAD 1: Goldilocks (G ↑, I ↓)",
         "desc": "Tech Líder (QQQ), Consumo Discricionário (XLY), Small Caps / High Beta (IWM), Crédito High Yield (HYG)",
         "color": "#3B82F6",
-        "ret_1d": "-0.76%",
-        "ret_1d_val": -0.76,
-        "ret_5d": "-1.30%",
-        "ret_5d_val": -1.3,
+        "ret_1d": "-0.82%",
+        "ret_1d_val": -0.82,
+        "ret_5d": "-1.36%",
+        "ret_5d_val": -1.36,
         "ret_prev_5d_val": -0.19,
-        "acceleration": "-1.11%",
-        "acceleration_val": -1.11,
+        "acceleration": "-1.17%",
+        "acceleration_val": -1.17,
         "accel_state": "#DECELERATING (Perdendo Força)",
         "accel_badge": "badge-bearish",
-        "ret_30d": "-3.81%",
-        "ret_30d_val": -3.81,
+        "ret_30d": "-3.87%",
+        "ret_30d_val": -3.87,
         "series": [
           0.0,
           -0.85,
@@ -1069,36 +1069,36 @@
           -3.27,
           -2.75,
           -3.08,
-          -3.81
+          -3.87
         ],
         "assets": [
           {
             "ticker": "QQQ",
-            "price": 705.135009765625,
-            "ret_1d": "-0.57%",
-            "ret_30d": "-3.39%",
-            "ret_30d_val": -3.39
+            "price": 704.5399780273438,
+            "ret_1d": "-0.65%",
+            "ret_30d": "-3.47%",
+            "ret_30d_val": -3.47
           },
           {
             "ticker": "XLY",
-            "price": 111.09500122070312,
-            "ret_1d": "-1.56%",
-            "ret_30d": "-4.84%",
-            "ret_30d_val": -4.84
+            "price": 110.87999725341797,
+            "ret_1d": "-1.75%",
+            "ret_30d": "-5.03%",
+            "ret_30d_val": -5.03
           },
           {
             "ticker": "IWM",
-            "price": 285.5799865722656,
-            "ret_1d": "-0.81%",
-            "ret_30d": "-6.08%",
-            "ret_30d_val": -6.08
+            "price": 285.1400146484375,
+            "ret_1d": "-0.70%",
+            "ret_30d": "-5.98%",
+            "ret_30d_val": -5.98
           },
           {
             "ticker": "HYG",
-            "price": 78.44000244140625,
-            "ret_1d": "-0.11%",
-            "ret_30d": "-0.93%",
-            "ret_30d_val": -0.93
+            "price": 78.37999725341797,
+            "ret_1d": "-0.19%",
+            "ret_30d": "-1.01%",
+            "ret_30d_val": -1.01
           }
         ]
       },
@@ -1106,17 +1106,17 @@
         "name": "QUAD 2: Reflação (G ↑, I ↑)",
         "desc": "Commodities Amplas (DBC), Cobre Físico (CPER), Industriais (XLI), Materiais Básicos (XLB)",
         "color": "#10B981",
-        "ret_1d": "+0.74%",
-        "ret_1d_val": 0.74,
-        "ret_5d": "-1.46%",
-        "ret_5d_val": -1.46,
+        "ret_1d": "+0.63%",
+        "ret_1d_val": 0.63,
+        "ret_5d": "-1.57%",
+        "ret_5d_val": -1.57,
         "ret_prev_5d_val": 1.52,
-        "acceleration": "-2.99%",
-        "acceleration_val": -2.99,
+        "acceleration": "-3.09%",
+        "acceleration_val": -3.09,
         "accel_state": "#DECELERATING (Perdendo Força)",
         "accel_badge": "badge-bearish",
-        "ret_30d": "-1.32%",
-        "ret_30d_val": -1.32,
+        "ret_30d": "-1.42%",
+        "ret_30d_val": -1.42,
         "series": [
           0.0,
           -1.25,
@@ -1138,36 +1138,36 @@
           -1.0,
           -0.95,
           -2.08,
-          -1.32
+          -1.42
         ],
         "assets": [
           {
             "ticker": "DBC",
-            "price": 33.70500183105469,
-            "ret_1d": "+1.67%",
-            "ret_30d": "+10.29%",
-            "ret_30d_val": 10.29
+            "price": 33.68000030517578,
+            "ret_1d": "+1.60%",
+            "ret_30d": "+10.21%",
+            "ret_30d_val": 10.21
           },
           {
             "ticker": "CPER",
-            "price": 38.70000076293945,
-            "ret_1d": "+1.15%",
-            "ret_30d": "-3.56%",
-            "ret_30d_val": -3.56
+            "price": 38.66999816894531,
+            "ret_1d": "+1.07%",
+            "ret_30d": "-3.64%",
+            "ret_30d_val": -3.64
           },
           {
             "ticker": "XLI",
-            "price": 169.33999633789062,
-            "ret_1d": "-0.35%",
-            "ret_30d": "-9.11%",
-            "ret_30d_val": -9.11
+            "price": 168.85000610351562,
+            "ret_1d": "-0.64%",
+            "ret_30d": "-9.38%",
+            "ret_30d_val": -9.38
           },
           {
             "ticker": "XLB",
-            "price": 50.724998474121094,
-            "ret_1d": "+0.47%",
-            "ret_30d": "-2.90%",
-            "ret_30d_val": -2.9
+            "price": 50.72999954223633,
+            "ret_1d": "+0.48%",
+            "ret_30d": "-2.89%",
+            "ret_30d_val": -2.89
           }
         ]
       },
@@ -1175,17 +1175,17 @@
         "name": "QUAD 3: Estagflação (G ↓, I ↑)",
         "desc": "Ouro Físico (GLD), Utilities (XLU), Energia (XLE), Tech Qualidade Secular (XLK)",
         "color": "#F59E0B",
-        "ret_1d": "+0.38%",
-        "ret_1d_val": 0.38,
-        "ret_5d": "-1.70%",
-        "ret_5d_val": -1.7,
+        "ret_1d": "+0.25%",
+        "ret_1d_val": 0.25,
+        "ret_5d": "-1.83%",
+        "ret_5d_val": -1.83,
         "ret_prev_5d_val": 1.42,
-        "acceleration": "-3.12%",
-        "acceleration_val": -3.12,
+        "acceleration": "-3.25%",
+        "acceleration_val": -3.25,
         "accel_state": "#DECELERATING (Perdendo Força)",
         "accel_badge": "badge-bearish",
-        "ret_30d": "-1.72%",
-        "ret_30d_val": -1.72,
+        "ret_30d": "-1.84%",
+        "ret_30d_val": -1.84,
         "series": [
           0.0,
           -0.7,
@@ -1207,36 +1207,36 @@
           -1.23,
           -0.75,
           -2.13,
-          -1.72
+          -1.84
         ],
         "assets": [
           {
             "ticker": "GLD",
-            "price": 394.7699890136719,
-            "ret_1d": "+0.49%",
-            "ret_30d": "-2.64%",
-            "ret_30d_val": -2.64
+            "price": 394.1499938964844,
+            "ret_1d": "+0.33%",
+            "ret_30d": "-2.80%",
+            "ret_30d_val": -2.8
           },
           {
             "ticker": "XLU",
-            "price": 41.4900016784668,
-            "ret_1d": "-0.79%",
-            "ret_30d": "-6.09%",
-            "ret_30d_val": -6.09
+            "price": 41.31999969482422,
+            "ret_1d": "-1.20%",
+            "ret_30d": "-6.47%",
+            "ret_30d_val": -6.47
           },
           {
             "ticker": "XLE",
-            "price": 65.8499984741211,
-            "ret_1d": "+2.05%",
-            "ret_30d": "+5.23%",
-            "ret_30d_val": 5.23
+            "price": 65.93000030517578,
+            "ret_1d": "+2.17%",
+            "ret_30d": "+5.35%",
+            "ret_30d_val": 5.35
           },
           {
             "ticker": "XLK",
-            "price": 183.89500427246094,
-            "ret_1d": "-0.21%",
-            "ret_30d": "-3.38%",
-            "ret_30d_val": -3.38
+            "price": 183.74000549316406,
+            "ret_1d": "-0.29%",
+            "ret_30d": "-3.46%",
+            "ret_30d_val": -3.46
           }
         ]
       },
@@ -1244,17 +1244,17 @@
         "name": "QUAD 4: Deflação (G ↓, I ↓)",
         "desc": "Treasuries 7-10Y (IEF), Saúde (XLV), Consumo Básico (XLP), Utilities (XLU)",
         "color": "#A855F7",
-        "ret_1d": "-0.35%",
-        "ret_1d_val": -0.35,
-        "ret_5d": "-0.67%",
-        "ret_5d_val": -0.67,
+        "ret_1d": "-0.55%",
+        "ret_1d_val": -0.55,
+        "ret_5d": "-0.87%",
+        "ret_5d_val": -0.87,
         "ret_prev_5d_val": -1.22,
-        "acceleration": "+0.54%",
-        "acceleration_val": 0.54,
+        "acceleration": "+0.35%",
+        "acceleration_val": 0.35,
         "accel_state": "#ACCELERATING (Ganhando Força)",
         "accel_badge": "badge-bullish",
-        "ret_30d": "-2.07%",
-        "ret_30d_val": -2.07,
+        "ret_30d": "-2.26%",
+        "ret_30d_val": -2.26,
         "series": [
           0.0,
           0.6,
@@ -1276,36 +1276,36 @@
           -1.98,
           -2.05,
           -1.73,
-          -2.07
+          -2.26
         ],
         "assets": [
           {
             "ticker": "IEF",
-            "price": 90.8499984741211,
-            "ret_1d": "-0.09%",
-            "ret_30d": "-1.79%",
-            "ret_30d_val": -1.79
+            "price": 90.81999969482422,
+            "ret_1d": "-0.12%",
+            "ret_30d": "-1.82%",
+            "ret_30d_val": -1.82
           },
           {
             "ticker": "XLV",
-            "price": 167.72999572753906,
-            "ret_1d": "-0.01%",
-            "ret_30d": "+0.41%",
-            "ret_30d_val": 0.41
+            "price": 167.66000366210938,
+            "ret_1d": "-0.05%",
+            "ret_30d": "+0.37%",
+            "ret_30d_val": 0.37
           },
           {
             "ticker": "XLP",
-            "price": 83.98999786376953,
-            "ret_1d": "-0.51%",
-            "ret_30d": "-0.81%",
-            "ret_30d_val": -0.81
+            "price": 83.7300033569336,
+            "ret_1d": "-0.82%",
+            "ret_30d": "-1.12%",
+            "ret_30d_val": -1.12
           },
           {
             "ticker": "XLU",
-            "price": 41.4900016784668,
-            "ret_1d": "-0.79%",
-            "ret_30d": "-6.09%",
-            "ret_30d_val": -6.09
+            "price": 41.31999969482422,
+            "ret_1d": "-1.20%",
+            "ret_30d": "-6.47%",
+            "ret_30d_val": -6.47
           }
         ]
       }
@@ -1313,47 +1313,47 @@
     "macro_ratios": {
       "growth_roc": {
         "name": "Aceleração do Crescimento (QQQ / IEF)",
-        "roc_5d": "-0.42%",
-        "roc_5d_val": -0.42,
+        "roc_5d": "-0.47%",
+        "roc_5d_val": -0.47,
         "status": "Crescimento Desacelerando (G ↓)",
         "quad_bias": "QUAD 3 / QUAD 4"
       },
       "inflation_roc": {
         "name": "Aceleração da Inflação (GLD / IEF)",
-        "roc_5d": "-1.00%",
-        "roc_5d_val": -1.0,
+        "roc_5d": "-1.12%",
+        "roc_5d_val": -1.12,
         "status": "Inflação Desacelerando (I ↓)",
         "quad_bias": "QUAD 1 / QUAD 4"
       },
       "cyclical_roc": {
         "name": "Ímpeto Cíclico vs Defensivo (XLI / XLP)",
-        "roc_5d": "-2.53%",
-        "roc_5d_val": -2.53,
+        "roc_5d": "-2.51%",
+        "roc_5d_val": -2.51,
         "status": "Busca por Defensivos / Preservação",
         "quad_bias": "QUAD 3 / QUAD 4"
       },
       "commodity_roc": {
         "name": "Pressão de Energia & Insumos (XLE / SGOV)",
-        "roc_5d": "+0.78%",
-        "roc_5d_val": 0.78,
+        "roc_5d": "+0.91%",
+        "roc_5d_val": 0.91,
         "status": "Choque de Insumos Físicos",
         "quad_bias": "QUAD 2 / QUAD 3"
       }
     },
     "leading_today": "QUAD 2",
     "leading_month": "QUAD 2",
-    "transition_signal": "🟡 PRENÚNCIO DE QUAD 2 (Reflação): Commodities industriais (Cobre, Energia, AIRR) acelerando a +-2.99% na 2ª derivada, superando o ouro. Possível repique de yields e alívio em cíclicos.",
+    "transition_signal": "🟡 PRENÚNCIO DE QUAD 2 (Reflação): Commodities industriais (Cobre, Energia, AIRR) acelerando a +-3.09% na 2ª derivada, superando o ouro. Possível repique de yields e alívio em cíclicos.",
     "signal_badge": "badge-neutral",
-    "updated_at": "15/09/2026 15:27:01"
+    "updated_at": "16/09/2026 09:31:06"
   },
   "economic_calendar": {
-    "updated_at": "15/09/2026 15:27:01",
+    "updated_at": "16/09/2026 09:31:06",
     "current_week": "14/09 a 18/09/2026",
     "events": [
       {
-        "date_str": "16/09 (Amanhã - Qua) 10:30 EDT",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "16/09 (Hoje - Qua) 10:30 EDT",
+        "tag": "HOJE",
+        "is_today": true,
         "indicator": "Crude Oil Inventories (EIA) & Mortgage Demand (MBA)",
         "consensus": "Estoques de Energia / Demanda Imobiliária",
         "quad_impact": "Queda em estoques de óleo impulsiona WTI (teto em US$ 97,53); juros de hipoteca em alta mantêm Housing (ITB) em drawdown.",
@@ -1362,8 +1362,8 @@
         "badge_class": "badge-bullish"
       },
       {
-        "date_str": "17/09 (Qui) 08:30 EDT",
-        "tag": "PRÓXIMO",
+        "date_str": "17/09 (Amanhã - Qui) 08:30 EDT",
+        "tag": "AMANHÃ",
         "is_today": false,
         "indicator": "Initial Jobless Claims (Pedidos de Seguro-Desemprego)",
         "consensus": "Consenso: 228k (Mercado de trabalho resiliente)",
@@ -1373,8 +1373,8 @@
         "badge_class": "badge-bearish"
       },
       {
-        "date_str": "17/09 (Qui) 08:30 EDT",
-        "tag": "PRÓXIMO",
+        "date_str": "17/09 (Amanhã - Qui) 08:30 EDT",
+        "tag": "AMANHÃ",
         "is_today": false,
         "indicator": "PPI (Preços ao Produtor - Final Demand)",
         "consensus": "Consenso: +0,3% MoM | Reaceleração de Atacado",
@@ -1433,143 +1433,143 @@
     {
       "ticker": "ASML",
       "earnings_date": "14/10/2026",
-      "days_until": 29,
+      "days_until": 28,
       "eps_consensus": "US$ 10.58",
       "revenue_consensus": "US$ 11.66B",
-      "status": "Em 29 dias"
+      "status": "Em 28 dias"
     },
     {
       "ticker": "MLI",
       "earnings_date": "20/10/2026",
-      "days_until": 35,
+      "days_until": 34,
       "eps_consensus": "US$ 1.08",
       "revenue_consensus": "US$ 1.28B",
-      "status": "Em 35 dias"
+      "status": "Em 34 dias"
     },
     {
       "ticker": "INTC",
       "earnings_date": "22/10/2026",
-      "days_until": 37,
+      "days_until": 36,
       "eps_consensus": "US$ 0.39",
       "revenue_consensus": "US$ 16.42B",
-      "status": "Em 37 dias"
+      "status": "Em 36 dias"
     },
     {
       "ticker": "NOK",
       "earnings_date": "22/10/2026",
-      "days_until": 37,
+      "days_until": 36,
       "eps_consensus": "US$ 0.07",
       "revenue_consensus": "US$ 5.06B",
-      "status": "Em 37 dias"
+      "status": "Em 36 dias"
     },
     {
       "ticker": "NEM",
       "earnings_date": "22/10/2026",
-      "days_until": 37,
+      "days_until": 36,
       "eps_consensus": "US$ 1.94",
       "revenue_consensus": "US$ 6.22B",
-      "status": "Em 37 dias"
+      "status": "Em 36 dias"
     },
     {
       "ticker": "BE",
       "earnings_date": "27/10/2026",
-      "days_until": 42,
+      "days_until": 41,
       "eps_consensus": "US$ 0.67",
       "revenue_consensus": "US$ 1.06B",
-      "status": "Em 42 dias"
+      "status": "Em 41 dias"
     },
     {
       "ticker": "GOOGL",
       "earnings_date": "28/10/2026",
-      "days_until": 43,
+      "days_until": 42,
       "eps_consensus": "US$ 3.01",
       "revenue_consensus": "US$ 127.23B",
-      "status": "Em 43 dias"
+      "status": "Em 42 dias"
     },
     {
       "ticker": "META",
       "earnings_date": "28/10/2026",
-      "days_until": 43,
+      "days_until": 42,
       "eps_consensus": "US$ 6.97",
       "revenue_consensus": "US$ 63.32B",
-      "status": "Em 43 dias"
+      "status": "Em 42 dias"
     },
     {
       "ticker": "AXTI",
       "earnings_date": "29/10/2026",
-      "days_until": 44,
+      "days_until": 43,
       "eps_consensus": "US$ 0.31",
       "revenue_consensus": "US$ 66.0M",
-      "status": "Em 44 dias"
+      "status": "Em 43 dias"
     },
     {
       "ticker": "FN",
       "earnings_date": "02/11/2026",
-      "days_until": 48,
+      "days_until": 47,
       "eps_consensus": "US$ 4.18",
       "revenue_consensus": "US$ 1.40B",
-      "status": "Em 48 dias"
+      "status": "Em 47 dias"
     },
     {
       "ticker": "UBER",
       "earnings_date": "03/11/2026",
-      "days_until": 49,
+      "days_until": 48,
       "eps_consensus": "US$ 0.87",
       "revenue_consensus": "US$ 14.68B",
-      "status": "Em 49 dias"
+      "status": "Em 48 dias"
     },
     {
       "ticker": "ALAB",
       "earnings_date": "03/11/2026",
-      "days_until": 49,
+      "days_until": 48,
       "eps_consensus": "US$ 1.19",
       "revenue_consensus": "US$ 550.6M",
-      "status": "Em 49 dias"
+      "status": "Em 48 dias"
     },
     {
       "ticker": "MELI",
       "earnings_date": "04/11/2026",
-      "days_until": 50,
+      "days_until": 49,
       "eps_consensus": "US$ 9.67",
       "revenue_consensus": "US$ 10.57B",
-      "status": "Em 50 dias"
+      "status": "Em 49 dias"
     },
     {
       "ticker": "COHR",
       "earnings_date": "04/11/2026",
-      "days_until": 50,
+      "days_until": 49,
       "eps_consensus": "US$ 1.96",
       "revenue_consensus": "US$ 2.30B",
-      "status": "Em 50 dias"
+      "status": "Em 49 dias"
     },
     {
       "ticker": "ARM",
       "earnings_date": "04/11/2026",
-      "days_until": 50,
+      "days_until": 49,
       "eps_consensus": "US$ 0.47",
       "revenue_consensus": "US$ 1.38B",
-      "status": "Em 50 dias"
+      "status": "Em 49 dias"
     },
     {
       "ticker": "MTSI",
       "earnings_date": "05/11/2026",
-      "days_until": 51,
+      "days_until": 50,
       "eps_consensus": "US$ 2.00",
       "revenue_consensus": "US$ 420.4M",
-      "status": "Em 51 dias"
+      "status": "Em 50 dias"
     },
     {
       "ticker": "TSEM",
       "earnings_date": "09/11/2026",
-      "days_until": 55,
+      "days_until": 54,
       "eps_consensus": "US$ 1.06",
       "revenue_consensus": "US$ 522.4M",
-      "status": "Em 55 dias"
+      "status": "Em 54 dias"
     },
     {
       "ticker": "CRDO",
       "earnings_date": "30/11/2026",
-      "days_until": 76,
+      "days_until": 75,
       "eps_consensus": "US$ 1.28",
       "revenue_consensus": "US$ 531.8M",
       "status": "Próximo Tri"
@@ -1577,7 +1577,7 @@
     {
       "ticker": "AVGO",
       "earnings_date": "09/12/2026",
-      "days_until": 85,
+      "days_until": 84,
       "eps_consensus": "US$ 3.83",
       "revenue_consensus": "US$ 34.88B",
       "status": "Próximo Tri"

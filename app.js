@@ -1010,6 +1010,63 @@ function setTab(tabId) {
 // ============================================================
 let etfProPlusDataCache = null;
 
+async function syncEtfProPlus() {
+  const btn = document.getElementById("etfProPlusSyncBtn");
+  const icon = document.getElementById("etfProPlusSyncIcon");
+  const text = document.getElementById("etfProPlusSyncText");
+  if (btn) btn.disabled = true;
+  if (icon) icon.classList.add("spin");
+  if (text) text.innerText = "Reprocessando...";
+  showToast("🔄 Reprocessando relatórios do ETF Pro Plus (parser + sizing + track record)...");
+
+  let triggered = false;
+  try {
+    const res = await fetch("/api/etf-pro-plus-sync", { method: "POST", headers: { "Content-Type": "application/json" } });
+    triggered = res.ok;
+  } catch (e) {}
+
+  const finish = async (confirmed, message) => {
+    if (btn) btn.disabled = false;
+    if (icon) icon.classList.remove("spin");
+    if (text) text.innerText = "Reprocessar Relatórios";
+    etfProPlusDataCache = null;
+    await fetchEtfProPlusData();
+    showToast(confirmed ? "✅ ETF Pro Plus atualizado!" : `⚠️ ${message || "Não foi possível confirmar o reprocessamento."}`);
+  };
+
+  if (!triggered) {
+    await finish(false, "Servidor local não encontrado.");
+    return;
+  }
+
+  let tries = 0;
+  const MAX_TRIES = 45; // 45 * 2s = 90s de tolerância (parser + sizing + track record com yfinance)
+  const checkInterval = setInterval(async () => {
+    tries++;
+    try {
+      const res = await fetch("/api/etf-pro-plus-sync-status");
+      if (res.ok) {
+        const status = await res.json();
+        if (!status.isSyncing) {
+          clearInterval(checkInterval);
+          await finish(true);
+        } else if (tries >= MAX_TRIES) {
+          clearInterval(checkInterval);
+          await finish(false, "Ainda reprocessando em segundo plano — confira de novo em instantes.");
+        }
+      } else if (tries >= 6) {
+        clearInterval(checkInterval);
+        await finish(false, "Não consegui confirmar o status.");
+      }
+    } catch (err) {
+      if (tries >= MAX_TRIES) {
+        clearInterval(checkInterval);
+        await finish(false, "Não consegui confirmar o status.");
+      }
+    }
+  }, 2000);
+}
+
 async function fetchEtfProPlusData() {
   try {
     const res = await fetch("/api/etf-pro-plus");
@@ -1032,7 +1089,7 @@ function renderEtfProPlusTab(data) {
   if (lineupBody) {
     const lineup = data.currentLineup || [];
     if (lineup.length === 0) {
-      lineupBody.innerHTML = `<tr><td colspan="8">Nenhuma posição reconciliada ainda.</td></tr>`;
+      lineupBody.innerHTML = `<tr><td colspan="9">Nenhuma posição reconciliada ainda.</td></tr>`;
     } else {
       lineupBody.innerHTML = lineup.map(p => {
         const entryCell = p.entryPrice != null
@@ -1041,6 +1098,10 @@ function renderEtfProPlusTab(data) {
         const band = p.allowedBand;
         const bandCell = band
           ? `<strong style="color:#10B981;">${band.minPct}–${band.maxPct}%</strong><br><small class="text-muted" style="font-size:0.68rem;">${band.label} (alvo ${band.midPct}%)</small>`
+          : `<small class="text-muted">N/D</small>`;
+        const quads = p.nativeQuads || [];
+        const quadCell = quads.length > 0
+          ? `<strong>${quads.map(q => `Q${q}`).join('/')}</strong><br><small class="text-muted" style="font-size:0.68rem;">${p.quadNote || ''}</small>`
           : `<small class="text-muted">N/D</small>`;
         return `
         <tr>
@@ -1051,6 +1112,7 @@ function renderEtfProPlusTab(data) {
           <td>${p.dateAdded || "N/D"}</td>
           <td>${entryCell}</td>
           <td>${bandCell}</td>
+          <td>${quadCell}</td>
           <td style="font-size:0.75rem; opacity:0.7;">${p.sourceOfEntry || "N/D"}</td>
         </tr>
       `;
@@ -1081,24 +1143,33 @@ function renderEtfProPlusTab(data) {
   const sizing = data.suggestedSizing;
   if (sizingBody) {
     if (!sizing || !sizing.sizing) {
-      sizingBody.innerHTML = `<tr><td colspan="6">Simulação de alocação ainda não gerada (rode etf_pro_plus_sizing.py).</td></tr>`;
+      sizingBody.innerHTML = `<tr><td colspan="8">Simulação de alocação ainda não gerada (rode etf_pro_plus_sizing.py).</td></tr>`;
     } else {
       if (sizingSubtitle) {
         sizingSubtitle.textContent = `${sizing.methodologyNote || ""} — NAV de referência: US$ ${(sizing.nav || 0).toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
       }
       const rows = sizing.sizing.slice().sort((a, b) => b.suggestedUsd - a.suggestedUsd);
-      sizingBody.innerHTML = rows.map(r => `
+      sizingBody.innerHTML = rows.map(r => {
+        const rangeCell = r.rangeScore != null
+          ? `${(r.rangeScore * 100).toFixed(0)}% da faixa favorável<br><small class="text-muted" style="font-size:0.68rem;">Range: ${r.riskRangeLow ?? 'N/D'}–${r.riskRangeHigh ?? 'N/D'} | Preço: ${r.livePrice ?? 'N/D'}</small>`
+          : `<small class="text-muted">Sem Risk Range</small>`;
+        const quads = r.nativeQuads || [];
+        const quadCell = quads.length > 0 ? `<strong>${quads.map(q => `Q${q}`).join('/')}</strong>` : `<small class="text-muted">N/D</small>`;
+        return `
         <tr>
           <td>${r.name || "N/D"}</td>
           <td><strong>${r.ticker}</strong></td>
-          <td>${r.daysHeld}d</td>
+          <td>${r.daysHeld != null ? r.daysHeld + 'd' : 'N/D'}</td>
+          <td>${rangeCell}</td>
           <td>${r.convictionScore}</td>
+          <td>${quadCell}</td>
           <td>${r.suggestedPct}%</td>
           <td>US$ ${r.suggestedUsd.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</td>
         </tr>
-      `).join("") + `
+      `;
+      }).join("") + `
         <tr style="font-weight:700; background: rgba(56,189,248,0.08);">
-          <td colspan="4">Total alocado</td>
+          <td colspan="6">Total alocado</td>
           <td>${sizing.totals?.totalPct ?? "-"}%</td>
           <td>US$ ${(sizing.totals?.totalUsd ?? 0).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</td>
         </tr>
@@ -4109,38 +4180,45 @@ async function syncReportsOnDemand() {
   }
 
   if (syncTriggered) {
-    // Aguarda o backend local processar
+    // Aguarda o backend local processar. A cadeia real (Gmail IMAP + market_analytics +
+    // sync_engine + git push) pode levar até ~2 minutos — NUNCA declarar sucesso sem
+    // confirmar isSyncing:false, senão a UI mente que terminou enquanto ainda roda atrás.
     let tries = 0;
+    const MAX_TRIES = 90; // 90 * 2s = 180s de tolerância real
+    if (textTab) textTab.innerText = "Sincronizando (pode levar até 2 min)...";
     const checkInterval = setInterval(async () => {
       tries++;
       try {
         const res = await fetch("/api/sync-status");
         if (res.ok) {
           const status = await res.json();
-          if (!status.isSyncing || tries >= 10) {
+          if (!status.isSyncing) {
             clearInterval(checkInterval);
-            await finishSync(true);
+            await finishSync(true, status.message);
+          } else if (tries >= MAX_TRIES) {
+            clearInterval(checkInterval);
+            await finishSync(false, "Ainda sincronizando em segundo plano — pode demorar mais que o esperado. Confira de novo em instantes.");
           }
         } else if (tries >= 6) {
           clearInterval(checkInterval);
-          await finishSync(true);
+          await finishSync(false, "Não consegui confirmar o status da sincronização.");
         }
       } catch (err) {
-        if (tries >= 4) {
+        if (tries >= MAX_TRIES) {
           clearInterval(checkInterval);
-          await finishSync(true);
+          await finishSync(false, "Não consegui confirmar o status da sincronização.");
         }
       }
-    }, 1500);
+    }, 2000);
   } else {
     // Se acessando da nuvem ou sem o server.py ativo, recarrega o banco mais recente
     setTimeout(async () => {
-      await finishSync(false);
+      await finishSync(false, "Servidor local não encontrado — recarregando último banco de relatórios salvo.");
     }, 1200);
   }
 }
 
-async function finishSync(wasLocalTriggered = true) {
+async function finishSync(confirmed, statusMessage) {
   const iconHeader = document.getElementById("syncIconHeader");
   const iconTab = document.getElementById("syncIconTab");
   const textHeader = document.getElementById("syncTextHeader");
@@ -4154,9 +4232,13 @@ async function finishSync(wasLocalTriggered = true) {
   await loadReportsDatabase();
   renderRiskRangesTable("all");
   populateTranslatedReportsDropdown();
-  
-  const latestDate = allReportsCache[0]?.shortDate || "Recente";
-  showToast(`✅ Base atualizada com sucesso! Relatório mais recente: ${latestDate}`);
+
+  if (confirmed) {
+    const latestDate = allReportsCache[0]?.shortDate || "Recente";
+    showToast(`✅ Base atualizada com sucesso! Relatório mais recente: ${latestDate}`);
+  } else {
+    showToast(`⚠️ ${statusMessage || "Não foi possível confirmar a sincronização — verifique de novo em instantes."}`);
+  }
 }
 
 // ========================================================
@@ -4717,13 +4799,13 @@ async function refreshGipData() {
     } catch (e) {}
   }
 
-  const finishGipRefresh = async (success) => {
+  const finishGipRefresh = async (success, message) => {
     if (btn) btn.disabled = false;
     if (icon) icon.classList.remove("spin");
     if (text) text.innerText = "Atualizar GIP";
     await fetchMarketAnalyticsData();
     await fetchLiveMarketQuotes();
-    showToast(success ? "✅ GIP e cotações da aba atualizados!" : "⚠️ Não foi possível recalcular agora — mostrando o último dado salvo.");
+    showToast(success ? "✅ GIP e cotações da aba atualizados!" : `⚠️ ${message || "Não foi possível recalcular agora — mostrando o último dado salvo."}`);
   };
 
   if (!refreshTriggered) {
@@ -4733,27 +4815,31 @@ async function refreshGipData() {
   }
 
   let tries = 0;
+  const MAX_TRIES = 60; // 60 * 2s = 120s de tolerância real (GEX + Dataroma + cotações pode passar de 1 min)
   const checkInterval = setInterval(async () => {
     tries++;
     try {
       const res = await fetch("/api/refresh-gip-status");
       if (res.ok) {
         const status = await res.json();
-        if (!status.isRefreshing || tries >= 40) {
+        if (!status.isRefreshing) {
           clearInterval(checkInterval);
           await finishGipRefresh(true);
+        } else if (tries >= MAX_TRIES) {
+          clearInterval(checkInterval);
+          await finishGipRefresh(false, "Ainda recalculando em segundo plano — confira de novo em instantes.");
         }
       } else if (tries >= 6) {
         clearInterval(checkInterval);
         await finishGipRefresh(false);
       }
     } catch (err) {
-      if (tries >= 4) {
+      if (tries >= MAX_TRIES) {
         clearInterval(checkInterval);
         await finishGipRefresh(false);
       }
     }
-  }, 1500);
+  }, 2000);
 }
 
 let quadChartInstance = null;
