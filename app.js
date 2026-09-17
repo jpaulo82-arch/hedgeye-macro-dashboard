@@ -960,6 +960,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   renderRiskRangesTable("all");
   renderPortfolioView(activePortfolioKey);
+  fetchMasterTheMarketForBroker(activePortfolioKey);
   runStockAnalysis("AAAU");
 });
 
@@ -1003,6 +1004,596 @@ function setTab(tabId) {
       fetchEtfProPlusData();
     }
   }
+  if (tabId === "decisions") {
+    fetchDecisionsData();
+  }
+}
+
+// ============================================================
+// LOG AUDITÁVEL & DECISÕES INSTITUCIONAIS (KM CALLS & TESES)
+// ============================================================
+let allAuditDecisions = [];
+let filteredAuditDecisions = [];
+
+async function fetchDecisionsData() {
+  const tbody = document.getElementById("decisionsTableBody");
+  try {
+    const res = await fetch("/api/decisions");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    processAndRenderAuditData(data);
+  } catch (e) {
+    console.error("Erro ao carregar decisões:", e);
+    if (tbody) tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; color: #F87171; padding: 2rem;">Erro ao carregar logs auditáveis: ${e.message}</td></tr>`;
+  }
+}
+
+function processAndRenderAuditData(data) {
+  const entradas = data.entradas || [];
+  const list = [];
+
+  entradas.forEach(entry => {
+    const reportDate = entry.date || "";
+    const reportTitle = entry.reportTitle || "Early Look";
+    const reportId = entry.reportId || "";
+    const model = entry.extractedByModel || "IA Institutional";
+
+    (entry.decisions || []).forEach(d => {
+      list.push({
+        date: reportDate,
+        reportTitle: reportTitle,
+        reportId: reportId,
+        model: model,
+        asset: d.ativo || "N/D",
+        category: d.categoria || "GERAL",
+        regime: d.regime || "Quad 3",
+        action: d.decisao || "N/D",
+        reason: d.racional || "N/D",
+        invalidation: d.gatilho_invalidacao || "N/D",
+        triggerType: d.tipo_gatilho || "Ruptura de Risk Range",
+        status: (d.status || "neutral").toLowerCase(),
+        portfolio: d.carteira || "Consolidada / Macro",
+        author: d.fonte || "KM Call (Early Look)",
+        isCustom: false
+      });
+    });
+  });
+
+  // Decisões adicionadas manualmente no navegador
+  const custom = getDecisions();
+  custom.forEach((d, i) => {
+    list.unshift({
+      date: d.date || "Hoje",
+      reportTitle: "Decisão Manual Registrada pelo Usuário",
+      reportId: `custom_${i}`,
+      model: "Operador / Gestor",
+      asset: d.asset || "N/D",
+      category: d.category || "PERSONAL THESIS",
+      regime: d.regime || "Quad 3",
+      action: d.action || "N/D",
+      reason: d.reason || "N/D",
+      invalidation: d.invalidation || "Definido pelo gestor",
+      triggerType: d.triggerType || "Decisão Manual",
+      status: (d.status || d.statusText || "neutral").toLowerCase().includes("bull") ? "bullish" : ((d.status || d.statusText || "").toLowerCase().includes("bear") ? "bearish" : "neutral"),
+      portfolio: d.portfolio || "Manual",
+      author: "Usuário (Auditado)",
+      isCustom: true,
+      customIndex: i
+    });
+  });
+
+  allAuditDecisions = list;
+
+  // Popula o select de Ativos com opções únicas
+  populateAuditAssetFilter();
+
+  // Atualiza os Stat Cards de KPIs
+  renderAuditKpis();
+
+  // Atualiza o Widget de Resumo no Dashboard Inicial
+  renderDashAuditRecentWidget();
+
+  // Aplica filtros e renderiza a tabela principal
+  applyDecisionsFilters();
+}
+
+function populateAuditAssetFilter() {
+  const assetSelect = document.getElementById("decisionsAssetFilter");
+  if (!assetSelect) return;
+
+  const currentVal = assetSelect.value;
+  const rawAssets = allAuditDecisions.map(d => d.asset);
+  
+  // Extrai tickers/palavras-chave individuais
+  const assetSet = new Set();
+  rawAssets.forEach(a => {
+    if (!a) return;
+    // Divide caso haja múltiplos tickers (ex: "TLT, ZROZ, LQD")
+    const parts = a.split(/[,/]/).map(s => s.trim()).filter(Boolean);
+    parts.forEach(p => {
+      if (p.length <= 15) assetSet.add(p);
+      else assetSet.add(a.trim());
+    });
+  });
+
+  const sortedAssets = Array.from(assetSet).sort((a, b) => a.localeCompare(b));
+  let options = `<option value="">Todos os Ativos (${sortedAssets.length})</option>`;
+  sortedAssets.forEach(ticker => {
+    options += `<option value="${ticker}">${ticker}</option>`;
+  });
+  assetSelect.innerHTML = options;
+  if (currentVal && assetSet.has(currentVal)) {
+    assetSelect.value = currentVal;
+  }
+}
+
+function renderAuditKpis() {
+  const kpiTotal = document.getElementById("auditKpiTotal");
+  const kpiDays = document.getElementById("auditKpiDays");
+  const kpiConviction = document.getElementById("auditKpiConviction");
+  const kpiTriggers = document.getElementById("auditKpiTriggers");
+
+  const total = allAuditDecisions.length;
+  const uniqueDates = new Set(allAuditDecisions.map(d => d.date)).size;
+
+  let bullishCount = 0;
+  let bearishCount = 0;
+  let neutralCount = 0;
+
+  allAuditDecisions.forEach(d => {
+    if (d.status.includes("bull")) bullishCount++;
+    else if (d.status.includes("bear")) bearishCount++;
+    else neutralCount++;
+  });
+
+  if (kpiTotal) kpiTotal.innerText = total;
+  if (kpiDays) kpiDays.innerText = `Em ${uniqueDates} sessões registradas`;
+  if (kpiConviction) {
+    kpiConviction.innerHTML = `<span style="color:#10B981;">🟢 ${bullishCount}</span> <span style="color:#64748B;">|</span> <span style="color:#F43F5E;">🔴 ${bearishCount}</span> <span style="color:#64748B;">|</span> <span style="color:#F59E0B;">🟡 ${neutralCount}</span>`;
+  }
+  if (kpiTriggers) {
+    const triggersCount = new Set(allAuditDecisions.map(d => d.triggerType)).size;
+    kpiTriggers.innerText = `${triggersCount} Tipos Ativos`;
+  }
+}
+
+function renderDashAuditRecentWidget() {
+  const badgeCount = document.getElementById("dashWidgetAuditCount");
+  const grid = document.getElementById("dashAuditRecentGrid");
+  if (badgeCount) badgeCount.innerText = allAuditDecisions.length;
+  if (!grid) return;
+
+  const recents = allAuditDecisions.slice(0, 4);
+  if (!recents.length) {
+    grid.innerHTML = `<div style="color: var(--text-dim); font-size: 0.85rem;">Nenhuma decisão auditada recente.</div>`;
+    return;
+  }
+
+  const html = recents.map((d, i) => {
+    const statusClass = d.status.includes("bull") ? "badge-bullish" : (d.status.includes("bear") ? "badge-bearish" : "badge-neutral");
+    const statusText = d.status.includes("bull") ? "🟢 Bullish" : (d.status.includes("bear") ? "🔴 Bearish" : "🟡 Neutral");
+    const regimeBadgeClass = getRegimeBadgeClass(d.regime);
+
+    return `
+      <div style="background: rgba(26, 35, 50, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 0.85rem 1rem; display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s;" onmouseover="this.style.borderColor='rgba(56,189,248,0.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.08)'">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+            <div style="display: flex; align-items: center; gap: 0.4rem;">
+              <strong style="color: #F8FAFC; font-size: 0.95rem;">${d.asset}</strong>
+              <span class="${regimeBadgeClass}">${d.regime}</span>
+            </div>
+            <span class="badge ${statusClass}" style="font-size: 0.72rem;">${statusText}</span>
+          </div>
+          <div style="font-size: 0.82rem; font-weight: 600; color: #38BDF8; margin-bottom: 0.35rem;">${d.action}</div>
+          <div style="font-size: 0.78rem; color: #FDA4AF; background: rgba(244, 63, 94, 0.08); border-left: 2px solid #F43F5E; padding: 0.25rem 0.5rem; border-radius: 0 4px 4px 0; margin-bottom: 0.4rem; line-height: 1.35;">
+            🎯 <strong>Invalidação:</strong> ${d.invalidation.length > 85 ? d.invalidation.slice(0, 85) + '...' : d.invalidation}
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: #94A3B8; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 0.4rem; margin-top: 0.3rem;">
+          <span>📅 ${d.date} | ${d.isCustom ? 'Manual' : 'KM Call'}</span>
+          <a href="javascript:void(0)" onclick="setTab('decisions'); setTimeout(() => openDecisionDetail(${i}), 150)" style="color: #38BDF8; text-decoration: none; font-weight: 600;">Ver Ficha &rarr;</a>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  grid.innerHTML = html;
+}
+
+function getRegimeBadgeClass(regime) {
+  const r = (regime || "").toLowerCase();
+  if (r.includes("quad 1")) return "badge-regime-q1";
+  if (r.includes("quad 2")) return "badge-regime-q2";
+  if (r.includes("quad 3")) return "badge-regime-q3";
+  if (r.includes("quad 4")) return "badge-regime-q4";
+  return "badge-regime-macro";
+}
+
+function applyDecisionsFilters() {
+  const searchInput = document.getElementById("decisionsSearchInput")?.value?.trim()?.toLowerCase() || "";
+  const assetFilter = document.getElementById("decisionsAssetFilter")?.value?.trim()?.toLowerCase() || "";
+  const regimeFilter = document.getElementById("decisionsRegimeFilter")?.value || "";
+  const triggerFilter = document.getElementById("decisionsTriggerFilter")?.value || "";
+  const statusFilter = document.getElementById("decisionsStatusFilter")?.value || "";
+  const periodFilter = document.getElementById("decisionsPeriodFilter")?.value || "all";
+
+  const now = new Date();
+  const todayStr = `${String(now.getDate()).padStart(2, '0')}/${String(now.getMonth() + 1).padStart(2, '0')}/${now.getFullYear()}`;
+
+  const filtered = allAuditDecisions.filter(d => {
+    // 1. Busca textual
+    if (searchInput) {
+      const fullText = `${d.asset} ${d.category} ${d.regime} ${d.action} ${d.reason} ${d.invalidation} ${d.triggerType} ${d.reportTitle} ${d.author}`.toLowerCase();
+      if (!fullText.includes(searchInput)) return false;
+    }
+
+    // 2. Filtro de Ativo
+    if (assetFilter) {
+      if (!d.asset.toLowerCase().includes(assetFilter)) return false;
+    }
+
+    // 3. Filtro de Regime
+    if (regimeFilter) {
+      if (!d.regime.toLowerCase().includes(regimeFilter.toLowerCase())) return false;
+    }
+
+    // 4. Filtro de Tipo de Gatilho
+    if (triggerFilter) {
+      if (d.triggerType !== triggerFilter) return false;
+    }
+
+    // 5. Filtro de Convicção / Status
+    if (statusFilter) {
+      if (!d.status.includes(statusFilter.toLowerCase())) return false;
+    }
+
+    // 6. Filtro de Período
+    if (periodFilter === "today") {
+      if (d.date !== todayStr && !d.date.toLowerCase().includes("hoje")) return false;
+    } else if (periodFilter === "7d" || periodFilter === "30d") {
+      const daysLimit = periodFilter === "7d" ? 7 : 30;
+      try {
+        const parts = d.date.split("/");
+        if (parts.length === 3) {
+          const itemDate = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
+          const diffDays = Math.floor((now - itemDate) / (1000 * 60 * 60 * 24));
+          if (diffDays > daysLimit) return false;
+        }
+      } catch (e) {}
+    }
+
+    return true;
+  });
+
+  filteredAuditDecisions = filtered;
+
+  // Atualiza contador
+  const countBadge = document.getElementById("decisionsFilterCount");
+  if (countBadge) {
+    countBadge.innerText = `Exibindo ${filtered.length} de ${allAuditDecisions.length} decisões auditadas`;
+  }
+
+  // Renderiza linhas da tabela
+  renderFilteredDecisionsTable(filtered);
+}
+
+function renderFilteredDecisionsTable(list) {
+  const tbody = document.getElementById("decisionsTableBody");
+  if (!tbody) return;
+
+  if (!list || list.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="9" style="text-align: center; padding: 2.5rem 1rem; color: #94A3B8;">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔍</div>
+          <div style="font-size: 1rem; font-weight: 600; color: #F8FAFC;">Nenhuma decisão encontrada com os filtros selecionados</div>
+          <p style="font-size: 0.8rem; margin-top: 0.3rem; color: #64748B;">Tente ajustar o termo de busca ou resetar os filtros.</p>
+          <button class="btn btn-outline btn-sm" style="margin-top: 0.8rem;" onclick="resetDecisionsFilters()">Resetar Filtros</button>
+        </td>
+      </tr>
+    `;
+    return;
+  }
+
+  const rowsHtml = list.map((d, idx) => {
+    const statusClass = d.status.includes("bull") ? "badge-bullish" : (d.status.includes("bear") ? "badge-bearish" : "badge-neutral");
+    const statusText = d.status.includes("bull") ? "🟢 Bullish" : (d.status.includes("bear") ? "🔴 Bearish" : "🟡 Neutral");
+    const regimeClass = getRegimeBadgeClass(d.regime);
+    const originBadge = d.isCustom
+      ? `<span class="badge" style="background: rgba(168, 85, 247, 0.18); color: #C084FC; border: 1px solid rgba(168, 85, 247, 0.35); font-size: 0.68rem;">Manual</span>`
+      : `<span class="badge badge-accent" style="font-size: 0.68rem;">KM Call</span>`;
+
+    const deleteBtn = d.isCustom
+      ? `<button class="btn btn-outline" style="padding: 0.15rem 0.4rem; font-size: 0.68rem; color: #F43F5E; border-color: rgba(244, 63, 94, 0.3);" onclick="deleteDecision(${d.customIndex})" title="Excluir decisão manual">✕</button>`
+      : ``;
+
+    return `
+      <tr style="transition: background-color 0.15s ease;">
+        <td style="white-space: nowrap;">
+          <strong>${d.date}</strong><br>
+          ${originBadge}
+        </td>
+        <td>
+          <strong style="color: #F8FAFC; font-size: 0.92rem;">${d.asset}</strong>
+        </td>
+        <td>
+          <span class="badge badge-core" style="font-size: 0.72rem; display: inline-block; margin-bottom: 0.2rem;">${d.category}</span><br>
+          <span style="font-size: 0.72rem; color: #94A3B8;">${d.portfolio}</span>
+        </td>
+        <td>
+          <span class="${regimeClass}">${d.regime}</span>
+        </td>
+        <td>
+          <strong style="color: #F8FAFC; font-size: 0.85rem;">${d.action}</strong><br>
+          <span class="badge ${statusClass}" style="font-size: 0.68rem; margin-top: 0.2rem;">${statusText}</span>
+        </td>
+        <td>
+          <span class="badge-trigger">⚡ ${d.triggerType}</span>
+        </td>
+        <td>
+          <div class="invalidation-pill" title="${d.invalidation}">
+            🎯 ${d.invalidation.length > 90 ? d.invalidation.slice(0, 90) + '...' : d.invalidation}
+          </div>
+        </td>
+        <td style="font-size: 0.82rem; color: #CBD5E1; line-height: 1.4;">
+          ${d.reason.length > 120 ? d.reason.slice(0, 120) + '...' : d.reason}
+        </td>
+        <td style="text-align: center; white-space: nowrap;">
+          <button class="btn btn-outline btn-sm" style="padding: 0.2rem 0.5rem; font-size: 0.72rem; color: #38BDF8; border-color: rgba(56, 189, 248, 0.35);" onclick="openDecisionDetail(${idx})" title="Ver ficha técnica completa da decisão">
+            👁️ Ficha
+          </button>
+          ${deleteBtn}
+        </td>
+      </tr>
+    `;
+  }).join("");
+
+  tbody.innerHTML = rowsHtml;
+}
+
+function resetDecisionsFilters() {
+  const sInput = document.getElementById("decisionsSearchInput");
+  const aFilter = document.getElementById("decisionsAssetFilter");
+  const rFilter = document.getElementById("decisionsRegimeFilter");
+  const tFilter = document.getElementById("decisionsTriggerFilter");
+  const stFilter = document.getElementById("decisionsStatusFilter");
+  const pFilter = document.getElementById("decisionsPeriodFilter");
+
+  if (sInput) sInput.value = "";
+  if (aFilter) aFilter.value = "";
+  if (rFilter) rFilter.value = "";
+  if (tFilter) tFilter.value = "";
+  if (stFilter) stFilter.value = "";
+  if (pFilter) pFilter.value = "all";
+
+  applyDecisionsFilters();
+  showToast("Filtros de auditoria resetados.");
+}
+
+// ============================================================
+// EXPORTAÇÃO DE LOGS AUDITÁVEIS (CSV & JSON)
+// ============================================================
+function exportDecisionsCSV() {
+  const dataToExport = filteredAuditDecisions.length > 0 ? filteredAuditDecisions : allAuditDecisions;
+  if (!dataToExport.length) {
+    showToast("⚠️ Nenhum registro disponível para exportação.");
+    return;
+  }
+
+  const headers = [
+    "Data",
+    "Ativo",
+    "Carteira",
+    "Categoria",
+    "Regime_Macro",
+    "Decisao_Conduta",
+    "Tipo_Gatilho",
+    "Gatilho_Invalidacao",
+    "Racional_Operacional",
+    "Status_Direcao",
+    "Origem_Fonte"
+  ];
+
+  const escapeCSV = (val) => {
+    if (val === null || val === undefined) return '""';
+    const str = String(val).replace(/"/g, '""');
+    return `"${str}"`;
+  };
+
+  const csvRows = [headers.join(";")];
+  dataToExport.forEach(d => {
+    const row = [
+      escapeCSV(d.date),
+      escapeCSV(d.asset),
+      escapeCSV(d.portfolio),
+      escapeCSV(d.category),
+      escapeCSV(d.regime),
+      escapeCSV(d.action),
+      escapeCSV(d.triggerType),
+      escapeCSV(d.invalidation),
+      escapeCSV(d.reason),
+      escapeCSV(d.status),
+      escapeCSV(d.author)
+    ];
+    csvRows.push(row.join(";"));
+  });
+
+  // UTF-8 BOM (\uFEFF) para garantir acentuação correta no Excel Windows/Mac
+  const csvContent = "\uFEFF" + csvRows.join("\r\n");
+  const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const nowStr = new Date().toISOString().slice(0, 10);
+  const link = document.createElement("a");
+  link.setAttribute("href", url);
+  link.setAttribute("download", `hedgeye_log_auditavel_${nowStr}.csv`);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+
+  showToast(`📥 ${dataToExport.length} logs exportados com sucesso em CSV!`);
+}
+
+function exportDecisionsJSON() {
+  const dataToExport = filteredAuditDecisions.length > 0 ? filteredAuditDecisions : allAuditDecisions;
+  if (!dataToExport.length) {
+    showToast("⚠️ Nenhum registro disponível para exportação.");
+    return;
+  }
+
+  const exportPayload = {
+    sistema: "Hedgeye Risk Management Terminal",
+    modulo: "Log de Decisões, KM Calls & Auditoria de Processo",
+    exportadoEm: new Date().toISOString(),
+    totalRegistros: dataToExport.length,
+    decisoes: dataToExport
+  };
+
+  const jsonString = JSON.stringify(exportPayload, null, 2);
+  const blob = new Blob([jsonString], { type: "application/json;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const nowStr = new Date().toISOString().slice(0, 10);
+  const link = document.createElement("a");
+  link.setAttribute("href", url);
+  link.setAttribute("download", `hedgeye_log_auditavel_${nowStr}.json`);
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+
+  showToast(`📋 ${dataToExport.length} logs exportados com sucesso em JSON!`);
+}
+
+// ============================================================
+// MODAL DE DETALHES DA DECISÃO
+// ============================================================
+function openDecisionDetail(index) {
+  const d = filteredAuditDecisions[index];
+  if (!d) return;
+
+  const modal = document.getElementById("decisionDetailModal");
+  const title = document.getElementById("modalDetailTitle");
+  const subtitle = document.getElementById("modalDetailSubtitle");
+  const content = document.getElementById("modalDetailContent");
+  if (!modal || !content) return;
+
+  if (title) title.innerText = `Ficha de Auditoria: ${d.asset}`;
+  if (subtitle) subtitle.innerText = `${d.action} — ${d.date} (${d.author})`;
+
+  const statusBadge = d.status.includes("bull")
+    ? `<span class="badge badge-bullish">🟢 Bullish / Long</span>`
+    : (d.status.includes("bear") ? `<span class="badge badge-bearish">🔴 Bearish / Short</span>` : `<span class="badge badge-neutral">🟡 Neutral</span>`);
+
+  const regimeBadgeClass = getRegimeBadgeClass(d.regime);
+
+  content.innerHTML = `
+    <div class="decision-detail-grid">
+      <div class="decision-detail-card">
+        <div class="decision-detail-label">Ativo / Tese</div>
+        <div class="decision-detail-val" style="color: #38BDF8; font-size: 1.1rem;">${d.asset}</div>
+      </div>
+      <div class="decision-detail-card">
+        <div class="decision-detail-label">Data & Sessão</div>
+        <div class="decision-detail-val">${d.date}</div>
+      </div>
+      <div class="decision-detail-card">
+        <div class="decision-detail-label">Regime Macro</div>
+        <div class="decision-detail-val"><span class="${regimeBadgeClass}">${d.regime}</span></div>
+      </div>
+      <div class="decision-detail-card">
+        <div class="decision-detail-label">Convicção / Status</div>
+        <div class="decision-detail-val">${statusBadge}</div>
+      </div>
+      <div class="decision-detail-card">
+        <div class="decision-detail-label">Categoria de Risco</div>
+        <div class="decision-detail-val"><span class="badge badge-core">${d.category}</span></div>
+      </div>
+      <div class="decision-detail-card">
+        <div class="decision-detail-label">Tipo de Gatilho</div>
+        <div class="decision-detail-val"><span class="badge-trigger">⚡ ${d.triggerType}</span></div>
+      </div>
+    </div>
+
+    <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+      <div class="decision-detail-label" style="color: #38BDF8;">Decisão & Conduta Operacional:</div>
+      <div style="font-size: 1rem; font-weight: 700; color: #F8FAFC; margin-top: 0.2rem;">${d.action}</div>
+    </div>
+
+    <div style="background: rgba(244, 63, 94, 0.08); border: 1px solid rgba(244, 63, 94, 0.25); border-left: 4px solid #F43F5E; border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+      <div class="decision-detail-label" style="color: #FDA4AF;">🎯 Gatilho Objetivo de Invalidação (Ponto de Saída):</div>
+      <div style="font-size: 0.92rem; color: #FEE2E2; margin-top: 0.3rem; line-height: 1.45;">${d.invalidation}</div>
+    </div>
+
+    <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 1rem; margin-bottom: 1rem;">
+      <div class="decision-detail-label">Racional Operacional Completo:</div>
+      <div style="font-size: 0.88rem; color: #E2E8F0; margin-top: 0.3rem; line-height: 1.5; white-space: pre-line;">${d.reason}</div>
+    </div>
+
+    <div style="font-size: 0.75rem; color: #94A3B8; border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 0.6rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+      <span><strong>Fonte:</strong> ${d.author} (${d.reportTitle})</span>
+      <span><strong>Modelo/Auditor:</strong> ${d.model}</span>
+    </div>
+  `;
+
+  modal.classList.add("active");
+}
+
+function closeDecisionDetailModal() {
+  const modal = document.getElementById("decisionDetailModal");
+  if (modal) modal.classList.remove("active");
+}
+
+async function syncDecisions() {
+  const icon = document.getElementById("decisionsSyncIcon");
+  const text = document.getElementById("decisionsSyncText");
+  if (icon) icon.classList.add("spin");
+  if (text) text.innerText = "Extraindo...";
+  showToast("🔄 Extraindo decisões do relatório mais recente via IA...");
+
+  let triggered = false;
+  try {
+    const res = await fetch("/api/decisions-sync", { method: "POST", headers: { "Content-Type": "application/json" } });
+    triggered = res.ok;
+  } catch (e) {}
+
+  const finish = async (confirmed, message) => {
+    if (icon) icon.classList.remove("spin");
+    if (text) text.innerText = "Extrair Decisões de Hoje";
+    await fetchDecisionsData();
+    showToast(confirmed ? "✅ Decisões atualizadas!" : `⚠️ ${message || "Não foi possível confirmar a extração."}`);
+  };
+
+  if (!triggered) {
+    await finish(false, "Servidor local não encontrado.");
+    return;
+  }
+
+  let tries = 0;
+  const MAX_TRIES = 30; // 30 * 2s = 60s
+  const checkInterval = setInterval(async () => {
+    tries++;
+    try {
+      const res = await fetch("/api/decisions-sync-status");
+      if (res.ok) {
+        const status = await res.json();
+        if (!status.isSyncing) {
+          clearInterval(checkInterval);
+          await finish(true);
+        } else if (tries >= MAX_TRIES) {
+          clearInterval(checkInterval);
+          await finish(false, "Ainda extraindo em segundo plano — confira de novo em instantes.");
+        }
+      } else if (tries >= 6) {
+        clearInterval(checkInterval);
+        await finish(false, "Não consegui confirmar o status.");
+      }
+    } catch (err) {
+      if (tries >= MAX_TRIES) {
+        clearInterval(checkInterval);
+        await finish(false, "Não consegui confirmar o status.");
+      }
+    }
+  }, 2000);
 }
 
 // ============================================================
@@ -1150,8 +1741,9 @@ function renderEtfProPlusTab(data) {
       }
       const rows = sizing.sizing.slice().sort((a, b) => b.suggestedUsd - a.suggestedUsd);
       sizingBody.innerHTML = rows.map(r => {
+        const outOfRange = r.rangeZone && r.rangeZone.includes("fora do range");
         const rangeCell = r.rangeScore != null
-          ? `${(r.rangeScore * 100).toFixed(0)}% da faixa favorável<br><small class="text-muted" style="font-size:0.68rem;">Range: ${r.riskRangeLow ?? 'N/D'}–${r.riskRangeHigh ?? 'N/D'} | Preço: ${r.livePrice ?? 'N/D'}</small>`
+          ? `<strong style="${outOfRange ? 'color:#F87171;' : ''}">${r.rangeZone || 'N/D'}</strong><br><small class="text-muted" style="font-size:0.68rem;">Range: ${r.riskRangeLow ?? 'N/D'}–${r.riskRangeHigh ?? 'N/D'} | Preço: ${r.livePrice ?? 'N/D'}</small>`
           : `<small class="text-muted">Sem Risk Range</small>`;
         const quads = r.nativeQuads || [];
         const quadCell = quads.length > 0 ? `<strong>${quads.map(q => `Q${q}`).join('/')}</strong>` : `<small class="text-muted">N/D</small>`;
@@ -1233,6 +1825,24 @@ function switchPortfolio(key) {
   activePortfolioKey = key;
   renderPortfolioView(key);
   showToast(`Portfólio alternado para: ${key === 'consolidated' ? 'Visão Consolidada' : portfolioData[key]?.name || key}`);
+  fetchMasterTheMarketForBroker(key);
+}
+
+// Busca o módulo Master the Market (Ouro Hoje + Tabela de Bandas) escopado só pra carteira
+// selecionada — sem isso, o módulo sempre mostrava o NAV consolidado (Schwab+Tastyworks)
+// mesmo quando você selecionava uma carteira específica.
+async function fetchMasterTheMarketForBroker(key) {
+  try {
+    const res = await authedFetch(`/api/portfolio?broker=${encodeURIComponent(key)}&_t=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) return;
+    const data = await res.json();
+    if (data.master_the_market_sizing) {
+      window.masterTheMarketSizingData = data.master_the_market_sizing;
+      renderMasterTheMarketModule(data.master_the_market_sizing);
+    }
+  } catch (e) {
+    console.warn("Falha ao buscar Master the Market por carteira:", e);
+  }
 }
 
 // RENDERIZAR TABELA DE RISK RANGES
@@ -3266,12 +3876,14 @@ function getDecisions() {
   try {
     const stored = localStorage.getItem("hedgeye_decisions_list_v5");
     if (stored) {
-      return JSON.parse(stored);
+      // Só decisões marcadas isCustom (adicionadas manualmente via "Nova Decisão") —
+      // nunca reintroduz o defaultDecisionsList fabricado se ele ficou salvo de sessão antiga.
+      return JSON.parse(stored).filter(d => d.isCustom);
     }
   } catch (e) {
     console.warn("Erro ao ler localStorage de decisões:", e);
   }
-  return defaultDecisionsList;
+  return [];
 }
 
 function setDecisions(list) {
@@ -3326,9 +3938,11 @@ function closeNewDecisionModal() {
 function saveNewDecision(event) {
   event.preventDefault();
   const asset = document.getElementById("decAsset")?.value?.trim();
-  const portfolio = document.getElementById("decPortfolio")?.value;
+  const portfolio = document.getElementById("decPortfolio")?.value || "Consolidado";
   const category = document.getElementById("decCategory")?.value?.trim() || "PERSONAL THESIS";
-  const status = document.getElementById("decStatus")?.value;
+  const status = document.getElementById("decStatus")?.value || "🟡 Neutral";
+  const regime = document.getElementById("decRegime")?.value || "Quad 3";
+  const triggerType = document.getElementById("decTriggerType")?.value || "Decisão Manual";
   const action = document.getElementById("decAction")?.value?.trim();
   const reason = document.getElementById("decReason")?.value?.trim();
   const invalidation = document.getElementById("decInvalidation")?.value?.trim();
@@ -3354,6 +3968,8 @@ function saveNewDecision(event) {
     asset: asset,
     portfolio: portfolio,
     category: category.toUpperCase(),
+    regime: regime,
+    triggerType: triggerType,
     badgeClass: "badge-core",
     action: action,
     reason: reason,
@@ -3365,7 +3981,26 @@ function saveNewDecision(event) {
   const list = getDecisions();
   list.unshift(newEntry);
   setDecisions(list);
-  renderDecisionsTable();
+
+  // Envia assincronamente para persistência permanente no backend
+  fetch("/api/decisions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      data: dateStr,
+      ativo: asset,
+      carteira: portfolio,
+      categoria: category.toUpperCase(),
+      regime: regime,
+      decisao: action,
+      racional: reason,
+      gatilho_invalidacao: invalidation || "Definido pelo gestor.",
+      tipo_gatilho: triggerType,
+      status: status.includes("Bullish") ? "bullish" : (status.includes("Bearish") ? "bearish" : "neutral")
+    })
+  }).catch(e => console.warn("Backend sync offline, mantido no localStorage:", e));
+
+  fetchDecisionsData();
   closeNewDecisionModal();
 
   // Limpa formulário
@@ -3378,7 +4013,7 @@ function deleteDecision(index) {
   if (index >= 0 && index < list.length) {
     list.splice(index, 1);
     setDecisions(list);
-    renderDecisionsTable();
+    fetchDecisionsData();
     showToast("Decisão removida do log.");
   }
 }
@@ -3718,15 +4353,27 @@ function updateDynamicDashboard(report) {
   const bulletsList = document.getElementById("morningBulletsList");
   if (bulletsList) {
     if (struct && struct.takeaways && struct.takeaways.length > 0) {
+      // Tradução manual antiga (só existe pra um punhado de relatórios específicos)
       bulletsList.innerHTML = struct.takeaways.map(t => `
         <li><strong>${t.title}:</strong> ${t.desc}</li>
       `).join("");
+    } else if ((report.takeawaysPt && report.takeawaysPt.length > 0) || report.synthesisPt) {
+      // Tradução + síntese automática (Gemini, via translate_reports.py) — cobre QUALQUER
+      // relatório novo, condensado (não é transcrição literal do relatório inteiro).
+      const items = (report.takeawaysPt || []).map(t => `<li>${t}</li>`).join("");
+      const synthesis = report.synthesisPt ? `<li><strong>Síntese:</strong> ${report.synthesisPt}</li>` : "";
+      bulletsList.innerHTML = items + synthesis;
     } else {
-      bulletsList.innerHTML = `
-        <li><strong>Síntese do Research (${dateStr}):</strong> ${report.summary ? report.summary.replace(/#+/g, '').replace(/\*+/g, '').substring(0, 250) + '...' : 'Análise quantitativa dos fluxos de capital e faixas de risco.'}</li>
-        <li><strong>Risk Ranges Oficiais:</strong> ${report.riskRanges ? `${report.riskRanges.length} faixas de volatilidade ajustada calibradas.` : 'Sinais TREND vigentes.'}</li>
-        <li><strong>Playbook Quantitativo:</strong> Manter posições alinhadas ao regime macro vigente e respeitar os pisos de range para aportes.</li>
-      `;
+      // Sem tradução ainda (relatório muito recente, tradução automática ainda não rodou, ou
+      // sem GEMINI_API_KEY configurada) — mostra o conteúdo ORIGINAL completo em inglês, com
+      // aviso claro, em vez de inventar tradução ou cortar em 250 caracteres.
+      const takeawaysEn = (report.takeaways || []).map(t => `<li>${t}</li>`).join("");
+      const bigPicEn = report.bigPicture ? `<li><strong>The Big Picture:</strong> ${report.bigPicture.replace(/\n+/g, ' ')}</li>` : "";
+      const macroGEn = report.macroGrind ? `<li><strong>Macro Grind:</strong> ${report.macroGrind.replace(/\n+/g, ' ')}</li>` : "";
+      const warning = `<li style="opacity:0.7;"><em>⚠️ Tradução automática ainda não disponível para este relatório — mostrando o texto original em inglês.</em></li>`;
+      bulletsList.innerHTML = (takeawaysEn || bigPicEn || macroGEn)
+        ? warning + takeawaysEn + bigPicEn + macroGEn
+        : `<li><strong>Síntese do Research (${dateStr}):</strong> ${report.summary ? report.summary.replace(/#+/g, '').replace(/\*+/g, '') : 'Análise quantitativa dos fluxos de capital e faixas de risco.'}</li>`;
     }
   }
 
@@ -4512,11 +5159,32 @@ function buildThesisHtml(report, struct) {
     `).join("");
   }
 
-  // Geração adaptativa inteligente para qualquer relatório da base indexada
+  // Tradução + síntese automática (Gemini, translate_reports.py) — condensada, não é
+  // transcrição literal do relatório inteiro (a versão anterior traduzia parágrafo a
+  // parágrafo e ficava longa demais).
+  if ((report.takeawaysPt && report.takeawaysPt.length > 0) || report.synthesisPt) {
+    const blocks = [];
+    if (report.takeawaysPt && report.takeawaysPt.length > 0) {
+      blocks.push({ title: "🎯 Principais Destaques Estratégicos (Key Takeaways)", paragraphs: report.takeawaysPt });
+    }
+    if (report.synthesisPt) {
+      blocks.push({ title: "🧠 Síntese — The Big Picture & Macro Grind", paragraphs: [report.synthesisPt] });
+    }
+    return blocks.map(sec => `
+      <div class="thesis-section-block">
+        <h4 class="thesis-section-title"><span class="icon">📌</span> ${sec.title}</h4>
+        ${sec.paragraphs.map(p => `<p class="thesis-paragraph">${p}</p>`).join("")}
+      </div>
+    `).join("") + `<p class="text-muted" style="font-size:0.78rem; margin-top:0.5rem;"><em>Traduzido automaticamente via IA (Gemini) — pode conter pequenas imprecisões. Texto original em inglês disponível no botão "EN" acima.</em></p>`;
+  }
+
+  // Geração adaptativa inteligente para qualquer relatório da base indexada (SEM tradução
+  // ainda disponível — mostra o original em inglês com aviso claro, cabeçalhos em PT)
   const content = report.content || report.summary || "";
   if (!content) {
     return `<div class="thesis-section-block"><p class="thesis-paragraph">Conteúdo da tese em processamento.</p></div>`;
   }
+  const untranslatedWarning = `<p class="text-muted" style="font-size:0.8rem;"><em>⚠️ Tradução automática ainda não disponível para este relatório — texto abaixo está no original em inglês.</em></p>`;
 
   // Divide o texto em blocos significativos com tradução de cabeçalhos
   const lines = content.split("\n").map(l => l.trim()).filter(l => l.length > 0);
@@ -4570,13 +5238,13 @@ function buildThesisHtml(report, struct) {
   }
 
   if (sections.length === 0) {
-    return `<div class="thesis-section-block"><p class="thesis-paragraph">${content.substring(0, 800)}...</p></div>`;
+    return untranslatedWarning + `<div class="thesis-section-block"><p class="thesis-paragraph">${content.substring(0, 800)}...</p></div>`;
   }
 
-  return sections.slice(0, 6).map((sec, idx) => `
+  return untranslatedWarning + sections.map((sec, idx) => `
     <div class="thesis-section-block">
       <h4 class="thesis-section-title"><span class="icon">📌</span> ${sec.title}</h4>
-      ${sec.paragraphs.slice(0, 5).map(p => `<p class="thesis-paragraph">${p}</p>`).join("")}
+      ${sec.paragraphs.map(p => `<p class="thesis-paragraph">${p}</p>`).join("")}
     </div>
   `).join("");
 }
@@ -4660,27 +5328,38 @@ function renderEarlyLookTranslatedView(report) {
     }
   } else {
     // Tradução e síntese adaptativa automática para outros relatórios indexados
-    const titleClean = (report.title || "").replace(/^#\s*/, '').replace(/EARLY LOOK:\s*/i, '');
+    const titleSource = report.titlePt || report.title || "";
+    const titleClean = titleSource.replace(/^#\s*/, '').replace(/EARLY LOOK:\s*/i, '');
     if (mainTitleEl) mainTitleEl.innerHTML = `EARLY LOOK: <span>${titleClean}</span>`;
     if (displayDateEl) displayDateEl.innerText = report.date || report.shortDate || "Data de Publicação";
     if (quoteTextEl) quoteTextEl.innerHTML = `Nós não apostamos contra pessoas nos mercados. Nós seguimos a Ordem Implicada dos fluxos de mercado. <span class="quote-author">— Keith McCullough</span>`;
     if (regimeEl) regimeEl.innerText = `REGIME GIP: QUAD 3 (#ACCELERATING)`;
     
     if (takeawaysGrid) {
-      takeawaysGrid.innerHTML = `
-        <div class="takeaway-card emerald-border">
-          <div class="takeaway-header"><span class="t-icon">⚡</span><h4>1. Síntese do Research</h4></div>
-          <div class="takeaway-body">${report.summary ? report.summary : 'Análise quantitativa dos fluxos de capital e faixas de risco.'}</div>
-        </div>
-        <div class="takeaway-card amber-border">
-          <div class="takeaway-header"><span class="t-icon">🎯</span><h4>2. Risk Ranges Extraídos</h4></div>
-          <div class="takeaway-body">${report.riskRanges && report.riskRanges.length > 0 ? `${report.riskRanges.length} ativos calculados e calibrados para o pregão.` : 'Faixas de volatilidade ajustada vigentes para o pregão.'}</div>
-        </div>
-        <div class="takeaway-card rose-border">
-          <div class="takeaway-header"><span class="t-icon">🧭</span><h4>3. Enquadramento Macro</h4></div>
-          <div class="takeaway-body">Regime de mercado avaliado sob a ótica de aceleração/desaceleração de Crescimento (G) e Inflação (I).</div>
-        </div>
-      `;
+      if (report.takeawaysPt && report.takeawaysPt.length > 0) {
+        const borders = ["emerald-border", "amber-border", "rose-border", "sky-border"];
+        takeawaysGrid.innerHTML = report.takeawaysPt.map((t, i) => `
+          <div class="takeaway-card ${borders[i % borders.length]}">
+            <div class="takeaway-header"><span class="t-icon">⚡</span><h4>${i + 1}. Destaque</h4></div>
+            <div class="takeaway-body">${t}</div>
+          </div>
+        `).join("");
+      } else {
+        takeawaysGrid.innerHTML = `
+          <div class="takeaway-card emerald-border">
+            <div class="takeaway-header"><span class="t-icon">⚡</span><h4>1. Síntese do Research</h4></div>
+            <div class="takeaway-body">⚠️ Tradução automática ainda não disponível. ${report.summary ? report.summary : 'Análise quantitativa dos fluxos de capital e faixas de risco.'}</div>
+          </div>
+          <div class="takeaway-card amber-border">
+            <div class="takeaway-header"><span class="t-icon">🎯</span><h4>2. Risk Ranges Extraídos</h4></div>
+            <div class="takeaway-body">${report.riskRanges && report.riskRanges.length > 0 ? `${report.riskRanges.length} ativos calculados e calibrados para o pregão.` : 'Faixas de volatilidade ajustada vigentes para o pregão.'}</div>
+          </div>
+          <div class="takeaway-card rose-border">
+            <div class="takeaway-header"><span class="t-icon">🧭</span><h4>3. Enquadramento Macro</h4></div>
+            <div class="takeaway-body">Regime de mercado avaliado sob a ótica de aceleração/desaceleração de Crescimento (G) e Inflação (I).</div>
+          </div>
+        `;
+      }
     }
   }
 
@@ -6355,7 +7034,7 @@ document.addEventListener("keydown", (e) => {
 function initApp() {
   renderPortfolioView(activePortfolioKey);
   renderRiskRangesTable("all");
-  renderDecisionsTable();
+  fetchDecisionsData();
   renderRebalanceModalTables();
   renderChatMessages();
   renderMacroIndicatorsTable();

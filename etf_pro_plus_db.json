@@ -1,5 +1,5 @@
 {
-  "updatedAt": "15/09/2026 15:37:58",
+  "updatedAt": "16/09/2026 14:40:02",
   "reports": {
     "weekly": [
       {
@@ -434,6 +434,391 @@
             "rangeHigh": 28.29
           }
         ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_110438_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-09-16 10:37AM EDT",
+        "addsLong": [
+          {
+            "name": "Energy Sector",
+            "ticker": "XLE"
+          },
+          {
+            "name": "Ethereum",
+            "ticker": "ETHA"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "Canadian Dollar",
+            "ticker": "FXC",
+            "rangeLow": 70.02,
+            "rangeHigh": 71.01
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2024-12-13 01:14PM EST",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_78957_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2024-12-16 01:35PM EST",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_79027_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2024-12-17 01:24PM EST",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_79081_UPDATE__4_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2024-12-18 12:14PM EST",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_79247_UPDATE__9_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2024-12-20 12:40PM EST",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_84671_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-04-07 10:58AM EDT",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_84723_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-04-08 10:40AM EDT",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_84800_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-04-09 10:36AM EDT",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_84885_UPDATE__6_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-04-10 10:38AM EDT",
+        "addsLong": [
+          {
+            "name": "7-10 Year Treasury Bonds",
+            "ticker": "IEF"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Magnificent Seven ETF",
+            "ticker": "MAGS"
+          },
+          {
+            "name": "Colombia",
+            "ticker": "GXG"
+          },
+          {
+            "name": "Investment Grade Corporate Bonds",
+            "ticker": "LQD"
+          },
+          {
+            "name": "20+ Year Treasuries",
+            "ticker": "TLT"
+          },
+          {
+            "name": "5-10 Year Investment Grade Corporate Bonds",
+            "ticker": "IGIB"
+          }
+        ],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_93781_UPDATE__5_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-10-14 10:48AM EDT",
+        "addsLong": [
+          {
+            "name": "Copper",
+            "ticker": "CPER"
+          },
+          {
+            "name": "Healthcare",
+            "ticker": "XLV"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "Global Value",
+            "ticker": "GVAL"
+          },
+          {
+            "name": "Ethereum",
+            "ticker": "ETHA"
+          },
+          {
+            "name": "Mexico",
+            "ticker": "EWW"
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_93844_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-10-15 10:33AM EDT",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Argentina",
+            "ticker": "ARGT"
+          }
+        ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_93939_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-10-16 10:33AM EDT",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_94021_UPDATE__6_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-10-17 11:59AM EDT",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_94117_UPDATE__1_New_ETF_Pro_Change.txt",
+        "reportDatetime": "2025-10-20 10:49AM EDT",
+        "addsLong": [
+          {
+            "name": "Interest Rate Hedge",
+            "ticker": "IVOL"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_94173_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-10-21 10:55AM EDT",
+        "addsLong": [],
+        "addsShort": [
+          {
+            "name": "Global Private Equity",
+            "ticker": "PSP"
+          },
+          {
+            "name": "Italy",
+            "ticker": "EWI"
+          }
+        ],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "India Small Cap",
+            "ticker": "SMIN"
+          }
+        ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_94235_UPDATE__1_New_ETF_Pro_Change.txt",
+        "reportDatetime": "2025-10-22 10:49AM EDT",
+        "addsLong": [],
+        "addsShort": [
+          {
+            "name": "Invesco CurrencyShares Canadian Dollar Trust",
+            "ticker": "FXC"
+          }
+        ],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_94308_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-10-23 10:39AM EDT",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "Sprott Junior Uranium Miners ETF ",
+            "ticker": "URNJ"
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_94368_UPDATE__5_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-10-24 11:01AM EDT",
+        "addsLong": [
+          {
+            "name": "Long Treasury Bond",
+            "ticker": "TLT"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Canadian Dollar",
+            "ticker": "FXC"
+          },
+          {
+            "name": "Greece",
+            "ticker": "GREK"
+          },
+          {
+            "name": "New Zealand",
+            "ticker": "ENZL"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Uranium Miners",
+            "ticker": "URNJ"
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_94493_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-10-27 10:39AM EDT",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Home Construction",
+            "ticker": "ITB"
+          },
+          {
+            "name": "Global Private Equity",
+            "ticker": "PSP"
+          }
+        ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_94592_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-10-28 01:47PM EDT",
+        "addsLong": [
+          {
+            "name": "US Dollar Bullish",
+            "ticker": "UUP"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "Global Cannabis",
+            "ticker": "TOKE"
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "Corn",
+            "ticker": "CORN"
+          }
+        ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_94673_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-10-29 03:27PM EDT",
+        "addsLong": [
+          {
+            "name": "Treasury Bonds",
+            "ticker": "IEF"
+          },
+          {
+            "name": "Micro-Cap Equity",
+            "ticker": "IWC"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_94757_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2025-10-30 03:06PM EDT",
+        "addsLong": [
+          {
+            "name": "Taxable Municipal Bonds",
+            "ticker": "BBN"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "New Zealand",
+            "ticker": "ENZL"
+          }
+        ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_94803_UPDATE__1_New_ETF_Pro_Change.txt",
+        "reportDatetime": "2025-10-31 10:39AM EDT",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Italy",
+            "ticker": "EWI"
+          }
+        ]
       }
     ],
     "monthly": [
@@ -511,6 +896,144 @@
   },
   "changesLog": [
     {
+      "date": "2024-12-13 01:14PM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Sem mudanças detectadas"
+    },
+    {
+      "date": "2024-12-16 01:35PM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_78957_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Sem mudanças detectadas"
+    },
+    {
+      "date": "2024-12-17 01:24PM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_79027_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Sem mudanças detectadas"
+    },
+    {
+      "date": "2024-12-18 12:14PM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_79081_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "summary": "Sem mudanças detectadas"
+    },
+    {
+      "date": "2024-12-20 12:40PM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_79247_UPDATE__9_New_ETF_Pro_Changes.txt",
+      "summary": "Sem mudanças detectadas"
+    },
+    {
+      "date": "2025-04-07 10:58AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_84671_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Sem mudanças detectadas"
+    },
+    {
+      "date": "2025-04-08 10:40AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_84723_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Sem mudanças detectadas"
+    },
+    {
+      "date": "2025-04-09 10:36AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_84800_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Sem mudanças detectadas"
+    },
+    {
+      "date": "2025-04-10 10:38AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_84885_UPDATE__6_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: 7-10 Year Treasury Bonds (IEF) | Adicionou SHORT: Magnificent Seven ETF (MAGS), Colombia (GXG), Investment Grade Corporate Bonds (LQD), 20+ Year Treasuries (TLT), 5-10 Year Investment Grade Corporate Bonds (IGIB)"
+    },
+    {
+      "date": "2025-10-14 10:48AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_93781_UPDATE__5_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Copper (CPER), Healthcare (XLV) | Removeu LONG: Global Value (GVAL), Ethereum (ETHA), Mexico (EWW)"
+    },
+    {
+      "date": "2025-10-15 10:33AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_93844_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Removeu SHORT: Argentina (ARGT)"
+    },
+    {
+      "date": "2025-10-16 10:33AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_93939_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Sem mudanças detectadas"
+    },
+    {
+      "date": "2025-10-17 11:59AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_94021_UPDATE__6_New_ETF_Pro_Changes.txt",
+      "summary": "Sem mudanças detectadas"
+    },
+    {
+      "date": "2025-10-20 10:49AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_94117_UPDATE__1_New_ETF_Pro_Change.txt",
+      "summary": "Adicionou LONG: Interest Rate Hedge (IVOL)"
+    },
+    {
+      "date": "2025-10-21 10:55AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_94173_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou SHORT: Global Private Equity (PSP), Italy (EWI) | Removeu SHORT: India Small Cap (SMIN)"
+    },
+    {
+      "date": "2025-10-22 10:49AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_94235_UPDATE__1_New_ETF_Pro_Change.txt",
+      "summary": "Adicionou SHORT: Invesco CurrencyShares Canadian Dollar Trust (FXC)"
+    },
+    {
+      "date": "2025-10-23 10:39AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_94308_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Removeu LONG: Sprott Junior Uranium Miners ETF  (URNJ)"
+    },
+    {
+      "date": "2025-10-24 11:01AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_94368_UPDATE__5_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Long Treasury Bond (TLT) | Adicionou SHORT: Canadian Dollar (FXC), Greece (GREK), New Zealand (ENZL) | Removeu LONG: Uranium Miners (URNJ)"
+    },
+    {
+      "date": "2025-10-27 10:39AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_94493_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Removeu SHORT: Home Construction (ITB), Global Private Equity (PSP)"
+    },
+    {
+      "date": "2025-10-28 01:47PM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_94592_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: US Dollar Bullish (UUP) | Removeu LONG: Global Cannabis (TOKE) | Removeu SHORT: Corn (CORN)"
+    },
+    {
+      "date": "2025-10-29 03:27PM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_94673_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Treasury Bonds (IEF), Micro-Cap Equity (IWC)"
+    },
+    {
+      "date": "2025-10-30 03:06PM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_94757_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Taxable Municipal Bonds (BBN) | Removeu SHORT: New Zealand (ENZL)"
+    },
+    {
+      "date": "2025-10-31 10:39AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_94803_UPDATE__1_New_ETF_Pro_Change.txt",
+      "summary": "Removeu SHORT: Italy (EWI)"
+    },
+    {
       "date": "2026-08-10 02:05PM EDT",
       "type": "monthly",
       "sourceFile": "monthly_2026-08-10.pdf",
@@ -527,6 +1050,12 @@
       "type": "intraday",
       "sourceFile": "intraday_2026-09-14.pdf",
       "summary": "Adicionou SHORT: US Small-Cap (IWM), Australia Equities (EWA), Switzerland (EWL) | Removeu LONG: Spain (EWP), Physical Uranium (SRUUF), Gold Miners (GDX), South Africa (EZA) | Removeu SHORT: US Dollar Bullish (UUP)"
+    },
+    {
+      "date": "2026-09-16 10:37AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_110438_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Energy Sector (XLE), Ethereum (ETHA) | Removeu LONG: Canadian Dollar (FXC)"
     }
   ],
   "currentLineup": [
@@ -748,29 +1277,6 @@
         "midPct": 4.0,
         "maxPct": 6.0,
         "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "FXC",
-      "name": "Canadian Dollar",
-      "side": "long",
-      "dateAdded": "8/26/2026",
-      "assetClass": "Foreign Currencies",
-      "entryPrice": 70.52,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 70.26,
-      "rangeHigh": 71.01,
-      "sourceOfEntry": "weekly:weekly_2026-09-13.pdf",
-      "allowedBand": {
-        "minPct": 4.0,
-        "midPct": 8.0,
-        "maxPct": 12.0,
-        "label": "Moeda Estrangeira / Ouro Físico (FX)"
       },
       "nativeQuads": [
         1,
@@ -1022,10 +1528,10 @@
       "rangeHigh": 106.0,
       "sourceOfEntry": "weekly:weekly_2026-09-13.pdf",
       "allowedBand": {
-        "minPct": 3.0,
-        "midPct": 6.5,
-        "maxPct": 10.0,
-        "label": "Renda Fixa"
+        "minPct": 1.5,
+        "midPct": 3.25,
+        "maxPct": 5.0,
+        "label": "Renda Fixa — Short (extrapolado, metade da banda Long)"
       },
       "nativeQuads": [
         4
@@ -1044,10 +1550,10 @@
       "rangeHigh": 82.71,
       "sourceOfEntry": "weekly:weekly_2026-09-13.pdf",
       "allowedBand": {
-        "minPct": 3.0,
-        "midPct": 6.5,
-        "maxPct": 10.0,
-        "label": "Renda Fixa"
+        "minPct": 1.5,
+        "midPct": 3.25,
+        "maxPct": 5.0,
+        "label": "Renda Fixa — Short (extrapolado, metade da banda Long)"
       },
       "nativeQuads": [
         4
@@ -1112,10 +1618,10 @@
       "rangeHigh": 59.42,
       "sourceOfEntry": "weekly:weekly_2026-09-13.pdf",
       "allowedBand": {
-        "minPct": 3.0,
-        "midPct": 6.5,
-        "maxPct": 10.0,
-        "label": "Renda Fixa"
+        "minPct": 1.5,
+        "midPct": 3.25,
+        "maxPct": 5.0,
+        "label": "Renda Fixa — Short (extrapolado, metade da banda Long)"
       },
       "nativeQuads": [
         4
@@ -1134,10 +1640,10 @@
       "rangeHigh": 15.01,
       "sourceOfEntry": "weekly:weekly_2026-09-13.pdf",
       "allowedBand": {
-        "minPct": 3.0,
-        "midPct": 6.5,
-        "maxPct": 10.0,
-        "label": "Renda Fixa"
+        "minPct": 1.5,
+        "midPct": 3.25,
+        "maxPct": 5.0,
+        "label": "Renda Fixa — Short (extrapolado, metade da banda Long)"
       },
       "nativeQuads": [
         4
@@ -1265,7 +1771,7 @@
       "side": "short",
       "dateAdded": "2026-09-14 10:16AM EDT",
       "assetClass": null,
-      "entryPrice": 287.91,
+      "entryPrice": 287.16,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -1300,6 +1806,36 @@
       "rangeLow": null,
       "rangeHigh": null,
       "sourceOfEntry": "intraday:intraday_2026-09-14.pdf",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "XLE",
+      "name": "Energy Sector",
+      "side": "long",
+      "dateAdded": "2026-09-16 10:37AM EDT",
+      "assetClass": null,
+      "entryPrice": 64.65,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110438_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "ETHA",
+      "name": "Ethereum",
+      "side": "long",
+      "dateAdded": "2026-09-16 10:37AM EDT",
+      "assetClass": null,
+      "entryPrice": 17.901,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110438_UPDATE__3_New_ETF_Pro_Changes.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"

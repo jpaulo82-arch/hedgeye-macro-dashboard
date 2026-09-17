@@ -80,7 +80,7 @@
       💼 Portfólio
     </button>
     <button class="nav-tab" data-tab="decisions" onclick="setTab('decisions')">
-      📝 Decisões Keith
+      📜 Log Auditável
     </button>
     <button class="nav-tab" data-tab="playbook" onclick="setTab('playbook')">
       🧭 Sistema GIP
@@ -285,6 +285,26 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WIDGET EXECUTIVO: LOG AUDITÁVEL & ÚLTIMAS DECISÕES INSTITUCIONAIS -->
+      <div class="card mt-3" style="border: 1px solid rgba(56, 189, 248, 0.25); background: linear-gradient(180deg, rgba(18, 24, 36, 0.95), rgba(15, 20, 30, 0.85));">
+        <div class="card-header" style="flex-wrap: wrap; gap: 0.75rem;">
+          <div>
+            <h3><span class="icon">📜</span> Trilha de Auditoria & Chamadas Recentes (Keith McCullough & Portfólio)</h3>
+            <p class="subtitle">Acompanhe as decisões institucionais auditadas com gatilhos de invalidação e convicção de regime</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <button class="btn btn-outline btn-sm" onclick="setTab('decisions')" style="color: #38BDF8; border-color: rgba(56, 189, 248, 0.4);" title="Abrir Central de Auditoria Completa com Filtros e Exportação">
+              <span>🔍</span> Ver Central de Auditoria Completa (<span id="dashWidgetAuditCount">--</span>) &rarr;
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div id="dashAuditRecentGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.85rem;">
+            <div style="color: var(--text-dim); font-size: 0.85rem;">Carregando chamadas recentes...</div>
           </div>
         </div>
       </div>
@@ -671,136 +691,152 @@
     <!-- ========================================================
          3. DECISÕES KEITH (LOG DE DECISÕES & AUDITORIA)
          ======================================================== -->
+    <!-- ========================================================
+         3. LOG AUDITÁVEL & DECISÕES INSTITUCIONAIS
+         ======================================================== -->
     <section id="tab-decisions" class="tab-content">
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <h3><span class="icon">📝</span> Log de Decisões, Chamadas do Keith & Auditoria de Teses</h3>
-            <p class="subtitle">Registro auditável para separar a qualidade do processo dos resultados de curto prazo</p>
+      <!-- 4 Stat Cards / KPIs de Auditoria -->
+      <div class="audit-stats-grid">
+        <div class="audit-stat-card stat-bullish">
+          <div class="audit-stat-header">
+            <span class="audit-stat-label">Total de Logs Auditados</span>
+            <span class="audit-stat-icon">📜</span>
           </div>
-          <button class="btn btn-primary" onclick="openNewDecisionModal()">
-            <span class="icon">➕</span> Nova Decisão
-          </button>
+          <div class="audit-stat-value" id="auditKpiTotal">--</div>
+          <div class="audit-stat-sub" id="auditKpiDays">Em 9 sessões de mercado</div>
         </div>
+
+        <div class="audit-stat-card stat-bearish">
+          <div class="audit-stat-header">
+            <span class="audit-stat-label">Convicção Dominante</span>
+            <span class="audit-stat-icon">⚖️</span>
+          </div>
+          <div class="audit-stat-value" id="auditKpiConviction" style="font-size: 1.15rem; line-height: 1.3;">--</div>
+          <div class="audit-stat-sub">Sinais de proteção e short ativo</div>
+        </div>
+
+        <div class="audit-stat-card stat-regime">
+          <div class="audit-stat-header">
+            <span class="audit-stat-label">Regime Macro Auditado</span>
+            <span class="audit-stat-icon">🧭</span>
+          </div>
+          <div class="audit-stat-value text-rose" style="font-size: 1.25rem;">QUAD 3</div>
+          <div class="audit-stat-sub">Estagflação / Reflação Real (#Accelerating)</div>
+        </div>
+
+        <div class="audit-stat-card stat-triggers">
+          <div class="audit-stat-header">
+            <span class="audit-stat-label">Gatilhos Monitorados</span>
+            <span class="audit-stat-icon">🎯</span>
+          </div>
+          <div class="audit-stat-value" id="auditKpiTriggers">--</div>
+          <div class="audit-stat-sub">Risk Ranges, TREND e Nowcast</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" style="flex-wrap: wrap; gap: 0.75rem;">
+          <div>
+            <h3><span class="icon">📜</span> Trilha de Auditoria & Chamadas de Investimento (KM Calls)</h3>
+            <p class="subtitle">Registro auditável e imutável para separar a qualidade do processo dos resultados de curto prazo</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+            <button class="btn-export-csv" onclick="exportDecisionsCSV()" title="Exportar logs auditados em formato CSV (Excel compatível)">
+              <span>📥</span> Exportar CSV
+            </button>
+            <button class="btn-export-json" onclick="exportDecisionsJSON()" title="Exportar logs auditados em formato JSON estruturado">
+              <span>📋</span> Exportar JSON
+            </button>
+            <button class="btn btn-outline btn-sm" id="decisionsSyncBtn" onclick="syncDecisions()" title="Extrair novas chamadas do Keith do relatório de hoje via IA">
+              <span class="icon" id="decisionsSyncIcon">🔄</span> <span id="decisionsSyncText">Extrair Decisões de Hoje</span>
+            </button>
+            <button class="btn btn-primary" onclick="openNewDecisionModal()">
+              <span class="icon">➕</span> Nova Decisão
+            </button>
+          </div>
+        </div>
+
         <div class="card-body">
+          <!-- BARRA DE FILTROS INTELIGENTES & BUSCA TEXTUAL -->
+          <div class="audit-filter-bar">
+            <div class="audit-filter-top-row">
+              <div class="audit-search-box">
+                <span class="audit-search-icon">🔍</span>
+                <input type="text" id="decisionsSearchInput" placeholder="Busca textual em ativo, tese, categoria, racional, gatilho..." oninput="applyDecisionsFilters()">
+              </div>
+
+              <div class="audit-filter-selects">
+                <select id="decisionsAssetFilter" class="audit-select" onchange="applyDecisionsFilters()" title="Filtrar por Ativo específico">
+                  <option value="">Todos os Ativos</option>
+                </select>
+
+                <select id="decisionsRegimeFilter" class="audit-select" onchange="applyDecisionsFilters()" title="Filtrar por Regime Macro">
+                  <option value="">Todos os Regimes</option>
+                  <option value="Quad 3">Quad 3 (Estagflação)</option>
+                  <option value="Quad 2">Quad 2 (Reflação)</option>
+                  <option value="Quad 1">Quad 1 (Goldilocks)</option>
+                  <option value="Quad 4">Quad 4 (Deflação)</option>
+                  <option value="Macro Global">Macro Global / FX</option>
+                </select>
+
+                <select id="decisionsTriggerFilter" class="audit-select" onchange="applyDecisionsFilters()" title="Filtrar por Tipo de Gatilho">
+                  <option value="">Todos os Gatilhos</option>
+                  <option value="Ruptura de Risk Range">Ruptura de Risk Range</option>
+                  <option value="Quebra de TREND">Quebra de TREND</option>
+                  <option value="Sinal TRADE">Sinal TRADE</option>
+                  <option value="Invalidação Nowcast / GIP">Invalidação Nowcast / GIP</option>
+                  <option value="Alocação de Fator / Rotação">Alocação de Fator / Rotação</option>
+                  <option value="Gestão de Risco / Stop">Gestão de Risco / Stop</option>
+                  <option value="Decisão Manual">Decisão Manual</option>
+                </select>
+
+                <select id="decisionsStatusFilter" class="audit-select" onchange="applyDecisionsFilters()" title="Filtrar por Convicção / Direção">
+                  <option value="">Todas as Convicções</option>
+                  <option value="bullish">🟢 Bullish / Long</option>
+                  <option value="bearish">🔴 Bearish / Short</option>
+                  <option value="neutral">🟡 Neutral / Caixa</option>
+                </select>
+
+                <select id="decisionsPeriodFilter" class="audit-select" onchange="applyDecisionsFilters()" title="Filtrar por Período de Data">
+                  <option value="all">Todo o Histórico</option>
+                  <option value="today">Apenas Hoje</option>
+                  <option value="7d">Últimos 7 Dias</option>
+                  <option value="30d">Últimos 30 Dias</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="audit-filter-bottom-row">
+              <div class="audit-filter-status">
+                <span class="pulse-dot" style="background:#38BDF8;"></span>
+                <span id="decisionsFilterCount">Filtrando decisões...</span>
+              </div>
+              <div class="audit-filter-actions">
+                <button class="btn btn-outline btn-sm" style="font-size: 0.75rem; padding: 0.25rem 0.6rem;" onclick="resetDecisionsFilters()">
+                  ✕ Limpar Filtros
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- TABELA DE AUDITORIA INSTITUCIONAL -->
           <div class="table-responsive">
             <table class="data-table">
               <thead>
                 <tr>
-                  <th>Data</th>
-                  <th>Ativo / Tema</th>
-                  <th>Carteira</th>
-                  <th>Categoria</th>
-                  <th>Decisão / Conduta</th>
-                  <th>Racional Operacional</th>
-                  <th>Gatilho de Invalidação</th>
-                  <th>Status</th>
+                  <th style="min-width: 105px;">Data & Origem</th>
+                  <th style="min-width: 140px;">Ativo / Tese</th>
+                  <th style="min-width: 130px;">Categoria & Carteira</th>
+                  <th style="min-width: 95px;">Regime Macro</th>
+                  <th style="min-width: 120px;">Decisão & Direção</th>
+                  <th style="min-width: 125px;">Tipo de Gatilho</th>
+                  <th style="min-width: 170px;">Gatilho de Invalidação</th>
+                  <th style="min-width: 220px;">Racional Operacional</th>
+                  <th style="min-width: 75px; text-align: center;">Ações</th>
                 </tr>
               </thead>
               <tbody id="decisionsTableBody">
-                <!-- CHAMADAS DE HOJE: 09/09/2026 (EARLYLOOK "Burning Down The USD House?") -->
-                <tr style="background: rgba(56, 189, 248, 0.08);">
-                  <td><strong>09/09/2026</strong> <br><span class="badge badge-accent">KM Call (Hoje)</span></td>
-                  <td><strong>Dólar Index (USD / DXY) & Iene (JPY)</strong></td>
-                  <td>Macro Global</td>
-                  <td><span class="badge badge-bearish">CURRENCY DEBASEMENT</span></td>
-                  <td><strong>Bearish TREND / Mínima de 3 Meses ($98,77)</strong></td>
-                  <td>Dólar em colapso com Iene subindo (+0,4% a 153,51) gera choque inflacionário e fuga do poder de compra real para commodities.</td>
-                  <td>Fechamento do DXY acima de 100,00 ou quebra de TREND no Iene.</td>
-                  <td><span class="badge badge-bearish">🔴 Bearish TREND</span></td>
-                </tr>
-                <tr style="background: rgba(56, 189, 248, 0.08);">
-                  <td><strong>09/09/2026</strong> <br><span class="badge badge-accent">KM Call (Hoje)</span></td>
-                  <td><strong>Ouro Spot & Cobre Físico (GOLD / COPPER / NEM)</strong></td>
-                  <td>Ambas</td>
-                  <td><span class="badge badge-core">REAL ASSETS / ATHs</span></td>
-                  <td><strong>Comprar Recuos / Alocação Máxima no Piso</strong></td>
-                  <td>Cobre rompendo para Máximas Históricas (ATHs 6,49–6,75), Ouro sustentado em 4.290–4.599 e CRB Index em nova máxima de ciclo.</td>
-                  <td>Fechamento do Ouro abaixo de US$ 4.204.</td>
-                  <td><span class="badge badge-bullish">🟢 Convicção Máxima</span></td>
-                </tr>
-                <tr style="background: rgba(56, 189, 248, 0.08);">
-                  <td><strong>09/09/2026</strong> <br><span class="badge badge-accent">KM Call (Hoje)</span></td>
-                  <td><strong>Treasuries & Juros Longos (UST10Y / TLT / IEF)</strong></td>
-                  <td>Macro Shorts</td>
-                  <td><span class="badge badge-bearish">SHORT DURATION ESTRUTURAL</span></td>
-                  <td><strong>Manter Shorts / Yields em Novas Máximas de Ciclo</strong></td>
-                  <td>UST 10Y Yield sinaliza topo em 4,86% e 2Y em 4,50%. Expectativas de inflação em alta pressionam a ponta longa.</td>
-                  <td>UST 10Y Yield fechando abaixo de 4,68%.</td>
-                  <td><span class="badge badge-bearish">🔴 Short Estrutural</span></td>
-                </tr>
-                <tr style="background: rgba(56, 189, 248, 0.08);">
-                  <td><strong>09/09/2026</strong> <br><span class="badge badge-accent">KM Call (Hoje)</span></td>
-                  <td><strong>Setor Imobiliário Residencial (Housing / ITB)</strong></td>
-                  <td>Macro Shorts</td>
-                  <td><span class="badge badge-bearish">COLLAPSE / HOUSING</span></td>
-                  <td><strong>Evitar / Subponderar / Short</strong></td>
-                  <td>Cesta de Housing da Goldman Sachs despencou -3,0% ontem e acumula -10,1% no mês devido ao impacto de juros de hipotecas altos.</td>
-                  <td>Rompimento de ITB acima de máximas de 3 meses.</td>
-                  <td><span class="badge badge-bearish">🔴 Setor Frágil</span></td>
-                </tr>
-                <!-- CHAMADAS DE 08/09/2026 -->
-                <tr>
-                  <td>08/09/2026</td>
-                  <td><strong>Petróleo & Oil Services (WTIC / OIH)</strong></td>
-                  <td>Ambas</td>
-                  <td><span class="badge badge-core">REFLAÇÃO QUAD 3</span></td>
-                  <td><strong>Long / Convicção Máxima (#Accelerating)</strong></td>
-                  <td>WTI disparou +23% no mês para teto de US$ 97,53. OIH elevou piso para 414 e teto para 444. Reforça superciclo de commodities.</td>
-                  <td>Quebra de suporte do WTI abaixo de US$ 86,36.</td>
-                  <td><span class="badge badge-bullish">🟢 Ativo (Líder)</span></td>
-                </tr>
-                <tr>
-                  <td>08/09/2026</td>
-                  <td><strong>Russell 2000 vs Large Caps (RUT / SPX)</strong></td>
-                  <td>Global</td>
-                  <td><span class="badge badge-tail">FACTOR REALLOCATION</span></td>
-                  <td><strong>Rebaixar RUT para Neutral / Priorizar Large Caps</strong></td>
-                  <td>Russell acumula -2,0% no mês sob pressão do custo de dívida e aperto financeiro. Large Caps mantêm fluxo comprador com SPX Bullish (7.604–7.767).</td>
-                  <td>RUT rompendo acima de 3.014 com alívio persistente nos bond yields.</td>
-                  <td><span class="badge badge-neutral">🟡 Rebaixado p/ Neutral</span></td>
-                </tr>
-                <tr>
-                  <td>08/09/2026</td>
-                  <td><strong>Utilities (XLU) & Crédito Corporativo (LQD)</strong></td>
-                  <td>Schwab + Shorts</td>
-                  <td><span class="badge badge-bearish">RELOAD SHORTS</span></td>
-                  <td><strong>Recarregar Shorts em XLU e Manter Short LQD</strong></td>
-                  <td>Keith McCullough recarregou posições short em Utilities no repique. LQD Bearish TREND (104,60–106,10) reflete deterioração de crédito longo.</td>
-                  <td>XLU em nova máxima histórica ou LQD sustentado acima de 106,10.</td>
-                  <td><span class="badge badge-bearish">🔴 Alerta Bearish</span></td>
-                </tr>
-                <!-- CHAMADAS ANTERIORES -->
-                <tr>
-                  <td>04/09/2026</td>
-                  <td><strong>AI Software vs Semis (IGV / SMH)</strong></td>
-                  <td>Hedgeye Macro</td>
-                  <td><span class="badge badge-core">LONG SOFTWARE / SHORT SEMIS</span></td>
-                  <td>Manter / Sobreponderar AI Software</td>
-                  <td>Long AI Software vs Short Semis avançou +17,9% no mês, enquanto High Beta Momentum desabou das máximas.</td>
-                  <td>Reversão técnica no par com quebra de fluxo em software enterprise.</td>
-                  <td><span class="badge badge-bullish">Ativo</span></td>
-                </tr>
-                <tr>
-                  <td>02/09/2026</td>
-                  <td><strong>High Beta & Semis IA (Quad 1)</strong></td>
-                  <td>Tasty + Schwab</td>
-                  <td><span class="badge badge-tail">TAIL (1–3%)</span></td>
-                  <td>Manter estritamente dentro do limite TAIL</td>
-                  <td>Cestas de momentum em drawdown de -24%; limitar risco a 1-3% por ativo e proteger caixa SGOV.</td>
-                  <td>Quebra simultânea de TRADE e TREND aciona saída total (#OUT).</td>
-                  <td><span class="badge badge-neutral">Vigente</span></td>
-                </tr>
-                <tr>
-                  <td>01/09/2026</td>
-                  <td><strong>MercadoLibre (MELI)</strong></td>
-                  <td>Ambas</td>
-                  <td><span class="badge badge-core">CORE GROWTH</span></td>
-                  <td>Manter posição integral</td>
-                  <td>Dólar fraco (DXY Bearish) expande margens na América Latina com aceleração de fintech (Mercado Pago).</td>
-                  <td>Desaceleração de TPV abaixo de 20% com deterioração de crédito.</td>
-                  <td><span class="badge badge-bullish">Vigente</span></td>
-                </tr>
+                <tr><td colspan="9" style="text-align: center; padding: 2rem;">Carregando logs auditáveis...</td></tr>
               </tbody>
             </table>
           </div>
@@ -2143,6 +2179,31 @@
             </div>
           </div>
 
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+              <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Regime Macro:</label>
+              <select id="decRegime" class="form-select" style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+                <option value="Quad 3" selected>Quad 3 (Estagflação / Reflação Real)</option>
+                <option value="Quad 2">Quad 2 (Reflação / High Growth)</option>
+                <option value="Quad 1">Quad 1 (Goldilocks)</option>
+                <option value="Quad 4">Quad 4 (Deflação)</option>
+                <option value="Macro Global">Macro Global / FX</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Tipo de Gatilho:</label>
+              <select id="decTriggerType" class="form-select" style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
+                <option value="Ruptura de Risk Range">Ruptura de Risk Range</option>
+                <option value="Quebra de TREND">Quebra de TREND</option>
+                <option value="Sinal TRADE">Sinal TRADE</option>
+                <option value="Invalidação Nowcast / GIP">Invalidação Nowcast / GIP</option>
+                <option value="Alocação de Fator / Rotação">Alocação de Fator / Rotação</option>
+                <option value="Gestão de Risco / Stop">Gestão de Risco / Stop</option>
+                <option value="Decisão Manual" selected>Decisão Manual</option>
+              </select>
+            </div>
+          </div>
+
           <div>
             <label style="font-size: 0.8rem; color: #94A3B8; font-weight: 600; display: block; margin-bottom: 0.3rem;">Decisão / Conduta Operacional:</label>
             <input type="text" id="decAction" class="form-input" placeholder="Ex: Aumentar alocação no piso do Risk Range" required style="width: 100%; padding: 0.5rem 0.75rem; font-size: 0.85rem;">
@@ -2163,6 +2224,28 @@
             <button type="submit" class="btn btn-primary"><span class="icon">💾</span> Salvar Decisão</button>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MODAL: DETALHES COMPLETOS DO LOG AUDITÁVEL
+       ======================================================== -->
+  <div id="decisionDetailModal" class="modal-overlay" onclick="if(event.target === this) closeDecisionDetailModal()">
+    <div class="modal-card" style="max-width: 720px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <span style="font-size: 1.4rem;">📜</span>
+          <div>
+            <h3 style="margin: 0; font-size: 1.15rem; color: #38BDF8;" id="modalDetailTitle">Ficha de Auditoria da Decisão</h3>
+            <p style="margin: 0.2rem 0 0; font-size: 0.8rem; color: #94A3B8;" id="modalDetailSubtitle">Registro histórico e gatilhos de saída auditados</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeDecisionDetailModal()" title="Fechar janela">✕</button>
+      </div>
+
+      <div class="modal-body" id="modalDetailContent">
+        <!-- Renderizado dinamicamente via JS -->
       </div>
     </div>
   </div>

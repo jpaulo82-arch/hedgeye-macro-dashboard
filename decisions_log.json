@@ -1,0 +1,465 @@
+{
+  "entradas": [
+    {
+      "reportId": "110426",
+      "date": "16/09/2026",
+      "reportTitle": "Sinais: Como Não Morrer Nos Mercados",
+      "extractedByModel": "gemini-flash-lite-latest",
+      "extractedAt": "2026-09-16T10:13:30.076682",
+      "decisions": [
+        {
+          "ativo": "TREASURIES DOS EUA",
+          "categoria": "SHORT DURATION ESTRUTURAL",
+          "decisao": "EVITAR",
+          "racional": "O mercado de Treasuries registra grandes drawdowns e o ambiente exige gestão de risco para evitar segurar títulos de longo prazo (bag-holding).",
+          "gatilho_invalidacao": "Estabilização sustentada da curva de juros com reversão do momentum de baixa nos títulos de longo prazo.",
+          "status": "bearish",
+          "tipo_gatilho": "Gestão de Risco / Stop",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (Sinais: Como Não Morrer Nos Mercados)"
+        },
+        {
+          "ativo": "CESTA DE ALTO SENTIMENTO DO VAREJO",
+          "categoria": "FATORES DE AÇÕES VAREJISTAS",
+          "decisao": "EVITAR",
+          "racional": "A cesta caiu mais 2,0% e foi de +23% para -3% no acumulado do ano, uma reversão de 26 pontos desde o pico de 28 de maio.",
+          "gatilho_invalidacao": "Retomada do fluxo institucional comprador e reversão do sentimento varejista para patamares de alta.",
+          "status": "bearish",
+          "tipo_gatilho": "Alocação de Fator / Rotação",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (Sinais: Como Não Morrer Nos Mercados)"
+        },
+        {
+          "ativo": "SOXL",
+          "categoria": "EXPOSIÇÕES ALAVANCADAS",
+          "decisao": "EVITAR",
+          "racional": "Ativo altamente alavancado que caiu 17% em um único dia com mais de 101 milhões de ações negociadas.",
+          "gatilho_invalidacao": "Recuperação técnica consistente dos semicondutores com redução da volatilidade implícita e do volume de capitulação.",
+          "status": "bearish",
+          "tipo_gatilho": "Gestão de Risco / Stop",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (Sinais: Como Não Morrer Nos Mercados)"
+        }
+      ]
+    },
+    {
+      "reportId": "110338",
+      "date": "15/09/2026",
+      "reportTitle": "EARLY LOOK: Hedgeye For Financial Advisors",
+      "extractedByModel": "gemini-flash-lite-latest",
+      "extractedAt": "2026-09-16T10:14:18.085625",
+      "decisions": [
+        {
+          "ativo": "TLT, ZROZ, LQD, JOJO, XLU",
+          "categoria": "MACRO HEDGES (SHORTS) / BONDS E UTILITIES",
+          "decisao": "Short / Manter Shorts",
+          "racional": "U.S. 10-Year yields are breaking higher toward key cycle highs, keeping inflation and Fed hike risk elevated.",
+          "gatilho_invalidacao": "TRADE ou TREND signals quebrarem (rompimento dos Risk Ranges sinalizando reversão) / Stop out conforme o processo de Risk Ranges.",
+          "status": "bearish",
+          "tipo_gatilho": "Ruptura de Risk Range",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Hedgeye For Financial Advisors)"
+        },
+        {
+          "ativo": "Gold, silver, copper",
+          "categoria": "REAL ASSETS / METAIS",
+          "decisao": "Reduzir posições",
+          "racional": "Precious and industrial metals under pressure as yields rise.",
+          "gatilho_invalidacao": "TRADE e TREND signals quebram (break rather than holding through drawdowns).",
+          "status": "bearish",
+          "tipo_gatilho": "Quebra de TREND",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Hedgeye For Financial Advisors)"
+        }
+      ]
+    },
+    {
+      "reportId": "110258",
+      "date": "14/09/2026",
+      "reportTitle": "EARLY LOOK: #MOAB In AI vs. The Cycle",
+      "extractedByModel": "gemini-flash-lite-latest",
+      "extractedAt": "2026-09-16T10:15:05.276951",
+      "decisions": [
+        {
+          "ativo": "QQQ",
+          "categoria": "EQUITIES TECH BEARISH",
+          "decisao": "VENDER / SHORT",
+          "racional": "Sinalizando Bearish TRADE com Risk Range de TRADE em 720 e TREND em 705. O autor vendeu todos os longs menos 1, e o ambiente é hostil para techs altamente valorizadas.",
+          "gatilho_invalidacao": "Fechamento ou reversão sustentável acima da resistência/TREND de 705 ou TRADE de 720.",
+          "status": "bearish",
+          "tipo_gatilho": "Ruptura de Risk Range",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: #MOAB In AI vs. The Cycle)"
+        },
+        {
+          "ativo": "SPY",
+          "categoria": "EQUITIES US BEARISH",
+          "decisao": "VENDER / REDUZIR",
+          "racional": "Virou Bearish TRADE na sexta-feira, levando à liquidação de posições longas em tempo real.",
+          "gatilho_invalidacao": "Recuperação do sinal de TRADE e suporte pelo modelo quantitativo.",
+          "status": "bearish",
+          "tipo_gatilho": "Sinal TRADE",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: #MOAB In AI vs. The Cycle)"
+        },
+        {
+          "ativo": "IWM",
+          "categoria": "SMALL CAPS BEARISH",
+          "decisao": "VENDER / EVITAR",
+          "racional": "Já rompeu o suporte do TREND, reforçando o posicionamento defensivo.",
+          "gatilho_invalidacao": "Retorno acima do nível de TREND do Russell (IWM).",
+          "status": "bearish",
+          "tipo_gatilho": "Quebra de TREND",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: #MOAB In AI vs. The Cycle)"
+        },
+        {
+          "ativo": "US Dollar Index",
+          "categoria": "GLOBAL FX BEARISH",
+          "decisao": "VENDER / MANTER BEARISH",
+          "racional": "Caiu -0.1% na última semana e -0.7% no último mês, mantendo-se Bearish TREND no modelo Hedgeye.",
+          "gatilho_invalidacao": "Inversão do sinal para Bullish TREND no modelo cuantitativo.",
+          "status": "bearish",
+          "tipo_gatilho": "Quebra de TREND",
+          "regime": "Macro Global",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: #MOAB In AI vs. The Cycle)"
+        },
+        {
+          "ativo": "Big Tech / AI Stocks (QQQ / SPY / IWM)",
+          "categoria": "FACTOR / TRADE",
+          "regime": "Quad 3",
+          "decisao": "Venda de Longs / Bearish TRADE (#MOAB)",
+          "racional": "Bolha de IA inflada por dívida e valuations insustentáveis; QQQ e SPY acionam Bearish TRADE e VXN rompe 22,14",
+          "gatilho_invalidacao": "QQQ recuperar TRADE acima de 720 com VXN recuando abaixo de 22,14",
+          "tipo_gatilho": "Sinal TRADE",
+          "status": "bullish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "Petróleo Contínuo & Energia (WTIC / OIH)",
+          "categoria": "CORE / REFLAÇÃO",
+          "regime": "Quad 3",
+          "decisao": "Long Convicção Máxima / Comprar Recuos",
+          "racional": "WTI subiu +9,4% na semana e +20,7% em 3 meses (teto US$ 105,74 Bullish); OIH range 415–438 Bullish",
+          "gatilho_invalidacao": "Fechamento do WTI abaixo de US$ 90,44",
+          "tipo_gatilho": "Ruptura de Risk Range",
+          "status": "bullish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "Juros dos T-Bonds (UST 2Y / UST 10Y)",
+          "categoria": "SHORT SOVEREIGN",
+          "regime": "Quad 3",
+          "decisao": "Manter Shorts em Bonds / Yields em Novas Máximas",
+          "racional": "UST 2Y (+26 bps) e UST 10Y (+19 bps) em máximas do ciclo; Nowcast acelerando eleva custo de capital",
+          "gatilho_invalidacao": "Fechamento do UST 10Y abaixo de 4,75%",
+          "tipo_gatilho": "Invalidação Nowcast / GIP",
+          "status": "bearish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "Metais Preciosos (GOLD / SLV)",
+          "categoria": "TÁTICO / HEDGE",
+          "regime": "Quad 3",
+          "decisao": "Reduzir Ouro para Mínimo (MIN) / Zerar Prata (SLV)",
+          "racional": "Ritmo de alta dos yields reais pressiona o ouro no curto prazo; Prata virou Bearish TREND (60–65)",
+          "gatilho_invalidacao": "Fechamento do Ouro acima de 4.473 retomando Bullish",
+          "tipo_gatilho": "Quebra de TREND",
+          "status": "bearish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "Mercados Emergentes & FX (COLO / INDA)",
+          "categoria": "GLOBAL FX & EQUITIES",
+          "regime": "Quad 3",
+          "decisao": "Long Colômbia (COLO) / Short Índia (INDA)",
+          "racional": "Peso Colombiano (+13,3% 3M) surfa superciclo do petróleo; Índia sofre com déficit na balança de energia",
+          "gatilho_invalidacao": "Inversão técnica de fluxo cambial no par COP/USD",
+          "tipo_gatilho": "Alocação de Fator / Rotação",
+          "status": "bullish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        }
+      ]
+    },
+    {
+      "reportId": "hist_11092026",
+      "date": "11/09/2026",
+      "reportTitle": "Decisões Auditadas de 11/09/2026",
+      "extractedByModel": "Histórico Curado Hedgeye",
+      "decisions": [
+        {
+          "ativo": "Dólar Index (DXY) & Treasuries 10Y",
+          "categoria": "MACRO / FX",
+          "regime": "Quad 3",
+          "decisao": "Bearish USD (98,40–99,67) / Bullish UST10Y (4,75%–4,98%)",
+          "racional": "Desvalorização do USD impulsiona inflação de commodities; curva precifica Nowcast de 3,5% em agosto",
+          "gatilho_invalidacao": "Fechamento do DXY > 100,00 ou 10Y < 4,68%",
+          "tipo_gatilho": "Invalidação Nowcast / GIP",
+          "status": "neutral",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "Russell 2000 (RUT)",
+          "categoria": "SHORT ESTRUTURAL",
+          "regime": "Quad 3",
+          "decisao": "Manter Short / Bearish TREND (2.875–2.970)",
+          "racional": "Small caps com balanços alavancados sofrem com aperto de liquidez e juros reais altos",
+          "gatilho_invalidacao": "Fechamento semanal do RUT acima de 2.970",
+          "tipo_gatilho": "Quebra de TREND",
+          "status": "bearish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        }
+      ]
+    },
+    {
+      "reportId": "110057",
+      "date": "10/09/2026",
+      "reportTitle": "EARLY LOOK: Betting $1T On Inflation Accelerating",
+      "extractedByModel": "gemini-flash-lite-latest",
+      "extractedAt": "2026-09-16T10:16:05.176291",
+      "decisions": [
+        {
+          "ativo": "BUXX",
+          "categoria": "REAL ASSETS / INFLATION HEDGES",
+          "decisao": "Comprar",
+          "racional": "O setup favorece BUXX e CLOX em detrimento de títulos de longa duração à medida que a inflação e os rendimentos sobem, com a inflação trimestral caminhando para 3,76% a/a no Q4 de 2026.",
+          "gatilho_invalidacao": "Inversão da tendência de re-aceleração da inflação no Nowcast da Hedgeye ou queda sustentada nos rendimentos dos Treasuries.",
+          "status": "bullish",
+          "tipo_gatilho": "Invalidação Nowcast / GIP",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Betting $1T On Inflation Accelerating)"
+        },
+        {
+          "ativo": "CLOX",
+          "categoria": "REAL ASSETS / INFLATION HEDGES",
+          "decisao": "Comprar",
+          "racional": "O setup favorece BUXX e CLOX em detrimento de títulos de longa duração à medida que a inflação e os rendimentos sobem, com a inflação trimestral caminhando para 3,76% a/a no Q4 de 2026.",
+          "gatilho_invalidacao": "Inversão da tendência de re-aceleração da inflação no Nowcast da Hedgeye ou queda sustentada nos rendimentos dos Treasuries.",
+          "status": "bullish",
+          "tipo_gatilho": "Invalidação Nowcast / GIP",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Betting $1T On Inflation Accelerating)"
+        },
+        {
+          "ativo": "TLT",
+          "categoria": "SHORT DURATION ESTRUTURAL",
+          "decisao": "Short",
+          "racional": "TLT, ZROZ, LQD e Utilities sensíveis a juros permanecem como shorts enquanto a inflação e os rendimentos avançam para novas máximas do ciclo de inflação.",
+          "gatilho_invalidacao": "Rendimentos de 2 e 10 anos quebrando abaixo dos suportes do ciclo ou reversão na alta da inflação projetada.",
+          "status": "bearish",
+          "tipo_gatilho": "Invalidação Nowcast / GIP",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Betting $1T On Inflation Accelerating)"
+        },
+        {
+          "ativo": "ZROZ",
+          "categoria": "SHORT DURATION ESTRUTURAL",
+          "decisao": "Short",
+          "racional": "TLT, ZROZ, LQD e Utilities sensíveis a juros permanecem como shorts enquanto a inflação e os rendimentos avançam para novas máximas do ciclo de inflação.",
+          "gatilho_invalidacao": "Rendimentos de 2 e 10 anos quebrando abaixo dos suportes do ciclo ou reversão na alta da inflação projetada.",
+          "status": "bearish",
+          "tipo_gatilho": "Invalidação Nowcast / GIP",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Betting $1T On Inflation Accelerating)"
+        },
+        {
+          "ativo": "LQD",
+          "categoria": "SHORT DURATION ESTRUTURAL",
+          "decisao": "Short",
+          "racional": "TLT, ZROZ, LQD e Utilities sensíveis a juros permanecem como shorts enquanto a inflação e os rendimentos avançam para novas máximas do ciclo de inflação.",
+          "gatilho_invalidacao": "Rendimentos de 2 e 10 anos quebrando abaixo dos suportes do ciclo ou reversão na alta da inflação projetada.",
+          "status": "bearish",
+          "tipo_gatilho": "Invalidação Nowcast / GIP",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Betting $1T On Inflation Accelerating)"
+        },
+        {
+          "ativo": "Utilities",
+          "categoria": "SHORT DURATION ESTRUTURAL",
+          "decisao": "Short",
+          "racional": "TLT, ZROZ, LQD e Utilities sensíveis a juros permanecem como shorts enquanto a inflação e os rendimentos avançam para novas máximas do ciclo de inflação.",
+          "gatilho_invalidacao": "Rendimentos de 2 e 10 anos quebrando abaixo dos suportes do ciclo ou reversão na alta da inflação projetada.",
+          "status": "bearish",
+          "tipo_gatilho": "Invalidação Nowcast / GIP",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Betting $1T On Inflation Accelerating)"
+        }
+      ]
+    },
+    {
+      "reportId": "hist_08092026",
+      "date": "08/09/2026",
+      "reportTitle": "Decisões Auditadas de 08/09/2026",
+      "extractedByModel": "Histórico Curado Hedgeye",
+      "decisions": [
+        {
+          "ativo": "Petróleo & Oil Services (WTIC / OIH)",
+          "categoria": "CORE / REFLAÇÃO",
+          "regime": "Quad 3",
+          "decisao": "Long Convicção Máxima / Aumentar",
+          "racional": "WTI explodindo para teto de US$ 96,62 (+23% mês); OIH piso subiu para 412 e teto para 444 (#Accelerating)",
+          "gatilho_invalidacao": "Quebra de suporte do WTI abaixo de 85,75",
+          "tipo_gatilho": "Ruptura de Risk Range",
+          "status": "bullish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "Cobre & Metais Reais (COPPER / ICOP / GOLD)",
+          "categoria": "CORE / REAL ASSETS",
+          "regime": "Quad 3",
+          "decisao": "Long / Comprar Recuos",
+          "racional": "Cobre em All-Time Highs (6,51–6,75), CRB +11,5% mês e Ouro firme (4.274–4.646) com DXY Bearish",
+          "gatilho_invalidacao": "Fechamento do Ouro abaixo de 4.204 ou DXY > 100",
+          "tipo_gatilho": "Gatilho Técnico",
+          "status": "bullish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "Russell 2000 vs Large Caps (RUT / SPX)",
+          "categoria": "FACTOR ALLOCATION",
+          "regime": "Quad 3",
+          "decisao": "Rebaixar RUT para NEUTRAL / Priorizar Large Caps",
+          "racional": "Russell acumula -2,0% no mês sob juros altos, enquanto Large Caps sustentam tendência",
+          "gatilho_invalidacao": "RUT quebrar acima de 3.014 com alívio nos yields",
+          "tipo_gatilho": "Alocação de Fator / Rotação",
+          "status": "neutral",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "Treasuries & Juros (UST10Y / TLT / ZROZ)",
+          "categoria": "SHORT ESTRUTURAL",
+          "regime": "Quad 3",
+          "decisao": "Short Duration / Evitar Renda Fixa Longa",
+          "racional": "10Y Yield subiu piso para 4,70% e teto para 4,87%; Higher-for-Longer sem cortes do Fed",
+          "gatilho_invalidacao": "Fechamento do 10Y abaixo de 4,70%",
+          "tipo_gatilho": "Ruptura de Risk Range",
+          "status": "bullish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "Utilities (XLU) & Crédito Corporativo (LQD)",
+          "categoria": "SHORT / REDUÇÃO",
+          "regime": "Quad 3",
+          "decisao": "Recarregar Shorts (XLU) e manter Short LQD",
+          "racional": "Setores sensíveis a juros e dívida corporativa sofrem forte pressão com aperto financeiro",
+          "gatilho_invalidacao": "Fechamento de XLU em nova máxima ou LQD > 106,10",
+          "tipo_gatilho": "Gatilho Técnico",
+          "status": "bearish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        }
+      ]
+    },
+    {
+      "reportId": "hist_04092026",
+      "date": "04/09/2026",
+      "reportTitle": "Decisões Auditadas de 04/09/2026",
+      "extractedByModel": "Histórico Curado Hedgeye",
+      "decisions": [
+        {
+          "ativo": "AI Software (IGV) vs Semis (SMH)",
+          "categoria": "CORE",
+          "regime": "Quad 3",
+          "decisao": "Long Software / Short Semis",
+          "racional": "Software subindo +17,9% no mês enquanto cestas de High Beta recuaram -77% das máximas de junho",
+          "gatilho_invalidacao": "Inversão técnica de fluxo de software enterprise",
+          "tipo_gatilho": "Alocação de Fator / Rotação",
+          "status": "bullish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        }
+      ]
+    },
+    {
+      "reportId": "hist_03082026",
+      "date": "03/08/2026",
+      "reportTitle": "Decisões Auditadas de 03/08/2026",
+      "extractedByModel": "Histórico Curado Hedgeye",
+      "decisions": [
+        {
+          "ativo": "Quadro macro",
+          "categoria": "Macro",
+          "regime": "Quad 3",
+          "decisao": "Tratar agosto como Quad 3, conforme EARLYLOOK",
+          "racional": "Declaração explícita do relatório “Quantum Quads”",
+          "gatilho_invalidacao": "Revisão futura do Nowcast com confirmação em dados/sinais",
+          "tipo_gatilho": "Invalidação Nowcast / GIP",
+          "status": "neutral",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        }
+      ]
+    },
+    {
+      "reportId": "hist_16072026",
+      "date": "16/07/2026",
+      "reportTitle": "Decisões Auditadas de 16/07/2026",
+      "extractedByModel": "Histórico Curado Hedgeye",
+      "decisions": [
+        {
+          "ativo": "HUMN, AIPO, DRIV, DRAM, CLS, VRT",
+          "categoria": "TAIL/Especulativa",
+          "regime": "Quad 3",
+          "decisao": "Manter em tamanhos pequenos",
+          "racional": "Convicção estrutural em robótica, IA e infraestrutura, com posição não dominante",
+          "gatilho_invalidacao": "Tese fundamental deteriorada, excesso de peso ou quebra TREND que exija redução ao tamanho TAIL",
+          "tipo_gatilho": "Quebra de TREND",
+          "status": "neutral",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "SGOV",
+          "categoria": "CAIXA",
+          "regime": "Quad 3",
+          "decisao": "Manter alocação elevada",
+          "racional": "Preservação de capital e opcionalidade em ambiente de incerteza",
+          "gatilho_invalidacao": "Cenário muda com sinais Bullish e assimetria clara em ativos CORE",
+          "tipo_gatilho": "Gatilho Técnico",
+          "status": "neutral",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "XLU, XLRE, XLV, XLP",
+          "categoria": "CORE",
+          "regime": "Quad 3",
+          "decisao": "Aumentar/montar exposição defensiva",
+          "racional": "Rotação de Quad 3 observada naquele momento",
+          "gatilho_invalidacao": "Quebra de sinais vigentes, em especial pressão persistente de yields para XLU/XLRE",
+          "tipo_gatilho": "Alocação de Fator / Rotação",
+          "status": "bullish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-09-16T10:16:28.144556"
+}
