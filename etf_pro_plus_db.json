@@ -1,5 +1,5 @@
 {
-  "updatedAt": "16/09/2026 14:40:02",
+  "updatedAt": "17/09/2026 17:00:28",
   "reports": {
     "weekly": [
       {
@@ -456,6 +456,86 @@
             "ticker": "FXC",
             "rangeLow": 70.02,
             "rangeHigh": 71.01
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_110530_UPDATE__6_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-09-17 11:25AM EDT",
+        "addsLong": [
+          {
+            "name": "Interest Rate Hedge",
+            "ticker": "PFIX"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Semiconductors",
+            "ticker": "SMH"
+          },
+          {
+            "name": "Space",
+            "ticker": "UFO"
+          },
+          {
+            "name": "Quantum Tech",
+            "ticker": "QTUM"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Oil Services",
+            "ticker": "OIH",
+            "rangeLow": 400.0,
+            "rangeHigh": 438.0
+          },
+          {
+            "name": "US Free Cash Flow",
+            "ticker": "VFLO",
+            "rangeLow": 52.51,
+            "rangeHigh": 56.47
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_110532_UPDATE__6_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-09-17 11:25AM EDT",
+        "addsLong": [
+          {
+            "name": "Interest Rate Hedge",
+            "ticker": "PFIX"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Semiconductors",
+            "ticker": "SMH"
+          },
+          {
+            "name": "Space",
+            "ticker": "UFO"
+          },
+          {
+            "name": "Quantum Tech",
+            "ticker": "QTUM"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Oil Services",
+            "ticker": "OIH",
+            "rangeLow": 400.0,
+            "rangeHigh": 438.0
+          },
+          {
+            "name": "US Free Cash Flow",
+            "ticker": "VFLO",
+            "rangeLow": 52.51,
+            "rangeHigh": 56.47
           }
         ],
         "removesShort": []
@@ -1056,6 +1136,18 @@
       "type": "intraday",
       "sourceFile": "intraday_110438_UPDATE__3_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Energy Sector (XLE), Ethereum (ETHA) | Removeu LONG: Canadian Dollar (FXC)"
+    },
+    {
+      "date": "2026-09-17 11:25AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_110530_UPDATE__6_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Interest Rate Hedge (PFIX) | Adicionou SHORT: Semiconductors (SMH), Space (UFO), Quantum Tech (QTUM) | Removeu LONG: Oil Services (OIH), US Free Cash Flow (VFLO)"
+    },
+    {
+      "date": "2026-09-17 11:25AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_110532_UPDATE__6_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Interest Rate Hedge (PFIX) | Adicionou SHORT: Semiconductors (SMH), Space (UFO), Quantum Tech (QTUM) | Removeu LONG: Oil Services (OIH), US Free Cash Flow (VFLO)"
     }
   ],
   "currentLineup": [
@@ -1262,29 +1354,6 @@
       "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     },
     {
-      "ticker": "OIH",
-      "name": "Oil Services",
-      "side": "long",
-      "dateAdded": "8/25/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 420.67,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 411.0,
-      "rangeHigh": 438.0,
-      "sourceOfEntry": "weekly:weekly_2026-09-13.pdf",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
       "ticker": "XBI",
       "name": "Biotech",
       "side": "long",
@@ -1446,29 +1515,6 @@
         3
       ],
       "quadNote": "Long — alinhado com Q1/Q2/Q3 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "VFLO",
-      "name": "US Free Cash Flow",
-      "side": "long",
-      "dateAdded": "9/11/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 53.88,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 52.51,
-      "rangeHigh": 56.47,
-      "sourceOfEntry": "weekly:weekly_2026-09-13.pdf",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     },
     {
       "ticker": "EWZ",
@@ -1816,7 +1862,7 @@
       "side": "long",
       "dateAdded": "2026-09-16 10:37AM EDT",
       "assetClass": null,
-      "entryPrice": 64.65,
+      "entryPrice": 64.03,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -1831,7 +1877,7 @@
       "side": "long",
       "dateAdded": "2026-09-16 10:37AM EDT",
       "assetClass": null,
-      "entryPrice": 17.901,
+      "entryPrice": 18.15,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -1839,6 +1885,69 @@
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "PFIX",
+      "name": "Interest Rate Hedge",
+      "side": "long",
+      "dateAdded": "2026-09-17 11:25AM EDT",
+      "assetClass": null,
+      "entryPrice": 52.0825,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110532_UPDATE__6_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "SMH",
+      "name": "Semiconductors",
+      "side": "short",
+      "dateAdded": "2026-09-17 11:25AM EDT",
+      "assetClass": null,
+      "entryPrice": 560.61,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110532_UPDATE__6_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "UFO",
+      "name": "Space",
+      "side": "short",
+      "dateAdded": "2026-09-17 11:25AM EDT",
+      "assetClass": null,
+      "entryPrice": 43.66,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110532_UPDATE__6_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "QTUM",
+      "name": "Quantum Tech",
+      "side": "short",
+      "dateAdded": "2026-09-17 11:25AM EDT",
+      "assetClass": null,
+      "entryPrice": 146.75,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110532_UPDATE__6_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [
+        1,
+        2
+      ],
+      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
     }
   ],
   "lineupSnapshots": [],

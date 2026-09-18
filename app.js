@@ -1675,10 +1675,30 @@ function renderEtfProPlusTab(data) {
   const updatedEl = document.getElementById("etfProPlusUpdatedAt");
   if (updatedEl) updatedEl.textContent = `Atualizado em ${data.updatedAt || "N/D"} — ${(data.currentLineup || []).length} posições ativas`;
 
+  // Mapa ticker -> sizing (longs orçados + shorts só-ranking) pra ordenar tudo pelo mesmo
+  // critério: % de alocação/conviction dentro da banda, não a ordem bruta de chegada do parser.
+  const etfProSizingByTicker = {};
+  (data.suggestedSizing?.sizing || []).forEach(r => { etfProSizingByTicker[r.ticker] = r; });
+  (data.suggestedSizing?.shortsSizing || []).forEach(r => { etfProSizingByTicker[r.ticker] = r; });
+
+  function sortEtfProByLongShortThenConviction(list) {
+    return list.slice().sort((a, b) => {
+      if (a.side !== b.side) return a.side === "long" ? -1 : 1;
+      const ra = etfProSizingByTicker[a.ticker];
+      const rb = etfProSizingByTicker[b.ticker];
+      const pa = ra ? ra.suggestedPct : -1;
+      const pb = rb ? rb.suggestedPct : -1;
+      if (pb !== pa) return pb - pa;
+      const ca = ra ? ra.convictionScore : -1;
+      const cb = rb ? rb.convictionScore : -1;
+      return cb - ca;
+    });
+  }
+
   // Lineup atual
   const lineupBody = document.getElementById("etfProPlusLineupBody");
   if (lineupBody) {
-    const lineup = data.currentLineup || [];
+    const lineup = sortEtfProByLongShortThenConviction(data.currentLineup || []);
     if (lineup.length === 0) {
       lineupBody.innerHTML = `<tr><td colspan="9">Nenhuma posição reconciliada ainda.</td></tr>`;
     } else {
@@ -1739,33 +1759,55 @@ function renderEtfProPlusTab(data) {
       if (sizingSubtitle) {
         sizingSubtitle.textContent = `${sizing.methodologyNote || ""} — NAV de referência: US$ ${(sizing.nav || 0).toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
       }
-      const rows = sizing.sizing.slice().sort((a, b) => b.suggestedUsd - a.suggestedUsd);
-      sizingBody.innerHTML = rows.map(r => {
+      // Long primeiro (maior % de alocação/conviction -> menor), depois short pelos mesmos
+      // critérios — os shorts não competem pelo orçamento de 100% do NAV (não operados com
+      // capital), então US$ ali é só referência dentro da própria banda, não soma no total.
+      const longRows = sizing.sizing.slice().sort((a, b) => (b.suggestedPct - a.suggestedPct) || (b.convictionScore - a.convictionScore));
+      const shortRows = (sizing.shortsSizing || []).slice().sort((a, b) => (b.suggestedPct - a.suggestedPct) || (b.convictionScore - a.convictionScore));
+
+      const renderRow = (r, budgeted) => {
         const outOfRange = r.rangeZone && r.rangeZone.includes("fora do range");
         const rangeCell = r.rangeScore != null
           ? `<strong style="${outOfRange ? 'color:#F87171;' : ''}">${r.rangeZone || 'N/D'}</strong><br><small class="text-muted" style="font-size:0.68rem;">Range: ${r.riskRangeLow ?? 'N/D'}–${r.riskRangeHigh ?? 'N/D'} | Preço: ${r.livePrice ?? 'N/D'}</small>`
           : `<small class="text-muted">Sem Risk Range</small>`;
         const quads = r.nativeQuads || [];
         const quadCell = quads.length > 0 ? `<strong>${quads.map(q => `Q${q}`).join('/')}</strong>` : `<small class="text-muted">N/D</small>`;
+        const usdCell = budgeted
+          ? `US$ ${r.suggestedUsd.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`
+          : `<small class="text-muted">ref. US$ ${r.suggestedUsd.toLocaleString('pt-BR', {minimumFractionDigits: 2})} (não orçado)</small>`;
+        const convictionCell = r.rsi != null
+          ? `${r.convictionScore}<br><small class="text-muted" style="font-size:0.65rem;" title="${r.tvConfirmationNote || ''}">RSI ${r.rsi.toFixed(0)} · TradingView</small>`
+          : `${r.convictionScore}<br><small class="text-muted" style="font-size:0.65rem;">Sem confirmação TV</small>`;
         return `
         <tr>
-          <td>${r.name || "N/D"}</td>
+          <td>${r.name || "N/D"} <span class="badge ${budgeted ? 'badge-bullish' : 'badge-bearish'}" style="font-size:0.62rem;">${budgeted ? 'Long' : 'Short'}</span></td>
           <td><strong>${r.ticker}</strong></td>
           <td>${r.daysHeld != null ? r.daysHeld + 'd' : 'N/D'}</td>
           <td>${rangeCell}</td>
-          <td>${r.convictionScore}</td>
+          <td>${convictionCell}</td>
           <td>${quadCell}</td>
           <td>${r.suggestedPct}%</td>
-          <td>US$ ${r.suggestedUsd.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</td>
+          <td>${usdCell}</td>
         </tr>
       `;
-      }).join("") + `
+      };
+
+      let html = longRows.map(r => renderRow(r, true)).join("") + `
         <tr style="font-weight:700; background: rgba(56,189,248,0.08);">
-          <td colspan="6">Total alocado</td>
+          <td colspan="6">Total alocado (perna LONG, orçamento de 100% do NAV)</td>
           <td>${sizing.totals?.totalPct ?? "-"}%</td>
           <td>US$ ${(sizing.totals?.totalUsd ?? 0).toLocaleString('pt-BR', {minimumFractionDigits: 2})}</td>
         </tr>
       `;
+      if (shortRows.length > 0) {
+        html += `
+        <tr>
+          <td colspan="8" style="padding-top:0.9rem; font-size:0.78rem; opacity:0.75; border-top:1px dashed rgba(255,255,255,0.15);">
+            Perna SHORT — mesmos critérios (banda por asset class + conviction pela posição no Risk Range), só pra ranking/referência. Não entra no orçamento de NAV (shorts não operados com capital).
+          </td>
+        </tr>` + shortRows.map(r => renderRow(r, false)).join("");
+      }
+      sizingBody.innerHTML = html;
     }
   }
 
@@ -2742,7 +2784,7 @@ async function runStockAnalysis(customTicker) {
     </div>
 
     <div class="analyzer-block mt-2">
-      <div class="block-title">4. Valuation & Múltiplos Alpha Vantage (Raio-X Fundamentalista)</div>
+      <div class="block-title">4. Valuation & Múltiplos TradingView (Raio-X Fundamentalista)</div>
       <div style="margin-top: 0.4rem;">
         ${valuationHtml}
       </div>
@@ -4248,8 +4290,88 @@ function showToast(msg) {
 // 9. MOTOR DE SINCRONIZAÇÃO EM TEMPO REAL & BASE DE RELATÓRIOS
 let allReportsCache = [];
 
+// Ticker -> categoria de exibição (usado só pro filtro da tabela de Risk Ranges). Quando um
+// ticker novo não está aqui, cai em "indices" por padrão — não afeta o valor real, só a aba
+// de filtro onde ele aparece.
+const RISK_RANGE_TYPE_MAP = {
+  UST10Y: "rates", US10: "rates", US02: "rates", US30: "rates", HYG: "rates", LQD: "rates",
+  VIX: "rates", USD: "rates", DXY: "rates", TLT: "rates",
+  SPX: "indices", COMPQ: "indices", QQQ: "indices", RUT: "indices", XLV: "indices",
+  IGV: "indices", XLU: "indices", SPY: "indices",
+  OIH: "commodities", WTIC: "commodities", NATGAS: "commodities", GOLD: "commodities",
+  COPPER: "commodities", SILVER: "commodities", CPER: "commodities",
+};
+
+// Reconstrói riskRangesData a partir dos Risk Ranges REAIS extraídos do relatório atual —
+// antes esse array era fixo (hardcoded com dado de 11/09) e nunca mudava, então toda vez que
+// um relatório novo carregava, a tabela de Risk Ranges, os cards de topo e as "Ações
+// Prioritárias" continuavam mostrando faixas/sinais de dias antigos sem nenhum aviso.
+// `current` sem cotação ao vivo confirmada vira o meio da faixa (nunca assume extremo sem
+// dado real — ver fetchLiveMarketQuotes() pra atualização de preço ao vivo em paralelo).
+function rebuildRiskRangesFromReport(report) {
+  const raw = report.riskRanges;
+  if (!raw || raw.length === 0) return; // sem dado real extraído — mantém o que já tinha
+
+  // Acha o relatório anterior (por ID, mais recente que não seja este) pra comparar faixas
+  // semana-a-semana ("Subiu"/"Caiu") — sem isso, cada ticker perde o histórico de comparação
+  // toda vez que o relatório do dia muda.
+  const prevReport = (allReportsCache || [])
+    .filter(r => r.id && report.id && r.id !== report.id && String(r.id) < String(report.id))
+    .sort((a, b) => String(b.id).localeCompare(String(a.id)))[0];
+  const prevRanges = {};
+  if (prevReport && prevReport.riskRanges) {
+    prevReport.riskRanges.forEach(r => { if (r.ticker) prevRanges[r.ticker] = r; });
+  }
+
+  riskRangesData = raw
+    .filter(r => r.ticker && r.high > r.low)
+    .map(r => {
+      const prev = prevRanges[r.ticker];
+      return {
+        ticker: r.ticker,
+        name: r.name || r.ticker,
+        type: RISK_RANGE_TYPE_MAP[r.ticker] || "indices",
+        low: r.low,
+        high: r.high,
+        current: (r.low + r.high) / 2,
+        signal: (r.signal || "NEUTRAL").toUpperCase(),
+        prevLow: prev ? prev.low : r.low,
+        prevHigh: prev ? prev.high : r.high,
+        prevSignal: prev ? (prev.signal || "NEUTRAL").toUpperCase() : (r.signal || "NEUTRAL").toUpperCase(),
+      };
+    });
+}
+
+// Gera as ações prioritárias do dia a partir dos Risk Ranges reais já carregados (mesma
+// lógica de posição-no-range da tabela) — funciona pra qualquer relatório automaticamente.
+function buildActionStepsFromRiskRanges(dateStr) {
+  if (!riskRangesData || riskRangesData.length === 0) {
+    return `<div class="action-step"><div class="step-content">Sem Risk Ranges suficientes no relatório de ${dateStr} para gerar ações automáticas.</div></div>`;
+  }
+  const bullish = riskRangesData.filter(r => r.signal === "BULLISH");
+  const bearish = riskRangesData.filter(r => r.signal === "BEARISH");
+  const items = [];
+  bullish.slice(0, 2).forEach(r => items.push(
+    `<strong>Manter/Aportar em ${r.name} (${r.ticker}):</strong> Bullish TREND, faixa ${r.low.toLocaleString('pt-BR')}–${r.high.toLocaleString('pt-BR')}.`
+  ));
+  bearish.slice(0, 2).forEach(r => items.push(
+    `<strong>Evitar/Reduzir ${r.name} (${r.ticker}):</strong> Bearish TREND, faixa ${r.low.toLocaleString('pt-BR')}–${r.high.toLocaleString('pt-BR')}.`
+  ));
+  if (items.length === 0) {
+    return `<div class="action-step"><div class="step-content">Risk Ranges do relatório de ${dateStr} sem sinais Bullish/Bearish claros — regime majoritariamente Neutral hoje.</div></div>`;
+  }
+  return items.map((html, i) => `
+    <div class="action-step">
+      <span class="step-num">${i + 1}</span>
+      <div class="step-content">${html}</div>
+    </div>
+  `).join("");
+}
+
 function updateDynamicDashboard(report) {
   if (!report) return;
+
+  rebuildRiskRangesFromReport(report);
 
   const dateStr = report.shortDate || (report.date ? report.date.substring(0, 15) : "11/09/2026");
   const shortDate = dateStr.includes("/") ? dateStr.substring(0, 5) : "11/09";
@@ -4377,137 +4499,121 @@ function updateDynamicDashboard(report) {
     }
   }
 
-  // 6. Atualizar Ações Prioritárias de Hoje
+  // 6. Atualizar Ações Prioritárias de Hoje — SEMPRE rotulado com a data real do relatório,
+  // pra nunca mais mostrar orientação antiga sem deixar claro de quando ela é.
+  const actionTitleEl = document.getElementById("morningActionStepsTitle");
+  if (actionTitleEl) actionTitleEl.innerText = `O QUE FAZER AGORA (AÇÕES PRIORITÁRIAS — relatório de ${dateStr}):`;
+
   const actionStepsContainer = document.getElementById("morningActionSteps");
   if (actionStepsContainer) {
     if (struct && struct.actionSteps && struct.actionSteps.length > 0) {
+      // Tradução manual antiga (só existe pra um punhado de relatórios específicos)
       actionStepsContainer.innerHTML = struct.actionSteps.map(s => `
         <div class="action-step">
           <span class="step-num">${s.num}</span>
-          <div class="step-content">
-            <strong>${s.title}:</strong> ${s.desc}
-          </div>
+          <div class="step-content"><strong>${s.title}:</strong> ${s.desc}</div>
         </div>
       `).join("");
-    } else if (repId === "110258" || dateStr.includes("14/09")) {
-      actionStepsContainer.innerHTML = `
-        <div class="action-step">
-          <span class="step-num">1</span>
-          <div class="step-content">
-            <strong>Defender Capital em Big Tech / AI e Respeitar Bearish TRADE (QQQ 720 / SPY / IWM):</strong> Não comprar quedas em semicondutores e IA alavancadas em múltiplos extremos; com QQQ e SPY em Bearish TRADE e VXN rompendo 22,14, realizar lucros residuais e proteger carteira.
-          </div>
-        </div>
-        <div class="action-step">
-          <span class="step-num">2</span>
-          <div class="step-content">
-            <strong>Manter Long Convicção Máxima em Energia e Petróleo (WTIC 90,44–105,74 / OIH 415–438):</strong> Aportar nos pisos de range das commodities energéticas e serviços, líderes absolutos do regime Quad 3.
-          </div>
-        </div>
-        <div class="action-step">
-          <span class="step-num">3</span>
-          <div class="step-content">
-            <strong>Manter Shorts em Renda Fixa Soberana, Crédito (HYG / LQD) e Utilities (XLU):</strong> Evitar qualquer duration longa com UST 10Y (4,75%–5,01%) e 2Y em máximas do ciclo.
-          </div>
-        </div>
-        <div class="action-step">
-          <span class="step-num">4</span>
-          <div class="step-content">
-            <strong>Disciplina Tática em Metais (Ouro no Mínimo / Zerar Prata):</strong> Reduzir Ouro para tamanho mínimo de segurança até que os juros reais estabilizem; não reabrir posições em Prata abaixo de 65.
-          </div>
-        </div>
-      `;
-    } else if (repId === "110123" || dateStr.includes("11/09")) {
-      actionStepsContainer.innerHTML = `
-        <div class="action-step">
-          <span class="step-num">1</span>
-          <div class="step-content">
-            <strong>Comprar Recuos em Ativos Reais e Inflação (Quad 3):</strong> Manter e aportar em dips de Ouro (AAAU, GDX, NEM), Cobre (6,35–6,84), Petróleo/Energia (WTIC, OIH, BE) e exposições internacionais seletivas (ex: COLO, LatAm).
-          </div>
-        </div>
-        <div class="action-step">
-          <span class="step-num">2</span>
-          <div class="step-content">
-            <strong>Manter Shorts em Treasuries, Crédito Corporativo e Utilities:</strong> Posições vendidas em Bonds/Crédito (HYG 78,25–79,20 Bearish, LQD 104,10–105,80 Bearish) e Utilities (XLU) com UST 10Y (4,75–4,98%) em tendência de alta.
-          </div>
-        </div>
-        <div class="action-step">
-          <span class="step-num">3</span>
-          <div class="step-content">
-            <strong>Evitar e Reduzir Russell 2000 (RUT), Growth e Momentum:</strong> Não tentar adivinhar fundo em setores intensivos em capital, dívida e duration longa (RUT 2.875–2.970 Bearish); respeitar os tetos de range para reduzir posições fora de Quad 3.
-          </div>
-        </div>
-      `;
+    } else {
+      // Gerado dinamicamente a partir dos Risk Ranges REAIS do relatório de hoje — funciona
+      // pra qualquer relatório novo automaticamente, nunca mostra ação de um dia antigo.
+      actionStepsContainer.innerHTML = buildActionStepsFromRiskRanges(dateStr);
     }
   }
 
   // 7. Atualizar Tabela de Camadas GIP
   const gipBody = document.getElementById("gipLayersBody");
   if (gipBody) {
-    if (repId === "110258" || dateStr.includes("14/09")) {
-      gipBody.innerHTML = `
-        <tr>
-          <td><strong>1. Vigente por Dados</strong></td>
-          <td><span class="badge quad-badge-sm q3">Global Quad 3</span></td>
-          <td>Dólar (USD 98,50–99,78 Bearish); Petróleo WTI (90,44–105,74 Bullish); Ouro (4.247–4.473 Neutral); Cobre (6,24–6,80 Neutral)</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-        <tr>
-          <td><strong>2. Precificado pelo Mercado</strong></td>
-          <td><span class="badge quad-badge-sm" style="background:#EF4444; color:#FFF;">Bearish Tech & Higher Rates</span></td>
-          <td>QQQ e SPY em Bearish TRADE; Russell 2000 quebrou TREND; Yields UST 2Y e 10Y (4,75%–5,01%) em máximas do ciclo de inflação</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-        <tr>
-          <td><strong>3. Nowcast 1–3 Meses</strong></td>
-          <td><span class="badge quad-badge-sm q3">#Accelerating</span></td>
-          <td>Nowcast de Inflação acelerando com alta de commodities; juros elevados penalizam a bolha de IA financiada por dívida (#MOAB)</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-      `;
-    } else if (repId === "110123" || dateStr.includes("11/09")) {
-      gipBody.innerHTML = `
-        <tr>
-          <td><strong>1. Vigente por Dados</strong></td>
-          <td><span class="badge quad-badge-sm q3">Global Quad 3</span></td>
-          <td>Dólar (USD 98,40–99,67 Bearish); Petróleo WTI (88,51–102,99 Bullish); Ouro (4.275–4.503 Bullish); Cobre (6,35–6,84 Bullish)</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-        <tr>
-          <td><strong>2. Precificado pelo Mercado</strong></td>
-          <td><span class="badge quad-badge-sm" style="background:#F97316; color:#FFF;">Higher for Longer</span></td>
-          <td>Bond Yields UST 2Y e 10Y (4,75%–4,98%) rompem para novas máximas do ciclo de inflação; Russell 2000 (RUT 2.875–2.970) em Bearish TREND</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-        <tr>
-          <td><strong>3. Nowcast 1–3 Meses</strong></td>
-          <td><span class="badge quad-badge-sm q3">#Accelerating</span></td>
-          <td>Nowcast de Inflação acelerando para 3,5% em agosto e nova alta em setembro; Fed sob pressão de novas altas de juros</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-      `;
-    } else if (repId === "110057" || dateStr.includes("10/09")) {
-      gipBody.innerHTML = `
-        <tr>
-          <td><strong>1. Vigente por Dados</strong></td>
-          <td><span class="badge quad-badge-sm q3">Global Quad 3</span></td>
-          <td>Dólar (DXY $98,33–$99,49 Bearish); Petróleo WTI (teto em $99,91); Cobre (6,55–6,85); Ouro (4.301–4.502)</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-        <tr>
-          <td><strong>2. Precificado pelo Mercado</strong></td>
-          <td><span class="badge quad-badge-sm" style="background:#F97316; color:#FFF;">Higher for Longer</span></td>
-          <td>Bond Yields UST 2Y (4,44%) e 10Y (4,86%–4,89%) rompem para novas máximas de ciclo de inflação</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-        <tr>
-          <td><strong>3. Nowcast 1–3 Meses</strong></td>
-          <td><span class="badge quad-badge-sm q3">#Accelerating</span></td>
-          <td>Nowcast de Inflação projetando CPI trimestral em direção a 3,76% a/a no 4T26 confirmando permanência em Quad 3</td>
-          <td><span class="text-emerald font-bold">Alta</span></td>
-        </tr>
-      `;
+    if (repId === "110258" || repId === "110123" || repId === "110057") {
+      // Tradução manual antiga — só existe pra esses 3 relatórios específicos.
+      gipBody.innerHTML = buildLegacyGipLayers(repId);
+    } else {
+      // Gerado dinamicamente a partir dos Risk Ranges reais + síntese traduzida do relatório
+      // de hoje — antes, qualquer relatório fora desses 3 IDs deixava a tabela inteira travada
+      // no último conteúdo que tinha carregado, sem nenhum aviso de que estava desatualizada.
+      gipBody.innerHTML = buildDynamicGipLayers(report, dateStr);
     }
   }
+}
+
+function buildDynamicGipLayers(report, dateStr) {
+  const bullish = (riskRangesData || []).filter(r => r.signal === "BULLISH").map(r => `${r.name} (${r.ticker})`);
+  const bearish = (riskRangesData || []).filter(r => r.signal === "BEARISH").map(r => `${r.name} (${r.ticker})`);
+  const quadBadge = document.getElementById("currentQuadBadge");
+  const quadClass = quadBadge ? quadBadge.className.replace("quad-badge", "quad-badge-sm") : "quad-badge-sm q3";
+  const quadText = document.getElementById("headerQuadText")?.innerText || "Regime N/D";
+
+  const row1 = (riskRangesData && riskRangesData.length > 0)
+    ? `Bullish: ${bullish.slice(0, 3).join(", ") || "nenhum"} | Bearish: ${bearish.slice(0, 3).join(", ") || "nenhum"}`
+    : "Risk Ranges deste relatório ainda não extraídos.";
+
+  const row2 = bearish.length > 0
+    ? `${bearish.slice(0, 4).join(", ")} em Bearish TREND hoje.`
+    : "Sem sinais Bearish extraídos deste relatório.";
+
+  const nowcastText = report.synthesisPt || report.takeawaysPt?.[0] || report.summary || "Síntese ainda não disponível para este relatório.";
+
+  return `
+    <tr>
+      <td><strong>1. Vigente por Dados (${dateStr})</strong></td>
+      <td><span class="${quadClass}">${quadText.replace("REGIME ATUAL: ", "")}</span></td>
+      <td>${row1}</td>
+      <td><span class="text-emerald font-bold">Hoje</span></td>
+    </tr>
+    <tr>
+      <td><strong>2. Precificado pelo Mercado</strong></td>
+      <td><span class="badge quad-badge-sm" style="background:#64748B; color:#FFF;">Ver Risk Ranges</span></td>
+      <td>${row2}</td>
+      <td><span class="text-emerald font-bold">Hoje</span></td>
+    </tr>
+    <tr>
+      <td><strong>3. Síntese do Relatório</strong></td>
+      <td><span class="badge quad-badge-sm q3">Early Look</span></td>
+      <td>${nowcastText.length > 280 ? nowcastText.substring(0, 280) + "..." : nowcastText}</td>
+      <td><span class="text-emerald font-bold">Hoje</span></td>
+    </tr>
+  `;
+}
+
+function buildLegacyGipLayers(repId) {
+  const table = {
+    "110258": [
+      ["Dólar (USD 98,50–99,78 Bearish); Petróleo WTI (90,44–105,74 Bullish); Ouro (4.247–4.473 Neutral); Cobre (6,24–6,80 Neutral)", "Bearish Tech & Higher Rates", "#EF4444"],
+      ["QQQ e SPY em Bearish TRADE; Russell 2000 quebrou TREND; Yields UST 2Y e 10Y (4,75%–5,01%) em máximas do ciclo de inflação", "", ""],
+      ["Nowcast de Inflação acelerando com alta de commodities; juros elevados penalizam a bolha de IA financiada por dívida (#MOAB)", "", ""]
+    ],
+    "110123": [
+      ["Dólar (USD 98,40–99,67 Bearish); Petróleo WTI (88,51–102,99 Bullish); Ouro (4.275–4.503 Bullish); Cobre (6,35–6,84 Bullish)", "Higher for Longer", "#F97316"],
+      ["Bond Yields UST 2Y e 10Y (4,75%–4,98%) rompem para novas máximas do ciclo de inflação; Russell 2000 (RUT 2.875–2.970) em Bearish TREND", "", ""],
+      ["Nowcast de Inflação acelerando para 3,5% em agosto e nova alta em setembro; Fed sob pressão de novas altas de juros", "", ""]
+    ],
+    "110057": [
+      ["Dólar (DXY $98,33–$99,49 Bearish); Petróleo WTI (teto em $99,91); Cobre (6,55–6,85); Ouro (4.301–4.502)", "Higher for Longer", "#F97316"],
+      ["Bond Yields UST 2Y (4,44%) e 10Y (4,86%–4,89%) rompem para novas máximas de ciclo de inflação", "", ""],
+      ["Nowcast de Inflação projetando CPI trimestral em direção a 3,76% a/a no 4T26 confirmando permanência em Quad 3", "", ""]
+    ]
+  };
+  const [l1, l2, l3] = table[repId];
+  return `
+    <tr>
+      <td><strong>1. Vigente por Dados</strong></td>
+      <td><span class="badge quad-badge-sm q3">Global Quad 3</span></td>
+      <td>${l1[0]}</td>
+      <td><span class="text-emerald font-bold">Alta</span></td>
+    </tr>
+    <tr>
+      <td><strong>2. Precificado pelo Mercado</strong></td>
+      <td><span class="badge quad-badge-sm" style="background:${l1[2]}; color:#FFF;">${l1[1]}</span></td>
+      <td>${l2[0]}</td>
+      <td><span class="text-emerald font-bold">Alta</span></td>
+    </tr>
+    <tr>
+      <td><strong>3. Nowcast 1–3 Meses</strong></td>
+      <td><span class="badge quad-badge-sm q3">#Accelerating</span></td>
+      <td>${l3[0]}</td>
+      <td><span class="text-emerald font-bold">Alta</span></td>
+    </tr>
+  `;
 }
 
 async function loadReportsDatabase() {
@@ -4549,24 +4655,15 @@ async function loadReportsDatabase() {
         if (elDate) elDate.value = `${latest.shortDate || latest.date}`;
         if (elId) elId.value = latest.id;
 
-        // Se o último relatório possuir Risk Ranges extraídos, podemos sincronizar
+        // Atualiza todos os elementos visuais do Dashboard com o relatório mais recente —
+        // updateDynamicDashboard() já reconstrói riskRangesData inteiro a partir dos Risk
+        // Ranges reais deste relatório (rebuildRiskRangesFromReport), então só precisamos
+        // re-renderizar a tabela depois (o merge parcial antigo só atualizava os ~16 tickers
+        // hardcoded e ignorava qualquer ticker novo — substituído).
+        updateDynamicDashboard(latest);
         if (latest.riskRanges && latest.riskRanges.length > 0) {
-          latest.riskRanges.forEach(newR => {
-            const existing = riskRangesData.find(r => r.ticker === newR.ticker);
-            if (existing) {
-              existing.prevLow = existing.low;
-              existing.prevHigh = existing.high;
-              existing.prevSignal = existing.signal;
-              existing.low = newR.low;
-              existing.high = newR.high;
-              existing.signal = newR.signal;
-            }
-          });
           renderRiskRangesTable("all");
         }
-
-        // Atualiza todos os elementos visuais do Dashboard com o relatório mais recente
-        updateDynamicDashboard(latest);
         renderEarlyLookTranslatedView(latest);
       }
 
@@ -6977,13 +7074,24 @@ async function fetchLiveMarketQuotes() {
       if (q && q.price && q.price > 0) {
         const sign = q.change_pct >= 0 ? "+" : "";
         const formattedPct = `${sign}${q.change_pct.toFixed(2)}%`;
-        const formattedPrice = item.category === "bonds" && item.symbol.startsWith("US") 
-          ? `${q.price.toFixed(2)}%` 
+        const formattedPrice = item.category === "bonds" && item.symbol.startsWith("US")
+          ? `${q.price.toFixed(2)}%`
           : (q.price >= 1000 ? q.price.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : q.price.toFixed(2));
-        
+
         item.current = `${formattedPrice} (${formattedPct})`;
         item.livePrice = q.price;
         item.changePct = q.change_pct;
+
+        // O sinal BULLISH/BEARISH TREND era um texto fixo (nunca recalculado), então ficava
+        // desatualizado indefinidamente. Só recalcula o formato simples "TREND" (a maioria
+        // dos itens) a partir da variação ao vivo; rótulos de sentimento com formato próprio
+        // (ex.: VIX "COMPLACÊNCIA", CPC "SENTIMENTO") ficam como o analista definiu, porque
+        // não são uma leitura de tendência de preço.
+        if (item.signal === "🟢 BULLISH TREND" || item.signal === "🔴 BEARISH TREND") {
+          if (q.change_pct > 0.1) item.signal = "🟢 BULLISH TREND";
+          else if (q.change_pct < -0.1) item.signal = "🔴 BEARISH TREND";
+          else item.signal = "🟡 NEUTRAL";
+        }
       }
     });
 

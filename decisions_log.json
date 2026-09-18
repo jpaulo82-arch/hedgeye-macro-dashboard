@@ -1,6 +1,39 @@
 {
   "entradas": [
     {
+      "reportId": "110500",
+      "date": "17/09/2026",
+      "reportTitle": "O SPY vai sustentar o nível de TREND?",
+      "extractedByModel": "gemini-flash-latest",
+      "extractedAt": "2026-09-17T09:40:45.295942",
+      "decisions": [
+        {
+          "ativo": "XLE",
+          "categoria": "EQUITIES SETORIAIS / ENERGIA",
+          "decisao": "Comprar na fraqueza",
+          "racional": "Ativo sustenta os sinais quantitativos operacionais em meio ao selloff do mercado e prêmio de volatilidade implícita elevado (+116% vs realizada).",
+          "gatilho_invalidacao": "Rompimento do suporte de TRADE (gatilho de redução) ou rompimento conjunto de TRADE e TREND (stop total).",
+          "status": "bullish"
+        },
+        {
+          "ativo": "IGV",
+          "categoria": "EQUITIES SETORIAIS / SOFTWARE",
+          "decisao": "Comprar na fraqueza",
+          "racional": "Manutenção e sustentação dos sinais do modelo quantitativo durante a fraqueza do mercado.",
+          "gatilho_invalidacao": "Rompimento do suporte de TRADE ou TREND.",
+          "status": "bullish"
+        },
+        {
+          "ativo": "OIH",
+          "categoria": "OIL SERVICES / ENERGIA",
+          "decisao": "Reduzir",
+          "racional": "Quebra/rompimento do nível de suporte operacional de TRADE.",
+          "gatilho_invalidacao": "Quebra simultânea do suporte de TREND (acionamento de stop integral da posição) ou retomada acima de TRADE.",
+          "status": "bearish"
+        }
+      ]
+    },
+    {
       "reportId": "110426",
       "date": "16/09/2026",
       "reportTitle": "Sinais: Como Não Morrer Nos Mercados",
@@ -42,6 +75,50 @@
           "regime": "Quad 3",
           "carteira": "Macro / Multi-Ativos",
           "fonte": "KM Call (Sinais: Como Não Morrer Nos Mercados)"
+        }
+      ]
+    },
+    {
+      "reportId": "hist_16072026",
+      "date": "16/07/2026",
+      "reportTitle": "Decisões Auditadas de 16/07/2026",
+      "extractedByModel": "Histórico Curado Hedgeye",
+      "decisions": [
+        {
+          "ativo": "HUMN, AIPO, DRIV, DRAM, CLS, VRT",
+          "categoria": "TAIL/Especulativa",
+          "regime": "Quad 3",
+          "decisao": "Manter em tamanhos pequenos",
+          "racional": "Convicção estrutural em robótica, IA e infraestrutura, com posição não dominante",
+          "gatilho_invalidacao": "Tese fundamental deteriorada, excesso de peso ou quebra TREND que exija redução ao tamanho TAIL",
+          "tipo_gatilho": "Quebra de TREND",
+          "status": "neutral",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "SGOV",
+          "categoria": "CAIXA",
+          "regime": "Quad 3",
+          "decisao": "Manter alocação elevada",
+          "racional": "Preservação de capital e opcionalidade em ambiente de incerteza",
+          "gatilho_invalidacao": "Cenário muda com sinais Bullish e assimetria clara em ativos CORE",
+          "tipo_gatilho": "Gatilho Técnico",
+          "status": "neutral",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "XLU, XLRE, XLV, XLP",
+          "categoria": "CORE",
+          "regime": "Quad 3",
+          "decisao": "Aumentar/montar exposição defensiva",
+          "racional": "Rotação de Quad 3 observada naquele momento",
+          "gatilho_invalidacao": "Quebra de sinais vigentes, em especial pressão persistente de yields para XLU/XLRE",
+          "tipo_gatilho": "Alocação de Fator / Rotação",
+          "status": "bullish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
         }
       ]
     },
@@ -415,51 +492,7 @@
           "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
         }
       ]
-    },
-    {
-      "reportId": "hist_16072026",
-      "date": "16/07/2026",
-      "reportTitle": "Decisões Auditadas de 16/07/2026",
-      "extractedByModel": "Histórico Curado Hedgeye",
-      "decisions": [
-        {
-          "ativo": "HUMN, AIPO, DRIV, DRAM, CLS, VRT",
-          "categoria": "TAIL/Especulativa",
-          "regime": "Quad 3",
-          "decisao": "Manter em tamanhos pequenos",
-          "racional": "Convicção estrutural em robótica, IA e infraestrutura, com posição não dominante",
-          "gatilho_invalidacao": "Tese fundamental deteriorada, excesso de peso ou quebra TREND que exija redução ao tamanho TAIL",
-          "tipo_gatilho": "Quebra de TREND",
-          "status": "neutral",
-          "carteira": "Consolidada / Macro",
-          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
-        },
-        {
-          "ativo": "SGOV",
-          "categoria": "CAIXA",
-          "regime": "Quad 3",
-          "decisao": "Manter alocação elevada",
-          "racional": "Preservação de capital e opcionalidade em ambiente de incerteza",
-          "gatilho_invalidacao": "Cenário muda com sinais Bullish e assimetria clara em ativos CORE",
-          "tipo_gatilho": "Gatilho Técnico",
-          "status": "neutral",
-          "carteira": "Consolidada / Macro",
-          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
-        },
-        {
-          "ativo": "XLU, XLRE, XLV, XLP",
-          "categoria": "CORE",
-          "regime": "Quad 3",
-          "decisao": "Aumentar/montar exposição defensiva",
-          "racional": "Rotação de Quad 3 observada naquele momento",
-          "gatilho_invalidacao": "Quebra de sinais vigentes, em especial pressão persistente de yields para XLU/XLRE",
-          "tipo_gatilho": "Alocação de Fator / Rotação",
-          "status": "bullish",
-          "carteira": "Consolidada / Macro",
-          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
-        }
-      ]
     }
   ],
-  "updatedAt": "2026-09-16T10:16:28.144556"
+  "updatedAt": "2026-09-18T09:27:34.191823"
 }
