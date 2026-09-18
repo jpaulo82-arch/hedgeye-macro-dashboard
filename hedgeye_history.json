@@ -292,7 +292,7 @@
     },
     {
       "data": "2026-09-18",
-      "timestamp": "2026-09-18T09:28:33.779589",
+      "timestamp": "2026-09-18T09:31:45.844215",
       "regime": "QUAD 3",
       "nav_total": 229490.39,
       "adherence_pct": 87.4,
@@ -349,5 +349,5 @@
       "auditoria_status": "VALIDADO_DETERMINISTICO"
     }
   ],
-  "ultima_atualizacao": "2026-09-18T09:28:33.781994"
+  "ultima_atualizacao": "2026-09-18T09:31:45.860969"
 }
