@@ -2687,6 +2687,201 @@ body {
 .decision-detail-label {
   font-size: 0.72rem;
   font-weight: 700;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+}
+
+.audit-search-icon {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.audit-filter-selects {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.audit-select {
+  background: rgba(26, 35, 50, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-sm);
+  color: #E2E8F0;
+  font-size: 0.82rem;
+  padding: 0.55rem 0.75rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.audit-select:focus {
+  border-color: #38BDF8;
+}
+
+.audit-filter-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.audit-filter-status {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.audit-filter-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Botões de Exportação */
+.btn-export-csv, .btn-export-json {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-export-csv {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.btn-export-csv:hover {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: #10B981;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-export-json {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.btn-export-json:hover {
+  background: rgba(56, 189, 248, 0.25);
+  border-color: #38BDF8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Badges de Regime */
+.badge-regime-q1 {
+  background: rgba(56, 189, 248, 0.18);
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.badge-regime-q2 {
+  background: rgba(249, 115, 22, 0.18);
+  color: #FB923C;
+  border: 1px solid rgba(249, 115, 22, 0.4);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.badge-regime-q3 {
+  background: rgba(236, 72, 153, 0.18);
+  color: #F472B6;
+  border: 1px solid rgba(236, 72, 153, 0.4);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.badge-regime-q4 {
+  background: rgba(139, 92, 246, 0.18);
+  color: #A78BFA;
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.badge-regime-macro {
+  background: rgba(99, 102, 241, 0.18);
+  color: #818CF8;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  font-weight: 700;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+/* Badges de Gatilho */
+.badge-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(245, 158, 11, 0.12);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  font-size: 0.72rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Invalidation Pill */
+.invalidation-pill {
+  display: inline-block;
+  background: rgba(244, 63, 94, 0.08);
+  border-left: 3px solid #F43F5E;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.78rem;
+  color: #FDA4AF;
+  line-height: 1.35;
+}
+
+/* Modal de Detalhes da Decisão */
+.decision-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.decision-detail-card {
+  background: rgba(26, 35, 50, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  padding: 0.75rem 0.9rem;
+}
+
+.decision-detail-label {
+  font-size: 0.72rem;
+  font-weight: 700;
   color: var(--text-dim);
   text-transform: uppercase;
   margin-bottom: 0.25rem;
@@ -2696,4 +2891,425 @@ body {
   font-size: 0.9rem;
   color: #F8FAFC;
   font-weight: 600;
+}
+
+/* ============================================================
+   RADAR DE ALERTAS DO ETF PRO PLUS — POSIÇÕES ABERTAS
+   ============================================================ */
+
+@keyframes etfBeaconPulse {
+  0% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+  70% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 0 8px rgba(245, 158, 11, 0); }
+  100% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+
+@keyframes etfCriticalPulse {
+  0% { transform: scale(0.95); opacity: 0.85; box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.8); }
+  70% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 0 10px rgba(244, 63, 94, 0); }
+  100% { transform: scale(0.95); opacity: 0.85; box-shadow: 0 0 0 0 rgba(244, 63, 94, 0); }
+}
+
+@keyframes etfGlowBorder {
+  0%, 100% { border-color: rgba(245, 158, 11, 0.4); box-shadow: 0 0 15px rgba(245, 158, 11, 0.15); }
+  50% { border-color: rgba(245, 158, 11, 0.85); box-shadow: 0 0 25px rgba(245, 158, 11, 0.35); }
+}
+
+/* Botão do Radar ETF Pro no Header */
+.btn-etf-radar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  color: #F8FAFC;
+  padding: 0.35rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.btn-etf-radar:hover {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(30, 41, 59, 0.95));
+  border-color: #F59E0B;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25);
+}
+
+.btn-etf-radar .beacon-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #F59E0B;
+  animation: etfBeaconPulse 1.8s infinite;
+}
+
+.btn-etf-radar.has-critical .beacon-dot {
+  background: #F43F5E;
+  animation: etfCriticalPulse 1.5s infinite;
+}
+
+.btn-etf-radar.has-critical {
+  border-color: rgba(244, 63, 94, 0.6);
+}
+
+.btn-etf-radar .badge-count {
+  background: #F59E0B;
+  color: #0F172A;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+.btn-etf-radar.has-critical .badge-count {
+  background: #F43F5E;
+  color: #FFFFFF;
+}
+
+/* Chip de Alerta na Aba do Menu */
+.nav-alert-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.2);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  margin-left: 0.35rem;
+  animation: etfBeaconPulse 2.2s infinite;
+}
+
+.nav-alert-chip.critical {
+  background: rgba(244, 63, 94, 0.25);
+  color: #FDA4AF;
+  border-color: rgba(244, 63, 94, 0.5);
+  animation: etfCriticalPulse 1.6s infinite;
+}
+
+/* Hero Banner de Alertas do ETF Pro */
+.etf-alerts-hero {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.85));
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 12px;
+  padding: 1.1rem 1.35rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45), 0 0 20px rgba(245, 158, 11, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.etf-alerts-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, #F59E0B, #EF4444);
+}
+
+.etf-alerts-hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.etf-alerts-hero-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.etf-alerts-hero-title h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #F8FAFC;
+  letter-spacing: 0.02em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.etf-alerts-hero-title h3 span.highlight {
+  color: #F59E0B;
+}
+
+.etf-alerts-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.85rem;
+}
+
+.etf-alert-card {
+  background: rgba(18, 24, 38, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.85rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.etf-alert-card:hover {
+  background: rgba(24, 32, 50, 0.95);
+  transform: translateY(-2px);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.etf-alert-card.type-critical {
+  border-left: 4px solid #F43F5E;
+  background: linear-gradient(90deg, rgba(244, 63, 94, 0.08), rgba(18, 24, 38, 0.85));
+}
+
+.etf-alert-card.type-new {
+  border-left: 4px solid #38BDF8;
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.08), rgba(18, 24, 38, 0.85));
+}
+
+.etf-alert-card.type-warning {
+  border-left: 4px solid #F59E0B;
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.08), rgba(18, 24, 38, 0.85));
+}
+
+.etf-alert-card.type-active {
+  border-left: 4px solid #10B981;
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.08), rgba(18, 24, 38, 0.85));
+}
+
+.etf-alert-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.etf-alert-ticker {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.etf-alert-ticker .broker-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #94A3B8;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+.etf-alert-summary {
+  font-size: 0.82rem;
+  color: #CBD5E1;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.etf-alert-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.72rem;
+  color: #94A3B8;
+  border-top: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-top: 0.45rem;
+}
+
+/* Badges e Pílulas Específicas do ETF Pro */
+.badge-etf-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.badge-etf-new {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(129, 140, 248, 0.25));
+  color: #7DD3FC;
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.badge-etf-critical {
+  background: linear-gradient(135deg, rgba(244, 63, 94, 0.25), rgba(239, 68, 68, 0.25));
+  color: #FDA4AF;
+  border: 1px solid rgba(244, 63, 94, 0.5);
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.3);
+  animation: etfCriticalPulse 1.8s infinite;
+}
+
+.badge-etf-removed {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(234, 88, 12, 0.25));
+  color: #FDE047;
+  border: 1px solid rgba(245, 158, 11, 0.5);
+}
+
+.badge-etf-active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.2));
+  color: #6EE7B7;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.badge-etf-sector {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(139, 92, 246, 0.2));
+  color: #D8B4FE;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+.badge-etf-none {
+  background: rgba(148, 163, 184, 0.1);
+  color: #94A3B8;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  font-size: 0.7rem;
+}
+
+/* Realce nas linhas da tabela do portfólio */
+tr.row-etf-new {
+  background: rgba(56, 189, 248, 0.05);
+  border-left: 3px solid #38BDF8 !important;
+}
+
+tr.row-etf-critical {
+  background: rgba(244, 63, 94, 0.07);
+  border-left: 3px solid #F43F5E !important;
+}
+
+tr.row-etf-active {
+  background: rgba(16, 185, 129, 0.03);
+}
+
+/* Modal de Alertas do ETF Pro */
+.etf-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(3, 7, 18, 0.82);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+}
+
+.etf-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.etf-modal-content {
+  background: #0F172A;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(245, 158, 11, 0.15);
+  border-radius: 14px;
+  width: 92%;
+  max-width: 950px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.96);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.etf-modal-overlay.active .etf-modal-content {
+  transform: scale(1);
+}
+
+.etf-modal-header {
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.95));
+}
+
+.etf-modal-header h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.etf-modal-close {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.etf-modal-close:hover {
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.etf-modal-body {
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.etf-modal-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.5rem;
+}
+
+.etf-modal-tab-btn {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94A3B8;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.etf-modal-tab-btn.active {
+  background: rgba(245, 158, 11, 0.18);
+  border-color: #F59E0B;
+  color: #FBBF24;
+}
+
+.etf-modal-tab-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
 }

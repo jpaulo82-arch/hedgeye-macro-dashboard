@@ -534,29 +534,57 @@ function renderMasterTheMarketModule(sizing) {
 }
 
 // 0. CONTROLE GLOBAL DE NAVEGAÇÃO E ABAS
-function setTab(tabName) {
+function setTab(tabId) {
   const navTabs = document.querySelectorAll(".nav-tab");
   navTabs.forEach(tab => {
-    if (tab.getAttribute("data-tab") === tabName) {
-      tab.classList.add("active");
-    } else {
-      tab.classList.remove("active");
-    }
+    tab.classList.toggle("active", tab.dataset.tab === tabId || tab.getAttribute("data-tab") === tabId);
   });
 
   const tabSections = document.querySelectorAll(".tab-content");
   tabSections.forEach(section => {
-    if (section.id === `tab-${tabName}`) {
-      section.classList.add("active");
-    } else {
-      section.classList.remove("active");
-    }
+    section.classList.toggle("active", section.id === `tab-${tabId}`);
   });
 
-  if (tabName === "macrodata") {
+  if (tabId === "portfolio") {
+    setTimeout(updatePortfolioChart, 60);
+    updateEtfProAlertsSystem();
+  }
+  if (tabId === "playbook") {
+    renderRebalanceModalTables();
+    if (marketAnalyticsData && marketAnalyticsData.quad_rotation_tracker) {
+      setTimeout(() => renderQuadRotationTracker(marketAnalyticsData.quad_rotation_tracker), 60);
+    } else {
+      fetchMarketAnalyticsData();
+    }
+  }
+  if (tabId === "analytics") {
+    if (marketAnalyticsData) {
+      setTimeout(() => renderMarketAnalytics(marketAnalyticsData), 60);
+    } else {
+      fetchMarketAnalyticsData();
+    }
+  }
+  if (tabId === "earlylook") {
+    if (allReportsCache && allReportsCache.length > 0) {
+      const activeRep = allReportsCache.find(r => r.id === activeTranslatedReportId || r.filename === activeTranslatedReportId) || allReportsCache[0];
+      renderEarlyLookTranslatedView(activeRep);
+    }
+  }
+  if (tabId === "etfproplus") {
+    if (etfProPlusDataCache) {
+      renderEtfProPlusTab(etfProPlusDataCache);
+    } else {
+      fetchEtfProPlusData();
+    }
+    updateEtfProAlertsSystem();
+  }
+  if (tabId === "decisions") {
+    fetchDecisionsData();
+  }
+  if (tabId === "macrodata") {
     renderMacroIndicatorsTable();
     renderTradingViewWatchlistTable();
-  } else if (tabName === "copilot") {
+  } else if (tabId === "copilot") {
     renderChatMessages();
     setTimeout(() => {
       const container = document.getElementById("chatMessagesContainer");
@@ -963,51 +991,6 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchMasterTheMarketForBroker(activePortfolioKey);
   runStockAnalysis("AAAU");
 });
-
-// NAVEGAÇÃO ENTRE ABAS
-function setTab(tabId) {
-  document.querySelectorAll(".nav-tab").forEach(tab => {
-    tab.classList.toggle("active", tab.dataset.tab === tabId);
-  });
-  document.querySelectorAll(".tab-content").forEach(content => {
-    content.classList.toggle("active", content.id === `tab-${tabId}`);
-  });
-
-  if (tabId === "portfolio") {
-    setTimeout(updatePortfolioChart, 60);
-  }
-  if (tabId === "playbook") {
-    renderRebalanceModalTables();
-    if (marketAnalyticsData && marketAnalyticsData.quad_rotation_tracker) {
-      setTimeout(() => renderQuadRotationTracker(marketAnalyticsData.quad_rotation_tracker), 60);
-    } else {
-      fetchMarketAnalyticsData();
-    }
-  }
-  if (tabId === "analytics") {
-    if (marketAnalyticsData) {
-      setTimeout(() => renderMarketAnalytics(marketAnalyticsData), 60);
-    } else {
-      fetchMarketAnalyticsData();
-    }
-  }
-  if (tabId === "earlylook") {
-    if (allReportsCache && allReportsCache.length > 0) {
-      const activeRep = allReportsCache.find(r => r.id === activeTranslatedReportId || r.filename === activeTranslatedReportId) || allReportsCache[0];
-      renderEarlyLookTranslatedView(activeRep);
-    }
-  }
-  if (tabId === "etfproplus") {
-    if (etfProPlusDataCache) {
-      renderEtfProPlusTab(etfProPlusDataCache);
-    } else {
-      fetchEtfProPlusData();
-    }
-  }
-  if (tabId === "decisions") {
-    fetchDecisionsData();
-  }
-}
 
 // ============================================================
 // LOG AUDITÁVEL & DECISÕES INSTITUCIONAIS (KM CALLS & TESES)
@@ -1860,6 +1843,530 @@ function renderEtfProPlusTab(data) {
       ? `<tr><td colspan="3">Nenhum relatório processado ainda.</td></tr>`
       : all.map(r => `<tr><td>${r.type}</td><td>${r.title}</td><td>${r.date || "N/D"}</td></tr>`).join("");
   }
+
+  // Atualiza também os alertas visuais do ETF Pro cruzados com as posições abertas
+  updateEtfProAlertsSystem();
+}
+
+// ============================================================
+// RADAR DE ALERTAS DO ETF PRO PLUS × POSIÇÕES ABERTAS
+// ============================================================
+let etfProAlertsCache = {
+  activePortfolioKey: 'schwab',
+  alerts: [],
+  portfolioMatches: [],
+  criticalCount: 0,
+  newChangeCount: 0,
+  activeCount: 0,
+  lastUpdated: null
+};
+let currentEtfModalFilter = 'all';
+
+function getActivePortfolioPositions() {
+  if (activePortfolioKey === "consolidated") {
+    return [...(portfolioData.schwab?.positions || []), ...(portfolioData.tastyworks?.positions || [])];
+  }
+  return (portfolioData[activePortfolioKey] || portfolioData.schwab)?.positions || [];
+}
+
+function computeEtfProPortfolioAlerts() {
+  if (!etfProPlusDataCache) return null;
+
+  const positions = getActivePortfolioPositions();
+  const openPosByTicker = {};
+  positions.forEach(p => {
+    const t = (p.ticker || '').toUpperCase().trim();
+    if (t) openPosByTicker[t] = p;
+  });
+
+  const etfLineupMap = {};
+  (etfProPlusDataCache.currentLineup || []).forEach(p => {
+    if (p.ticker) etfLineupMap[p.ticker.toUpperCase().trim()] = p;
+  });
+
+  const etfSizingMap = {};
+  (etfProPlusDataCache.suggestedSizing?.sizing || []).forEach(r => { 
+    if (r.ticker) etfSizingMap[r.ticker.toUpperCase().trim()] = r; 
+  });
+  (etfProPlusDataCache.suggestedSizing?.shortsSizing || []).forEach(r => { 
+    if (r.ticker) etfSizingMap[r.ticker.toUpperCase().trim()] = r; 
+  });
+
+  const changesLog = (etfProPlusDataCache.changesLog || []).slice(-12).reverse();
+
+  const alerts = [];
+  const matches = [];
+
+  // 1. Analisar cada posição em carteira
+  positions.forEach(p => {
+    const ticker = (p.ticker || '').toUpperCase().trim();
+    const qty = parseFloat(p.qty) || 0;
+    const price = parseFloat(p.price) || 0;
+    const val = p.marketValue ? parseFloat(p.marketValue) : (qty * price);
+    const conduct = p.conduct || '';
+    const isAdoptedFromEtf = conduct.toLowerCase().includes('etf pro') || conduct.toLowerCase().includes('etf pro plus');
+
+    const etfItem = etfLineupMap[ticker];
+    const sizingItem = etfSizingMap[ticker];
+
+    // Verificar se há menção nos relatórios recentes (ex: últimos 14 dias)
+    let recentMention = null;
+    for (const c of changesLog) {
+      const summary = c.summary || '';
+      const regex = new RegExp(`\\b${ticker}\\b`, 'i');
+      if (regex.test(summary)) {
+        recentMention = {
+          date: c.date,
+          type: c.type,
+          summary: summary
+        };
+        break;
+      }
+    }
+
+    let alertObj = null;
+
+    // Cenário 1: Posição consta no ETF Pro como SHORT enquanto estamos LONG (Divergência Crítica)
+    if (etfItem && etfItem.side === 'short') {
+      alertObj = {
+        ticker: ticker,
+        name: p.name || ticker,
+        broker: p.broker || 'Schwab',
+        marketValue: val,
+        statusType: 'critical',
+        badgeText: '🚨 ETF Pro: SHORT',
+        badgeClass: 'badge-etf-critical',
+        rowClass: 'row-etf-critical',
+        title: `Divergência Crítica: Hedgeye recomendando SHORT`,
+        description: `O ETF Pro Plus está com recomendação BEARISH / SHORT no ativo ${ticker}, enquanto a carteira mantém posição aberta COMPRADA.`,
+        actionTip: `Avaliar venda imediata ou proteção/hedge contra risco de queda em Quad 3.`,
+        date: etfItem.dateAdded || 'Recente',
+        suggestedPct: sizingItem ? sizingItem.suggestedPct : null
+      };
+    }
+    // Cenário 2: Adicionado recentemente no ETF Pro (Adição de Long)
+    else if (recentMention && (recentMention.summary.toLowerCase().includes('adicionou long') || recentMention.summary.toLowerCase().includes('longs adicionados'))) {
+      const addDate = recentMention.date ? recentMention.date.split(' ')[0] : 'Recente';
+      alertObj = {
+        ticker: ticker,
+        name: p.name || ticker,
+        broker: p.broker || 'Schwab',
+        marketValue: val,
+        statusType: 'new',
+        badgeText: `⚡ ETF Pro: Adicionado (${addDate})`,
+        badgeClass: 'badge-etf-new',
+        rowClass: 'row-etf-new',
+        title: `Nova Inclusão no ETF Pro Plus!`,
+        description: `O ETF Pro Plus adicionou ${ticker} como recomendação LONG oficial em ${recentMention.date}. Recomendação Long ativa com sizing sugerido.`,
+        actionTip: sizingItem ? `Sizing sugerido de ${sizingItem.suggestedPct}% (NAV ref. US$ ${sizingItem.suggestedUsd?.toLocaleString('pt-BR', {maximumFractionDigits: 0})}). Aproveitar recuos.` : `Posição confirmada pelo modelo Hedgeye.`,
+        date: recentMention.date,
+        suggestedPct: sizingItem ? sizingItem.suggestedPct : null
+      };
+    }
+    // Cenário 3: Posição adotada via ETF Pro que foi REMOVIDA do lineup
+    else if (isAdoptedFromEtf && !etfItem) {
+      alertObj = {
+        ticker: ticker,
+        name: p.name || ticker,
+        broker: p.broker || 'Schwab',
+        marketValue: val,
+        statusType: 'removed',
+        badgeText: '⚠️ Removido do ETF Pro',
+        badgeClass: 'badge-etf-removed',
+        rowClass: 'row-etf-critical',
+        title: `Alerta de Saída: Tese Removida do Lineup`,
+        description: `Esta posição foi originada via sinal do ETF Pro Plus (${conduct}), porém NÃO consta mais no Lineup atual de ETFs ativos da Hedgeye.`,
+        actionTip: `Hedgeye encerrou o sinal. Avaliar realização de lucros ou encerramento da posição.`,
+        date: 'Fora do Lineup',
+        suggestedPct: 0
+      };
+    }
+    // Cenário 4: Posição ativa como LONG no ETF Pro
+    else if (etfItem && etfItem.side === 'long') {
+      const outOfRange = sizingItem?.rangeZone?.includes("fora do range");
+      const rangeZone = sizingItem?.rangeZone || "No Range";
+      alertObj = {
+        ticker: ticker,
+        name: p.name || ticker,
+        broker: p.broker || 'Schwab',
+        marketValue: val,
+        statusType: outOfRange ? 'warning' : 'active',
+        badgeText: outOfRange ? `⚠️ ETF Pro: ${rangeZone}` : `🟢 ETF Pro: Long (${sizingItem?.suggestedPct ? sizingItem.suggestedPct + '%' : 'Ativo'})`,
+        badgeClass: outOfRange ? 'badge-etf-warning' : 'badge-etf-active',
+        rowClass: outOfRange ? 'row-etf-new' : 'row-etf-active',
+        title: `Posição Sincronizada com ETF Pro`,
+        description: `Posição confirmada no Lineup Long desde ${etfItem.dateAdded}. Conviction: ${sizingItem?.convictionScore || 'N/D'} | Range: ${etfItem.rangeLow || 'N/D'}–${etfItem.rangeHigh || 'N/D'}.`,
+        actionTip: outOfRange ? `Ativo operando em extremo de Risk Range. Evitar compras em euforia.` : `Manter posição alinhada e recomprar nos pisos de range.`,
+        date: etfItem.dateAdded,
+        suggestedPct: sizingItem ? sizingItem.suggestedPct : null
+      };
+    }
+
+    if (alertObj) {
+      alerts.push(alertObj);
+    }
+
+    if (etfItem || isAdoptedFromEtf) {
+      matches.push({
+        position: p,
+        etfItem: etfItem,
+        sizingItem: sizingItem,
+        alertObj: alertObj
+      });
+    }
+  });
+
+  // 2. Alerta Setorial Especial: Semicondutores
+  const hasSemis = positions.some(p => ['TSM', 'ASML', 'FN', 'TSEM', 'MTSI', 'CRDO'].includes((p.ticker || '').toUpperCase().trim()));
+  const smhInShorts = etfLineupMap['SMH'] && etfLineupMap['SMH'].side === 'short';
+  if (hasSemis && smhInShorts) {
+    alerts.unshift({
+      ticker: 'SMH / SEMIS',
+      name: 'Vento Contrário Setorial: Semicondutores',
+      broker: 'Schwab',
+      marketValue: 0,
+      statusType: 'critical',
+      badgeText: '🚨 ETF Pro: Short SMH (Alerta Semis)',
+      badgeClass: 'badge-etf-sector',
+      rowClass: '',
+      title: `Alerta Setorial Hedgeye: Short em Semicondutores (SMH)`,
+      description: `O ETF Pro Plus adicionou SHORT em Semicondutores (SMH em 17/09). A carteira mantém 6 ações desse setor (TSM, ASML, FN, TSEM, MTSI, CRDO).`,
+      actionTip: `Não comprar quedas em chips no Quad 3 e respeitar stops nos pisos de Risk Range.`,
+      date: etfLineupMap['SMH'].dateAdded || '17/09/2026',
+      suggestedPct: null
+    });
+  }
+
+  // Ordenar alertas: critical primeiro, depois new, depois removed, warning, active
+  const orderRank = { critical: 0, new: 1, removed: 2, warning: 3, active: 4, neutral: 5 };
+  alerts.sort((a, b) => (orderRank[a.statusType] ?? 99) - (orderRank[b.statusType] ?? 99));
+
+  etfProAlertsCache = {
+    activePortfolioKey: activePortfolioKey,
+    alerts: alerts,
+    portfolioMatches: matches,
+    criticalCount: alerts.filter(a => a.statusType === 'critical').length,
+    newChangeCount: alerts.filter(a => a.statusType === 'new').length,
+    activeCount: alerts.filter(a => a.statusType === 'active').length,
+    lastUpdated: new Date().toLocaleTimeString('pt-BR')
+  };
+
+  return etfProAlertsCache;
+}
+
+function getEtfAlertForPosition(ticker) {
+  if (!ticker) return { badgeHtml: '<span class="badge-etf-status badge-etf-none">— Tese Própria</span>', rowClass: '' };
+  const t = ticker.toUpperCase().trim();
+
+  // Busca no cache de alertas
+  if (etfProAlertsCache && etfProAlertsCache.alerts) {
+    const alert = etfProAlertsCache.alerts.find(a => a.ticker === t);
+    if (alert) {
+      return {
+        badgeHtml: `<span class="badge-etf-status ${alert.badgeClass}" title="${alert.title}: ${alert.description}">${alert.badgeText}</span>`,
+        rowClass: alert.rowClass || '',
+        alert: alert
+      };
+    }
+  }
+
+  // Fallback rápido
+  if (etfProPlusDataCache && etfProPlusDataCache.currentLineup) {
+    const etfItem = etfProPlusDataCache.currentLineup.find(p => p.ticker && p.ticker.toUpperCase().trim() === t);
+    if (etfItem) {
+      const isLong = etfItem.side === 'long';
+      return {
+        badgeHtml: `<span class="badge-etf-status ${isLong ? 'badge-etf-active' : 'badge-etf-critical'}">${isLong ? '🟢 ETF Pro: Long' : '🔴 ETF Pro: Short'}</span>`,
+        rowClass: isLong ? 'row-etf-active' : 'row-etf-critical'
+      };
+    }
+  }
+
+  return {
+    badgeHtml: '<span class="badge-etf-status badge-etf-none">— Tese Própria</span>',
+    rowClass: ''
+  };
+}
+
+function updateEtfProAlertsSystem() {
+  const cache = computeEtfProPortfolioAlerts();
+  if (!cache) return;
+
+  const totalUrgent = cache.criticalCount + cache.newChangeCount;
+
+  // 1. Header Button & Badge
+  const headerCountEl = document.getElementById("headerEtfAlertsCount");
+  const headerBtnEl = document.getElementById("btnHeaderEtfAlerts");
+  if (headerCountEl) {
+    headerCountEl.textContent = totalUrgent > 0 ? totalUrgent : (cache.activeCount > 0 ? cache.activeCount : '0');
+  }
+  if (headerBtnEl) {
+    headerBtnEl.classList.toggle("has-critical", cache.criticalCount > 0);
+  }
+
+  // 2. Nav Tab Chip
+  const navChipEl = document.getElementById("navEtfAlertsChip");
+  if (navChipEl) {
+    if (totalUrgent > 0) {
+      navChipEl.style.display = "inline-flex";
+      navChipEl.className = `nav-alert-chip ${cache.criticalCount > 0 ? 'critical' : ''}`;
+      navChipEl.textContent = cache.criticalCount > 0 ? `🚨 ${cache.criticalCount} Alerta${cache.criticalCount > 1 ? 's' : ''}` : `⚡ ${cache.newChangeCount} Novo${cache.newChangeCount > 1 ? 's' : ''}`;
+    } else if (cache.activeCount > 0) {
+      navChipEl.style.display = "inline-flex";
+      navChipEl.className = "nav-alert-chip";
+      navChipEl.textContent = `🟢 ${cache.activeCount} Sinc`;
+    } else {
+      navChipEl.style.display = "none";
+    }
+  }
+
+  // 3. Renderizar Banner no Dashboard
+  renderEtfAlertsHeroBanner("dashboardEtfAlertsContainer", false);
+
+  // 4. Renderizar Banner no Portfólio
+  renderEtfAlertsHeroBanner("portfolioEtfAlertsContainer", true);
+
+  // 5. Renderizar Seção de Cruzamento na aba ETF Pro Plus
+  renderEtfProPortfolioMatchingSection();
+
+  // 6. Atualizar Lista no Modal
+  renderEtfAlertsModalList();
+}
+
+function renderEtfAlertsHeroBanner(containerId, isPortfolioScope) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  const cache = etfProAlertsCache;
+  if (!cache || !cache.alerts || cache.alerts.length === 0) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const topAlerts = cache.alerts.slice(0, 3);
+  const urgentCount = cache.criticalCount + cache.newChangeCount;
+
+  container.innerHTML = `
+    <div class="etf-alerts-hero">
+      <div class="etf-alerts-hero-header">
+        <div class="etf-alerts-hero-title">
+          <span style="font-size: 1.45rem;">📡</span>
+          <div>
+            <h3>Radar de Alterações: <span class="highlight">ETF Pro Plus × Suas Posições Abertas</span></h3>
+            <p class="subtitle" style="margin: 0; margin-top: 2px;">
+              ${urgentCount > 0 ? `⚠️ <strong>${urgentCount} alteração(ões) com impacto direto</strong> na sua carteira` : `✓ Todas as posições mapeadas e em sincronia com o modelo da Hedgeye`} · Atualizado às ${cache.lastUpdated || 'hoje'}
+            </p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <button class="btn btn-outline btn-sm" onclick="setTab('etfproplus')" style="font-size: 0.76rem; border-color: rgba(255,255,255,0.15); color: #E2E8F0;">
+            <span>📊 Abrir ETF Pro</span>
+          </button>
+          <button class="btn btn-accent btn-sm" onclick="openEtfAlertsModal()" style="font-size: 0.76rem; font-weight: 700;">
+            <span>⚡ Ver Todos os Alertas (${cache.alerts.length})</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="etf-alerts-hero-grid">
+        ${topAlerts.map(a => `
+          <div class="etf-alert-card type-${a.statusType}">
+            <div class="etf-alert-card-top">
+              <div class="etf-alert-ticker">
+                <span>${a.ticker}</span>
+                <span class="broker-tag">${a.broker}</span>
+              </div>
+              <span class="badge-etf-status ${a.badgeClass}">${a.badgeText}</span>
+            </div>
+            <div class="etf-alert-summary">
+              <strong>${a.title}:</strong> ${a.description}
+            </div>
+            <div class="etf-alert-meta">
+              <span>💡 <em>${a.actionTip}</em></span>
+              <span>${a.date}</span>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
+function renderEtfProPortfolioMatchingSection() {
+  const container = document.getElementById("etfProPortfolioMatchingContainer");
+  if (!container) return;
+
+  const cache = etfProAlertsCache;
+  if (!cache || !cache.portfolioMatches || cache.portfolioMatches.length === 0) {
+    container.innerHTML = "";
+    return;
+  }
+
+  const matches = cache.portfolioMatches;
+  let totalUsdMatched = 0;
+  matches.forEach(m => {
+    const qty = parseFloat(m.position.qty) || 0;
+    const price = parseFloat(m.position.price) || 0;
+    totalUsdMatched += m.position.marketValue ? parseFloat(m.position.marketValue) : (qty * price);
+  });
+
+  container.innerHTML = `
+    <div class="card mb-4" style="border: 1px solid rgba(56, 189, 248, 0.35); background: linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.85)); box-shadow: 0 8px 30px rgba(0,0,0,0.4);">
+      <div class="card-header" style="border-bottom: 1px solid rgba(56, 189, 248, 0.2);">
+        <div>
+          <h3 style="color: #38BDF8;"><span class="icon">🎯</span> Suas Posições Abertas no ETF Pro Plus</h3>
+          <p class="subtitle">Cruzamento em tempo real entre sua carteira real e o lineup oficial do Hedgeye ETF Pro Plus.</p>
+        </div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <span class="badge badge-accent" style="background: rgba(56, 189, 248, 0.18); color: #38BDF8; font-weight: 700;">
+            ${matches.length} Posições Cobertas · US$ ${totalUsdMatched.toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}
+          </span>
+          <button class="btn btn-outline btn-sm" onclick="openEtfAlertsModal()">
+            <span>🔔 Ver Detalhes</span>
+          </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="data-table" style="font-size: 0.82rem;">
+            <thead>
+              <tr>
+                <th>Ticker</th>
+                <th>Nome</th>
+                <th>Corretora / Qtd</th>
+                <th>Valor Atual</th>
+                <th>Status ETF Pro</th>
+                <th>% Sugerido (Hedgeye)</th>
+                <th>Risk Range Low–High</th>
+                <th>Ação Recomendada</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${matches.map(m => {
+                const p = m.position;
+                const qty = parseFloat(p.qty) || 0;
+                const price = parseFloat(p.price) || 0;
+                const val = p.marketValue ? parseFloat(p.marketValue) : (qty * price);
+                const etf = m.etfItem;
+                const sz = m.sizingItem;
+                const alert = m.alertObj;
+
+                let statusBadge = alert ? `<span class="badge-etf-status ${alert.badgeClass}">${alert.badgeText}</span>` : '<span class="badge-etf-status badge-etf-none">—</span>';
+                let rangeText = etf && etf.rangeLow ? `${etf.rangeLow}–${etf.rangeHigh}` : (sz?.riskRangeLow ? `${sz.riskRangeLow}–${sz.riskRangeHigh}` : 'N/D');
+
+                return `
+                  <tr class="${alert?.rowClass || ''}">
+                    <td><strong>${p.ticker}</strong></td>
+                    <td>${p.name || p.ticker}</td>
+                    <td><span class="tag tag-outline">${p.broker || 'Schwab'}</span> ${qty.toLocaleString('pt-BR')} cotas</td>
+                    <td class="font-bold">US$ ${val.toLocaleString('pt-BR', {minimumFractionDigits: 2})}</td>
+                    <td>${statusBadge}</td>
+                    <td>${sz ? `<strong style="color:#10B981;">${sz.suggestedPct}%</strong> <small class="text-muted">(US$ ${sz.suggestedUsd?.toLocaleString('pt-BR', {maximumFractionDigits: 0})})</small>` : '<small class="text-muted">N/D</small>'}</td>
+                    <td><small>${rangeText}</small></td>
+                    <td><small style="color: #CBD5E1;">${alert?.actionTip || p.conduct || 'Manter tese'}</small></td>
+                  </tr>
+                `;
+              }).join("")}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderEtfAlertsModalList() {
+  const container = document.getElementById("etfAlertsModalList");
+  if (!container) return;
+
+  const cache = etfProAlertsCache;
+  if (!cache || !cache.alerts) {
+    container.innerHTML = "<p class='text-muted'>Nenhum alerta disponível no momento.</p>";
+    return;
+  }
+
+  // Atualizar contadores das abas do modal
+  const cntAll = document.getElementById("modalTabCountAll");
+  const cntRecent = document.getElementById("modalTabCountRecent");
+  const cntCritical = document.getElementById("modalTabCountCritical");
+  const cntHoldings = document.getElementById("modalTabCountHoldings");
+
+  if (cntAll) cntAll.textContent = cache.alerts.length;
+  if (cntRecent) cntRecent.textContent = cache.newChangeCount;
+  if (cntCritical) cntCritical.textContent = cache.criticalCount;
+  if (cntHoldings) cntHoldings.textContent = cache.activeCount;
+
+  // Filtrar conforme aba ativa
+  let list = cache.alerts;
+  if (currentEtfModalFilter === 'recent') {
+    list = cache.alerts.filter(a => a.statusType === 'new');
+  } else if (currentEtfModalFilter === 'critical') {
+    list = cache.alerts.filter(a => a.statusType === 'critical' || a.statusType === 'removed');
+  } else if (currentEtfModalFilter === 'holdings') {
+    list = cache.alerts.filter(a => a.statusType === 'active' || a.statusType === 'warning');
+  }
+
+  if (list.length === 0) {
+    container.innerHTML = `
+      <div style="padding: 2rem; text-align: center; color: #94A3B8;">
+        <span style="font-size: 2rem;">✓</span>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Nenhum alerta nesta categoria.</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = list.map(a => `
+    <div class="etf-alert-card type-${a.statusType}" style="padding: 1rem;">
+      <div class="etf-alert-card-top">
+        <div class="etf-alert-ticker">
+          <span style="font-size: 1.15rem;">${a.ticker}</span>
+          <span class="broker-tag">${a.broker}</span>
+          <span style="font-size: 0.85rem; color: #94A3B8; font-weight: 500;">${a.name}</span>
+        </div>
+        <span class="badge-etf-status ${a.badgeClass}">${a.badgeText}</span>
+      </div>
+      <div style="font-size: 0.88rem; color: #F1F5F9; font-weight: 600; margin-top: 0.3rem;">
+        ${a.title}
+      </div>
+      <div class="etf-alert-summary" style="margin-top: 0.25rem;">
+        ${a.description}
+      </div>
+      <div class="etf-alert-meta" style="margin-top: 0.6rem;">
+        <span style="color: #FBBF24;"><strong>Recomendação Operacional:</strong> ${a.actionTip}</span>
+        <span>Data: ${a.date}</span>
+      </div>
+    </div>
+  `).join("");
+}
+
+function filterEtfAlertsModal(type) {
+  currentEtfModalFilter = type;
+  document.querySelectorAll(".etf-modal-tab-btn").forEach(btn => {
+    btn.classList.remove("active");
+  });
+  if (type === 'all') document.getElementById("modalTabAll")?.classList.add("active");
+  if (type === 'recent') document.getElementById("modalTabRecent")?.classList.add("active");
+  if (type === 'critical') document.getElementById("modalTabCritical")?.classList.add("active");
+  if (type === 'holdings') document.getElementById("modalTabHoldings")?.classList.add("active");
+
+  renderEtfAlertsModalList();
+}
+
+function openEtfAlertsModal() {
+  const modal = document.getElementById("etfAlertsModal");
+  if (modal) {
+    computeEtfProPortfolioAlerts();
+    renderEtfAlertsModalList();
+    modal.classList.add("active");
+  }
+}
+
+function closeEtfAlertsModal() {
+  const modal = document.getElementById("etfAlertsModal");
+  if (modal) {
+    modal.classList.remove("active");
+  }
 }
 
 // TROCA DE PORTFÓLIO ATIVO
@@ -2128,11 +2635,16 @@ function renderPortfolioView(key) {
         bandCell = `<strong style="color: ${over ? '#F87171' : '#10B981'};">${band.min}–${band.max}%</strong><br><small style="color: ${bandColor};">${band.label}${over ? ' — ACIMA DO TETO' : ''}</small>`;
       }
 
+      const etfAlert = getEtfAlertForPosition(p.ticker);
       const tr = document.createElement("tr");
+      if (etfAlert && etfAlert.rowClass) {
+        tr.className = etfAlert.rowClass;
+      }
       tr.innerHTML = `
         <td><strong>${p.ticker}</strong> <br><small class="text-muted">${p.typeGroup || 'Ativo'}</small></td>
         <td>${p.name || p.ticker}</td>
         <td><span class="tag tag-outline">${p.broker || 'Schwab'}</span></td>
+        <td>${etfAlert ? etfAlert.badgeHtml : '<span class="badge-etf-status badge-etf-none">—</span>'}</td>
         <td><strong>${qty === 1 && p.ticker === 'CAIXA' ? '-' : qty.toLocaleString('pt-BR')}</strong></td>
         <td><span class="badge ${catBadge}">${cat}</span></td>
         <td class="font-bold">US$ ${val.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
@@ -3261,21 +3773,6 @@ function savePortfolioUpdate() {
 
   showToast(`Posições de ${broker === 'schwab' ? 'Charles Schwab' : 'Tastyworks'} atualizadas e reconciliadas com sucesso!`);
   closePortfolioModal();
-}
-
-// 6.1 MODAL DE RELATÓRIO EXECUTIVO & PESQUISA
-function openReportModal() {
-  const reportModal = document.getElementById("reportModal");
-  if (reportModal) {
-    reportModal.classList.add("active");
-  }
-}
-
-function closeReportModal() {
-  const reportModal = document.getElementById("reportModal");
-  if (reportModal) {
-    reportModal.classList.remove("active");
-  }
 }
 
 // 6.1 DICIONÁRIO DE TRADUÇÕES ESTRUTURADAS & ANÁLISES PROFUNDAS DOS RELATÓRIOS
@@ -7135,6 +7632,7 @@ document.addEventListener("keydown", (e) => {
     closeNewDecisionModal();
     closePortfolioModal();
     closeNewMacroIndicatorModal();
+    closeEtfAlertsModal();
   }
 });
 
@@ -7150,6 +7648,12 @@ function initApp() {
   // 0. Verifica Autenticação Supabase e carrega carteira canônica
   checkAuthSession();
   fetchPortfolioDataFromApi();
+
+  // Carrega ETF Pro Plus e radar de alertas imediatos de posições abertas
+  fetchEtfProPlusData().then(() => {
+    updateEtfProAlertsSystem();
+    renderPortfolioView(activePortfolioKey);
+  });
 
   renderTradingViewWatchlistTable();
   loadReportsDatabase().then(() => {

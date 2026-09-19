@@ -57,6 +57,12 @@
         <span class="status-indicator online"></span>
         <span id="marketTime">09/09/2026 | NYSE Open</span>
       </div>
+      <!-- Botão Radar de Alertas ETF Pro -->
+      <button class="btn-etf-radar" id="btnHeaderEtfAlerts" onclick="openEtfAlertsModal()" title="Radar de Alterações do ETF Pro para Posições Abertas">
+        <span class="beacon-dot"></span>
+        <span>Radar ETF Pro</span>
+        <span class="badge-count" id="headerEtfAlertsCount">0</span>
+      </button>
       <button class="btn btn-outline" id="btnSyncHeader" onclick="syncReportsOnDemand()" title="Sincronizar novos relatórios com o Gmail agora">
         <span class="icon" id="syncIconHeader">🔄</span> <span id="syncTextHeader">Sincronizar</span>
       </button>
@@ -98,7 +104,7 @@
       📥 Base & Sincronizador
     </button>
     <button class="nav-tab" data-tab="etfproplus" onclick="setTab('etfproplus')">
-      📡 ETF Pro Plus
+      📡 ETF Pro Plus <span class="nav-alert-chip" id="navEtfAlertsChip" style="display:none;"></span>
     </button>
   </nav>
 
@@ -157,6 +163,9 @@
           </div>
         </div>
       </div>
+
+      <!-- RADAR DE ALERTAS DO ETF PRO PLUS (POSIÇÕES ABERTAS) -->
+      <div id="dashboardEtfAlertsContainer"></div>
 
       <!-- Grid 2 Colunas: Matriz GIP e Síntese Matinal -->
       <div class="grid-2-col">
@@ -434,6 +443,9 @@
         </div>
       </div>
 
+      <!-- RADAR DE ALERTAS DO ETF PRO NA CARTEIRA -->
+      <div id="portfolioEtfAlertsContainer"></div>
+
       <!-- Resumo de Alocação Real por Quadrante -->
       <div class="grid-3-col mt-3">
         <div class="card stat-card">
@@ -670,6 +682,7 @@
                   <th>Ticker / Ativo</th>
                   <th>Nome da Empresa / Tese</th>
                   <th>Corretora</th>
+                  <th>Status / Alerta ETF Pro</th>
                   <th>Quantidade</th>
                   <th>Categoria</th>
                   <th>Market Value</th>
@@ -1846,6 +1859,9 @@
          ETF PRO PLUS — Lineup, mudanças, simulação de alocação
          ======================================================== -->
     <section id="tab-etfproplus" class="tab-content">
+      <!-- PAINEL DE IMPACTO NAS NOSSAS POSIÇÕES EM ABERTO -->
+      <div id="etfProPortfolioMatchingContainer"></div>
+
       <div class="card">
         <div class="card-header">
           <div>
@@ -2430,10 +2446,33 @@
     </div>
   </div>
 
+  <!-- Modal Central de Alertas do ETF Pro Plus x Posições Abertas -->
+  <div class="etf-modal-overlay" id="etfAlertsModal" onclick="if(event.target === this) closeEtfAlertsModal()">
+    <div class="etf-modal-content">
+      <div class="etf-modal-header">
+        <h2>
+          <span>📡</span> Radar de Alterações: ETF Pro × Posições Abertas
+        </h2>
+        <button class="etf-modal-close" onclick="closeEtfAlertsModal()" title="Fechar">✕</button>
+      </div>
+      <div class="etf-modal-body">
+        <div class="etf-modal-tabs">
+          <button class="etf-modal-tab-btn active" id="modalTabAll" onclick="filterEtfAlertsModal('all')">Todos os Alertas (<span id="modalTabCountAll">0</span>)</button>
+          <button class="etf-modal-tab-btn" id="modalTabRecent" onclick="filterEtfAlertsModal('recent')">⚡ Alterações Recentes (<span id="modalTabCountRecent">0</span>)</button>
+          <button class="etf-modal-tab-btn" id="modalTabCritical" onclick="filterEtfAlertsModal('critical')">🚨 Divergências / Risco (<span id="modalTabCountCritical">0</span>)</button>
+          <button class="etf-modal-tab-btn" id="modalTabHoldings" onclick="filterEtfAlertsModal('holdings')">🟢 Posições no Lineup (<span id="modalTabCountHoldings">0</span>)</button>
+        </div>
+        <div id="etfAlertsModalList" style="display: flex; flex-direction: column; gap: 0.85rem;">
+          <!-- Inserido dinamicamente via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Toast de Notificação -->
   <div class="toast-notification" id="toastNotification">Notificação</div>
 
   <!-- Script Principal da Aplicação -->
-  <script src="app.js?v=20260915_V11_MTM_SIZING"></script>
+  <script src="app.js?v=20260918_V12_ETF_PRO_ALERTS"></script>
 </body>
 </html>

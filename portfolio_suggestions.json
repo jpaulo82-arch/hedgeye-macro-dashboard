@@ -1,0 +1,240 @@
+{
+  "generatedAt": "2026-09-19T09:32:02",
+  "reportDate": "18/09/2026",
+  "reportTitle": "Notas de Resumo da Semana Macro | 18 de Setembro de 2026",
+  "disclaimer": "SINAIS para revisão manual — nenhuma ordem é enviada. Tamanhos seguem as bandas do Master the Market por conta.",
+  "brokers": {
+    "schwab": {
+      "nav": 219655.56,
+      "cashLikePct": 22.9,
+      "bondsPct": 42.9,
+      "adherencePct": 83.4,
+      "actions": [
+        {
+          "ticker": "COLO",
+          "action": "COMPRAR (até o mínimo da banda)",
+          "qty": 50,
+          "usd": 2462.5,
+          "price": 49.25,
+          "reason": "ETF Pro long em 0.90% do NAV (banda 2.0–6.0%); conviction 0.76, Zona de entrada (perto do LRR, ainda sem confirmação).",
+          "rule": "ETF Pro Plus + banda ETF 2–6%",
+          "priority": "média"
+        },
+        {
+          "ticker": "IGV",
+          "action": "COMPRAR (até o mínimo da banda)",
+          "qty": 23,
+          "usd": 2400.05,
+          "price": 104.35,
+          "reason": "ETF Pro long em 0.95% do NAV (banda 2.0–6.0%); conviction 0.64, Confirmado — a favor da posição.",
+          "rule": "ETF Pro Plus + banda ETF 2–6%",
+          "priority": "média"
+        },
+        {
+          "ticker": "XBI",
+          "action": "COMPRAR (até o mínimo da banda)",
+          "qty": 14,
+          "usd": 2194.08,
+          "price": 156.72,
+          "reason": "ETF Pro long em 1.07% do NAV (banda 2.0–6.0%); conviction 0.68, Zona de entrada (perto do LRR, ainda sem confirmação).",
+          "rule": "ETF Pro Plus + banda ETF 2–6%",
+          "priority": "média"
+        },
+        {
+          "ticker": "XLE",
+          "action": "COMPRAR (até o mínimo da banda)",
+          "qty": 29,
+          "usd": 1864.99,
+          "price": 64.31,
+          "reason": "ETF Pro long em 1.17% do NAV (banda 2.0–6.0%); conviction 0.2, sem Risk Range.",
+          "rule": "ETF Pro Plus + banda ETF 2–6%",
+          "priority": "média"
+        },
+        {
+          "ticker": "FXH",
+          "action": "COMPRAR (até o mínimo da banda)",
+          "qty": 14,
+          "usd": 1830.78,
+          "price": 130.77,
+          "reason": "ETF Pro long em 1.19% do NAV (banda 2.0–6.0%); conviction 1.0, Confirmado — a favor da posição.",
+          "rule": "ETF Pro Plus + banda ETF 2–6%",
+          "priority": "média"
+        },
+        {
+          "ticker": "ARM",
+          "action": "FECHAR (sub-escala, vender na força)",
+          "qty": 6,
+          "usd": 1653.66,
+          "price": 275.61,
+          "reason": "0.75% do NAV (< mínimo de 1%), Quad 1 em regime Quad 3, +3.9% hoje; ETF Pro está short semis.",
+          "rule": "Ação individual mínimo 1% / regime",
+          "priority": "média"
+        },
+        {
+          "ticker": "XLV",
+          "action": "COMPRAR (até o mínimo da banda)",
+          "qty": 7,
+          "usd": 1178.73,
+          "price": 168.39,
+          "reason": "ETF Pro long em 1.53% do NAV (banda 2.0–6.0%); conviction 1.0, Confirmado — a favor da posição.",
+          "rule": "ETF Pro Plus + banda ETF 2–6%",
+          "priority": "média"
+        },
+        {
+          "ticker": "TSEM",
+          "action": "FECHAR (sub-escala, vender na força)",
+          "qty": 5,
+          "usd": 1118.0,
+          "price": 223.6,
+          "reason": "0.51% do NAV (< mínimo de 1%), Quad 1 em regime Quad 3, +1.8% hoje; ETF Pro está short semis.",
+          "rule": "Ação individual mínimo 1% / regime",
+          "priority": "média"
+        },
+        {
+          "ticker": "MTSI",
+          "action": "FECHAR (sub-escala, vender na força)",
+          "qty": 4,
+          "usd": 1103.44,
+          "price": 275.86,
+          "reason": "0.50% do NAV (< mínimo de 1%), Quad 1 em regime Quad 3, +4.8% hoje; ETF Pro está short semis.",
+          "rule": "Ação individual mínimo 1% / regime",
+          "priority": "média"
+        },
+        {
+          "ticker": "CRDO",
+          "action": "FECHAR (sub-escala, vender na força)",
+          "qty": 6,
+          "usd": 1055.34,
+          "price": 175.89,
+          "reason": "0.48% do NAV (< mínimo de 1%), Quad 1 em regime Quad 3, +5.2% hoje; ETF Pro está short semis.",
+          "rule": "Ação individual mínimo 1% / regime",
+          "priority": "média"
+        }
+      ],
+      "alerts": [
+        "Renda fixa corporativa = 43% do NAV enquanto ETF Pro está short LQD/JOJO/ZROZ/TLT e HYG/LQD estão BEARISH nos Risk Ranges. Dados de bonds desatualizados (11/09) — reenviar extrato para indicar quais reduzir."
+      ]
+    },
+    "tastyworks": {
+      "nav": 33591.12,
+      "cashLikePct": 69.1,
+      "bondsPct": 0.0,
+      "adherencePct": 86.7,
+      "actions": [
+        {
+          "ticker": "IWM",
+          "action": "COBRIR (reduzir short)",
+          "qty": 7,
+          "usd": 1988.7,
+          "price": 284.1,
+          "reason": "Short em 8.5% do NAV, acima da banda 1.0–3.0%.",
+          "rule": "Master the Market: short dentro da banda",
+          "priority": "alta"
+        },
+        {
+          "ticker": "SMH",
+          "action": "COBRIR (reduzir short)",
+          "qty": 1,
+          "usd": 573.0,
+          "price": 573.0,
+          "reason": "Short em 3.4% do NAV, acima da banda 1.0–3.0%.",
+          "rule": "Master the Market: short dentro da banda",
+          "priority": "alta"
+        },
+        {
+          "ticker": "AVGO",
+          "action": "REDUZIR",
+          "qty": 2,
+          "usd": 715.22,
+          "price": 357.61,
+          "reason": "4.3% do NAV, acima do teto de 3% p/ ação. Quad 1 e/ou semis contradizem o ETF Pro (SMH/QTUM short).",
+          "rule": "Ação individual 1–3%",
+          "priority": "média"
+        },
+        {
+          "ticker": "PFIX",
+          "action": "COMPRAR (entrada no mínimo)",
+          "qty": 13,
+          "usd": 691.99,
+          "price": 53.23,
+          "reason": "ETF Pro long não detido; conviction 0.2, sem Risk Range. Caixa+SGOV = 69% do NAV (banda da casa 10–30%).",
+          "rule": "ETF Pro Plus, entrada no mínimo; escalar 50–150 bps",
+          "priority": "média"
+        },
+        {
+          "ticker": "COLO",
+          "action": "COMPRAR (entrada no mínimo)",
+          "qty": 14,
+          "usd": 689.5,
+          "price": 49.25,
+          "reason": "ETF Pro long não detido; conviction 0.76, Zona de entrada (perto do LRR, ainda sem confirmação). Caixa+SGOV = 69% do NAV (banda da casa 10–30%).",
+          "rule": "ETF Pro Plus, entrada no mínimo; escalar 50–150 bps",
+          "priority": "média"
+        },
+        {
+          "ticker": "EWZ",
+          "action": "COMPRAR (entrada no mínimo)",
+          "qty": 18,
+          "usd": 675.36,
+          "price": 37.52,
+          "reason": "ETF Pro long não detido; conviction 0.75, Confirmado — a favor da posição. Caixa+SGOV = 69% do NAV (banda da casa 10–30%).",
+          "rule": "ETF Pro Plus, entrada no mínimo; escalar 50–150 bps",
+          "priority": "média"
+        },
+        {
+          "ticker": "MSOS",
+          "action": "COMPRAR (entrada no mínimo)",
+          "qty": 137,
+          "usd": 671.3,
+          "price": 4.9,
+          "reason": "ETF Pro long não detido; conviction 0.8, Zona de entrada (perto do LRR, ainda sem confirmação). Caixa+SGOV = 69% do NAV (banda da casa 10–30%).",
+          "rule": "ETF Pro Plus, entrada no mínimo; escalar 50–150 bps",
+          "priority": "média"
+        },
+        {
+          "ticker": "CORN",
+          "action": "COMPRAR (entrada no mínimo)",
+          "qty": 34,
+          "usd": 669.8,
+          "price": 19.7,
+          "reason": "ETF Pro long não detido; conviction 0.7, Confirmado — a favor da posição. Caixa+SGOV = 69% do NAV (banda da casa 10–30%).",
+          "rule": "ETF Pro Plus, entrada no mínimo; escalar 50–150 bps",
+          "priority": "média"
+        },
+        {
+          "ticker": "FXH",
+          "action": "COMPRAR (entrada no mínimo)",
+          "qty": 5,
+          "usd": 653.85,
+          "price": 130.77,
+          "reason": "ETF Pro long não detido; conviction 1.0, Confirmado — a favor da posição. Caixa+SGOV = 69% do NAV (banda da casa 10–30%).",
+          "rule": "ETF Pro Plus, entrada no mínimo; escalar 50–150 bps",
+          "priority": "média"
+        },
+        {
+          "ticker": "ARM",
+          "action": "REDUZIR",
+          "qty": 2,
+          "usd": 551.22,
+          "price": 275.61,
+          "reason": "4.1% do NAV, acima do teto de 3% p/ ação. Quad 1 e/ou semis contradizem o ETF Pro (SMH/QTUM short).",
+          "rule": "Ação individual 1–3%",
+          "priority": "média"
+        },
+        {
+          "ticker": "MLI",
+          "action": "REDUZIR",
+          "qty": 4,
+          "usd": 240.28,
+          "price": 60.07,
+          "reason": "3.6% do NAV, acima do teto de 3% p/ ação.",
+          "rule": "Ação individual 1–3%",
+          "priority": "média"
+        }
+      ],
+      "alerts": [
+        "Caixa + SGOV = 69% do NAV, acima da banda da casa de 30%."
+      ]
+    }
+  }
+}
