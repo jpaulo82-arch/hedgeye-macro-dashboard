@@ -1,47 +1,47 @@
 {
-  "updated_at": "20/09/2026 09:31:44",
+  "updated_at": "21/09/2026 09:31:51",
   "gex": [
     {
       "ticker": "SPY",
       "current_price": 761.69,
-      "net_gex_million": -215.6,
-      "regime": "SHORT GAMMA",
-      "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
-      "call_wall": 770.0,
+      "net_gex_million": 8023.22,
+      "regime": "LONG GAMMA",
+      "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
+      "call_wall": 762.0,
       "put_wall": 760.0,
-      "zero_gamma_level": 757.0,
-      "total_call_oi": 257954,
-      "total_put_oi": 235590,
-      "put_call_ratio": 0.91,
-      "updated_at": "20/09/2026 09:31:13"
+      "zero_gamma_level": 762.0,
+      "total_call_oi": 473502,
+      "total_put_oi": 802150,
+      "put_call_ratio": 1.69,
+      "updated_at": "21/09/2026 09:31:05"
     },
     {
       "ticker": "QQQ",
       "current_price": 721.45,
-      "net_gex_million": 1514.43,
+      "net_gex_million": 332.13,
       "regime": "LONG GAMMA",
       "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
-      "call_wall": 725.0,
-      "put_wall": 717.0,
-      "zero_gamma_level": 650.0,
-      "total_call_oi": 118405,
-      "total_put_oi": 69074,
-      "put_call_ratio": 0.58,
-      "updated_at": "20/09/2026 09:31:15"
+      "call_wall": 722.0,
+      "put_wall": 719.0,
+      "zero_gamma_level": 722.0,
+      "total_call_oi": 254035,
+      "total_put_oi": 512824,
+      "put_call_ratio": 2.02,
+      "updated_at": "21/09/2026 09:31:07"
     },
     {
       "ticker": "IWM",
       "current_price": 284.1,
-      "net_gex_million": -25.56,
-      "regime": "SHORT GAMMA",
-      "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
-      "call_wall": 285.0,
+      "net_gex_million": 0.69,
+      "regime": "LONG GAMMA",
+      "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
+      "call_wall": 287.0,
       "put_wall": 284.0,
-      "zero_gamma_level": 264.0,
-      "total_call_oi": 14289,
-      "total_put_oi": 23028,
-      "put_call_ratio": 1.61,
-      "updated_at": "20/09/2026 09:31:16"
+      "zero_gamma_level": 205.0,
+      "total_call_oi": 196422,
+      "total_put_oi": 219758,
+      "put_call_ratio": 1.12,
+      "updated_at": "21/09/2026 09:31:09"
     }
   ],
   "fundamentals": [
@@ -1349,15 +1349,15 @@
     "leading_month": "QUAD 2",
     "transition_signal": "🟡 PRENÚNCIO DE QUAD 2 (Reflação): Commodities industriais (Cobre, Energia, AIRR) acelerando a ++2.62% na 2ª derivada, superando o ouro. Possível repique de yields e alívio em cíclicos.",
     "signal_badge": "badge-neutral",
-    "updated_at": "20/09/2026 09:31:35"
+    "updated_at": "21/09/2026 09:31:36"
   },
   "economic_calendar": {
-    "updated_at": "20/09/2026 09:31:35",
-    "current_week": "14/09 a 18/09/2026",
+    "updated_at": "21/09/2026 09:31:36",
+    "current_week": "21/09 a 25/09/2026",
     "events": [
       {
-        "date_str": "16/09 (Qua) 10:30 EDT",
-        "tag": "CONCLUÍDO",
+        "date_str": "23/09 (Qua) 10:30 EDT",
+        "tag": "PRÓXIMO",
         "is_today": false,
         "indicator": "Crude Oil Inventories (EIA) & Mortgage Demand (MBA)",
         "consensus": "Divulgação semanal (toda quarta) — sem consenso de mercado publicado",
@@ -1367,8 +1367,8 @@
         "badge_class": "badge-bullish"
       },
       {
-        "date_str": "17/09 (Qui) 08:30 EDT",
-        "tag": "CONCLUÍDO",
+        "date_str": "24/09 (Qui) 08:30 EDT",
+        "tag": "PRÓXIMO",
         "is_today": false,
         "indicator": "Initial Jobless Claims (Pedidos de Seguro-Desemprego)",
         "consensus": "Divulgação semanal (toda quinta) — sem consenso de mercado publicado",
@@ -1416,143 +1416,143 @@
     {
       "ticker": "ASML",
       "earnings_date": "14/10/2026",
-      "days_until": 24,
+      "days_until": 23,
       "eps_consensus": "US$ 10.58",
       "revenue_consensus": "US$ 11.66B",
-      "status": "Em 24 dias"
+      "status": "Em 23 dias"
     },
     {
       "ticker": "MLI",
       "earnings_date": "20/10/2026",
-      "days_until": 30,
+      "days_until": 29,
       "eps_consensus": "US$ 1.09",
       "revenue_consensus": "US$ 1.28B",
-      "status": "Em 30 dias"
+      "status": "Em 29 dias"
     },
     {
       "ticker": "INTC",
       "earnings_date": "22/10/2026",
-      "days_until": 32,
+      "days_until": 31,
       "eps_consensus": "US$ 0.39",
       "revenue_consensus": "US$ 16.43B",
-      "status": "Em 32 dias"
+      "status": "Em 31 dias"
     },
     {
       "ticker": "NOK",
       "earnings_date": "22/10/2026",
-      "days_until": 32,
+      "days_until": 31,
       "eps_consensus": "US$ 0.07",
       "revenue_consensus": "US$ 5.05B",
-      "status": "Em 32 dias"
+      "status": "Em 31 dias"
     },
     {
       "ticker": "NEM",
       "earnings_date": "22/10/2026",
-      "days_until": 32,
+      "days_until": 31,
       "eps_consensus": "US$ 1.94",
       "revenue_consensus": "US$ 6.22B",
-      "status": "Em 32 dias"
+      "status": "Em 31 dias"
     },
     {
       "ticker": "BE",
       "earnings_date": "27/10/2026",
-      "days_until": 37,
+      "days_until": 36,
       "eps_consensus": "US$ 0.67",
       "revenue_consensus": "US$ 1.06B",
-      "status": "Em 37 dias"
+      "status": "Em 36 dias"
     },
     {
       "ticker": "GOOGL",
       "earnings_date": "28/10/2026",
-      "days_until": 38,
+      "days_until": 37,
       "eps_consensus": "US$ 3.02",
       "revenue_consensus": "US$ 127.30B",
-      "status": "Em 38 dias"
+      "status": "Em 37 dias"
     },
     {
       "ticker": "META",
       "earnings_date": "28/10/2026",
-      "days_until": 38,
+      "days_until": 37,
       "eps_consensus": "US$ 6.97",
       "revenue_consensus": "US$ 63.31B",
-      "status": "Em 38 dias"
+      "status": "Em 37 dias"
     },
     {
       "ticker": "AXTI",
       "earnings_date": "29/10/2026",
-      "days_until": 39,
+      "days_until": 38,
       "eps_consensus": "US$ 0.31",
       "revenue_consensus": "US$ 66.0M",
-      "status": "Em 39 dias"
+      "status": "Em 38 dias"
     },
     {
       "ticker": "FN",
       "earnings_date": "02/11/2026",
-      "days_until": 43,
+      "days_until": 42,
       "eps_consensus": "US$ 4.18",
       "revenue_consensus": "US$ 1.40B",
-      "status": "Em 43 dias"
+      "status": "Em 42 dias"
     },
     {
       "ticker": "UBER",
       "earnings_date": "03/11/2026",
-      "days_until": 44,
+      "days_until": 43,
       "eps_consensus": "US$ 0.87",
       "revenue_consensus": "US$ 14.68B",
-      "status": "Em 44 dias"
+      "status": "Em 43 dias"
     },
     {
       "ticker": "ALAB",
       "earnings_date": "03/11/2026",
-      "days_until": 44,
+      "days_until": 43,
       "eps_consensus": "US$ 1.19",
       "revenue_consensus": "US$ 550.6M",
-      "status": "Em 44 dias"
+      "status": "Em 43 dias"
     },
     {
       "ticker": "MELI",
       "earnings_date": "04/11/2026",
-      "days_until": 45,
+      "days_until": 44,
       "eps_consensus": "US$ 9.67",
       "revenue_consensus": "US$ 10.57B",
-      "status": "Em 45 dias"
+      "status": "Em 44 dias"
     },
     {
       "ticker": "COHR",
       "earnings_date": "04/11/2026",
-      "days_until": 45,
+      "days_until": 44,
       "eps_consensus": "US$ 1.96",
       "revenue_consensus": "US$ 2.30B",
-      "status": "Em 45 dias"
+      "status": "Em 44 dias"
     },
     {
       "ticker": "ARM",
       "earnings_date": "04/11/2026",
-      "days_until": 45,
+      "days_until": 44,
       "eps_consensus": "US$ 0.47",
       "revenue_consensus": "US$ 1.38B",
-      "status": "Em 45 dias"
+      "status": "Em 44 dias"
     },
     {
       "ticker": "MTSI",
       "earnings_date": "05/11/2026",
-      "days_until": 46,
+      "days_until": 45,
       "eps_consensus": "US$ 2.00",
       "revenue_consensus": "US$ 420.4M",
-      "status": "Em 46 dias"
+      "status": "Em 45 dias"
     },
     {
       "ticker": "TSEM",
       "earnings_date": "09/11/2026",
-      "days_until": 50,
+      "days_until": 49,
       "eps_consensus": "US$ 1.06",
       "revenue_consensus": "US$ 522.4M",
-      "status": "Em 50 dias"
+      "status": "Em 49 dias"
     },
     {
       "ticker": "CRDO",
       "earnings_date": "30/11/2026",
-      "days_until": 71,
+      "days_until": 70,
       "eps_consensus": "US$ 1.28",
       "revenue_consensus": "US$ 531.8M",
       "status": "Próximo Tri"
@@ -1560,7 +1560,7 @@
     {
       "ticker": "AVGO",
       "earnings_date": "09/12/2026",
-      "days_until": 80,
+      "days_until": 79,
       "eps_consensus": "US$ 3.83",
       "revenue_consensus": "US$ 34.88B",
       "status": "Próximo Tri"

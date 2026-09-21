@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-20T09:31:55",
-  "reportDate": "18/09/2026",
-  "reportTitle": "Notas do Resumo Semanal Macro | 18 de Setembro de 2026",
+  "generatedAt": "2026-09-21T09:32:01",
+  "reportDate": "21/09/2026",
+  "reportTitle": "EARLY LOOK: Sinais Furtivos de #Quad2",
   "disclaimer": "SINAIS para revisão manual — nenhuma ordem é enviada. Tamanhos seguem as bandas do Master the Market por conta.",
   "brokers": {
     "schwab": {
@@ -61,16 +61,6 @@
           "priority": "média"
         },
         {
-          "ticker": "ARM",
-          "action": "FECHAR (sub-escala, vender na força)",
-          "qty": 6,
-          "usd": 1653.66,
-          "price": 275.61,
-          "reason": "0.75% do NAV (< mínimo de 1%), Quad 1 em regime Quad 3, +3.9% hoje; ETF Pro está short semis.",
-          "rule": "Ação individual mínimo 1% / regime",
-          "priority": "média"
-        },
-        {
           "ticker": "XLV",
           "action": "COMPRAR (até o mínimo da banda)",
           "qty": 7,
@@ -79,40 +69,11 @@
           "reason": "ETF Pro long em 1.53% do NAV (banda 2.0–6.0%); conviction 1.0, Confirmado — a favor da posição.",
           "rule": "ETF Pro Plus + banda ETF 2–6%",
           "priority": "média"
-        },
-        {
-          "ticker": "TSEM",
-          "action": "FECHAR (sub-escala, vender na força)",
-          "qty": 5,
-          "usd": 1118.0,
-          "price": 223.6,
-          "reason": "0.51% do NAV (< mínimo de 1%), Quad 1 em regime Quad 3, +1.8% hoje; ETF Pro está short semis.",
-          "rule": "Ação individual mínimo 1% / regime",
-          "priority": "média"
-        },
-        {
-          "ticker": "MTSI",
-          "action": "FECHAR (sub-escala, vender na força)",
-          "qty": 4,
-          "usd": 1103.44,
-          "price": 275.86,
-          "reason": "0.50% do NAV (< mínimo de 1%), Quad 1 em regime Quad 3, +4.8% hoje; ETF Pro está short semis.",
-          "rule": "Ação individual mínimo 1% / regime",
-          "priority": "média"
-        },
-        {
-          "ticker": "CRDO",
-          "action": "FECHAR (sub-escala, vender na força)",
-          "qty": 6,
-          "usd": 1055.34,
-          "price": 175.89,
-          "reason": "0.48% do NAV (< mínimo de 1%), Quad 1 em regime Quad 3, +5.2% hoje; ETF Pro está short semis.",
-          "rule": "Ação individual mínimo 1% / regime",
-          "priority": "média"
         }
       ],
       "alerts": [
-        "Renda fixa corporativa = 43% do NAV enquanto ETF Pro está short LQD/JOJO/ZROZ/TLT e HYG/LQD estão BEARISH nos Risk Ranges. Dados de bonds desatualizados (11/09) — reenviar extrato para indicar quais reduzir."
+        "Renda fixa corporativa = 43% do NAV enquanto ETF Pro está short LQD/JOJO/ZROZ/TLT e HYG/LQD estão BEARISH nos Risk Ranges. Dados de bonds desatualizados (11/09) — reenviar extrato para indicar quais reduzir.",
+        "Cobre a >90% do Risk Range — evitar adicionar em CPER/XME/FCX/MLI; metais somam cluster relevante."
       ]
     },
     "tastyworks": {
@@ -233,6 +194,7 @@
         }
       ],
       "alerts": [
+        "Cobre a >90% do Risk Range — evitar adicionar em CPER/XME/FCX/MLI; metais somam cluster relevante.",
         "Caixa + SGOV = 69% do NAV, acima da banda da casa de 30%."
       ]
     }
