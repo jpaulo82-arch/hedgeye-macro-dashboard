@@ -355,6 +355,24 @@
         </div>
       </div>
 
+      <!-- TRADE x TREND — Matriz de Estado & Phase Transitions (TradingView vs. Risk Range oficial) -->
+      <div class="card mt-3">
+        <div class="card-header" style="flex-wrap: wrap; gap: 0.75rem;">
+          <div>
+            <h3><span class="icon">🧭</span> Trade x Trend — Estado por Posição (<span id="vixGaugeInline">VIX --</span>)</h3>
+            <p class="subtitle">TRADE inferido do preço ao vivo (TradingView) vs. Risk Range™ oficial do dia · TREND vem 1:1 do sinal do Early Look</p>
+          </div>
+          <button class="btn btn-outline btn-sm" id="phaseTransitionsRefreshBtn" onclick="refreshPhaseTransitions()">
+            <span id="phaseTransitionsRefreshIcon">🔄</span> <span id="phaseTransitionsRefreshText">Atualizar Trade x Trend</span>
+          </button>
+        </div>
+        <div class="card-body">
+          <div id="tradeTrendStatesGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem;">
+            <div style="color: var(--text-dim); font-size: 0.85rem;">Carregando estados Trade x Trend...</div>
+          </div>
+        </div>
+      </div>
+
       <!-- Calendário Econômico & Catalisadores Macro (Nowcast Triggers) + Balanços da Carteira -->
       <div class="card mt-3">
         <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem;">

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "18/09/2026 15:08:37",
+  "updatedAt": "21/09/2026 12:00:33",
   "reports": {
     "weekly": [
       {
@@ -660,6 +660,42 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_110706_UPDATE__5_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-09-21 10:24AM EDT",
+        "addsLong": [
+          {
+            "name": "Commodity Strategy",
+            "ticker": "HGER"
+          },
+          {
+            "name": "Brent Oil",
+            "ticker": "BNO"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Palladium",
+            "ticker": "PALL"
+          }
+        ],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Semiconductors",
+            "ticker": "SMH",
+            "rangeLow": 531.0,
+            "rangeHigh": 588.0
+          },
+          {
+            "name": "Quantum Tech",
+            "ticker": "QTUM",
+            "rangeLow": 139.0,
+            "rangeHigh": 152.0
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -1290,6 +1326,12 @@
       "type": "intraday",
       "sourceFile": "intraday_110587_UPDATE__2_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou SHORT: Germany (EWG) | Removeu LONG: Global Natural Resources (GNR)"
+    },
+    {
+      "date": "2026-09-21 10:24AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_110706_UPDATE__5_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Commodity Strategy (HGER), Brent Oil (BNO) | Adicionou SHORT: Palladium (PALL) | Removeu SHORT: Semiconductors (SMH), Quantum Tech (QTUM)"
     }
   ],
   "currentLineup": [
@@ -2044,21 +2086,6 @@
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
     },
     {
-      "ticker": "SMH",
-      "name": "Semiconductors",
-      "side": "short",
-      "dateAdded": "2026-09-17 11:25AM EDT",
-      "assetClass": null,
-      "entryPrice": 560.61,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_110532_UPDATE__6_New_ETF_Pro_Changes.txt",
-      "allowedBand": null,
-      "nativeQuads": [],
-      "quadNote": "N/D (sem classificação de setor/classe confiável)"
-    },
-    {
       "ticker": "UFO",
       "name": "Space",
       "side": "short",
@@ -2074,34 +2101,61 @@
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
     },
     {
-      "ticker": "QTUM",
-      "name": "Quantum Tech",
-      "side": "short",
-      "dateAdded": "2026-09-17 11:25AM EDT",
-      "assetClass": null,
-      "entryPrice": 146.75,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_110532_UPDATE__6_New_ETF_Pro_Changes.txt",
-      "allowedBand": null,
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
       "ticker": "EWG",
       "name": "Germany",
       "side": "short",
       "dateAdded": "2026-09-18 10:41AM EDT",
       "assetClass": null,
-      "entryPrice": 42.105,
+      "entryPrice": 42.15,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
       "sourceOfEntry": "intraday:intraday_110587_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "HGER",
+      "name": "Commodity Strategy",
+      "side": "long",
+      "dateAdded": "2026-09-21 10:24AM EDT",
+      "assetClass": null,
+      "entryPrice": 35.675,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110706_UPDATE__5_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "BNO",
+      "name": "Brent Oil",
+      "side": "long",
+      "dateAdded": "2026-09-21 10:24AM EDT",
+      "assetClass": null,
+      "entryPrice": 58.92,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110706_UPDATE__5_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "PALL",
+      "name": "Palladium",
+      "side": "short",
+      "dateAdded": "2026-09-21 10:24AM EDT",
+      "assetClass": null,
+      "entryPrice": 23.6301,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110706_UPDATE__5_New_ETF_Pro_Changes.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"

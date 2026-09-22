@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T15:10:03.510053",
+  "generatedAt": "2026-09-21T12:00:57.541548",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -213,7 +213,7 @@
     {
       "month": "2024-11",
       "activePositions": 1,
-      "monthlyReturnPct": 0.504,
+      "monthlyReturnPct": 0.503,
       "details": [
         {
           "ticker": "BUXX",
@@ -222,7 +222,7 @@
           "periodEnd": "2024-11-30",
           "priceStart": 18.5969,
           "priceEnd": 18.6906,
-          "returnPct": 0.504
+          "returnPct": 0.503
         }
       ]
     },
@@ -245,7 +245,7 @@
     {
       "month": "2025-01",
       "activePositions": 1,
-      "monthlyReturnPct": 0.504,
+      "monthlyReturnPct": 0.503,
       "details": [
         {
           "ticker": "BUXX",
@@ -254,7 +254,7 @@
           "periodEnd": "2025-01-31",
           "priceStart": 18.7522,
           "priceEnd": 18.8466,
-          "returnPct": 0.504
+          "returnPct": 0.503
         }
       ]
     },
@@ -1660,95 +1660,95 @@
     },
     {
       "month": "2024-11",
-      "cumulativeIndex": 107.104
+      "cumulativeIndex": 107.103
     },
     {
       "month": "2024-12",
-      "cumulativeIndex": 107.563
+      "cumulativeIndex": 107.562
     },
     {
       "month": "2025-01",
-      "cumulativeIndex": 108.106
+      "cumulativeIndex": 108.103
     },
     {
       "month": "2025-02",
-      "cumulativeIndex": 108.302
+      "cumulativeIndex": 108.3
     },
     {
       "month": "2025-03",
-      "cumulativeIndex": 111.214
+      "cumulativeIndex": 111.211
     },
     {
       "month": "2025-04",
-      "cumulativeIndex": 113.453
+      "cumulativeIndex": 113.451
     },
     {
       "month": "2025-05",
-      "cumulativeIndex": 114.912
+      "cumulativeIndex": 114.91
     },
     {
       "month": "2025-06",
-      "cumulativeIndex": 114.383
+      "cumulativeIndex": 114.38
     },
     {
       "month": "2025-07",
-      "cumulativeIndex": 114.083
+      "cumulativeIndex": 114.081
     },
     {
       "month": "2025-08",
-      "cumulativeIndex": 115.588
+      "cumulativeIndex": 115.585
     },
     {
       "month": "2025-09",
-      "cumulativeIndex": 119.312
+      "cumulativeIndex": 119.31
     },
     {
       "month": "2025-10",
-      "cumulativeIndex": 120.837
+      "cumulativeIndex": 120.834
     },
     {
       "month": "2025-11",
-      "cumulativeIndex": 123.258
+      "cumulativeIndex": 123.256
     },
     {
       "month": "2025-12",
-      "cumulativeIndex": 124.312
+      "cumulativeIndex": 124.31
     },
     {
       "month": "2026-01",
-      "cumulativeIndex": 129.648
+      "cumulativeIndex": 129.645
     },
     {
       "month": "2026-02",
-      "cumulativeIndex": 135.562
+      "cumulativeIndex": 135.559
     },
     {
       "month": "2026-03",
-      "cumulativeIndex": 130.297
+      "cumulativeIndex": 130.294
     },
     {
       "month": "2026-04",
-      "cumulativeIndex": 129.89
+      "cumulativeIndex": 129.888
     },
     {
       "month": "2026-05",
-      "cumulativeIndex": 130.006
+      "cumulativeIndex": 130.003
     },
     {
       "month": "2026-06",
-      "cumulativeIndex": 130.144
+      "cumulativeIndex": 130.141
     },
     {
       "month": "2026-07",
-      "cumulativeIndex": 132.097
+      "cumulativeIndex": 132.095
     },
     {
       "month": "2026-08",
-      "cumulativeIndex": 135.388
+      "cumulativeIndex": 135.385
     },
     {
       "month": "2026-09",
-      "cumulativeIndex": 135.437
+      "cumulativeIndex": 135.434
     }
   ],
   "excludedPositions": [
@@ -1760,6 +1760,16 @@
     {
       "ticker": "GNR",
       "side": "long",
+      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
+    },
+    {
+      "ticker": "SMH",
+      "side": "short",
+      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
+    },
+    {
+      "ticker": "QTUM",
+      "side": "short",
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     },
     {
@@ -1823,5 +1833,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 53
+  "positionsIncluded": 54
 }

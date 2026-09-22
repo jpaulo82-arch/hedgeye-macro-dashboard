@@ -2,7 +2,7 @@
   "status": "success",
   "data_calculo": "15/09/2026",
   "livro_referencia": "Master the Market — Keith McCullough (Position Sizing Rules)",
-  "nav_total_usd": 253246.68,
+  "nav_total_usd": 254906.03,
   "destaque_ouro_hoje": {
     "ticker": "AAAU",
     "nome": "Goldman Sachs Physical Gold (Ouro Físico)",
@@ -13,24 +13,24 @@
     "signal_trend": "BULLISH (Preservado acima de US$ 4.251)",
     "sizing_status": "MIN SIZE (Tamanho Mínimo)",
     "regra_master_the_market": "Quando o sinal TRADE quebra mas o TREND permanece Bullish, o livro 'Master the Market' exige redução imediata para MIN SIZE (4.0% do NAV — banda de Moeda Estrangeira/Ouro Físico, pág. 37), preservando opcionalidade e evitando stop out antecipado.",
-    "nav_total_usd": 253246.68,
+    "nav_total_usd": 254906.03,
     "sizing_bands": {
       "min_size": {
         "pct_label": "4.0% (piso da banda Foreign Currency)",
-        "usd_alvo": 10129.87,
-        "cotas_alvo_aau": 235,
+        "usd_alvo": 10196.24,
+        "cotas_alvo_aau": 238,
         "gatilho": "Bearish TRADE & Bullish TREND (Situação de HOJE: Spot 4.385 < 4.395)"
       },
       "mid_size": {
         "pct_label": "8.0% (meio da banda Foreign Currency)",
-        "usd_alvo": 20259.73,
-        "cotas_alvo_aau": 470,
+        "usd_alvo": 20392.48,
+        "cotas_alvo_aau": 476,
         "gatilho": "Bullish TRADE & Bullish TREND no centro do Risk Range"
       },
       "max_size": {
         "pct_label": "12.0% (teto da banda Foreign Currency)",
-        "usd_alvo": 30389.6,
-        "cotas_alvo_aau": 704,
+        "usd_alvo": 30588.72,
+        "cotas_alvo_aau": 714,
         "gatilho": "Bullish TRADE & Bullish TREND no PISO do Risk Range em Quad 3"
       },
       "stop_out": {
@@ -42,25 +42,25 @@
     },
     "posicao_atual": {
       "cotas_atuais": 200,
-      "preco_cota": 43.14,
-      "valor_atual_usd": 8628.0,
-      "peso_atual_pct": 3.41
+      "preco_cota": 42.83,
+      "valor_atual_usd": 8566.0,
+      "peso_atual_pct": 3.36
     },
     "ajuste_operacional_hoje": {
-      "acao": "AUMENTAR / COMPRAR 35 COTAS",
-      "delta_cotas": 35,
-      "delta_usd": 1509.9,
+      "acao": "AUMENTAR / COMPRAR 38 COTAS",
+      "delta_cotas": 38,
+      "delta_usd": 1627.54,
       "caixa_liberado_usd": 0.0,
-      "posicao_resultante_usd": 10137.9,
+      "posicao_resultante_usd": 10193.54,
       "posicao_resultante_pct": 4.0,
       "invalidation_stop_level": "US$ 4.251,00 Spot (Quebra de TREND)"
     },
     "complexo_ouro_total": {
-      "aau_mv": 8628.0,
+      "aau_mv": 8566.0,
       "gdx_mv": 0.0,
       "nem_mv": 0.0,
-      "total_usd": 8628.0,
-      "total_pct": 3.41,
+      "total_usd": 8566.0,
+      "total_pct": 3.36,
       "comentario": "Inclui Ouro Físico (AAAU) + Mineradoras de Ouro (GDX + NEM). O processo Hedgeye recomenda focar o ajuste de MIN SIZE no instrumento direto (AAAU) e monitorar margens das mineradoras."
     }
   },
@@ -71,9 +71,9 @@
       "min_pct": 4.0,
       "mid_pct": 8.0,
       "max_pct": 12.0,
-      "min_usd": 10129.87,
-      "mid_usd": 20259.73,
-      "max_usd": 30389.6
+      "min_usd": 10196.24,
+      "mid_usd": 20392.48,
+      "max_usd": 30588.72
     },
     {
       "classe_chave": "equities_etf",
@@ -81,9 +81,9 @@
       "min_pct": 2.0,
       "mid_pct": 4.0,
       "max_pct": 6.0,
-      "min_usd": 5064.93,
-      "mid_usd": 10129.87,
-      "max_usd": 15194.8
+      "min_usd": 5098.12,
+      "mid_usd": 10196.24,
+      "max_usd": 15294.36
     },
     {
       "classe_chave": "commodities",
@@ -91,9 +91,9 @@
       "min_pct": 1.0,
       "mid_pct": 2.5,
       "max_pct": 4.0,
-      "min_usd": 2532.47,
-      "mid_usd": 6331.17,
-      "max_usd": 10129.87
+      "min_usd": 2549.06,
+      "mid_usd": 6372.65,
+      "max_usd": 10196.24
     },
     {
       "classe_chave": "fixed_income",
@@ -101,29 +101,29 @@
       "min_pct": 3.0,
       "mid_pct": 6.5,
       "max_pct": 10.0,
-      "min_usd": 7597.4,
-      "mid_usd": 16461.03,
-      "max_usd": 25324.67
+      "min_usd": 7647.18,
+      "mid_usd": 16568.89,
+      "max_usd": 25490.6
     },
     {
       "classe_chave": "single_stock_long",
       "nome": "Ações Individuais — Long",
-      "min_pct": 1.0,
-      "mid_pct": 2.0,
-      "max_pct": 3.0,
-      "min_usd": 2532.47,
-      "mid_usd": 5064.93,
-      "max_usd": 7597.4
+      "min_pct": 2.0,
+      "mid_pct": 4.0,
+      "max_pct": 6.0,
+      "min_usd": 5098.12,
+      "mid_usd": 10196.24,
+      "max_usd": 15294.36
     },
     {
       "classe_chave": "single_stock_short",
       "nome": "Ações Individuais — Short",
-      "min_pct": 0.5,
-      "mid_pct": 1.25,
-      "max_pct": 2.0,
-      "min_usd": 1266.23,
-      "mid_usd": 3165.58,
-      "max_usd": 5064.93
+      "min_pct": 1.0,
+      "mid_pct": 2.0,
+      "max_pct": 3.0,
+      "min_usd": 2549.06,
+      "mid_usd": 5098.12,
+      "max_usd": 7647.18
     },
     {
       "classe_chave": "cash_tbills",
@@ -131,9 +131,9 @@
       "min_pct": 10.0,
       "mid_pct": 20.0,
       "max_pct": 30.0,
-      "min_usd": 25324.67,
-      "mid_usd": 50649.34,
-      "max_usd": 75974.0
+      "min_usd": 25490.6,
+      "mid_usd": 50981.21,
+      "max_usd": 76471.81
     }
   ]
 }

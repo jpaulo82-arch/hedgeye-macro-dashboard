@@ -6115,6 +6115,139 @@ async function refreshGipData() {
   }, 2000);
 }
 
+// ==============================================================================
+// TRADE x TREND — Matriz de estado por posição (phase_transition_engine.py)
+// ==============================================================================
+const MATRIX_STATE_COLORS = {
+  "Press It": "#34D399",
+  "Buying Opportunity": "#38BDF8",
+  "Bounce, Not a Reversal": "#F59E0B",
+  "Confirmed Weak": "#F87171",
+};
+
+async function fetchPhaseTransitionData() {
+  try {
+    let res = await fetch("/api/phase-transitions");
+    if (!res.ok) res = await fetch("phase_transition_states.json");
+    if (res.ok) {
+      const data = await res.json();
+      renderTradeTrendStates(data);
+    }
+  } catch (err) {
+    console.warn("Phase Transition Engine ainda não disponível:", err);
+  }
+}
+
+function renderTradeTrendStates(data) {
+  const grid = document.getElementById("tradeTrendStatesGrid");
+  const vixInline = document.getElementById("vixGaugeInline");
+  if (!data) return;
+
+  const vix = data.vix_gauge || {};
+  if (vixInline) {
+    vixInline.innerText = vix.status === "ok"
+      ? `VIX ${vix.value} — ${vix.bucket ? vix.bucket.label : "N/D"}`
+      : "VIX indisponível";
+  }
+
+  const posicoes = data.posicoes || {};
+  const tickers = Object.keys(posicoes);
+  if (!grid) return;
+  if (tickers.length === 0) {
+    grid.innerHTML = `<div style="color: var(--text-dim); font-size: 0.85rem;">Sem estados calculados ainda hoje. Clique em "Atualizar Trade x Trend" ou rode o pipeline diário.</div>`;
+    return;
+  }
+
+  grid.innerHTML = tickers.map(t => {
+    const s = posicoes[t];
+    if (s.status !== "ok") {
+      return `
+        <div style="border: 1px solid rgba(148,163,184,0.2); border-radius: 8px; padding: 0.7rem; background: rgba(30,41,59,0.4);">
+          <strong style="color: #F8FAFC;">${t}</strong><br>
+          <span style="font-size: 0.78rem; color: var(--text-dim);">N/D — ${s.reason || "sem dado ao vivo"}</span>
+        </div>`;
+    }
+    const ms = s.matrix_state || {};
+    const rung = s.response_ladder_rung || {};
+    const color = MATRIX_STATE_COLORS[ms.label] || "#94A3B8";
+    const pct = s.range_pct_position != null ? `${s.range_pct_position}%` : "N/D";
+    return `
+      <div style="border: 1px solid ${color}55; border-left: 3px solid ${color}; border-radius: 8px; padding: 0.7rem; background: rgba(30,41,59,0.4);">
+        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+          <strong style="color: #F8FAFC;">${t}</strong>
+          <span style="font-size: 0.7rem; color: ${color}; font-weight: 600;">${ms.label || "N/D"}</span>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--text-dim); margin-top: 0.2rem;">
+          TRADE ${s.trade_signal || "N/D"} / TREND ${(s.trend_signal || "N/D").toLowerCase()}
+        </div>
+        <div style="font-size: 0.75rem; color: var(--text-dim);">
+          Preço ${s.live_price ? s.live_price.value : "N/D"} · ${pct} do range (${s.range_zone || "N/D"})
+        </div>
+        <div style="font-size: 0.72rem; color: #CBD5E1; margin-top: 0.35rem;">
+          <strong>${rung.label || "N/D"}:</strong> ${rung.action || ""}
+        </div>
+      </div>`;
+  }).join("");
+}
+
+async function refreshPhaseTransitions() {
+  const btn = document.getElementById("phaseTransitionsRefreshBtn");
+  const icon = document.getElementById("phaseTransitionsRefreshIcon");
+  const text = document.getElementById("phaseTransitionsRefreshText");
+  if (btn) btn.disabled = true;
+  if (icon) icon.classList.add("spin");
+  if (text) text.innerText = "Atualizando...";
+
+  let refreshTriggered = false;
+  const refreshEndpoints = ["/api/refresh-phase-transitions", "http://localhost:8080/api/refresh-phase-transitions"];
+  for (const ep of refreshEndpoints) {
+    try {
+      const res = await fetch(ep, { method: "POST", headers: { "Content-Type": "application/json" } });
+      if (res.ok) { refreshTriggered = true; break; }
+    } catch (e) {}
+  }
+
+  const finish = async (msg) => {
+    if (btn) btn.disabled = false;
+    if (icon) icon.classList.remove("spin");
+    if (text) text.innerText = "Atualizar Trade x Trend";
+    await fetchPhaseTransitionData();
+    if (msg) showToast(msg);
+  };
+
+  if (!refreshTriggered) {
+    await finish("⚠️ Sem servidor local — mostrando o último dado salvo.");
+    return;
+  }
+
+  let tries = 0;
+  const MAX_TRIES = 30; // 30 * 2s = 60s (só TradingView + nada de Gmail/git)
+  const checkInterval = setInterval(async () => {
+    tries++;
+    try {
+      const res = await fetch("/api/refresh-phase-transitions-status");
+      if (res.ok) {
+        const status = await res.json();
+        if (!status.isRefreshing) {
+          clearInterval(checkInterval);
+          await finish("✅ Estados Trade x Trend atualizados!");
+        } else if (tries >= MAX_TRIES) {
+          clearInterval(checkInterval);
+          await finish("⚠️ Ainda calculando em segundo plano — confira de novo em instantes.");
+        }
+      } else if (tries >= 6) {
+        clearInterval(checkInterval);
+        await finish(null);
+      }
+    } catch (err) {
+      if (tries >= MAX_TRIES) {
+        clearInterval(checkInterval);
+        await finish(null);
+      }
+    }
+  }, 2000);
+}
+
 let quadChartInstance = null;
 
 function renderQuadRotationTracker(tracker) {
@@ -7660,7 +7793,8 @@ function initApp() {
     populateTranslatedReportsDropdown();
   });
   fetchMarketAnalyticsData();
-  
+  fetchPhaseTransitionData();
+
   // Inicia cotações em tempo real e agenda polling inteligente a cada 60s
   fetchLiveMarketQuotes();
   setInterval(() => {
