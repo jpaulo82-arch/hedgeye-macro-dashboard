@@ -989,6 +989,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderRiskRangesTable("all");
   renderPortfolioView(activePortfolioKey);
   fetchMasterTheMarketForBroker(activePortfolioKey);
+  syncPortfolioSelectors();
   runStockAnalysis("AAAU");
 });
 
@@ -2375,7 +2376,23 @@ function switchPortfolio(key) {
   renderPortfolioView(key);
   showToast(`Portfólio alternado para: ${key === 'consolidated' ? 'Visão Consolidada' : portfolioData[key]?.name || key}`);
   fetchMasterTheMarketForBroker(key);
+  syncPortfolioSelectors();
+  // A aba ETF Pro Plus (matching/alertas) usava activePortfolioKey mas nunca recalculava
+  // quando você trocava de carteira pelo seletor do header — a tabela ficava travada na
+  // carteira que estava selecionada quando a aba abriu pela primeira vez.
+  updateEtfProAlertsSystem();
 }
+
+// Mantém os dois seletores de carteira (header + aba ETF Pro Plus) sincronizados entre si,
+// pra trocar em qualquer um dos dois refletir no outro.
+function syncPortfolioSelectors() {
+  const headerSel = document.getElementById("portfolioSelect");
+  if (headerSel) headerSel.value = activePortfolioKey;
+  const etfProSel = document.getElementById("etfProPortfolioSelect");
+  if (etfProSel) etfProSel.value = activePortfolioKey;
+}
+
+window.portfolioMetricsByBroker = {};
 
 // Busca o módulo Master the Market (Ouro Hoje + Tabela de Bandas) escopado só pra carteira
 // selecionada — sem isso, o módulo sempre mostrava o NAV consolidado (Schwab+Tastyworks)
@@ -2389,9 +2406,72 @@ async function fetchMasterTheMarketForBroker(key) {
       window.masterTheMarketSizingData = data.master_the_market_sizing;
       renderMasterTheMarketModule(data.master_the_market_sizing);
     }
+    window.portfolioMetricsByBroker[key] = data;
+    renderEtfProAllocationSummary(key);
   } catch (e) {
     console.warn("Falha ao buscar Master the Market por carteira:", e);
   }
+}
+
+// Card "Carteira & Aderência ao Quadrante Recomendado" na aba ETF Pro Plus: NAV da carteira
+// selecionada, % já alocado no quadrante que a Hedgeye recomenda hoje (vs. meta de 60%) e a
+// lista de ajustes táticos pendentes (mesmos sinais que portfolio_engine.py já calcula por
+// posição — nunca recalculado aqui no front, só exibido).
+function renderEtfProAllocationSummary(key) {
+  const container = document.getElementById("etfProAllocationSummaryBody");
+  if (!container) return;
+
+  const data = window.portfolioMetricsByBroker?.[key];
+  if (!data || data.status !== "success") {
+    container.innerHTML = `<p class="text-muted">Sem dados de carteira ainda para "${key}". Verifique se o servidor local está rodando.</p>`;
+    return;
+  }
+
+  const adherence = data.adherence_pct ?? 0;
+  const target = data.target_adherence_pct ?? 60;
+  const gap = Math.round((adherence - target) * 10) / 10;
+  const gapColor = gap >= 0 ? "#34D399" : "#F87171";
+  const gapText = gap >= 0 ? `+${gap}pp acima da meta de ${target}%` : `${gap}pp abaixo da meta de ${target}%`;
+
+  const sinaisAjuste = (data.sinais || []).filter(s => s.tipo && s.tipo !== "observar" && !(s.motivo || "").includes("Dentro das bandas"));
+
+  container.innerHTML = `
+    <div style="display:flex; flex-wrap:wrap; gap:1.75rem; margin-bottom:1.1rem;">
+      <div>
+        <div style="font-size:0.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.03em;">NAV da Carteira</div>
+        <div style="font-size:1.35rem; font-weight:700; color:#F8FAFC;">US$ ${data.nav_total.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2})}</div>
+      </div>
+      <div>
+        <div style="font-size:0.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.03em;">Alocado no Quadrante Recomendado (${data.regime || data.regime_code || 'N/D'})</div>
+        <div style="font-size:1.35rem; font-weight:700; color:#38BDF8;">${adherence}% <span style="font-size:0.78rem; font-weight:600; color:${gapColor};">(${gapText})</span></div>
+      </div>
+      <div>
+        <div style="font-size:0.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.03em;">Caixa</div>
+        <div style="font-size:1.35rem; font-weight:700; color:#F8FAFC;">${data.cash_pct}%</div>
+      </div>
+      <div>
+        <div style="font-size:0.72rem; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.03em;">Posições</div>
+        <div style="font-size:1.35rem; font-weight:700; color:#F8FAFC;">${data.positions_count ?? 0}</div>
+      </div>
+    </div>
+    ${sinaisAjuste.length > 0 ? `
+      <div class="table-responsive">
+        <table class="data-table" style="font-size:0.8rem;">
+          <thead><tr><th>Ticker</th><th>Peso na Carteira</th><th>Quadrante do Ativo</th><th>Ajuste Sugerido</th><th>Motivo</th></tr></thead>
+          <tbody>
+            ${sinaisAjuste.map(s => `
+              <tr>
+                <td><strong>${s.ticker}</strong></td>
+                <td>${s.portfolioWeight}%</td>
+                <td><span class="tag tag-outline">${s.quad}</span></td>
+                <td><strong style="color:#F59E0B;">${s.tipo}</strong></td>
+                <td><small class="text-muted">${s.motivo}</small></td>
+              </tr>`).join("")}
+          </tbody>
+        </table>
+      </div>
+    ` : `<p style="color:#34D399; font-size:0.85rem; margin:0;">✓ Nenhum ajuste tático pendente nesta carteira — todas as posições dentro das bandas operacionais.</p>`}
+  `;
 }
 
 // RENDERIZAR TABELA DE RISK RANGES

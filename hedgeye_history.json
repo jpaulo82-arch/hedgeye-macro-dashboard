@@ -521,7 +521,65 @@
         }
       ],
       "auditoria_status": "VALIDADO_DETERMINISTICO"
+    },
+    {
+      "data": "2026-09-22",
+      "timestamp": "2026-09-22T09:31:53.429439",
+      "regime": "QUAD 3",
+      "nav_total": 254906.03,
+      "adherence_pct": 83.4,
+      "cash_pct": 6.3,
+      "our_levels_count": 16,
+      "sinais_count": 57,
+      "sinais_destaque": [
+        {
+          "ticker": "SGOV",
+          "broker": "Schwab",
+          "tipo": "observar",
+          "quad": "Quad3",
+          "portfolioWeight": 16.58,
+          "motivo": "Dentro das bandas operacionais",
+          "fonte": "Our Levels + Feed Real"
+        },
+        {
+          "ticker": "SGOV",
+          "broker": "Tastyworks",
+          "tipo": "observar",
+          "quad": "Quad3",
+          "portfolioWeight": 5.92,
+          "motivo": "Dentro das bandas operacionais",
+          "fonte": "Our Levels + Feed Real"
+        },
+        {
+          "ticker": "453258AP0",
+          "broker": "Schwab",
+          "tipo": "observar",
+          "quad": "Quad3",
+          "portfolioWeight": 4.24,
+          "motivo": "Dentro das bandas operacionais",
+          "fonte": "Our Levels + Feed Real"
+        },
+        {
+          "ticker": "SAN/29",
+          "broker": "Schwab",
+          "tipo": "observar",
+          "quad": "Quad3",
+          "portfolioWeight": 4.11,
+          "motivo": "Dentro das bandas operacionais",
+          "fonte": "Our Levels + Feed Real"
+        },
+        {
+          "ticker": "86964WAL6",
+          "broker": "Schwab",
+          "tipo": "observar",
+          "quad": "Quad3",
+          "portfolioWeight": 4.09,
+          "motivo": "Dentro das bandas operacionais",
+          "fonte": "Our Levels + Feed Real"
+        }
+      ],
+      "auditoria_status": "VALIDADO_DETERMINISTICO"
     }
   ],
-  "ultima_atualizacao": "2026-09-21T09:32:04.962555"
+  "ultima_atualizacao": "2026-09-22T09:31:53.443650"
 }

@@ -16,5 +16,23 @@
     "GOLD": "NEUTRAL",
     "COPPER": "BULLISH",
     "SILVER": "NEUTRAL"
+  },
+  "2026-09-22": {
+    "UST10Y": "BULLISH",
+    "HYG": "BEARISH",
+    "LQD": "BEARISH",
+    "SPX": "BULLISH",
+    "COMPQ": "BULLISH",
+    "RUT": "BEARISH",
+    "XLV": "BULLISH",
+    "IGV": "BULLISH",
+    "XLE": "BULLISH",
+    "VIX": "BEARISH",
+    "USD": "BULLISH",
+    "WTIC": "BULLISH",
+    "NATGAS": "BEARISH",
+    "GOLD": "NEUTRAL",
+    "COPPER": "BULLISH",
+    "SILVER": "BEARISH"
   }
 }

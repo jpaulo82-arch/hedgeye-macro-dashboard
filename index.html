@@ -1877,6 +1877,29 @@
          ETF PRO PLUS — Lineup, mudanças, simulação de alocação
          ======================================================== -->
     <section id="tab-etfproplus" class="tab-content">
+      <!-- CARTEIRA & ADERÊNCIA AO QUADRANTE RECOMENDADO -->
+      <div class="card" id="etfProAllocationSummaryCard">
+        <div class="card-header" style="flex-wrap: wrap; gap: 0.75rem;">
+          <div>
+            <h3><span class="icon">💼</span> Carteira & Aderência ao Quadrante Recomendado</h3>
+            <p class="subtitle">Escolha a carteira para ver o que precisa ajustar e quanto já está alocado no quadrante que a Hedgeye recomenda hoje</p>
+          </div>
+          <div class="portfolio-selector-container">
+            <label for="etfProPortfolioSelect"><span class="icon">💼</span> Carteira:</label>
+            <select id="etfProPortfolioSelect" onchange="switchPortfolio(this.value)">
+              <option value="consolidated">Visão Consolidada Global</option>
+              <option value="schwab" selected>Charles Schwab</option>
+              <option value="tastyworks">Tastyworks</option>
+            </select>
+          </div>
+        </div>
+        <div class="card-body">
+          <div id="etfProAllocationSummaryBody">
+            <p class="text-muted">Carregando aderência da carteira...</p>
+          </div>
+        </div>
+      </div>
+
       <!-- PAINEL DE IMPACTO NAS NOSSAS POSIÇÕES EM ABERTO -->
       <div id="etfProPortfolioMatchingContainer"></div>
 

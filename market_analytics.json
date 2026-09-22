@@ -1,5 +1,5 @@
 {
-  "updated_at": "22/09/2026 09:00:04",
+  "updated_at": "22/09/2026 09:31:32",
   "gex": [
     {
       "ticker": "SPY",
@@ -13,21 +13,21 @@
       "total_call_oi": 529806,
       "total_put_oi": 879390,
       "put_call_ratio": 1.66,
-      "updated_at": "22/09/2026 08:59:33"
+      "updated_at": "22/09/2026 09:31:01"
     },
     {
       "ticker": "QQQ",
       "current_price": 741.47,
-      "net_gex_million": 1797.82,
+      "net_gex_million": 691.56,
       "regime": "LONG GAMMA",
       "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
       "call_wall": 742.0,
       "put_wall": 730.0,
-      "zero_gamma_level": 490.0,
+      "zero_gamma_level": 742.0,
       "total_call_oi": 123371,
       "total_put_oi": 658398,
       "put_call_ratio": 5.34,
-      "updated_at": "22/09/2026 08:59:35"
+      "updated_at": "22/09/2026 09:31:03"
     },
     {
       "ticker": "IWM",
@@ -41,7 +41,7 @@
       "total_call_oi": 225516,
       "total_put_oi": 209871,
       "put_call_ratio": 0.93,
-      "updated_at": "22/09/2026 08:59:36"
+      "updated_at": "22/09/2026 09:31:04"
     }
   ],
   "fundamentals": [
@@ -1339,10 +1339,10 @@
     "leading_month": "QUAD 3",
     "transition_signal": "🔵 REBOTE TÁTICO DE QUAD 1 (Goldilocks): Tech e Software liderando no curto prazo, mas dependente de relaxamento de yields (10Y abaixo de 4,60%).",
     "signal_badge": "badge-tail",
-    "updated_at": "22/09/2026 08:59:56"
+    "updated_at": "22/09/2026 09:31:24"
   },
   "economic_calendar": {
-    "updated_at": "22/09/2026 08:59:56",
+    "updated_at": "22/09/2026 09:31:24",
     "current_week": "21/09 a 25/09/2026",
     "events": [
       {
