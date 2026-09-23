@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T12:00:57.541548",
+  "generatedAt": "2026-09-22T12:01:19.014438",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -125,7 +125,7 @@
           "periodStart": "2024-05-01",
           "periodEnd": "2024-05-31",
           "priceStart": 18.0135,
-          "priceEnd": 18.1134,
+          "priceEnd": 18.1135,
           "returnPct": 0.555
         }
       ]
@@ -221,7 +221,7 @@
           "periodStart": "2024-11-01",
           "periodEnd": "2024-11-30",
           "priceStart": 18.5969,
-          "priceEnd": 18.6906,
+          "priceEnd": 18.6905,
           "returnPct": 0.503
         }
       ]
@@ -236,7 +236,7 @@
           "side": "long",
           "periodStart": "2024-12-01",
           "periodEnd": "2024-12-31",
-          "priceStart": 18.6906,
+          "priceStart": 18.6905,
           "priceEnd": 18.7707,
           "returnPct": 0.429
         }
@@ -651,7 +651,7 @@
           "side": "long",
           "periodStart": "2026-01-01",
           "periodEnd": "2026-01-31",
-          "priceStart": 24.722,
+          "priceStart": 24.7221,
           "priceEnd": 24.8325,
           "returnPct": 0.447
         }
@@ -866,8 +866,8 @@
           "side": "long",
           "periodStart": "2026-06-17",
           "periodEnd": "2026-06-30",
-          "priceStart": 150.0482,
-          "priceEnd": 158.66,
+          "priceStart": 149.4762,
+          "priceEnd": 158.0551,
           "returnPct": 5.739
         }
       ]
@@ -927,8 +927,8 @@
           "side": "long",
           "periodStart": "2026-07-01",
           "periodEnd": "2026-07-31",
-          "priceStart": 159.54,
-          "priceEnd": 162.55,
+          "priceStart": 158.9317,
+          "priceEnd": 161.9303,
           "returnPct": 1.887
         },
         {
@@ -1006,8 +1006,8 @@
           "side": "long",
           "periodStart": "2026-08-01",
           "periodEnd": "2026-08-31",
-          "priceStart": 162.24,
-          "priceEnd": 170.54,
+          "priceStart": 161.6215,
+          "priceEnd": 169.8898,
           "returnPct": 5.116
         },
         {
@@ -1087,8 +1087,8 @@
           "side": "short",
           "periodStart": "2026-08-05",
           "periodEnd": "2026-08-31",
-          "priceStart": 18.02,
-          "priceEnd": 17.68,
+          "priceStart": 17.9478,
+          "priceEnd": 17.6091,
           "returnPct": 1.887
         },
         {
@@ -1096,8 +1096,8 @@
           "side": "short",
           "periodStart": "2026-08-12",
           "periodEnd": "2026-08-31",
-          "priceStart": 43.84,
-          "priceEnd": 42.23,
+          "priceStart": 43.52,
+          "priceEnd": 41.9218,
           "returnPct": 3.672
         },
         {
@@ -1238,8 +1238,8 @@
           "side": "long",
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
-          "priceStart": 171.67,
-          "priceEnd": 167.66,
+          "priceStart": 171.0155,
+          "priceEnd": 167.0208,
           "returnPct": -2.336
         },
         {
@@ -1373,8 +1373,8 @@
           "side": "short",
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
-          "priceStart": 17.48,
-          "priceEnd": 16.97,
+          "priceStart": 17.4099,
+          "priceEnd": 16.902,
           "returnPct": 2.918
         },
         {
@@ -1382,8 +1382,8 @@
           "side": "short",
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
-          "priceStart": 42.56,
-          "priceEnd": 41.32,
+          "priceStart": 42.2493,
+          "priceEnd": 41.0184,
           "returnPct": 2.914
         },
         {
@@ -1436,8 +1436,8 @@
           "side": "short",
           "periodStart": "2026-09-08",
           "periodEnd": "2026-09-15",
-          "priceStart": 174.42,
-          "priceEnd": 168.85,
+          "priceStart": 173.9525,
+          "priceEnd": 168.3974,
           "returnPct": 3.193
         },
         {
@@ -1833,5 +1833,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 54
+  "positionsIncluded": 58
 }

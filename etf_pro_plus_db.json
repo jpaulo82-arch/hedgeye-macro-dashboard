@@ -1,5 +1,5 @@
 {
-  "updatedAt": "21/09/2026 12:00:33",
+  "updatedAt": "22/09/2026 12:00:47",
   "reports": {
     "weekly": [
       {
@@ -696,6 +696,33 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_110776_UPDATE__4_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-09-22 10:27AM EDT",
+        "addsLong": [
+          {
+            "name": "Oil Refiners",
+            "ticker": "CRAK"
+          },
+          {
+            "name": "Tanker Shipping",
+            "ticker": "BWET"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Consumer Discretionary",
+            "ticker": "XLY"
+          },
+          {
+            "name": "High Yield Bonds",
+            "ticker": "HYG"
+          }
+        ],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -1332,6 +1359,12 @@
       "type": "intraday",
       "sourceFile": "intraday_110706_UPDATE__5_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Commodity Strategy (HGER), Brent Oil (BNO) | Adicionou SHORT: Palladium (PALL) | Removeu SHORT: Semiconductors (SMH), Quantum Tech (QTUM)"
+    },
+    {
+      "date": "2026-09-22 10:27AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_110776_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Oil Refiners (CRAK), Tanker Shipping (BWET) | Adicionou SHORT: Consumer Discretionary (XLY), High Yield Bonds (HYG)"
     }
   ],
   "currentLineup": [
@@ -2046,7 +2079,7 @@
       "side": "long",
       "dateAdded": "2026-09-16 10:37AM EDT",
       "assetClass": null,
-      "entryPrice": 64.03,
+      "entryPrice": 63.6517,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -2121,7 +2154,7 @@
       "side": "long",
       "dateAdded": "2026-09-21 10:24AM EDT",
       "assetClass": null,
-      "entryPrice": 35.675,
+      "entryPrice": 35.76,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -2136,7 +2169,7 @@
       "side": "long",
       "dateAdded": "2026-09-21 10:24AM EDT",
       "assetClass": null,
-      "entryPrice": 58.92,
+      "entryPrice": 58.87,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -2151,11 +2184,74 @@
       "side": "short",
       "dateAdded": "2026-09-21 10:24AM EDT",
       "assetClass": null,
-      "entryPrice": 23.6301,
+      "entryPrice": 23.73,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
       "sourceOfEntry": "intraday:intraday_110706_UPDATE__5_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "CRAK",
+      "name": "Oil Refiners",
+      "side": "long",
+      "dateAdded": "2026-09-22 10:27AM EDT",
+      "assetClass": null,
+      "entryPrice": 64.365,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110776_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "BWET",
+      "name": "Tanker Shipping",
+      "side": "long",
+      "dateAdded": "2026-09-22 10:27AM EDT",
+      "assetClass": null,
+      "entryPrice": 686.9606,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110776_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "XLY",
+      "name": "Consumer Discretionary",
+      "side": "short",
+      "dateAdded": "2026-09-22 10:27AM EDT",
+      "assetClass": null,
+      "entryPrice": 112.415,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110776_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [
+        1,
+        2
+      ],
+      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
+    },
+    {
+      "ticker": "HYG",
+      "name": "High Yield Bonds",
+      "side": "short",
+      "dateAdded": "2026-09-22 10:27AM EDT",
+      "assetClass": null,
+      "entryPrice": 78.67,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110776_UPDATE__4_New_ETF_Pro_Changes.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
