@@ -11,3 +11,12 @@ Thumbs.db
 node_modules/
 dist/
 build/
+
+# ========================================================
+# DADOS FINANCEIROS PESSOAIS — nunca publicar (repo publico + Vercel)
+# ========================================================
+carteira_posicoes*.json
+master_the_market_sizing.json
+portfolio_suggestions.json
+hedgeye_history.json
+etf_pro_plus_suggested_sizing.json
