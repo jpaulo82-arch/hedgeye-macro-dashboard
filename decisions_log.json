@@ -1,6 +1,55 @@
 {
   "entradas": [
     {
+      "reportId": "110893",
+      "date": "24/09/2026",
+      "reportTitle": "EARLY LOOK: Ninguém Quer o Papel",
+      "extractedByModel": "gemini-flash-lite-latest",
+      "extractedAt": "2026-09-24T09:31:13.164152",
+      "decisions": [
+        {
+          "ativo": "TLT",
+          "categoria": "SHORT DURATION ESTRUTURAL",
+          "decisao": "vender a descoberto",
+          "racional": "Yields dos Treasuries em Bullish TREND após dados fortes e leilão fraco de 5 anos, com fraca demanda por duration pressionando a ponta longa.",
+          "gatilho_invalidacao": "A taxa de 10 anos começar a sinalizar topos mais baixos.",
+          "status": "bearish"
+        },
+        {
+          "ativo": "ZROZ",
+          "categoria": "SHORT DURATION ESTRUTURAL",
+          "decisao": "vender a descoberto",
+          "racional": "Yields dos Treasuries em Bullish TREND após dados fortes e leilão fraco de 5 anos, com fraca demanda por duration pressionando a ponta longa.",
+          "gatilho_invalidacao": "A taxa de 10 anos começar a sinalizar topos mais baixos.",
+          "status": "bearish"
+        },
+        {
+          "ativo": "LQD",
+          "categoria": "SHORT DURATION ESTRUTURAL",
+          "decisao": "vender a descoberto",
+          "racional": "Yields dos Treasuries em Bullish TREND após dados fortes e leilão fraco de 5 anos, com fraca demanda por duration pressionando a ponta longa.",
+          "gatilho_invalidacao": "A taxa de 10 anos começar a sinalizar topos mais baixos.",
+          "status": "bearish"
+        },
+        {
+          "ativo": "XLU",
+          "categoria": "SHORT DURATION ESTRUTURAL",
+          "decisao": "vender a descoberto",
+          "racional": "Yields dos Treasuries em Bullish TREND após dados fortes e leilão fraco de 5 anos, com fraca demanda por duration pressionando a ponta longa.",
+          "gatilho_invalidacao": "A taxa de 10 anos começar a sinalizar topos mais baixos.",
+          "status": "bearish"
+        },
+        {
+          "ativo": "PFIX",
+          "categoria": "HEDGE DE VOLATILIDADE EM RENDA FIXA",
+          "decisao": "comprar",
+          "racional": "Yields dos Treasuries em Bullish TREND, dando suporte a posições compradas em volatilidade de títulos.",
+          "gatilho_invalidacao": "A taxa de 10 anos começar a sinalizar topos mais baixos.",
+          "status": "bullish"
+        }
+      ]
+    },
+    {
       "reportId": "110500",
       "date": "17/09/2026",
       "reportTitle": "O SPY vai sustentar o nível de TREND?",
@@ -494,5 +543,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-23T09:30:57.011857"
+  "updatedAt": "2026-09-24T09:31:13.164203"
 }

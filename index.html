@@ -1877,6 +1877,21 @@
          ETF PRO PLUS — Lineup, mudanças, simulação de alocação
          ======================================================== -->
     <section id="tab-etfproplus" class="tab-content">
+      <!-- LOG DE MUDANÇAS (EM PRIMEIRO LUGAR) -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">🔄</span> Log de Mudanças</h3>
+            <p class="subtitle">Log cronológico de todo relatório processado (semanal, diário e mensal)</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div id="etfProPlusChangesLog">
+            <p>Carregando changes log...</p>
+          </div>
+        </div>
+      </div>
+
       <!-- CARTEIRA & ADERÊNCIA AO QUADRANTE RECOMENDADO -->
       <div class="card" id="etfProAllocationSummaryCard">
         <div class="card-header" style="flex-wrap: wrap; gap: 0.75rem;">
@@ -1903,6 +1918,38 @@
       <!-- PAINEL DE IMPACTO NAS NOSSAS POSIÇÕES EM ABERTO -->
       <div id="etfProPortfolioMatchingContainer"></div>
 
+      <!-- SIMULAÇÃO DE ALOCAÇÃO (REFERÊNCIA) -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h3><span class="icon">🧮</span> Simulação de Alocação (Referência)</h3>
+            <p class="subtitle" id="etfProPlusSizingSubtitle">Carteira real não é alterada — isto é só uma foto de tamanhos sugeridos.</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="data-table" style="font-size: 0.84rem;">
+              <thead>
+                <tr>
+                  <th>Ativo</th>
+                  <th>Ticker</th>
+                  <th>Dias em Carteira</th>
+                  <th>Posição no Risk Range</th>
+                  <th>Conviction</th>
+                  <th>Quadrante GIP</th>
+                  <th>% Sugerido</th>
+                  <th>US$ Sugerido</th>
+                </tr>
+              </thead>
+              <tbody id="etfProPlusSizingBody">
+                <tr><td colspan="8">Carregando simulação de alocação...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- LINEUP ATUAL (ANTES DO TRACK RECORD) -->
       <div class="card">
         <div class="card-header">
           <div>
@@ -1937,50 +1984,7 @@
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <h3><span class="icon">🔄</span> O Que Mudou</h3>
-            <p class="subtitle">Log cronológico de todo relatório processado (semanal, diário e mensal)</p>
-          </div>
-        </div>
-        <div class="card-body">
-          <div id="etfProPlusChangesLog">
-            <p>Carregando changes log...</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <h3><span class="icon">🧮</span> Simulação de Alocação (Referência)</h3>
-            <p class="subtitle" id="etfProPlusSizingSubtitle">Carteira real não é alterada — isto é só uma foto de tamanhos sugeridos.</p>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="data-table" style="font-size: 0.84rem;">
-              <thead>
-                <tr>
-                  <th>Ativo</th>
-                  <th>Ticker</th>
-                  <th>Dias em Carteira</th>
-                  <th>Posição no Risk Range</th>
-                  <th>Conviction</th>
-                  <th>Quadrante GIP</th>
-                  <th>% Sugerido</th>
-                  <th>US$ Sugerido</th>
-                </tr>
-              </thead>
-              <tbody id="etfProPlusSizingBody">
-                <tr><td colspan="8">Carregando simulação de alocação...</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-
+      <!-- TRACK RECORD -->
       <div class="card">
         <div class="card-header">
           <div>
