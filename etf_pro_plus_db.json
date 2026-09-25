@@ -1,5 +1,5 @@
 {
-  "updatedAt": "22/09/2026 12:00:47",
+  "updatedAt": "24/09/2026 12:00:47",
   "reports": {
     "weekly": [
       {
@@ -696,6 +696,33 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_110775_UPDATE__4_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-09-22 10:27AM EDT",
+        "addsLong": [
+          {
+            "name": "Oil Refiners",
+            "ticker": "CRAK"
+          },
+          {
+            "name": "Tanker Shipping",
+            "ticker": "BWET"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Consumer Discretionary",
+            "ticker": "XLY"
+          },
+          {
+            "name": "High Yield Bonds",
+            "ticker": "HYG"
+          }
+        ],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_110776_UPDATE__4_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2026-09-22 10:27AM EDT",
         "addsLong": [
@@ -719,6 +746,27 @@
           }
         ],
         "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_110905_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-09-24 10:32AM EDT",
+        "addsLong": [
+          {
+            "name": "Blockchain Equity",
+            "ticker": "BLOK"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "Colombia",
+            "ticker": "COLO",
+            "rangeLow": 48.91,
+            "rangeHigh": 52.63
+          }
+        ],
         "removesShort": []
       },
       {
@@ -1363,8 +1411,20 @@
     {
       "date": "2026-09-22 10:27AM EDT",
       "type": "intraday",
+      "sourceFile": "intraday_110775_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Oil Refiners (CRAK), Tanker Shipping (BWET) | Adicionou SHORT: Consumer Discretionary (XLY), High Yield Bonds (HYG)"
+    },
+    {
+      "date": "2026-09-22 10:27AM EDT",
+      "type": "intraday",
       "sourceFile": "intraday_110776_UPDATE__4_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Oil Refiners (CRAK), Tanker Shipping (BWET) | Adicionou SHORT: Consumer Discretionary (XLY), High Yield Bonds (HYG)"
+    },
+    {
+      "date": "2026-09-24 10:32AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_110905_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Blockchain Equity (BLOK) | Removeu LONG: Colombia (COLO)"
     }
   ],
   "currentLineup": [
@@ -1500,29 +1560,6 @@
         4
       ],
       "quadNote": "Long — alinhado com Q4 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "COLO",
-      "name": "Colombia",
-      "side": "long",
-      "dateAdded": "7/17/2026",
-      "assetClass": "Emerging Markets Equities",
-      "entryPrice": 51.38,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 48.22,
-      "rangeHigh": 52.75,
-      "sourceOfEntry": "weekly:weekly_2026-09-13.pdf",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     },
     {
       "ticker": "IGV",
@@ -2199,7 +2236,7 @@
       "side": "long",
       "dateAdded": "2026-09-22 10:27AM EDT",
       "assetClass": null,
-      "entryPrice": 64.365,
+      "entryPrice": 64.08,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -2214,7 +2251,7 @@
       "side": "long",
       "dateAdded": "2026-09-22 10:27AM EDT",
       "assetClass": null,
-      "entryPrice": 686.9606,
+      "entryPrice": 739.4,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -2229,7 +2266,7 @@
       "side": "short",
       "dateAdded": "2026-09-22 10:27AM EDT",
       "assetClass": null,
-      "entryPrice": 112.415,
+      "entryPrice": 110.65,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -2247,11 +2284,26 @@
       "side": "short",
       "dateAdded": "2026-09-22 10:27AM EDT",
       "assetClass": null,
-      "entryPrice": 78.67,
+      "entryPrice": 78.1,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
       "sourceOfEntry": "intraday:intraday_110776_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "BLOK",
+      "name": "Blockchain Equity",
+      "side": "long",
+      "dateAdded": "2026-09-24 10:32AM EDT",
+      "assetClass": null,
+      "entryPrice": 64.65,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110905_UPDATE__2_New_ETF_Pro_Changes.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"

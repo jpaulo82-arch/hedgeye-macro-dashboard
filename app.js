@@ -611,7 +611,7 @@ let portfolioData = {
 
 // 2. DADOS DE RISK RANGES OFICIAIS (09/09/2026) COM COMPARAÇÃO DIA ANTERIOR
 let riskRangesData = [
-  { ticker: "UST10Y", name: "10Y U.S. Treasury Yield", type: "rates", low: 4.68, high: 4.86, current: 4.78, signal: "BULLISH", prevLow: 4.70, prevHigh: 4.87, prevSignal: "BULLISH" },
+  { ticker: "US10", name: "10Y U.S. Treasury Yield", type: "rates", low: 4.68, high: 4.86, current: 4.78, signal: "BULLISH", prevLow: 4.70, prevHigh: 4.87, prevSignal: "BULLISH" },
   { ticker: "HYG", name: "High Yield Corporate Bond ETF", type: "rates", low: 78.91, high: 79.49, current: 79.25, signal: "BULLISH", prevLow: 78.90, prevHigh: 79.47, prevSignal: "BULLISH" },
   { ticker: "LQD", name: "Investment Grade Corp Bond ETF", type: "rates", low: 104.60, high: 106.10, current: 105.30, signal: "BEARISH", prevLow: 104.70, prevHigh: 106.10, prevSignal: "BEARISH" },
   { ticker: "SPX", name: "S&P 500", type: "indices", low: 7604, high: 7767, current: 7710, signal: "BULLISH", prevLow: 7615, prevHigh: 7772, prevSignal: "BULLISH" },
@@ -4871,7 +4871,7 @@ let allReportsCache = [];
 // ticker novo não está aqui, cai em "indices" por padrão — não afeta o valor real, só a aba
 // de filtro onde ele aparece.
 const RISK_RANGE_TYPE_MAP = {
-  UST10Y: "rates", US10: "rates", US02: "rates", US30: "rates", HYG: "rates", LQD: "rates",
+  US10: "rates", US02: "rates", US30: "rates", HYG: "rates", LQD: "rates",
   VIX: "rates", USD: "rates", DXY: "rates", TLT: "rates",
   SPX: "indices", COMPQ: "indices", QQQ: "indices", RUT: "indices", XLV: "indices",
   IGV: "indices", XLU: "indices", SPY: "indices",
@@ -5019,7 +5019,7 @@ function updateDynamicDashboard(report) {
     if (subWti) subWti.innerText = `Range: ${wti.low.toLocaleString('pt-BR')} a ${wti.high.toLocaleString('pt-BR')} (+23% mês). Teto explodiu para ${wti.high.toLocaleString('pt-BR')}.`;
   }
 
-  const ust10 = riskRangesData.find(r => r.ticker === "UST10Y");
+  const ust10 = riskRangesData.find(r => r.ticker === "US10");
   if (ust10) {
     const valUst10 = document.getElementById("val-ust10");
     const subUst10 = document.getElementById("sub-ust10");
