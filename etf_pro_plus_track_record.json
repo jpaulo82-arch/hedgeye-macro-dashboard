@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T12:01:11.131526",
+  "generatedAt": "2026-09-25T12:00:59.011586",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -45,7 +45,7 @@
           "periodStart": "2023-12-01",
           "periodEnd": "2023-12-31",
           "priceStart": 17.5677,
-          "priceEnd": 17.6812,
+          "priceEnd": 17.6813,
           "returnPct": 0.647
         }
       ]
@@ -60,7 +60,7 @@
           "side": "long",
           "periodStart": "2024-01-01",
           "periodEnd": "2024-01-31",
-          "priceStart": 17.6812,
+          "priceStart": 17.6813,
           "priceEnd": 17.8066,
           "returnPct": 0.709
         }
@@ -245,7 +245,7 @@
     {
       "month": "2025-01",
       "activePositions": 1,
-      "monthlyReturnPct": 0.504,
+      "monthlyReturnPct": 0.503,
       "details": [
         {
           "ticker": "BUXX",
@@ -254,7 +254,7 @@
           "periodEnd": "2025-01-31",
           "priceStart": 18.7522,
           "priceEnd": 18.8466,
-          "returnPct": 0.504
+          "returnPct": 0.503
         }
       ]
     },
@@ -874,8 +874,8 @@
     },
     {
       "month": "2026-07",
-      "activePositions": 8,
-      "monthlyReturnPct": 1.501,
+      "activePositions": 9,
+      "monthlyReturnPct": 1.855,
       "details": [
         {
           "ticker": "BUXX",
@@ -948,13 +948,22 @@
           "priceStart": 44.39,
           "priceEnd": 46.47,
           "returnPct": 4.686
+        },
+        {
+          "ticker": "COLO",
+          "side": "long",
+          "periodStart": "2026-07-17",
+          "periodEnd": "2026-07-31",
+          "priceStart": 44.39,
+          "priceEnd": 46.47,
+          "returnPct": 4.686
         }
       ]
     },
     {
       "month": "2026-08",
-      "activePositions": 25,
-      "monthlyReturnPct": 2.491,
+      "activePositions": 26,
+      "monthlyReturnPct": 2.585,
       "details": [
         {
           "ticker": "BUXX",
@@ -1018,15 +1027,6 @@
           "priceStart": 103.08,
           "priceEnd": 109.98,
           "returnPct": 6.694
-        },
-        {
-          "ticker": "LVHI",
-          "side": "long",
-          "periodStart": "2026-08-17",
-          "periodEnd": "2026-08-31",
-          "priceStart": 42.4412,
-          "priceEnd": 42.5304,
-          "returnPct": 0.21
         },
         {
           "ticker": "XBI",
@@ -1180,13 +1180,31 @@
           "priceStart": 45.94,
           "priceEnd": 48.21,
           "returnPct": 4.941
+        },
+        {
+          "ticker": "LVHI",
+          "side": "long",
+          "periodStart": "2026-08-17",
+          "periodEnd": "2026-08-31",
+          "priceStart": 42.4412,
+          "priceEnd": 42.5304,
+          "returnPct": 0.21
+        },
+        {
+          "ticker": "COLO",
+          "side": "long",
+          "periodStart": "2026-08-01",
+          "periodEnd": "2026-08-31",
+          "priceStart": 45.94,
+          "priceEnd": 48.21,
+          "returnPct": 4.941
         }
       ]
     },
     {
       "month": "2026-09",
-      "activePositions": 46,
-      "monthlyReturnPct": 0.036,
+      "activePositions": 47,
+      "monthlyReturnPct": 0.125,
       "details": [
         {
           "ticker": "BUXX",
@@ -1250,15 +1268,6 @@
           "priceStart": 106.18,
           "priceEnd": 105.55,
           "returnPct": -0.593
-        },
-        {
-          "ticker": "LVHI",
-          "side": "long",
-          "periodStart": "2026-09-01",
-          "periodEnd": "2026-09-15",
-          "priceStart": 42.6593,
-          "priceEnd": 42.43,
-          "returnPct": -0.538
         },
         {
           "ticker": "XBI",
@@ -1412,15 +1421,6 @@
           "priceStart": 200.35,
           "priceEnd": 190.68,
           "returnPct": 4.827
-        },
-        {
-          "ticker": "JOET",
-          "side": "short",
-          "periodStart": "2026-09-04",
-          "periodEnd": "2026-09-15",
-          "priceStart": 45.73,
-          "priceEnd": 44.85,
-          "returnPct": 1.924
         },
         {
           "ticker": "XLI",
@@ -1601,6 +1601,33 @@
           "priceStart": 48.69,
           "priceEnd": 50.75,
           "returnPct": 4.231
+        },
+        {
+          "ticker": "LVHI",
+          "side": "long",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-15",
+          "priceStart": 42.6593,
+          "priceEnd": 42.43,
+          "returnPct": -0.538
+        },
+        {
+          "ticker": "JOET",
+          "side": "short",
+          "periodStart": "2026-09-04",
+          "periodEnd": "2026-09-15",
+          "priceStart": 45.73,
+          "priceEnd": 44.85,
+          "returnPct": 1.924
+        },
+        {
+          "ticker": "COLO",
+          "side": "long",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-15",
+          "priceStart": 48.69,
+          "priceEnd": 50.75,
+          "returnPct": 4.231
         }
       ]
     }
@@ -1668,90 +1695,95 @@
     },
     {
       "month": "2025-01",
-      "cumulativeIndex": 108.106
+      "cumulativeIndex": 108.105
     },
     {
       "month": "2025-02",
-      "cumulativeIndex": 108.302
+      "cumulativeIndex": 108.301
     },
     {
       "month": "2025-03",
-      "cumulativeIndex": 111.214
+      "cumulativeIndex": 111.212
     },
     {
       "month": "2025-04",
-      "cumulativeIndex": 113.453
+      "cumulativeIndex": 113.452
     },
     {
       "month": "2025-05",
-      "cumulativeIndex": 114.912
+      "cumulativeIndex": 114.911
     },
     {
       "month": "2025-06",
-      "cumulativeIndex": 114.383
+      "cumulativeIndex": 114.381
     },
     {
       "month": "2025-07",
-      "cumulativeIndex": 114.083
+      "cumulativeIndex": 114.082
     },
     {
       "month": "2025-08",
-      "cumulativeIndex": 115.588
+      "cumulativeIndex": 115.587
     },
     {
       "month": "2025-09",
-      "cumulativeIndex": 119.312
+      "cumulativeIndex": 119.311
     },
     {
       "month": "2025-10",
-      "cumulativeIndex": 120.837
+      "cumulativeIndex": 120.836
     },
     {
       "month": "2025-11",
-      "cumulativeIndex": 123.258
+      "cumulativeIndex": 123.257
     },
     {
       "month": "2025-12",
-      "cumulativeIndex": 124.312
+      "cumulativeIndex": 124.311
     },
     {
       "month": "2026-01",
-      "cumulativeIndex": 129.648
+      "cumulativeIndex": 129.646
     },
     {
       "month": "2026-02",
-      "cumulativeIndex": 135.562
+      "cumulativeIndex": 135.561
     },
     {
       "month": "2026-03",
-      "cumulativeIndex": 130.297
+      "cumulativeIndex": 130.296
     },
     {
       "month": "2026-04",
-      "cumulativeIndex": 129.89
+      "cumulativeIndex": 129.889
     },
     {
       "month": "2026-05",
-      "cumulativeIndex": 130.006
+      "cumulativeIndex": 130.005
     },
     {
       "month": "2026-06",
-      "cumulativeIndex": 130.144
+      "cumulativeIndex": 130.142
     },
     {
       "month": "2026-07",
-      "cumulativeIndex": 132.097
+      "cumulativeIndex": 132.557
     },
     {
       "month": "2026-08",
-      "cumulativeIndex": 135.388
+      "cumulativeIndex": 135.983
     },
     {
       "month": "2026-09",
-      "cumulativeIndex": 135.437
+      "cumulativeIndex": 136.153
     }
   ],
   "excludedPositions": [
+    {
+      "ticker": "GNR",
+      "side": "long",
+      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
+    },
     {
       "ticker": "GNR",
       "side": "long",
@@ -1769,6 +1801,21 @@
     },
     {
       "ticker": "QTUM",
+      "side": "short",
+      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
+    },
+    {
+      "ticker": "SMH",
+      "side": "short",
+      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
+    },
+    {
+      "ticker": "QTUM",
+      "side": "short",
+      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
+    },
+    {
+      "ticker": "UFO",
       "side": "short",
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     },
@@ -1833,5 +1880,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 59
+  "positionsIncluded": 60
 }

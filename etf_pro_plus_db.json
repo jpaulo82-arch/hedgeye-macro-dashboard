@@ -1,5 +1,5 @@
 {
-  "updatedAt": "24/09/2026 12:00:47",
+  "updatedAt": "25/09/2026 12:00:36",
   "reports": {
     "weekly": [
       {
@@ -622,6 +622,25 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_110560_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-09-18 10:41AM EDT",
+        "addsLong": [],
+        "addsShort": [
+          {
+            "name": "Germany",
+            "ticker": "EWG"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Global Natural Resources",
+            "ticker": "GNR"
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_110572_UPDATE__2_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2026-09-18 10:41AM EDT",
         "addsLong": [],
@@ -660,6 +679,69 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_110610_UPDATE__5_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-09-21 10:24AM EDT",
+        "addsLong": [
+          {
+            "name": "Commodity Strategy",
+            "ticker": "HGER"
+          },
+          {
+            "name": "Brent Oil",
+            "ticker": "BNO"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Palladium",
+            "ticker": "PALL"
+          }
+        ],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Semiconductors",
+            "ticker": "SMH",
+            "rangeLow": 531.0,
+            "rangeHigh": 588.0
+          },
+          {
+            "name": "Quantum Tech",
+            "ticker": "QTUM",
+            "rangeLow": 139.0,
+            "rangeHigh": 152.0
+          }
+        ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_110643_UPDATE__4_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-09-22 10:27AM EDT",
+        "addsLong": [
+          {
+            "name": "Oil Refiners",
+            "ticker": "CRAK"
+          },
+          {
+            "name": "Tanker Shipping",
+            "ticker": "BWET"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Consumer Discretionary",
+            "ticker": "XLY"
+          },
+          {
+            "name": "High Yield Bonds",
+            "ticker": "HYG"
+          }
+        ],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_110706_UPDATE__5_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2026-09-21 10:24AM EDT",
         "addsLong": [
@@ -691,6 +773,61 @@
             "ticker": "QTUM",
             "rangeLow": 139.0,
             "rangeHigh": 152.0
+          }
+        ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_110707_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-09-24 10:32AM EDT",
+        "addsLong": [
+          {
+            "name": "Blockchain Equity",
+            "ticker": "BLOK"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "Colombia",
+            "ticker": "COLO",
+            "rangeLow": 48.91,
+            "rangeHigh": 52.63
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_110755_UPDATE__4_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-09-25 10:24AM EDT",
+        "addsLong": [
+          {
+            "name": "Cybersecurity",
+            "ticker": "BUG"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "International High Dividend",
+            "ticker": "LVHI",
+            "rangeLow": 41.59,
+            "rangeHigh": 42.94
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "Quality Momentum",
+            "ticker": "JOET",
+            "rangeLow": 44.02,
+            "rangeHigh": 45.98
+          },
+          {
+            "name": "Space",
+            "ticker": "UFO",
+            "rangeLow": 41.82,
+            "rangeHigh": 44.48
           }
         ]
       },
@@ -1393,6 +1530,12 @@
     {
       "date": "2026-09-18 10:41AM EDT",
       "type": "intraday",
+      "sourceFile": "intraday_110560_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou SHORT: Germany (EWG) | Removeu LONG: Global Natural Resources (GNR)"
+    },
+    {
+      "date": "2026-09-18 10:41AM EDT",
+      "type": "intraday",
       "sourceFile": "intraday_110572_UPDATE__2_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou SHORT: Germany (EWG) | Removeu LONG: Global Natural Resources (GNR)"
     },
@@ -1405,8 +1548,20 @@
     {
       "date": "2026-09-21 10:24AM EDT",
       "type": "intraday",
+      "sourceFile": "intraday_110610_UPDATE__5_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Commodity Strategy (HGER), Brent Oil (BNO) | Adicionou SHORT: Palladium (PALL) | Removeu SHORT: Semiconductors (SMH), Quantum Tech (QTUM)"
+    },
+    {
+      "date": "2026-09-21 10:24AM EDT",
+      "type": "intraday",
       "sourceFile": "intraday_110706_UPDATE__5_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Commodity Strategy (HGER), Brent Oil (BNO) | Adicionou SHORT: Palladium (PALL) | Removeu SHORT: Semiconductors (SMH), Quantum Tech (QTUM)"
+    },
+    {
+      "date": "2026-09-22 10:27AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_110643_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Oil Refiners (CRAK), Tanker Shipping (BWET) | Adicionou SHORT: Consumer Discretionary (XLY), High Yield Bonds (HYG)"
     },
     {
       "date": "2026-09-22 10:27AM EDT",
@@ -1423,8 +1578,20 @@
     {
       "date": "2026-09-24 10:32AM EDT",
       "type": "intraday",
+      "sourceFile": "intraday_110707_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Blockchain Equity (BLOK) | Removeu LONG: Colombia (COLO)"
+    },
+    {
+      "date": "2026-09-24 10:32AM EDT",
+      "type": "intraday",
       "sourceFile": "intraday_110905_UPDATE__2_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Blockchain Equity (BLOK) | Removeu LONG: Colombia (COLO)"
+    },
+    {
+      "date": "2026-09-25 10:24AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_110755_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Cybersecurity (BUG) | Removeu LONG: International High Dividend (LVHI) | Removeu SHORT: Quality Momentum (JOET), Space (UFO)"
     }
   ],
   "currentLineup": [
@@ -1571,29 +1738,6 @@
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
       "rangeLow": 97.0,
       "rangeHigh": 111.0,
-      "sourceOfEntry": "weekly:weekly_2026-09-13.pdf",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "LVHI",
-      "name": "International High Dividend",
-      "side": "long",
-      "dateAdded": "8/17/2026",
-      "assetClass": "International Equities",
-      "entryPrice": 42.3,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 41.59,
-      "rangeHigh": 43.12,
       "sourceOfEntry": "weekly:weekly_2026-09-13.pdf",
       "allowedBand": {
         "minPct": 2.0,
@@ -1997,29 +2141,6 @@
       "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
     },
     {
-      "ticker": "JOET",
-      "name": "Quality Momentum",
-      "side": "short",
-      "dateAdded": "9/4/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 45.45,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 44.18,
-      "rangeHigh": 45.91,
-      "sourceOfEntry": "weekly:weekly_2026-09-13.pdf",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.0,
-        "maxPct": 3.0,
-        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
       "ticker": "XLI",
       "name": "Industrials",
       "side": "short",
@@ -2156,21 +2277,6 @@
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
     },
     {
-      "ticker": "UFO",
-      "name": "Space",
-      "side": "short",
-      "dateAdded": "2026-09-17 11:25AM EDT",
-      "assetClass": null,
-      "entryPrice": 43.66,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_110532_UPDATE__6_New_ETF_Pro_Changes.txt",
-      "allowedBand": null,
-      "nativeQuads": [],
-      "quadNote": "N/D (sem classificação de setor/classe confiável)"
-    },
-    {
       "ticker": "EWG",
       "name": "Germany",
       "side": "short",
@@ -2236,7 +2342,7 @@
       "side": "long",
       "dateAdded": "2026-09-22 10:27AM EDT",
       "assetClass": null,
-      "entryPrice": 64.08,
+      "entryPrice": 64.03,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -2251,7 +2357,7 @@
       "side": "long",
       "dateAdded": "2026-09-22 10:27AM EDT",
       "assetClass": null,
-      "entryPrice": 739.4,
+      "entryPrice": 682.01,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -2266,7 +2372,7 @@
       "side": "short",
       "dateAdded": "2026-09-22 10:27AM EDT",
       "assetClass": null,
-      "entryPrice": 110.65,
+      "entryPrice": 112.33,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -2284,7 +2390,7 @@
       "side": "short",
       "dateAdded": "2026-09-22 10:27AM EDT",
       "assetClass": null,
-      "entryPrice": 78.1,
+      "entryPrice": 78.67,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -2299,11 +2405,26 @@
       "side": "long",
       "dateAdded": "2026-09-24 10:32AM EDT",
       "assetClass": null,
-      "entryPrice": 64.65,
+      "entryPrice": 64.94,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
       "sourceOfEntry": "intraday:intraday_110905_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "BUG",
+      "name": "Cybersecurity",
+      "side": "long",
+      "dateAdded": "2026-09-25 10:24AM EDT",
+      "assetClass": null,
+      "entryPrice": 45.53,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_110755_UPDATE__4_New_ETF_Pro_Changes.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
