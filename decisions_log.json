@@ -1,6 +1,31 @@
 {
   "entradas": [
     {
+      "reportId": "110983",
+      "date": "29/09/2026",
+      "reportTitle": "EARLY LOOK: Escolhendo o #Quad2 Texas",
+      "extractedByModel": "gemini-flash-latest",
+      "extractedAt": "2026-09-29T09:31:14.050968",
+      "decisions": [
+        {
+          "ativo": "TLT",
+          "categoria": "SHORT TREASURIES / QUAD2",
+          "decisao": "Vender / Short",
+          "racional": "Regime de #Quad2 projetado para 4 dos próximos 5 meses até janeiro de 2027, impulsionando rendimentos dos Treasuries para topos mais altos de ciclo.",
+          "gatilho_invalidacao": "Sinais do Risk Range™ para os rendimentos de 2 e 10 anos começarem a formar topos descendentes (mais baixos).",
+          "status": "bearish"
+        },
+        {
+          "ativo": "ZROZ",
+          "categoria": "SHORT TREASURIES / QUAD2",
+          "decisao": "Vender / Short",
+          "racional": "Regime de #Quad2 projetado para 4 dos próximos 5 meses até janeiro de 2027, impulsionando rendimentos dos Treasuries para topos mais altos de ciclo.",
+          "gatilho_invalidacao": "Sinais do Risk Range™ para os rendimentos de 2 e 10 anos começarem a formar topos descendentes (mais baixos).",
+          "status": "bearish"
+        }
+      ]
+    },
+    {
       "reportId": "110893",
       "date": "24/09/2026",
       "reportTitle": "EARLY LOOK: Ninguém Quer o Papel",
@@ -543,5 +568,5 @@
       ]
     }
   ],
-  "updatedAt": "2026-09-28T09:30:54.040128"
+  "updatedAt": "2026-09-29T09:31:14.051005"
 }

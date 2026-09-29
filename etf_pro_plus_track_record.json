@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T12:00:59.011586",
+  "generatedAt": "2026-09-28T12:01:01.133785",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -45,7 +45,7 @@
           "periodStart": "2023-12-01",
           "periodEnd": "2023-12-31",
           "priceStart": 17.5677,
-          "priceEnd": 17.6813,
+          "priceEnd": 17.6812,
           "returnPct": 0.647
         }
       ]
@@ -60,7 +60,7 @@
           "side": "long",
           "periodStart": "2024-01-01",
           "periodEnd": "2024-01-31",
-          "priceStart": 17.6813,
+          "priceStart": 17.6812,
           "priceEnd": 17.8066,
           "returnPct": 0.709
         }
@@ -125,7 +125,7 @@
           "periodStart": "2024-05-01",
           "periodEnd": "2024-05-31",
           "priceStart": 18.0135,
-          "priceEnd": 18.1134,
+          "priceEnd": 18.1135,
           "returnPct": 0.555
         }
       ]
@@ -962,8 +962,8 @@
     },
     {
       "month": "2026-08",
-      "activePositions": 26,
-      "monthlyReturnPct": 2.585,
+      "activePositions": 25,
+      "monthlyReturnPct": 2.685,
       "details": [
         {
           "ticker": "BUXX",
@@ -1027,15 +1027,6 @@
           "priceStart": 103.08,
           "priceEnd": 109.98,
           "returnPct": 6.694
-        },
-        {
-          "ticker": "XBI",
-          "side": "long",
-          "periodStart": "2026-08-28",
-          "periodEnd": "2026-08-31",
-          "priceStart": 162.38,
-          "priceEnd": 162.5,
-          "returnPct": 0.074
         },
         {
           "ticker": "MSOS",
@@ -1203,8 +1194,8 @@
     },
     {
       "month": "2026-09",
-      "activePositions": 47,
-      "monthlyReturnPct": 0.125,
+      "activePositions": 45,
+      "monthlyReturnPct": 0.314,
       "details": [
         {
           "ticker": "BUXX",
@@ -1270,15 +1261,6 @@
           "returnPct": -0.593
         },
         {
-          "ticker": "XBI",
-          "side": "long",
-          "periodStart": "2026-09-01",
-          "periodEnd": "2026-09-15",
-          "priceStart": 163.4,
-          "priceEnd": 154.03,
-          "returnPct": -5.734
-        },
-        {
           "ticker": "MSOS",
           "side": "long",
           "periodStart": "2026-09-01",
@@ -1304,24 +1286,6 @@
           "priceStart": 31.41,
           "priceEnd": 32.24,
           "returnPct": 2.642
-        },
-        {
-          "ticker": "WEAT",
-          "side": "long",
-          "periodStart": "2026-09-04",
-          "periodEnd": "2026-09-15",
-          "priceStart": 26.49,
-          "priceEnd": 26.32,
-          "returnPct": -0.642
-        },
-        {
-          "ticker": "EWS",
-          "side": "long",
-          "periodStart": "2026-09-09",
-          "periodEnd": "2026-09-15",
-          "priceStart": 33.77,
-          "priceEnd": 33.13,
-          "returnPct": -1.895
         },
         {
           "ticker": "CORN",
@@ -1466,6 +1430,15 @@
           "priceStart": 60.49,
           "priceEnd": 60.25,
           "returnPct": 0.397
+        },
+        {
+          "ticker": "PSP",
+          "side": "short",
+          "periodStart": "2026-09-15",
+          "periodEnd": "2026-09-15",
+          "priceStart": 58.7519,
+          "priceEnd": 58.7519,
+          "returnPct": -0.0
         },
         {
           "ticker": "EWP",
@@ -1771,11 +1744,11 @@
     },
     {
       "month": "2026-08",
-      "cumulativeIndex": 135.983
+      "cumulativeIndex": 136.116
     },
     {
       "month": "2026-09",
-      "cumulativeIndex": 136.153
+      "cumulativeIndex": 136.543
     }
   ],
   "excludedPositions": [
@@ -1792,31 +1765,6 @@
     {
       "ticker": "GNR",
       "side": "long",
-      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
-    },
-    {
-      "ticker": "SMH",
-      "side": "short",
-      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
-    },
-    {
-      "ticker": "QTUM",
-      "side": "short",
-      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
-    },
-    {
-      "ticker": "SMH",
-      "side": "short",
-      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
-    },
-    {
-      "ticker": "QTUM",
-      "side": "short",
-      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
-    },
-    {
-      "ticker": "UFO",
-      "side": "short",
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     },
     {
@@ -1855,11 +1803,6 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     },
     {
-      "ticker": "PSP",
-      "side": "short",
-      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
-    },
-    {
       "ticker": "TOKE",
       "side": "long",
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
@@ -1880,5 +1823,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 60
+  "positionsIncluded": 63
 }
