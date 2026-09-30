@@ -13,7 +13,11 @@
           "decisao": "Vender / Short",
           "racional": "Regime de #Quad2 projetado para 4 dos próximos 5 meses até janeiro de 2027, impulsionando rendimentos dos Treasuries para topos mais altos de ciclo.",
           "gatilho_invalidacao": "Sinais do Risk Range™ para os rendimentos de 2 e 10 anos começarem a formar topos descendentes (mais baixos).",
-          "status": "bearish"
+          "status": "bearish",
+          "tipo_gatilho": "Ruptura de Risk Range",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Escolhendo o #Quad2 Texas)"
         },
         {
           "ativo": "ZROZ",
@@ -21,7 +25,158 @@
           "decisao": "Vender / Short",
           "racional": "Regime de #Quad2 projetado para 4 dos próximos 5 meses até janeiro de 2027, impulsionando rendimentos dos Treasuries para topos mais altos de ciclo.",
           "gatilho_invalidacao": "Sinais do Risk Range™ para os rendimentos de 2 e 10 anos começarem a formar topos descendentes (mais baixos).",
-          "status": "bearish"
+          "status": "bearish",
+          "tipo_gatilho": "Ruptura de Risk Range",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Escolhendo o #Quad2 Texas)"
+        }
+      ],
+      "sourceType": "earlylook"
+    },
+    {
+      "reportId": "etf_intra_20260929",
+      "date": "29/09/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (29/09/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-09-29T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "CRTC",
+          "categoria": "ETF PRO PLUS — US CRITICAL TECH",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (US Critical Tech). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 29/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "XLK",
+          "categoria": "ETF PRO PLUS — TECHNOLOGY SECTOR",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Technology Sector). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 29/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "QTUM",
+          "categoria": "ETF PRO PLUS — QUANTUM TECH",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Quantum Tech). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 29/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "JETS",
+          "categoria": "ETF PRO PLUS — GLOBAL AIRLINES",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (Global Airlines). Posição vendida encerrada no lineup oficial da Hedgeye. Cobertura no Trend Range: 27.14 – 29.45.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 29/09/2026)",
+          "rangeLow": 27.14,
+          "rangeHigh": 29.45
+        },
+        {
+          "ativo": "PRN",
+          "categoria": "ETF PRO PLUS — INDUSTRIALS MOMENTUM",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (Industrials Momentum). Posição vendida encerrada no lineup oficial da Hedgeye. Cobertura no Trend Range: 188.00 – 206.00.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 29/09/2026)",
+          "rangeLow": 188.0,
+          "rangeHigh": 206.0
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20260925",
+      "date": "25/09/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (25/09/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-09-25T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "BUG",
+          "categoria": "ETF PRO PLUS — CYBERSECURITY",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Cybersecurity). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 25/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "LVHI",
+          "categoria": "ETF PRO PLUS — INTERNATIONAL HIGH DIVIDEND",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (International High Dividend). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 41.59 – 42.94.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 25/09/2026)",
+          "rangeLow": 41.59,
+          "rangeHigh": 42.94
+        },
+        {
+          "ativo": "JOET",
+          "categoria": "ETF PRO PLUS — QUALITY MOMENTUM",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (Quality Momentum). Posição vendida encerrada no lineup oficial da Hedgeye. Cobertura no Trend Range: 44.02 – 45.98.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 25/09/2026)",
+          "rangeLow": 44.02,
+          "rangeHigh": 45.98
+        },
+        {
+          "ativo": "UFO",
+          "categoria": "ETF PRO PLUS — SPACE",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (Space). Posição vendida encerrada no lineup oficial da Hedgeye. Cobertura no Trend Range: 41.82 – 44.48.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 25/09/2026)",
+          "rangeLow": 41.82,
+          "rangeHigh": 44.48
         }
       ]
     },
@@ -38,7 +193,11 @@
           "decisao": "vender a descoberto",
           "racional": "Yields dos Treasuries em Bullish TREND após dados fortes e leilão fraco de 5 anos, com fraca demanda por duration pressionando a ponta longa.",
           "gatilho_invalidacao": "A taxa de 10 anos começar a sinalizar topos mais baixos.",
-          "status": "bearish"
+          "status": "bearish",
+          "tipo_gatilho": "Quebra de TREND",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Ninguém Quer o Papel)"
         },
         {
           "ativo": "ZROZ",
@@ -46,7 +205,11 @@
           "decisao": "vender a descoberto",
           "racional": "Yields dos Treasuries em Bullish TREND após dados fortes e leilão fraco de 5 anos, com fraca demanda por duration pressionando a ponta longa.",
           "gatilho_invalidacao": "A taxa de 10 anos começar a sinalizar topos mais baixos.",
-          "status": "bearish"
+          "status": "bearish",
+          "tipo_gatilho": "Quebra de TREND",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Ninguém Quer o Papel)"
         },
         {
           "ativo": "LQD",
@@ -54,7 +217,11 @@
           "decisao": "vender a descoberto",
           "racional": "Yields dos Treasuries em Bullish TREND após dados fortes e leilão fraco de 5 anos, com fraca demanda por duration pressionando a ponta longa.",
           "gatilho_invalidacao": "A taxa de 10 anos começar a sinalizar topos mais baixos.",
-          "status": "bearish"
+          "status": "bearish",
+          "tipo_gatilho": "Quebra de TREND",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Ninguém Quer o Papel)"
         },
         {
           "ativo": "XLU",
@@ -62,7 +229,11 @@
           "decisao": "vender a descoberto",
           "racional": "Yields dos Treasuries em Bullish TREND após dados fortes e leilão fraco de 5 anos, com fraca demanda por duration pressionando a ponta longa.",
           "gatilho_invalidacao": "A taxa de 10 anos começar a sinalizar topos mais baixos.",
-          "status": "bearish"
+          "status": "bearish",
+          "tipo_gatilho": "Quebra de TREND",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Ninguém Quer o Papel)"
         },
         {
           "ativo": "PFIX",
@@ -70,7 +241,844 @@
           "decisao": "comprar",
           "racional": "Yields dos Treasuries em Bullish TREND, dando suporte a posições compradas em volatilidade de títulos.",
           "gatilho_invalidacao": "A taxa de 10 anos começar a sinalizar topos mais baixos.",
-          "status": "bullish"
+          "status": "bullish",
+          "tipo_gatilho": "Quebra de TREND",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Ninguém Quer o Papel)"
+        }
+      ],
+      "sourceType": "earlylook"
+    },
+    {
+      "reportId": "etf_intra_20260924",
+      "date": "24/09/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (24/09/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-09-24T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "BLOK",
+          "categoria": "ETF PRO PLUS — BLOCKCHAIN EQUITY",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Blockchain Equity). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 24/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "COLO",
+          "categoria": "ETF PRO PLUS — COLOMBIA",
+          "regime": "Macro Global",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Colombia). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 48.91 – 52.63.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 24/09/2026)",
+          "rangeLow": 48.91,
+          "rangeHigh": 52.63
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20260922",
+      "date": "22/09/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (22/09/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-09-22T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "CRAK",
+          "categoria": "ETF PRO PLUS — OIL REFINERS",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Oil Refiners). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 22/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "BWET",
+          "categoria": "ETF PRO PLUS — TANKER SHIPPING",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Tanker Shipping). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 22/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "XLY",
+          "categoria": "ETF PRO PLUS — CONSUMER DISCRETIONARY",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Consumer Discretionary). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 22/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "HYG",
+          "categoria": "ETF PRO PLUS — HIGH YIELD BONDS",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (High Yield Bonds). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 22/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
+      "reportId": "etf_monthly_20260922",
+      "date": "22/09/2026",
+      "reportTitle": "ETF PRO PLUS: Rebalanceamento Mensal (September Update (Q3 2026))",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-09-22T11:00:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "IBIT",
+          "categoria": "ETF PRO PLUS — BITCOIN",
+          "regime": "Quad 3",
+          "decisao": "Flip Short → Long",
+          "racional": "Virada estratégica oficial no relatório mensal (September Update (Q3 2026)): ativo IBIT (Bitcoin) passa de Short para Long na carteira recomendada.",
+          "gatilho_invalidacao": "Quebra de Bullish TREND ou retorno para Short no próximo Update mensal.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "IGV",
+          "categoria": "ETF PRO PLUS — TECH SOFTWARE",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "LVHI",
+          "categoria": "ETF PRO PLUS — INTERNATIONAL HIGH DIVIDEND",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "MSOS",
+          "categoria": "ETF PRO PLUS — US CANNABIS",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "IBIT",
+          "categoria": "ETF PRO PLUS — BITCOIN",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "DBMF",
+          "categoria": "ETF PRO PLUS — MANAGED FUTURES",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "CORN",
+          "categoria": "ETF PRO PLUS — CORN",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "XLE",
+          "categoria": "ETF PRO PLUS — ENERGY SECTOR",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "ETHA",
+          "categoria": "ETF PRO PLUS — ETHEREUM",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "PFIX",
+          "categoria": "ETF PRO PLUS — INTEREST RATE HEDGE",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "XLU",
+          "categoria": "ETF PRO PLUS — UTILITIES SECTOR",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "ZROZ",
+          "categoria": "ETF PRO PLUS — US TREASURY LONG",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "JOJO",
+          "categoria": "ETF PRO PLUS — CREDIT ROTATION",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "JETS",
+          "categoria": "ETF PRO PLUS — GLOBAL AIRLINES",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "PRN",
+          "categoria": "ETF PRO PLUS — INDUSTRIALS MOMENTUM",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "JOET",
+          "categoria": "ETF PRO PLUS — QUALITY MOMENTUM",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "XLI",
+          "categoria": "ETF PRO PLUS — INDUSTRIALS",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "INDA",
+          "categoria": "ETF PRO PLUS — INDIA",
+          "regime": "Macro Global",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "IWM",
+          "categoria": "ETF PRO PLUS — US SMALL-CAP",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "EWA",
+          "categoria": "ETF PRO PLUS — AUSTRALIA EQUITIES",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "EWL",
+          "categoria": "ETF PRO PLUS — SWITZERLAND",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "PSP",
+          "categoria": "ETF PRO PLUS — GLOBAL PRIVATE EQUITY",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "SMH",
+          "categoria": "ETF PRO PLUS — SEMICONDUCTORS",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "UFO",
+          "categoria": "ETF PRO PLUS — SPACE",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "QTUM",
+          "categoria": "ETF PRO PLUS — QUANTUM TECH",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "EWG",
+          "categoria": "ETF PRO PLUS — GERMANY",
+          "regime": "Macro Global",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (September Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "VYM",
+          "categoria": "ETF PRO PLUS — VYM",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "XLRE",
+          "categoria": "ETF PRO PLUS — XLRE",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "IAK",
+          "categoria": "ETF PRO PLUS — IAK",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "FAB",
+          "categoria": "ETF PRO PLUS — FAB",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "DESK",
+          "categoria": "ETF PRO PLUS — DESK",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "NOBL",
+          "categoria": "ETF PRO PLUS — NOBL",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "ENZL",
+          "categoria": "ETF PRO PLUS — ENZL",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "IPAY",
+          "categoria": "ETF PRO PLUS — IPAY",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "RSP",
+          "categoria": "ETF PRO PLUS — RSP",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "EPHE",
+          "categoria": "ETF PRO PLUS — EPHE",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "VTIP",
+          "categoria": "ETF PRO PLUS — VTIP",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "CRAK",
+          "categoria": "ETF PRO PLUS — OIL REFINERS",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "IVOL",
+          "categoria": "ETF PRO PLUS — IVOL",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "HDV",
+          "categoria": "ETF PRO PLUS — HDV",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "FXE",
+          "categoria": "ETF PRO PLUS — FXE",
+          "regime": "Macro Global",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "MSTY",
+          "categoria": "ETF PRO PLUS — MSTY",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "EWY",
+          "categoria": "ETF PRO PLUS — EWY",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "PTF",
+          "categoria": "ETF PRO PLUS — PTF",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "MEME",
+          "categoria": "ETF PRO PLUS — MEME",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "CARZ",
+          "categoria": "ETF PRO PLUS — CARZ",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "UUP",
+          "categoria": "ETF PRO PLUS — US DOLLAR BULLISH",
+          "regime": "Macro Global",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "DRAM",
+          "categoria": "ETF PRO PLUS — DRAM",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "MINV",
+          "categoria": "ETF PRO PLUS — MINV",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        },
+        {
+          "ativo": "LSEQ",
+          "categoria": "ETF PRO PLUS — LSEQ",
+          "regime": "Quad 3",
+          "decisao": "Zerar Posição / Remover",
+          "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
+          "gatilho_invalidacao": "Reversão técnica ou reinclusão no lineup.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (September Update (Q3 2026))"
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20260921",
+      "date": "21/09/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (21/09/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-09-21T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "HGER",
+          "categoria": "ETF PRO PLUS — COMMODITY STRATEGY",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Commodity Strategy). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 21/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "BNO",
+          "categoria": "ETF PRO PLUS — BRENT OIL",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Brent Oil). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 21/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "PALL",
+          "categoria": "ETF PRO PLUS — PALLADIUM",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Palladium). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 21/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "SMH",
+          "categoria": "ETF PRO PLUS — SEMICONDUCTORS",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (Semiconductors). Posição vendida encerrada no lineup oficial da Hedgeye. Cobertura no Trend Range: 531.00 – 588.00.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 21/09/2026)",
+          "rangeLow": 531.0,
+          "rangeHigh": 588.0
+        },
+        {
+          "ativo": "QTUM",
+          "categoria": "ETF PRO PLUS — QUANTUM TECH",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (Quantum Tech). Posição vendida encerrada no lineup oficial da Hedgeye. Cobertura no Trend Range: 139.00 – 152.00.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 21/09/2026)",
+          "rangeLow": 139.0,
+          "rangeHigh": 152.0
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20260918",
+      "date": "18/09/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (18/09/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-09-18T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "EWG",
+          "categoria": "ETF PRO PLUS — GERMANY",
+          "regime": "Macro Global",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Germany). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 18/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "GNR",
+          "categoria": "ETF PRO PLUS — GLOBAL NATURAL RESOURCES",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Global Natural Resources). Posição zerada pelo modelo quantitativo Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 18/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
         }
       ]
     },
@@ -87,7 +1095,11 @@
           "decisao": "Comprar na fraqueza",
           "racional": "Ativo sustenta os sinais quantitativos operacionais em meio ao selloff do mercado e prêmio de volatilidade implícita elevado (+116% vs realizada).",
           "gatilho_invalidacao": "Rompimento do suporte de TRADE (gatilho de redução) ou rompimento conjunto de TRADE e TREND (stop total).",
-          "status": "bullish"
+          "status": "bullish",
+          "tipo_gatilho": "Quebra de TREND",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (O SPY vai sustentar o nível de TREND?)"
         },
         {
           "ativo": "IGV",
@@ -95,7 +1107,11 @@
           "decisao": "Comprar na fraqueza",
           "racional": "Manutenção e sustentação dos sinais do modelo quantitativo durante a fraqueza do mercado.",
           "gatilho_invalidacao": "Rompimento do suporte de TRADE ou TREND.",
-          "status": "bullish"
+          "status": "bullish",
+          "tipo_gatilho": "Quebra de TREND",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (O SPY vai sustentar o nível de TREND?)"
         },
         {
           "ativo": "OIH",
@@ -103,7 +1119,106 @@
           "decisao": "Reduzir",
           "racional": "Quebra/rompimento do nível de suporte operacional de TRADE.",
           "gatilho_invalidacao": "Quebra simultânea do suporte de TREND (acionamento de stop integral da posição) ou retomada acima de TRADE.",
-          "status": "bearish"
+          "status": "bearish",
+          "tipo_gatilho": "Quebra de TREND",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (O SPY vai sustentar o nível de TREND?)"
+        }
+      ],
+      "sourceType": "earlylook"
+    },
+    {
+      "reportId": "etf_intra_20260917",
+      "date": "17/09/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (17/09/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-09-17T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "PFIX",
+          "categoria": "ETF PRO PLUS — INTEREST RATE HEDGE",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Interest Rate Hedge). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 17/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "SMH",
+          "categoria": "ETF PRO PLUS — SEMICONDUCTORS",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Semiconductors). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 17/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "UFO",
+          "categoria": "ETF PRO PLUS — SPACE",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Space). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 17/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "QTUM",
+          "categoria": "ETF PRO PLUS — QUANTUM TECH",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Quantum Tech). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 17/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "OIH",
+          "categoria": "ETF PRO PLUS — OIL SERVICES",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Oil Services). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 400.00 – 438.00.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 17/09/2026)",
+          "rangeLow": 400.0,
+          "rangeHigh": 438.0
+        },
+        {
+          "ativo": "VFLO",
+          "categoria": "ETF PRO PLUS — US FREE CASH FLOW",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (US Free Cash Flow). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 52.51 – 56.47.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 17/09/2026)",
+          "rangeLow": 52.51,
+          "rangeHigh": 56.47
         }
       ]
     },
@@ -150,49 +1265,58 @@
           "carteira": "Macro / Multi-Ativos",
           "fonte": "KM Call (Sinais: Como Não Morrer Nos Mercados)"
         }
-      ]
+      ],
+      "sourceType": "earlylook"
     },
     {
-      "reportId": "hist_16072026",
-      "date": "16/07/2026",
-      "reportTitle": "Decisões Auditadas de 16/07/2026",
-      "extractedByModel": "Histórico Curado Hedgeye",
+      "reportId": "etf_intra_20260916",
+      "date": "16/09/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (16/09/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-09-16T10:30:00",
+      "sourceType": "etf_pro_plus",
       "decisions": [
         {
-          "ativo": "HUMN, AIPO, DRIV, DRAM, CLS, VRT",
-          "categoria": "TAIL/Especulativa",
+          "ativo": "XLE",
+          "categoria": "ETF PRO PLUS — ENERGY SECTOR",
           "regime": "Quad 3",
-          "decisao": "Manter em tamanhos pequenos",
-          "racional": "Convicção estrutural em robótica, IA e infraestrutura, com posição não dominante",
-          "gatilho_invalidacao": "Tese fundamental deteriorada, excesso de peso ou quebra TREND que exija redução ao tamanho TAIL",
-          "tipo_gatilho": "Quebra de TREND",
-          "status": "neutral",
-          "carteira": "Consolidada / Macro",
-          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
-        },
-        {
-          "ativo": "SGOV",
-          "categoria": "CAIXA",
-          "regime": "Quad 3",
-          "decisao": "Manter alocação elevada",
-          "racional": "Preservação de capital e opcionalidade em ambiente de incerteza",
-          "gatilho_invalidacao": "Cenário muda com sinais Bullish e assimetria clara em ativos CORE",
-          "tipo_gatilho": "Gatilho Técnico",
-          "status": "neutral",
-          "carteira": "Consolidada / Macro",
-          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
-        },
-        {
-          "ativo": "XLU, XLRE, XLV, XLP",
-          "categoria": "CORE",
-          "regime": "Quad 3",
-          "decisao": "Aumentar/montar exposição defensiva",
-          "racional": "Rotação de Quad 3 observada naquele momento",
-          "gatilho_invalidacao": "Quebra de sinais vigentes, em especial pressão persistente de yields para XLU/XLRE",
-          "tipo_gatilho": "Alocação de Fator / Rotação",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Energy Sector). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
           "status": "bullish",
-          "carteira": "Consolidada / Macro",
-          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 16/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "ETHA",
+          "categoria": "ETF PRO PLUS — ETHEREUM",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Ethereum). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 16/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "FXC",
+          "categoria": "ETF PRO PLUS — CANADIAN DOLLAR",
+          "regime": "Macro Global",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Canadian Dollar). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 70.02 – 71.01.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 16/09/2026)",
+          "rangeLow": 70.02,
+          "rangeHigh": 71.01
         }
       ]
     },
@@ -227,7 +1351,8 @@
           "carteira": "Macro / Multi-Ativos",
           "fonte": "KM Call (EARLY LOOK: Hedgeye For Financial Advisors)"
         }
-      ]
+      ],
+      "sourceType": "earlylook"
     },
     {
       "reportId": "110258",
@@ -344,39 +1469,8 @@
           "carteira": "Consolidada / Macro",
           "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
         }
-      ]
-    },
-    {
-      "reportId": "hist_11092026",
-      "date": "11/09/2026",
-      "reportTitle": "Decisões Auditadas de 11/09/2026",
-      "extractedByModel": "Histórico Curado Hedgeye",
-      "decisions": [
-        {
-          "ativo": "Dólar Index (DXY) & Treasuries 10Y",
-          "categoria": "MACRO / FX",
-          "regime": "Quad 3",
-          "decisao": "Bearish USD (98,40–99,67) / Bullish UST10Y (4,75%–4,98%)",
-          "racional": "Desvalorização do USD impulsiona inflação de commodities; curva precifica Nowcast de 3,5% em agosto",
-          "gatilho_invalidacao": "Fechamento do DXY > 100,00 ou 10Y < 4,68%",
-          "tipo_gatilho": "Invalidação Nowcast / GIP",
-          "status": "neutral",
-          "carteira": "Consolidada / Macro",
-          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
-        },
-        {
-          "ativo": "Russell 2000 (RUT)",
-          "categoria": "SHORT ESTRUTURAL",
-          "regime": "Quad 3",
-          "decisao": "Manter Short / Bearish TREND (2.875–2.970)",
-          "racional": "Small caps com balanços alavancados sofrem com aperto de liquidez e juros reais altos",
-          "gatilho_invalidacao": "Fechamento semanal do RUT acima de 2.970",
-          "tipo_gatilho": "Quebra de TREND",
-          "status": "bearish",
-          "carteira": "Consolidada / Macro",
-          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
-        }
-      ]
+      ],
+      "sourceType": "earlylook"
     },
     {
       "reportId": "110057",
@@ -457,7 +1551,232 @@
           "carteira": "Macro / Multi-Ativos",
           "fonte": "KM Call (EARLY LOOK: Betting $1T On Inflation Accelerating)"
         }
+      ],
+      "sourceType": "earlylook"
+    },
+    {
+      "reportId": "hist_14092026",
+      "date": "14/09/2026",
+      "reportTitle": "Decisões Auditadas de 14/09/2026",
+      "extractedByModel": "Histórico Curado Hedgeye",
+      "sourceType": "historical",
+      "decisions": [
+        {
+          "ativo": "Big Tech / AI Stocks (QQQ / SPY / IWM)",
+          "categoria": "FACTOR / TRADE",
+          "regime": "Quad 3",
+          "decisao": "Venda de Longs / Bearish TRADE (#MOAB)",
+          "racional": "Bolha de IA inflada por dívida e valuations insustentáveis; QQQ e SPY acionam Bearish TRADE e VXN rompe 22,14",
+          "gatilho_invalidacao": "QQQ recuperar TRADE acima de 720 com VXN recuando abaixo de 22,14",
+          "tipo_gatilho": "Sinal TRADE",
+          "status": "bullish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "Petróleo Contínuo & Energia (WTIC / OIH)",
+          "categoria": "CORE / REFLAÇÃO",
+          "regime": "Quad 3",
+          "decisao": "Long Convicção Máxima / Comprar Recuos",
+          "racional": "WTI subiu +9,4% na semana e +20,7% em 3 meses (teto US$ 105,74 Bullish); OIH range 415–438 Bullish",
+          "gatilho_invalidacao": "Fechamento do WTI abaixo de US$ 90,44",
+          "tipo_gatilho": "Ruptura de Risk Range",
+          "status": "bullish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "Juros dos T-Bonds (UST 2Y / UST 10Y)",
+          "categoria": "SHORT SOVEREIGN",
+          "regime": "Quad 3",
+          "decisao": "Manter Shorts em Bonds / Yields em Novas Máximas",
+          "racional": "UST 2Y (+26 bps) e UST 10Y (+19 bps) em máximas do ciclo; Nowcast acelerando eleva custo de capital",
+          "gatilho_invalidacao": "Fechamento do UST 10Y abaixo de 4,75%",
+          "tipo_gatilho": "Invalidação Nowcast / GIP",
+          "status": "bearish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "Metais Preciosos (GOLD / SLV)",
+          "categoria": "TÁTICO / HEDGE",
+          "regime": "Quad 3",
+          "decisao": "Reduzir Ouro para Mínimo (MIN) / Zerar Prata (SLV)",
+          "racional": "Ritmo de alta dos yields reais pressiona o ouro no curto prazo; Prata virou Bearish TREND (60–65)",
+          "gatilho_invalidacao": "Fechamento do Ouro acima de 4.473 retomando Bullish",
+          "tipo_gatilho": "Quebra de TREND",
+          "status": "bearish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "Mercados Emergentes & FX (COLO / INDA)",
+          "categoria": "GLOBAL FX & EQUITIES",
+          "regime": "Quad 3",
+          "decisao": "Long Colômbia (COLO) / Short Índia (INDA)",
+          "racional": "Peso Colombiano (+13,3% 3M) surfa superciclo do petróleo; Índia sofre com déficit na balança de energia",
+          "gatilho_invalidacao": "Inversão técnica de fluxo cambial no par COP/USD",
+          "tipo_gatilho": "Alocação de Fator / Rotação",
+          "status": "bullish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        }
       ]
+    },
+    {
+      "reportId": "etf_intra_20260914",
+      "date": "14/09/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (14/09/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-09-14T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "IWM",
+          "categoria": "ETF PRO PLUS — US SMALL-CAP",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (US Small-Cap). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 14/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "EWA",
+          "categoria": "ETF PRO PLUS — AUSTRALIA EQUITIES",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Australia Equities). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 14/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "EWL",
+          "categoria": "ETF PRO PLUS — SWITZERLAND",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Switzerland). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 14/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "EWP",
+          "categoria": "ETF PRO PLUS — SPAIN",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Spain). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 61.07 – 63.13.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 14/09/2026)",
+          "rangeLow": 61.07,
+          "rangeHigh": 63.13
+        },
+        {
+          "ativo": "SRUUF",
+          "categoria": "ETF PRO PLUS — PHYSICAL URANIUM",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Physical Uranium). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 19.00 – 20.50.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 14/09/2026)",
+          "rangeLow": 19.0,
+          "rangeHigh": 20.5
+        },
+        {
+          "ativo": "GDX",
+          "categoria": "ETF PRO PLUS — GOLD MINERS",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Gold Miners). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 93.00 – 105.00.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 14/09/2026)",
+          "rangeLow": 93.0,
+          "rangeHigh": 105.0
+        },
+        {
+          "ativo": "EZA",
+          "categoria": "ETF PRO PLUS — SOUTH AFRICA",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (South Africa). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 68.01 – 72.52.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 14/09/2026)",
+          "rangeLow": 68.01,
+          "rangeHigh": 72.52
+        },
+        {
+          "ativo": "UUP",
+          "categoria": "ETF PRO PLUS — US DOLLAR BULLISH",
+          "regime": "Macro Global",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (US Dollar Bullish). Posição vendida encerrada no lineup oficial da Hedgeye. Cobertura no Trend Range: 27.72 – 28.29.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 14/09/2026)",
+          "rangeLow": 27.72,
+          "rangeHigh": 28.29
+        }
+      ]
+    },
+    {
+      "reportId": "hist_11092026",
+      "date": "11/09/2026",
+      "reportTitle": "Decisões Auditadas de 11/09/2026",
+      "extractedByModel": "Histórico Curado Hedgeye",
+      "decisions": [
+        {
+          "ativo": "Dólar Index (DXY) & Treasuries 10Y",
+          "categoria": "MACRO / FX",
+          "regime": "Quad 3",
+          "decisao": "Bearish USD (98,40–99,67) / Bullish UST10Y (4,75%–4,98%)",
+          "racional": "Desvalorização do USD impulsiona inflação de commodities; curva precifica Nowcast de 3,5% em agosto",
+          "gatilho_invalidacao": "Fechamento do DXY > 100,00 ou 10Y < 4,68%",
+          "tipo_gatilho": "Invalidação Nowcast / GIP",
+          "status": "neutral",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "Russell 2000 (RUT)",
+          "categoria": "SHORT ESTRUTURAL",
+          "regime": "Quad 3",
+          "decisao": "Manter Short / Bearish TREND (2.875–2.970)",
+          "racional": "Small caps com balanços alavancados sofrem com aperto de liquidez e juros reais altos",
+          "gatilho_invalidacao": "Fechamento semanal do RUT acima de 2.970",
+          "tipo_gatilho": "Quebra de TREND",
+          "status": "bearish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        }
+      ],
+      "sourceType": "historical"
     },
     {
       "reportId": "hist_08092026",
@@ -525,7 +1844,8 @@
           "carteira": "Consolidada / Macro",
           "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
         }
-      ]
+      ],
+      "sourceType": "historical"
     },
     {
       "reportId": "hist_04092026",
@@ -544,6 +1864,329 @@
           "status": "bullish",
           "carteira": "Consolidada / Macro",
           "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        }
+      ],
+      "sourceType": "historical"
+    },
+    {
+      "reportId": "etf_monthly_20260810",
+      "date": "10/08/2026",
+      "reportTitle": "ETF PRO PLUS: Rebalanceamento Mensal (August Update (Q3 2026))",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-08-10T11:00:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "EWZ",
+          "categoria": "ETF PRO PLUS — BRAZIL",
+          "regime": "Macro Global",
+          "decisao": "Flip Short → Long",
+          "racional": "Virada estratégica oficial no relatório mensal (August Update (Q3 2026)): ativo EWZ (Brazil) passa de Short para Long na carteira recomendada.",
+          "gatilho_invalidacao": "Quebra de Bullish TREND ou retorno para Short no próximo Update mensal.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "FXE",
+          "categoria": "ETF PRO PLUS — FXE",
+          "regime": "Macro Global",
+          "decisao": "Flip Short → Long",
+          "racional": "Virada estratégica oficial no relatório mensal (August Update (Q3 2026)): ativo FXE (FXE) passa de Short para Long na carteira recomendada.",
+          "gatilho_invalidacao": "Quebra de Bullish TREND ou retorno para Short no próximo Update mensal.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "DRAM",
+          "categoria": "ETF PRO PLUS — DRAM",
+          "regime": "Quad 3",
+          "decisao": "Flip Long → Short",
+          "racional": "Virada estratégica oficial no relatório mensal (August Update (Q3 2026)): ativo DRAM (DRAM) passa de Long para Short na carteira recomendada.",
+          "gatilho_invalidacao": "Quebra de Bearish TREND ou retorno para Long no próximo Update mensal.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "UUP",
+          "categoria": "ETF PRO PLUS — US DOLLAR BULLISH",
+          "regime": "Macro Global",
+          "decisao": "Flip Long → Short",
+          "racional": "Virada estratégica oficial no relatório mensal (August Update (Q3 2026)): ativo UUP (US Dollar Bullish) passa de Long para Short na carteira recomendada.",
+          "gatilho_invalidacao": "Quebra de Bearish TREND ou retorno para Long no próximo Update mensal.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "LQD",
+          "categoria": "ETF PRO PLUS — US CORPORATE BONDS",
+          "regime": "Quad 3",
+          "decisao": "Flip Long → Short",
+          "racional": "Virada estratégica oficial no relatório mensal (August Update (Q3 2026)): ativo LQD (US Corporate Bonds) passa de Long para Short na carteira recomendada.",
+          "gatilho_invalidacao": "Quebra de Bearish TREND ou retorno para Long no próximo Update mensal.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "TLT",
+          "categoria": "ETF PRO PLUS — LONG TREASURY BOND",
+          "regime": "Quad 3",
+          "decisao": "Flip Long → Short",
+          "racional": "Virada estratégica oficial no relatório mensal (August Update (Q3 2026)): ativo TLT (Long Treasury Bond) passa de Long para Short na carteira recomendada.",
+          "gatilho_invalidacao": "Quebra de Bearish TREND ou retorno para Long no próximo Update mensal.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "FAB",
+          "categoria": "ETF PRO PLUS — FAB",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "DESK",
+          "categoria": "ETF PRO PLUS — DESK",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "NOBL",
+          "categoria": "ETF PRO PLUS — NOBL",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "COLO",
+          "categoria": "ETF PRO PLUS — COLOMBIA",
+          "regime": "Macro Global",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "ENZL",
+          "categoria": "ETF PRO PLUS — ENZL",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "IPAY",
+          "categoria": "ETF PRO PLUS — IPAY",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "RSP",
+          "categoria": "ETF PRO PLUS — RSP",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "EPHE",
+          "categoria": "ETF PRO PLUS — EPHE",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "VTIP",
+          "categoria": "ETF PRO PLUS — VTIP",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "CRAK",
+          "categoria": "ETF PRO PLUS — OIL REFINERS",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "IVOL",
+          "categoria": "ETF PRO PLUS — IVOL",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "HDV",
+          "categoria": "ETF PRO PLUS — HDV",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de alta ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "QAT",
+          "categoria": "ETF PRO PLUS — QATAR",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "EWY",
+          "categoria": "ETF PRO PLUS — EWY",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "PTF",
+          "categoria": "ETF PRO PLUS — PTF",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "MEME",
+          "categoria": "ETF PRO PLUS — MEME",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "CARZ",
+          "categoria": "ETF PRO PLUS — CARZ",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "PBD",
+          "categoria": "ETF PRO PLUS — CLEAN ENERGY",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "MINV",
+          "categoria": "ETF PRO PLUS — MINV",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
+        },
+        {
+          "ativo": "LSEQ",
+          "categoria": "ETF PRO PLUS — LSEQ",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Novo ativo Short incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
+          "gatilho_invalidacao": "Quebra de TREND de baixa ou ordem de remoção.",
+          "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (August Update (Q3 2026))"
         }
       ]
     },
@@ -565,8 +2208,646 @@
           "carteira": "Consolidada / Macro",
           "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
         }
+      ],
+      "sourceType": "historical"
+    },
+    {
+      "reportId": "hist_16072026",
+      "date": "16/07/2026",
+      "reportTitle": "Decisões Auditadas de 16/07/2026",
+      "extractedByModel": "Histórico Curado Hedgeye",
+      "decisions": [
+        {
+          "ativo": "HUMN, AIPO, DRIV, DRAM, CLS, VRT",
+          "categoria": "TAIL/Especulativa",
+          "regime": "Quad 3",
+          "decisao": "Manter em tamanhos pequenos",
+          "racional": "Convicção estrutural em robótica, IA e infraestrutura, com posição não dominante",
+          "gatilho_invalidacao": "Tese fundamental deteriorada, excesso de peso ou quebra TREND que exija redução ao tamanho TAIL",
+          "tipo_gatilho": "Quebra de TREND",
+          "status": "neutral",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "SGOV",
+          "categoria": "CAIXA",
+          "regime": "Quad 3",
+          "decisao": "Manter alocação elevada",
+          "racional": "Preservação de capital e opcionalidade em ambiente de incerteza",
+          "gatilho_invalidacao": "Cenário muda com sinais Bullish e assimetria clara em ativos CORE",
+          "tipo_gatilho": "Gatilho Técnico",
+          "status": "neutral",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        },
+        {
+          "ativo": "XLU, XLRE, XLV, XLP",
+          "categoria": "CORE",
+          "regime": "Quad 3",
+          "decisao": "Aumentar/montar exposição defensiva",
+          "racional": "Rotação de Quad 3 observada naquele momento",
+          "gatilho_invalidacao": "Quebra de sinais vigentes, em especial pressão persistente de yields para XLU/XLRE",
+          "tipo_gatilho": "Alocação de Fator / Rotação",
+          "status": "bullish",
+          "carteira": "Consolidada / Macro",
+          "fonte": "Log Histórico Institucional (Hedgeye Markdown)"
+        }
+      ],
+      "sourceType": "historical"
+    },
+    {
+      "reportId": "etf_intra_20251031",
+      "date": "31/10/2025",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (31/10/2025)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2025-10-31T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "EWI",
+          "categoria": "ETF PRO PLUS — ITALY",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (Italy). Posição vendida encerrada no lineup oficial da Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 31/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20251030",
+      "date": "30/10/2025",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (30/10/2025)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2025-10-30T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "BBN",
+          "categoria": "ETF PRO PLUS — TAXABLE MUNICIPAL BONDS",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Taxable Municipal Bonds). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 30/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "ENZL",
+          "categoria": "ETF PRO PLUS — NEW ZEALAND",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (New Zealand). Posição vendida encerrada no lineup oficial da Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 30/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20251029",
+      "date": "29/10/2025",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (29/10/2025)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2025-10-29T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "IEF",
+          "categoria": "ETF PRO PLUS — TREASURY BONDS",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Treasury Bonds). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 29/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "IWC",
+          "categoria": "ETF PRO PLUS — MICRO-CAP EQUITY",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Micro-Cap Equity). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 29/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20251028",
+      "date": "28/10/2025",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (28/10/2025)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2025-10-28T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "UUP",
+          "categoria": "ETF PRO PLUS — US DOLLAR BULLISH",
+          "regime": "Macro Global",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (US Dollar Bullish). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 28/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "TOKE",
+          "categoria": "ETF PRO PLUS — GLOBAL CANNABIS",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Global Cannabis). Posição zerada pelo modelo quantitativo Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 28/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "CORN",
+          "categoria": "ETF PRO PLUS — CORN",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (Corn). Posição vendida encerrada no lineup oficial da Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 28/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20251027",
+      "date": "27/10/2025",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (27/10/2025)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2025-10-27T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "ITB",
+          "categoria": "ETF PRO PLUS — HOME CONSTRUCTION",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (Home Construction). Posição vendida encerrada no lineup oficial da Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 27/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "PSP",
+          "categoria": "ETF PRO PLUS — GLOBAL PRIVATE EQUITY",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (Global Private Equity). Posição vendida encerrada no lineup oficial da Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 27/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20251024",
+      "date": "24/10/2025",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (24/10/2025)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2025-10-24T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "TLT",
+          "categoria": "ETF PRO PLUS — LONG TREASURY BOND",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Long Treasury Bond). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 24/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "FXC",
+          "categoria": "ETF PRO PLUS — CANADIAN DOLLAR",
+          "regime": "Macro Global",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Canadian Dollar). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 24/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "GREK",
+          "categoria": "ETF PRO PLUS — GREECE",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Greece). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 24/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "ENZL",
+          "categoria": "ETF PRO PLUS — NEW ZEALAND",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (New Zealand). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 24/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "URNJ",
+          "categoria": "ETF PRO PLUS — URANIUM MINERS",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Uranium Miners). Posição zerada pelo modelo quantitativo Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 24/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20251023",
+      "date": "23/10/2025",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (23/10/2025)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2025-10-23T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "URNJ",
+          "categoria": "ETF PRO PLUS — SPROTT JUNIOR URANIUM MINERS ETF ",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Sprott Junior Uranium Miners ETF ). Posição zerada pelo modelo quantitativo Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 23/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20251022",
+      "date": "22/10/2025",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (22/10/2025)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2025-10-22T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "FXC",
+          "categoria": "ETF PRO PLUS — INVESCO CURRENCYSHARES CANADIAN DOLLAR TRUST",
+          "regime": "Macro Global",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Invesco CurrencyShares Canadian Dollar Trust). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 22/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20251021",
+      "date": "21/10/2025",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (21/10/2025)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2025-10-21T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "PSP",
+          "categoria": "ETF PRO PLUS — GLOBAL PRIVATE EQUITY",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Global Private Equity). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 21/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "EWI",
+          "categoria": "ETF PRO PLUS — ITALY",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Italy). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 21/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "SMIN",
+          "categoria": "ETF PRO PLUS — INDIA SMALL CAP",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (India Small Cap). Posição vendida encerrada no lineup oficial da Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 21/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20251020",
+      "date": "20/10/2025",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (20/10/2025)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2025-10-20T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "IVOL",
+          "categoria": "ETF PRO PLUS — INTEREST RATE HEDGE",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Interest Rate Hedge). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 20/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20251015",
+      "date": "15/10/2025",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (15/10/2025)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2025-10-15T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "ARGT",
+          "categoria": "ETF PRO PLUS — ARGENTINA",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (Argentina). Posição vendida encerrada no lineup oficial da Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 15/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20251014",
+      "date": "14/10/2025",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (14/10/2025)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2025-10-14T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "CPER",
+          "categoria": "ETF PRO PLUS — COPPER",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Copper). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 14/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "XLV",
+          "categoria": "ETF PRO PLUS — HEALTHCARE",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Healthcare). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 14/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "GVAL",
+          "categoria": "ETF PRO PLUS — GLOBAL VALUE",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Global Value). Posição zerada pelo modelo quantitativo Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 14/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "ETHA",
+          "categoria": "ETF PRO PLUS — ETHEREUM",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Ethereum). Posição zerada pelo modelo quantitativo Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 14/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "EWW",
+          "categoria": "ETF PRO PLUS — MEXICO",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Mexico). Posição zerada pelo modelo quantitativo Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 14/10/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20250410",
+      "date": "10/04/2025",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (10/04/2025)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2025-04-10T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "IEF",
+          "categoria": "ETF PRO PLUS — 7-10 YEAR TREASURY BONDS",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (7-10 Year Treasury Bonds). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 10/04/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "MAGS",
+          "categoria": "ETF PRO PLUS — MAGNIFICENT SEVEN ETF",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Magnificent Seven ETF). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 10/04/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "GXG",
+          "categoria": "ETF PRO PLUS — COLOMBIA",
+          "regime": "Macro Global",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Colombia). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 10/04/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "LQD",
+          "categoria": "ETF PRO PLUS — INVESTMENT GRADE CORPORATE BONDS",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Investment Grade Corporate Bonds). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 10/04/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "TLT",
+          "categoria": "ETF PRO PLUS — 20+ YEAR TREASURIES",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (20+ Year Treasuries). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 10/04/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "IGIB",
+          "categoria": "ETF PRO PLUS — 5-10 YEAR INVESTMENT GRADE CORPORATE BONDS",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (5-10 Year Investment Grade Corporate Bonds). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 10/04/2025)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
       ]
     }
   ],
-  "updatedAt": "2026-09-29T09:31:14.051005"
+  "updatedAt": "30/09/2026 09:31:23"
 }

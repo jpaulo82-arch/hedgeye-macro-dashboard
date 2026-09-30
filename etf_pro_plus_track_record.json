@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T12:01:01.133785",
+  "generatedAt": "2026-09-29T12:01:07.719012",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -125,7 +125,7 @@
           "periodStart": "2024-05-01",
           "periodEnd": "2024-05-31",
           "priceStart": 18.0135,
-          "priceEnd": 18.1135,
+          "priceEnd": 18.1134,
           "returnPct": 0.555
         }
       ]
@@ -1369,24 +1369,6 @@
           "returnPct": 1.03
         },
         {
-          "ticker": "JETS",
-          "side": "short",
-          "periodStart": "2026-09-03",
-          "periodEnd": "2026-09-15",
-          "priceStart": 28.42,
-          "priceEnd": 27.88,
-          "returnPct": 1.9
-        },
-        {
-          "ticker": "PRN",
-          "side": "short",
-          "periodStart": "2026-09-04",
-          "periodEnd": "2026-09-15",
-          "priceStart": 200.35,
-          "priceEnd": 190.68,
-          "returnPct": 4.827
-        },
-        {
           "ticker": "XLI",
           "side": "short",
           "periodStart": "2026-09-08",
@@ -1601,6 +1583,24 @@
           "priceStart": 48.69,
           "priceEnd": 50.75,
           "returnPct": 4.231
+        },
+        {
+          "ticker": "JETS",
+          "side": "short",
+          "periodStart": "2026-09-03",
+          "periodEnd": "2026-09-15",
+          "priceStart": 28.42,
+          "priceEnd": 27.88,
+          "returnPct": 1.9
+        },
+        {
+          "ticker": "PRN",
+          "side": "short",
+          "periodStart": "2026-09-04",
+          "periodEnd": "2026-09-15",
+          "priceStart": 200.35,
+          "priceEnd": 190.68,
+          "returnPct": 4.827
         }
       ]
     }
@@ -1823,5 +1823,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 63
+  "positionsIncluded": 66
 }

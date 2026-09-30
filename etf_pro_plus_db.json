@@ -1,5 +1,5 @@
 {
-  "updatedAt": "28/09/2026 12:00:25",
+  "updatedAt": "29/09/2026 12:00:34",
   "reports": {
     "weekly": [
       {
@@ -2090,6 +2090,41 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_111026_UPDATE__5_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-09-29 10:21AM EDT",
+        "addsLong": [
+          {
+            "name": "US Critical Tech",
+            "ticker": "CRTC"
+          },
+          {
+            "name": "Technology Sector",
+            "ticker": "XLK"
+          },
+          {
+            "name": "Quantum Tech",
+            "ticker": "QTUM"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Global Airlines",
+            "ticker": "JETS",
+            "rangeLow": 27.14,
+            "rangeHigh": 29.45
+          },
+          {
+            "name": "Industrials Momentum",
+            "ticker": "PRN",
+            "rangeLow": 188.0,
+            "rangeHigh": 206.0
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -3164,6 +3199,12 @@
       "type": "intraday",
       "sourceFile": "intraday_110940_UPDATE__4_New_ETF_Pro_Changes.txt",
       "summary": "Sem mudanças detectadas"
+    },
+    {
+      "date": "2026-09-29 10:21AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_111026_UPDATE__5_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: US Critical Tech (CRTC), Technology Sector (XLK), Quantum Tech (QTUM) | Removeu SHORT: Global Airlines (JETS), Industrials Momentum (PRN)"
     }
   ],
   "currentLineup": [
@@ -3800,52 +3841,6 @@
       "quadNote": "Short — aposta CONTRA Q4 (histórico de força nesses regimes)"
     },
     {
-      "ticker": "JETS",
-      "name": "Global Airlines",
-      "side": "short",
-      "dateAdded": "9/3/2026",
-      "assetClass": "Global Equities",
-      "entryPrice": 28.98,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 27.14,
-      "rangeHigh": 29.45,
-      "sourceOfEntry": "weekly:weekly_110910_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.0,
-        "maxPct": 3.0,
-        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
-      "ticker": "PRN",
-      "name": "Industrials Momentum",
-      "side": "short",
-      "dateAdded": "9/4/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 201.36,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 188.0,
-      "rangeHigh": 206.0,
-      "sourceOfEntry": "weekly:weekly_110910_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.0,
-        "maxPct": 3.0,
-        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
       "ticker": "XLI",
       "name": "Industrials",
       "side": "short",
@@ -4067,6 +4062,60 @@
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "CRTC",
+      "name": "US Critical Tech",
+      "side": "long",
+      "dateAdded": "2026-09-29 10:21AM EDT",
+      "assetClass": null,
+      "entryPrice": 41.33,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_111026_UPDATE__5_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [
+        1,
+        2
+      ],
+      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
+    },
+    {
+      "ticker": "XLK",
+      "name": "Technology Sector",
+      "side": "long",
+      "dateAdded": "2026-09-29 10:21AM EDT",
+      "assetClass": null,
+      "entryPrice": 195.62,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_111026_UPDATE__5_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [
+        1,
+        2
+      ],
+      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
+    },
+    {
+      "ticker": "QTUM",
+      "name": "Quantum Tech",
+      "side": "long",
+      "dateAdded": "2026-09-29 10:21AM EDT",
+      "assetClass": null,
+      "entryPrice": 152.295,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_111026_UPDATE__5_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [
+        1,
+        2
+      ],
+      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     }
   ],
   "lineupSnapshots": [],
