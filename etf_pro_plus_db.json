@@ -1,5 +1,5 @@
 {
-  "updatedAt": "29/09/2026 12:00:34",
+  "updatedAt": "30/09/2026 12:00:49",
   "reports": {
     "weekly": [
       {
@@ -2125,6 +2125,36 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_111103_UPDATE__4_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-09-30 10:30AM EDT",
+        "addsLong": [
+          {
+            "name": "Biotechnology",
+            "ticker": "IBB"
+          },
+          {
+            "name": "UAE",
+            "ticker": "UAE"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Silver",
+            "ticker": "SLV"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Blockchain Equity",
+            "ticker": "BLOK",
+            "rangeLow": 60.75,
+            "rangeHigh": 68.5
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -3205,6 +3235,12 @@
       "type": "intraday",
       "sourceFile": "intraday_111026_UPDATE__5_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: US Critical Tech (CRTC), Technology Sector (XLK), Quantum Tech (QTUM) | Removeu SHORT: Global Airlines (JETS), Industrials Momentum (PRN)"
+    },
+    {
+      "date": "2026-09-30 10:30AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_111103_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Biotechnology (IBB), UAE (UAE) | Adicionou SHORT: Silver (SLV) | Removeu LONG: Blockchain Equity (BLOK)"
     }
   ],
   "currentLineup": [
@@ -3638,29 +3674,6 @@
       "quadNote": "Long — alinhado com Q1/Q2/Q3 (Best Asset Class/Setor nesses regimes)"
     },
     {
-      "ticker": "BLOK",
-      "name": "Blockchain Equity",
-      "side": "long",
-      "dateAdded": "9/24/2026",
-      "assetClass": "Global Equities",
-      "entryPrice": 64.21,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 60.75,
-      "rangeHigh": 68.5,
-      "sourceOfEntry": "weekly:weekly_110910_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
       "ticker": "BUG",
       "name": "Cybersecurity",
       "side": "long",
@@ -4069,7 +4082,7 @@
       "side": "long",
       "dateAdded": "2026-09-29 10:21AM EDT",
       "assetClass": null,
-      "entryPrice": 41.33,
+      "entryPrice": 41.26,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -4087,7 +4100,7 @@
       "side": "long",
       "dateAdded": "2026-09-29 10:21AM EDT",
       "assetClass": null,
-      "entryPrice": 195.62,
+      "entryPrice": 194.5,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -4105,7 +4118,7 @@
       "side": "long",
       "dateAdded": "2026-09-29 10:21AM EDT",
       "assetClass": null,
-      "entryPrice": 152.295,
+      "entryPrice": 151.87,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -4116,6 +4129,54 @@
         2
       ],
       "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
+    },
+    {
+      "ticker": "IBB",
+      "name": "Biotechnology",
+      "side": "long",
+      "dateAdded": "2026-09-30 10:30AM EDT",
+      "assetClass": null,
+      "entryPrice": 211.58,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_111103_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [
+        1,
+        2
+      ],
+      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
+    },
+    {
+      "ticker": "UAE",
+      "name": "UAE",
+      "side": "long",
+      "dateAdded": "2026-09-30 10:30AM EDT",
+      "assetClass": null,
+      "entryPrice": 20.1,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_111103_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "SLV",
+      "name": "Silver",
+      "side": "short",
+      "dateAdded": "2026-09-30 10:30AM EDT",
+      "assetClass": null,
+      "entryPrice": 54.555,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_111103_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
     }
   ],
   "lineupSnapshots": [],

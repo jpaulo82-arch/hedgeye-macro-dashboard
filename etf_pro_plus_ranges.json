@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T16:46:08",
+  "generatedAt": "2026-09-30T14:34:40",
   "ranges": {
     "BUXX": {
       "low": 20.18,
@@ -12,9 +12,9 @@
     "AAAU": {
       "low": 41.08,
       "high": 43.5,
-      "price": 41.09,
-      "pct": 0.4,
-      "zone": "perto do LRR",
+      "price": 40.91,
+      "pct": -7.0,
+      "zone": "abaixo do LRR",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "CLOX": {
@@ -28,287 +28,279 @@
     "CLOZ": {
       "low": 26.15,
       "high": 26.39,
-      "price": 26.29,
-      "pct": 58.3,
+      "price": 26.3,
+      "pct": 62.5,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "FXH": {
       "low": 128.0,
       "high": 134.0,
-      "price": 130.91,
-      "pct": 48.5,
+      "price": 131.75,
+      "pct": 62.5,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "XLV": {
       "low": 167.0,
-      "high": 173.0,
-      "price": 170.54,
-      "pct": 59.0,
+      "high": 172.0,
+      "price": 170.07,
+      "pct": 61.4,
       "zone": "meio do range",
       "source": "Early Look (Our Levels, diário)"
     },
     "IGV": {
-      "low": 103.0,
-      "high": 109.0,
-      "price": 105.0,
-      "pct": 33.3,
+      "low": 104.0,
+      "high": 110.0,
+      "price": 106.69,
+      "pct": 44.8,
       "zone": "meio do range",
       "source": "Early Look (Our Levels, diário)"
     },
     "MSOS": {
       "low": 4.71,
       "high": 5.5,
-      "price": 5.12,
-      "pct": 51.9,
-      "zone": "meio do range",
+      "price": 4.47,
+      "pct": -30.4,
+      "zone": "abaixo do LRR",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "IBIT": {
       "low": 43.04,
       "high": 51.01,
-      "price": 47.29,
-      "pct": 53.3,
+      "price": 47.64,
+      "pct": 57.7,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "DBMF": {
       "low": 31.72,
       "high": 32.97,
-      "price": 32.44,
-      "pct": 57.6,
+      "price": 32.66,
+      "pct": 75.2,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "CORN": {
       "low": 19.34,
       "high": 20.29,
-      "price": 19.52,
-      "pct": 18.9,
-      "zone": "meio do range",
+      "price": 19.09,
+      "pct": -26.3,
+      "zone": "abaixo do LRR",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "EWZ": {
       "low": 36.09,
       "high": 38.5,
-      "price": 36.41,
-      "pct": 13.3,
-      "zone": "perto do LRR",
+      "price": 37.22,
+      "pct": 46.9,
+      "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "XLE": {
-      "low": 61.0,
-      "high": 64.96,
-      "price": 61.52,
-      "pct": 13.1,
-      "zone": "perto do LRR",
+      "low": 60.28,
+      "high": 64.54,
+      "price": 61.95,
+      "pct": 39.2,
+      "zone": "meio do range",
       "source": "Early Look (Our Levels, diário)"
     },
     "ETHA": {
       "low": 18.05,
       "high": 21.96,
-      "price": 20.32,
-      "pct": 58.1,
+      "price": 20.27,
+      "pct": 56.8,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "PFIX": {
       "low": 52.09,
       "high": 59.34,
-      "price": 62.19,
-      "pct": 139.3,
+      "price": 63.07,
+      "pct": 151.4,
       "zone": "acima do TRR",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "HGER": {
       "low": 35.13,
       "high": 36.47,
-      "price": 34.94,
-      "pct": -14.2,
-      "zone": "abaixo do LRR",
+      "price": 35.3,
+      "pct": 12.7,
+      "zone": "perto do LRR",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "BNO": {
       "low": 57.07,
       "high": 63.98,
-      "price": 58.9,
-      "pct": 26.5,
+      "price": 60.25,
+      "pct": 46.0,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "CRAK": {
       "low": 62.75,
       "high": 66.88,
-      "price": 62.8,
-      "pct": 1.2,
-      "zone": "perto do LRR",
+      "price": 63.73,
+      "pct": 23.7,
+      "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "BWET": {
       "low": 601.0,
       "high": 873.0,
-      "price": 722.1,
-      "pct": 44.5,
-      "zone": "meio do range",
-      "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
-    },
-    "BLOK": {
-      "low": 60.75,
-      "high": 68.5,
-      "price": 62.11,
-      "pct": 17.5,
+      "price": 783.72,
+      "pct": 67.2,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "BUG": {
       "low": 43.27,
       "high": 47.57,
-      "price": 45.28,
-      "pct": 46.7,
+      "price": 46.42,
+      "pct": 73.3,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "QAT": {
       "low": 16.21,
       "high": 17.14,
-      "price": 16.35,
-      "pct": 15.1,
-      "zone": "meio do range",
+      "price": 16.31,
+      "pct": 10.8,
+      "zone": "perto do LRR",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "LQD": {
-      "low": 102.0,
-      "high": 104.6,
-      "price": 102.31,
-      "pct": 11.9,
-      "zone": "perto do LRR",
+      "low": 101.6,
+      "high": 104.4,
+      "price": 102.11,
+      "pct": 18.2,
+      "zone": "meio do range",
       "source": "Early Look (Our Levels, diário)"
     },
     "TLT": {
       "low": 78.46,
       "high": 81.79,
-      "price": 78.15,
-      "pct": -9.3,
+      "price": 77.59,
+      "pct": -26.1,
       "zone": "abaixo do LRR",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "PBD": {
       "low": 16.2,
       "high": 17.51,
-      "price": 16.75,
-      "pct": 42.0,
+      "price": 16.89,
+      "pct": 52.7,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "XLU": {
       "low": 39.01,
       "high": 41.66,
-      "price": 39.73,
-      "pct": 27.2,
+      "price": 39.64,
+      "pct": 23.8,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "ZROZ": {
       "low": 55.17,
       "high": 59.12,
-      "price": 54.47,
-      "pct": -17.7,
+      "price": 53.7,
+      "pct": -37.2,
       "zone": "abaixo do LRR",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "JOJO": {
       "low": 14.17,
       "high": 14.88,
-      "price": 14.57,
-      "pct": 56.3,
+      "price": 14.61,
+      "pct": 62.0,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "XLI": {
       "low": 165.0,
       "high": 173.0,
-      "price": 169.05,
-      "pct": 50.6,
+      "price": 167.95,
+      "pct": 36.9,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "INDA": {
       "low": 47.0,
       "high": 48.91,
-      "price": 46.92,
-      "pct": -4.2,
+      "price": 46.67,
+      "pct": -17.3,
       "zone": "abaixo do LRR",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "IWM": {
       "low": 277.0,
       "high": 288.0,
-      "price": 278.74,
-      "pct": 15.8,
+      "price": 278.96,
+      "pct": 17.8,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "EWA": {
       "low": 28.01,
       "high": 29.21,
-      "price": 28.36,
-      "pct": 29.2,
+      "price": 28.43,
+      "pct": 35.0,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "EWL": {
       "low": 59.46,
       "high": 61.36,
-      "price": 59.95,
-      "pct": 25.8,
-      "zone": "meio do range",
+      "price": 59.26,
+      "pct": -10.5,
+      "zone": "abaixo do LRR",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "PSP": {
       "low": 56.19,
       "high": 59.57,
-      "price": 56.48,
-      "pct": 8.6,
+      "price": 56.51,
+      "pct": 9.5,
       "zone": "perto do LRR",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "EWG": {
       "low": 41.17,
       "high": 42.99,
-      "price": 41.89,
-      "pct": 39.6,
-      "zone": "meio do range",
+      "price": 41.43,
+      "pct": 14.3,
+      "zone": "perto do LRR",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "PALL": {
       "low": 22.08,
       "high": 24.01,
-      "price": 22.14,
-      "pct": 3.1,
-      "zone": "perto do LRR",
+      "price": 21.83,
+      "pct": -13.0,
+      "zone": "abaixo do LRR",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "XLY": {
       "low": 107.0,
       "high": 113.0,
-      "price": 109.23,
-      "pct": 37.2,
+      "price": 109.06,
+      "pct": 34.3,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "HYG": {
-      "low": 77.35,
-      "high": 78.37,
-      "price": 77.29,
-      "pct": -5.9,
-      "zone": "abaixo do LRR",
+      "low": 77.01,
+      "high": 78.5,
+      "price": 77.26,
+      "pct": 16.8,
+      "zone": "meio do range",
       "source": "Early Look (Our Levels, diário)"
     },
     "CRTC": {
       "low": null,
       "high": null,
-      "price": 41.3,
+      "price": 41.54,
       "pct": null,
       "zone": null,
       "source": null
@@ -316,7 +308,7 @@
     "XLK": {
       "low": null,
       "high": null,
-      "price": 194.57,
+      "price": 196.13,
       "pct": null,
       "zone": null,
       "source": null
@@ -324,7 +316,31 @@
     "QTUM": {
       "low": null,
       "high": null,
-      "price": 151.76,
+      "price": 151.94,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "IBB": {
+      "low": null,
+      "high": null,
+      "price": 211.79,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "UAE": {
+      "low": null,
+      "high": null,
+      "price": 20.09,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "SLV": {
+      "low": null,
+      "high": null,
+      "price": 54.3,
       "pct": null,
       "zone": null,
       "source": null

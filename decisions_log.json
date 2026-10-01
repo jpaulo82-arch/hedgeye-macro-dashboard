@@ -1,6 +1,72 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20260930",
+      "date": "30/09/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (30/09/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-09-30T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "IBB",
+          "categoria": "ETF PRO PLUS — BIOTECHNOLOGY",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Biotechnology). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 30/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "UAE",
+          "categoria": "ETF PRO PLUS — UAE",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (UAE). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 30/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "SLV",
+          "categoria": "ETF PRO PLUS — SILVER",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Silver). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 30/09/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "BLOK",
+          "categoria": "ETF PRO PLUS — BLOCKCHAIN EQUITY",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Blockchain Equity). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 60.75 – 68.50.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 30/09/2026)",
+          "rangeLow": 60.75,
+          "rangeHigh": 68.5
+        }
+      ]
+    },
+    {
       "reportId": "110983",
       "date": "29/09/2026",
       "reportTitle": "EARLY LOOK: Escolhendo o #Quad2 Texas",
@@ -2849,5 +2915,5 @@
       ]
     }
   ],
-  "updatedAt": "30/09/2026 09:31:23"
+  "updatedAt": "01/10/2026 09:31:20"
 }
