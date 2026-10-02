@@ -1,6 +1,58 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261001",
+      "date": "01/10/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (01/10/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-10-01T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "TOPT",
+          "categoria": "ETF PRO PLUS — TOP 20 US STOCKS",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Top 20 US Stocks). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 01/10/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "CORN",
+          "categoria": "ETF PRO PLUS — CORN",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Corn). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 19.34 – 20.29.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 01/10/2026)",
+          "rangeLow": 19.34,
+          "rangeHigh": 20.29
+        },
+        {
+          "ativo": "HGER",
+          "categoria": "ETF PRO PLUS — COMMODITY STRATEGY",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Commodity Strategy). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 34.75 – 36.47.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 01/10/2026)",
+          "rangeLow": 34.75,
+          "rangeHigh": 36.47
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20260930",
       "date": "30/09/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (30/09/2026)",
@@ -2915,5 +2967,5 @@
       ]
     }
   ],
-  "updatedAt": "01/10/2026 09:31:20"
+  "updatedAt": "02/10/2026 09:30:45"
 }

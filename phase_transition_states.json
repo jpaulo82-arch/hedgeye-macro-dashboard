@@ -1,6 +1,6 @@
 {
-  "gerado_em": "2026-10-01T09:32:42.368967",
-  "data": "2026-10-01",
+  "gerado_em": "2026-10-02T09:32:20.882567",
+  "data": "2026-10-02",
   "posicoes": {
     "US10": {
       "ticker": "US10",
@@ -88,7 +88,7 @@
     },
     "NATGAS": {
       "ticker": "NATGAS",
-      "trend_signal": "BULLISH",
+      "trend_signal": "BEARISH",
       "live_price": null,
       "status": "indisponivel",
       "reason": "Ticker especial 'NATGAS' (NYMEX:NG1!) não respondeu no scanner do TradingView (grupo 'futures')"
@@ -102,7 +102,7 @@
     },
     "COPPER": {
       "ticker": "COPPER",
-      "trend_signal": "NEUTRAL",
+      "trend_signal": "BULLISH",
       "live_price": null,
       "status": "indisponivel",
       "reason": "Ticker especial 'COPPER' (COMEX:HG1!) não respondeu no scanner do TradingView (grupo 'futures')"

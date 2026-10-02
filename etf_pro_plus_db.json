@@ -1,5 +1,5 @@
 {
-  "updatedAt": "30/09/2026 12:00:49",
+  "updatedAt": "01/10/2026 14:00:32",
   "reports": {
     "weekly": [
       {
@@ -2155,6 +2155,33 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_111170_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-01 12:39PM EDT",
+        "addsLong": [
+          {
+            "name": "Top 20 US Stocks",
+            "ticker": "TOPT"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "Corn",
+            "ticker": "CORN",
+            "rangeLow": 19.34,
+            "rangeHigh": 20.29
+          },
+          {
+            "name": "Commodity Strategy",
+            "ticker": "HGER",
+            "rangeLow": 34.75,
+            "rangeHigh": 36.47
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -3241,6 +3268,12 @@
       "type": "intraday",
       "sourceFile": "intraday_111103_UPDATE__4_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Biotechnology (IBB), UAE (UAE) | Adicionou SHORT: Silver (SLV) | Removeu LONG: Blockchain Equity (BLOK)"
+    },
+    {
+      "date": "2026-10-01 12:39PM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_111170_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Top 20 US Stocks (TOPT) | Removeu LONG: Corn (CORN), Commodity Strategy (HGER)"
     }
   ],
   "currentLineup": [
@@ -3470,30 +3503,6 @@
       "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     },
     {
-      "ticker": "CORN",
-      "name": "Corn",
-      "side": "long",
-      "dateAdded": "9/9/2026",
-      "assetClass": "Commodities",
-      "entryPrice": 19.73,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 19.34,
-      "rangeHigh": 20.29,
-      "sourceOfEntry": "weekly:weekly_110910_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.5,
-        "maxPct": 4.0,
-        "label": "Commodities (Hedgeye classifica Cripto aqui também)"
-      },
-      "nativeQuads": [
-        1,
-        2,
-        3
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2/Q3 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
       "ticker": "EWZ",
       "name": "Brazil",
       "side": "long",
@@ -3577,30 +3586,6 @@
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
-    },
-    {
-      "ticker": "HGER",
-      "name": "Commodity Strategy",
-      "side": "long",
-      "dateAdded": "9/21/2026",
-      "assetClass": "Commodities",
-      "entryPrice": 35.6,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 35.13,
-      "rangeHigh": 36.47,
-      "sourceOfEntry": "weekly:weekly_110910_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.5,
-        "maxPct": 4.0,
-        "label": "Commodities (Hedgeye classifica Cripto aqui também)"
-      },
-      "nativeQuads": [
-        1,
-        2,
-        3
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2/Q3 (Best Asset Class/Setor nesses regimes)"
     },
     {
       "ticker": "BNO",
@@ -4136,7 +4121,7 @@
       "side": "long",
       "dateAdded": "2026-09-30 10:30AM EDT",
       "assetClass": null,
-      "entryPrice": 211.58,
+      "entryPrice": 210.53,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -4154,7 +4139,7 @@
       "side": "long",
       "dateAdded": "2026-09-30 10:30AM EDT",
       "assetClass": null,
-      "entryPrice": 20.1,
+      "entryPrice": 20.07,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -4169,11 +4154,26 @@
       "side": "short",
       "dateAdded": "2026-09-30 10:30AM EDT",
       "assetClass": null,
-      "entryPrice": 54.555,
+      "entryPrice": 54.51,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
       "sourceOfEntry": "intraday:intraday_111103_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "TOPT",
+      "name": "Top 20 US Stocks",
+      "side": "long",
+      "dateAdded": "2026-10-01 12:39PM EDT",
+      "assetClass": null,
+      "entryPrice": 34.7399,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_111170_UPDATE__3_New_ETF_Pro_Changes.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
