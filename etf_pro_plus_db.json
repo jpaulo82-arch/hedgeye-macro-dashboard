@@ -1,5 +1,5 @@
 {
-  "updatedAt": "01/10/2026 14:00:32",
+  "updatedAt": "02/10/2026 15:00:34",
   "reports": {
     "weekly": [
       {
@@ -2182,6 +2182,68 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_111232_UPDATE__4_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-02 10:26AM EDT",
+        "addsLong": [
+          {
+            "name": "Healthcare Technology",
+            "ticker": "HTEC"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "US Cannabis",
+            "ticker": "MSOS",
+            "rangeLow": 4.35,
+            "rangeHigh": 5.5
+          },
+          {
+            "name": "Energy Sector",
+            "ticker": "XLE",
+            "rangeLow": 60.26,
+            "rangeHigh": 65.57
+          },
+          {
+            "name": "UAE",
+            "ticker": "UAE"
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_111246_UPDATE__4_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-02 10:26AM EDT",
+        "addsLong": [
+          {
+            "name": "Healthcare Technology",
+            "ticker": "HTEC"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "US Cannabis",
+            "ticker": "MSOS",
+            "rangeLow": 4.35,
+            "rangeHigh": 5.5
+          },
+          {
+            "name": "Energy Sector",
+            "ticker": "XLE",
+            "rangeLow": 60.26,
+            "rangeHigh": 65.57
+          },
+          {
+            "name": "UAE",
+            "ticker": "UAE"
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -3274,6 +3336,18 @@
       "type": "intraday",
       "sourceFile": "intraday_111170_UPDATE__3_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Top 20 US Stocks (TOPT) | Removeu LONG: Corn (CORN), Commodity Strategy (HGER)"
+    },
+    {
+      "date": "2026-10-02 10:26AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_111232_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Healthcare Technology (HTEC) | Removeu LONG: US Cannabis (MSOS), Energy Sector (XLE), UAE (UAE)"
+    },
+    {
+      "date": "2026-10-02 10:26AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_111246_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Healthcare Technology (HTEC) | Removeu LONG: US Cannabis (MSOS), Energy Sector (XLE), UAE (UAE)"
     }
   ],
   "currentLineup": [
@@ -3434,28 +3508,6 @@
       "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     },
     {
-      "ticker": "MSOS",
-      "name": "US Cannabis",
-      "side": "long",
-      "dateAdded": "8/28/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 5.16,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 4.71,
-      "rangeHigh": 5.5,
-      "sourceOfEntry": "weekly:weekly_110910_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        4
-      ],
-      "quadNote": "Long — alinhado com Q4 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
       "ticker": "IBIT",
       "name": "Bitcoin",
       "side": "long",
@@ -3512,29 +3564,6 @@
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
       "rangeLow": 36.09,
       "rangeHigh": 38.5,
-      "sourceOfEntry": "weekly:weekly_110910_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "XLE",
-      "name": "Energy Sector",
-      "side": "long",
-      "dateAdded": "9/16/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 62.04,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 60.26,
-      "rangeHigh": 65.57,
       "sourceOfEntry": "weekly:weekly_110910_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 2.0,
@@ -4134,21 +4163,6 @@
       "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     },
     {
-      "ticker": "UAE",
-      "name": "UAE",
-      "side": "long",
-      "dateAdded": "2026-09-30 10:30AM EDT",
-      "assetClass": null,
-      "entryPrice": 20.07,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_111103_UPDATE__4_New_ETF_Pro_Changes.txt",
-      "allowedBand": null,
-      "nativeQuads": [],
-      "quadNote": "N/D (sem classificação de setor/classe confiável)"
-    },
-    {
       "ticker": "SLV",
       "name": "Silver",
       "side": "short",
@@ -4169,7 +4183,7 @@
       "side": "long",
       "dateAdded": "2026-10-01 12:39PM EDT",
       "assetClass": null,
-      "entryPrice": 34.7399,
+      "entryPrice": 34.89,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -4177,6 +4191,24 @@
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "HTEC",
+      "name": "Healthcare Technology",
+      "side": "long",
+      "dateAdded": "2026-10-02 10:26AM EDT",
+      "assetClass": null,
+      "entryPrice": 43.34,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_111246_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [
+        1,
+        2
+      ],
+      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     }
   ],
   "lineupSnapshots": [],

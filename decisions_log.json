@@ -1,6 +1,106 @@
 {
   "entradas": [
     {
+      "reportId": "111337",
+      "date": "05/10/2026",
+      "reportTitle": "EARLY LOOK: Quem É o Banco no #Quad2?",
+      "extractedByModel": "gemini-flash-latest",
+      "extractedAt": "2026-10-05T08:49:32.432557",
+      "decisions": [
+        {
+          "ativo": "XLK",
+          "categoria": "LONG TECHNOLOGY / QUAD 2",
+          "decisao": "Long / Comprar",
+          "racional": "O setor de Tecnologia lidera os ganhos no ciclo de #Quad2 com o XLK subindo +8,8% no último mês, impulsionado por mega-caps.",
+          "gatilho_invalidacao": "Mudança no regime macro de #Quad2 ou perda de momentum relativo frente a outros setores.",
+          "status": "bullish",
+          "tipo_gatilho": "Gatilho Técnico",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Quem É o Banco no #Quad2?)"
+        },
+        {
+          "ativo": "XLF",
+          "categoria": "SHORT FINANCIALS / BANKING PRESSURE",
+          "decisao": "Short / Vender",
+          "racional": "O XLF recua -7,2% no último mês sob pressão direta do US Dollar em novas máximas de ciclo e Treasury de 2 anos próxima a 4,84%, gerando ventos contrários a bancos.",
+          "gatilho_invalidacao": "Fechamento expressivo dos rendimentos da Treasury de 2 anos, queda relevante do dólar ou quebra da tendência de baixa relativa do setor.",
+          "status": "bearish",
+          "tipo_gatilho": "Gatilho Técnico",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Quem É o Banco no #Quad2?)"
+        }
+      ],
+      "sourceType": "earlylook"
+    },
+    {
+      "reportId": "etf_intra_20261002",
+      "date": "02/10/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (02/10/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-10-02T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "HTEC",
+          "categoria": "ETF PRO PLUS — HEALTHCARE TECHNOLOGY",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Healthcare Technology). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 02/10/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "MSOS",
+          "categoria": "ETF PRO PLUS — US CANNABIS",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (US Cannabis). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 4.35 – 5.50.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 02/10/2026)",
+          "rangeLow": 4.35,
+          "rangeHigh": 5.5
+        },
+        {
+          "ativo": "XLE",
+          "categoria": "ETF PRO PLUS — ENERGY SECTOR",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Energy Sector). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 60.26 – 65.57.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 02/10/2026)",
+          "rangeLow": 60.26,
+          "rangeHigh": 65.57
+        },
+        {
+          "ativo": "UAE",
+          "categoria": "ETF PRO PLUS — UAE",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (UAE). Posição zerada pelo modelo quantitativo Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 02/10/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261001",
       "date": "01/10/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (01/10/2026)",
@@ -2967,5 +3067,5 @@
       ]
     }
   ],
-  "updatedAt": "02/10/2026 09:30:45"
+  "updatedAt": "05/10/2026 08:49:32"
 }

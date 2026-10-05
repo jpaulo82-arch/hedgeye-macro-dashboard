@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T14:00:56",
+  "generatedAt": "2026-10-02T15:01:08",
   "ranges": {
     "BUXX": {
       "low": 20.18,
@@ -42,7 +42,7 @@
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "XLV": {
-      "low": 166.0,
+      "low": 165.0,
       "high": 172.0,
       "price": null,
       "pct": null,
@@ -50,20 +50,12 @@
       "source": "Early Look (Our Levels, diário)"
     },
     "IGV": {
-      "low": 104.0,
-      "high": 109.0,
+      "low": 105.0,
+      "high": 110.0,
       "price": null,
       "pct": null,
       "zone": null,
       "source": "Early Look (Our Levels, diário)"
-    },
-    "MSOS": {
-      "low": 4.71,
-      "high": 5.5,
-      "price": null,
-      "pct": null,
-      "zone": null,
-      "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "IBIT": {
       "low": 43.04,
@@ -88,14 +80,6 @@
       "pct": null,
       "zone": null,
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
-    },
-    "XLE": {
-      "low": 60.4,
-      "high": 63.95,
-      "price": null,
-      "pct": null,
-      "zone": null,
-      "source": "Early Look (Our Levels, diário)"
     },
     "ETHA": {
       "low": 18.05,
@@ -154,8 +138,8 @@
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "LQD": {
-      "low": 101.2,
-      "high": 103.8,
+      "low": 100.8,
+      "high": 103.7,
       "price": null,
       "pct": null,
       "zone": null,
@@ -274,7 +258,7 @@
       "source": "ETF Pro semanal de 27/09/2026 (range de TREND)"
     },
     "HYG": {
-      "low": 76.73,
+      "low": 76.4,
       "high": 77.99,
       "price": null,
       "pct": null,
@@ -313,14 +297,6 @@
       "zone": null,
       "source": null
     },
-    "UAE": {
-      "low": null,
-      "high": null,
-      "price": null,
-      "pct": null,
-      "zone": null,
-      "source": null
-    },
     "SLV": {
       "low": null,
       "high": null,
@@ -330,6 +306,14 @@
       "source": null
     },
     "TOPT": {
+      "low": null,
+      "high": null,
+      "price": null,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "HTEC": {
       "low": null,
       "high": null,
       "price": null,

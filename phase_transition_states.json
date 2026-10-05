@@ -1,6 +1,6 @@
 {
-  "gerado_em": "2026-10-02T09:32:20.882567",
-  "data": "2026-10-02",
+  "gerado_em": "2026-10-05T08:51:04.190233",
+  "data": "2026-10-05",
   "posicoes": {
     "US10": {
       "ticker": "US10",
@@ -58,13 +58,6 @@
       "status": "indisponivel",
       "reason": "Ticker 'IGV' não encontrado no TradingView"
     },
-    "XLE": {
-      "ticker": "XLE",
-      "trend_signal": "BULLISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker 'XLE' não encontrado no TradingView"
-    },
     "VIX": {
       "ticker": "VIX",
       "trend_signal": "BEARISH",
@@ -88,7 +81,7 @@
     },
     "NATGAS": {
       "ticker": "NATGAS",
-      "trend_signal": "BEARISH",
+      "trend_signal": "BULLISH",
       "live_price": null,
       "status": "indisponivel",
       "reason": "Ticker especial 'NATGAS' (NYMEX:NG1!) não respondeu no scanner do TradingView (grupo 'futures')"
