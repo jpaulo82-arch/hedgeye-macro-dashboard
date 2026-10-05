@@ -1,5 +1,5 @@
 {
-  "updated_at": "05/10/2026 08:50:42",
+  "updated_at": "05/10/2026 09:31:48",
   "gex": [
     {
       "ticker": "SPY",
@@ -13,7 +13,7 @@
       "total_call_oi": 981588,
       "total_put_oi": 757001,
       "put_call_ratio": 0.77,
-      "updated_at": "05/10/2026 08:50:06"
+      "updated_at": "05/10/2026 09:31:18"
     },
     {
       "ticker": "QQQ",
@@ -27,7 +27,7 @@
       "total_call_oi": 244212,
       "total_put_oi": 493500,
       "put_call_ratio": 2.02,
-      "updated_at": "05/10/2026 08:50:08"
+      "updated_at": "05/10/2026 09:31:20"
     },
     {
       "ticker": "IWM",
@@ -41,7 +41,7 @@
       "total_call_oi": 170477,
       "total_put_oi": 247119,
       "put_call_ratio": 1.45,
-      "updated_at": "05/10/2026 08:50:09"
+      "updated_at": "05/10/2026 09:31:21"
     }
   ],
   "fundamentals": [
@@ -94,7 +94,7 @@
       "net_margin": "42.9%",
       "revenue_growth": "+85.5%",
       "market_cap": "US$ 1695.3B",
-      "beta": "1.46",
+      "beta": "1.48",
       "recommendation": "STRONG_BUY"
     },
     {
@@ -1344,10 +1344,10 @@
     "leading_month": "QUAD 1",
     "transition_signal": "🟢 QUAD 3 CONFIRMADO (#Accelerating): Cesta de Ouro, Prata e Commodities liderando a tração macro (Aceleração de +3.82% na 2ª derivada). Vento a favor para posições compradas em ouro/energia.",
     "signal_badge": "badge-bullish",
-    "updated_at": "05/10/2026 08:50:31"
+    "updated_at": "05/10/2026 09:31:40"
   },
   "economic_calendar": {
-    "updated_at": "05/10/2026 08:50:31",
+    "updated_at": "05/10/2026 09:31:40",
     "current_week": "05/10 a 09/10/2026",
     "events": [
       {
