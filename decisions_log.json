@@ -1,6 +1,30 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261006",
+      "date": "06/10/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (06/10/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-10-06T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "IBB",
+          "categoria": "ETF PRO PLUS — BIOTECHNOLOGY",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Biotechnology). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 200.00 – 214.00.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 06/10/2026)",
+          "rangeLow": 200.0,
+          "rangeHigh": 214.0
+        }
+      ]
+    },
+    {
       "reportId": "111337",
       "date": "05/10/2026",
       "reportTitle": "EARLY LOOK: Quem É o Banco no #Quad2?",
@@ -3067,5 +3091,5 @@
       ]
     }
   ],
-  "updatedAt": "05/10/2026 09:30:49"
+  "updatedAt": "06/10/2026 12:01:07"
 }

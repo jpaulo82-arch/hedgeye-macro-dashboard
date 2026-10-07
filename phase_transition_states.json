@@ -1,6 +1,6 @@
 {
-  "gerado_em": "2026-10-05T09:32:05.246479",
-  "data": "2026-10-05",
+  "gerado_em": "2026-10-07T09:31:32.248711",
+  "data": "2026-10-07",
   "posicoes": {
     "US10": {
       "ticker": "US10",
@@ -12,104 +12,465 @@
     "HYG": {
       "ticker": "HYG",
       "trend_signal": "BEARISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker 'HYG' não encontrado no TradingView"
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 76.5,
+        "high": 77.75
+      },
+      "live_price": {
+        "value": 77.27,
+        "fonte": "TradingView Real-Time",
+        "timestamp": 1791376288
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 61.6,
+      "matrix_state": {
+        "label": "Bounce, Not a Reversal",
+        "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
+        "sizing_rung": "TRIM",
+        "action": "Não perseguir o rally — tratar como alívio tático, não reversão de tese."
+      },
+      "response_ladder_rung": {
+        "rung": "REDUCE",
+        "label": "Reduce",
+        "condition": "Imprime uma primeira Lower High, ou a mínima do Risk Range para de subir.",
+        "action": "Cortar em direção ao meio da banda de sizing. Ainda comprado, só menos errado se estiver errado."
+      },
+      "status": "ok"
     },
     "LQD": {
       "ticker": "LQD",
       "trend_signal": "BEARISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker 'LQD' não encontrado no TradingView"
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 101.1,
+        "high": 102.9
+      },
+      "live_price": {
+        "value": 102.14,
+        "fonte": "TradingView Real-Time",
+        "timestamp": 1791376288
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 57.8,
+      "matrix_state": {
+        "label": "Bounce, Not a Reversal",
+        "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
+        "sizing_rung": "TRIM",
+        "action": "Não perseguir o rally — tratar como alívio tático, não reversão de tese."
+      },
+      "response_ladder_rung": {
+        "rung": "REDUCE",
+        "label": "Reduce",
+        "condition": "Imprime uma primeira Lower High, ou a mínima do Risk Range para de subir.",
+        "action": "Cortar em direção ao meio da banda de sizing. Ainda comprado, só menos errado se estiver errado."
+      },
+      "status": "ok"
     },
     "SPX": {
       "ticker": "SPX",
       "trend_signal": "BULLISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker especial 'SPX' (SP:SPX) não respondeu no scanner do TradingView (grupo 'america')"
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 7676.0,
+        "high": 7851.0
+      },
+      "live_price": {
+        "value": 7818.93,
+        "fonte": "TradingView (America)",
+        "timestamp": 1791376289
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 81.7,
+      "matrix_state": {
+        "label": "Press It",
+        "description": "Intacto nos dois horizontes. Confiança total.",
+        "sizing_rung": "FULL",
+        "action": "Pode adicionar na fraqueza (buy the red) dentro da banda de sizing."
+      },
+      "response_ladder_rung": {
+        "rung": "HOLD_ADD",
+        "label": "Hold / Add",
+        "condition": "Higher Highs e Higher Lows intactos, TRADE e TREND ambos bullish, mínimas do Risk Range (LRR) ainda subindo.",
+        "action": "Adicionar nos recuos até a ponta baixa do range."
+      },
+      "status": "ok"
     },
     "COMPQ": {
       "ticker": "COMPQ",
       "trend_signal": "BULLISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker especial 'COMPQ' (NASDAQ:IXIC) não respondeu no scanner do TradingView (grupo 'america')"
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 26752.0,
+        "high": 27690.0
+      },
+      "live_price": {
+        "value": 27599.7918,
+        "fonte": "TradingView (America)",
+        "timestamp": 1791376289
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 90.4,
+      "matrix_state": {
+        "label": "Press It",
+        "description": "Intacto nos dois horizontes. Confiança total.",
+        "sizing_rung": "FULL",
+        "action": "Pode adicionar na fraqueza (buy the red) dentro da banda de sizing."
+      },
+      "response_ladder_rung": {
+        "rung": "HOLD_ADD",
+        "label": "Hold / Add",
+        "condition": "Higher Highs e Higher Lows intactos, TRADE e TREND ambos bullish, mínimas do Risk Range (LRR) ainda subindo.",
+        "action": "Adicionar nos recuos até a ponta baixa do range."
+      },
+      "status": "ok"
     },
     "RUT": {
       "ticker": "RUT",
       "trend_signal": "BEARISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker especial 'RUT' (TVC:RUT) não respondeu no scanner do TradingView (grupo 'cfd')"
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 2779.0,
+        "high": 2862.0
+      },
+      "live_price": {
+        "value": 2830.2974,
+        "fonte": "TradingView (Cfd)",
+        "timestamp": 1791376289
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 61.8,
+      "matrix_state": {
+        "label": "Bounce, Not a Reversal",
+        "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
+        "sizing_rung": "TRIM",
+        "action": "Não perseguir o rally — tratar como alívio tático, não reversão de tese."
+      },
+      "response_ladder_rung": {
+        "rung": "REDUCE",
+        "label": "Reduce",
+        "condition": "Imprime uma primeira Lower High, ou a mínima do Risk Range para de subir.",
+        "action": "Cortar em direção ao meio da banda de sizing. Ainda comprado, só menos errado se estiver errado."
+      },
+      "status": "ok"
     },
     "XLV": {
       "ticker": "XLV",
       "trend_signal": "BULLISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker 'XLV' não encontrado no TradingView"
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 164.0,
+        "high": 172.0
+      },
+      "live_price": {
+        "value": 167.09,
+        "fonte": "TradingView Real-Time",
+        "timestamp": 1791376289
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 38.6,
+      "matrix_state": {
+        "label": "Press It",
+        "description": "Intacto nos dois horizontes. Confiança total.",
+        "sizing_rung": "FULL",
+        "action": "Pode adicionar na fraqueza (buy the red) dentro da banda de sizing."
+      },
+      "response_ladder_rung": {
+        "rung": "HOLD_ADD",
+        "label": "Hold / Add",
+        "condition": "Higher Highs e Higher Lows intactos, TRADE e TREND ambos bullish, mínimas do Risk Range (LRR) ainda subindo.",
+        "action": "Adicionar nos recuos até a ponta baixa do range."
+      },
+      "status": "ok"
     },
     "IGV": {
       "ticker": "IGV",
       "trend_signal": "BULLISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker 'IGV' não encontrado no TradingView"
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 106.0,
+        "high": 112.0
+      },
+      "live_price": {
+        "value": 111.16,
+        "fonte": "TradingView Real-Time",
+        "timestamp": 1791376290
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 86.0,
+      "matrix_state": {
+        "label": "Press It",
+        "description": "Intacto nos dois horizontes. Confiança total.",
+        "sizing_rung": "FULL",
+        "action": "Pode adicionar na fraqueza (buy the red) dentro da banda de sizing."
+      },
+      "response_ladder_rung": {
+        "rung": "HOLD_ADD",
+        "label": "Hold / Add",
+        "condition": "Higher Highs e Higher Lows intactos, TRADE e TREND ambos bullish, mínimas do Risk Range (LRR) ainda subindo.",
+        "action": "Adicionar nos recuos até a ponta baixa do range."
+      },
+      "status": "ok"
+    },
+    "XLK": {
+      "ticker": "XLK",
+      "trend_signal": "BULLISH",
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 194.0,
+        "high": 203.0
+      },
+      "live_price": {
+        "value": 202.0,
+        "fonte": "TradingView Real-Time",
+        "timestamp": 1791376290
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 88.9,
+      "matrix_state": {
+        "label": "Press It",
+        "description": "Intacto nos dois horizontes. Confiança total.",
+        "sizing_rung": "FULL",
+        "action": "Pode adicionar na fraqueza (buy the red) dentro da banda de sizing."
+      },
+      "response_ladder_rung": {
+        "rung": "HOLD_ADD",
+        "label": "Hold / Add",
+        "condition": "Higher Highs e Higher Lows intactos, TRADE e TREND ambos bullish, mínimas do Risk Range (LRR) ainda subindo.",
+        "action": "Adicionar nos recuos até a ponta baixa do range."
+      },
+      "status": "ok"
     },
     "VIX": {
       "ticker": "VIX",
       "trend_signal": "BEARISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker especial 'VIX' (CBOE:VIX) não respondeu no scanner do TradingView (grupo 'america')"
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 14.44,
+        "high": 16.84
+      },
+      "live_price": {
+        "value": 15.78,
+        "fonte": "TradingView (America)",
+        "timestamp": 1791376290
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 55.8,
+      "matrix_state": {
+        "label": "Bounce, Not a Reversal",
+        "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
+        "sizing_rung": "TRIM",
+        "action": "Não perseguir o rally — tratar como alívio tático, não reversão de tese."
+      },
+      "response_ladder_rung": {
+        "rung": "REDUCE",
+        "label": "Reduce",
+        "condition": "Imprime uma primeira Lower High, ou a mínima do Risk Range para de subir.",
+        "action": "Cortar em direção ao meio da banda de sizing. Ainda comprado, só menos errado se estiver errado."
+      },
+      "status": "ok"
     },
     "USD": {
       "ticker": "USD",
       "trend_signal": "BULLISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker especial 'USD' (TVC:DXY) não respondeu no scanner do TradingView (grupo 'america')"
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 101.31,
+        "high": 102.74
+      },
+      "live_price": {
+        "value": 102.482,
+        "fonte": "TradingView (America)",
+        "timestamp": 1791376290
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 82.0,
+      "matrix_state": {
+        "label": "Press It",
+        "description": "Intacto nos dois horizontes. Confiança total.",
+        "sizing_rung": "FULL",
+        "action": "Pode adicionar na fraqueza (buy the red) dentro da banda de sizing."
+      },
+      "response_ladder_rung": {
+        "rung": "HOLD_ADD",
+        "label": "Hold / Add",
+        "condition": "Higher Highs e Higher Lows intactos, TRADE e TREND ambos bullish, mínimas do Risk Range (LRR) ainda subindo.",
+        "action": "Adicionar nos recuos até a ponta baixa do range."
+      },
+      "status": "ok"
     },
     "WTIC": {
       "ticker": "WTIC",
       "trend_signal": "BULLISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker especial 'WTIC' (NYMEX:CL1!) não respondeu no scanner do TradingView (grupo 'futures')"
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 88.07,
+        "high": 94.58
+      },
+      "live_price": {
+        "value": 89.82,
+        "fonte": "TradingView (Futures)",
+        "timestamp": 1791376291
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 26.9,
+      "matrix_state": {
+        "label": "Press It",
+        "description": "Intacto nos dois horizontes. Confiança total.",
+        "sizing_rung": "FULL",
+        "action": "Pode adicionar na fraqueza (buy the red) dentro da banda de sizing."
+      },
+      "response_ladder_rung": {
+        "rung": "HOLD_ADD",
+        "label": "Hold / Add",
+        "condition": "Higher Highs e Higher Lows intactos, TRADE e TREND ambos bullish, mínimas do Risk Range (LRR) ainda subindo.",
+        "action": "Adicionar nos recuos até a ponta baixa do range."
+      },
+      "status": "ok"
     },
     "NATGAS": {
       "ticker": "NATGAS",
       "trend_signal": "BULLISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker especial 'NATGAS' (NYMEX:NG1!) não respondeu no scanner do TradingView (grupo 'futures')"
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 2.95,
+        "high": 3.31
+      },
+      "live_price": {
+        "value": 3.199,
+        "fonte": "TradingView (Futures)",
+        "timestamp": 1791376291
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 69.2,
+      "matrix_state": {
+        "label": "Press It",
+        "description": "Intacto nos dois horizontes. Confiança total.",
+        "sizing_rung": "FULL",
+        "action": "Pode adicionar na fraqueza (buy the red) dentro da banda de sizing."
+      },
+      "response_ladder_rung": {
+        "rung": "HOLD_ADD",
+        "label": "Hold / Add",
+        "condition": "Higher Highs e Higher Lows intactos, TRADE e TREND ambos bullish, mínimas do Risk Range (LRR) ainda subindo.",
+        "action": "Adicionar nos recuos até a ponta baixa do range."
+      },
+      "status": "ok"
     },
     "GOLD": {
       "ticker": "GOLD",
       "trend_signal": "BEARISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker especial 'GOLD' (TVC:GOLD) não respondeu no scanner do TradingView (grupo 'cfd')"
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 4047.0,
+        "high": 4255.0
+      },
+      "live_price": {
+        "value": 4082.348,
+        "fonte": "TradingView (Cfd)",
+        "timestamp": 1791376291
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 17.0,
+      "matrix_state": {
+        "label": "Bounce, Not a Reversal",
+        "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
+        "sizing_rung": "TRIM",
+        "action": "Não perseguir o rally — tratar como alívio tático, não reversão de tese."
+      },
+      "response_ladder_rung": {
+        "rung": "REDUCE",
+        "label": "Reduce",
+        "condition": "Imprime uma primeira Lower High, ou a mínima do Risk Range para de subir.",
+        "action": "Cortar em direção ao meio da banda de sizing. Ainda comprado, só menos errado se estiver errado."
+      },
+      "status": "ok"
     },
     "COPPER": {
       "ticker": "COPPER",
       "trend_signal": "BULLISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker especial 'COPPER' (COMEX:HG1!) não respondeu no scanner do TradingView (grupo 'futures')"
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 6.4,
+        "high": 6.75
+      },
+      "live_price": {
+        "value": 6.639,
+        "fonte": "TradingView (Futures)",
+        "timestamp": 1791376291
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 68.3,
+      "matrix_state": {
+        "label": "Press It",
+        "description": "Intacto nos dois horizontes. Confiança total.",
+        "sizing_rung": "FULL",
+        "action": "Pode adicionar na fraqueza (buy the red) dentro da banda de sizing."
+      },
+      "response_ladder_rung": {
+        "rung": "HOLD_ADD",
+        "label": "Hold / Add",
+        "condition": "Higher Highs e Higher Lows intactos, TRADE e TREND ambos bullish, mínimas do Risk Range (LRR) ainda subindo.",
+        "action": "Adicionar nos recuos até a ponta baixa do range."
+      },
+      "status": "ok"
     },
     "SILVER": {
       "ticker": "SILVER",
       "trend_signal": "BEARISH",
-      "live_price": null,
-      "status": "indisponivel",
-      "reason": "Ticker especial 'SILVER' (TVC:SILVER) não respondeu no scanner do TradingView (grupo 'cfd')"
+      "trend_just_broke_today": false,
+      "risk_range": {
+        "low": 57.0,
+        "high": 63.0
+      },
+      "live_price": {
+        "value": 59.0541,
+        "fonte": "TradingView (Cfd)",
+        "timestamp": 1791376291
+      },
+      "trade_signal": "bullish",
+      "range_zone": "dentro",
+      "range_pct_position": 34.2,
+      "matrix_state": {
+        "label": "Bounce, Not a Reversal",
+        "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
+        "sizing_rung": "TRIM",
+        "action": "Não perseguir o rally — tratar como alívio tático, não reversão de tese."
+      },
+      "response_ladder_rung": {
+        "rung": "REDUCE",
+        "label": "Reduce",
+        "condition": "Imprime uma primeira Lower High, ou a mínima do Risk Range para de subir.",
+        "action": "Cortar em direção ao meio da banda de sizing. Ainda comprado, só menos errado se estiver errado."
+      },
+      "status": "ok"
     }
   },
   "vix_gauge": {
-    "status": "indisponivel",
-    "reason": "Ticker especial 'VIX' (CBOE:VIX) não respondeu no scanner do TradingView (grupo 'america')"
+    "status": "ok",
+    "value": 15.78,
+    "fonte": "TradingView (America)",
+    "timestamp": 1791376290,
+    "bucket": {
+      "key": "investable",
+      "min": 9.0,
+      "max": 19.0,
+      "label": "Investable",
+      "action": "Ranges são operáveis e as formações tendem a persistir. Tamanho pleno é apropriado."
+    }
   }
 }
