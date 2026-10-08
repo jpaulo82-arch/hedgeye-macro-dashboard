@@ -1,6 +1,58 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261007",
+      "date": "07/10/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (07/10/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-10-07T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "JPXN",
+          "categoria": "ETF PRO PLUS — JAPAN",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Japan). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 07/10/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "SOLZ",
+          "categoria": "ETF PRO PLUS — SOLANA",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Solana). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 07/10/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "IPAY",
+          "categoria": "ETF PRO PLUS — DIGITAL PAYMENTS",
+          "regime": "Quad 3",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (Digital Payments). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 07/10/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261006",
       "date": "06/10/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (06/10/2026)",
@@ -1002,7 +1054,7 @@
         },
         {
           "ativo": "IPAY",
-          "categoria": "ETF PRO PLUS — IPAY",
+          "categoria": "ETF PRO PLUS — DIGITAL PAYMENTS",
           "regime": "Quad 3",
           "decisao": "Zerar Posição / Remover",
           "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
@@ -2252,7 +2304,7 @@
         },
         {
           "ativo": "IPAY",
-          "categoria": "ETF PRO PLUS — IPAY",
+          "categoria": "ETF PRO PLUS — DIGITAL PAYMENTS",
           "regime": "Quad 3",
           "decisao": "Comprar / Long",
           "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
@@ -3091,5 +3143,5 @@
       ]
     }
   ],
-  "updatedAt": "06/10/2026 12:01:07"
+  "updatedAt": "08/10/2026 09:30:52"
 }
