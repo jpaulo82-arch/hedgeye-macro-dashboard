@@ -1,5 +1,5 @@
 {
-  "updatedAt": "07/10/2026 12:00:35",
+  "updatedAt": "08/10/2026 12:00:59",
   "reports": {
     "weekly": [
       {
@@ -2289,6 +2289,22 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_111567_UPDATE__1_New_ETF_Pro_Change.txt",
+        "reportDatetime": "2026-10-08 10:25AM EDT",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "Healthcare Equity",
+            "ticker": "FXH",
+            "rangeLow": 128.0,
+            "rangeHigh": 133.0
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -3411,6 +3427,12 @@
       "type": "intraday",
       "sourceFile": "intraday_111485_UPDATE__3_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Japan (JPXN), Solana (SOLZ) | Adicionou SHORT: Digital Payments (IPAY)"
+    },
+    {
+      "date": "2026-10-08 10:25AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_111567_UPDATE__1_New_ETF_Pro_Change.txt",
+      "summary": "Removeu LONG: Healthcare Equity (FXH)"
     }
   ],
   "currentLineup": [
@@ -3420,7 +3442,7 @@
       "side": "long",
       "dateAdded": "2026-10-07 10:24AM EDT",
       "assetClass": null,
-      "entryPrice": 104.44,
+      "entryPrice": 104.58,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -3450,7 +3472,7 @@
       "side": "short",
       "dateAdded": "2026-10-07 10:24AM EDT",
       "assetClass": null,
-      "entryPrice": 47.41,
+      "entryPrice": 47.56,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,

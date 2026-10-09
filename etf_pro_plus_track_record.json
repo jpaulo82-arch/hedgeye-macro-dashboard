@@ -1,11 +1,27 @@
 {
-  "generatedAt": "2026-10-07T12:00:46.539702",
+  "generatedAt": "2026-10-08T12:01:13.725931",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
+      "month": "2026-06",
+      "activePositions": 1,
+      "monthlyReturnPct": 4.256,
+      "details": [
+        {
+          "ticker": "FXH",
+          "side": "long",
+          "periodStart": "2026-06-12",
+          "periodEnd": "2026-06-30",
+          "priceStart": 117.1409,
+          "priceEnd": 122.1265,
+          "returnPct": 4.256
+        }
+      ]
+    },
+    {
       "month": "2026-07",
-      "activePositions": 2,
-      "monthlyReturnPct": 4.686,
+      "activePositions": 3,
+      "monthlyReturnPct": 4.087,
       "details": [
         {
           "ticker": "COLO",
@@ -24,13 +40,22 @@
           "priceStart": 44.39,
           "priceEnd": 46.47,
           "returnPct": 4.686
+        },
+        {
+          "ticker": "FXH",
+          "side": "long",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-07-31",
+          "priceStart": 123.2341,
+          "priceEnd": 126.7961,
+          "returnPct": 2.89
         }
       ]
     },
     {
       "month": "2026-08",
-      "activePositions": 12,
-      "monthlyReturnPct": 2.559,
+      "activePositions": 13,
+      "monthlyReturnPct": 2.656,
       "details": [
         {
           "ticker": "EWP",
@@ -139,13 +164,22 @@
           "priceStart": 4.99,
           "priceEnd": 4.95,
           "returnPct": -0.802
+        },
+        {
+          "ticker": "FXH",
+          "side": "long",
+          "periodStart": "2026-08-01",
+          "periodEnd": "2026-08-31",
+          "priceStart": 127.7041,
+          "priceEnd": 132.5931,
+          "returnPct": 3.828
         }
       ]
     },
     {
       "month": "2026-09",
-      "activePositions": 23,
-      "monthlyReturnPct": 0.025,
+      "activePositions": 24,
+      "monthlyReturnPct": -0.043,
       "details": [
         {
           "ticker": "EWP",
@@ -353,22 +387,35 @@
           "priceStart": 4.93,
           "priceEnd": 4.93,
           "returnPct": 0.0
+        },
+        {
+          "ticker": "FXH",
+          "side": "long",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-15",
+          "priceStart": 132.7128,
+          "priceEnd": 130.5876,
+          "returnPct": -1.601
         }
       ]
     }
   ],
   "cumulative": [
     {
+      "month": "2026-06",
+      "cumulativeIndex": 104.256
+    },
+    {
       "month": "2026-07",
-      "cumulativeIndex": 104.686
+      "cumulativeIndex": 108.517
     },
     {
       "month": "2026-08",
-      "cumulativeIndex": 107.365
+      "cumulativeIndex": 111.399
     },
     {
       "month": "2026-09",
-      "cumulativeIndex": 107.392
+      "cumulativeIndex": 111.351
     }
   ],
   "excludedPositions": [
@@ -458,5 +505,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 37
+  "positionsIncluded": 38
 }

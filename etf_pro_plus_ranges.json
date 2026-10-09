@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-07T13:21:43",
+  "generatedAt": "2026-10-08T12:01:15",
   "ranges": {
     "JPXN": {
       "low": null,
       "high": null,
-      "price": 104.47,
+      "price": 103.88,
       "pct": null,
       "zone": null,
       "source": null
@@ -12,7 +12,7 @@
     "SOLZ": {
       "low": null,
       "high": null,
-      "price": 11.62,
+      "price": 11.15,
       "pct": null,
       "zone": null,
       "source": null
@@ -20,7 +20,7 @@
     "IPAY": {
       "low": null,
       "high": null,
-      "price": 47.48,
+      "price": 47.45,
       "pct": null,
       "zone": null,
       "source": null
