@@ -1,6 +1,52 @@
 {
   "entradas": [
     {
+      "reportId": "111852",
+      "date": "13/10/2026",
+      "reportTitle": "EARLY LOOK: Complacência Antes do Dado de Inflação",
+      "extractedByModel": "gemini-flash-latest",
+      "extractedAt": "2026-10-13T09:32:53.361190",
+      "decisions": [
+        {
+          "ativo": "Ativos sensíveis a taxas de juros",
+          "categoria": "SHORT SENSÍVEL A TAXAS",
+          "decisao": "Aumentar posições vendidas (short)",
+          "racional": "Volatilidade implícita em níveis extraordinariamente baixos indicando complacência do mercado; nowcast da Hedgeye projeta aceleração inflacionária acima do consenso com reversão rápida das expectativas de juros.",
+          "gatilho_invalidacao": "Dado de inflação confirmando desaceleração ou vindo abaixo do consenso, validando o tom dovish do Fed.",
+          "status": "bearish",
+          "tipo_gatilho": "Invalidação Nowcast / GIP",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Complacência Antes do Dado de Inflação)"
+        },
+        {
+          "ativo": "Commodities",
+          "categoria": "COMMODITIES / REALIZAÇÃO DE LUCROS",
+          "decisao": "Realizar lucros (reduzir)",
+          "racional": "Gerenciamento de risco e complacência observada no mercado antes da divulgação dos dados de inflação.",
+          "gatilho_invalidacao": "Persistência de choque inflacionário mantendo a pressão compradora nas commodities.",
+          "status": "neutral",
+          "tipo_gatilho": "Invalidação Nowcast / GIP",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Complacência Antes do Dado de Inflação)"
+        },
+        {
+          "ativo": "Grandes empresas de tecnologia (Mag 7 e QQQ)",
+          "categoria": "MEGA CAP TECH / LONG BIAS",
+          "decisao": "Manter comprado (long) e comprar em correções causadas por volatilidade",
+          "racional": "Gerenciamento de risco macro; intenção de utilizar picos de volatilidade pré e pós-inflação para obter melhores pontos de entrada.",
+          "gatilho_invalidacao": "Reprecificação agressiva e prolongada das taxas de juros que desmonte o valuation das empresas de tecnologia de grande porte.",
+          "status": "bullish",
+          "tipo_gatilho": "Invalidação Nowcast / GIP",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Complacência Antes do Dado de Inflação)"
+        }
+      ],
+      "sourceType": "earlylook"
+    },
+    {
       "reportId": "etf_intra_20261009",
       "date": "09/10/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (09/10/2026)",
@@ -3205,5 +3251,5 @@
       ]
     }
   ],
-  "updatedAt": "13/10/2026 09:21:56"
+  "updatedAt": "13/10/2026 09:32:53"
 }
