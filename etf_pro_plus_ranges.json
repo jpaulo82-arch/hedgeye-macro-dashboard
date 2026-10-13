@@ -1,10 +1,314 @@
 {
-  "generatedAt": "2026-10-08T12:01:15",
+  "generatedAt": "2026-10-09T13:37:15",
   "ranges": {
+    "BUXX": {
+      "low": null,
+      "high": null,
+      "price": 20.16,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "CLOX": {
+      "low": null,
+      "high": null,
+      "price": 25.54,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "CLOZ": {
+      "low": null,
+      "high": null,
+      "price": 26.26,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "XLV": {
+      "low": 164.0,
+      "high": 172.0,
+      "price": 170.32,
+      "pct": 79.0,
+      "zone": "meio do range",
+      "source": "Early Look (Our Levels, diário)"
+    },
+    "IGV": {
+      "low": 106.0,
+      "high": 113.0,
+      "price": 111.94,
+      "pct": 84.9,
+      "zone": "meio do range",
+      "source": "Early Look (Our Levels, diário)"
+    },
+    "IBIT": {
+      "low": null,
+      "high": null,
+      "price": 46.88,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "DBMF": {
+      "low": null,
+      "high": null,
+      "price": 33.18,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "ETHA": {
+      "low": null,
+      "high": null,
+      "price": 56.4,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "PFIX": {
+      "low": null,
+      "high": null,
+      "price": 62.3,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "BNO": {
+      "low": null,
+      "high": null,
+      "price": 63.93,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "CRAK": {
+      "low": null,
+      "high": null,
+      "price": 66.74,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "BWET": {
+      "low": null,
+      "high": null,
+      "price": 973.26,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "BUG": {
+      "low": null,
+      "high": null,
+      "price": 49.39,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "CRTC": {
+      "low": null,
+      "high": null,
+      "price": 42.2,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "XLK": {
+      "low": 194.0,
+      "high": 205.0,
+      "price": 198.25,
+      "pct": 38.6,
+      "zone": "meio do range",
+      "source": "Early Look (Our Levels, diário)"
+    },
+    "QTUM": {
+      "low": null,
+      "high": null,
+      "price": 151.4,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "TOPT": {
+      "low": null,
+      "high": null,
+      "price": 35.51,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "HTEC": {
+      "low": null,
+      "high": null,
+      "price": 42.92,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "QAT": {
+      "low": null,
+      "high": null,
+      "price": 15.98,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "LQD": {
+      "low": 101.4,
+      "high": 102.8,
+      "price": 102.36,
+      "pct": 68.6,
+      "zone": "meio do range",
+      "source": "Early Look (Our Levels, diário)"
+    },
+    "TLT": {
+      "low": null,
+      "high": null,
+      "price": 77.81,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "PBD": {
+      "low": null,
+      "high": null,
+      "price": 16.71,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "XLU": {
+      "low": null,
+      "high": null,
+      "price": 41.3,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "ZROZ": {
+      "low": null,
+      "high": null,
+      "price": 53.7,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "JOJO": {
+      "low": null,
+      "high": null,
+      "price": 14.54,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "XLI": {
+      "low": null,
+      "high": null,
+      "price": 168.88,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "INDA": {
+      "low": null,
+      "high": null,
+      "price": 45.97,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "IWM": {
+      "low": null,
+      "high": null,
+      "price": 278.63,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "EWA": {
+      "low": null,
+      "high": null,
+      "price": 28.5,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "EWL": {
+      "low": null,
+      "high": null,
+      "price": 59.52,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "PSP": {
+      "low": null,
+      "high": null,
+      "price": 56.33,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "EWG": {
+      "low": null,
+      "high": null,
+      "price": 40.86,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "PALL": {
+      "low": null,
+      "high": null,
+      "price": 20.77,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "XLY": {
+      "low": null,
+      "high": null,
+      "price": 112.8,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "HYG": {
+      "low": 76.57,
+      "high": 77.53,
+      "price": 77.17,
+      "pct": 62.5,
+      "zone": "meio do range",
+      "source": "Early Look (Our Levels, diário)"
+    },
+    "XLF": {
+      "low": null,
+      "high": null,
+      "price": 54.66,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "EWW": {
+      "low": null,
+      "high": null,
+      "price": 71.4,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "SLV": {
+      "low": null,
+      "high": null,
+      "price": 54.94,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
     "JPXN": {
       "low": null,
       "high": null,
-      "price": 103.88,
+      "price": 104.18,
       "pct": null,
       "zone": null,
       "source": null
@@ -12,7 +316,7 @@
     "SOLZ": {
       "low": null,
       "high": null,
-      "price": 11.15,
+      "price": 10.89,
       "pct": null,
       "zone": null,
       "source": null
@@ -20,7 +324,23 @@
     "IPAY": {
       "low": null,
       "high": null,
-      "price": 47.45,
+      "price": 48.49,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "QQQ": {
+      "low": null,
+      "high": null,
+      "price": 750.62,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "FJP": {
+      "low": null,
+      "high": null,
+      "price": 78.77,
       "pct": null,
       "zone": null,
       "source": null

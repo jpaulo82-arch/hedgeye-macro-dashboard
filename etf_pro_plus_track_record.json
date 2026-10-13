@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T12:01:13.725931",
+  "generatedAt": "2026-10-09T12:00:43.935559",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -249,8 +249,8 @@
           "side": "long",
           "periodStart": "2026-09-11",
           "periodEnd": "2026-09-15",
-          "priceStart": 53.88,
-          "priceEnd": 54.39,
+          "priceStart": 53.7811,
+          "priceEnd": 54.2901,
           "returnPct": 0.947
         },
         {
@@ -267,8 +267,8 @@
           "side": "long",
           "periodStart": "2026-09-11",
           "periodEnd": "2026-09-15",
-          "priceStart": 53.88,
-          "priceEnd": 54.39,
+          "priceStart": 53.7811,
+          "priceEnd": 54.2901,
           "returnPct": 0.947
         },
         {
@@ -285,8 +285,8 @@
           "side": "long",
           "periodStart": "2026-09-11",
           "periodEnd": "2026-09-15",
-          "priceStart": 53.88,
-          "priceEnd": 54.39,
+          "priceStart": 53.7811,
+          "priceEnd": 54.2901,
           "returnPct": 0.947
         },
         {
@@ -303,8 +303,8 @@
           "side": "long",
           "periodStart": "2026-09-11",
           "periodEnd": "2026-09-15",
-          "priceStart": 53.88,
-          "priceEnd": 54.39,
+          "priceStart": 53.7811,
+          "priceEnd": 54.2901,
           "returnPct": 0.947
         },
         {
@@ -505,5 +505,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 38
+  "positionsIncluded": 40
 }

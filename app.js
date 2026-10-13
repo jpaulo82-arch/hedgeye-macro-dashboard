@@ -1649,6 +1649,7 @@ async function fetchEtfProPlusData() {
     const data = await res.json();
     etfProPlusDataCache = data;
     renderEtfProPlusTab(data);
+    if (typeof refreshMorningActionSteps === "function") refreshMorningActionSteps();
   } catch (e) {
     const body = document.getElementById("etfProPlusLineupBody");
     if (body) body.innerHTML = `<tr><td colspan="6">Erro ao carregar dados do ETF Pro Plus: ${e.message}</td></tr>`;
@@ -4919,34 +4920,141 @@ function rebuildRiskRangesFromReport(report) {
     });
 }
 
-// Gera as ações prioritárias do dia a partir dos Risk Ranges reais já carregados (mesma
-// lógica de posição-no-range da tabela) — funciona pra qualquer relatório automaticamente.
-function buildActionStepsFromRiskRanges(dateStr) {
+// Relatório mais recente já renderizado no painel (usado pra re-renderizar as ações
+// prioritárias quando o ETF Pro Plus termina de carregar, já que os dois chegam em paralelo).
+let lastDashboardReport = null;
+
+// Quad do relatório — MESMA regra do badge de regime do topo (palavras-chave do título).
+function detectReportQuad(report) {
+  const t = ((report && report.title) || "").toLowerCase();
+  if (t.includes("quad3") || t.includes("oil") || t.includes("rates") || t.includes("inflation") || t.includes("accelerat") || t.includes("problem")) return 3;
+  if (t.includes("quad2")) return 2;
+  const m = t.match(/quad\s?([1-4])/);
+  return m ? parseInt(m[1], 10) : null;
+}
+
+// Ativo do Risk Range -> Quads onde é "Best" (Master the Market, pág. 27 — mesma fonte de
+// master_the_market_rules.py), ETFs do ETF Pro que representam o mesmo tema e tema (1 ação por
+// tema). `quads: []` = sem classificação confiável (N/D, nunca chuta). `inverse: true` = yield
+// (yield em alta = preço de bond em queda).
+const ACTION_ASSET_MAP = {
+  SPX:    { theme: "acoes-us",  quads: [1, 2], proxies: ["SPY", "VOO", "IVV", "TOPT"] },
+  SPY:    { theme: "acoes-us",  quads: [1, 2], proxies: ["SPY", "VOO", "IVV", "TOPT"] },
+  COMPQ:  { theme: "tech",      quads: [1, 2], proxies: ["QQQ", "XLK", "CRTC", "QTUM", "SMH"] },
+  QQQ:    { theme: "tech",      quads: [1, 2], proxies: ["QQQ", "XLK", "CRTC", "QTUM", "SMH"] },
+  IGV:    { theme: "tech",      quads: [1, 2], proxies: ["IGV"] },
+  RUT:    { theme: "small-cap", quads: [1, 2], proxies: ["IWM"] },
+  XLV:    { theme: "saude",     quads: [4],    proxies: ["XLV", "IBB", "HTEC"] },
+  XLU:    { theme: "utilities", quads: [3, 4], proxies: ["XLU"] },
+  OIH:    { theme: "energia",   quads: [],     proxies: ["XLE", "OIH"] },
+  WTIC:   { theme: "energia",   quads: [1, 2, 3], proxies: ["USO", "XLE"] },
+  NATGAS: { theme: "energia",   quads: [1, 2, 3], proxies: ["UNG"] },
+  COPPER: { theme: "metais",    quads: [1, 2, 3], proxies: ["CPER"] },
+  CPER:   { theme: "metais",    quads: [1, 2, 3], proxies: ["CPER"] },
+  SILVER: { theme: "prata",     quads: [1, 2, 3], proxies: ["SLV"] },
+  GOLD:   { theme: "ouro",      quads: [3, 4], proxies: ["AAAU", "GLD", "IAU"] },
+  HYG:    { theme: "credito",   quads: [4],    proxies: ["HYG"] },
+  LQD:    { theme: "credito",   quads: [4],    proxies: ["LQD"] },
+  TLT:    { theme: "duration",  quads: [4],    proxies: ["TLT", "ZROZ", "IEF"] },
+  US10:   { theme: "duration",  quads: [4],    proxies: ["TLT", "ZROZ", "IEF"], inverse: true },
+  US30:   { theme: "duration",  quads: [4],    proxies: ["TLT", "ZROZ", "IEF"], inverse: true },
+  US02:   { theme: "duration",  quads: [4],    proxies: ["TLT", "ZROZ", "IEF"], inverse: true },
+};
+
+// Motor de convergência. Cada ativo recebe até 3 "votos" (+ = favorece ter o ativo):
+//   1) TREND do Risk Range do Early Look: Bullish +1 / Bearish -1 (yields invertidos);
+//   2) Quad atual: ativo é "Best" no quad vigente +1; é classificado mas não é Best -0.5;
+//      sem classificação 0 (o livro só lista "Best", não modelamos "Worst");
+//   3) ETF Pro Plus: long no lineup +1 / short -1 / misto ou ausente 0.
+// Só vira ação o que converge; o que as fontes discordam vira "divergência" (sem ação).
+function buildActionStepsFromRiskRanges(dateStr, report) {
   if (!riskRangesData || riskRangesData.length === 0) {
     return `<div class="action-step"><div class="step-content">Sem Risk Ranges suficientes no relatório de ${dateStr} para gerar ações automáticas.</div></div>`;
   }
-  const bullish = riskRangesData.filter(r => r.signal === "BULLISH");
-  const bearish = riskRangesData.filter(r => r.signal === "BEARISH");
-  const items = [];
-  bullish.slice(0, 2).forEach(r => items.push(
-    `<strong>Manter/Aportar em ${r.name} (${r.ticker}):</strong> Bullish TREND, faixa ${r.low.toLocaleString('pt-BR')}–${r.high.toLocaleString('pt-BR')}.`
-  ));
-  bearish.slice(0, 2).forEach(r => items.push(
-    `<strong>Evitar/Reduzir ${r.name} (${r.ticker}):</strong> Bearish TREND, faixa ${r.low.toLocaleString('pt-BR')}–${r.high.toLocaleString('pt-BR')}.`
-  ));
-  if (items.length === 0) {
-    return `<div class="action-step"><div class="step-content">Risk Ranges do relatório de ${dateStr} sem sinais Bullish/Bearish claros — regime majoritariamente Neutral hoje.</div></div>`;
+  const cq = detectReportQuad(report);
+  const lineup = (etfProPlusDataCache && etfProPlusDataCache.currentLineup) || [];
+  const lineupByTicker = {};
+  lineup.forEach(p => { if (p.ticker) lineupByTicker[p.ticker.toUpperCase().trim()] = p; });
+  const fmt = n => n.toLocaleString('pt-BR');
+
+  const cands = [];
+  riskRangesData.forEach(r => {
+    const meta = ACTION_ASSET_MAP[r.ticker];
+    if (!meta) return; // VIX, USD etc.: não são ativos acionáveis diretos
+    const sig = r.signal === "BULLISH" ? 1 : r.signal === "BEARISH" ? -1 : 0;
+    const vTrend = meta.inverse ? -sig : sig;
+    let vQuad = 0, quadTxt = "sem classificação de Quad";
+    if (cq && meta.quads.length) {
+      const q = meta.quads.map(n => `Q${n}`).join("/");
+      if (meta.quads.includes(cq)) { vQuad = 1; quadTxt = `Quad ${cq} ✔ (Best em ${q})`; }
+      else { vQuad = -0.5; quadTxt = `Quad ${cq} ✘ (Best só em ${q})`; }
+    } else if (!cq) { quadTxt = "Quad do dia não identificado"; }
+    const held = meta.proxies.map(t => lineupByTicker[t]).filter(Boolean);
+    const longs = held.filter(p => p.side === "long"), shorts = held.filter(p => p.side === "short");
+    let vEtf = 0, etfTxt = lineup.length ? "ETF Pro: sem posição" : "ETF Pro: carregando";
+    if (longs.length && !shorts.length) { vEtf = 1; etfTxt = `ETF Pro: long ${longs.map(p => p.ticker).join(", ")}`; }
+    else if (shorts.length && !longs.length) { vEtf = -1; etfTxt = `ETF Pro: short ${shorts.map(p => p.ticker).join(", ")}`; }
+    else if (longs.length && shorts.length) { etfTxt = "ETF Pro: misto (long e short)"; }
+    const votes = [vTrend, vQuad, vEtf];
+    const pos = votes.filter(v => v > 0).reduce((a, b) => a + b, 0);
+    const neg = votes.filter(v => v < 0).reduce((a, b) => a + b, 0);
+    const trendTxt = r.signal === "NEUTRAL" ? "Early: Neutral" : `Early: ${r.signal === "BULLISH" ? "Bullish" : "Bearish"} TREND${meta.inverse ? " (yield)" : ""}, faixa ${fmt(r.low)}–${fmt(r.high)}`;
+    const agree = votes.filter(v => (pos >= -neg ? v > 0 : v < 0)).length;
+    cands.push({ r, meta, pos, neg, score: pos + neg, agree, evidence: `${trendTxt} · ${quadTxt} · ${etfTxt}` });
+  });
+
+  const buys = cands.filter(c => c.pos >= 1.5 && c.neg > -1).sort((a, b) => b.score - a.score);
+  const avoids = cands.filter(c => c.neg <= -1.5 && c.pos < 1).sort((a, b) => a.score - b.score);
+  const conflicts = cands.filter(c => c.pos >= 1 && c.neg <= -0.5 && !buys.includes(c) && !avoids.includes(c)).sort((a, b) => Math.abs(b.pos * b.neg) - Math.abs(a.pos * a.neg));
+
+  // 1 ação por tema (ex.: HYG e LQD são o mesmo tema "credito"); máx. 4 ações
+  const usedThemes = new Set();
+  const actions = [];
+  [...buys.map(c => ({ c, kind: "buy" })), ...avoids.map(c => ({ c, kind: "avoid" }))]
+    .sort((a, b) => Math.abs(b.c.score) - Math.abs(a.c.score))
+    .forEach(x => {
+      if (actions.length >= 4 || usedThemes.has(x.c.meta.theme)) return;
+      usedThemes.add(x.c.meta.theme);
+      actions.push(x);
+    });
+
+  const divs = [];
+  conflicts.forEach(c => { if (divs.length < 2 && !usedThemes.has(c.meta.theme)) { usedThemes.add(c.meta.theme); divs.push(c); } });
+
+  const head = `<div class="step-content" style="opacity:0.75; font-size:0.78rem; margin-bottom:6px;">Regime do dia: <strong>${cq ? "Quad " + cq : "N/D"}</strong> — só entra o que converge entre <strong>Quad (Master the Market)</strong>, <strong>TREND do Risk Range (Early Look)</strong> e <strong>lineup do ETF Pro Plus</strong>.</div>`;
+  if (actions.length === 0 && divs.length === 0) {
+    return head + `<div class="action-step"><div class="step-content">Nenhuma ação hoje: as fontes não convergem em nenhum ativo (relatório de ${dateStr}). Manter disciplina e monitorar mudanças de TREND.</div></div>`;
   }
-  return items.map((html, i) => `
+  const rows = actions.map((x, i) => {
+    const verb = x.kind === "buy" ? "Manter/Aportar em" : "Evitar/Reduzir";
+    return `
     <div class="action-step">
       <span class="step-num">${i + 1}</span>
-      <div class="step-content">${html}</div>
-    </div>
-  `).join("");
+      <div class="step-content"><strong>${verb} ${x.c.r.name} (${x.c.r.ticker}):</strong> ${x.c.evidence}. <em>(${x.c.agree}/3 fontes alinhadas)</em></div>
+    </div>`;
+  });
+  const divRows = divs.map(c => `
+    <div class="action-step">
+      <span class="step-num">⚠</span>
+      <div class="step-content"><strong>Divergência — sem ação em ${c.r.name} (${c.r.ticker}):</strong> ${c.evidence}. Aguardar as fontes se alinharem.</div>
+    </div>`);
+  return head + rows.join("") + divRows.join("");
+}
+
+// Re-renderiza só o bloco de ações (usado quando o ETF Pro Plus chega depois do relatório).
+function refreshMorningActionSteps() {
+  const el = document.getElementById("morningActionSteps");
+  if (!el || !lastDashboardReport) return;
+  const rep = lastDashboardReport;
+  const struct = structuredTranslations[rep.id || ""] || structuredTranslations[rep.filename] || (rep.structured || null);
+  if (struct && struct.actionSteps && struct.actionSteps.length > 0) return; // tradução manual tem prioridade
+  const dateStr = rep.shortDate || (rep.date ? rep.date.substring(0, 15) : "");
+  el.innerHTML = buildActionStepsFromRiskRanges(dateStr, rep);
 }
 
 function updateDynamicDashboard(report) {
   if (!report) return;
+  lastDashboardReport = report;
 
   rebuildRiskRangesFromReport(report);
 
@@ -5092,9 +5200,9 @@ function updateDynamicDashboard(report) {
         </div>
       `).join("");
     } else {
-      // Gerado dinamicamente a partir dos Risk Ranges REAIS do relatório de hoje — funciona
-      // pra qualquer relatório novo automaticamente, nunca mostra ação de um dia antigo.
-      actionStepsContainer.innerHTML = buildActionStepsFromRiskRanges(dateStr);
+      // Gerado dinamicamente cruzando Quad do dia + Risk Ranges REAIS do relatório de hoje +
+      // lineup do ETF Pro Plus — funciona pra qualquer relatório novo automaticamente.
+      actionStepsContainer.innerHTML = buildActionStepsFromRiskRanges(dateStr, report);
     }
   }
 

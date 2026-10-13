@@ -1,6 +1,44 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261009",
+      "date": "09/10/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (09/10/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-10-09T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "QQQ",
+          "categoria": "ETF PRO PLUS — NASDAQ 100",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Nasdaq 100). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 09/10/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "FJP",
+          "categoria": "ETF PRO PLUS — JAPAN",
+          "regime": "Quad 3",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Japan). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 09/10/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261008",
       "date": "08/10/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (08/10/2026)",
@@ -3167,5 +3205,5 @@
       ]
     }
   ],
-  "updatedAt": "09/10/2026 09:31:31"
+  "updatedAt": "13/10/2026 09:21:56"
 }
