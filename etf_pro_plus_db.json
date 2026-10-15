@@ -1,5 +1,5 @@
 {
-  "updatedAt": "13/10/2026 15:00:27",
+  "updatedAt": "14/10/2026 12:00:51",
   "reports": {
     "weekly": [
       {
@@ -3216,6 +3216,24 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_111907_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-14 10:28AM EDT",
+        "addsLong": [
+          {
+            "name": "Natural Gas",
+            "ticker": "UNG"
+          },
+          {
+            "name": "Hypergrowth",
+            "ticker": "HYP"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -4469,6 +4487,12 @@
       "type": "intraday",
       "sourceFile": "intraday_111850_UPDATE__3_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: US Dollar Bullish (UUP) | Adicionou SHORT: Denmark (EDEN) | Removeu LONG: Ethereum (ETHA)"
+    },
+    {
+      "date": "2026-10-14 10:28AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_111907_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Natural Gas (UNG), Hypergrowth (HYP)"
     }
   ],
   "currentLineup": [
@@ -5363,7 +5387,7 @@
       "side": "long",
       "dateAdded": "2026-10-13 10:29AM EDT",
       "assetClass": null,
-      "entryPrice": 29.0415,
+      "entryPrice": 29.02,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -5378,11 +5402,41 @@
       "side": "short",
       "dateAdded": "2026-10-13 10:29AM EDT",
       "assetClass": null,
-      "entryPrice": 109.23,
+      "entryPrice": 109.51,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
       "sourceOfEntry": "intraday:intraday_111850_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "UNG",
+      "name": "Natural Gas",
+      "side": "long",
+      "dateAdded": "2026-10-14 10:28AM EDT",
+      "assetClass": null,
+      "entryPrice": 11.005,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_111907_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "HYP",
+      "name": "Hypergrowth",
+      "side": "long",
+      "dateAdded": "2026-10-14 10:28AM EDT",
+      "assetClass": null,
+      "entryPrice": 28.62,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_111907_UPDATE__2_New_ETF_Pro_Changes.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
