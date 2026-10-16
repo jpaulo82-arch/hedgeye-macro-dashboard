@@ -1,6 +1,158 @@
 {
   "entradas": [
     {
+      "reportId": "111955",
+      "date": "15/10/2026",
+      "reportTitle": "EARLY LOOK: Evento de Crédito/Mercado na Bolha de IA?",
+      "extractedByModel": "gemini-flash-latest",
+      "extractedAt": "2026-10-16T09:33:07.398611",
+      "decisions": [
+        {
+          "ativo": "CoreWeave",
+          "categoria": "BOLHA DE IA / INFRAESTRUTURA",
+          "decisao": "Short (Vender a descoberto)",
+          "racional": "Gastos excessivos com infraestrutura de IA, queima de caixa elevada e alavancagem em cenário de aperto nas condições de financiamento, com spreads de High Yield abrindo 59 bps no último mês e KOSPI recuando 39% do pico.",
+          "gatilho_invalidacao": "Não especificado no relatório",
+          "status": "bearish",
+          "tipo_gatilho": "Gatilho Técnico",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Evento de Crédito/Mercado na Bolha de IA?)"
+        },
+        {
+          "ativo": "IREN",
+          "categoria": "BOLHA DE IA / INFRAESTRUTURA",
+          "decisao": "Short (Vender a descoberto)",
+          "racional": "Gastos excessivos com infraestrutura de IA, queima de caixa elevada e alavancagem em cenário de aperto nas condições de financiamento, com spreads de High Yield abrindo 59 bps no último mês e KOSPI recuando 39% do pico.",
+          "gatilho_invalidacao": "Não especificado no relatório",
+          "status": "bearish",
+          "tipo_gatilho": "Gatilho Técnico",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Evento de Crédito/Mercado na Bolha de IA?)"
+        },
+        {
+          "ativo": "Nebius",
+          "categoria": "BOLHA DE IA / INFRAESTRUTURA",
+          "decisao": "Short (Vender a descoberto)",
+          "racional": "Gastos excessivos com infraestrutura de IA, queima de caixa elevada e alavancagem em cenário de aperto nas condições de financiamento, com spreads de High Yield abrindo 59 bps no último mês e KOSPI recuando 39% do pico.",
+          "gatilho_invalidacao": "Não especificado no relatório",
+          "status": "bearish",
+          "tipo_gatilho": "Gatilho Técnico",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Evento de Crédito/Mercado na Bolha de IA?)"
+        },
+        {
+          "ativo": "Oracle",
+          "categoria": "BOLHA DE IA / INFRAESTRUTURA",
+          "decisao": "Short (Vender a descoberto)",
+          "racional": "Gastos excessivos com infraestrutura de IA, queima de caixa elevada e alavancagem em cenário de aperto nas condições de financiamento, com spreads de High Yield abrindo 59 bps no último mês e KOSPI recuando 39% do pico.",
+          "gatilho_invalidacao": "Não especificado no relatório",
+          "status": "bearish",
+          "tipo_gatilho": "Gatilho Técnico",
+          "regime": "Quad 3",
+          "carteira": "Macro / Multi-Ativos",
+          "fonte": "KM Call (EARLY LOOK: Evento de Crédito/Mercado na Bolha de IA?)"
+        }
+      ],
+      "sourceType": "earlylook"
+    },
+    {
+      "reportId": "etf_intra_20261015",
+      "date": "15/10/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (15/10/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-10-15T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "EWZ",
+          "categoria": "ETF PRO PLUS — BRAZIL",
+          "regime": "Macro Global",
+          "decisao": "Comprar / Long",
+          "racional": "Ordem oficial de compra/long na carteira recomendada ETF Pro Plus (Brazil). Sinal quantitativo de entrada publicado no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 15/10/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "FXB",
+          "categoria": "ETF PRO PLUS — BRITISH POUND",
+          "regime": "Macro Global",
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "Ordem oficial de venda a descoberto (short) na carteira recomendada ETF Pro Plus (British Pound). Sinal quantitativo emitido no UPDATE intraday.",
+          "gatilho_invalidacao": "Ruptura do Trend Range para cima (None se rompido) ou ordem de remoção no ETF Pro Plus Update.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 15/10/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "FJP",
+          "categoria": "ETF PRO PLUS — JAPAN",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Japan). Posição zerada pelo modelo quantitativo Hedgeye. Saída no Trend Range: 76.92 – 80.62.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 15/10/2026)",
+          "rangeLow": 76.92,
+          "rangeHigh": 80.62
+        },
+        {
+          "ativo": "HYP",
+          "categoria": "ETF PRO PLUS — HYPERGROWTH",
+          "regime": "Quad 3",
+          "decisao": "Vender / Zerar Long",
+          "racional": "Ordem oficial de encerramento Long no ETF Pro Plus (Hypergrowth). Posição zerada pelo modelo quantitativo Hedgeye.",
+          "gatilho_invalidacao": "Reversão técnica para Bullish Trend ou nova inclusão no lineup do ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 15/10/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "XLU",
+          "categoria": "ETF PRO PLUS — UTILITIES SECTOR",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (Utilities Sector). Posição vendida encerrada no lineup oficial da Hedgeye. Cobertura no Trend Range: 38.90 – 42.37.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 15/10/2026)",
+          "rangeLow": 38.9,
+          "rangeHigh": 42.37
+        },
+        {
+          "ativo": "XLY",
+          "categoria": "ETF PRO PLUS — CONSUMER DISCRETIONARY",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (Consumer Discretionary). Posição vendida encerrada no lineup oficial da Hedgeye. Cobertura no Trend Range: 105.00 – 115.00.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 15/10/2026)",
+          "rangeLow": 105.0,
+          "rangeHigh": 115.0
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261014",
       "date": "14/10/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (14/10/2026)",
@@ -3775,5 +3927,5 @@
       ]
     }
   ],
-  "updatedAt": "15/10/2026 09:32:53"
+  "updatedAt": "16/10/2026 09:33:07"
 }

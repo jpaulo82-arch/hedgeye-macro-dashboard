@@ -1,0 +1,62 @@
+{
+  "updated_at": "2026-10-15T14:43:00-03:00",
+  "source": "https://app.hedgeye.com/macro_dashboard/investing_ideas",
+  "description": "Ações e Ativos Individuais Selecionados pelos Analistas Fundamentalistas e Quant da Hedgeye",
+  "ideas": [
+    {
+      "ticker": "PBR",
+      "name": "Petróleo Brasileiro S.A. (Petrobras)",
+      "side": "LONG",
+      "sector": "Energy",
+      "theme": "#Quad2 Commodity Inflation & Oil Supply Tightness",
+      "analyst": "Jonesy / Hedgeye Energy Pro",
+      "added_date": "2026-10-12",
+      "catalyst": "Aceleração de produção e dividend yield de dois dígitos com suporte em Petróleo WTI em alta",
+      "status": "ACTIVE"
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "side": "LONG",
+      "sector": "Technology",
+      "theme": "#Quad2 Mega Cap Tech Leadership",
+      "analyst": "Technology Research Team",
+      "added_date": "2026-09-29",
+      "catalyst": "Crescimento acelerado de receita (Top 25% Sales Growth) e Capex contínuo em Data Centers",
+      "status": "ACTIVE"
+    },
+    {
+      "ticker": "AMZN",
+      "name": "Amazon.com, Inc.",
+      "side": "LONG",
+      "sector": "Consumer / Tech Cloud",
+      "theme": "#Quad2 Large Cap & AWS Re-acceleration",
+      "analyst": "Internet & Media Team",
+      "added_date": "2026-10-01",
+      "catalyst": "Expansão de margem operacional no e-commerce e forte tração corporativa em Cloud",
+      "status": "ACTIVE"
+    },
+    {
+      "ticker": "STZ",
+      "name": "Constellation Brands, Inc.",
+      "side": "SHORT",
+      "sector": "Consumer Staples / Beverages",
+      "theme": "Stagflationary Margin Compression",
+      "analyst": "Consumer Staples Team",
+      "added_date": "2026-09-22",
+      "catalyst": "Queda no volume de vendas de cerveja premium e perda de poder de repasse de preço",
+      "status": "ACTIVE"
+    },
+    {
+      "ticker": "KMX",
+      "name": "CarMax, Inc.",
+      "side": "SHORT",
+      "sector": "Consumer Discretionary / Auto Retail",
+      "theme": "Auto Loan Defaults & High Interest Rates",
+      "analyst": "Retail Team",
+      "added_date": "2026-09-28",
+      "catalyst": "Custo de crédito elevado, inadimplência em subprime e compressão de margens unitárias",
+      "status": "ACTIVE"
+    }
+  ]
+}

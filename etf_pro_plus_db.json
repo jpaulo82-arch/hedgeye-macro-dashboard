@@ -1,5 +1,5 @@
 {
-  "updatedAt": "14/10/2026 12:00:51",
+  "updatedAt": "15/10/2026 13:00:39",
   "reports": {
     "weekly": [
       {
@@ -3234,6 +3234,49 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_111976_UPDATE__6_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-15 11:13AM EDT",
+        "addsLong": [
+          {
+            "name": "Brazil",
+            "ticker": "EWZ"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "British Pound",
+            "ticker": "FXB"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Japan",
+            "ticker": "FJP",
+            "rangeLow": 76.92,
+            "rangeHigh": 80.62
+          },
+          {
+            "name": "Hypergrowth",
+            "ticker": "HYP"
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "Utilities Sector",
+            "ticker": "XLU",
+            "rangeLow": 38.9,
+            "rangeHigh": 42.37
+          },
+          {
+            "name": "Consumer Discretionary",
+            "ticker": "XLY",
+            "rangeLow": 105.0,
+            "rangeHigh": 115.0
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -4493,6 +4536,12 @@
       "type": "intraday",
       "sourceFile": "intraday_111907_UPDATE__2_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Natural Gas (UNG), Hypergrowth (HYP)"
+    },
+    {
+      "date": "2026-10-15 11:13AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_111976_UPDATE__6_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Brazil (EWZ) | Adicionou SHORT: British Pound (FXB) | Removeu LONG: Japan (FJP), Hypergrowth (HYP) | Removeu SHORT: Utilities Sector (XLU), Consumer Discretionary (XLY)"
     }
   ],
   "currentLineup": [
@@ -4902,29 +4951,6 @@
       "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     },
     {
-      "ticker": "FJP",
-      "name": "Japan",
-      "side": "long",
-      "dateAdded": "10/9/2026",
-      "assetClass": "International Equities",
-      "entryPrice": 78.92,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 76.92,
-      "rangeHigh": 80.62,
-      "sourceOfEntry": "weekly:weekly_111767_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
       "ticker": "QAT",
       "name": "Qatar",
       "side": "short",
@@ -5013,29 +5039,6 @@
         2
       ],
       "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
-      "ticker": "XLU",
-      "name": "Utilities Sector",
-      "side": "short",
-      "dateAdded": "8/12/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 41.41,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 38.9,
-      "rangeHigh": 42.37,
-      "sourceOfEntry": "weekly:weekly_111767_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.0,
-        "maxPct": 3.0,
-        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        3,
-        4
-      ],
-      "quadNote": "Short — aposta CONTRA Q3/Q4 (histórico de força nesses regimes)"
     },
     {
       "ticker": "ZROZ",
@@ -5267,29 +5270,6 @@
       "quadNote": "Short — aposta CONTRA Q1/Q2/Q3 (histórico de força nesses regimes)"
     },
     {
-      "ticker": "XLY",
-      "name": "Consumer Discretionary",
-      "side": "short",
-      "dateAdded": "9/22/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 112.85,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 105.0,
-      "rangeHigh": 115.0,
-      "sourceOfEntry": "weekly:weekly_111767_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.0,
-        "maxPct": 3.0,
-        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
       "ticker": "HYG",
       "name": "High Yield Bonds",
       "side": "short",
@@ -5417,7 +5397,7 @@
       "side": "long",
       "dateAdded": "2026-10-14 10:28AM EDT",
       "assetClass": null,
-      "entryPrice": 11.005,
+      "entryPrice": 11.22,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -5427,16 +5407,31 @@
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
     },
     {
-      "ticker": "HYP",
-      "name": "Hypergrowth",
+      "ticker": "EWZ",
+      "name": "Brazil",
       "side": "long",
-      "dateAdded": "2026-10-14 10:28AM EDT",
+      "dateAdded": "2026-10-15 11:13AM EDT",
       "assetClass": null,
-      "entryPrice": 28.62,
+      "entryPrice": 42.22,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_111907_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "sourceOfEntry": "intraday:intraday_111976_UPDATE__6_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "FXB",
+      "name": "British Pound",
+      "side": "short",
+      "dateAdded": "2026-10-15 11:13AM EDT",
+      "assetClass": null,
+      "entryPrice": 127.39,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_111976_UPDATE__6_New_ETF_Pro_Changes.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"

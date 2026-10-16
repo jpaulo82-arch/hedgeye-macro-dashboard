@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T12:01:21.628246",
+  "generatedAt": "2026-10-15T13:01:11.661245",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -45,7 +45,7 @@
           "periodStart": "2023-12-01",
           "periodEnd": "2023-12-31",
           "priceStart": 17.5677,
-          "priceEnd": 17.6812,
+          "priceEnd": 17.6813,
           "returnPct": 0.647
         }
       ]
@@ -60,7 +60,7 @@
           "side": "long",
           "periodStart": "2024-01-01",
           "periodEnd": "2024-01-31",
-          "priceStart": 17.6812,
+          "priceStart": 17.6813,
           "priceEnd": 17.8066,
           "returnPct": 0.709
         }
@@ -213,7 +213,7 @@
     {
       "month": "2024-11",
       "activePositions": 1,
-      "monthlyReturnPct": 0.504,
+      "monthlyReturnPct": 0.503,
       "details": [
         {
           "ticker": "BUXX",
@@ -222,7 +222,7 @@
           "periodEnd": "2024-11-30",
           "priceStart": 18.5969,
           "priceEnd": 18.6906,
-          "returnPct": 0.504
+          "returnPct": 0.503
         }
       ]
     },
@@ -245,7 +245,7 @@
     {
       "month": "2025-01",
       "activePositions": 1,
-      "monthlyReturnPct": 0.503,
+      "monthlyReturnPct": 0.504,
       "details": [
         {
           "ticker": "BUXX",
@@ -254,7 +254,7 @@
           "periodEnd": "2025-01-31",
           "priceStart": 18.7522,
           "priceEnd": 18.8466,
-          "returnPct": 0.503
+          "returnPct": 0.504
         }
       ]
     },
@@ -468,7 +468,7 @@
           "side": "long",
           "periodStart": "2025-10-01",
           "periodEnd": "2025-10-31",
-          "priceStart": 24.3074,
+          "priceStart": 24.3073,
           "priceEnd": 24.3703,
           "returnPct": 0.259
         }
@@ -885,15 +885,6 @@
           "returnPct": 1.887
         },
         {
-          "ticker": "XLU",
-          "side": "short",
-          "periodStart": "2026-08-12",
-          "periodEnd": "2026-08-31",
-          "priceStart": 43.52,
-          "priceEnd": 41.9218,
-          "returnPct": 3.672
-        },
-        {
           "ticker": "ZROZ",
           "side": "short",
           "periodStart": "2026-08-25",
@@ -1027,6 +1018,15 @@
           "priceStart": 127.7041,
           "priceEnd": 132.5931,
           "returnPct": 3.828
+        },
+        {
+          "ticker": "XLU",
+          "side": "short",
+          "periodStart": "2026-08-12",
+          "periodEnd": "2026-08-31",
+          "priceStart": 43.52,
+          "priceEnd": 41.9218,
+          "returnPct": 3.672
         }
       ]
     },
@@ -1133,15 +1133,6 @@
           "priceStart": 17.4099,
           "priceEnd": 16.902,
           "returnPct": 2.918
-        },
-        {
-          "ticker": "XLU",
-          "side": "short",
-          "periodStart": "2026-09-01",
-          "periodEnd": "2026-09-15",
-          "priceStart": 42.2493,
-          "priceEnd": 41.0184,
-          "returnPct": 2.914
         },
         {
           "ticker": "ZROZ",
@@ -1430,6 +1421,15 @@
           "priceStart": 132.7128,
           "priceEnd": 130.5876,
           "returnPct": -1.601
+        },
+        {
+          "ticker": "XLU",
+          "side": "short",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-15",
+          "priceStart": 42.2493,
+          "priceEnd": 41.0184,
+          "returnPct": 2.914
         }
       ]
     }
@@ -1489,11 +1489,11 @@
     },
     {
       "month": "2024-11",
-      "cumulativeIndex": 107.104
+      "cumulativeIndex": 107.103
     },
     {
       "month": "2024-12",
-      "cumulativeIndex": 107.563
+      "cumulativeIndex": 107.562
     },
     {
       "month": "2025-01",
@@ -1607,6 +1607,11 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     },
     {
+      "ticker": "HYP",
+      "side": "long",
+      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
+    },
+    {
       "ticker": "GVAL",
       "side": "long",
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
@@ -1662,5 +1667,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 82
+  "positionsIncluded": 83
 }
