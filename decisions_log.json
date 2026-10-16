@@ -1,6 +1,30 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261016",
+      "date": "16/10/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (16/10/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-10-16T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "XLF",
+          "categoria": "ETF PRO PLUS — FINANCIALS",
+          "regime": "Quad 3",
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "Ordem oficial de cobertura de Short no ETF Pro Plus (Financials). Posição vendida encerrada no lineup oficial da Hedgeye. Cobertura no Trend Range: 52.90 – 55.20.",
+          "gatilho_invalidacao": "Reversão técnica para Bearish Trend ou nova recomendação de short no ETF Pro Plus.",
+          "tipo_gatilho": "Ordem Oficial ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 16/10/2026)",
+          "rangeLow": 52.9,
+          "rangeHigh": 55.2
+        }
+      ]
+    },
+    {
       "reportId": "111955",
       "date": "15/10/2026",
       "reportTitle": "EARLY LOOK: Evento de Crédito/Mercado na Bolha de IA?",
@@ -3927,5 +3951,5 @@
       ]
     }
   ],
-  "updatedAt": "16/10/2026 09:33:07"
+  "updatedAt": "16/10/2026 14:32:07"
 }

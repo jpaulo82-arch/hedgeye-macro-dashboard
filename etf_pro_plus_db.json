@@ -1,5 +1,5 @@
 {
-  "updatedAt": "15/10/2026 13:00:39",
+  "updatedAt": "16/10/2026 13:00:37",
   "reports": {
     "weekly": [
       {
@@ -3277,6 +3277,22 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_112066_UPDATE__1_New_ETF_Pro_Change.txt",
+        "reportDatetime": "2026-10-16 11:55AM EDT",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Financials",
+            "ticker": "XLF",
+            "rangeLow": 52.9,
+            "rangeHigh": 55.2
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -4542,6 +4558,12 @@
       "type": "intraday",
       "sourceFile": "intraday_111976_UPDATE__6_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Brazil (EWZ) | Adicionou SHORT: British Pound (FXB) | Removeu LONG: Japan (FJP), Hypergrowth (HYP) | Removeu SHORT: Utilities Sector (XLU), Consumer Discretionary (XLY)"
+    },
+    {
+      "date": "2026-10-16 11:55AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_112066_UPDATE__1_New_ETF_Pro_Change.txt",
+      "summary": "Removeu SHORT: Financials (XLF)"
     }
   ],
   "currentLineup": [
@@ -5292,29 +5314,6 @@
       "quadNote": "Short — aposta CONTRA Q4 (histórico de força nesses regimes)"
     },
     {
-      "ticker": "XLF",
-      "name": "Financials",
-      "side": "short",
-      "dateAdded": "9/28/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 54.73,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 52.9,
-      "rangeHigh": 55.2,
-      "sourceOfEntry": "weekly:weekly_111767_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.0,
-        "maxPct": 3.0,
-        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
       "ticker": "EWW",
       "name": "Mexico",
       "side": "short",
@@ -5412,7 +5411,7 @@
       "side": "long",
       "dateAdded": "2026-10-15 11:13AM EDT",
       "assetClass": null,
-      "entryPrice": 42.22,
+      "entryPrice": 41.58,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -5427,7 +5426,7 @@
       "side": "short",
       "dateAdded": "2026-10-15 11:13AM EDT",
       "assetClass": null,
-      "entryPrice": 127.39,
+      "entryPrice": 127.6,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,

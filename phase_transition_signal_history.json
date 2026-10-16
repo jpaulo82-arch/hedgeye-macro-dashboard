@@ -355,7 +355,7 @@
     "WTIC": "BULLISH",
     "NATGAS": "BULLISH",
     "GOLD": "BEARISH",
-    "COPPER": "NEUTRAL",
+    "COPPER": "BULLISH",
     "SILVER": "BEARISH"
   }
 }
