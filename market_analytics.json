@@ -1,5 +1,5 @@
 {
-  "updated_at": "17/10/2026 09:02:26",
+  "updated_at": "17/10/2026 10:01:29",
   "gex": [
     {
       "ticker": "SPY",
@@ -13,7 +13,7 @@
       "total_call_oi": 32441,
       "total_put_oi": 31780,
       "put_call_ratio": 0.98,
-      "updated_at": "17/10/2026 09:01:56"
+      "updated_at": "17/10/2026 10:00:55"
     },
     {
       "ticker": "QQQ",
@@ -27,7 +27,7 @@
       "total_call_oi": 196349,
       "total_put_oi": 195555,
       "put_call_ratio": 1.0,
-      "updated_at": "17/10/2026 09:01:58"
+      "updated_at": "17/10/2026 10:00:57"
     },
     {
       "ticker": "IWM",
@@ -41,7 +41,7 @@
       "total_call_oi": 50961,
       "total_put_oi": 32185,
       "put_call_ratio": 0.63,
-      "updated_at": "17/10/2026 09:01:59"
+      "updated_at": "17/10/2026 10:00:58"
     }
   ],
   "fundamentals": [
@@ -1349,10 +1349,10 @@
     "leading_month": "QUAD 4",
     "transition_signal": "🟡 PRENÚNCIO DE QUAD 2 (Reflação): Commodities industriais (Cobre, Energia, AIRR) acelerando a +-0.88% na 2ª derivada, superando o ouro. Possível repique de yields e alívio em cíclicos.",
     "signal_badge": "badge-neutral",
-    "updated_at": "17/10/2026 09:02:17"
+    "updated_at": "17/10/2026 10:01:16"
   },
   "economic_calendar": {
-    "updated_at": "17/10/2026 09:02:19",
+    "updated_at": "17/10/2026 10:01:17",
     "source": "TradingView Official Real-Time Calendar API",
     "current_week": "12/10 a 16/10/2026",
     "total_events": 74,

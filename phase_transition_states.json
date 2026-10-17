@@ -1,5 +1,5 @@
 {
-  "gerado_em": "2026-10-17T09:02:48.582745",
+  "gerado_em": "2026-10-17T10:01:49.961783",
   "data": "2026-10-17",
   "posicoes": {
     "US10": {
@@ -20,7 +20,7 @@
       "live_price": {
         "value": 76.86,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792238564
+        "timestamp": 1792242106
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -50,7 +50,7 @@
       "live_price": {
         "value": 103.4,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792238565
+        "timestamp": 1792242106
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -80,7 +80,7 @@
       "live_price": {
         "value": 7659.44,
         "fonte": "TradingView (America)",
-        "timestamp": 1792238565
+        "timestamp": 1792242106
       },
       "trade_signal": "bearish",
       "range_zone": "abaixo_lrr",
@@ -110,7 +110,7 @@
       "live_price": {
         "value": 26140.034,
         "fonte": "TradingView (America)",
-        "timestamp": 1792238565
+        "timestamp": 1792242106
       },
       "trade_signal": "bearish",
       "range_zone": "abaixo_lrr",
@@ -140,7 +140,7 @@
       "live_price": {
         "value": 2721.37,
         "fonte": "TradingView (Cfd)",
-        "timestamp": 1792238565
+        "timestamp": 1792242107
       },
       "trade_signal": "bearish",
       "range_zone": "abaixo_lrr",
@@ -170,7 +170,7 @@
       "live_price": {
         "value": 176.71,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792238566
+        "timestamp": 1792242107
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -200,7 +200,7 @@
       "live_price": {
         "value": 104.34,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792238566
+        "timestamp": 1792242107
       },
       "trade_signal": "bearish",
       "range_zone": "abaixo_lrr",
@@ -230,7 +230,7 @@
       "live_price": {
         "value": 183.47,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792238566
+        "timestamp": 1792242107
       },
       "trade_signal": "bearish",
       "range_zone": "abaixo_lrr",
@@ -260,7 +260,7 @@
       "live_price": {
         "value": 19.99,
         "fonte": "TradingView (America)",
-        "timestamp": 1792238566
+        "timestamp": 1792242108
       },
       "trade_signal": "bullish",
       "range_zone": "acima_trr",
@@ -290,7 +290,7 @@
       "live_price": {
         "value": 101.779,
         "fonte": "TradingView (America)",
-        "timestamp": 1792238567
+        "timestamp": 1792242108
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -320,7 +320,7 @@
       "live_price": {
         "value": 99.02,
         "fonte": "TradingView (Futures)",
-        "timestamp": 1792238567
+        "timestamp": 1792242108
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -350,7 +350,7 @@
       "live_price": {
         "value": 3.116,
         "fonte": "TradingView (Futures)",
-        "timestamp": 1792238567
+        "timestamp": 1792242108
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -380,7 +380,7 @@
       "live_price": {
         "value": 4165.69,
         "fonte": "TradingView (Cfd)",
-        "timestamp": 1792238567
+        "timestamp": 1792242109
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -410,7 +410,7 @@
       "live_price": {
         "value": 6.5735,
         "fonte": "TradingView (Futures)",
-        "timestamp": 1792238568
+        "timestamp": 1792242109
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -440,7 +440,7 @@
       "live_price": {
         "value": 56.965,
         "fonte": "TradingView (Cfd)",
-        "timestamp": 1792238568
+        "timestamp": 1792242109
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -464,7 +464,7 @@
     "status": "ok",
     "value": 19.99,
     "fonte": "TradingView (America)",
-    "timestamp": 1792238566,
+    "timestamp": 1792242108,
     "bucket": null
   }
 }
