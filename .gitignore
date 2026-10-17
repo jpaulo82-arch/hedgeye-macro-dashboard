@@ -20,3 +20,6 @@ master_the_market_sizing.json
 portfolio_suggestions.json
 hedgeye_history.json
 etf_pro_plus_suggested_sizing.json
+
+# Dados capturados do app.hedgeye.com (conteúdo licenciado — redistribuição proibida pela Hedgeye)
+hedgeye_app/
