@@ -1,33 +1,33 @@
 {
   "kind": "weekly",
-  "sourceFile": "weekly_111767_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-  "reportDatetime": "2026-10-11 16:35",
+  "sourceFile": "weekly_112171_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+  "reportDatetime": "2026-10-18 12:26",
   "title": "ETF Pro Plus — Weekly",
-  "generatedAt": "2026-10-16T13:01:12",
+  "generatedAt": "2026-10-19T10:01:36",
   "sections": [
     {
       "id": "resumo",
       "title": "Resumo da semana",
-      "pt": "Lineup do relatório semanal de 11/10/2026: 22 posições Bullish (long) e 21 Bearish (short) — saldo líquido de +1.\n\nNa semana anterior (05/10/2026) eram 20 longs e 20 shorts. Variação: +2 longs, +1 shorts; 5 entradas e 2 saídas no lineup.",
-      "en": "Lineup do relatório semanal de 11/10/2026: 22 posições Bullish (long) e 21 Bearish (short) — saldo líquido de +1.\n\nNa semana anterior (05/10/2026) eram 20 longs e 20 shorts. Variação: +2 longs, +1 shorts; 5 entradas e 2 saídas no lineup."
+      "pt": "Lineup do relatório semanal de 18/10/2026: 21 posições Bullish (long) e 19 Bearish (short) — saldo líquido de +2.\n\nNa semana anterior (11/10/2026) eram 22 longs e 21 shorts. Variação: -1 longs, -2 shorts; 5 entradas e 8 saídas no lineup.",
+      "en": "Lineup do relatório semanal de 18/10/2026: 21 posições Bullish (long) e 19 Bearish (short) — saldo líquido de +2.\n\nNa semana anterior (11/10/2026) eram 22 longs e 21 shorts. Variação: -1 longs, -2 shorts; 5 entradas e 8 saídas no lineup."
     },
     {
       "id": "mudancas",
       "title": "Mudanças no lineup vs. semana anterior",
-      "pt": "Entradas Long:\n• Japan (JPXN, entrada 10/7/2026, $104.45)\n• Solana (SOLZ, entrada 10/7/2026, $10.76)\n• Nasdaq 100 (QQQ, entrada 10/9/2026, $751.27)\n• Japan (FJP, entrada 10/9/2026, $78.92)\n\nSaídas Long:\n• Healthcare Equity (FXH, entrada 6/12/2026, $129.45)\n• Biotechnology (IBB, entrada 9/30/2026, $205.30)\n\nEntradas Short:\n• Digital Payments (IPAY, entrada 10/7/2026, $48.68)\n\nSaídas Short:\nNenhuma.",
-      "en": "Entradas Long:\n• Japan (JPXN, entrada 10/7/2026, $104.45)\n• Solana (SOLZ, entrada 10/7/2026, $10.76)\n• Nasdaq 100 (QQQ, entrada 10/9/2026, $751.27)\n• Japan (FJP, entrada 10/9/2026, $78.92)\n\nSaídas Long:\n• Healthcare Equity (FXH, entrada 6/12/2026, $129.45)\n• Biotechnology (IBB, entrada 9/30/2026, $205.30)\n\nEntradas Short:\n• Digital Payments (IPAY, entrada 10/7/2026, $48.68)\n\nSaídas Short:\nNenhuma."
+      "pt": "Entradas Long:\n• US Dollar Bullish (UUP, entrada 10/13/2026, $28.92)\n• Natural Gas (UNG, entrada 10/14/2026, $10.66)\n• Brazil (EWZ, entrada 10/15/2026, $41.83)\n\nSaídas Long:\n• Ethereum (ETHA, entrada 9/16/2026, $55.99)\n• Quantum Tech (QTUM, entrada 9/29/2026, $152.06)\n• Solana (SOLZ, entrada 10/7/2026, $10.76)\n• Japan (FJP, entrada 10/9/2026, $78.92)\n\nEntradas Short:\n• Denmark (EDEN, entrada 10/13/2026, $110.65)\n• British Pound (FXB, entrada 10/15/2026, $128.17)\n\nSaídas Short:\n• Utilities Sector (XLU, entrada 8/12/2026, $41.41)\n• Consumer Discretionary (XLY, entrada 9/22/2026, $112.85)\n• Financials (XLF, entrada 9/28/2026, $54.73)\n• Digital Payments (IPAY, entrada 10/7/2026, $48.68)",
+      "en": "Entradas Long:\n• US Dollar Bullish (UUP, entrada 10/13/2026, $28.92)\n• Natural Gas (UNG, entrada 10/14/2026, $10.66)\n• Brazil (EWZ, entrada 10/15/2026, $41.83)\n\nSaídas Long:\n• Ethereum (ETHA, entrada 9/16/2026, $55.99)\n• Quantum Tech (QTUM, entrada 9/29/2026, $152.06)\n• Solana (SOLZ, entrada 10/7/2026, $10.76)\n• Japan (FJP, entrada 10/9/2026, $78.92)\n\nEntradas Short:\n• Denmark (EDEN, entrada 10/13/2026, $110.65)\n• British Pound (FXB, entrada 10/15/2026, $128.17)\n\nSaídas Short:\n• Utilities Sector (XLU, entrada 8/12/2026, $41.41)\n• Consumer Discretionary (XLY, entrada 9/22/2026, $112.85)\n• Financials (XLF, entrada 9/28/2026, $54.73)\n• Digital Payments (IPAY, entrada 10/7/2026, $48.68)"
     },
     {
       "id": "classes",
       "title": "Posicionamento por classe de ativo",
-      "pt": "• Ações — EUA: 6 long / 5 short (líquido +1)\n• Renda fixa: 4 long / 5 short (líquido -1)\n• Commodities / cripto: 5 long / 2 short (líquido +3)\n• Ações — globais: 4 long / 3 short (líquido +1)\n• Ações — internacionais: 2 long / 3 short (líquido -1)\n• Ações — mercados emergentes: 0 long / 3 short (líquido -3)\n• Moedas / alternativos: 1 long / 0 short (líquido +1)\n\nMudanças de composição vs. semana anterior:\n• Ações — EUA: 7L/5S → 6L/5S\n• Ações — globais: 4L/2S → 4L/3S\n• Ações — internacionais: 0L/3S → 2L/3S\n• Commodities / cripto: 4L/2S → 5L/2S",
-      "en": "• Ações — EUA: 6 long / 5 short (líquido +1)\n• Renda fixa: 4 long / 5 short (líquido -1)\n• Commodities / cripto: 5 long / 2 short (líquido +3)\n• Ações — globais: 4 long / 3 short (líquido +1)\n• Ações — internacionais: 2 long / 3 short (líquido -1)\n• Ações — mercados emergentes: 0 long / 3 short (líquido -3)\n• Moedas / alternativos: 1 long / 0 short (líquido +1)\n\nMudanças de composição vs. semana anterior:\n• Ações — EUA: 7L/5S → 6L/5S\n• Ações — globais: 4L/2S → 4L/3S\n• Ações — internacionais: 0L/3S → 2L/3S\n• Commodities / cripto: 4L/2S → 5L/2S"
+      "pt": "• Renda fixa: 4 long / 5 short (líquido -1)\n• Ações — EUA: 6 long / 2 short (líquido +4)\n• Commodities / cripto: 4 long / 2 short (líquido +2)\n• Ações — globais: 3 long / 2 short (líquido +1)\n• Ações — internacionais: 1 long / 4 short (líquido -3)\n• Ações — mercados emergentes: 1 long / 3 short (líquido -2)\n• Moedas / alternativos: 2 long / 1 short (líquido +1)\n\nMudanças de composição vs. semana anterior:\n• Ações — EUA: 6L/5S → 6L/2S\n• Ações — globais: 4L/3S → 3L/2S\n• Ações — internacionais: 2L/3S → 1L/4S\n• Ações — mercados emergentes: 0L/3S → 1L/3S\n• Commodities / cripto: 5L/2S → 4L/2S\n• Moedas / alternativos: 1L/0S → 2L/1S",
+      "en": "• Renda fixa: 4 long / 5 short (líquido -1)\n• Ações — EUA: 6 long / 2 short (líquido +4)\n• Commodities / cripto: 4 long / 2 short (líquido +2)\n• Ações — globais: 3 long / 2 short (líquido +1)\n• Ações — internacionais: 1 long / 4 short (líquido -3)\n• Ações — mercados emergentes: 1 long / 3 short (líquido -2)\n• Moedas / alternativos: 2 long / 1 short (líquido +1)\n\nMudanças de composição vs. semana anterior:\n• Ações — EUA: 6L/5S → 6L/2S\n• Ações — globais: 4L/3S → 3L/2S\n• Ações — internacionais: 2L/3S → 1L/4S\n• Ações — mercados emergentes: 0L/3S → 1L/3S\n• Commodities / cripto: 5L/2S → 4L/2S\n• Moedas / alternativos: 1L/0S → 2L/1S"
     },
     {
       "id": "ranges",
       "title": "Posição dos preços no Risk Range",
-      "pt": "Longs no topo do Risk Range (≥80%):\nNenhuma.\n\nLongs no fundo do Risk Range (≤20%):\n• Ethereum (ETHA): 11% do range ($55.01–$63.80)\n\nShorts no topo do Risk Range (≥80%):\n• Credit Rotation (JOJO): 89% do range ($14.03–$14.64)\n• Australia Equities (EWA): 83% do range ($27.09–$28.93)\n\nShorts no fundo do Risk Range (≤20%):\nNenhuma.",
-      "en": "Longs no topo do Risk Range (≥80%):\nNenhuma.\n\nLongs no fundo do Risk Range (≤20%):\n• Ethereum (ETHA): 11% do range ($55.01–$63.80)\n\nShorts no topo do Risk Range (≥80%):\n• Credit Rotation (JOJO): 89% do range ($14.03–$14.64)\n• Australia Equities (EWA): 83% do range ($27.09–$28.93)\n\nShorts no fundo do Risk Range (≤20%):\nNenhuma."
+      "pt": "Longs no topo do Risk Range (≥80%):\n• Brent Oil (BNO): 82% do range ($61.53–$68.47)\n\nLongs no fundo do Risk Range (≤20%):\n• Tech Software (IGV): 20% do range ($102.00–$114.00)\n• Interest Rate Hedge (PFIX): 18% do range ($56.52–$67.85)\n• Technology Sector (XLK): 17% do range ($179.00–$205.00)\n• Top 20 US Stocks (TOPT): 20% do range ($34.26–$36.00)\n• Nasdaq 100 (QQQ): 8% do range ($705.00–$767.00)\n\nShorts no topo do Risk Range (≥80%):\n• US Corporate Bonds (LQD): 80% do range ($101.00–$104.00)\n• US Treasury Long (ZROZ): 81% do range ($52.67–$57.54)\n• Switzerland (EWL): 83% do range ($58.80–$62.98)\n• Mexico (EWW): 88% do range ($70.70–$75.52)\n\nShorts no fundo do Risk Range (≤20%):\nNenhuma.",
+      "en": "Longs no topo do Risk Range (≥80%):\n• Brent Oil (BNO): 82% do range ($61.53–$68.47)\n\nLongs no fundo do Risk Range (≤20%):\n• Tech Software (IGV): 20% do range ($102.00–$114.00)\n• Interest Rate Hedge (PFIX): 18% do range ($56.52–$67.85)\n• Technology Sector (XLK): 17% do range ($179.00–$205.00)\n• Top 20 US Stocks (TOPT): 20% do range ($34.26–$36.00)\n• Nasdaq 100 (QQQ): 8% do range ($705.00–$767.00)\n\nShorts no topo do Risk Range (≥80%):\n• US Corporate Bonds (LQD): 80% do range ($101.00–$104.00)\n• US Treasury Long (ZROZ): 81% do range ($52.67–$57.54)\n• Switzerland (EWL): 83% do range ($58.80–$62.98)\n• Mexico (EWW): 88% do range ($70.70–$75.52)\n\nShorts no fundo do Risk Range (≤20%):\nNenhuma."
     },
     {
       "id": "fonte",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T13:01:11.735862",
+  "generatedAt": "2026-10-19T10:01:35.118179",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -29,7 +29,7 @@
           "periodStart": "2023-11-01",
           "periodEnd": "2023-11-30",
           "priceStart": 17.428,
-          "priceEnd": 17.5502,
+          "priceEnd": 17.5503,
           "returnPct": 0.702
         }
       ]
@@ -204,7 +204,7 @@
           "side": "long",
           "periodStart": "2024-10-01",
           "periodEnd": "2024-10-31",
-          "priceStart": 18.5513,
+          "priceStart": 18.5514,
           "priceEnd": 18.6061,
           "returnPct": 0.295
         }
@@ -245,7 +245,7 @@
     {
       "month": "2025-01",
       "activePositions": 1,
-      "monthlyReturnPct": 0.504,
+      "monthlyReturnPct": 0.503,
       "details": [
         {
           "ticker": "BUXX",
@@ -254,7 +254,7 @@
           "periodEnd": "2025-01-31",
           "priceStart": 18.7522,
           "priceEnd": 18.8466,
-          "returnPct": 0.504
+          "returnPct": 0.503
         }
       ]
     },
@@ -1497,87 +1497,87 @@
     },
     {
       "month": "2025-01",
-      "cumulativeIndex": 108.106
+      "cumulativeIndex": 108.105
     },
     {
       "month": "2025-02",
-      "cumulativeIndex": 108.499
+      "cumulativeIndex": 108.498
     },
     {
       "month": "2025-03",
-      "cumulativeIndex": 108.508
+      "cumulativeIndex": 108.507
     },
     {
       "month": "2025-04",
-      "cumulativeIndex": 108.723
+      "cumulativeIndex": 108.722
     },
     {
       "month": "2025-05",
-      "cumulativeIndex": 109.712
+      "cumulativeIndex": 109.711
     },
     {
       "month": "2025-06",
-      "cumulativeIndex": 110.152
+      "cumulativeIndex": 110.151
     },
     {
       "month": "2025-07",
-      "cumulativeIndex": 110.521
+      "cumulativeIndex": 110.52
     },
     {
       "month": "2025-08",
-      "cumulativeIndex": 111.124
+      "cumulativeIndex": 111.123
     },
     {
       "month": "2025-09",
-      "cumulativeIndex": 111.403
+      "cumulativeIndex": 111.402
     },
     {
       "month": "2025-10",
-      "cumulativeIndex": 111.657
+      "cumulativeIndex": 111.656
     },
     {
       "month": "2025-11",
-      "cumulativeIndex": 112.137
+      "cumulativeIndex": 112.136
     },
     {
       "month": "2025-12",
-      "cumulativeIndex": 112.611
+      "cumulativeIndex": 112.61
     },
     {
       "month": "2026-01",
-      "cumulativeIndex": 113.115
+      "cumulativeIndex": 113.114
     },
     {
       "month": "2026-02",
-      "cumulativeIndex": 113.481
+      "cumulativeIndex": 113.479
     },
     {
       "month": "2026-03",
-      "cumulativeIndex": 113.793
+      "cumulativeIndex": 113.791
     },
     {
       "month": "2026-04",
-      "cumulativeIndex": 114.537
+      "cumulativeIndex": 114.536
     },
     {
       "month": "2026-05",
-      "cumulativeIndex": 115.219
+      "cumulativeIndex": 115.218
     },
     {
       "month": "2026-06",
-      "cumulativeIndex": 117.77
+      "cumulativeIndex": 117.769
     },
     {
       "month": "2026-07",
-      "cumulativeIndex": 120.187
+      "cumulativeIndex": 120.186
     },
     {
       "month": "2026-08",
-      "cumulativeIndex": 122.903
+      "cumulativeIndex": 122.902
     },
     {
       "month": "2026-09",
-      "cumulativeIndex": 123.348
+      "cumulativeIndex": 123.347
     }
   ],
   "excludedPositions": [
