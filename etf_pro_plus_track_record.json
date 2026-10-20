@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T10:01:35.118179",
+  "generatedAt": "2026-10-19T11:45:57.011415",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -468,7 +468,7 @@
           "side": "long",
           "periodStart": "2025-10-01",
           "periodEnd": "2025-10-31",
-          "priceStart": 24.3074,
+          "priceStart": 24.3073,
           "priceEnd": 24.3703,
           "returnPct": 0.259
         }
@@ -1180,15 +1180,6 @@
           "returnPct": 0.703
         },
         {
-          "ticker": "EWA",
-          "side": "short",
-          "periodStart": "2026-09-14",
-          "periodEnd": "2026-09-15",
-          "priceStart": 29.06,
-          "priceEnd": 28.89,
-          "returnPct": 0.585
-        },
-        {
           "ticker": "EWL",
           "side": "short",
           "periodStart": "2026-09-14",
@@ -1430,6 +1421,15 @@
           "priceStart": 42.2493,
           "priceEnd": 41.0184,
           "returnPct": 2.914
+        },
+        {
+          "ticker": "EWA",
+          "side": "short",
+          "periodStart": "2026-09-14",
+          "periodEnd": "2026-09-15",
+          "priceStart": 29.06,
+          "priceEnd": 28.89,
+          "returnPct": 0.585
         }
       ]
     }
@@ -1667,5 +1667,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 83
+  "positionsIncluded": 85
 }

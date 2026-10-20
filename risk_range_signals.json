@@ -1,11 +1,11 @@
 {
   "source": "email",
-  "source_title": "RISK RANGE™ SIGNALS: OCTOBER 16, 2026",
-  "source_email_id": "112033",
-  "source_file": "hedgeye_112033_RISK_RANGE__SIGNALS__OCTOBER_16__2026.md",
-  "sent_at": "2026-10-16T07:30:54-04:00",
-  "signals_date": "2026-10-16",
-  "parsed_at": "2026-10-18T10:00:25",
+  "source_title": "RISK RANGE™ SIGNALS: OCTOBER 20, 2026",
+  "source_email_id": "112265",
+  "source_file": "hedgeye_112265_RISK_RANGE__SIGNALS__OCTOBER_20__2026.md",
+  "sent_at": "2026-10-20T07:26:22-04:00",
+  "signals_date": "2026-10-20",
+  "parsed_at": "2026-10-20T09:30:22",
   "total_signals": 37,
   "signals": [
     {
@@ -13,26 +13,26 @@
       "ticker_hedgeye": "UST30Y",
       "name": "30-Year U.S. Treasury Yield",
       "trend": "BULLISH",
-      "buy_trade": 5.4,
-      "sell_trade": 5.7,
-      "prev_close": 5.43
+      "buy_trade": 5.38,
+      "sell_trade": 5.69,
+      "prev_close": 5.48
     },
     {
       "ticker": "US10",
       "ticker_hedgeye": "UST10Y",
       "name": "10-Year U.S. Treasury Yield",
       "trend": "BULLISH",
-      "buy_trade": 5.06,
-      "sell_trade": 5.36,
-      "prev_close": 5.1
+      "buy_trade": 5.05,
+      "sell_trade": 5.35,
+      "prev_close": 5.15
     },
     {
       "ticker": "UST2Y",
       "ticker_hedgeye": "UST2Y",
       "name": "2-Year U.S. Treasury Yield",
       "trend": "BULLISH",
-      "buy_trade": 4.71,
-      "sell_trade": 4.89,
+      "buy_trade": 4.72,
+      "sell_trade": 4.86,
       "prev_close": 4.77
     },
     {
@@ -40,117 +40,117 @@
       "ticker_hedgeye": "HYG",
       "name": "High Yield",
       "trend": "BEARISH",
-      "buy_trade": 76.54,
-      "sell_trade": 77.61,
-      "prev_close": 77.13
+      "buy_trade": 76.42,
+      "sell_trade": 77.42,
+      "prev_close": 76.83
     },
     {
       "ticker": "LQD",
       "ticker_hedgeye": "LQD",
       "name": "Investment Grade Corporate Bond ETF",
       "trend": "BEARISH",
-      "buy_trade": 101.7,
-      "sell_trade": 103.9,
-      "prev_close": 103.5
+      "buy_trade": 101.6,
+      "sell_trade": 103.7,
+      "prev_close": 102.9
     },
     {
       "ticker": "SPX",
       "ticker_hedgeye": "SPX",
       "name": "S&P 500",
       "trend": "BULLISH",
-      "buy_trade": 7701.0,
-      "sell_trade": 7850.0,
-      "prev_close": 7744.0
+      "buy_trade": 7613.0,
+      "sell_trade": 7859.0,
+      "prev_close": 7691.0
     },
     {
       "ticker": "COMPQ",
       "ticker_hedgeye": "COMPQ",
       "name": "NASDAQ Composite",
-      "trend": "BULLISH",
-      "buy_trade": 26514.0,
-      "sell_trade": 27621.0,
-      "prev_close": 26713.0
+      "trend": "NEUTRAL",
+      "buy_trade": 26028.0,
+      "sell_trade": 27701.0,
+      "prev_close": 26431.0
     },
     {
       "ticker": "RUT",
       "ticker_hedgeye": "RUT",
       "name": "Russell 2000",
       "trend": "BEARISH",
-      "buy_trade": 2725.0,
-      "sell_trade": 2826.0,
-      "prev_close": 2767.0
+      "buy_trade": 2695.0,
+      "sell_trade": 2810.0,
+      "prev_close": 2728.0
     },
     {
       "ticker": "XLV",
       "ticker_hedgeye": "XLV",
       "name": "Health Care Select Sector SPDR Fund",
       "trend": "BULLISH",
-      "buy_trade": 169.0,
-      "sell_trade": 178.0,
-      "prev_close": 177.0
+      "buy_trade": 170.0,
+      "sell_trade": 179.0,
+      "prev_close": 176.0
     },
     {
       "ticker": "IGV",
       "ticker_hedgeye": "IGV",
       "name": "iShares Expanded Tech-Software Sector ETF",
       "trend": "BULLISH",
-      "buy_trade": 106.0,
+      "buy_trade": 102.0,
       "sell_trade": 114.0,
-      "prev_close": 110.0
+      "prev_close": 106.0
     },
     {
       "ticker": "XLK",
       "ticker_hedgeye": "XLK",
       "name": "Technology Select Sector SPDR Fund",
-      "trend": "BULLISH",
-      "buy_trade": 186.0,
-      "sell_trade": 204.0,
-      "prev_close": 189.0
+      "trend": "NEUTRAL",
+      "buy_trade": 180.0,
+      "sell_trade": 202.0,
+      "prev_close": 186.0
     },
     {
       "ticker": "SSEC",
       "ticker_hedgeye": "SSEC",
       "name": "SHANGHAI COMPOSITE",
       "trend": "BEARISH",
-      "buy_trade": 3702.0,
-      "sell_trade": 3857.0,
-      "prev_close": 3716.0
+      "buy_trade": 3680.0,
+      "sell_trade": 3840.0,
+      "prev_close": 3735.0
     },
     {
       "ticker": "NIKK",
       "ticker_hedgeye": "NIKK",
       "name": "Nikkei 225 Index",
-      "trend": "NEUTRAL",
-      "buy_trade": 63521.0,
-      "sell_trade": 70700.0,
-      "prev_close": 65324.0
+      "trend": "BEARISH",
+      "buy_trade": 63312.0,
+      "sell_trade": 67694.0,
+      "prev_close": 64075.0
     },
     {
       "ticker": "DAX",
       "ticker_hedgeye": "DAX",
       "name": "German DAX Composite",
       "trend": "BEARISH",
-      "buy_trade": 24799.0,
-      "sell_trade": 25731.0,
-      "prev_close": 25642.0
+      "buy_trade": 24794.0,
+      "sell_trade": 25610.0,
+      "prev_close": 25093.0
     },
     {
       "ticker": "VIX",
       "ticker_hedgeye": "VIX",
       "name": "Volatility Index",
       "trend": "BEARISH",
-      "buy_trade": 14.84,
-      "sell_trade": 17.7,
-      "prev_close": 16.15
+      "buy_trade": 14.21,
+      "sell_trade": 19.98,
+      "prev_close": 18.68
     },
     {
       "ticker": "USD",
       "ticker_hedgeye": "USD",
       "name": "U.S. Dollar Index",
       "trend": "BULLISH",
-      "buy_trade": 101.3,
-      "sell_trade": 102.71,
-      "prev_close": 101.49
+      "buy_trade": 101.43,
+      "sell_trade": 102.64,
+      "prev_close": 101.65
     },
     {
       "ticker": "EUR/USD",
@@ -158,26 +158,26 @@
       "name": "Euro to U.S. Dollar",
       "trend": "BEARISH",
       "buy_trade": 1.115,
-      "sell_trade": 1.128,
-      "prev_close": 1.126
+      "sell_trade": 1.125,
+      "prev_close": 1.122
     },
     {
       "ticker": "USD/YEN",
       "ticker_hedgeye": "USD/YEN",
       "name": "U.S. Dollar to Japanese Yen",
       "trend": "BEARISH",
-      "buy_trade": 157.37,
-      "sell_trade": 158.64,
-      "prev_close": 158.01
+      "buy_trade": 157.53,
+      "sell_trade": 158.51,
+      "prev_close": 158.09
     },
     {
       "ticker": "GBP/USD",
       "ticker_hedgeye": "GBP/USD",
       "name": "British Pound to U.S. Dollar",
       "trend": "BEARISH",
-      "buy_trade": 1.317,
-      "sell_trade": 1.335,
-      "prev_close": 1.334
+      "buy_trade": 1.318,
+      "sell_trade": 1.337,
+      "prev_close": 1.335
     },
     {
       "ticker": "CAD/USD",
@@ -185,62 +185,62 @@
       "name": "Canadian Dollar to U.S. Dollar",
       "trend": "BEARISH",
       "buy_trade": 0.698,
-      "sell_trade": 0.708,
-      "prev_close": 0.707
+      "sell_trade": 0.713,
+      "prev_close": 0.712
     },
     {
       "ticker": "WTIC",
       "ticker_hedgeye": "WTIC",
       "name": "Light Crude Oil Continuous Contract",
       "trend": "BULLISH",
-      "buy_trade": 89.44,
-      "sell_trade": 99.97,
-      "prev_close": 95.87
+      "buy_trade": 94.09,
+      "sell_trade": 103.17,
+      "prev_close": 100.7
     },
     {
       "ticker": "BRENT",
       "ticker_hedgeye": "BRENT",
       "name": "Brent Crude Oil Continuous Contract",
       "trend": "BULLISH",
-      "buy_trade": 102.0,
-      "sell_trade": 110.0,
-      "prev_close": 106.0
+      "buy_trade": 104.0,
+      "sell_trade": 114.0,
+      "prev_close": 111.0
     },
     {
       "ticker": "NATGAS",
       "ticker_hedgeye": "NATGAS",
       "name": "Natural Gas Continuous Contract",
-      "trend": "BULLISH",
-      "buy_trade": 3.03,
-      "sell_trade": 3.35,
-      "prev_close": 3.18
+      "trend": "NEUTRAL",
+      "buy_trade": 2.89,
+      "sell_trade": 3.28,
+      "prev_close": 3.0
     },
     {
       "ticker": "GOLD",
       "ticker_hedgeye": "GOLD",
       "name": "Gold Spot Price",
       "trend": "BEARISH",
-      "buy_trade": 4090.0,
-      "sell_trade": 4216.0,
-      "prev_close": 4198.0
+      "buy_trade": 4088.0,
+      "sell_trade": 4201.0,
+      "prev_close": 4138.0
     },
     {
       "ticker": "COPPER",
       "ticker_hedgeye": "COPPER",
       "name": "Copper Spot Price",
       "trend": "BULLISH",
-      "buy_trade": 6.41,
+      "buy_trade": 6.42,
       "sell_trade": 6.71,
-      "prev_close": 6.64
+      "prev_close": 6.58
     },
     {
       "ticker": "SILVER",
       "ticker_hedgeye": "SILVER",
       "name": "Silver Spot Price",
       "trend": "BEARISH",
-      "buy_trade": 55.0,
-      "sell_trade": 60.0,
-      "prev_close": 58.0
+      "buy_trade": 54.0,
+      "sell_trade": 59.0,
+      "prev_close": 57.0
     },
     {
       "ticker": "MSFT",
@@ -248,111 +248,107 @@
       "name": "Microsoft Corp.",
       "trend": "BULLISH",
       "buy_trade": 520.0,
-      "sell_trade": 550.0,
-      "prev_close": 539.0
+      "sell_trade": 547.0,
+      "prev_close": 534.0
     },
     {
       "ticker": "AAPL",
       "ticker_hedgeye": "AAPL",
       "name": "Apple Inc.",
       "trend": "BULLISH",
-      "buy_trade": 334.0,
-      "sell_trade": 347.0,
-      "prev_close": 342.0
+      "buy_trade": 336.0,
+      "sell_trade": 346.0,
+      "prev_close": 343.0
     },
     {
       "ticker": "AMZN",
       "ticker_hedgeye": "AMZN",
       "name": "Amazon Inc.",
       "trend": "BULLISH",
-      "buy_trade": 249.0,
-      "sell_trade": 264.0,
-      "prev_close": 255.0
+      "buy_trade": 250.0,
+      "sell_trade": 269.0,
+      "prev_close": 262.0
     },
     {
       "ticker": "META",
       "ticker_hedgeye": "META",
       "name": "Meta Platforms Inc.",
       "trend": "BULLISH",
-      "buy_trade": 708.0,
-      "sell_trade": 763.0,
-      "prev_close": 737.0
+      "buy_trade": 690.0,
+      "sell_trade": 762.0,
+      "prev_close": 705.0
     },
     {
       "ticker": "GOOGL",
       "ticker_hedgeye": "GOOGL",
       "name": "Alphabet Inc.",
-      "trend": "BULLISH",
-      "buy_trade": 342.0,
-      "sell_trade": 357.0,
-      "prev_close": 349.0
+      "trend": "BEARISH",
+      "buy_trade": 337.0,
+      "sell_trade": 353.0,
+      "prev_close": 344.0
     },
     {
       "ticker": "NFLX",
       "ticker_hedgeye": "NFLX",
       "name": "Netflix Inc.",
       "trend": "BEARISH",
-      "buy_trade": 67.0,
-      "sell_trade": 75.0,
-      "prev_close": 73.0
+      "buy_trade": 68.0,
+      "sell_trade": 73.0,
+      "prev_close": 70.0
     },
     {
       "ticker": "TSLA",
       "ticker_hedgeye": "TSLA",
       "name": "Tesla Inc.",
       "trend": "BEARISH",
-      "buy_trade": 350.0,
-      "sell_trade": 385.0,
-      "prev_close": 362.0
+      "buy_trade": 352.0,
+      "sell_trade": 375.0,
+      "prev_close": 368.0
     },
     {
       "ticker": "NVDA",
       "ticker_hedgeye": "NVDA",
       "name": "NVIDIA Corporation",
-      "trend": "NEUTRAL",
-      "buy_trade": 210.0,
-      "sell_trade": 230.0,
+      "trend": "BEARISH",
+      "buy_trade": 208.0,
+      "sell_trade": 225.0,
       "prev_close": 217.0
     },
     {
       "ticker": "SPCX",
       "ticker_hedgeye": "SPCX",
       "name": "Space Exploration Technologies Corp.",
-      "trend": "NEUTRAL",
-      "buy_trade": 145.0,
-      "sell_trade": 171.0,
-      "prev_close": 149.0
+      "trend": "BEARISH",
+      "buy_trade": 140.0,
+      "sell_trade": 157.0,
+      "prev_close": 148.0
     },
     {
       "ticker": "DT",
       "ticker_hedgeye": "DT",
       "name": "Dynatrace Inc.",
       "trend": "BULLISH",
-      "buy_trade": 59.0,
-      "sell_trade": 68.0,
-      "prev_close": 63.73
+      "buy_trade": 58.0,
+      "sell_trade": 66.0,
+      "prev_close": 61.54
     },
     {
       "ticker": "BITCOIN",
       "ticker_hedgeye": "BITCOIN",
       "name": "Bitcoin Spot Price",
       "trend": "BULLISH",
-      "buy_trade": 80506.0,
-      "sell_trade": 84208.0,
-      "prev_close": 82458.0
+      "buy_trade": 80641.0,
+      "sell_trade": 83112.0,
+      "prev_close": 81354.0
     }
   ],
   "trend_changes": [
-    "USD/YEN changed from Neutral to Bearish",
-    "COPPER changed from Neutral to Bullish",
-    "TSLA changed from Neutral to Bearish",
-    "DT was added to Risk Ranges™",
-    "RSP changed from Bearish to Bullish and was in the #OutBucket",
-    "XLY changed from Bearish to Neutral and was in the #OutBucket",
-    "PINK changed from Bearish to Bullish and was in the #OutBucket",
-    "IAK changed from Neutral to Bullish and was in the #OutBucket",
-    "XLF changed from Bearish to Neutral and was in the #OutBucket",
-    "TXG was removed from Risk Ranges™"
+    "COMPQ changed from Bullish to Neutral",
+    "XLK changed from Bullish to Neutral",
+    "NIKK changed from Neutral to Bearish",
+    "NATGAS changed from Bullish to Neutral",
+    "AMZN changed from Bearish to Bullish",
+    "XLF changed from Bullish to Neutral and was in the #OutBucket"
   ],
   "outbucket": [
     {
@@ -382,7 +378,7 @@
     {
       "ticker": "XLY",
       "name": "Consumer Discretionary Select Sector SPDR Fund",
-      "trend": "NEUTRAL",
+      "trend": "BEARISH",
       "since": "2026-07-31"
     },
     {
@@ -406,7 +402,7 @@
     {
       "ticker": "PINK",
       "name": "Simplify Healthcare ETF",
-      "trend": "BULLISH",
+      "trend": "BEARISH",
       "since": "2025-10-23"
     },
     {

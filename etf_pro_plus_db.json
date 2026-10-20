@@ -1,5 +1,5 @@
 {
-  "updatedAt": "19/10/2026 10:00:37",
+  "updatedAt": "19/10/2026 11:45:26",
   "reports": {
     "weekly": [
       {
@@ -3700,6 +3700,31 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_112209_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-19 10:31AM EDT",
+        "addsLong": [
+          {
+            "name": "S&P Equal Weight",
+            "ticker": "RSP"
+          },
+          {
+            "name": "Rising Rates Fixed Income",
+            "ticker": "RISR"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Australia Equities",
+            "ticker": "EWA",
+            "rangeLow": 27.99,
+            "rangeHigh": 29.24
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -4977,6 +5002,12 @@
       "type": "weekly",
       "sourceFile": "weekly_112171_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "summary": "Snapshot consolidado: 40 posições ativas (21 long / 19 short)"
+    },
+    {
+      "date": "2026-10-19 10:31AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_112209_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: S&P Equal Weight (RSP), Rising Rates Fixed Income (RISR) | Removeu SHORT: Australia Equities (EWA)"
     }
   ],
   "currentLineup": [
@@ -5659,29 +5690,6 @@
       "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
     },
     {
-      "ticker": "EWA",
-      "name": "Australia Equities",
-      "side": "short",
-      "dateAdded": "9/14/2026",
-      "assetClass": "International Equities",
-      "entryPrice": 28.73,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 27.99,
-      "rangeHigh": 29.24,
-      "sourceOfEntry": "weekly:weekly_112171_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.0,
-        "maxPct": 3.0,
-        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
       "ticker": "EWL",
       "name": "Switzerland",
       "side": "short",
@@ -5877,6 +5885,36 @@
       "rangeLow": 126.0,
       "rangeHigh": 129.0,
       "sourceOfEntry": "weekly:weekly_112171_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "RSP",
+      "name": "S&P Equal Weight",
+      "side": "long",
+      "dateAdded": "2026-10-19 10:31AM EDT",
+      "assetClass": null,
+      "entryPrice": 213.325,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_112209_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "RISR",
+      "name": "Rising Rates Fixed Income",
+      "side": "long",
+      "dateAdded": "2026-10-19 10:31AM EDT",
+      "assetClass": null,
+      "entryPrice": 37.115,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_112209_UPDATE__3_New_ETF_Pro_Changes.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
