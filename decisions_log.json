@@ -1,6 +1,142 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261020",
+      "date": "20/10/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (20/10/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-10-20T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "DJIA",
+          "categoria": "ETF PRO PLUS — DOW COVERED CALL",
+          "regime": null,
+          "decisao": "Comprar / Long",
+          "racional": "ETF Pro Plus adicionou Dow Covered Call (DJIA) como LONG no UPDATE de 20/10/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 20/10/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "EWM",
+          "categoria": "ETF PRO PLUS — MALAYSIA",
+          "regime": null,
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "ETF Pro Plus adicionou Malaysia (EWM) como SHORT no UPDATE de 20/10/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 20/10/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "EPHE",
+          "categoria": "ETF PRO PLUS — PHILIPPINES",
+          "regime": null,
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "ETF Pro Plus adicionou Philippines (EPHE) como SHORT no UPDATE de 20/10/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 20/10/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "JPXN",
+          "categoria": "ETF PRO PLUS — JAPAN",
+          "regime": null,
+          "decisao": "Vender / Zerar Long",
+          "racional": "ETF Pro Plus encerrou o LONG em Japan (JPXN) no UPDATE de 20/10/2026. Saída no Trend Range: 101.00 – 106.00.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 20/10/2026)",
+          "rangeLow": 101.0,
+          "rangeHigh": 106.0
+        },
+        {
+          "ativo": "QQQ",
+          "categoria": "ETF PRO PLUS — NASDAQ 100",
+          "regime": null,
+          "decisao": "Vender / Zerar Long",
+          "racional": "ETF Pro Plus encerrou o LONG em Nasdaq 100 (QQQ) no UPDATE de 20/10/2026. Saída no Trend Range: 705.00 – 767.00.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 20/10/2026)",
+          "rangeLow": 705.0,
+          "rangeHigh": 767.0
+        },
+        {
+          "ativo": "UNG",
+          "categoria": "ETF PRO PLUS — NATURAL GAS",
+          "regime": null,
+          "decisao": "Vender / Zerar Long",
+          "racional": "ETF Pro Plus encerrou o LONG em Natural Gas (UNG) no UPDATE de 20/10/2026. Saída no Trend Range: 10.25 – 11.41.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 20/10/2026)",
+          "rangeLow": 10.25,
+          "rangeHigh": 11.41
+        },
+        {
+          "ativo": "EWL",
+          "categoria": "ETF PRO PLUS — SWITZERLAND",
+          "regime": null,
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "ETF Pro Plus encerrou o SHORT em Switzerland (EWL) no UPDATE de 20/10/2026. Cobertura no Trend Range: 58.80 – 62.98.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 20/10/2026)",
+          "rangeLow": 58.8,
+          "rangeHigh": 62.98
+        },
+        {
+          "ativo": "EWW",
+          "categoria": "ETF PRO PLUS — MEXICO",
+          "regime": null,
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "ETF Pro Plus encerrou o SHORT em Mexico (EWW) no UPDATE de 20/10/2026. Cobertura no Trend Range: 70.70 – 75.52.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 20/10/2026)",
+          "rangeLow": 70.7,
+          "rangeHigh": 75.52
+        },
+        {
+          "ativo": "FXB",
+          "categoria": "ETF PRO PLUS — BRITISH POUND",
+          "regime": null,
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "ETF Pro Plus encerrou o SHORT em British Pound (FXB) no UPDATE de 20/10/2026. Cobertura no Trend Range: 126.00 – 129.00.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 20/10/2026)",
+          "rangeLow": 126.0,
+          "rangeHigh": 129.0
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261019",
       "date": "19/10/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (19/10/2026)",
@@ -1696,7 +1832,7 @@
         },
         {
           "ativo": "EPHE",
-          "categoria": "ETF PRO PLUS — EPHE",
+          "categoria": "ETF PRO PLUS — PHILIPPINES",
           "regime": null,
           "decisao": "Zerar Posição / Remover",
           "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
@@ -2620,7 +2756,7 @@
         },
         {
           "ativo": "EPHE",
-          "categoria": "ETF PRO PLUS — EPHE",
+          "categoria": "ETF PRO PLUS — PHILIPPINES",
           "regime": null,
           "decisao": "Comprar / Long",
           "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
@@ -3435,5 +3571,5 @@
       ]
     }
   ],
-  "updatedAt": "20/10/2026 09:30:57"
+  "updatedAt": "21/10/2026 09:31:18"
 }

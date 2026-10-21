@@ -1,47 +1,47 @@
 {
-  "updated_at": "20/10/2026 09:31:44",
+  "updated_at": "21/10/2026 09:32:39",
   "gex": [
     {
       "ticker": "SPY",
-      "current_price": 766.48,
-      "net_gex_million": -2774.95,
+      "current_price": 769.05,
+      "net_gex_million": -3580.17,
       "regime": "SHORT GAMMA",
       "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
       "call_wall": 770.0,
       "put_wall": 769.0,
-      "zero_gamma_level": 530.0,
-      "total_call_oi": 521110,
-      "total_put_oi": 943382,
-      "put_call_ratio": 1.81,
-      "updated_at": "20/10/2026 09:31:04"
+      "zero_gamma_level": 500.0,
+      "total_call_oi": 539573,
+      "total_put_oi": 832533,
+      "put_call_ratio": 1.54,
+      "updated_at": "21/10/2026 09:32:01"
     },
     {
       "ticker": "QQQ",
-      "current_price": 718.36,
-      "net_gex_million": -1405.19,
+      "current_price": 717.63,
+      "net_gex_million": -2448.64,
       "regime": "SHORT GAMMA",
       "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
-      "call_wall": 735.0,
+      "call_wall": 722.0,
       "put_wall": 710.0,
-      "zero_gamma_level": 718.0,
-      "total_call_oi": 394767,
-      "total_put_oi": 593494,
-      "put_call_ratio": 1.5,
-      "updated_at": "20/10/2026 09:31:06"
+      "zero_gamma_level": 722.0,
+      "total_call_oi": 430402,
+      "total_put_oi": 601029,
+      "put_call_ratio": 1.4,
+      "updated_at": "21/10/2026 09:32:03"
     },
     {
       "ticker": "IWM",
-      "current_price": 271.28,
-      "net_gex_million": -326.57,
+      "current_price": 275.78,
+      "net_gex_million": -46.87,
       "regime": "SHORT GAMMA",
       "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
-      "call_wall": 275.0,
-      "put_wall": 267.0,
+      "call_wall": 280.0,
+      "put_wall": 277.0,
       "zero_gamma_level": 160.0,
-      "total_call_oi": 212069,
-      "total_put_oi": 242124,
-      "put_call_ratio": 1.14,
-      "updated_at": "20/10/2026 09:31:08"
+      "total_call_oi": 244983,
+      "total_put_oi": 250873,
+      "put_call_ratio": 1.02,
+      "updated_at": "21/10/2026 09:32:04"
     }
   ],
   "fundamentals": [
@@ -49,12 +49,12 @@
       "ticker": "MELI",
       "shortName": "MercadoLibre, Inc.",
       "sector": "Consumer Cyclical",
-      "price": 1839.72,
-      "pe": "50.7x",
-      "ev_ebitda": "25.9x",
+      "price": 1879.5,
+      "pe": "51.1x",
+      "ev_ebitda": "26.4x",
       "net_margin": "5.3%",
       "revenue_growth": "+49.8%",
-      "market_cap": "US$ 93.3B",
+      "market_cap": "US$ 95.3B",
       "beta": "1.31",
       "recommendation": "BUY"
     },
@@ -62,12 +62,12 @@
       "ticker": "GOOGL",
       "shortName": "Alphabet Inc.",
       "sector": "Communication Services",
-      "price": 344.18,
-      "pe": "17.3x",
-      "ev_ebitda": "23.7x",
+      "price": 340.27,
+      "pe": "17.1x",
+      "ev_ebitda": "23.4x",
       "net_margin": "54.8%",
       "revenue_growth": "+24.2%",
-      "market_cap": "US$ 4209.3B",
+      "market_cap": "US$ 4161.5B",
       "beta": "1.21",
       "recommendation": "STRONG_BUY"
     },
@@ -75,12 +75,12 @@
       "ticker": "UBER",
       "shortName": "Uber Technologies, Inc.",
       "sector": "Technology",
-      "price": 69.96,
-      "pe": "15.3x",
-      "ev_ebitda": "20.5x",
+      "price": 68.94,
+      "pe": "15.1x",
+      "ev_ebitda": "20.2x",
       "net_margin": "17.3%",
       "revenue_growth": "+12.2%",
-      "market_cap": "US$ 142.9B",
+      "market_cap": "US$ 140.8B",
       "beta": "1.26",
       "recommendation": "BUY"
     },
@@ -88,12 +88,12 @@
       "ticker": "AVGO",
       "shortName": "Broadcom Inc.",
       "sector": "Technology",
-      "price": 334.59,
+      "price": 334.37,
       "pe": "42.7x",
       "ev_ebitda": "31.2x",
       "net_margin": "42.9%",
       "revenue_growth": "+85.5%",
-      "market_cap": "US$ 1597.2B",
+      "market_cap": "US$ 1596.2B",
       "beta": "1.48",
       "recommendation": "STRONG_BUY"
     },
@@ -101,12 +101,12 @@
       "ticker": "ASML",
       "shortName": "ASML Holding N.V. - New York Re",
       "sector": "Technology",
-      "price": 1647.12,
-      "pe": "40.5x",
-      "ev_ebitda": "2165.8x",
+      "price": 1630.84,
+      "pe": "40.1x",
+      "ev_ebitda": "2144.4x",
       "net_margin": "34.1%",
       "revenue_growth": "+55.2%",
-      "market_cap": "US$ 634.8B",
+      "market_cap": "US$ 628.6B",
       "beta": "1.30",
       "recommendation": "STRONG_BUY"
     },
@@ -114,12 +114,12 @@
       "ticker": "META",
       "shortName": "Meta Platforms, Inc.",
       "sector": "Communication Services",
-      "price": 705.44,
-      "pe": "26.6x",
-      "ev_ebitda": "16.6x",
+      "price": 694.25,
+      "pe": "26.2x",
+      "ev_ebitda": "16.3x",
       "net_margin": "29.8%",
       "revenue_growth": "+28.0%",
-      "market_cap": "US$ 1797.1B",
+      "market_cap": "US$ 1768.6B",
       "beta": "1.19",
       "recommendation": "STRONG_BUY"
     },
@@ -127,12 +127,12 @@
       "ticker": "FN",
       "shortName": "Fabrinet",
       "sector": "Technology",
-      "price": 362.69,
-      "pe": "27.8x",
-      "ev_ebitda": "22.8x",
+      "price": 355.48,
+      "pe": "27.2x",
+      "ev_ebitda": "22.4x",
       "net_margin": "10.2%",
       "revenue_growth": "+44.6%",
-      "market_cap": "US$ 13.0B",
+      "market_cap": "US$ 12.7B",
       "beta": "1.22",
       "recommendation": "BUY"
     },
@@ -140,12 +140,12 @@
       "ticker": "ALAB",
       "shortName": "Astera Labs, Inc.",
       "sector": "Technology",
-      "price": 286.58,
-      "pe": "141.2x",
-      "ev_ebitda": "170.0x",
+      "price": 284.8,
+      "pe": "140.3x",
+      "ev_ebitda": "168.9x",
       "net_margin": "30.7%",
       "revenue_growth": "+104.5%",
-      "market_cap": "US$ 49.7B",
+      "market_cap": "US$ 49.4B",
       "beta": "3.69",
       "recommendation": "BUY"
     },
@@ -153,12 +153,12 @@
       "ticker": "COHR",
       "shortName": "Coherent Corp.",
       "sector": "Technology",
-      "price": 232.02,
+      "price": 231.8,
       "pe": "56.3x",
-      "ev_ebitda": "33.3x",
+      "ev_ebitda": "33.2x",
       "net_margin": "11.3%",
       "revenue_growth": "+33.7%",
-      "market_cap": "US$ 45.7B",
+      "market_cap": "US$ 45.6B",
       "beta": "2.11",
       "recommendation": "BUY"
     },
@@ -166,12 +166,12 @@
       "ticker": "CRDO",
       "shortName": "Credo Technology Group Holding ",
       "sector": "Technology",
-      "price": 172.81,
-      "pe": "61.3x",
-      "ev_ebitda": "58.4x",
+      "price": 171.51,
+      "pe": "60.8x",
+      "ev_ebitda": "58.0x",
       "net_margin": "33.8%",
       "revenue_growth": "+114.7%",
-      "market_cap": "US$ 32.5B",
+      "market_cap": "US$ 32.2B",
       "beta": "3.25",
       "recommendation": "STRONG_BUY"
     },
@@ -179,12 +179,12 @@
       "ticker": "ARM",
       "shortName": "Arm Holdings plc",
       "sector": "Technology",
-      "price": 228.05,
-      "pe": "235.1x",
-      "ev_ebitda": "225.8x",
+      "price": 221.06,
+      "pe": "227.9x",
+      "ev_ebitda": "218.8x",
       "net_margin": "20.2%",
       "revenue_growth": "+22.4%",
-      "market_cap": "US$ 243.6B",
+      "market_cap": "US$ 236.1B",
       "beta": "3.79",
       "recommendation": "BUY"
     },
@@ -192,12 +192,12 @@
       "ticker": "MTSI",
       "shortName": "MACOM Technology Solutions Hold",
       "sector": "Technology",
-      "price": 265.79,
-      "pe": "84.6x",
-      "ev_ebitda": "72.6x",
+      "price": 262.93,
+      "pe": "83.7x",
+      "ev_ebitda": "71.8x",
       "net_margin": "20.7%",
       "revenue_growth": "+35.8%",
-      "market_cap": "US$ 20.3B",
+      "market_cap": "US$ 20.1B",
       "beta": "1.76",
       "recommendation": "BUY"
     },
@@ -205,9 +205,9 @@
       "ticker": "AXTI",
       "shortName": "AXT Inc",
       "sector": "Technology",
-      "price": 56.79,
-      "pe": "1419.8x",
-      "ev_ebitda": "252.7x",
+      "price": 57.09,
+      "pe": "1427.2x",
+      "ev_ebitda": "254.1x",
       "net_margin": "3.2%",
       "revenue_growth": "+164.8%",
       "market_cap": "US$ 3.7B",
@@ -218,12 +218,12 @@
       "ticker": "TSEM",
       "shortName": "Tower Semiconductor Ltd.",
       "sector": "Technology",
-      "price": 200.3,
-      "pe": "79.2x",
-      "ev_ebitda": "35.7x",
+      "price": 183.78,
+      "pe": "72.6x",
+      "ev_ebitda": "32.5x",
       "net_margin": "16.9%",
       "revenue_growth": "+23.7%",
-      "market_cap": "US$ 22.6B",
+      "market_cap": "US$ 20.9B",
       "beta": "0.89",
       "recommendation": "STRONG_BUY"
     },
@@ -231,12 +231,12 @@
       "ticker": "INTC",
       "shortName": "Intel Corporation",
       "sector": "Technology",
-      "price": 92.03,
-      "pe": "Fwd 43.6x",
-      "ev_ebitda": "29.7x",
+      "price": 91.69,
+      "pe": "Fwd 43.4x",
+      "ev_ebitda": "29.6x",
       "net_margin": "-19.8%",
       "revenue_growth": "+25.4%",
-      "market_cap": "US$ 486.5B",
+      "market_cap": "US$ 484.7B",
       "beta": "2.23",
       "recommendation": "BUY"
     },
@@ -244,12 +244,12 @@
       "ticker": "NOK",
       "shortName": "Nokia Corporation Sponsored",
       "sector": "Technology",
-      "price": 9.08,
-      "pe": "64.9x",
-      "ev_ebitda": "18.9x",
+      "price": 9.02,
+      "pe": "64.4x",
+      "ev_ebitda": "18.7x",
       "net_margin": "3.5%",
       "revenue_growth": "+8.4%",
-      "market_cap": "US$ 50.8B",
+      "market_cap": "US$ 50.5B",
       "beta": "0.73",
       "recommendation": "BUY"
     },
@@ -257,12 +257,12 @@
       "ticker": "NEM",
       "shortName": "Newmont Corporation",
       "sector": "Basic Materials",
-      "price": 118.01,
-      "pe": "14.9x",
-      "ev_ebitda": "7.1x",
+      "price": 116.81,
+      "pe": "14.7x",
+      "ev_ebitda": "7.0x",
       "net_margin": "33.4%",
       "revenue_growth": "+15.1%",
-      "market_cap": "US$ 124.3B",
+      "market_cap": "US$ 123.1B",
       "beta": "0.53",
       "recommendation": "BUY"
     },
@@ -270,12 +270,12 @@
       "ticker": "BE",
       "shortName": "Bloom Energy Corporation",
       "sector": "Industrials",
-      "price": 226.22,
-      "pe": "297.7x",
-      "ev_ebitda": "159.5x",
+      "price": 222.65,
+      "pe": "293.0x",
+      "ev_ebitda": "157.0x",
       "net_margin": "7.9%",
       "revenue_growth": "+165.5%",
-      "market_cap": "US$ 66.6B",
+      "market_cap": "US$ 65.6B",
       "beta": "3.78",
       "recommendation": "BUY"
     },
@@ -283,12 +283,12 @@
       "ticker": "MLI",
       "shortName": "Mueller Industries, Inc.",
       "sector": "Industrials",
-      "price": 60.82,
-      "pe": "15.8x",
-      "ev_ebitda": "11.1x",
-      "net_margin": "18.2%",
-      "revenue_growth": "+25.5%",
-      "market_cap": "US$ 13.5B",
+      "price": 56.81,
+      "pe": "14.6x",
+      "ev_ebitda": "9.8x",
+      "net_margin": "17.3%",
+      "revenue_growth": "+31.6%",
+      "market_cap": "US$ 12.6B",
       "beta": "1.09",
       "recommendation": "STRONG_BUY"
     },
@@ -296,7 +296,7 @@
       "ticker": "AAAU",
       "shortName": "Goldman Sachs Physical Gold ETF",
       "sector": "N/A",
-      "price": 40.82,
+      "price": 40.59,
       "pe": "N/D",
       "ev_ebitda": "N/D",
       "net_margin": "N/D",
@@ -309,7 +309,7 @@
       "ticker": "GDX",
       "shortName": "VanEck Gold Miners ETF",
       "sector": "N/A",
-      "price": 86.47,
+      "price": 86.1,
       "pe": "13.7x",
       "ev_ebitda": "N/D",
       "net_margin": "N/D",
@@ -322,7 +322,7 @@
       "ticker": "SLV",
       "shortName": "iShares Silver Trust",
       "sector": "N/A",
-      "price": 51.54,
+      "price": 52.12,
       "pe": "N/D",
       "ev_ebitda": "N/D",
       "net_margin": "N/D",
@@ -335,7 +335,7 @@
       "ticker": "SGOV",
       "shortName": "iShares 0-3 Month Treasury Bond",
       "sector": "N/A",
-      "price": 100.59,
+      "price": 100.61,
       "pe": "N/D",
       "ev_ebitda": "N/D",
       "net_margin": "N/D",
@@ -409,21 +409,21 @@
       "name": "Amazon.com Inc.",
       "sector": "Consumer Discretionary",
       "ownership_count": 34,
-      "hold_price": "$238.47"
+      "hold_price": "$239.00"
     },
     {
       "ticker": "META",
       "name": "Meta Platforms Inc.",
       "sector": "Technology",
-      "ownership_count": 31,
-      "hold_price": "$566.17"
+      "ownership_count": 32,
+      "hold_price": "$567.89"
     },
     {
       "ticker": "V",
       "name": "Visa Inc.",
       "sector": "Services",
       "ownership_count": 30,
-      "hold_price": "$343.09"
+      "hold_price": "$344.81"
     },
     {
       "ticker": "BRK.B",
@@ -444,28 +444,28 @@
       "name": "Mastercard Inc.",
       "sector": "Services",
       "ownership_count": 22,
-      "hold_price": "$513.60"
+      "hold_price": "$514.23"
     },
     {
       "ticker": "DIS",
       "name": "Walt Disney Co.",
       "sector": "Consumer Discretionary",
-      "ownership_count": 20,
-      "hold_price": "$96.25"
+      "ownership_count": 21,
+      "hold_price": "$96.49"
     },
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corp.",
       "sector": "Information Technology",
       "ownership_count": 18,
-      "hold_price": "$200.14"
+      "hold_price": "$204.17"
     },
     {
       "ticker": "MCO",
       "name": "Moody's Corp",
       "sector": "Financials",
       "ownership_count": 17,
-      "hold_price": "$452.92"
+      "hold_price": "$453.04"
     },
     {
       "ticker": "UNH",
@@ -507,7 +507,7 @@
       "name": "S&P Global Inc.",
       "sector": "Consumer Discretionary",
       "ownership_count": 15,
-      "hold_price": "$407.26"
+      "hold_price": "$406.60"
     },
     {
       "ticker": "CMCSA",
@@ -552,18 +552,18 @@
       "hold_price": "$125.81"
     },
     {
-      "ticker": "AMAT",
-      "name": "Applied Materials",
-      "sector": "Information Technology",
-      "ownership_count": 12,
-      "hold_price": "$712.69"
-    },
-    {
       "ticker": "DHR",
       "name": "Danaher Corp.",
       "sector": "Industrials",
       "ownership_count": 12,
       "hold_price": "$190.53"
+    },
+    {
+      "ticker": "ELV",
+      "name": "Elevance Health Inc.",
+      "sector": "Health Care",
+      "ownership_count": 12,
+      "hold_price": "$386.73"
     }
   ],
   "dataroma_activity": {
@@ -794,8 +794,8 @@
     },
     {
       "ticker": "META",
-      "ownership_count": 31,
-      "hold_price": "$566.17",
+      "ownership_count": 32,
+      "hold_price": "$567.89",
       "sector": "Technology",
       "is_top_consensus": true,
       "recent_activity": "🟢 Alta Convicção Institucional (Top Consenso)",
@@ -1010,7 +1010,6 @@
   },
   "quad_rotation_tracker": {
     "dates": [
-      "18/09",
       "21/09",
       "22/09",
       "23/09",
@@ -1031,7 +1030,8 @@
       "14/10",
       "15/10",
       "16/10",
-      "19/10"
+      "19/10",
+      "20/10"
     ],
     "baskets": {
       "QUAD 1": {
@@ -1045,112 +1045,112 @@
         ],
         "desc": "QQQ, XLY, IWM, HYG (cesta definida no sistema)",
         "periods": {
-          "1D": 0.81,
-          "1S": -1.18,
-          "1M": -0.81,
-          "3M": -2.27,
-          "6M": 0.93,
-          "YTD": 6.09,
-          "1A": 8.16
+          "1D": 0.62,
+          "1S": -0.34,
+          "1M": -1.41,
+          "3M": -1.12,
+          "6M": 2.14,
+          "YTD": 6.74,
+          "1A": 8.53
         },
-        "ret_1d": "+0.81%",
-        "ret_1d_val": 0.81,
-        "ret_5d": "-1.18%",
-        "ret_5d_val": -1.18,
-        "ret_30d": "-0.81%",
-        "ret_30d_val": -0.81,
+        "ret_1d": "+0.62%",
+        "ret_1d_val": 0.62,
+        "ret_5d": "-0.34%",
+        "ret_5d_val": -0.34,
+        "ret_30d": "-1.41%",
+        "ret_30d_val": -1.41,
         "acceleration": "N/D",
         "acceleration_val": null,
         "accel_state": "",
         "accel_badge": "",
         "series": [
           0.0,
-          1.22,
-          1.59,
-          0.35,
-          0.18,
-          0.37,
+          0.36,
+          -0.87,
+          -1.03,
+          -0.85,
+          -1.74,
+          -1.8,
+          -1.95,
+          -1.77,
+          -1.02,
           -0.53,
-          -0.59,
-          -0.74,
-          -0.56,
-          0.2,
-          0.7,
-          1.03,
-          0.53,
-          0.23,
-          0.77,
-          0.38,
-          0.15,
-          -1.11,
-          -0.28,
-          -1.63,
-          -0.81
+          -0.21,
+          -0.7,
+          -0.99,
+          -0.46,
+          -0.84,
+          -1.07,
+          -2.31,
+          -1.49,
+          -2.81,
+          -2.01,
+          -1.41
         ],
         "assets": [
           {
             "ticker": "QQQ",
-            "price": 718.36,
+            "price": 717.63,
             "periods": {
-              "1D": 1.21,
-              "1S": -3.71,
-              "1M": -0.32,
-              "3M": 1.43,
-              "6M": 11.3,
-              "YTD": 17.34,
-              "1A": 20.29
+              "1D": -0.1,
+              "1S": -3.49,
+              "1M": -3.22,
+              "3M": 1.85,
+              "6M": 11.61,
+              "YTD": 17.22,
+              "1A": 19.39
             },
-            "ret_1d": "+1.21%",
-            "ret_30d": "-0.32%",
-            "ret_30d_val": -0.32
+            "ret_1d": "-0.10%",
+            "ret_30d": "-3.22%",
+            "ret_30d_val": -3.22
           },
           {
             "ticker": "XLY",
-            "price": 114.46,
+            "price": 115.5,
             "periods": {
-              "1D": 1.78,
-              "1S": 1.95,
-              "1M": 3.32,
-              "3M": -0.14,
-              "6M": -4.11,
-              "YTD": -3.55,
-              "1A": -0.7
+              "1D": 0.91,
+              "1S": 2.79,
+              "1M": 2.91,
+              "3M": 1.52,
+              "6M": -2.51,
+              "YTD": -2.67,
+              "1A": -0.65
             },
-            "ret_1d": "+1.78%",
-            "ret_30d": "+3.32%",
-            "ret_30d_val": 3.32
+            "ret_1d": "+0.91%",
+            "ret_30d": "+2.91%",
+            "ret_30d_val": 2.91
           },
           {
             "ticker": "IWM",
-            "price": 271.28,
+            "price": 275.78,
             "periods": {
-              "1D": 0.31,
-              "1S": -2.38,
-              "1M": -4.51,
-              "3M": -8.28,
-              "6M": -1.7,
-              "YTD": 10.95,
-              "1A": 11.82
+              "1D": 1.66,
+              "1S": -0.33,
+              "1M": -3.43,
+              "3M": -5.89,
+              "6M": 0.96,
+              "YTD": 12.79,
+              "1A": 14.45
             },
-            "ret_1d": "+0.31%",
-            "ret_30d": "-4.51%",
-            "ret_30d_val": -4.51
+            "ret_1d": "+1.66%",
+            "ret_30d": "-3.43%",
+            "ret_30d_val": -3.43
           },
           {
             "ticker": "HYG",
             "price": 76.83,
             "periods": {
-              "1D": -0.04,
-              "1S": -0.6,
-              "1M": -1.73,
-              "3M": -2.11,
-              "6M": -1.78,
+              "1D": 0.0,
+              "1S": -0.34,
+              "1M": -1.92,
+              "3M": -1.95,
+              "6M": -1.52,
               "YTD": -0.39,
-              "1A": 1.21
+              "1A": 0.95
             },
-            "ret_1d": "-0.04%",
-            "ret_30d": "-1.73%",
-            "ret_30d_val": -1.73
+            "ret_1d": "+0.00%",
+            "ret_30d": "-1.92%",
+            "ret_30d_val": -1.92
           }
         ]
       },
@@ -1165,112 +1165,112 @@
         ],
         "desc": "DBC, CPER, XLI, XLB (cesta definida no sistema)",
         "periods": {
-          "1D": -0.15,
-          "1S": 0.01,
-          "1M": 0.37,
-          "3M": 2.43,
-          "6M": 4.77,
-          "YTD": 21.48,
-          "1A": 28.64
+          "1D": 0.19,
+          "1S": 0.12,
+          "1M": 0.49,
+          "3M": 2.12,
+          "6M": 5.31,
+          "YTD": 21.66,
+          "1A": 28.93
         },
-        "ret_1d": "-0.15%",
-        "ret_1d_val": -0.15,
-        "ret_5d": "+0.01%",
-        "ret_5d_val": 0.01,
-        "ret_30d": "+0.37%",
-        "ret_30d_val": 0.37,
+        "ret_1d": "+0.19%",
+        "ret_1d_val": 0.19,
+        "ret_5d": "+0.12%",
+        "ret_5d_val": 0.12,
+        "ret_30d": "+0.49%",
+        "ret_30d_val": 0.49,
         "acceleration": "N/D",
         "acceleration_val": null,
         "accel_state": "",
         "accel_badge": "",
         "series": [
           0.0,
-          0.08,
-          0.9,
-          0.58,
-          0.34,
-          0.19,
-          -0.9,
-          -1.25,
-          -1.62,
-          -1.29,
-          -1.09,
-          -0.65,
-          0.02,
-          -1.19,
-          -0.87,
-          -0.1,
+          0.81,
+          0.5,
+          0.26,
+          0.11,
+          -0.97,
+          -1.33,
+          -1.7,
+          -1.37,
+          -1.17,
+          -0.73,
+          -0.06,
+          -1.26,
+          -0.94,
+          -0.18,
+          0.29,
           0.37,
-          0.44,
-          -0.44,
-          -0.01,
-          0.52,
-          0.37
+          -0.51,
+          -0.08,
+          0.45,
+          0.31,
+          0.49
         ],
         "assets": [
           {
             "ticker": "DBC",
-            "price": 33.68,
+            "price": 33.57,
             "periods": {
-              "1D": -0.18,
-              "1S": 1.05,
-              "1M": 2.28,
-              "3M": 13.9,
-              "6M": 17.47,
-              "YTD": 50.63,
-              "1A": 57.24
+              "1D": -0.33,
+              "1S": 0.27,
+              "1M": 3.04,
+              "3M": 12.42,
+              "6M": 14.93,
+              "YTD": 50.13,
+              "1A": 56.87
             },
-            "ret_1d": "-0.18%",
-            "ret_30d": "+2.28%",
-            "ret_30d_val": 2.28
+            "ret_1d": "-0.33%",
+            "ret_30d": "+3.04%",
+            "ret_30d_val": 3.04
           },
           {
             "ticker": "CPER",
-            "price": 39.57,
+            "price": 39.75,
             "periods": {
-              "1D": 0.18,
-              "1S": -2.61,
-              "1M": -1.64,
-              "3M": 0.1,
-              "6M": 6.92,
-              "YTD": 13.19,
-              "1A": 28.31
+              "1D": 0.45,
+              "1S": -1.73,
+              "1M": -2.26,
+              "3M": 1.27,
+              "6M": 8.73,
+              "YTD": 13.7,
+              "1A": 28.97
             },
-            "ret_1d": "+0.18%",
-            "ret_30d": "-1.64%",
-            "ret_30d_val": -1.64
+            "ret_1d": "+0.45%",
+            "ret_30d": "-2.26%",
+            "ret_30d_val": -2.26
           },
           {
             "ticker": "XLI",
-            "price": 166.68,
+            "price": 166.8,
             "periods": {
-              "1D": -0.64,
-              "1S": -1.46,
-              "1M": -1.54,
-              "3M": -6.45,
-              "6M": -3.66,
-              "YTD": 8.31,
-              "1A": 11.2
+              "1D": 0.07,
+              "1S": -1.11,
+              "1M": -1.87,
+              "3M": -6.49,
+              "6M": -2.2,
+              "YTD": 8.39,
+              "1A": 11.19
             },
-            "ret_1d": "-0.64%",
-            "ret_30d": "-1.54%",
-            "ret_30d_val": -1.54
+            "ret_1d": "+0.07%",
+            "ret_30d": "-1.87%",
+            "ret_30d_val": -1.87
           },
           {
             "ticker": "XLB",
-            "price": 50.95,
+            "price": 51.23,
             "periods": {
-              "1D": 0.06,
-              "1S": 3.05,
-              "1M": 2.39,
-              "3M": 2.16,
-              "6M": -1.64,
-              "YTD": 13.79,
-              "1A": 17.82
+              "1D": 0.55,
+              "1S": 3.04,
+              "1M": 3.06,
+              "3M": 1.27,
+              "6M": -0.22,
+              "YTD": 14.42,
+              "1A": 18.7
             },
-            "ret_1d": "+0.06%",
-            "ret_30d": "+2.39%",
-            "ret_30d_val": 2.39
+            "ret_1d": "+0.55%",
+            "ret_30d": "+3.06%",
+            "ret_30d_val": 3.06
           }
         ]
       },
@@ -1285,112 +1285,112 @@
         ],
         "desc": "GLD, XLU, XLE, XLK (cesta definida no sistema)",
         "periods": {
-          "1D": -0.48,
-          "1S": -0.97,
-          "1M": 0.07,
-          "3M": 3.41,
-          "6M": 5.72,
-          "YTD": 19.75,
-          "1A": 20.82
+          "1D": 0.17,
+          "1S": -1.35,
+          "1M": 0.45,
+          "3M": 2.49,
+          "6M": 6.45,
+          "YTD": 19.94,
+          "1A": 21.14
         },
-        "ret_1d": "-0.48%",
-        "ret_1d_val": -0.48,
-        "ret_5d": "-0.97%",
-        "ret_5d_val": -0.97,
-        "ret_30d": "+0.07%",
-        "ret_30d_val": 0.07,
+        "ret_1d": "+0.17%",
+        "ret_1d_val": 0.17,
+        "ret_5d": "-1.35%",
+        "ret_5d_val": -1.35,
+        "ret_30d": "+0.45%",
+        "ret_30d_val": 0.45,
         "acceleration": "N/D",
         "acceleration_val": null,
         "accel_state": "",
         "accel_badge": "",
         "series": [
           0.0,
-          -0.11,
-          -0.17,
-          -0.98,
-          -1.29,
-          -1.1,
-          -2.43,
-          -2.07,
-          -2.21,
-          -1.2,
-          -0.96,
-          -0.52,
-          0.64,
-          0.0,
-          0.38,
-          1.03,
-          1.06,
-          1.63,
-          0.58,
-          0.37,
-          0.58,
-          0.07
+          -0.06,
+          -0.88,
+          -1.18,
+          -1.0,
+          -2.34,
+          -1.97,
+          -2.12,
+          -1.11,
+          -0.87,
+          -0.43,
+          0.73,
+          0.09,
+          0.5,
+          1.15,
+          1.19,
+          1.78,
+          0.75,
+          0.54,
+          0.78,
+          0.25,
+          0.45
         ],
         "assets": [
           {
             "ticker": "GLD",
-            "price": 379.69,
+            "price": 377.65,
             "periods": {
-              "1D": -0.61,
-              "1S": -0.64,
-              "1M": -5.35,
-              "3M": 1.3,
-              "6M": -14.11,
-              "YTD": -4.19,
-              "1A": -4.23
+              "1D": -0.54,
+              "1S": -1.05,
+              "1M": -5.2,
+              "3M": -0.39,
+              "6M": -12.09,
+              "YTD": -4.71,
+              "1A": -2.92
             },
-            "ret_1d": "-0.61%",
-            "ret_30d": "-5.35%",
-            "ret_30d_val": -5.35
+            "ret_1d": "-0.54%",
+            "ret_30d": "-5.20%",
+            "ret_30d_val": -5.2
           },
           {
             "ticker": "XLU",
-            "price": 41.36,
+            "price": 41.88,
             "periods": {
-              "1D": -2.01,
-              "1S": -0.65,
-              "1M": 1.37,
-              "3M": -7.25,
-              "6M": -8.35,
-              "YTD": -1.09,
-              "1A": -7.41
+              "1D": 1.26,
+              "1S": 0.02,
+              "1M": 3.0,
+              "3M": -8.15,
+              "6M": -5.55,
+              "YTD": 0.15,
+              "1A": -5.92
             },
-            "ret_1d": "-2.01%",
-            "ret_30d": "+1.37%",
-            "ret_30d_val": 1.37
+            "ret_1d": "+1.26%",
+            "ret_30d": "+3.00%",
+            "ret_30d_val": 3.0
           },
           {
             "ticker": "XLE",
-            "price": 67.8,
+            "price": 67.97,
             "periods": {
-              "1D": -0.64,
-              "1S": 2.71,
-              "1M": 6.05,
-              "3M": 16.59,
-              "6M": 24.74,
-              "YTD": 54.65,
-              "1A": 63.54
+              "1D": 0.25,
+              "1S": 1.15,
+              "1M": 8.82,
+              "3M": 15.5,
+              "6M": 23.26,
+              "YTD": 55.04,
+              "1A": 62.61
             },
-            "ret_1d": "-0.64%",
-            "ret_30d": "+6.05%",
-            "ret_30d_val": 6.05
+            "ret_1d": "+0.25%",
+            "ret_30d": "+8.82%",
+            "ret_30d_val": 8.82
           },
           {
             "ticker": "XLK",
-            "price": 185.96,
+            "price": 185.44,
             "periods": {
-              "1D": 1.36,
-              "1S": -5.3,
-              "1M": -1.81,
+              "1D": -0.28,
+              "1S": -5.52,
+              "1M": -4.83,
               "3M": 2.99,
-              "6M": 20.6,
-              "YTD": 29.63,
-              "1A": 31.39
+              "6M": 20.16,
+              "YTD": 29.27,
+              "1A": 30.8
             },
-            "ret_1d": "+1.36%",
-            "ret_30d": "-1.81%",
-            "ret_30d_val": -1.81
+            "ret_1d": "-0.28%",
+            "ret_30d": "-4.83%",
+            "ret_30d_val": -4.83
           }
         ]
       },
@@ -1405,112 +1405,112 @@
         ],
         "desc": "IEF, XLV, XLP, XLU (cesta definida no sistema)",
         "periods": {
-          "1D": -0.86,
-          "1S": 1.38,
-          "1M": 2.91,
-          "3M": 1.19,
-          "6M": 3.75,
-          "YTD": 6.18,
-          "1A": 7.0
+          "1D": 1.11,
+          "1S": 2.76,
+          "1M": 3.97,
+          "3M": 1.93,
+          "6M": 5.98,
+          "YTD": 7.4,
+          "1A": 7.79
         },
-        "ret_1d": "-0.86%",
-        "ret_1d_val": -0.86,
-        "ret_5d": "+1.38%",
-        "ret_5d_val": 1.38,
-        "ret_30d": "+2.91%",
-        "ret_30d_val": 2.91,
+        "ret_1d": "+1.11%",
+        "ret_1d_val": 1.11,
+        "ret_5d": "+2.76%",
+        "ret_5d_val": 2.76,
+        "ret_30d": "+3.97%",
+        "ret_30d_val": 3.97,
         "acceleration": "N/D",
         "acceleration_val": null,
         "accel_state": "",
         "accel_badge": "",
         "series": [
           0.0,
-          0.1,
-          0.4,
-          -0.6,
-          -1.04,
-          -0.63,
-          -0.77,
-          -0.72,
-          -1.65,
-          -1.83,
-          -1.75,
-          -1.37,
-          -0.39,
-          -0.18,
-          0.29,
-          0.89,
-          1.5,
-          1.27,
-          2.43,
-          3.23,
-          3.81,
-          2.91
+          0.3,
+          -0.7,
+          -1.14,
+          -0.73,
+          -0.87,
+          -0.82,
+          -1.74,
+          -1.93,
+          -1.84,
+          -1.46,
+          -0.48,
+          -0.27,
+          0.2,
+          0.79,
+          1.41,
+          1.18,
+          2.34,
+          3.14,
+          3.72,
+          2.82,
+          3.97
         ],
         "assets": [
           {
             "ticker": "IEF",
-            "price": 90.08,
+            "price": 90.25,
             "periods": {
-              "1D": -0.38,
-              "1S": 0.73,
-              "1M": -0.45,
-              "3M": -2.45,
-              "6M": -4.07,
-              "YTD": -3.48,
-              "1A": -3.96
+              "1D": 0.19,
+              "1S": 0.79,
+              "1M": -0.65,
+              "3M": -2.04,
+              "6M": -3.47,
+              "YTD": -3.3,
+              "1A": -3.63
             },
-            "ret_1d": "-0.38%",
-            "ret_30d": "-0.45%",
-            "ret_30d_val": -0.45
+            "ret_1d": "+0.19%",
+            "ret_30d": "-0.65%",
+            "ret_30d_val": -0.65
           },
           {
             "ticker": "XLV",
-            "price": 175.65,
+            "price": 179.82,
             "periods": {
-              "1D": -0.6,
-              "1S": 2.13,
-              "1M": 4.71,
-              "3M": 10.03,
-              "6M": 20.13,
-              "YTD": 14.88,
-              "1A": 25.48
+              "1D": 2.37,
+              "1S": 5.99,
+              "1M": 6.4,
+              "3M": 13.22,
+              "6M": 24.25,
+              "YTD": 17.6,
+              "1A": 27.61
             },
-            "ret_1d": "-0.60%",
-            "ret_30d": "+4.71%",
-            "ret_30d_val": 4.71
+            "ret_1d": "+2.37%",
+            "ret_30d": "+6.40%",
+            "ret_30d_val": 6.4
           },
           {
             "ticker": "XLP",
-            "price": 87.21,
+            "price": 87.75,
             "periods": {
-              "1D": -0.47,
-              "1S": 3.32,
-              "1M": 6.02,
-              "3M": 4.43,
-              "6M": 7.29,
-              "YTD": 14.43,
-              "1A": 13.88
+              "1D": 0.62,
+              "1S": 4.23,
+              "1M": 7.12,
+              "3M": 4.68,
+              "6M": 8.68,
+              "YTD": 15.14,
+              "1A": 13.08
             },
-            "ret_1d": "-0.47%",
-            "ret_30d": "+6.02%",
-            "ret_30d_val": 6.02
+            "ret_1d": "+0.62%",
+            "ret_30d": "+7.12%",
+            "ret_30d_val": 7.12
           },
           {
             "ticker": "XLU",
-            "price": 41.36,
+            "price": 41.88,
             "periods": {
-              "1D": -2.01,
-              "1S": -0.65,
-              "1M": 1.37,
-              "3M": -7.25,
-              "6M": -8.35,
-              "YTD": -1.09,
-              "1A": -7.41
+              "1D": 1.26,
+              "1S": 0.02,
+              "1M": 3.0,
+              "3M": -8.15,
+              "6M": -5.55,
+              "YTD": 0.15,
+              "1A": -5.92
             },
-            "ret_1d": "-2.01%",
-            "ret_30d": "+1.37%",
-            "ret_30d_val": 1.37
+            "ret_1d": "+1.26%",
+            "ret_30d": "+3.00%",
+            "ret_30d_val": 3.0
           }
         ]
       }
@@ -1525,7 +1525,7 @@
       "1A"
     ],
     "leaders": {
-      "1D": "QUAD 1",
+      "1D": "QUAD 4",
       "1S": "QUAD 4",
       "1M": "QUAD 4",
       "3M": "QUAD 3",
@@ -1536,151 +1536,151 @@
     "ranking_por_periodo": {
       "1D": [
         {
+          "quad": "QUAD 4",
+          "ret": 1.11
+        },
+        {
           "quad": "QUAD 1",
-          "ret": 0.81
+          "ret": 0.62
         },
         {
           "quad": "QUAD 2",
-          "ret": -0.15
+          "ret": 0.19
         },
         {
           "quad": "QUAD 3",
-          "ret": -0.48
-        },
-        {
-          "quad": "QUAD 4",
-          "ret": -0.86
+          "ret": 0.17
         }
       ],
       "1S": [
         {
           "quad": "QUAD 4",
-          "ret": 1.38
+          "ret": 2.76
         },
         {
           "quad": "QUAD 2",
-          "ret": 0.01
-        },
-        {
-          "quad": "QUAD 3",
-          "ret": -0.97
+          "ret": 0.12
         },
         {
           "quad": "QUAD 1",
-          "ret": -1.18
+          "ret": -0.34
+        },
+        {
+          "quad": "QUAD 3",
+          "ret": -1.35
         }
       ],
       "1M": [
         {
           "quad": "QUAD 4",
-          "ret": 2.91
+          "ret": 3.97
         },
         {
           "quad": "QUAD 2",
-          "ret": 0.37
+          "ret": 0.49
         },
         {
           "quad": "QUAD 3",
-          "ret": 0.07
+          "ret": 0.45
         },
         {
           "quad": "QUAD 1",
-          "ret": -0.81
+          "ret": -1.41
         }
       ],
       "3M": [
         {
           "quad": "QUAD 3",
-          "ret": 3.41
+          "ret": 2.49
         },
         {
           "quad": "QUAD 2",
-          "ret": 2.43
+          "ret": 2.12
         },
         {
           "quad": "QUAD 4",
-          "ret": 1.19
+          "ret": 1.93
         },
         {
           "quad": "QUAD 1",
-          "ret": -2.27
+          "ret": -1.12
         }
       ],
       "6M": [
         {
           "quad": "QUAD 3",
-          "ret": 5.72
-        },
-        {
-          "quad": "QUAD 2",
-          "ret": 4.77
+          "ret": 6.45
         },
         {
           "quad": "QUAD 4",
-          "ret": 3.75
+          "ret": 5.98
+        },
+        {
+          "quad": "QUAD 2",
+          "ret": 5.31
         },
         {
           "quad": "QUAD 1",
-          "ret": 0.93
+          "ret": 2.14
         }
       ],
       "YTD": [
         {
           "quad": "QUAD 2",
-          "ret": 21.48
+          "ret": 21.66
         },
         {
           "quad": "QUAD 3",
-          "ret": 19.75
+          "ret": 19.94
         },
         {
           "quad": "QUAD 4",
-          "ret": 6.18
+          "ret": 7.4
         },
         {
           "quad": "QUAD 1",
-          "ret": 6.09
+          "ret": 6.74
         }
       ],
       "1A": [
         {
           "quad": "QUAD 2",
-          "ret": 28.64
+          "ret": 28.93
         },
         {
           "quad": "QUAD 3",
-          "ret": 20.82
+          "ret": 21.14
         },
         {
           "quad": "QUAD 1",
-          "ret": 8.16
+          "ret": 8.53
         },
         {
           "quad": "QUAD 4",
-          "ret": 7.0
+          "ret": 7.79
         }
       ]
     },
     "macro_ratios": {},
-    "leading_today": "QUAD 1",
+    "leading_today": "QUAD 4",
     "leading_month": "QUAD 4",
-    "transition_signal": "Quad líder por período (cestas do sistema): 1D: QUAD 1 · 1S: QUAD 4 · 1M: QUAD 4 · 3M: QUAD 3 · 6M: QUAD 3 · YTD: QUAD 2 · 1A: QUAD 2",
+    "transition_signal": "Quad líder por período (cestas do sistema): 1D: QUAD 4 · 1S: QUAD 4 · 1M: QUAD 4 · 3M: QUAD 3 · 6M: QUAD 3 · YTD: QUAD 2 · 1A: QUAD 2",
     "signal_badge": "badge-neutral",
-    "last_close": "19/10/2026",
+    "last_close": "20/10/2026",
     "fonte": "Yahoo Finance (fechamentos ajustados)",
     "aviso": "Composição das cestas definida no sistema, não publicada pela Hedgeye. O regime oficial vem do Early Look.",
-    "updated_at": "20/10/2026 09:31:29"
+    "updated_at": "21/10/2026 09:32:26"
   },
   "economic_calendar": {
-    "updated_at": "20/10/2026 09:31:30",
+    "updated_at": "21/10/2026 09:32:27",
     "source": "TradingView Official Real-Time Calendar API",
     "current_week": "19/10 a 23/10/2026",
-    "total_events": 57,
+    "total_events": 61,
     "events": [
       {
         "id": "394224",
         "date_raw": "2026-10-19T12:30:00.000Z",
-        "date_str": "19/10 (Ontem - Seg) 12:30 UTC",
+        "date_str": "19/10 (Seg) 12:30 UTC",
         "tag": "CONCLUÍDO",
         "is_today": false,
         "has_actual": false,
@@ -1704,7 +1704,7 @@
       {
         "id": "398192",
         "date_raw": "2026-10-19T14:00:00.000Z",
-        "date_str": "19/10 (Ontem - Seg) 14:00 UTC",
+        "date_str": "19/10 (Seg) 14:00 UTC",
         "tag": "DIVULGADO",
         "is_today": false,
         "has_actual": true,
@@ -1728,9 +1728,9 @@
       {
         "id": "397849",
         "date_raw": "2026-10-20T12:15:00.000Z",
-        "date_str": "20/10 (Hoje - Ter) 12:15 UTC",
-        "tag": "HOJE",
-        "is_today": true,
+        "date_str": "20/10 (Ontem - Ter) 12:15 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
         "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
@@ -1752,9 +1752,9 @@
       {
         "id": "397931",
         "date_raw": "2026-10-20T12:30:00.000Z",
-        "date_str": "20/10 (Hoje - Ter) 12:30 UTC",
-        "tag": "HOJE",
-        "is_today": true,
+        "date_str": "20/10 (Ontem - Ter) 12:30 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
         "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
@@ -1774,35 +1774,11 @@
         "source_url": "https://www.census.gov"
       },
       {
-        "id": "399131",
-        "date_raw": "2026-10-20T12:30:00.000Z",
-        "date_str": "20/10 (Hoje - Ter) 12:30 UTC",
-        "tag": "HOJE",
-        "is_today": true,
-        "has_actual": true,
-        "country": "US",
-        "country_label": "[EUA]",
-        "indicator": "[EUA] · Building Permits Prel",
-        "raw_title": "Building Permits Prel",
-        "consensus": "Divulgado: 1.4 | Projeção: 1.39 | Anterior: 1.403",
-        "actual": 1.4,
-        "forecast": 1.39,
-        "previous": 1.403,
-        "unit": "USD",
-        "importance": 1,
-        "quad_impact": "Evento macroeconômico acompanhado pelos agentes de mercado e mesas institucionais.",
-        "market_trigger": "Acompanhamento de volatilidade intraday.",
-        "portfolio_sensitivity": "Sensibilidade moderada de mercado",
-        "badge_class": "badge-neutral",
-        "source": "Census Bureau",
-        "source_url": "https://www.census.gov"
-      },
-      {
         "id": "399226",
         "date_raw": "2026-10-20T12:30:00.000Z",
-        "date_str": "20/10 (Hoje - Ter) 12:30 UTC",
-        "tag": "HOJE",
-        "is_today": true,
+        "date_str": "20/10 (Ontem - Ter) 12:30 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
         "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
@@ -1822,11 +1798,35 @@
         "source_url": "https://www.census.gov/"
       },
       {
+        "id": "399131",
+        "date_raw": "2026-10-20T12:30:00.000Z",
+        "date_str": "20/10 (Ontem - Ter) 12:30 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
+        "has_actual": true,
+        "country": "US",
+        "country_label": "[EUA]",
+        "indicator": "[EUA] · Building Permits Prel",
+        "raw_title": "Building Permits Prel",
+        "consensus": "Divulgado: 1.4 | Projeção: 1.39 | Anterior: 1.403",
+        "actual": 1.4,
+        "forecast": 1.39,
+        "previous": 1.403,
+        "unit": "USD",
+        "importance": 1,
+        "quad_impact": "Evento macroeconômico acompanhado pelos agentes de mercado e mesas institucionais.",
+        "market_trigger": "Acompanhamento de volatilidade intraday.",
+        "portfolio_sensitivity": "Sensibilidade moderada de mercado",
+        "badge_class": "badge-neutral",
+        "source": "Census Bureau",
+        "source_url": "https://www.census.gov"
+      },
+      {
         "id": "398490",
         "date_raw": "2026-10-20T12:30:00.000Z",
-        "date_str": "20/10 (Hoje - Ter) 12:30 UTC",
-        "tag": "HOJE",
-        "is_today": true,
+        "date_str": "20/10 (Ontem - Ter) 12:30 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
         "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
@@ -1848,16 +1848,16 @@
       {
         "id": "398322",
         "date_raw": "2026-10-20T14:00:00.000Z",
-        "date_str": "20/10 (Hoje - Ter) 14:00 UTC",
-        "tag": "HOJE",
-        "is_today": true,
-        "has_actual": false,
+        "date_str": "20/10 (Ontem - Ter) 14:00 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
+        "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · Pending Home Sales YoY",
         "raw_title": "Pending Home Sales YoY",
-        "consensus": "Anterior: -4.7",
-        "actual": null,
+        "consensus": "Divulgado: -11.3 | Anterior: -4.7",
+        "actual": -11.3,
         "forecast": null,
         "previous": -4.7,
         "unit": "USD",
@@ -1872,16 +1872,16 @@
       {
         "id": "399122",
         "date_raw": "2026-10-20T14:00:00.000Z",
-        "date_str": "20/10 (Hoje - Ter) 14:00 UTC",
-        "tag": "HOJE",
-        "is_today": true,
-        "has_actual": false,
+        "date_str": "20/10 (Ontem - Ter) 14:00 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
+        "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · Pending Home Sales MoM",
         "raw_title": "Pending Home Sales MoM",
-        "consensus": "Projeção: -0.5 | Anterior: 0.3",
-        "actual": null,
+        "consensus": "Divulgado: -7.3 | Projeção: -0.5 | Anterior: 0.3",
+        "actual": -7.3,
         "forecast": -0.5,
         "previous": 0.3,
         "unit": "USD",
@@ -1896,16 +1896,16 @@
       {
         "id": "421534",
         "date_raw": "2026-10-20T15:00:00.000Z",
-        "date_str": "20/10 (Hoje - Ter) 15:00 UTC",
-        "tag": "HOJE",
-        "is_today": true,
-        "has_actual": false,
+        "date_str": "20/10 (Ontem - Ter) 15:00 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
+        "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · Atlanta Fed GDPNow",
         "raw_title": "Atlanta Fed GDPNow",
-        "consensus": "Anterior: 3.6",
-        "actual": null,
+        "consensus": "Divulgado: 3.5 | Anterior: 3.6",
+        "actual": 3.5,
         "forecast": null,
         "previous": 3.6,
         "unit": "USD",
@@ -1920,18 +1920,18 @@
       {
         "id": "397088",
         "date_raw": "2026-10-20T20:30:00.000Z",
-        "date_str": "20/10 (Hoje - Ter) 20:30 UTC",
-        "tag": "HOJE",
-        "is_today": true,
-        "has_actual": false,
+        "date_str": "20/10 (Ontem - Ter) 20:30 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
+        "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · API Crude Oil Stock Change",
         "raw_title": "API Crude Oil Stock Change",
-        "consensus": "Projeção: -1.3 | Anterior: -11.1",
-        "actual": null,
+        "consensus": "Divulgado: -4.93 | Projeção: -1.3 | Anterior: -11.12",
+        "actual": -4.93,
         "forecast": -1.3,
-        "previous": -11.1,
+        "previous": -11.12,
         "unit": "USD",
         "importance": 0,
         "quad_impact": "Balanço físico de oferta e demanda de energia. Queda nos estoques pressiona custos de frete e insumos produtivos.",
@@ -1944,16 +1944,16 @@
       {
         "id": "397089",
         "date_raw": "2026-10-21T11:00:00.000Z",
-        "date_str": "21/10 (Amanhã - Qua) 11:00 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
-        "has_actual": false,
+        "date_str": "21/10 (Hoje - Qua) 11:00 UTC",
+        "tag": "HOJE",
+        "is_today": true,
+        "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · MBA 30-Year Mortgage Rate",
         "raw_title": "MBA 30-Year Mortgage Rate",
-        "consensus": "Anterior: 7.5",
-        "actual": null,
+        "consensus": "Divulgado: 7.41 | Anterior: 7.5",
+        "actual": 7.41,
         "forecast": null,
         "previous": 7.5,
         "unit": "USD",
@@ -1968,17 +1968,17 @@
       {
         "id": "397100",
         "date_raw": "2026-10-21T14:30:00.000Z",
-        "date_str": "21/10 (Amanhã - Qua) 14:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "21/10 (Hoje - Qua) 14:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · EIA Crude Oil Stocks Change",
         "raw_title": "EIA Crude Oil Stocks Change",
-        "consensus": "Projeção: -0.3 | Anterior: -8.557",
+        "consensus": "Projeção: -0.8 | Anterior: -8.557",
         "actual": null,
-        "forecast": -0.3,
+        "forecast": -0.8,
         "previous": -8.557,
         "unit": "USD",
         "importance": 0,
@@ -1992,17 +1992,17 @@
       {
         "id": "397098",
         "date_raw": "2026-10-21T14:30:00.000Z",
-        "date_str": "21/10 (Amanhã - Qua) 14:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "21/10 (Hoje - Qua) 14:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · EIA Gasoline Stocks Change",
         "raw_title": "EIA Gasoline Stocks Change",
-        "consensus": "Anterior: 3.518",
+        "consensus": "Projeção: -0.4 | Anterior: 3.518",
         "actual": null,
-        "forecast": null,
+        "forecast": -0.4,
         "previous": 3.518,
         "unit": "USD",
         "importance": 0,
@@ -2016,8 +2016,8 @@
       {
         "id": "420945",
         "date_raw": "2026-10-22T12:00:00.000Z",
-        "date_str": "22/10 (Qui) 12:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "22/10 (Amanhã - Qui) 12:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "BR",
@@ -2040,8 +2040,8 @@
       {
         "id": "397108",
         "date_raw": "2026-10-22T12:30:00.000Z",
-        "date_str": "22/10 (Qui) 12:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "22/10 (Amanhã - Qui) 12:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2062,30 +2062,6 @@
         "source_url": "https://www.dol.gov/"
       },
       {
-        "id": "398504",
-        "date_raw": "2026-10-23T13:45:00.000Z",
-        "date_str": "23/10 (Sex) 13:45 UTC",
-        "tag": "PRÓXIMO",
-        "is_today": false,
-        "has_actual": false,
-        "country": "US",
-        "country_label": "[EUA]",
-        "indicator": "[EUA] · S&P Global Manufacturing PMI Flash",
-        "raw_title": "S&P Global Manufacturing PMI Flash",
-        "consensus": "Projeção: 55.5 | Anterior: 55.9",
-        "actual": null,
-        "forecast": 55.5,
-        "previous": 55.9,
-        "unit": "USD",
-        "importance": 0,
-        "quad_impact": "Indicador antecedente do PIB e atividade industrial/serviços (G ↑/↓). Acima de 50 afasta recessão imediata e valida teses de crescimento (#Quad1/#Quad2).",
-        "market_trigger": "Surpresas de alta sustentam rotações para ativos cíclicos; fraqueza pressiona margens.",
-        "portfolio_sensitivity": "Cíclicos / Industriais / Tech / Consumo",
-        "badge_class": "badge-bullish",
-        "source": "S&P Global",
-        "source_url": "https://www.pmi.spglobal.com/public"
-      },
-      {
         "id": "398767",
         "date_raw": "2026-10-23T13:45:00.000Z",
         "date_str": "23/10 (Sex) 13:45 UTC",
@@ -2100,6 +2076,30 @@
         "actual": null,
         "forecast": null,
         "previous": 58.4,
+        "unit": "USD",
+        "importance": 0,
+        "quad_impact": "Indicador antecedente do PIB e atividade industrial/serviços (G ↑/↓). Acima de 50 afasta recessão imediata e valida teses de crescimento (#Quad1/#Quad2).",
+        "market_trigger": "Surpresas de alta sustentam rotações para ativos cíclicos; fraqueza pressiona margens.",
+        "portfolio_sensitivity": "Cíclicos / Industriais / Tech / Consumo",
+        "badge_class": "badge-bullish",
+        "source": "S&P Global",
+        "source_url": "https://www.pmi.spglobal.com/public"
+      },
+      {
+        "id": "398504",
+        "date_raw": "2026-10-23T13:45:00.000Z",
+        "date_str": "23/10 (Sex) 13:45 UTC",
+        "tag": "PRÓXIMO",
+        "is_today": false,
+        "has_actual": false,
+        "country": "US",
+        "country_label": "[EUA]",
+        "indicator": "[EUA] · S&P Global Manufacturing PMI Flash",
+        "raw_title": "S&P Global Manufacturing PMI Flash",
+        "consensus": "Projeção: 55.5 | Anterior: 55.9",
+        "actual": null,
+        "forecast": 55.5,
+        "previous": 55.9,
         "unit": "USD",
         "importance": 0,
         "quad_impact": "Indicador antecedente do PIB e atividade industrial/serviços (G ↑/↓). Acima de 50 afasta recessão imediata e valida teses de crescimento (#Quad1/#Quad2).",
@@ -2264,9 +2264,9 @@
         "country_label": "[EUA]",
         "indicator": "[EUA] · Building Permits MoM Final",
         "raw_title": "Building Permits MoM Final",
-        "consensus": "Anterior: -2.1",
+        "consensus": "Projeção: -0.2 | Anterior: -2.1",
         "actual": null,
-        "forecast": null,
+        "forecast": -0.2,
         "previous": -2.1,
         "unit": "USD",
         "importance": 0,
@@ -2288,10 +2288,10 @@
         "country_label": "[EUA]",
         "indicator": "[EUA] · ADP Employment Change Weekly",
         "raw_title": "ADP Employment Change Weekly",
-        "consensus": "Sem projeção pública de mercado",
+        "consensus": "Anterior: 18.5",
         "actual": null,
         "forecast": null,
-        "previous": null,
+        "previous": 18.5,
         "unit": "USD",
         "importance": 0,
         "quad_impact": "Termômetro da solidez do mercado de trabalho americano (segunda derivada de Crescimento G). Desaceleração amplia risco de desaceleração macro (#Quad3 / #Quad4).",
@@ -2398,30 +2398,6 @@
         "source_url": "https://www.census.gov"
       },
       {
-        "id": "418459",
-        "date_raw": "2026-10-27T14:00:00.000Z",
-        "date_str": "27/10 (Ter) 14:00 UTC",
-        "tag": "PRÓXIMO",
-        "is_today": false,
-        "has_actual": false,
-        "country": "US",
-        "country_label": "[EUA]",
-        "indicator": "[EUA] · CB Consumer Confidence",
-        "raw_title": "CB Consumer Confidence",
-        "consensus": "Anterior: 81.9",
-        "actual": null,
-        "forecast": null,
-        "previous": 81.9,
-        "unit": "USD",
-        "importance": 0,
-        "quad_impact": "Indicador antecedente do PIB e atividade industrial/serviços (G ↑/↓). Acima de 50 afasta recessão imediata e valida teses de crescimento (#Quad1/#Quad2).",
-        "market_trigger": "Surpresas de alta sustentam rotações para ativos cíclicos; fraqueza pressiona margens.",
-        "portfolio_sensitivity": "Cíclicos / Industriais / Tech / Consumo",
-        "badge_class": "badge-bullish",
-        "source": "TradingView Official Calendar",
-        "source_url": "https://www.tradingview.com/economic-calendar/"
-      },
-      {
         "id": "399185",
         "date_raw": "2026-10-27T14:00:00.000Z",
         "date_str": "27/10 (Ter) 14:00 UTC",
@@ -2446,6 +2422,30 @@
         "source_url": "https://www.census.gov"
       },
       {
+        "id": "418459",
+        "date_raw": "2026-10-27T14:00:00.000Z",
+        "date_str": "27/10 (Ter) 14:00 UTC",
+        "tag": "PRÓXIMO",
+        "is_today": false,
+        "has_actual": false,
+        "country": "US",
+        "country_label": "[EUA]",
+        "indicator": "[EUA] · CB Consumer Confidence",
+        "raw_title": "CB Consumer Confidence",
+        "consensus": "Anterior: 81.9",
+        "actual": null,
+        "forecast": null,
+        "previous": 81.9,
+        "unit": "USD",
+        "importance": 0,
+        "quad_impact": "Indicador antecedente do PIB e atividade industrial/serviços (G ↑/↓). Acima de 50 afasta recessão imediata e valida teses de crescimento (#Quad1/#Quad2).",
+        "market_trigger": "Surpresas de alta sustentam rotações para ativos cíclicos; fraqueza pressiona margens.",
+        "portfolio_sensitivity": "Cíclicos / Industriais / Tech / Consumo",
+        "badge_class": "badge-bullish",
+        "source": "TradingView Official Calendar",
+        "source_url": "https://www.tradingview.com/economic-calendar/"
+      },
+      {
         "id": "421535",
         "date_raw": "2026-10-27T15:00:00.000Z",
         "date_str": "27/10 (Ter) 15:00 UTC",
@@ -2456,10 +2456,10 @@
         "country_label": "[EUA]",
         "indicator": "[EUA] · Atlanta Fed GDPNow",
         "raw_title": "Atlanta Fed GDPNow",
-        "consensus": "Sem projeção pública de mercado",
+        "consensus": "Projeção: 3.5 | Anterior: 3.5",
         "actual": null,
-        "forecast": null,
-        "previous": null,
+        "forecast": 3.5,
+        "previous": 3.5,
         "unit": "USD",
         "importance": 0,
         "quad_impact": "Indicador antecedente do PIB e atividade industrial/serviços (G ↑/↓). Acima de 50 afasta recessão imediata e valida teses de crescimento (#Quad1/#Quad2).",
@@ -2480,10 +2480,10 @@
         "country_label": "[EUA]",
         "indicator": "[EUA] · API Crude Oil Stock Change",
         "raw_title": "API Crude Oil Stock Change",
-        "consensus": "Sem projeção pública de mercado",
+        "consensus": "Anterior: -4.93",
         "actual": null,
         "forecast": null,
-        "previous": null,
+        "previous": -4.93,
         "unit": "USD",
         "importance": 0,
         "quad_impact": "Balanço físico de oferta e demanda de energia. Queda nos estoques pressiona custos de frete e insumos produtivos.",
@@ -2504,10 +2504,10 @@
         "country_label": "[EUA]",
         "indicator": "[EUA] · MBA 30-Year Mortgage Rate",
         "raw_title": "MBA 30-Year Mortgage Rate",
-        "consensus": "Sem projeção pública de mercado",
+        "consensus": "Anterior: 7.41",
         "actual": null,
         "forecast": null,
-        "previous": null,
+        "previous": 7.41,
         "unit": "USD",
         "importance": 0,
         "quad_impact": "Evento macroeconômico acompanhado pelos agentes de mercado e mesas institucionais.",
@@ -2542,30 +2542,6 @@
         "source_url": "https://www.census.gov/"
       },
       {
-        "id": "398634",
-        "date_raw": "2026-10-28T12:30:00.000Z",
-        "date_str": "28/10 (Qua) 12:30 UTC",
-        "tag": "PRÓXIMO",
-        "is_today": false,
-        "has_actual": false,
-        "country": "US",
-        "country_label": "[EUA]",
-        "indicator": "[EUA] · Wholesale Inventories MoM Adv",
-        "raw_title": "Wholesale Inventories MoM Adv",
-        "consensus": "Anterior: 0.5",
-        "actual": null,
-        "forecast": null,
-        "previous": 0.5,
-        "unit": "USD",
-        "importance": 0,
-        "quad_impact": "Evento macroeconômico acompanhado pelos agentes de mercado e mesas institucionais.",
-        "market_trigger": "Acompanhamento de volatilidade intraday.",
-        "portfolio_sensitivity": "Sensibilidade moderada de mercado",
-        "badge_class": "badge-neutral",
-        "source": "Census Bureau",
-        "source_url": "https://www.census.gov/"
-      },
-      {
         "id": "398559",
         "date_raw": "2026-10-28T12:30:00.000Z",
         "date_str": "28/10 (Qua) 12:30 UTC",
@@ -2588,6 +2564,30 @@
         "badge_class": "badge-neutral",
         "source": "Census Bureau",
         "source_url": "https://www.census.gov"
+      },
+      {
+        "id": "398634",
+        "date_raw": "2026-10-28T12:30:00.000Z",
+        "date_str": "28/10 (Qua) 12:30 UTC",
+        "tag": "PRÓXIMO",
+        "is_today": false,
+        "has_actual": false,
+        "country": "US",
+        "country_label": "[EUA]",
+        "indicator": "[EUA] · Wholesale Inventories MoM Adv",
+        "raw_title": "Wholesale Inventories MoM Adv",
+        "consensus": "Anterior: 0.5",
+        "actual": null,
+        "forecast": null,
+        "previous": 0.5,
+        "unit": "USD",
+        "importance": 0,
+        "quad_impact": "Evento macroeconômico acompanhado pelos agentes de mercado e mesas institucionais.",
+        "market_trigger": "Acompanhamento de volatilidade intraday.",
+        "portfolio_sensitivity": "Sensibilidade moderada de mercado",
+        "badge_class": "badge-neutral",
+        "source": "Census Bureau",
+        "source_url": "https://www.census.gov/"
       },
       {
         "id": "397142",
@@ -2710,7 +2710,7 @@
         "source_url": "http://www.federalreserve.gov/"
       },
       {
-        "id": "397886",
+        "id": "397151",
         "date_raw": "2026-10-29T12:30:00.000Z",
         "date_str": "29/10 (Qui) 12:30 UTC",
         "tag": "PRÓXIMO",
@@ -2718,14 +2718,62 @@
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
-        "indicator": "[EUA] · Core PCE Price Index MoM",
-        "raw_title": "Core PCE Price Index MoM",
-        "consensus": "Anterior: 0.2",
+        "indicator": "[EUA] · Initial Jobless Claims",
+        "raw_title": "Initial Jobless Claims",
+        "consensus": "Sem projeção pública de mercado",
         "actual": null,
         "forecast": null,
-        "previous": 0.2,
+        "previous": null,
         "unit": "USD",
-        "importance": 1,
+        "importance": 0,
+        "quad_impact": "Termômetro da solidez do mercado de trabalho americano (segunda derivada de Crescimento G). Desaceleração amplia risco de desaceleração macro (#Quad3 / #Quad4).",
+        "market_trigger": "Desvios frente ao consenso calibram precificação de cortes na taxa dos Fed Funds.",
+        "portfolio_sensitivity": "Renda Fixa / Cíclicos / Tech / Equities",
+        "badge_class": "badge-bearish",
+        "source": "Department of Labour",
+        "source_url": "https://www.dol.gov/"
+      },
+      {
+        "id": "398035",
+        "date_raw": "2026-10-29T12:30:00.000Z",
+        "date_str": "29/10 (Qui) 12:30 UTC",
+        "tag": "PRÓXIMO",
+        "is_today": false,
+        "has_actual": false,
+        "country": "US",
+        "country_label": "[EUA]",
+        "indicator": "[EUA] · GDP Price Index QoQ Adv",
+        "raw_title": "GDP Price Index QoQ Adv",
+        "consensus": "Anterior: 6.1",
+        "actual": null,
+        "forecast": null,
+        "previous": 6.1,
+        "unit": "USD",
+        "importance": 0,
+        "quad_impact": "Indicador antecedente do PIB e atividade industrial/serviços (G ↑/↓). Acima de 50 afasta recessão imediata e valida teses de crescimento (#Quad1/#Quad2).",
+        "market_trigger": "Surpresas de alta sustentam rotações para ativos cíclicos; fraqueza pressiona margens.",
+        "portfolio_sensitivity": "Cíclicos / Industriais / Tech / Consumo",
+        "badge_class": "badge-bullish",
+        "source": "Bureau of Economics Analysis",
+        "source_url": "http://www.bea.gov"
+      },
+      {
+        "id": "398113",
+        "date_raw": "2026-10-29T12:30:00.000Z",
+        "date_str": "29/10 (Qui) 12:30 UTC",
+        "tag": "PRÓXIMO",
+        "is_today": false,
+        "has_actual": false,
+        "country": "US",
+        "country_label": "[EUA]",
+        "indicator": "[EUA] · PCE Price Index YoY",
+        "raw_title": "PCE Price Index YoY",
+        "consensus": "Anterior: 3.4",
+        "actual": null,
+        "forecast": null,
+        "previous": 3.4,
+        "unit": "USD",
+        "importance": 0,
         "quad_impact": "Pressão direta na aceleração/desaceleração da Inflação (I ↑/↓). Leitura acima do consenso sustenta regimes inflacionários (#Quad2/#Quad3) e yields 'Higher for Longer'.",
         "market_trigger": "Movimenta curva de Treasuries (10Y Yield), Dólar DXY e demanda por hedges de inflação.",
         "portfolio_sensitivity": "ALTO IMPACTO (Ouro / Commodities / Treasuries / DXY)",
@@ -2734,7 +2782,7 @@
         "source_url": "http://www.bea.gov/"
       },
       {
-        "id": "398269",
+        "id": "398255",
         "date_raw": "2026-10-29T12:30:00.000Z",
         "date_str": "29/10 (Qui) 12:30 UTC",
         "tag": "PRÓXIMO",
@@ -2742,12 +2790,12 @@
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
-        "indicator": "[EUA] · Personal Spending MoM",
-        "raw_title": "Personal Spending MoM",
-        "consensus": "Anterior: 0.9",
+        "indicator": "[EUA] · Personal Income MoM",
+        "raw_title": "Personal Income MoM",
+        "consensus": "Anterior: 0.2",
         "actual": null,
         "forecast": null,
-        "previous": 0.9,
+        "previous": 0.2,
         "unit": "USD",
         "importance": 1,
         "quad_impact": "Evento macroeconômico acompanhado pelos agentes de mercado e mesas institucionais.",
@@ -2782,7 +2830,7 @@
         "source_url": "http://www.bea.gov"
       },
       {
-        "id": "398255",
+        "id": "398269",
         "date_raw": "2026-10-29T12:30:00.000Z",
         "date_str": "29/10 (Qui) 12:30 UTC",
         "tag": "PRÓXIMO",
@@ -2790,12 +2838,12 @@
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
-        "indicator": "[EUA] · Personal Income MoM",
-        "raw_title": "Personal Income MoM",
-        "consensus": "Anterior: 0.2",
+        "indicator": "[EUA] · Personal Spending MoM",
+        "raw_title": "Personal Spending MoM",
+        "consensus": "Anterior: 0.9",
         "actual": null,
         "forecast": null,
-        "previous": 0.2,
+        "previous": 0.9,
         "unit": "USD",
         "importance": 1,
         "quad_impact": "Evento macroeconômico acompanhado pelos agentes de mercado e mesas institucionais.",
@@ -2806,7 +2854,7 @@
         "source_url": "https://www.bea.gov"
       },
       {
-        "id": "398113",
+        "id": "397886",
         "date_raw": "2026-10-29T12:30:00.000Z",
         "date_str": "29/10 (Qui) 12:30 UTC",
         "tag": "PRÓXIMO",
@@ -2814,14 +2862,14 @@
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
-        "indicator": "[EUA] · PCE Price Index YoY",
-        "raw_title": "PCE Price Index YoY",
-        "consensus": "Anterior: 3.4",
+        "indicator": "[EUA] · Core PCE Price Index MoM",
+        "raw_title": "Core PCE Price Index MoM",
+        "consensus": "Anterior: 0.2",
         "actual": null,
         "forecast": null,
-        "previous": 3.4,
+        "previous": 0.2,
         "unit": "USD",
-        "importance": 0,
+        "importance": 1,
         "quad_impact": "Pressão direta na aceleração/desaceleração da Inflação (I ↑/↓). Leitura acima do consenso sustenta regimes inflacionários (#Quad2/#Quad3) e yields 'Higher for Longer'.",
         "market_trigger": "Movimenta curva de Treasuries (10Y Yield), Dólar DXY e demanda por hedges de inflação.",
         "portfolio_sensitivity": "ALTO IMPACTO (Ouro / Commodities / Treasuries / DXY)",
@@ -2852,54 +2900,6 @@
         "badge_class": "badge-bullish",
         "source": "Bureau of Economics Analysis",
         "source_url": "http://www.bea.gov/"
-      },
-      {
-        "id": "398035",
-        "date_raw": "2026-10-29T12:30:00.000Z",
-        "date_str": "29/10 (Qui) 12:30 UTC",
-        "tag": "PRÓXIMO",
-        "is_today": false,
-        "has_actual": false,
-        "country": "US",
-        "country_label": "[EUA]",
-        "indicator": "[EUA] · GDP Price Index QoQ Adv",
-        "raw_title": "GDP Price Index QoQ Adv",
-        "consensus": "Anterior: 6.1",
-        "actual": null,
-        "forecast": null,
-        "previous": 6.1,
-        "unit": "USD",
-        "importance": 0,
-        "quad_impact": "Indicador antecedente do PIB e atividade industrial/serviços (G ↑/↓). Acima de 50 afasta recessão imediata e valida teses de crescimento (#Quad1/#Quad2).",
-        "market_trigger": "Surpresas de alta sustentam rotações para ativos cíclicos; fraqueza pressiona margens.",
-        "portfolio_sensitivity": "Cíclicos / Industriais / Tech / Consumo",
-        "badge_class": "badge-bullish",
-        "source": "Bureau of Economics Analysis",
-        "source_url": "http://www.bea.gov"
-      },
-      {
-        "id": "397151",
-        "date_raw": "2026-10-29T12:30:00.000Z",
-        "date_str": "29/10 (Qui) 12:30 UTC",
-        "tag": "PRÓXIMO",
-        "is_today": false,
-        "has_actual": false,
-        "country": "US",
-        "country_label": "[EUA]",
-        "indicator": "[EUA] · Initial Jobless Claims",
-        "raw_title": "Initial Jobless Claims",
-        "consensus": "Sem projeção pública de mercado",
-        "actual": null,
-        "forecast": null,
-        "previous": null,
-        "unit": "USD",
-        "importance": 0,
-        "quad_impact": "Termômetro da solidez do mercado de trabalho americano (segunda derivada de Crescimento G). Desaceleração amplia risco de desaceleração macro (#Quad3 / #Quad4).",
-        "market_trigger": "Desvios frente ao consenso calibram precificação de cortes na taxa dos Fed Funds.",
-        "portfolio_sensitivity": "Renda Fixa / Cíclicos / Tech / Equities",
-        "badge_class": "badge-bearish",
-        "source": "Department of Labour",
-        "source_url": "https://www.dol.gov/"
       },
       {
         "id": "421537",
@@ -2951,8 +2951,8 @@
       },
       {
         "id": "398921",
-        "date_raw": "2026-10-30T13:30:00.000Z",
-        "date_str": "30/10 (Sex) 13:30 UTC",
+        "date_raw": "2026-10-30T12:30:00.000Z",
+        "date_str": "30/10 (Sex) 12:30 UTC",
         "tag": "PRÓXIMO",
         "is_today": false,
         "has_actual": false,
@@ -2975,8 +2975,8 @@
       },
       {
         "id": "398882",
-        "date_raw": "2026-10-30T13:30:00.000Z",
-        "date_str": "30/10 (Sex) 13:30 UTC",
+        "date_raw": "2026-10-30T12:30:00.000Z",
+        "date_str": "30/10 (Sex) 12:30 UTC",
         "tag": "PRÓXIMO",
         "is_today": false,
         "has_actual": false,
@@ -2999,8 +2999,8 @@
       },
       {
         "id": "397958",
-        "date_raw": "2026-10-30T13:30:00.000Z",
-        "date_str": "30/10 (Sex) 13:30 UTC",
+        "date_raw": "2026-10-30T12:30:00.000Z",
+        "date_str": "30/10 (Sex) 12:30 UTC",
         "tag": "PRÓXIMO",
         "is_today": false,
         "has_actual": false,
@@ -3044,6 +3044,102 @@
         "badge_class": "badge-bullish",
         "source": "Institute for Supply Management",
         "source_url": "https://chicago.ismworld.org/"
+      },
+      {
+        "id": "397196",
+        "date_raw": "2026-11-02T14:00:00.000Z",
+        "date_str": "02/11 (Seg) 14:00 UTC",
+        "tag": "PRÓXIMO",
+        "is_today": false,
+        "has_actual": false,
+        "country": "US",
+        "country_label": "[EUA]",
+        "indicator": "[EUA] · ISM Manufacturing Employment",
+        "raw_title": "ISM Manufacturing Employment",
+        "consensus": "Anterior: 52.7",
+        "actual": null,
+        "forecast": null,
+        "previous": 52.7,
+        "unit": "USD",
+        "importance": 0,
+        "quad_impact": "Termômetro da solidez do mercado de trabalho americano (segunda derivada de Crescimento G). Desaceleração amplia risco de desaceleração macro (#Quad3 / #Quad4).",
+        "market_trigger": "Desvios frente ao consenso calibram precificação de cortes na taxa dos Fed Funds.",
+        "portfolio_sensitivity": "Renda Fixa / Cíclicos / Tech / Equities",
+        "badge_class": "badge-bullish",
+        "source": "Institute for Supply Management",
+        "source_url": "https://www.ismworld.org"
+      },
+      {
+        "id": "397194",
+        "date_raw": "2026-11-02T14:00:00.000Z",
+        "date_str": "02/11 (Seg) 14:00 UTC",
+        "tag": "PRÓXIMO",
+        "is_today": false,
+        "has_actual": false,
+        "country": "US",
+        "country_label": "[EUA]",
+        "indicator": "[EUA] · ISM Manufacturing PMI",
+        "raw_title": "ISM Manufacturing PMI",
+        "consensus": "Anterior: 54.5",
+        "actual": null,
+        "forecast": null,
+        "previous": 54.5,
+        "unit": "USD",
+        "importance": 1,
+        "quad_impact": "Indicador antecedente do PIB e atividade industrial/serviços (G ↑/↓). Acima de 50 afasta recessão imediata e valida teses de crescimento (#Quad1/#Quad2).",
+        "market_trigger": "Surpresas de alta sustentam rotações para ativos cíclicos; fraqueza pressiona margens.",
+        "portfolio_sensitivity": "Cíclicos / Industriais / Tech / Consumo",
+        "badge_class": "badge-bullish",
+        "source": "Institute for Supply Management",
+        "source_url": "https://www.ismworld.org"
+      },
+      {
+        "id": "421538",
+        "date_raw": "2026-11-02T15:00:00.000Z",
+        "date_str": "02/11 (Seg) 15:00 UTC",
+        "tag": "PRÓXIMO",
+        "is_today": false,
+        "has_actual": false,
+        "country": "US",
+        "country_label": "[EUA]",
+        "indicator": "[EUA] · Atlanta Fed GDPNow",
+        "raw_title": "Atlanta Fed GDPNow",
+        "consensus": "Sem projeção pública de mercado",
+        "actual": null,
+        "forecast": null,
+        "previous": null,
+        "unit": "USD",
+        "importance": 0,
+        "quad_impact": "Indicador antecedente do PIB e atividade industrial/serviços (G ↑/↓). Acima de 50 afasta recessão imediata e valida teses de crescimento (#Quad1/#Quad2).",
+        "market_trigger": "Surpresas de alta sustentam rotações para ativos cíclicos; fraqueza pressiona margens.",
+        "portfolio_sensitivity": "Cíclicos / Industriais / Tech / Consumo",
+        "badge_class": "badge-bullish",
+        "source": "Federal Reserve Bank of Atlanta",
+        "source_url": "https://www.atlantafed.org/"
+      },
+      {
+        "id": "421913",
+        "date_raw": "2026-11-02T16:15:00.000Z",
+        "date_str": "02/11 (Seg) 16:15 UTC",
+        "tag": "PRÓXIMO",
+        "is_today": false,
+        "has_actual": false,
+        "country": "US",
+        "country_label": "[EUA]",
+        "indicator": "[EUA] · Fed Goolsbee Speech",
+        "raw_title": "Fed Goolsbee Speech",
+        "consensus": "Sem projeção pública de mercado",
+        "actual": null,
+        "forecast": null,
+        "previous": null,
+        "unit": "USD",
+        "importance": 0,
+        "quad_impact": "Orientação prospectiva da política monetária dos Bancos Centrais. Postura hawkish contrai liquidez; alívio dovish suporta risco.",
+        "market_trigger": "Volatilidade imediata nas taxas de juros de curto e longo prazo, e no câmbio global.",
+        "portfolio_sensitivity": "RISCO MÁXIMO (Bonds / DXY / Ações Globais)",
+        "badge_class": "badge-bullish",
+        "source": "Federal Reserve",
+        "source_url": "http://www.federalreserve.gov/"
       }
     ]
   },
@@ -3051,7 +3147,7 @@
     {
       "ticker": "ASML",
       "earnings_date": "14/10/2026",
-      "days_until": -6,
+      "days_until": -7,
       "eps_consensus": "US$ 15.39",
       "revenue_consensus": "US$ 14.82B",
       "status": "Próximo Tri"
@@ -3059,146 +3155,146 @@
     {
       "ticker": "MLI",
       "earnings_date": "20/10/2026",
-      "days_until": 0,
-      "eps_consensus": "US$ 1.15",
-      "revenue_consensus": "US$ 1.28B",
-      "status": "Em 0 dias"
+      "days_until": -1,
+      "eps_consensus": "US$ 0.94",
+      "revenue_consensus": "US$ 1.17B",
+      "status": "Próximo Tri"
     },
     {
       "ticker": "META",
       "earnings_date": "21/10/2026",
-      "days_until": 1,
+      "days_until": 0,
       "eps_consensus": "US$ 6.80",
       "revenue_consensus": "US$ 63.41B",
-      "status": "Em 1 dias"
+      "status": "Em 0 dias"
     },
     {
       "ticker": "NOK",
       "earnings_date": "22/10/2026",
-      "days_until": 2,
+      "days_until": 1,
       "eps_consensus": "US$ 0.07",
       "revenue_consensus": "US$ 5.06B",
-      "status": "Em 2 dias"
+      "status": "Em 1 dias"
     },
     {
       "ticker": "NEM",
       "earnings_date": "22/10/2026",
-      "days_until": 2,
-      "eps_consensus": "US$ 1.92",
-      "revenue_consensus": "US$ 6.30B",
-      "status": "Em 2 dias"
+      "days_until": 1,
+      "eps_consensus": "US$ 1.94",
+      "revenue_consensus": "US$ 6.26B",
+      "status": "Em 1 dias"
     },
     {
       "ticker": "BE",
       "earnings_date": "22/10/2026",
-      "days_until": 2,
+      "days_until": 1,
       "eps_consensus": "US$ 0.67",
       "revenue_consensus": "US$ 1.07B",
-      "status": "Em 2 dias"
+      "status": "Em 1 dias"
     },
     {
       "ticker": "GOOGL",
       "earnings_date": "28/10/2026",
-      "days_until": 8,
+      "days_until": 7,
       "eps_consensus": "US$ 2.99",
       "revenue_consensus": "US$ 127.85B",
-      "status": "Em 8 dias"
+      "status": "Em 7 dias"
     },
     {
       "ticker": "AXTI",
       "earnings_date": "29/10/2026",
-      "days_until": 9,
+      "days_until": 8,
       "eps_consensus": "US$ 0.31",
       "revenue_consensus": "US$ 66.0M",
-      "status": "Em 9 dias"
+      "status": "Em 8 dias"
     },
     {
       "ticker": "INTC",
       "earnings_date": "29/10/2026",
-      "days_until": 9,
+      "days_until": 8,
       "eps_consensus": "US$ 0.40",
       "revenue_consensus": "US$ 16.47B",
-      "status": "Em 9 dias"
+      "status": "Em 8 dias"
     },
     {
       "ticker": "FN",
       "earnings_date": "02/11/2026",
-      "days_until": 13,
+      "days_until": 12,
       "eps_consensus": "US$ 4.19",
       "revenue_consensus": "US$ 1.40B",
-      "status": "Em 13 dias"
+      "status": "Em 12 dias"
     },
     {
       "ticker": "TSEM",
       "earnings_date": "02/11/2026",
-      "days_until": 13,
+      "days_until": 12,
       "eps_consensus": "US$ 1.07",
       "revenue_consensus": "US$ 522.1M",
-      "status": "Em 13 dias"
+      "status": "Em 12 dias"
     },
     {
       "ticker": "ALAB",
       "earnings_date": "03/11/2026",
-      "days_until": 14,
+      "days_until": 13,
       "eps_consensus": "US$ 1.19",
       "revenue_consensus": "US$ 550.8M",
-      "status": "Em 14 dias"
+      "status": "Em 13 dias"
     },
     {
       "ticker": "MELI",
       "earnings_date": "04/11/2026",
-      "days_until": 15,
+      "days_until": 14,
       "eps_consensus": "US$ 9.27",
       "revenue_consensus": "US$ 10.68B",
-      "status": "Em 15 dias"
+      "status": "Em 14 dias"
     },
     {
       "ticker": "UBER",
       "earnings_date": "04/11/2026",
-      "days_until": 15,
+      "days_until": 14,
       "eps_consensus": "US$ 0.87",
       "revenue_consensus": "US$ 14.67B",
-      "status": "Em 15 dias"
+      "status": "Em 14 dias"
     },
     {
       "ticker": "COHR",
       "earnings_date": "04/11/2026",
-      "days_until": 15,
+      "days_until": 14,
       "eps_consensus": "US$ 1.96",
       "revenue_consensus": "US$ 2.30B",
-      "status": "Em 15 dias"
+      "status": "Em 14 dias"
     },
     {
       "ticker": "ARM",
       "earnings_date": "04/11/2026",
-      "days_until": 15,
+      "days_until": 14,
       "eps_consensus": "US$ 0.47",
       "revenue_consensus": "US$ 1.38B",
-      "status": "Em 15 dias"
+      "status": "Em 14 dias"
     },
     {
       "ticker": "MTSI",
       "earnings_date": "05/11/2026",
-      "days_until": 16,
+      "days_until": 15,
       "eps_consensus": "US$ 2.00",
       "revenue_consensus": "US$ 420.2M",
-      "status": "Em 16 dias"
+      "status": "Em 15 dias"
     },
     {
       "ticker": "CRDO",
       "earnings_date": "30/11/2026",
-      "days_until": 41,
+      "days_until": 40,
       "eps_consensus": "US$ 1.28",
       "revenue_consensus": "US$ 531.7M",
-      "status": "Em 41 dias"
+      "status": "Em 40 dias"
     },
     {
       "ticker": "AVGO",
       "earnings_date": "09/12/2026",
-      "days_until": 50,
+      "days_until": 49,
       "eps_consensus": "US$ 3.83",
       "revenue_consensus": "US$ 34.89B",
-      "status": "Em 50 dias"
+      "status": "Em 49 dias"
     }
   ],
   "macro_indicators_official": [

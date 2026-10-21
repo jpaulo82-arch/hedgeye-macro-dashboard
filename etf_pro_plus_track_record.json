@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T11:45:57.011415",
+  "generatedAt": "2026-10-20T12:01:35.784772",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -245,7 +245,7 @@
     {
       "month": "2025-01",
       "activePositions": 1,
-      "monthlyReturnPct": 0.503,
+      "monthlyReturnPct": 0.504,
       "details": [
         {
           "ticker": "BUXX",
@@ -254,7 +254,7 @@
           "periodEnd": "2025-01-31",
           "priceStart": 18.7522,
           "priceEnd": 18.8466,
-          "returnPct": 0.503
+          "returnPct": 0.504
         }
       ]
     },
@@ -1180,15 +1180,6 @@
           "returnPct": 0.703
         },
         {
-          "ticker": "EWL",
-          "side": "short",
-          "periodStart": "2026-09-14",
-          "periodEnd": "2026-09-15",
-          "priceStart": 60.49,
-          "priceEnd": 60.25,
-          "returnPct": 0.397
-        },
-        {
           "ticker": "PSP",
           "side": "short",
           "periodStart": "2026-09-15",
@@ -1430,6 +1421,15 @@
           "priceStart": 29.06,
           "priceEnd": 28.89,
           "returnPct": 0.585
+        },
+        {
+          "ticker": "EWL",
+          "side": "short",
+          "periodStart": "2026-09-14",
+          "periodEnd": "2026-09-15",
+          "priceStart": 60.49,
+          "priceEnd": 60.25,
+          "returnPct": 0.397
         }
       ]
     }
@@ -1497,87 +1497,87 @@
     },
     {
       "month": "2025-01",
-      "cumulativeIndex": 108.105
+      "cumulativeIndex": 108.106
     },
     {
       "month": "2025-02",
-      "cumulativeIndex": 108.498
+      "cumulativeIndex": 108.499
     },
     {
       "month": "2025-03",
-      "cumulativeIndex": 108.507
+      "cumulativeIndex": 108.508
     },
     {
       "month": "2025-04",
-      "cumulativeIndex": 108.722
+      "cumulativeIndex": 108.723
     },
     {
       "month": "2025-05",
-      "cumulativeIndex": 109.711
+      "cumulativeIndex": 109.712
     },
     {
       "month": "2025-06",
-      "cumulativeIndex": 110.151
+      "cumulativeIndex": 110.152
     },
     {
       "month": "2025-07",
-      "cumulativeIndex": 110.52
+      "cumulativeIndex": 110.521
     },
     {
       "month": "2025-08",
-      "cumulativeIndex": 111.123
+      "cumulativeIndex": 111.124
     },
     {
       "month": "2025-09",
-      "cumulativeIndex": 111.402
+      "cumulativeIndex": 111.403
     },
     {
       "month": "2025-10",
-      "cumulativeIndex": 111.656
+      "cumulativeIndex": 111.657
     },
     {
       "month": "2025-11",
-      "cumulativeIndex": 112.136
+      "cumulativeIndex": 112.137
     },
     {
       "month": "2025-12",
-      "cumulativeIndex": 112.61
+      "cumulativeIndex": 112.611
     },
     {
       "month": "2026-01",
-      "cumulativeIndex": 113.114
+      "cumulativeIndex": 113.115
     },
     {
       "month": "2026-02",
-      "cumulativeIndex": 113.479
+      "cumulativeIndex": 113.481
     },
     {
       "month": "2026-03",
-      "cumulativeIndex": 113.791
+      "cumulativeIndex": 113.793
     },
     {
       "month": "2026-04",
-      "cumulativeIndex": 114.536
+      "cumulativeIndex": 114.537
     },
     {
       "month": "2026-05",
-      "cumulativeIndex": 115.218
+      "cumulativeIndex": 115.219
     },
     {
       "month": "2026-06",
-      "cumulativeIndex": 117.769
+      "cumulativeIndex": 117.77
     },
     {
       "month": "2026-07",
-      "cumulativeIndex": 120.186
+      "cumulativeIndex": 120.187
     },
     {
       "month": "2026-08",
-      "cumulativeIndex": 122.902
+      "cumulativeIndex": 122.903
     },
     {
       "month": "2026-09",
-      "cumulativeIndex": 123.347
+      "cumulativeIndex": 123.348
     }
   ],
   "excludedPositions": [
@@ -1667,5 +1667,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 85
+  "positionsIncluded": 88
 }

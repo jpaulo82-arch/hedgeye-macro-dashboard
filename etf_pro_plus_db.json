@@ -1,5 +1,5 @@
 {
-  "updatedAt": "19/10/2026 11:45:26",
+  "updatedAt": "20/10/2026 12:01:01",
   "reports": {
     "weekly": [
       {
@@ -3725,6 +3725,67 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_112282_UPDATE__9_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-20 10:27AM EDT",
+        "addsLong": [
+          {
+            "name": "Dow Covered Call",
+            "ticker": "DJIA"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Malaysia",
+            "ticker": "EWM"
+          },
+          {
+            "name": "Philippines",
+            "ticker": "EPHE"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Japan",
+            "ticker": "JPXN",
+            "rangeLow": 101.0,
+            "rangeHigh": 106.0
+          },
+          {
+            "name": "Nasdaq 100",
+            "ticker": "QQQ",
+            "rangeLow": 705.0,
+            "rangeHigh": 767.0
+          },
+          {
+            "name": "Natural Gas",
+            "ticker": "UNG",
+            "rangeLow": 10.25,
+            "rangeHigh": 11.41
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "Switzerland",
+            "ticker": "EWL",
+            "rangeLow": 58.8,
+            "rangeHigh": 62.98
+          },
+          {
+            "name": "Mexico",
+            "ticker": "EWW",
+            "rangeLow": 70.7,
+            "rangeHigh": 75.52
+          },
+          {
+            "name": "British Pound",
+            "ticker": "FXB",
+            "rangeLow": 126.0,
+            "rangeHigh": 129.0
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -5008,6 +5069,12 @@
       "type": "intraday",
       "sourceFile": "intraday_112209_UPDATE__3_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: S&P Equal Weight (RSP), Rising Rates Fixed Income (RISR) | Removeu SHORT: Australia Equities (EWA)"
+    },
+    {
+      "date": "2026-10-20 10:27AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_112282_UPDATE__9_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Dow Covered Call (DJIA) | Adicionou SHORT: Malaysia (EWM), Philippines (EPHE) | Removeu LONG: Japan (JPXN), Nasdaq 100 (QQQ), Natural Gas (UNG) | Removeu SHORT: Switzerland (EWL), Mexico (EWW), British Pound (FXB)"
     }
   ],
   "currentLineup": [
@@ -5371,52 +5438,6 @@
       "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     },
     {
-      "ticker": "JPXN",
-      "name": "Japan",
-      "side": "long",
-      "dateAdded": "10/7/2026",
-      "assetClass": "International Equities",
-      "entryPrice": 102.48,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 101.0,
-      "rangeHigh": 106.0,
-      "sourceOfEntry": "weekly:weekly_112171_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "QQQ",
-      "name": "Nasdaq 100",
-      "side": "long",
-      "dateAdded": "10/9/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 709.8,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 705.0,
-      "rangeHigh": 767.0,
-      "sourceOfEntry": "weekly:weekly_112171_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
       "ticker": "UUP",
       "name": "US Dollar Bullish",
       "side": "long",
@@ -5438,30 +5459,6 @@
         2
       ],
       "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "UNG",
-      "name": "Natural Gas",
-      "side": "long",
-      "dateAdded": "10/14/2026",
-      "assetClass": "Commodities",
-      "entryPrice": 10.66,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 10.25,
-      "rangeHigh": 11.41,
-      "sourceOfEntry": "weekly:weekly_112171_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.5,
-        "maxPct": 4.0,
-        "label": "Commodities (Hedgeye classifica Cripto aqui também)"
-      },
-      "nativeQuads": [
-        1,
-        2,
-        3
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2/Q3 (Best Asset Class/Setor nesses regimes)"
     },
     {
       "ticker": "EWZ",
@@ -5690,29 +5687,6 @@
       "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
     },
     {
-      "ticker": "EWL",
-      "name": "Switzerland",
-      "side": "short",
-      "dateAdded": "9/14/2026",
-      "assetClass": "International Equities",
-      "entryPrice": 62.25,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 58.8,
-      "rangeHigh": 62.98,
-      "sourceOfEntry": "weekly:weekly_112171_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.0,
-        "maxPct": 3.0,
-        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
       "ticker": "PSP",
       "name": "Global Private Equity",
       "side": "short",
@@ -5805,29 +5779,6 @@
       "quadNote": "Short — aposta CONTRA Q4 (histórico de força nesses regimes)"
     },
     {
-      "ticker": "EWW",
-      "name": "Mexico",
-      "side": "short",
-      "dateAdded": "9/28/2026",
-      "assetClass": "Emerging Markets Equities",
-      "entryPrice": 74.94,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 70.7,
-      "rangeHigh": 75.52,
-      "sourceOfEntry": "weekly:weekly_112171_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.0,
-        "maxPct": 3.0,
-        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
       "ticker": "SLV",
       "name": "Silver",
       "side": "short",
@@ -5875,27 +5826,12 @@
       "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
     },
     {
-      "ticker": "FXB",
-      "name": "British Pound",
-      "side": "short",
-      "dateAdded": "10/15/2026",
-      "assetClass": "Foreign Currencies *All ETF recent intra day prices data through 10/18/2026",
-      "entryPrice": 128.17,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 126.0,
-      "rangeHigh": 129.0,
-      "sourceOfEntry": "weekly:weekly_112171_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": null,
-      "nativeQuads": [],
-      "quadNote": "N/D (sem classificação de setor/classe confiável)"
-    },
-    {
       "ticker": "RSP",
       "name": "S&P Equal Weight",
       "side": "long",
       "dateAdded": "2026-10-19 10:31AM EDT",
       "assetClass": null,
-      "entryPrice": 213.325,
+      "entryPrice": 213.4,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -5910,11 +5846,56 @@
       "side": "long",
       "dateAdded": "2026-10-19 10:31AM EDT",
       "assetClass": null,
-      "entryPrice": 37.115,
+      "entryPrice": 37.09,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
       "sourceOfEntry": "intraday:intraday_112209_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "DJIA",
+      "name": "Dow Covered Call",
+      "side": "long",
+      "dateAdded": "2026-10-20 10:27AM EDT",
+      "assetClass": null,
+      "entryPrice": 22.66,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_112282_UPDATE__9_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "EWM",
+      "name": "Malaysia",
+      "side": "short",
+      "dateAdded": "2026-10-20 10:27AM EDT",
+      "assetClass": null,
+      "entryPrice": 26.56,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_112282_UPDATE__9_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "EPHE",
+      "name": "Philippines",
+      "side": "short",
+      "dateAdded": "2026-10-20 10:27AM EDT",
+      "assetClass": null,
+      "entryPrice": 23.15,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_112282_UPDATE__9_New_ETF_Pro_Changes.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"

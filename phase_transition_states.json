@@ -1,6 +1,6 @@
 {
-  "gerado_em": "2026-10-20T09:32:15.393905",
-  "data": "2026-10-20",
+  "gerado_em": "2026-10-21T09:33:05.694270",
+  "data": "2026-10-21",
   "posicoes": {
     "UST30Y": {
       "ticker": "UST30Y",
@@ -28,17 +28,17 @@
       "trend_signal": "BEARISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 76.42,
+        "low": 76.46,
         "high": 77.42
       },
       "live_price": {
         "value": 76.83,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499524
+        "timestamp": 1792585975
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 41.0,
+      "range_pct_position": 38.5,
       "matrix_state": {
         "label": "Bounce, Not a Reversal",
         "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
@@ -58,17 +58,17 @@
       "trend_signal": "BEARISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 101.6,
-        "high": 103.7
+        "low": 101.9,
+        "high": 103.9
       },
       "live_price": {
-        "value": 102.88,
+        "value": 103.22,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499525
+        "timestamp": 1792585975
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 61.0,
+      "range_pct_position": 66.0,
       "matrix_state": {
         "label": "Bounce, Not a Reversal",
         "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
@@ -88,17 +88,17 @@
       "trend_signal": "BULLISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 7613.0,
-        "high": 7859.0
+        "low": 7616.0,
+        "high": 7850.0
       },
       "live_price": {
-        "value": 7690.73,
+        "value": 7712.57,
         "fonte": "TradingView (America)",
-        "timestamp": 1792499525
+        "timestamp": 1792585976
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 31.6,
+      "range_pct_position": 41.3,
       "matrix_state": {
         "label": "Press It",
         "description": "Intacto nos dois horizontes. Confiança total.",
@@ -118,17 +118,17 @@
       "trend_signal": "NEUTRAL",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 26028.0,
-        "high": 27701.0
+        "low": 25979.0,
+        "high": 26667.0
       },
       "live_price": {
-        "value": 26430.8862,
+        "value": 26424.8169,
         "fonte": "TradingView (America)",
-        "timestamp": 1792499525
+        "timestamp": 1792585976
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 24.1,
+      "range_pct_position": 64.8,
       "matrix_state": null,
       "response_ladder_rung": null,
       "status": "ok"
@@ -138,17 +138,17 @@
       "trend_signal": "BEARISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 2695.0,
-        "high": 2810.0
+        "low": 2711.0,
+        "high": 2812.0
       },
       "live_price": {
-        "value": 2728.298,
+        "value": 2776.5267,
         "fonte": "TradingView (Cfd)",
-        "timestamp": 1792499526
+        "timestamp": 1792585976
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 29.0,
+      "range_pct_position": 64.9,
       "matrix_state": {
         "label": "Bounce, Not a Reversal",
         "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
@@ -168,17 +168,17 @@
       "trend_signal": "BULLISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 170.0,
-        "high": 179.0
+        "low": 173.0,
+        "high": 182.0
       },
       "live_price": {
-        "value": 175.65,
+        "value": 179.82,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499526
+        "timestamp": 1792585976
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 62.8,
+      "range_pct_position": 75.8,
       "matrix_state": {
         "label": "Press It",
         "description": "Intacto nos dois horizontes. Confiança total.",
@@ -199,16 +199,16 @@
       "trend_just_broke_today": false,
       "risk_range": {
         "low": 102.0,
-        "high": 114.0
+        "high": 113.0
       },
       "live_price": {
-        "value": 105.99,
+        "value": 106.93,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499526
+        "timestamp": 1792585977
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 33.2,
+      "range_pct_position": 44.8,
       "matrix_state": {
         "label": "Press It",
         "description": "Intacto nos dois horizontes. Confiança total.",
@@ -232,13 +232,13 @@
         "high": 202.0
       },
       "live_price": {
-        "value": 185.96,
+        "value": 185.44,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499526
+        "timestamp": 1792585977
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 27.1,
+      "range_pct_position": 24.7,
       "matrix_state": null,
       "response_ladder_rung": null,
       "status": "ok"
@@ -262,17 +262,17 @@
       "trend_signal": "BEARISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 24794.0,
-        "high": 25610.0
+        "low": 24816.0,
+        "high": 25611.0
       },
       "live_price": {
-        "value": 43.72,
+        "value": 44.08,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499528
+        "timestamp": 1792585978
       },
       "trade_signal": "bearish",
       "range_zone": "abaixo_lrr",
-      "range_pct_position": -3033.1,
+      "range_pct_position": -3116.0,
       "matrix_state": {
         "label": "Confirmed Weak",
         "description": "Quebrado nos dois horizontes. Não está 'em promoção' — postura defensiva.",
@@ -292,17 +292,17 @@
       "trend_signal": "BEARISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 14.21,
-        "high": 19.98
+        "low": 14.32,
+        "high": 19.95
       },
       "live_price": {
-        "value": 18.84,
+        "value": 17.33,
         "fonte": "TradingView (America)",
-        "timestamp": 1792499528
+        "timestamp": 1792585978
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 80.2,
+      "range_pct_position": 53.5,
       "matrix_state": {
         "label": "Bounce, Not a Reversal",
         "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
@@ -322,17 +322,17 @@
       "trend_signal": "BULLISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 101.43,
-        "high": 102.64
+        "low": 101.45,
+        "high": 102.59
       },
       "live_price": {
-        "value": 101.723,
+        "value": 101.69,
         "fonte": "TradingView (America)",
-        "timestamp": 1792499528
+        "timestamp": 1792585978
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 24.2,
+      "range_pct_position": 21.1,
       "matrix_state": {
         "label": "Press It",
         "description": "Intacto nos dois horizontes. Confiança total.",
@@ -363,7 +363,7 @@
     },
     "GBP/USD": {
       "ticker": "GBP/USD",
-      "trend_signal": "BEARISH",
+      "trend_signal": "NEUTRAL",
       "live_price": null,
       "status": "indisponivel",
       "reason": "Ticker 'GBP/USD' não encontrado no TradingView"
@@ -380,17 +380,17 @@
       "trend_signal": "BULLISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 94.09,
-        "high": 103.17
+        "low": 94.33,
+        "high": 102.97
       },
       "live_price": {
-        "value": 100.48,
+        "value": 98.36,
         "fonte": "TradingView (Futures)",
-        "timestamp": 1792499530
+        "timestamp": 1792585981
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 70.4,
+      "range_pct_position": 46.6,
       "matrix_state": {
         "label": "Press It",
         "description": "Intacto nos dois horizontes. Confiança total.",
@@ -414,22 +414,32 @@
     },
     "NATGAS": {
       "ticker": "NATGAS",
-      "trend_signal": "NEUTRAL",
+      "trend_signal": "BEARISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 2.89,
-        "high": 3.28
+        "low": 2.79,
+        "high": 3.12
       },
       "live_price": {
-        "value": 2.99,
+        "value": 2.844,
         "fonte": "TradingView (Futures)",
-        "timestamp": 1792499531
+        "timestamp": 1792585981
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 25.6,
-      "matrix_state": null,
-      "response_ladder_rung": null,
+      "range_pct_position": 16.4,
+      "matrix_state": {
+        "label": "Bounce, Not a Reversal",
+        "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
+        "sizing_rung": "TRIM",
+        "action": "Não perseguir o rally — tratar como alívio tático, não reversão de tese."
+      },
+      "response_ladder_rung": {
+        "rung": "REDUCE",
+        "label": "Reduce",
+        "condition": "Imprime uma primeira Lower High, ou a mínima do Risk Range para de subir.",
+        "action": "Cortar em direção ao meio da banda de sizing. Ainda comprado, só menos errado se estiver errado."
+      },
       "status": "ok"
     },
     "GOLD": {
@@ -437,17 +447,17 @@
       "trend_signal": "BEARISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 4088.0,
-        "high": 4201.0
+        "low": 4085.0,
+        "high": 4199.0
       },
       "live_price": {
-        "value": 4119.85,
+        "value": 4129.54,
         "fonte": "TradingView (Cfd)",
-        "timestamp": 1792499531
+        "timestamp": 1792585982
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 28.2,
+      "range_pct_position": 39.1,
       "matrix_state": {
         "label": "Bounce, Not a Reversal",
         "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
@@ -464,32 +474,22 @@
     },
     "COPPER": {
       "ticker": "COPPER",
-      "trend_signal": "BULLISH",
+      "trend_signal": "NEUTRAL",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 6.42,
-        "high": 6.71
+        "low": 6.4,
+        "high": 6.69
       },
       "live_price": {
-        "value": 6.569,
+        "value": 6.528,
         "fonte": "TradingView (Futures)",
-        "timestamp": 1792499531
+        "timestamp": 1792585982
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 51.4,
-      "matrix_state": {
-        "label": "Press It",
-        "description": "Intacto nos dois horizontes. Confiança total.",
-        "sizing_rung": "FULL",
-        "action": "Pode adicionar na fraqueza (buy the red) dentro da banda de sizing."
-      },
-      "response_ladder_rung": {
-        "rung": "HOLD_ADD",
-        "label": "Hold / Add",
-        "condition": "Higher Highs e Higher Lows intactos, TRADE e TREND ambos bullish, mínimas do Risk Range (LRR) ainda subindo.",
-        "action": "Adicionar nos recuos até a ponta baixa do range."
-      },
+      "range_pct_position": 44.1,
+      "matrix_state": null,
+      "response_ladder_rung": null,
       "status": "ok"
     },
     "SILVER": {
@@ -497,17 +497,17 @@
       "trend_signal": "BEARISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 54.0,
-        "high": 59.0
+        "low": 53.0,
+        "high": 58.0
       },
       "live_price": {
-        "value": 56.82,
+        "value": 57.3939,
         "fonte": "TradingView (Cfd)",
-        "timestamp": 1792499532
+        "timestamp": 1792585982
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 56.4,
+      "range_pct_position": 87.9,
       "matrix_state": {
         "label": "Bounce, Not a Reversal",
         "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
@@ -528,16 +528,16 @@
       "trend_just_broke_today": false,
       "risk_range": {
         "low": 520.0,
-        "high": 547.0
+        "high": 548.0
       },
       "live_price": {
-        "value": 533.52,
+        "value": 531.87,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499532
+        "timestamp": 1792585982
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 50.1,
+      "range_pct_position": 42.4,
       "matrix_state": {
         "label": "Press It",
         "description": "Intacto nos dois horizontes. Confiança total.",
@@ -557,17 +557,17 @@
       "trend_signal": "BULLISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 336.0,
-        "high": 346.0
+        "low": 335.0,
+        "high": 345.0
       },
       "live_price": {
-        "value": 342.94,
+        "value": 339.5,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499532
+        "timestamp": 1792585983
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 69.4,
+      "range_pct_position": 45.0,
       "matrix_state": {
         "label": "Press It",
         "description": "Intacto nos dois horizontes. Confiança total.",
@@ -591,13 +591,13 @@
         "high": 269.0
       },
       "live_price": {
-        "value": 262.45,
+        "value": 262.63,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499532
+        "timestamp": 1792585983
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 65.5,
+      "range_pct_position": 66.5,
       "matrix_state": {
         "label": "Press It",
         "description": "Intacto nos dois horizontes. Confiança total.",
@@ -617,17 +617,17 @@
       "trend_signal": "BULLISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 690.0,
+        "low": 684.0,
         "high": 762.0
       },
       "live_price": {
-        "value": 705.44,
+        "value": 694.25,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499533
+        "timestamp": 1792585983
       },
       "trade_signal": "bullish",
-      "range_zone": "dentro",
-      "range_pct_position": 21.4,
+      "range_zone": "perto_lrr",
+      "range_pct_position": 13.1,
       "matrix_state": {
         "label": "Press It",
         "description": "Intacto nos dois horizontes. Confiança total.",
@@ -647,17 +647,17 @@
       "trend_signal": "BEARISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 337.0,
-        "high": 353.0
+        "low": 332.0,
+        "high": 352.0
       },
       "live_price": {
-        "value": 344.18,
+        "value": 340.27,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499533
+        "timestamp": 1792585983
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 44.9,
+      "range_pct_position": 41.3,
       "matrix_state": {
         "label": "Bounce, Not a Reversal",
         "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
@@ -677,17 +677,17 @@
       "trend_signal": "BEARISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 68.0,
-        "high": 73.0
+        "low": 67.0,
+        "high": 71.0
       },
       "live_price": {
-        "value": 69.85,
+        "value": 68.69,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499533
+        "timestamp": 1792585983
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 37.0,
+      "range_pct_position": 42.2,
       "matrix_state": {
         "label": "Bounce, Not a Reversal",
         "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
@@ -704,91 +704,81 @@
     },
     "TSLA": {
       "ticker": "TSLA",
-      "trend_signal": "BEARISH",
+      "trend_signal": "BULLISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 352.0,
-        "high": 375.0
+        "low": 356.0,
+        "high": 390.0
       },
       "live_price": {
-        "value": 368.06,
+        "value": 373.71,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499533
+        "timestamp": 1792585984
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 69.8,
+      "range_pct_position": 52.1,
       "matrix_state": {
-        "label": "Bounce, Not a Reversal",
-        "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
-        "sizing_rung": "TRIM",
-        "action": "Não perseguir o rally — tratar como alívio tático, não reversão de tese."
+        "label": "Press It",
+        "description": "Intacto nos dois horizontes. Confiança total.",
+        "sizing_rung": "FULL",
+        "action": "Pode adicionar na fraqueza (buy the red) dentro da banda de sizing."
       },
       "response_ladder_rung": {
-        "rung": "REDUCE",
-        "label": "Reduce",
-        "condition": "Imprime uma primeira Lower High, ou a mínima do Risk Range para de subir.",
-        "action": "Cortar em direção ao meio da banda de sizing. Ainda comprado, só menos errado se estiver errado."
+        "rung": "HOLD_ADD",
+        "label": "Hold / Add",
+        "condition": "Higher Highs e Higher Lows intactos, TRADE e TREND ambos bullish, mínimas do Risk Range (LRR) ainda subindo.",
+        "action": "Adicionar nos recuos até a ponta baixa do range."
       },
       "status": "ok"
     },
     "NVDA": {
       "ticker": "NVDA",
-      "trend_signal": "BEARISH",
+      "trend_signal": "NEUTRAL",
       "trend_just_broke_today": false,
       "risk_range": {
         "low": 208.0,
-        "high": 225.0
+        "high": 235.0
       },
       "live_price": {
-        "value": 217.09,
+        "value": 216.47,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499534
+        "timestamp": 1792585984
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 53.5,
-      "matrix_state": {
-        "label": "Bounce, Not a Reversal",
-        "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
-        "sizing_rung": "TRIM",
-        "action": "Não perseguir o rally — tratar como alívio tático, não reversão de tese."
-      },
-      "response_ladder_rung": {
-        "rung": "REDUCE",
-        "label": "Reduce",
-        "condition": "Imprime uma primeira Lower High, ou a mínima do Risk Range para de subir.",
-        "action": "Cortar em direção ao meio da banda de sizing. Ainda comprado, só menos errado se estiver errado."
-      },
+      "range_pct_position": 31.4,
+      "matrix_state": null,
+      "response_ladder_rung": null,
       "status": "ok"
     },
     "SPCX": {
       "ticker": "SPCX",
-      "trend_signal": "BEARISH",
+      "trend_signal": "BULLISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 140.0,
-        "high": 157.0
+        "low": 145.0,
+        "high": 173.0
       },
       "live_price": {
-        "value": 147.96,
+        "value": 147.79,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499534
+        "timestamp": 1792585984
       },
       "trade_signal": "bullish",
-      "range_zone": "dentro",
-      "range_pct_position": 46.8,
+      "range_zone": "perto_lrr",
+      "range_pct_position": 10.0,
       "matrix_state": {
-        "label": "Bounce, Not a Reversal",
-        "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
-        "sizing_rung": "TRIM",
-        "action": "Não perseguir o rally — tratar como alívio tático, não reversão de tese."
+        "label": "Press It",
+        "description": "Intacto nos dois horizontes. Confiança total.",
+        "sizing_rung": "FULL",
+        "action": "Pode adicionar na fraqueza (buy the red) dentro da banda de sizing."
       },
       "response_ladder_rung": {
-        "rung": "REDUCE",
-        "label": "Reduce",
-        "condition": "Imprime uma primeira Lower High, ou a mínima do Risk Range para de subir.",
-        "action": "Cortar em direção ao meio da banda de sizing. Ainda comprado, só menos errado se estiver errado."
+        "rung": "HOLD_ADD",
+        "label": "Hold / Add",
+        "condition": "Higher Highs e Higher Lows intactos, TRADE e TREND ambos bullish, mínimas do Risk Range (LRR) ainda subindo.",
+        "action": "Adicionar nos recuos até a ponta baixa do range."
       },
       "status": "ok"
     },
@@ -797,17 +787,17 @@
       "trend_signal": "BULLISH",
       "trend_just_broke_today": false,
       "risk_range": {
-        "low": 58.0,
-        "high": 66.0
+        "low": 60.0,
+        "high": 67.0
       },
       "live_price": {
-        "value": 61.54,
+        "value": 63.64,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1792499534
+        "timestamp": 1792585984
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 44.2,
+      "range_pct_position": 52.0,
       "matrix_state": {
         "label": "Press It",
         "description": "Intacto nos dois horizontes. Confiança total.",
@@ -832,9 +822,9 @@
   },
   "vix_gauge": {
     "status": "ok",
-    "value": 18.84,
+    "value": 17.33,
     "fonte": "TradingView (America)",
-    "timestamp": 1792499528,
+    "timestamp": 1792585978,
     "bucket": {
       "key": "investable",
       "min": 9.0,
