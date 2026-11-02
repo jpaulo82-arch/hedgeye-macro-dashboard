@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T14:52:01.933872",
+  "generatedAt": "2026-11-02T14:54:22.585532",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -188,7 +188,7 @@
           "side": "long",
           "periodStart": "2024-09-01",
           "periodEnd": "2024-09-30",
-          "priceStart": 18.3002,
+          "priceStart": 18.3003,
           "priceEnd": 18.4022,
           "returnPct": 0.557
         }
@@ -905,15 +905,6 @@
           "returnPct": 1.887
         },
         {
-          "ticker": "QAT",
-          "side": "short",
-          "periodStart": "2026-07-16",
-          "periodEnd": "2026-07-31",
-          "priceStart": 17.59,
-          "priceEnd": 17.38,
-          "returnPct": 1.194
-        },
-        {
           "ticker": "COLO",
           "side": "long",
           "periodStart": "2026-07-17",
@@ -957,6 +948,15 @@
           "priceStart": 25.8457,
           "priceEnd": 25.9627,
           "returnPct": 0.453
+        },
+        {
+          "ticker": "QAT",
+          "side": "short",
+          "periodStart": "2026-07-16",
+          "periodEnd": "2026-07-31",
+          "priceStart": 17.59,
+          "priceEnd": 17.38,
+          "returnPct": 1.194
         }
       ]
     },
@@ -991,15 +991,6 @@
           "priceStart": 161.6215,
           "priceEnd": 169.8898,
           "returnPct": 5.116
-        },
-        {
-          "ticker": "QAT",
-          "side": "short",
-          "periodStart": "2026-08-01",
-          "periodEnd": "2026-08-31",
-          "priceStart": 17.645,
-          "priceEnd": 17.41,
-          "returnPct": 1.332
         },
         {
           "ticker": "PBD",
@@ -1189,6 +1180,15 @@
           "priceStart": 14.9188,
           "priceEnd": 14.9218,
           "returnPct": -0.02
+        },
+        {
+          "ticker": "QAT",
+          "side": "short",
+          "periodStart": "2026-08-01",
+          "periodEnd": "2026-08-31",
+          "priceStart": 17.645,
+          "priceEnd": 17.41,
+          "returnPct": 1.332
         }
       ]
     },
@@ -1223,15 +1223,6 @@
           "priceStart": 171.0155,
           "priceEnd": 167.0208,
           "returnPct": -2.336
-        },
-        {
-          "ticker": "QAT",
-          "side": "short",
-          "periodStart": "2026-09-01",
-          "periodEnd": "2026-09-15",
-          "priceStart": 17.3,
-          "priceEnd": 17.19,
-          "returnPct": 0.636
         },
         {
           "ticker": "PBD",
@@ -1574,6 +1565,15 @@
           "priceStart": 14.8772,
           "priceEnd": 14.724,
           "returnPct": 1.03
+        },
+        {
+          "ticker": "QAT",
+          "side": "short",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-15",
+          "priceStart": 17.3,
+          "priceEnd": 17.19,
+          "returnPct": 0.636
         }
       ]
     }

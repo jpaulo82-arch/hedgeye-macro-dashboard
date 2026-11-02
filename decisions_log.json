@@ -1,6 +1,30 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261102",
+      "date": "02/11/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (02/11/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-11-02T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "QAT",
+          "categoria": "ETF PRO PLUS — QATAR",
+          "regime": null,
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "ETF Pro Plus encerrou o SHORT em Qatar (QAT) no UPDATE de 02/11/2026. Cobertura no Trend Range: 14.76 – 16.71.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 02/11/2026)",
+          "rangeLow": 14.76,
+          "rangeHigh": 16.71
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261030",
       "date": "30/10/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (30/10/2026)",
@@ -2526,7 +2550,7 @@
         },
         {
           "ativo": "RSP",
-          "categoria": "ETF PRO PLUS — S&P EQUAL WEIGHT",
+          "categoria": "ETF PRO PLUS — P EQUAL WEIGHT",
           "regime": null,
           "decisao": "Zerar Posição / Remover",
           "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
@@ -3450,7 +3474,7 @@
         },
         {
           "ativo": "RSP",
-          "categoria": "ETF PRO PLUS — S&P EQUAL WEIGHT",
+          "categoria": "ETF PRO PLUS — P EQUAL WEIGHT",
           "regime": null,
           "decisao": "Comprar / Long",
           "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
@@ -4277,5 +4301,5 @@
       ]
     }
   ],
-  "updatedAt": "30/10/2026 17:14:32"
+  "updatedAt": "02/11/2026 14:55:42"
 }
