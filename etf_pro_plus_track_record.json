@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T14:54:22.585532",
+  "generatedAt": "2026-11-03T14:47:18.018331",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -540,7 +540,7 @@
           "side": "long",
           "periodStart": "2025-10-01",
           "periodEnd": "2025-10-31",
-          "priceStart": 24.3074,
+          "priceStart": 24.3073,
           "priceEnd": 24.3703,
           "returnPct": 0.259
         },
@@ -1243,15 +1243,6 @@
           "returnPct": 3.193
         },
         {
-          "ticker": "INDA",
-          "side": "short",
-          "periodStart": "2026-09-11",
-          "periodEnd": "2026-09-15",
-          "priceStart": 48.57,
-          "priceEnd": 47.59,
-          "returnPct": 2.018
-        },
-        {
           "ticker": "IWM",
           "side": "short",
           "periodStart": "2026-09-14",
@@ -1574,6 +1565,15 @@
           "priceStart": 17.3,
           "priceEnd": 17.19,
           "returnPct": 0.636
+        },
+        {
+          "ticker": "INDA",
+          "side": "short",
+          "periodStart": "2026-09-11",
+          "periodEnd": "2026-09-15",
+          "priceStart": 48.57,
+          "priceEnd": 47.59,
+          "returnPct": 2.018
         }
       ]
     }
@@ -1821,5 +1821,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 104
+  "positionsIncluded": 111
 }

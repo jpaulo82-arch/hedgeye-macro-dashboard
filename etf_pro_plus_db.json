@@ -1,5 +1,5 @@
 {
-  "updatedAt": "02/11/2026 14:53:34",
+  "updatedAt": "03/11/2026 14:46:27",
   "reports": {
     "weekly": [
       {
@@ -4881,6 +4881,75 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_113299_UPDATE__11_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-11-03 10:22AM EST",
+        "addsLong": [
+          {
+            "name": "US Market Neutral",
+            "ticker": "BTAL"
+          },
+          {
+            "name": "US Treasury Long",
+            "ticker": "ZROZ"
+          },
+          {
+            "name": "US Min Vol",
+            "ticker": "USMV"
+          },
+          {
+            "name": "Core Plus Bond",
+            "ticker": "JCPB"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Hedge Fund VIP",
+            "ticker": "GVIP"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Tanker Shipping",
+            "ticker": "BWET",
+            "rangeLow": 799.0,
+            "rangeHigh": 1022.0
+          },
+          {
+            "name": "Dow Covered Call",
+            "ticker": "DJIA",
+            "rangeLow": 22.04,
+            "rangeHigh": 22.67
+          },
+          {
+            "name": "Commodity Strategy",
+            "ticker": "HGER",
+            "rangeLow": 34.0,
+            "rangeHigh": 36.5
+          },
+          {
+            "name": "Japanese Yen",
+            "ticker": "FXY",
+            "rangeLow": 57.55,
+            "rangeHigh": 58.92
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "India",
+            "ticker": "INDA",
+            "rangeLow": 45.56,
+            "rangeHigh": 49.0
+          },
+          {
+            "name": "Global Airlines",
+            "ticker": "JETS",
+            "rangeLow": 25.58,
+            "rangeHigh": 28.5
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -5741,6 +5810,112 @@
             "UFO"
           ]
         }
+      },
+      {
+        "type": "monthly",
+        "sourceFile": "monthly_113310_ETF_Pro_Plus__November_Update__Q4_2026_.txt",
+        "title": "November Update (Q4 2026)",
+        "reportDatetime": "2026-11-03 12:36PM EST",
+        "quadCurrent": null,
+        "totalPositions": null,
+        "currentLineup": {
+          "long": [
+            "BUXX",
+            "CLOX",
+            "XLV",
+            "BNO",
+            "BWET",
+            "BUG",
+            "HTEC",
+            "UUP",
+            "RSP",
+            "DJIA",
+            "HGER",
+            "ILS",
+            "XLP",
+            "LVHI",
+            "FXY",
+            "FTXG",
+            "IAK",
+            "BNDD"
+          ],
+          "short": [
+            "QAT",
+            "PBD",
+            "XLI",
+            "INDA",
+            "IWM",
+            "PSP",
+            "PALL",
+            "SLV",
+            "EWM",
+            "EPHE",
+            "EWQ",
+            "IDX",
+            "EWY",
+            "DRAM",
+            "GDX",
+            "GRNY",
+            "JETS",
+            "MEME"
+          ]
+        },
+        "changes": {
+          "addedLongs": [
+            "UUP",
+            "RSP",
+            "DJIA",
+            "HGER",
+            "ILS",
+            "XLP",
+            "LVHI",
+            "FXY",
+            "FTXG",
+            "IAK",
+            "BNDD"
+          ],
+          "addedShorts": [
+            "EWM",
+            "EPHE",
+            "EWQ",
+            "IDX",
+            "EWY",
+            "DRAM",
+            "GDX",
+            "GRNY",
+            "JETS",
+            "MEME"
+          ],
+          "flippedShortToLong": [],
+          "flippedLongToShort": [],
+          "removed": [
+            "CLOZ",
+            "IGV",
+            "IBIT",
+            "DBMF",
+            "PFIX",
+            "CRAK",
+            "CRTC",
+            "XLK",
+            "TOPT",
+            "JPXN",
+            "QQQ",
+            "FJP",
+            "LQD",
+            "TLT",
+            "XLU",
+            "ZROZ",
+            "JOJO",
+            "EWA",
+            "EWL",
+            "EWG",
+            "XLY",
+            "HYG",
+            "XLF",
+            "EWW",
+            "IPAY"
+          ]
+        }
       }
     ]
   },
@@ -6236,6 +6411,18 @@
       "type": "intraday",
       "sourceFile": "intraday_113218_UPDATE__1_New_ETF_Pro_Change.txt",
       "summary": "Removeu SHORT: Qatar (QAT)"
+    },
+    {
+      "date": "2026-11-03 10:22AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_113299_UPDATE__11_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: US Market Neutral (BTAL), US Treasury Long (ZROZ), US Min Vol (USMV), Core Plus Bond (JCPB) | Adicionou SHORT: Hedge Fund VIP (GVIP) | Removeu LONG: Tanker Shipping (BWET), Dow Covered Call (DJIA), Commodity Strategy (HGER), Japanese Yen (FXY) | Removeu SHORT: India (INDA), Global Airlines (JETS)"
+    },
+    {
+      "date": "2026-11-03 12:36PM EST",
+      "type": "monthly",
+      "sourceFile": "monthly_113310_ETF_Pro_Plus__November_Update__Q4_2026_.txt",
+      "summary": "[Quad N/D] Longs adicionados no mês: UUP, RSP, DJIA, HGER, ILS, XLP, LVHI, FXY, FTXG, IAK, BNDD | Shorts adicionados no mês: EWM, EPHE, EWQ, IDX, EWY, DRAM, GDX, GRNY, JETS, MEME | Removidos no mês: CLOZ, IGV, IBIT, DBMF, PFIX, CRAK, CRTC, XLK, TOPT, JPXN, QQQ, FJP, LQD, TLT, XLU, ZROZ, JOJO, EWA, EWL, EWG, XLY, HYG, XLF, EWW, IPAY"
     }
   ],
   "currentLineup": [
@@ -6315,30 +6502,6 @@
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
       "rangeLow": 65.8,
       "rangeHigh": 73.33,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.5,
-        "maxPct": 4.0,
-        "label": "Commodities (Hedgeye classifica Cripto aqui também)"
-      },
-      "nativeQuads": [
-        1,
-        2,
-        3
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2/Q3 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "BWET",
-      "name": "Tanker Shipping",
-      "side": "long",
-      "dateAdded": "9/22/2026",
-      "assetClass": "Commodities",
-      "entryPrice": 968.92,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 799.0,
-      "rangeHigh": 1022.0,
       "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 1.0,
@@ -6446,53 +6609,6 @@
       "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     },
     {
-      "ticker": "DJIA",
-      "name": "Dow Covered Call",
-      "side": "long",
-      "dateAdded": "10/20/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 22.48,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 22.04,
-      "rangeHigh": 22.67,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "HGER",
-      "name": "Commodity Strategy",
-      "side": "long",
-      "dateAdded": "10/21/2026",
-      "assetClass": "Commodities",
-      "entryPrice": 35.58,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 35.0,
-      "rangeHigh": 36.5,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.5,
-        "maxPct": 4.0,
-        "label": "Commodities (Hedgeye classifica Cripto aqui também)"
-      },
-      "nativeQuads": [
-        1,
-        2,
-        3
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2/Q3 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
       "ticker": "ILS",
       "name": "Catastrophe Bonds",
       "side": "long",
@@ -6552,29 +6668,6 @@
         "midPct": 4.0,
         "maxPct": 6.0,
         "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "FXY",
-      "name": "Japanese Yen",
-      "side": "long",
-      "dateAdded": "10/26/2026",
-      "assetClass": "Foreign Currencies",
-      "entryPrice": 58.19,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 57.55,
-      "rangeHigh": 58.92,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 4.0,
-        "midPct": 8.0,
-        "maxPct": 12.0,
-        "label": "Moeda Estrangeira / Ouro Físico (FX)"
       },
       "nativeQuads": [
         1,
@@ -6676,29 +6769,6 @@
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
       "rangeLow": 160.0,
       "rangeHigh": 171.0,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.0,
-        "maxPct": 3.0,
-        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
-      "ticker": "INDA",
-      "name": "India",
-      "side": "short",
-      "dateAdded": "9/11/2026",
-      "assetClass": "Emerging Markets Equities",
-      "entryPrice": 47.72,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 45.56,
-      "rangeHigh": 48.28,
       "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 1.0,
@@ -6986,29 +7056,6 @@
       "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
     },
     {
-      "ticker": "JETS",
-      "name": "Global Airlines",
-      "side": "short",
-      "dateAdded": "10/28/2026",
-      "assetClass": "Global Equities",
-      "entryPrice": 26.93,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 25.58,
-      "rangeHigh": 27.84,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.0,
-        "maxPct": 3.0,
-        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
       "ticker": "MEME",
       "name": "Meme",
       "side": "short",
@@ -7030,6 +7077,81 @@
         2
       ],
       "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
+    },
+    {
+      "ticker": "BTAL",
+      "name": "US Market Neutral",
+      "side": "long",
+      "dateAdded": "2026-11-03 10:22AM EST",
+      "assetClass": null,
+      "entryPrice": 13.1786,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_113299_UPDATE__11_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "ZROZ",
+      "name": "US Treasury Long",
+      "side": "long",
+      "dateAdded": "2026-11-03 10:22AM EST",
+      "assetClass": null,
+      "entryPrice": 58.09,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_113299_UPDATE__11_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "USMV",
+      "name": "US Min Vol",
+      "side": "long",
+      "dateAdded": "2026-11-03 10:22AM EST",
+      "assetClass": null,
+      "entryPrice": 102.93,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_113299_UPDATE__11_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "JCPB",
+      "name": "Core Plus Bond",
+      "side": "long",
+      "dateAdded": "2026-11-03 10:22AM EST",
+      "assetClass": null,
+      "entryPrice": 45.335,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_113299_UPDATE__11_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "GVIP",
+      "name": "Hedge Fund VIP",
+      "side": "short",
+      "dateAdded": "2026-11-03 10:22AM EST",
+      "assetClass": null,
+      "entryPrice": 160.4662,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_113299_UPDATE__11_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
     }
   ],
   "lineupSnapshots": [],
