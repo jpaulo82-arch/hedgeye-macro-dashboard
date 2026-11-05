@@ -1,5 +1,5 @@
 {
-  "updatedAt": "03/11/2026 14:46:27",
+  "updatedAt": "04/11/2026 12:46:52",
   "reports": {
     "weekly": [
       {
@@ -4950,6 +4950,57 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-11-04 10:29AM EST",
+        "addsLong": [
+          {
+            "name": "Utilities Sector",
+            "ticker": "XLU"
+          },
+          {
+            "name": "Long Treasury Bond",
+            "ticker": "TLT"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Euro",
+            "ticker": "FXE"
+          },
+          {
+            "name": "Nasdaq 100",
+            "ticker": "QQQ"
+          },
+          {
+            "name": "Lithium Tech",
+            "ticker": "LIT"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Brent Oil",
+            "ticker": "BNO",
+            "rangeLow": 65.8,
+            "rangeHigh": 73.33
+          },
+          {
+            "name": "Cybersecurity",
+            "ticker": "BUG",
+            "rangeLow": 44.76,
+            "rangeHigh": 54.08
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "Global Private Equity",
+            "ticker": "PSP",
+            "rangeLow": 55.18,
+            "rangeHigh": 60.5
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -6423,6 +6474,12 @@
       "type": "monthly",
       "sourceFile": "monthly_113310_ETF_Pro_Plus__November_Update__Q4_2026_.txt",
       "summary": "[Quad N/D] Longs adicionados no mês: UUP, RSP, DJIA, HGER, ILS, XLP, LVHI, FXY, FTXG, IAK, BNDD | Shorts adicionados no mês: EWM, EPHE, EWQ, IDX, EWY, DRAM, GDX, GRNY, JETS, MEME | Removidos no mês: CLOZ, IGV, IBIT, DBMF, PFIX, CRAK, CRTC, XLK, TOPT, JPXN, QQQ, FJP, LQD, TLT, XLU, ZROZ, JOJO, EWA, EWL, EWG, XLY, HYG, XLF, EWW, IPAY"
+    },
+    {
+      "date": "2026-11-04 10:29AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Utilities Sector (XLU), Long Treasury Bond (TLT) | Adicionou SHORT: Euro (FXE), Nasdaq 100 (QQQ), Lithium Tech (LIT) | Removeu LONG: Brent Oil (BNO), Cybersecurity (BUG) | Removeu SHORT: Global Private Equity (PSP)"
     }
   ],
   "currentLineup": [
@@ -6491,53 +6548,6 @@
         4
       ],
       "quadNote": "Long — alinhado com Q4 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "BNO",
-      "name": "Brent Oil",
-      "side": "long",
-      "dateAdded": "9/21/2026",
-      "assetClass": "Commodities",
-      "entryPrice": 71.39,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 65.8,
-      "rangeHigh": 73.33,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.5,
-        "maxPct": 4.0,
-        "label": "Commodities (Hedgeye classifica Cripto aqui também)"
-      },
-      "nativeQuads": [
-        1,
-        2,
-        3
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2/Q3 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "BUG",
-      "name": "Cybersecurity",
-      "side": "long",
-      "dateAdded": "9/25/2026",
-      "assetClass": "Global Equities",
-      "entryPrice": 49.37,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 44.76,
-      "rangeHigh": 54.08,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     },
     {
       "ticker": "HTEC",
@@ -6792,29 +6802,6 @@
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
       "rangeLow": 270.0,
       "rangeHigh": 285.0,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.0,
-        "maxPct": 3.0,
-        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
-      "ticker": "PSP",
-      "name": "Global Private Equity",
-      "side": "short",
-      "dateAdded": "9/15/2026",
-      "assetClass": "Global Equities",
-      "entryPrice": 58.83,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 55.18,
-      "rangeHigh": 59.49,
       "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 1.0,
@@ -7084,7 +7071,7 @@
       "side": "long",
       "dateAdded": "2026-11-03 10:22AM EST",
       "assetClass": null,
-      "entryPrice": 13.1786,
+      "entryPrice": 13.13,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -7099,7 +7086,7 @@
       "side": "long",
       "dateAdded": "2026-11-03 10:22AM EST",
       "assetClass": null,
-      "entryPrice": 58.09,
+      "entryPrice": 58.13,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -7114,7 +7101,7 @@
       "side": "long",
       "dateAdded": "2026-11-03 10:22AM EST",
       "assetClass": null,
-      "entryPrice": 102.93,
+      "entryPrice": 102.72,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -7129,7 +7116,7 @@
       "side": "long",
       "dateAdded": "2026-11-03 10:22AM EST",
       "assetClass": null,
-      "entryPrice": 45.335,
+      "entryPrice": 45.36,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -7144,7 +7131,7 @@
       "side": "short",
       "dateAdded": "2026-11-03 10:22AM EST",
       "assetClass": null,
-      "entryPrice": 160.4662,
+      "entryPrice": 160.686,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -7152,6 +7139,87 @@
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "XLU",
+      "name": "Utilities Sector",
+      "side": "long",
+      "dateAdded": "2026-11-04 10:29AM EST",
+      "assetClass": null,
+      "entryPrice": 43.11,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [
+        3,
+        4
+      ],
+      "quadNote": "Long — alinhado com Q3/Q4 (Best Asset Class/Setor nesses regimes)"
+    },
+    {
+      "ticker": "TLT",
+      "name": "Long Treasury Bond",
+      "side": "long",
+      "dateAdded": "2026-11-04 10:29AM EST",
+      "assetClass": null,
+      "entryPrice": 81.31,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "FXE",
+      "name": "Euro",
+      "side": "short",
+      "dateAdded": "2026-11-04 10:29AM EST",
+      "assetClass": null,
+      "entryPrice": 103.695,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "QQQ",
+      "name": "Nasdaq 100",
+      "side": "short",
+      "dateAdded": "2026-11-04 10:29AM EST",
+      "assetClass": null,
+      "entryPrice": 693.38,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "LIT",
+      "name": "Lithium Tech",
+      "side": "short",
+      "dateAdded": "2026-11-04 10:29AM EST",
+      "assetClass": null,
+      "entryPrice": 61.82,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [
+        1,
+        2
+      ],
+      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
     }
   ],
   "lineupSnapshots": [],

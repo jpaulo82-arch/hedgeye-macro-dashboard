@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T14:47:20",
+  "generatedAt": "2026-11-04T12:47:28",
   "ranges": {
     "BUXX": {
       "low": null,
@@ -12,39 +12,23 @@
     "CLOX": {
       "low": null,
       "high": null,
-      "price": 25.51,
+      "price": 25.52,
       "pct": null,
       "zone": null,
       "source": null
     },
     "XLV": {
-      "low": 178.0,
+      "low": 177.0,
       "high": 187.0,
-      "price": 184.79,
-      "pct": 75.4,
-      "zone": "meio do range",
+      "price": 185.77,
+      "pct": 87.7,
+      "zone": "perto do TRR",
       "source": "Early Look (Our Levels, diário)"
-    },
-    "BNO": {
-      "low": null,
-      "high": null,
-      "price": 65.69,
-      "pct": null,
-      "zone": null,
-      "source": null
-    },
-    "BUG": {
-      "low": null,
-      "high": null,
-      "price": 46.94,
-      "pct": null,
-      "zone": null,
-      "source": null
     },
     "HTEC": {
       "low": null,
       "high": null,
-      "price": 45.79,
+      "price": 46.32,
       "pct": null,
       "zone": null,
       "source": null
@@ -52,23 +36,23 @@
     "UUP": {
       "low": null,
       "high": null,
-      "price": 28.99,
+      "price": 28.91,
       "pct": null,
       "zone": null,
       "source": null
     },
     "RSP": {
       "low": 216.0,
-      "high": 222.0,
-      "price": 219.75,
-      "pct": 62.5,
-      "zone": "meio do range",
+      "high": 221.0,
+      "price": 221.45,
+      "pct": 109.0,
+      "zone": "acima do TRR",
       "source": "Early Look (Our Levels, diário)"
     },
     "ILS": {
       "low": null,
       "high": null,
-      "price": 20.32,
+      "price": 20.33,
       "pct": null,
       "zone": null,
       "source": null
@@ -76,7 +60,7 @@
     "XLP": {
       "low": null,
       "high": null,
-      "price": 89.28,
+      "price": 91.33,
       "pct": null,
       "zone": null,
       "source": null
@@ -84,7 +68,7 @@
     "LVHI": {
       "low": null,
       "high": null,
-      "price": 42.9,
+      "price": 43.55,
       "pct": null,
       "zone": null,
       "source": null
@@ -92,7 +76,7 @@
     "FTXG": {
       "low": null,
       "high": null,
-      "price": 22.86,
+      "price": 23.38,
       "pct": null,
       "zone": null,
       "source": null
@@ -100,7 +84,7 @@
     "IAK": {
       "low": null,
       "high": null,
-      "price": 150.21,
+      "price": 150.82,
       "pct": null,
       "zone": null,
       "source": null
@@ -108,7 +92,7 @@
     "BNDD": {
       "low": null,
       "high": null,
-      "price": 97.91,
+      "price": 97.58,
       "pct": null,
       "zone": null,
       "source": null
@@ -116,7 +100,7 @@
     "PBD": {
       "low": null,
       "high": null,
-      "price": 15.35,
+      "price": 15.85,
       "pct": null,
       "zone": null,
       "source": null
@@ -124,7 +108,7 @@
     "XLI": {
       "low": null,
       "high": null,
-      "price": 171.63,
+      "price": 167.89,
       "pct": null,
       "zone": null,
       "source": null
@@ -132,15 +116,7 @@
     "IWM": {
       "low": null,
       "high": null,
-      "price": 280.81,
-      "pct": null,
-      "zone": null,
-      "source": null
-    },
-    "PSP": {
-      "low": null,
-      "high": null,
-      "price": 59.63,
+      "price": 282.24,
       "pct": null,
       "zone": null,
       "source": null
@@ -148,7 +124,7 @@
     "PALL": {
       "low": null,
       "high": null,
-      "price": 16.97,
+      "price": 18.01,
       "pct": null,
       "zone": null,
       "source": null
@@ -156,7 +132,7 @@
     "SLV": {
       "low": null,
       "high": null,
-      "price": 44.81,
+      "price": 46.78,
       "pct": null,
       "zone": null,
       "source": null
@@ -164,7 +140,7 @@
     "EWM": {
       "low": null,
       "high": null,
-      "price": 26.93,
+      "price": 27.16,
       "pct": null,
       "zone": null,
       "source": null
@@ -172,7 +148,7 @@
     "EPHE": {
       "low": null,
       "high": null,
-      "price": 22.33,
+      "price": 22.7,
       "pct": null,
       "zone": null,
       "source": null
@@ -180,7 +156,7 @@
     "EWQ": {
       "low": null,
       "high": null,
-      "price": 42.6,
+      "price": 43.73,
       "pct": null,
       "zone": null,
       "source": null
@@ -188,7 +164,7 @@
     "IDX": {
       "low": null,
       "high": null,
-      "price": 8.66,
+      "price": 8.74,
       "pct": null,
       "zone": null,
       "source": null
@@ -196,7 +172,7 @@
     "EWY": {
       "low": null,
       "high": null,
-      "price": 155.27,
+      "price": 154.61,
       "pct": null,
       "zone": null,
       "source": null
@@ -204,7 +180,7 @@
     "DRAM": {
       "low": null,
       "high": null,
-      "price": 47.69,
+      "price": 46.4,
       "pct": null,
       "zone": null,
       "source": null
@@ -212,7 +188,7 @@
     "GDX": {
       "low": null,
       "high": null,
-      "price": 78.12,
+      "price": 82.24,
       "pct": null,
       "zone": null,
       "source": null
@@ -220,7 +196,7 @@
     "GRNY": {
       "low": null,
       "high": null,
-      "price": 26.62,
+      "price": 26.45,
       "pct": null,
       "zone": null,
       "source": null
@@ -228,7 +204,7 @@
     "MEME": {
       "low": null,
       "high": null,
-      "price": 6.24,
+      "price": 6.06,
       "pct": null,
       "zone": null,
       "source": null
@@ -236,7 +212,7 @@
     "BTAL": {
       "low": null,
       "high": null,
-      "price": 13.14,
+      "price": 13.07,
       "pct": null,
       "zone": null,
       "source": null
@@ -244,7 +220,7 @@
     "ZROZ": {
       "low": null,
       "high": null,
-      "price": 58.09,
+      "price": 58.11,
       "pct": null,
       "zone": null,
       "source": null
@@ -252,7 +228,7 @@
     "USMV": {
       "low": null,
       "high": null,
-      "price": 103.04,
+      "price": 103.83,
       "pct": null,
       "zone": null,
       "source": null
@@ -268,7 +244,47 @@
     "GVIP": {
       "low": null,
       "high": null,
-      "price": 160.72,
+      "price": 161.0,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "XLU": {
+      "low": null,
+      "high": null,
+      "price": 42.88,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "TLT": {
+      "low": null,
+      "high": null,
+      "price": 81.16,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "FXE": {
+      "low": null,
+      "high": null,
+      "price": 103.66,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "QQQ": {
+      "low": null,
+      "high": null,
+      "price": 696.3,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "LIT": {
+      "low": null,
+      "high": null,
+      "price": 61.8,
       "pct": null,
       "zone": null,
       "source": null

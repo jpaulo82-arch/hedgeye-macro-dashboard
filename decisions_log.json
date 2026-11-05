@@ -1,6 +1,128 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261104",
+      "date": "04/11/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (04/11/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-11-04T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "XLU",
+          "categoria": "ETF PRO PLUS — UTILITIES SECTOR",
+          "regime": null,
+          "decisao": "Comprar / Long",
+          "racional": "ETF Pro Plus adicionou Utilities Sector (XLU) como LONG no UPDATE de 04/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 04/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "TLT",
+          "categoria": "ETF PRO PLUS — LONG TREASURY BOND",
+          "regime": null,
+          "decisao": "Comprar / Long",
+          "racional": "ETF Pro Plus adicionou Long Treasury Bond (TLT) como LONG no UPDATE de 04/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 04/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "FXE",
+          "categoria": "ETF PRO PLUS — EURO",
+          "regime": null,
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "ETF Pro Plus adicionou Euro (FXE) como SHORT no UPDATE de 04/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 04/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "QQQ",
+          "categoria": "ETF PRO PLUS — NASDAQ 100",
+          "regime": null,
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "ETF Pro Plus adicionou Nasdaq 100 (QQQ) como SHORT no UPDATE de 04/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 04/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "LIT",
+          "categoria": "ETF PRO PLUS — LITHIUM TECH",
+          "regime": null,
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "ETF Pro Plus adicionou Lithium Tech (LIT) como SHORT no UPDATE de 04/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 04/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "BNO",
+          "categoria": "ETF PRO PLUS — BRENT OIL",
+          "regime": null,
+          "decisao": "Vender / Zerar Long",
+          "racional": "ETF Pro Plus encerrou o LONG em Brent Oil (BNO) no UPDATE de 04/11/2026. Saída no Trend Range: 65.80 – 73.33.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 04/11/2026)",
+          "rangeLow": 65.8,
+          "rangeHigh": 73.33
+        },
+        {
+          "ativo": "BUG",
+          "categoria": "ETF PRO PLUS — CYBERSECURITY",
+          "regime": null,
+          "decisao": "Vender / Zerar Long",
+          "racional": "ETF Pro Plus encerrou o LONG em Cybersecurity (BUG) no UPDATE de 04/11/2026. Saída no Trend Range: 44.76 – 54.08.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 04/11/2026)",
+          "rangeLow": 44.76,
+          "rangeHigh": 54.08
+        },
+        {
+          "ativo": "PSP",
+          "categoria": "ETF PRO PLUS — GLOBAL PRIVATE EQUITY",
+          "regime": null,
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "ETF Pro Plus encerrou o SHORT em Global Private Equity (PSP) no UPDATE de 04/11/2026. Cobertura no Trend Range: 55.18 – 60.50.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 04/11/2026)",
+          "rangeLow": 55.18,
+          "rangeHigh": 60.5
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261103",
       "date": "03/11/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (03/11/2026)",
@@ -3348,7 +3470,7 @@
         },
         {
           "ativo": "FXE",
-          "categoria": "ETF PRO PLUS — FXE",
+          "categoria": "ETF PRO PLUS — EURO",
           "regime": null,
           "decisao": "Zerar Posição / Remover",
           "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
@@ -4068,10 +4190,10 @@
         },
         {
           "ativo": "FXE",
-          "categoria": "ETF PRO PLUS — FXE",
+          "categoria": "ETF PRO PLUS — EURO",
           "regime": null,
           "decisao": "Flip Short → Long",
-          "racional": "Virada estratégica oficial no relatório mensal (August Update (Q3 2026)): ativo FXE (FXE) passa de Short para Long na carteira recomendada.",
+          "racional": "Virada estratégica oficial no relatório mensal (August Update (Q3 2026)): ativo FXE (Euro) passa de Short para Long na carteira recomendada.",
           "gatilho_invalidacao": null,
           "tipo_gatilho": "Virada Estratégica ETF Pro Plus",
           "status": "bullish",
@@ -5027,5 +5149,5 @@
       ]
     }
   ],
-  "updatedAt": "04/11/2026 09:31:20"
+  "updatedAt": "05/11/2026 09:31:59"
 }
