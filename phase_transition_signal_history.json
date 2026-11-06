@@ -1,22 +1,4 @@
 {
-  "2026-09-21": {
-    "UST10Y": "BULLISH",
-    "HYG": "BEARISH",
-    "LQD": "BEARISH",
-    "SPX": "BULLISH",
-    "COMPQ": "BULLISH",
-    "RUT": "BEARISH",
-    "XLV": "BULLISH",
-    "IGV": "BULLISH",
-    "XLE": "BULLISH",
-    "VIX": "BEARISH",
-    "USD": "BULLISH",
-    "WTIC": "BULLISH",
-    "NATGAS": "BEARISH",
-    "GOLD": "NEUTRAL",
-    "COPPER": "BULLISH",
-    "SILVER": "NEUTRAL"
-  },
   "2026-09-22": {
     "UST10Y": "BULLISH",
     "HYG": "BEARISH",
@@ -593,6 +575,23 @@
     "USD": "BULLISH",
     "WTIC": "BEARISH",
     "NATGAS": "BEARISH",
+    "GOLD": "BEARISH",
+    "COPPER": "BEARISH",
+    "SILVER": "BEARISH"
+  },
+  "2026-11-06": {
+    "US10": "BEARISH",
+    "HYG": "BEARISH",
+    "LQD": "BULLISH",
+    "SPX": "BEARISH",
+    "COMPQ": "BEARISH",
+    "RUT": "BEARISH",
+    "XLV": "BULLISH",
+    "RSP": "BULLISH",
+    "VIX": "BULLISH",
+    "USD": "BULLISH",
+    "WTIC": "BEARISH",
+    "NATGAS": "BULLISH",
     "GOLD": "BEARISH",
     "COPPER": "BEARISH",
     "SILVER": "BEARISH"

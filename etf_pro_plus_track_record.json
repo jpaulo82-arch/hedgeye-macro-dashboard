@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T12:47:27.421726",
+  "generatedAt": "2026-11-05T12:47:12.931210",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -77,7 +77,7 @@
           "periodStart": "2024-02-01",
           "periodEnd": "2024-02-29",
           "priceStart": 17.6852,
-          "priceEnd": 17.7332,
+          "priceEnd": 17.7333,
           "returnPct": 0.272
         }
       ]
@@ -302,8 +302,8 @@
           "side": "long",
           "periodStart": "2025-03-06",
           "periodEnd": "2025-03-31",
-          "priceStart": 23.543,
-          "priceEnd": 23.5061,
+          "priceStart": 23.6399,
+          "priceEnd": 23.6029,
           "returnPct": -0.157
         },
         {
@@ -336,8 +336,8 @@
           "side": "long",
           "periodStart": "2025-04-01",
           "periodEnd": "2025-04-30",
-          "priceStart": 23.5154,
-          "priceEnd": 23.5413,
+          "priceStart": 23.6122,
+          "priceEnd": 23.6382,
           "returnPct": 0.11
         },
         {
@@ -370,8 +370,8 @@
           "side": "long",
           "periodStart": "2025-05-01",
           "periodEnd": "2025-05-31",
-          "priceStart": 23.4858,
-          "priceEnd": 23.7636,
+          "priceStart": 23.5825,
+          "priceEnd": 23.8615,
           "returnPct": 1.183
         },
         {
@@ -404,8 +404,8 @@
           "side": "long",
           "periodStart": "2025-06-01",
           "periodEnd": "2025-06-30",
-          "priceStart": 23.8148,
-          "priceEnd": 23.8847,
+          "priceStart": 23.9128,
+          "priceEnd": 23.9831,
           "returnPct": 0.294
         },
         {
@@ -438,8 +438,8 @@
           "side": "long",
           "periodStart": "2025-07-01",
           "periodEnd": "2025-07-31",
-          "priceStart": 23.8847,
-          "priceEnd": 23.9587,
+          "priceStart": 23.9831,
+          "priceEnd": 24.0574,
           "returnPct": 0.31
         },
         {
@@ -472,8 +472,8 @@
           "side": "long",
           "periodStart": "2025-08-01",
           "periodEnd": "2025-08-31",
-          "priceStart": 23.9522,
-          "priceEnd": 24.1197,
+          "priceStart": 24.0508,
+          "priceEnd": 24.219,
           "returnPct": 0.699
         },
         {
@@ -506,8 +506,8 @@
           "side": "long",
           "periodStart": "2025-09-01",
           "periodEnd": "2025-09-30",
-          "priceStart": 24.0943,
-          "priceEnd": 24.1737,
+          "priceStart": 24.1935,
+          "priceEnd": 24.2732,
           "returnPct": 0.33
         },
         {
@@ -540,8 +540,8 @@
           "side": "long",
           "periodStart": "2025-10-01",
           "periodEnd": "2025-10-31",
-          "priceStart": 24.2143,
-          "priceEnd": 24.277,
+          "priceStart": 24.314,
+          "priceEnd": 24.377,
           "returnPct": 0.259
         },
         {
@@ -574,8 +574,8 @@
           "side": "long",
           "periodStart": "2025-11-01",
           "periodEnd": "2025-11-30",
-          "priceStart": 24.3007,
-          "priceEnd": 24.4076,
+          "priceStart": 24.4008,
+          "priceEnd": 24.5081,
           "returnPct": 0.44
         },
         {
@@ -608,8 +608,8 @@
           "side": "long",
           "periodStart": "2025-12-01",
           "periodEnd": "2025-12-31",
-          "priceStart": 24.4123,
-          "priceEnd": 24.5255,
+          "priceStart": 24.5128,
+          "priceEnd": 24.6265,
           "returnPct": 0.464
         },
         {
@@ -642,8 +642,8 @@
           "side": "long",
           "periodStart": "2026-01-01",
           "periodEnd": "2026-01-31",
-          "priceStart": 24.5265,
-          "priceEnd": 24.6361,
+          "priceStart": 24.6274,
+          "priceEnd": 24.7375,
           "returnPct": 0.447
         },
         {
@@ -676,8 +676,8 @@
           "side": "long",
           "periodStart": "2026-02-01",
           "periodEnd": "2026-02-28",
-          "priceStart": 24.6457,
-          "priceEnd": 24.7171,
+          "priceStart": 24.7472,
+          "priceEnd": 24.8189,
           "returnPct": 0.29
         },
         {
@@ -710,8 +710,8 @@
           "side": "long",
           "periodStart": "2026-03-01",
           "periodEnd": "2026-03-31",
-          "priceStart": 24.722,
-          "priceEnd": 24.7723,
+          "priceStart": 24.8237,
+          "priceEnd": 24.8743,
           "returnPct": 0.204
         },
         {
@@ -744,8 +744,8 @@
           "side": "long",
           "periodStart": "2026-04-01",
           "periodEnd": "2026-04-30",
-          "priceStart": 24.782,
-          "priceEnd": 24.9474,
+          "priceStart": 24.884,
+          "priceEnd": 25.0501,
           "returnPct": 0.667
         },
         {
@@ -762,8 +762,8 @@
           "side": "long",
           "periodStart": "2026-04-22",
           "periodEnd": "2026-04-30",
-          "priceStart": 25.1223,
-          "priceEnd": 25.377,
+          "priceStart": 25.2684,
+          "priceEnd": 25.5246,
           "returnPct": 1.014
         }
       ]
@@ -787,8 +787,8 @@
           "side": "long",
           "periodStart": "2026-05-01",
           "periodEnd": "2026-05-31",
-          "priceStart": 24.9085,
-          "priceEnd": 24.9866,
+          "priceStart": 25.011,
+          "priceEnd": 25.0895,
           "returnPct": 0.314
         },
         {
@@ -805,8 +805,8 @@
           "side": "long",
           "periodStart": "2026-05-01",
           "periodEnd": "2026-05-31",
-          "priceStart": 25.3434,
-          "priceEnd": 25.6265,
+          "priceStart": 25.4907,
+          "priceEnd": 25.7755,
           "returnPct": 1.117
         }
       ]
@@ -830,8 +830,8 @@
           "side": "long",
           "periodStart": "2026-06-01",
           "periodEnd": "2026-06-30",
-          "priceStart": 25.0013,
-          "priceEnd": 25.117,
+          "priceStart": 25.1042,
+          "priceEnd": 25.2204,
           "returnPct": 0.463
         },
         {
@@ -866,8 +866,8 @@
           "side": "long",
           "periodStart": "2026-06-01",
           "periodEnd": "2026-06-30",
-          "priceStart": 25.641,
-          "priceEnd": 25.6741,
+          "priceStart": 25.7901,
+          "priceEnd": 25.8233,
           "returnPct": 0.129
         }
       ]
@@ -891,8 +891,8 @@
           "side": "long",
           "periodStart": "2026-07-01",
           "periodEnd": "2026-07-31",
-          "priceStart": 25.1513,
-          "priceEnd": 25.2035,
+          "priceStart": 25.2549,
+          "priceEnd": 25.3072,
           "returnPct": 0.207
         },
         {
@@ -945,8 +945,8 @@
           "side": "long",
           "periodStart": "2026-07-01",
           "periodEnd": "2026-07-31",
-          "priceStart": 25.6741,
-          "priceEnd": 25.7903,
+          "priceStart": 25.8233,
+          "priceEnd": 25.9402,
           "returnPct": 0.453
         },
         {
@@ -979,8 +979,8 @@
           "side": "long",
           "periodStart": "2026-08-01",
           "periodEnd": "2026-08-31",
-          "priceStart": 25.1897,
-          "priceEnd": 25.2816,
+          "priceStart": 25.2934,
+          "priceEnd": 25.3857,
           "returnPct": 0.365
         },
         {
@@ -1150,8 +1150,8 @@
           "side": "long",
           "periodStart": "2026-08-01",
           "periodEnd": "2026-08-31",
-          "priceStart": 25.7903,
-          "priceEnd": 25.7294,
+          "priceStart": 25.9402,
+          "priceEnd": 25.879,
           "returnPct": -0.236
         },
         {
@@ -1177,8 +1177,8 @@
           "side": "short",
           "periodStart": "2026-08-26",
           "periodEnd": "2026-08-31",
-          "priceStart": 14.9188,
-          "priceEnd": 14.9218,
+          "priceStart": 14.9908,
+          "priceEnd": 14.9938,
           "returnPct": -0.02
         },
         {
@@ -1211,8 +1211,8 @@
           "side": "long",
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
-          "priceStart": 25.3231,
-          "priceEnd": 25.3578,
+          "priceStart": 25.4273,
+          "priceEnd": 25.4622,
           "returnPct": 0.137
         },
         {
@@ -1499,8 +1499,8 @@
           "side": "long",
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
-          "priceStart": 25.7294,
-          "priceEnd": 25.8657,
+          "priceStart": 25.879,
+          "priceEnd": 26.0161,
           "returnPct": 0.53
         },
         {
@@ -1544,8 +1544,8 @@
           "side": "short",
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
-          "priceStart": 14.8772,
-          "priceEnd": 14.724,
+          "priceStart": 14.949,
+          "priceEnd": 14.795,
           "returnPct": 1.03
         },
         {
@@ -1821,5 +1821,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 117
+  "positionsIncluded": 118
 }

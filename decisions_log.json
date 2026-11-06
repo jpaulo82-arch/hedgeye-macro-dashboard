@@ -1,6 +1,44 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261105",
+      "date": "05/11/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (05/11/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-11-05T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "CAOS",
+          "categoria": "ETF PRO PLUS — TAIL RISK STRATEGY",
+          "regime": null,
+          "decisao": "Comprar / Long",
+          "racional": "ETF Pro Plus adicionou Tail Risk Strategy (CAOS) como LONG no UPDATE de 05/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 05/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "EWM",
+          "categoria": "ETF PRO PLUS — MALAYSIA",
+          "regime": null,
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "ETF Pro Plus encerrou o SHORT em Malaysia (EWM) no UPDATE de 05/11/2026. Cobertura no Trend Range: 26.18 – 27.44.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 05/11/2026)",
+          "rangeLow": 26.18,
+          "rangeHigh": 27.44
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261104",
       "date": "04/11/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (04/11/2026)",
@@ -5149,5 +5187,5 @@
       ]
     }
   ],
-  "updatedAt": "05/11/2026 10:02:07"
+  "updatedAt": "06/11/2026 09:31:57"
 }

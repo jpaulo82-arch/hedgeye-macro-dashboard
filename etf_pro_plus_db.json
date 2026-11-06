@@ -1,5 +1,5 @@
 {
-  "updatedAt": "04/11/2026 12:46:52",
+  "updatedAt": "05/11/2026 12:46:32",
   "reports": {
     "weekly": [
       {
@@ -5001,6 +5001,27 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_113478_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-11-05 10:25AM EST",
+        "addsLong": [
+          {
+            "name": "Tail Risk Strategy",
+            "ticker": "CAOS"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Malaysia",
+            "ticker": "EWM",
+            "rangeLow": 26.18,
+            "rangeHigh": 27.44
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -6480,6 +6501,12 @@
       "type": "intraday",
       "sourceFile": "intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Utilities Sector (XLU), Long Treasury Bond (TLT) | Adicionou SHORT: Euro (FXE), Nasdaq 100 (QQQ), Lithium Tech (LIT) | Removeu LONG: Brent Oil (BNO), Cybersecurity (BUG) | Removeu SHORT: Global Private Equity (PSP)"
+    },
+    {
+      "date": "2026-11-05 10:25AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_113478_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Tail Risk Strategy (CAOS) | Removeu SHORT: Malaysia (EWM)"
     }
   ],
   "currentLineup": [
@@ -6864,29 +6891,6 @@
       "quadNote": "Short — aposta CONTRA Q1/Q2/Q3 (histórico de força nesses regimes)"
     },
     {
-      "ticker": "EWM",
-      "name": "Malaysia",
-      "side": "short",
-      "dateAdded": "10/20/2026",
-      "assetClass": "Emerging Markets Equities",
-      "entryPrice": 26.87,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 26.18,
-      "rangeHigh": 27.44,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.0,
-        "maxPct": 3.0,
-        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
       "ticker": "EPHE",
       "name": "Philippines",
       "side": "short",
@@ -7146,7 +7150,7 @@
       "side": "long",
       "dateAdded": "2026-11-04 10:29AM EST",
       "assetClass": null,
-      "entryPrice": 43.11,
+      "entryPrice": 43.61,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -7164,7 +7168,7 @@
       "side": "long",
       "dateAdded": "2026-11-04 10:29AM EST",
       "assetClass": null,
-      "entryPrice": 81.31,
+      "entryPrice": 81.76,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -7179,7 +7183,7 @@
       "side": "short",
       "dateAdded": "2026-11-04 10:29AM EST",
       "assetClass": null,
-      "entryPrice": 103.695,
+      "entryPrice": 103.61,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -7194,7 +7198,7 @@
       "side": "short",
       "dateAdded": "2026-11-04 10:29AM EST",
       "assetClass": null,
-      "entryPrice": 693.38,
+      "entryPrice": 691.95,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -7209,7 +7213,7 @@
       "side": "short",
       "dateAdded": "2026-11-04 10:29AM EST",
       "assetClass": null,
-      "entryPrice": 61.82,
+      "entryPrice": 61.88,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -7220,6 +7224,21 @@
         2
       ],
       "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
+    },
+    {
+      "ticker": "CAOS",
+      "name": "Tail Risk Strategy",
+      "side": "long",
+      "dateAdded": "2026-11-05 10:25AM EST",
+      "assetClass": null,
+      "entryPrice": 91.7599,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_113478_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
     }
   ],
   "lineupSnapshots": [],
