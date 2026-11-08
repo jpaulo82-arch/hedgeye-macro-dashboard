@@ -1,6 +1,44 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261106",
+      "date": "06/11/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (06/11/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-11-06T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "XLRE",
+          "categoria": "ETF PRO PLUS — REAL ESTATE",
+          "regime": null,
+          "decisao": "Comprar / Long",
+          "racional": "ETF Pro Plus adicionou Real Estate (XLRE) como LONG no UPDATE de 06/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 06/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "EWQ",
+          "categoria": "ETF PRO PLUS — FRANCE",
+          "regime": null,
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "ETF Pro Plus encerrou o SHORT em France (EWQ) no UPDATE de 06/11/2026. Cobertura no Trend Range: 40.06 – 44.00.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 06/11/2026)",
+          "rangeLow": 40.06,
+          "rangeHigh": 44.0
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261105",
       "date": "05/11/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (05/11/2026)",
@@ -3352,7 +3390,7 @@
         },
         {
           "ativo": "XLRE",
-          "categoria": "ETF PRO PLUS — XLRE",
+          "categoria": "ETF PRO PLUS — REAL ESTATE",
           "regime": null,
           "decisao": "Zerar Posição / Remover",
           "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
@@ -5187,5 +5225,5 @@
       ]
     }
   ],
-  "updatedAt": "06/11/2026 09:31:57"
+  "updatedAt": "08/11/2026 16:42:49"
 }

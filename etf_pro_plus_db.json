@@ -1,5 +1,5 @@
 {
-  "updatedAt": "05/11/2026 12:46:32",
+  "updatedAt": "06/11/2026 12:46:22",
   "reports": {
     "weekly": [
       {
@@ -5022,6 +5022,27 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_113564_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-11-06 10:11AM EST",
+        "addsLong": [
+          {
+            "name": "Real Estate",
+            "ticker": "XLRE"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "France",
+            "ticker": "EWQ",
+            "rangeLow": 40.06,
+            "rangeHigh": 44.0
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -6507,6 +6528,12 @@
       "type": "intraday",
       "sourceFile": "intraday_113478_UPDATE__2_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Tail Risk Strategy (CAOS) | Removeu SHORT: Malaysia (EWM)"
+    },
+    {
+      "date": "2026-11-06 10:11AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_113564_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Real Estate (XLRE) | Removeu SHORT: France (EWQ)"
     }
   ],
   "currentLineup": [
@@ -6914,29 +6941,6 @@
       "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
     },
     {
-      "ticker": "EWQ",
-      "name": "France",
-      "side": "short",
-      "dateAdded": "10/21/2026",
-      "assetClass": "International Equities",
-      "entryPrice": 42.24,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 40.06,
-      "rangeHigh": 42.9,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 1.0,
-        "midPct": 2.0,
-        "maxPct": 3.0,
-        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
-    },
-    {
       "ticker": "IDX",
       "name": "Indonesia",
       "side": "short",
@@ -7231,7 +7235,7 @@
       "side": "long",
       "dateAdded": "2026-11-05 10:25AM EST",
       "assetClass": null,
-      "entryPrice": 91.7599,
+      "entryPrice": 92.0,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -7239,6 +7243,24 @@
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "XLRE",
+      "name": "Real Estate",
+      "side": "long",
+      "dateAdded": "2026-11-06 10:11AM EST",
+      "assetClass": null,
+      "entryPrice": 44.285,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_113564_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [
+        3,
+        4
+      ],
+      "quadNote": "Long — alinhado com Q3/Q4 (Best Asset Class/Setor nesses regimes)"
     }
   ],
   "lineupSnapshots": [],
