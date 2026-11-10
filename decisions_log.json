@@ -1,6 +1,44 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261109",
+      "date": "09/11/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (09/11/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-11-09T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "POWA",
+          "categoria": "ETF PRO PLUS — PRICING POWER",
+          "regime": null,
+          "decisao": "Comprar / Long",
+          "racional": "ETF Pro Plus adicionou Pricing Power (POWA) como LONG no UPDATE de 09/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 09/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "GDX",
+          "categoria": "ETF PRO PLUS — GOLD MINERS",
+          "regime": null,
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "ETF Pro Plus encerrou o SHORT em Gold Miners (GDX) no UPDATE de 09/11/2026. Cobertura no Trend Range: 75.81 – 89.44.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 09/11/2026)",
+          "rangeLow": 75.81,
+          "rangeHigh": 89.44
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261106",
       "date": "06/11/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (06/11/2026)",
@@ -384,7 +422,7 @@
         },
         {
           "ativo": "RSP",
-          "categoria": "ETF PRO PLUS — P EQUAL WEIGHT",
+          "categoria": "ETF PRO PLUS — S&P EQUAL WEIGHT",
           "regime": null,
           "decisao": "Comprar / Long",
           "racional": "Novo ativo Long incorporado no rebalanceamento mensal (November Update (Q4 2026)) da carteira recomendada ETF Pro Plus.",
@@ -468,7 +506,7 @@
         },
         {
           "ativo": "FTXG",
-          "categoria": "ETF PRO PLUS — BEVERAGE",
+          "categoria": "ETF PRO PLUS — FOOD & BEVERAGE",
           "regime": null,
           "decisao": "Comprar / Long",
           "racional": "Novo ativo Long incorporado no rebalanceamento mensal (November Update (Q4 2026)) da carteira recomendada ETF Pro Plus.",
@@ -588,7 +626,7 @@
         },
         {
           "ativo": "GRNY",
-          "categoria": "ETF PRO PLUS — U.S. LARGE CAP",
+          "categoria": "ETF PRO PLUS — \"GRANNY SHOTS\" U.S. LARGE CAP",
           "regime": null,
           "decisao": "Vender a Descoberto / Short",
           "racional": "Novo ativo Short incorporado no rebalanceamento mensal (November Update (Q4 2026)) da carteira recomendada ETF Pro Plus.",
@@ -3474,7 +3512,7 @@
         },
         {
           "ativo": "RSP",
-          "categoria": "ETF PRO PLUS — P EQUAL WEIGHT",
+          "categoria": "ETF PRO PLUS — S&P EQUAL WEIGHT",
           "regime": null,
           "decisao": "Zerar Posição / Remover",
           "racional": "Ativo encerrado e retirado da carteira recomendada no rebalanceamento mensal (September Update (Q3 2026)).",
@@ -4398,7 +4436,7 @@
         },
         {
           "ativo": "RSP",
-          "categoria": "ETF PRO PLUS — P EQUAL WEIGHT",
+          "categoria": "ETF PRO PLUS — S&P EQUAL WEIGHT",
           "regime": null,
           "decisao": "Comprar / Long",
           "racional": "Novo ativo Long incorporado no rebalanceamento mensal (August Update (Q3 2026)) da carteira recomendada ETF Pro Plus.",
@@ -5225,5 +5263,5 @@
       ]
     }
   ],
-  "updatedAt": "09/11/2026 09:31:10"
+  "updatedAt": "10/11/2026 09:32:30"
 }

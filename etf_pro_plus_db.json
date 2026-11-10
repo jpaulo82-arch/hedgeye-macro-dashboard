@@ -1,5 +1,5 @@
 {
-  "updatedAt": "06/11/2026 12:46:22",
+  "updatedAt": "09/11/2026 18:35:36",
   "reports": {
     "weekly": [
       {
@@ -1949,6 +1949,443 @@
       },
       {
         "type": "weekly",
+        "sourceFile": "weekly_111719_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+        "reportDatetime": "2026-10-11 04:35PM EDT",
+        "positions": [
+          {
+            "name": "Income Short Maturity",
+            "ticker": "BUXX",
+            "side": "long",
+            "dateAdded": "10/25/2023",
+            "recentPrice": 20.2,
+            "rangeLow": 20.15,
+            "rangeHigh": 20.25,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "AAA CLO",
+            "ticker": "CLOX",
+            "side": "long",
+            "dateAdded": "3/6/2025",
+            "recentPrice": 25.52,
+            "rangeLow": 25.48,
+            "rangeHigh": 25.58,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "CLOs",
+            "ticker": "CLOZ",
+            "side": "long",
+            "dateAdded": "4/22/2026",
+            "recentPrice": 26.27,
+            "rangeLow": 26.13,
+            "rangeHigh": 26.32,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "Healthcare",
+            "ticker": "XLV",
+            "side": "long",
+            "dateAdded": "6/17/2026",
+            "recentPrice": 170.81,
+            "rangeLow": 164.0,
+            "rangeHigh": 174.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Tech Software",
+            "ticker": "IGV",
+            "side": "long",
+            "dateAdded": "8/12/2026",
+            "recentPrice": 112.67,
+            "rangeLow": 105.0,
+            "rangeHigh": 116.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Bitcoin",
+            "ticker": "IBIT",
+            "side": "long",
+            "dateAdded": "9/2/2026",
+            "recentPrice": 46.55,
+            "rangeLow": 45.73,
+            "rangeHigh": 49.17,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Managed Futures",
+            "ticker": "DBMF",
+            "side": "long",
+            "dateAdded": "9/3/2026",
+            "recentPrice": 33.15,
+            "rangeLow": 32.14,
+            "rangeHigh": 33.77,
+            "assetClass": "Foreign Currencies"
+          },
+          {
+            "name": "Ethereum",
+            "ticker": "ETHA",
+            "side": "long",
+            "dateAdded": "9/16/2026",
+            "recentPrice": 55.99,
+            "rangeLow": 55.01,
+            "rangeHigh": 63.8,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Interest Rate Hedge",
+            "ticker": "PFIX",
+            "side": "long",
+            "dateAdded": "9/17/2026",
+            "recentPrice": 61.72,
+            "rangeLow": 58.7,
+            "rangeHigh": 68.51,
+            "assetClass": "US Fixed Income"
+          },
+          {
+            "name": "Brent Oil",
+            "ticker": "BNO",
+            "side": "long",
+            "dateAdded": "9/21/2026",
+            "recentPrice": 63.99,
+            "rangeLow": 58.61,
+            "rangeHigh": 65.39,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Oil Refiners",
+            "ticker": "CRAK",
+            "side": "long",
+            "dateAdded": "9/22/2026",
+            "recentPrice": 66.29,
+            "rangeLow": 63.08,
+            "rangeHigh": 68.03,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Tanker Shipping",
+            "ticker": "BWET",
+            "side": "long",
+            "dateAdded": "9/22/2026",
+            "recentPrice": 998.3,
+            "rangeLow": 756.0,
+            "rangeHigh": 1090.0,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Cybersecurity",
+            "ticker": "BUG",
+            "side": "long",
+            "dateAdded": "9/25/2026",
+            "recentPrice": 50.08,
+            "rangeLow": 45.46,
+            "rangeHigh": 60.14,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "US Critical Tech",
+            "ticker": "CRTC",
+            "side": "long",
+            "dateAdded": "9/29/2026",
+            "recentPrice": 42.17,
+            "rangeLow": 41.2,
+            "rangeHigh": 42.6,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Technology Sector",
+            "ticker": "XLK",
+            "side": "long",
+            "dateAdded": "9/29/2026",
+            "recentPrice": 198.78,
+            "rangeLow": 192.0,
+            "rangeHigh": 205.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Quantum Tech",
+            "ticker": "QTUM",
+            "side": "long",
+            "dateAdded": "9/29/2026",
+            "recentPrice": 152.06,
+            "rangeLow": 148.0,
+            "rangeHigh": 160.0,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Top 20 US Stocks",
+            "ticker": "TOPT",
+            "side": "long",
+            "dateAdded": "10/1/2026",
+            "recentPrice": 35.5,
+            "rangeLow": 34.43,
+            "rangeHigh": 36.66,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Healthcare Technology",
+            "ticker": "HTEC",
+            "side": "long",
+            "dateAdded": "10/2/2026",
+            "recentPrice": 43.03,
+            "rangeLow": 41.0,
+            "rangeHigh": 45.23,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Japan",
+            "ticker": "JPXN",
+            "side": "long",
+            "dateAdded": "10/7/2026",
+            "recentPrice": 104.45,
+            "rangeLow": 101.0,
+            "rangeHigh": 108.0,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Solana",
+            "ticker": "SOLZ",
+            "side": "long",
+            "dateAdded": "10/7/2026",
+            "recentPrice": 10.76,
+            "rangeLow": 10.24,
+            "rangeHigh": 12.49,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Nasdaq 100",
+            "ticker": "QQQ",
+            "side": "long",
+            "dateAdded": "10/9/2026",
+            "recentPrice": 751.27,
+            "rangeLow": 730.0,
+            "rangeHigh": 767.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Japan",
+            "ticker": "FJP",
+            "side": "long",
+            "dateAdded": "10/9/2026",
+            "recentPrice": 78.92,
+            "rangeLow": 76.92,
+            "rangeHigh": 80.62,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Qatar",
+            "ticker": "QAT",
+            "side": "short",
+            "dateAdded": "7/16/2026",
+            "recentPrice": 15.99,
+            "rangeLow": 15.02,
+            "rangeHigh": 16.68,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "US Corporate Bonds",
+            "ticker": "LQD",
+            "side": "short",
+            "dateAdded": "8/4/2026",
+            "recentPrice": 102.41,
+            "rangeLow": 100.0,
+            "rangeHigh": 104.0,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "Long Treasury Bond",
+            "ticker": "TLT",
+            "side": "short",
+            "dateAdded": "8/5/2026",
+            "recentPrice": 77.98,
+            "rangeLow": 76.02,
+            "rangeHigh": 79.16,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "Clean Energy",
+            "ticker": "PBD",
+            "side": "short",
+            "dateAdded": "8/5/2026",
+            "recentPrice": 16.75,
+            "rangeLow": 16.06,
+            "rangeHigh": 17.28,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Utilities Sector",
+            "ticker": "XLU",
+            "side": "short",
+            "dateAdded": "8/12/2026",
+            "recentPrice": 41.41,
+            "rangeLow": 38.9,
+            "rangeHigh": 42.37,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "US Treasury Long",
+            "ticker": "ZROZ",
+            "side": "short",
+            "dateAdded": "8/25/2026",
+            "recentPrice": 54.02,
+            "rangeLow": 51.92,
+            "rangeHigh": 55.43,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "Credit Rotation",
+            "ticker": "JOJO",
+            "side": "short",
+            "dateAdded": "8/26/2026",
+            "recentPrice": 14.57,
+            "rangeLow": 14.03,
+            "rangeHigh": 14.64,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "Industrials",
+            "ticker": "XLI",
+            "side": "short",
+            "dateAdded": "9/8/2026",
+            "recentPrice": 169.25,
+            "rangeLow": 164.0,
+            "rangeHigh": 173.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "India",
+            "ticker": "INDA",
+            "side": "short",
+            "dateAdded": "9/11/2026",
+            "recentPrice": 46.03,
+            "rangeLow": 45.1,
+            "rangeHigh": 47.36,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "US Small-Cap",
+            "ticker": "IWM",
+            "side": "short",
+            "dateAdded": "9/14/2026",
+            "recentPrice": 278.94,
+            "rangeLow": 273.0,
+            "rangeHigh": 284.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Australia Equities",
+            "ticker": "EWA",
+            "side": "short",
+            "dateAdded": "9/14/2026",
+            "recentPrice": 28.62,
+            "rangeLow": 27.09,
+            "rangeHigh": 28.93,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Switzerland",
+            "ticker": "EWL",
+            "side": "short",
+            "dateAdded": "9/14/2026",
+            "recentPrice": 59.75,
+            "rangeLow": 58.07,
+            "rangeHigh": 60.54,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Global Private Equity",
+            "ticker": "PSP",
+            "side": "short",
+            "dateAdded": "9/15/2026",
+            "recentPrice": 56.5,
+            "rangeLow": 55.13,
+            "rangeHigh": 57.41,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Germany",
+            "ticker": "EWG",
+            "side": "short",
+            "dateAdded": "9/18/2026",
+            "recentPrice": 40.96,
+            "rangeLow": 40.26,
+            "rangeHigh": 42.0,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Palladium",
+            "ticker": "PALL",
+            "side": "short",
+            "dateAdded": "9/21/2026",
+            "recentPrice": 20.77,
+            "rangeLow": 19.76,
+            "rangeHigh": 22.42,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Consumer Discretionary",
+            "ticker": "XLY",
+            "side": "short",
+            "dateAdded": "9/22/2026",
+            "recentPrice": 112.85,
+            "rangeLow": 105.0,
+            "rangeHigh": 115.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "High Yield Bonds",
+            "ticker": "HYG",
+            "side": "short",
+            "dateAdded": "9/22/2026",
+            "recentPrice": 77.23,
+            "rangeLow": 76.01,
+            "rangeHigh": 77.7,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "Financials",
+            "ticker": "XLF",
+            "side": "short",
+            "dateAdded": "9/28/2026",
+            "recentPrice": 54.73,
+            "rangeLow": 52.9,
+            "rangeHigh": 55.2,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Mexico",
+            "ticker": "EWW",
+            "side": "short",
+            "dateAdded": "9/28/2026",
+            "recentPrice": 71.95,
+            "rangeLow": 69.57,
+            "rangeHigh": 73.2,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "Silver",
+            "ticker": "SLV",
+            "side": "short",
+            "dateAdded": "9/30/2026",
+            "recentPrice": 54.78,
+            "rangeLow": 53.04,
+            "rangeHigh": 56.69,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Digital Payments",
+            "ticker": "IPAY",
+            "side": "short",
+            "dateAdded": "10/7/2026",
+            "recentPrice": 48.68,
+            "rangeLow": 45.7,
+            "rangeHigh": 49.5,
+            "assetClass": "Global Equities *All ETF recent intra day prices data through 10/11/2026"
+          }
+        ]
+      },
+      {
+        "type": "weekly",
         "sourceFile": "weekly_111767_ETF_Pro_Plus_-_New_Weekly_Report.txt",
         "reportDatetime": "2026-10-11 04:35PM EDT",
         "positions": [
@@ -2386,6 +2823,413 @@
       },
       {
         "type": "weekly",
+        "sourceFile": "weekly_112122_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+        "reportDatetime": "2026-10-18 12:26PM EDT",
+        "positions": [
+          {
+            "name": "Income Short Maturity",
+            "ticker": "BUXX",
+            "side": "long",
+            "dateAdded": "10/25/2023",
+            "recentPrice": 20.19,
+            "rangeLow": 20.16,
+            "rangeHigh": 20.25,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "AAA CLO",
+            "ticker": "CLOX",
+            "side": "long",
+            "dateAdded": "3/6/2025",
+            "recentPrice": 25.58,
+            "rangeLow": 25.5,
+            "rangeHigh": 25.62,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "CLOs",
+            "ticker": "CLOZ",
+            "side": "long",
+            "dateAdded": "4/22/2026",
+            "recentPrice": 26.2,
+            "rangeLow": 26.16,
+            "rangeHigh": 26.31,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "Healthcare",
+            "ticker": "XLV",
+            "side": "long",
+            "dateAdded": "6/17/2026",
+            "recentPrice": 176.71,
+            "rangeLow": 168.0,
+            "rangeHigh": 180.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Tech Software",
+            "ticker": "IGV",
+            "side": "long",
+            "dateAdded": "8/12/2026",
+            "recentPrice": 104.34,
+            "rangeLow": 102.0,
+            "rangeHigh": 114.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Bitcoin",
+            "ticker": "IBIT",
+            "side": "long",
+            "dateAdded": "9/2/2026",
+            "recentPrice": 46.15,
+            "rangeLow": 45.05,
+            "rangeHigh": 48.41,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Managed Futures",
+            "ticker": "DBMF",
+            "side": "long",
+            "dateAdded": "9/3/2026",
+            "recentPrice": 32.71,
+            "rangeLow": 32.23,
+            "rangeHigh": 33.5,
+            "assetClass": "Foreign Currencies"
+          },
+          {
+            "name": "Interest Rate Hedge",
+            "ticker": "PFIX",
+            "side": "long",
+            "dateAdded": "9/17/2026",
+            "recentPrice": 58.6,
+            "rangeLow": 56.52,
+            "rangeHigh": 67.85,
+            "assetClass": "US Fixed Income"
+          },
+          {
+            "name": "Brent Oil",
+            "ticker": "BNO",
+            "side": "long",
+            "dateAdded": "9/21/2026",
+            "recentPrice": 67.19,
+            "rangeLow": 61.53,
+            "rangeHigh": 68.47,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Oil Refiners",
+            "ticker": "CRAK",
+            "side": "long",
+            "dateAdded": "9/22/2026",
+            "recentPrice": 67.34,
+            "rangeLow": 64.9,
+            "rangeHigh": 68.99,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Tanker Shipping",
+            "ticker": "BWET",
+            "side": "long",
+            "dateAdded": "9/22/2026",
+            "recentPrice": 898.97,
+            "rangeLow": 823.0,
+            "rangeHigh": 1062.0,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Cybersecurity",
+            "ticker": "BUG",
+            "side": "long",
+            "dateAdded": "9/25/2026",
+            "recentPrice": 44.34,
+            "rangeLow": 42.01,
+            "rangeHigh": 50.74,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "US Critical Tech",
+            "ticker": "CRTC",
+            "side": "long",
+            "dateAdded": "9/29/2026",
+            "recentPrice": 41.03,
+            "rangeLow": 40.5,
+            "rangeHigh": 42.73,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Technology Sector",
+            "ticker": "XLK",
+            "side": "long",
+            "dateAdded": "9/29/2026",
+            "recentPrice": 183.47,
+            "rangeLow": 179.0,
+            "rangeHigh": 205.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Top 20 US Stocks",
+            "ticker": "TOPT",
+            "side": "long",
+            "dateAdded": "10/1/2026",
+            "recentPrice": 34.6,
+            "rangeLow": 34.26,
+            "rangeHigh": 36.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Healthcare Technology",
+            "ticker": "HTEC",
+            "side": "long",
+            "dateAdded": "10/2/2026",
+            "recentPrice": 42.74,
+            "rangeLow": 41.7,
+            "rangeHigh": 44.54,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Japan",
+            "ticker": "JPXN",
+            "side": "long",
+            "dateAdded": "10/7/2026",
+            "recentPrice": 102.48,
+            "rangeLow": 101.0,
+            "rangeHigh": 106.0,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Nasdaq 100",
+            "ticker": "QQQ",
+            "side": "long",
+            "dateAdded": "10/9/2026",
+            "recentPrice": 709.8,
+            "rangeLow": 705.0,
+            "rangeHigh": 767.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "US Dollar Bullish",
+            "ticker": "UUP",
+            "side": "long",
+            "dateAdded": "10/13/2026",
+            "recentPrice": 28.92,
+            "rangeLow": 28.74,
+            "rangeHigh": 29.3,
+            "assetClass": "Foreign Currencies"
+          },
+          {
+            "name": "Natural Gas",
+            "ticker": "UNG",
+            "side": "long",
+            "dateAdded": "10/14/2026",
+            "recentPrice": 10.66,
+            "rangeLow": 10.25,
+            "rangeHigh": 11.41,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Brazil",
+            "ticker": "EWZ",
+            "side": "long",
+            "dateAdded": "10/15/2026",
+            "recentPrice": 41.83,
+            "rangeLow": 40.0,
+            "rangeHigh": 44.01,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "Qatar",
+            "ticker": "QAT",
+            "side": "short",
+            "dateAdded": "7/16/2026",
+            "recentPrice": 15.6,
+            "rangeLow": 15.01,
+            "rangeHigh": 16.38,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "US Corporate Bonds",
+            "ticker": "LQD",
+            "side": "short",
+            "dateAdded": "8/4/2026",
+            "recentPrice": 103.4,
+            "rangeLow": 101.0,
+            "rangeHigh": 104.0,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "Long Treasury Bond",
+            "ticker": "TLT",
+            "side": "short",
+            "dateAdded": "8/5/2026",
+            "recentPrice": 80.05,
+            "rangeLow": 76.72,
+            "rangeHigh": 80.98,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "Clean Energy",
+            "ticker": "PBD",
+            "side": "short",
+            "dateAdded": "8/5/2026",
+            "recentPrice": 15.77,
+            "rangeLow": 15.17,
+            "rangeHigh": 16.81,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "US Treasury Long",
+            "ticker": "ZROZ",
+            "side": "short",
+            "dateAdded": "8/25/2026",
+            "recentPrice": 56.63,
+            "rangeLow": 52.67,
+            "rangeHigh": 57.54,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "Credit Rotation",
+            "ticker": "JOJO",
+            "side": "short",
+            "dateAdded": "8/26/2026",
+            "recentPrice": 14.51,
+            "rangeLow": 14.1,
+            "rangeHigh": 14.65,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "Industrials",
+            "ticker": "XLI",
+            "side": "short",
+            "dateAdded": "9/8/2026",
+            "recentPrice": 167.76,
+            "rangeLow": 164.0,
+            "rangeHigh": 172.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "India",
+            "ticker": "INDA",
+            "side": "short",
+            "dateAdded": "9/11/2026",
+            "recentPrice": 47.66,
+            "rangeLow": 45.14,
+            "rangeHigh": 48.33,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "US Small-Cap",
+            "ticker": "IWM",
+            "side": "short",
+            "dateAdded": "9/14/2026",
+            "recentPrice": 270.44,
+            "rangeLow": 265.0,
+            "rangeHigh": 282.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Australia Equities",
+            "ticker": "EWA",
+            "side": "short",
+            "dateAdded": "9/14/2026",
+            "recentPrice": 28.73,
+            "rangeLow": 27.99,
+            "rangeHigh": 29.24,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Switzerland",
+            "ticker": "EWL",
+            "side": "short",
+            "dateAdded": "9/14/2026",
+            "recentPrice": 62.25,
+            "rangeLow": 58.8,
+            "rangeHigh": 62.98,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Global Private Equity",
+            "ticker": "PSP",
+            "side": "short",
+            "dateAdded": "9/15/2026",
+            "recentPrice": 55.72,
+            "rangeLow": 55.0,
+            "rangeHigh": 57.34,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Germany",
+            "ticker": "EWG",
+            "side": "short",
+            "dateAdded": "9/18/2026",
+            "recentPrice": 41.57,
+            "rangeLow": 40.22,
+            "rangeHigh": 41.97,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Palladium",
+            "ticker": "PALL",
+            "side": "short",
+            "dateAdded": "9/21/2026",
+            "recentPrice": 20.17,
+            "rangeLow": 19.44,
+            "rangeHigh": 21.44,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "High Yield Bonds",
+            "ticker": "HYG",
+            "side": "short",
+            "dateAdded": "9/22/2026",
+            "recentPrice": 76.86,
+            "rangeLow": 76.01,
+            "rangeHigh": 77.48,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "Mexico",
+            "ticker": "EWW",
+            "side": "short",
+            "dateAdded": "9/28/2026",
+            "recentPrice": 74.94,
+            "rangeLow": 70.7,
+            "rangeHigh": 75.52,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "Silver",
+            "ticker": "SLV",
+            "side": "short",
+            "dateAdded": "9/30/2026",
+            "recentPrice": 51.51,
+            "rangeLow": 49.14,
+            "rangeHigh": 55.2,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Denmark",
+            "ticker": "EDEN",
+            "side": "short",
+            "dateAdded": "10/13/2026",
+            "recentPrice": 110.65,
+            "rangeLow": 106.0,
+            "rangeHigh": 112.0,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "British Pound",
+            "ticker": "FXB",
+            "side": "short",
+            "dateAdded": "10/15/2026",
+            "recentPrice": 128.17,
+            "rangeLow": 126.0,
+            "rangeHigh": 129.0,
+            "assetClass": "Foreign Currencies *All ETF recent intra day prices data through 10/18/2026"
+          }
+        ]
+      },
+      {
+        "type": "weekly",
         "sourceFile": "weekly_112171_ETF_Pro_Plus_-_New_Weekly_Report.txt",
         "reportDatetime": "2026-10-18 12:26PM EDT",
         "positions": [
@@ -2793,6 +3637,403 @@
       },
       {
         "type": "weekly",
+        "sourceFile": "weekly_112574_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+        "reportDatetime": "2026-10-25 12:01PM EDT",
+        "positions": [
+          {
+            "name": "Income Short Maturity",
+            "ticker": "BUXX",
+            "side": "long",
+            "dateAdded": "10/25/2023",
+            "recentPrice": 20.21,
+            "rangeLow": 20.17,
+            "rangeHigh": 20.24,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "AAA CLO",
+            "ticker": "CLOX",
+            "side": "long",
+            "dateAdded": "3/6/2025",
+            "recentPrice": 25.57,
+            "rangeLow": 25.52,
+            "rangeHigh": 25.61,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "Healthcare",
+            "ticker": "XLV",
+            "side": "long",
+            "dateAdded": "6/17/2026",
+            "recentPrice": 179.28,
+            "rangeLow": 172.0,
+            "rangeHigh": 185.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Tech Software",
+            "ticker": "IGV",
+            "side": "long",
+            "dateAdded": "8/12/2026",
+            "recentPrice": 110.59,
+            "rangeLow": 103.0,
+            "rangeHigh": 114.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Bitcoin",
+            "ticker": "IBIT",
+            "side": "long",
+            "dateAdded": "9/2/2026",
+            "recentPrice": 45.96,
+            "rangeLow": 44.41,
+            "rangeHigh": 48.55,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Managed Futures",
+            "ticker": "DBMF",
+            "side": "long",
+            "dateAdded": "9/3/2026",
+            "recentPrice": 32.73,
+            "rangeLow": 32.23,
+            "rangeHigh": 33.3,
+            "assetClass": "Foreign Currencies"
+          },
+          {
+            "name": "Interest Rate Hedge",
+            "ticker": "PFIX",
+            "side": "long",
+            "dateAdded": "9/17/2026",
+            "recentPrice": 57.42,
+            "rangeLow": 54.92,
+            "rangeHigh": 63.0,
+            "assetClass": "US Fixed Income"
+          },
+          {
+            "name": "Brent Oil",
+            "ticker": "BNO",
+            "side": "long",
+            "dateAdded": "9/21/2026",
+            "recentPrice": 70.99,
+            "rangeLow": 63.81,
+            "rangeHigh": 71.96,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Oil Refiners",
+            "ticker": "CRAK",
+            "side": "long",
+            "dateAdded": "9/22/2026",
+            "recentPrice": 64.26,
+            "rangeLow": 62.0,
+            "rangeHigh": 69.0,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Tanker Shipping",
+            "ticker": "BWET",
+            "side": "long",
+            "dateAdded": "9/22/2026",
+            "recentPrice": 896.61,
+            "rangeLow": 760.0,
+            "rangeHigh": 1031.0,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Cybersecurity",
+            "ticker": "BUG",
+            "side": "long",
+            "dateAdded": "9/25/2026",
+            "recentPrice": 49.93,
+            "rangeLow": 44.34,
+            "rangeHigh": 60.14,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Healthcare Technology",
+            "ticker": "HTEC",
+            "side": "long",
+            "dateAdded": "10/2/2026",
+            "recentPrice": 44.42,
+            "rangeLow": 42.01,
+            "rangeHigh": 46.03,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "US Dollar Bullish",
+            "ticker": "UUP",
+            "side": "long",
+            "dateAdded": "10/13/2026",
+            "recentPrice": 28.96,
+            "rangeLow": 28.75,
+            "rangeHigh": 29.15,
+            "assetClass": "Foreign Currencies"
+          },
+          {
+            "name": "Brazil",
+            "ticker": "EWZ",
+            "side": "long",
+            "dateAdded": "10/15/2026",
+            "recentPrice": 42.59,
+            "rangeLow": 40.71,
+            "rangeHigh": 43.74,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "S&P Equal Weight",
+            "ticker": "RSP",
+            "side": "long",
+            "dateAdded": "10/19/2026",
+            "recentPrice": 216.54,
+            "rangeLow": 212.0,
+            "rangeHigh": 220.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Dow Covered Call",
+            "ticker": "DJIA",
+            "side": "long",
+            "dateAdded": "10/20/2026",
+            "recentPrice": 22.5,
+            "rangeLow": 22.03,
+            "rangeHigh": 22.93,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Commodity Strategy",
+            "ticker": "HGER",
+            "side": "long",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 36.5,
+            "rangeLow": 35.05,
+            "rangeHigh": 36.97,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Microsoft Income",
+            "ticker": "MSFY",
+            "side": "long",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 21.14,
+            "rangeLow": 20.4,
+            "rangeHigh": 22.19,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Catastrophe Bonds",
+            "ticker": "ILS",
+            "side": "long",
+            "dateAdded": "10/22/2026",
+            "recentPrice": 20.28,
+            "rangeLow": 20.2,
+            "rangeHigh": 20.44,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "Consumer Staples",
+            "ticker": "XLP",
+            "side": "long",
+            "dateAdded": "10/23/2026",
+            "recentPrice": 88.26,
+            "rangeLow": 84.0,
+            "rangeHigh": 91.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "International High Dividend",
+            "ticker": "LVHI",
+            "side": "long",
+            "dateAdded": "10/23/2026",
+            "recentPrice": 42.8,
+            "rangeLow": 42.06,
+            "rangeHigh": 43.41,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Qatar",
+            "ticker": "QAT",
+            "side": "short",
+            "dateAdded": "7/16/2026",
+            "recentPrice": 15.18,
+            "rangeLow": 14.76,
+            "rangeHigh": 15.89,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "Clean Energy",
+            "ticker": "PBD",
+            "side": "short",
+            "dateAdded": "8/5/2026",
+            "recentPrice": 15.13,
+            "rangeLow": 14.16,
+            "rangeHigh": 16.38,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Credit Rotation",
+            "ticker": "JOJO",
+            "side": "short",
+            "dateAdded": "8/26/2026",
+            "recentPrice": 14.7,
+            "rangeLow": 14.29,
+            "rangeHigh": 14.81,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "Industrials",
+            "ticker": "XLI",
+            "side": "short",
+            "dateAdded": "9/8/2026",
+            "recentPrice": 164.62,
+            "rangeLow": 160.0,
+            "rangeHigh": 170.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "India",
+            "ticker": "INDA",
+            "side": "short",
+            "dateAdded": "9/11/2026",
+            "recentPrice": 46.46,
+            "rangeLow": 45.56,
+            "rangeHigh": 48.23,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "US Small-Cap",
+            "ticker": "IWM",
+            "side": "short",
+            "dateAdded": "9/14/2026",
+            "recentPrice": 275.75,
+            "rangeLow": 266.0,
+            "rangeHigh": 282.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Global Private Equity",
+            "ticker": "PSP",
+            "side": "short",
+            "dateAdded": "9/15/2026",
+            "recentPrice": 57.24,
+            "rangeLow": 54.23,
+            "rangeHigh": 57.93,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Germany",
+            "ticker": "EWG",
+            "side": "short",
+            "dateAdded": "9/18/2026",
+            "recentPrice": 40.94,
+            "rangeLow": 40.06,
+            "rangeHigh": 41.94,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Palladium",
+            "ticker": "PALL",
+            "side": "short",
+            "dateAdded": "9/21/2026",
+            "recentPrice": 18.94,
+            "rangeLow": 18.65,
+            "rangeHigh": 21.06,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "High Yield Bonds",
+            "ticker": "HYG",
+            "side": "short",
+            "dateAdded": "9/22/2026",
+            "recentPrice": 77.05,
+            "rangeLow": 76.41,
+            "rangeHigh": 77.3,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "Silver",
+            "ticker": "SLV",
+            "side": "short",
+            "dateAdded": "9/30/2026",
+            "recentPrice": 48.72,
+            "rangeLow": 47.37,
+            "rangeHigh": 53.72,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Malaysia",
+            "ticker": "EWM",
+            "side": "short",
+            "dateAdded": "10/20/2026",
+            "recentPrice": 26.68,
+            "rangeLow": 26.04,
+            "rangeHigh": 27.21,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "Philippines",
+            "ticker": "EPHE",
+            "side": "short",
+            "dateAdded": "10/20/2026",
+            "recentPrice": 22.57,
+            "rangeLow": 22.12,
+            "rangeHigh": 23.4,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "France",
+            "ticker": "EWQ",
+            "side": "short",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 41.37,
+            "rangeLow": 40.32,
+            "rangeHigh": 42.53,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Indonesia",
+            "ticker": "IDX",
+            "side": "short",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 9.47,
+            "rangeLow": 8.3,
+            "rangeHigh": 10.3,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "South Korea",
+            "ticker": "EWY",
+            "side": "short",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 151.26,
+            "rangeLow": 143.0,
+            "rangeHigh": 167.0,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "Roundhill Memory",
+            "ticker": "DRAM",
+            "side": "short",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 47.06,
+            "rangeLow": 44.14,
+            "rangeHigh": 52.81,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Quality Momentum",
+            "ticker": "JOET",
+            "side": "short",
+            "dateAdded": "10/23/2026",
+            "recentPrice": 44.98,
+            "rangeLow": 44.01,
+            "rangeHigh": 45.71,
+            "assetClass": "Domestic Equities *All ETF recent intra day prices data through 10/25/2026"
+          }
+        ]
+      },
+      {
+        "type": "weekly",
         "sourceFile": "weekly_112625_ETF_Pro_Plus_-_New_Weekly_Report.txt",
         "reportDatetime": "2026-10-25 12:01PM EDT",
         "positions": [
@@ -3190,6 +4431,373 @@
       },
       {
         "type": "weekly",
+        "sourceFile": "weekly_113134_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+        "reportDatetime": "2026-11-01 04:21PM EST",
+        "positions": [
+          {
+            "name": "Income Short Maturity",
+            "ticker": "BUXX",
+            "side": "long",
+            "dateAdded": "10/25/2023",
+            "recentPrice": 20.22,
+            "rangeLow": 20.12,
+            "rangeHigh": 20.25,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "AAA CLO",
+            "ticker": "CLOX",
+            "side": "long",
+            "dateAdded": "3/6/2025",
+            "recentPrice": 25.61,
+            "rangeLow": 25.54,
+            "rangeHigh": 25.65,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "Healthcare",
+            "ticker": "XLV",
+            "side": "long",
+            "dateAdded": "6/17/2026",
+            "recentPrice": 184.87,
+            "rangeLow": 175.0,
+            "rangeHigh": 189.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Brent Oil",
+            "ticker": "BNO",
+            "side": "long",
+            "dateAdded": "9/21/2026",
+            "recentPrice": 71.39,
+            "rangeLow": 65.8,
+            "rangeHigh": 73.33,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Tanker Shipping",
+            "ticker": "BWET",
+            "side": "long",
+            "dateAdded": "9/22/2026",
+            "recentPrice": 968.92,
+            "rangeLow": 799.0,
+            "rangeHigh": 1022.0,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Cybersecurity",
+            "ticker": "BUG",
+            "side": "long",
+            "dateAdded": "9/25/2026",
+            "recentPrice": 49.37,
+            "rangeLow": 44.76,
+            "rangeHigh": 54.08,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Healthcare Technology",
+            "ticker": "HTEC",
+            "side": "long",
+            "dateAdded": "10/2/2026",
+            "recentPrice": 45.5,
+            "rangeLow": 43.5,
+            "rangeHigh": 46.99,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "US Dollar Bullish",
+            "ticker": "UUP",
+            "side": "long",
+            "dateAdded": "10/13/2026",
+            "recentPrice": 29.0,
+            "rangeLow": 28.74,
+            "rangeHigh": 29.24,
+            "assetClass": "Foreign Currencies"
+          },
+          {
+            "name": "P Equal Weight",
+            "ticker": "RSP",
+            "side": "long",
+            "dateAdded": "10/19/2026",
+            "recentPrice": 218.31,
+            "rangeLow": 212.0,
+            "rangeHigh": 220.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Dow Covered Call",
+            "ticker": "DJIA",
+            "side": "long",
+            "dateAdded": "10/20/2026",
+            "recentPrice": 22.48,
+            "rangeLow": 22.04,
+            "rangeHigh": 22.67,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Commodity Strategy",
+            "ticker": "HGER",
+            "side": "long",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 35.58,
+            "rangeLow": 35.0,
+            "rangeHigh": 36.5,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Catastrophe Bonds",
+            "ticker": "ILS",
+            "side": "long",
+            "dateAdded": "10/22/2026",
+            "recentPrice": 20.32,
+            "rangeLow": 20.22,
+            "rangeHigh": 20.44,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "Consumer Staples",
+            "ticker": "XLP",
+            "side": "long",
+            "dateAdded": "10/23/2026",
+            "recentPrice": 89.42,
+            "rangeLow": 85.0,
+            "rangeHigh": 92.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "International High Dividend",
+            "ticker": "LVHI",
+            "side": "long",
+            "dateAdded": "10/23/2026",
+            "recentPrice": 43.18,
+            "rangeLow": 42.49,
+            "rangeHigh": 43.97,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Japanese Yen",
+            "ticker": "FXY",
+            "side": "long",
+            "dateAdded": "10/26/2026",
+            "recentPrice": 58.19,
+            "rangeLow": 57.55,
+            "rangeHigh": 58.92,
+            "assetClass": "Foreign Currencies"
+          },
+          {
+            "name": "Beverage",
+            "ticker": "FTXG",
+            "side": "long",
+            "dateAdded": "10/26/2026",
+            "recentPrice": 22.83,
+            "rangeLow": 22.0,
+            "rangeHigh": 23.51,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "US Insurance",
+            "ticker": "IAK",
+            "side": "long",
+            "dateAdded": "10/28/2026",
+            "recentPrice": 148.83,
+            "rangeLow": 144.0,
+            "rangeHigh": 152.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "US Deflation",
+            "ticker": "BNDD",
+            "side": "long",
+            "dateAdded": "10/30/2026",
+            "recentPrice": 98.9,
+            "rangeLow": 96.13,
+            "rangeHigh": 99.4,
+            "assetClass": "US Fixed Income"
+          },
+          {
+            "name": "Qatar",
+            "ticker": "QAT",
+            "side": "short",
+            "dateAdded": "7/16/2026",
+            "recentPrice": 16.17,
+            "rangeLow": 14.76,
+            "rangeHigh": 16.71,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "Clean Energy",
+            "ticker": "PBD",
+            "side": "short",
+            "dateAdded": "8/5/2026",
+            "recentPrice": 15.0,
+            "rangeLow": 14.09,
+            "rangeHigh": 15.9,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Industrials",
+            "ticker": "XLI",
+            "side": "short",
+            "dateAdded": "9/8/2026",
+            "recentPrice": 167.4,
+            "rangeLow": 160.0,
+            "rangeHigh": 171.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "India",
+            "ticker": "INDA",
+            "side": "short",
+            "dateAdded": "9/11/2026",
+            "recentPrice": 47.72,
+            "rangeLow": 45.56,
+            "rangeHigh": 48.28,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "US Small-Cap",
+            "ticker": "IWM",
+            "side": "short",
+            "dateAdded": "9/14/2026",
+            "recentPrice": 279.33,
+            "rangeLow": 270.0,
+            "rangeHigh": 285.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Global Private Equity",
+            "ticker": "PSP",
+            "side": "short",
+            "dateAdded": "9/15/2026",
+            "recentPrice": 58.83,
+            "rangeLow": 55.18,
+            "rangeHigh": 59.49,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Palladium",
+            "ticker": "PALL",
+            "side": "short",
+            "dateAdded": "9/21/2026",
+            "recentPrice": 17.78,
+            "rangeLow": 17.09,
+            "rangeHigh": 20.21,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Silver",
+            "ticker": "SLV",
+            "side": "short",
+            "dateAdded": "9/30/2026",
+            "recentPrice": 44.6,
+            "rangeLow": 43.65,
+            "rangeHigh": 51.79,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Malaysia",
+            "ticker": "EWM",
+            "side": "short",
+            "dateAdded": "10/20/2026",
+            "recentPrice": 26.87,
+            "rangeLow": 26.18,
+            "rangeHigh": 27.44,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "Philippines",
+            "ticker": "EPHE",
+            "side": "short",
+            "dateAdded": "10/20/2026",
+            "recentPrice": 22.33,
+            "rangeLow": 21.3,
+            "rangeHigh": 23.14,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "France",
+            "ticker": "EWQ",
+            "side": "short",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 42.24,
+            "rangeLow": 40.06,
+            "rangeHigh": 42.9,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Indonesia",
+            "ticker": "IDX",
+            "side": "short",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 8.79,
+            "rangeLow": 8.32,
+            "rangeHigh": 9.47,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "South Korea",
+            "ticker": "EWY",
+            "side": "short",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 152.89,
+            "rangeLow": 143.0,
+            "rangeHigh": 164.0,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "Roundhill Memory",
+            "ticker": "DRAM",
+            "side": "short",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 48.01,
+            "rangeLow": 44.06,
+            "rangeHigh": 54.11,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Gold Miners",
+            "ticker": "GDX",
+            "side": "short",
+            "dateAdded": "10/27/2026",
+            "recentPrice": 77.09,
+            "rangeLow": 75.81,
+            "rangeHigh": 85.78,
+            "assetClass": "International Equity"
+          },
+          {
+            "name": "U.S. Large Cap",
+            "ticker": "GRNY",
+            "side": "short",
+            "dateAdded": "10/27/2026",
+            "recentPrice": 26.58,
+            "rangeLow": 26.03,
+            "rangeHigh": 27.51,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Global Airlines",
+            "ticker": "JETS",
+            "side": "short",
+            "dateAdded": "10/28/2026",
+            "recentPrice": 26.93,
+            "rangeLow": 25.58,
+            "rangeHigh": 27.84,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Meme",
+            "ticker": "MEME",
+            "side": "short",
+            "dateAdded": "10/29/2026",
+            "recentPrice": 6.37,
+            "rangeLow": 5.98,
+            "rangeHigh": 7.12,
+            "assetClass": "Domestic Equities"
+          }
+        ]
+      },
+      {
+        "type": "weekly",
         "sourceFile": "weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
         "reportDatetime": "2026-11-01 04:21PM EST",
         "positions": [
@@ -3552,6 +5160,740 @@
             "rangeLow": 5.98,
             "rangeHigh": 7.12,
             "assetClass": "Domestic Equities"
+          }
+        ]
+      },
+      {
+        "type": "weekly",
+        "sourceFile": "weekly_113642_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+        "reportDatetime": "2026-11-08 07:13PM EST",
+        "positions": [
+          {
+            "name": "Income Short Maturity",
+            "ticker": "BUXX",
+            "side": "long",
+            "dateAdded": "10/25/2023",
+            "recentPrice": 20.19,
+            "rangeLow": 20.13,
+            "rangeHigh": 20.25,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "AAA CLO",
+            "ticker": "CLOX",
+            "side": "long",
+            "dateAdded": "3/6/2025",
+            "recentPrice": 25.55,
+            "rangeLow": 25.48,
+            "rangeHigh": 25.6,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "Healthcare",
+            "ticker": "XLV",
+            "side": "long",
+            "dateAdded": "6/17/2026",
+            "recentPrice": 184.8,
+            "rangeLow": 176.0,
+            "rangeHigh": 191.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Healthcare Technology",
+            "ticker": "HTEC",
+            "side": "long",
+            "dateAdded": "10/2/2026",
+            "recentPrice": 44.7,
+            "rangeLow": 43.53,
+            "rangeHigh": 47.1,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "US Dollar Bullish",
+            "ticker": "UUP",
+            "side": "long",
+            "dateAdded": "10/13/2026",
+            "recentPrice": 29.13,
+            "rangeLow": 28.8,
+            "rangeHigh": 29.5,
+            "assetClass": "Foreign Currencies"
+          },
+          {
+            "name": "S&P Equal Weight",
+            "ticker": "RSP",
+            "side": "long",
+            "dateAdded": "10/19/2026",
+            "recentPrice": 216.05,
+            "rangeLow": 213.0,
+            "rangeHigh": 223.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Catastrophe Bonds",
+            "ticker": "ILS",
+            "side": "long",
+            "dateAdded": "10/22/2026",
+            "recentPrice": 20.35,
+            "rangeLow": 20.25,
+            "rangeHigh": 20.41,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "Consumer Staples",
+            "ticker": "XLP",
+            "side": "long",
+            "dateAdded": "10/23/2026",
+            "recentPrice": 90.08,
+            "rangeLow": 86.0,
+            "rangeHigh": 93.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "International High Dividend",
+            "ticker": "LVHI",
+            "side": "long",
+            "dateAdded": "10/23/2026",
+            "recentPrice": 42.85,
+            "rangeLow": 42.43,
+            "rangeHigh": 43.75,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Food & Beverage",
+            "ticker": "FTXG",
+            "side": "long",
+            "dateAdded": "10/26/2026",
+            "recentPrice": 23.19,
+            "rangeLow": 22.22,
+            "rangeHigh": 23.96,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "US Insurance",
+            "ticker": "IAK",
+            "side": "long",
+            "dateAdded": "10/28/2026",
+            "recentPrice": 148.7,
+            "rangeLow": 144.0,
+            "rangeHigh": 155.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "US Deflation",
+            "ticker": "BNDD",
+            "side": "long",
+            "dateAdded": "10/30/2026",
+            "recentPrice": 98.48,
+            "rangeLow": 97.16,
+            "rangeHigh": 99.22,
+            "assetClass": "US Fixed Income"
+          },
+          {
+            "name": "US Market Neutral",
+            "ticker": "BTAL",
+            "side": "long",
+            "dateAdded": "11/3/2026",
+            "recentPrice": 13.25,
+            "rangeLow": 12.72,
+            "rangeHigh": 13.76,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "US Treasury Long",
+            "ticker": "ZROZ",
+            "side": "long",
+            "dateAdded": "11/3/2026",
+            "recentPrice": 59.04,
+            "rangeLow": 57.45,
+            "rangeHigh": 59.57,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "US Min Vol",
+            "ticker": "USMV",
+            "side": "long",
+            "dateAdded": "11/3/2026",
+            "recentPrice": 101.23,
+            "rangeLow": 100.0,
+            "rangeHigh": 105.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Core Plus Bond",
+            "ticker": "JCPB",
+            "side": "long",
+            "dateAdded": "11/3/2026",
+            "recentPrice": 45.6,
+            "rangeLow": 45.1,
+            "rangeHigh": 45.83,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "Utilities Sector",
+            "ticker": "XLU",
+            "side": "long",
+            "dateAdded": "11/4/2026",
+            "recentPrice": 43.13,
+            "rangeLow": 42.32,
+            "rangeHigh": 44.11,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Long Treasury Bond",
+            "ticker": "TLT",
+            "side": "long",
+            "dateAdded": "11/4/2026",
+            "recentPrice": 81.92,
+            "rangeLow": 80.45,
+            "rangeHigh": 82.46,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "Tail Risk Strategy",
+            "ticker": "CAOS",
+            "side": "long",
+            "dateAdded": "11/5/2026",
+            "recentPrice": 91.81,
+            "rangeLow": 91.25,
+            "rangeHigh": 92.12,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Real Estate",
+            "ticker": "XLRE",
+            "side": "long",
+            "dateAdded": "11/6/2026",
+            "recentPrice": 44.0,
+            "rangeLow": 42.76,
+            "rangeHigh": 45.36,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Clean Energy",
+            "ticker": "PBD",
+            "side": "short",
+            "dateAdded": "8/5/2026",
+            "recentPrice": 15.14,
+            "rangeLow": 14.2,
+            "rangeHigh": 15.84,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Industrials",
+            "ticker": "XLI",
+            "side": "short",
+            "dateAdded": "9/8/2026",
+            "recentPrice": 162.67,
+            "rangeLow": 158.0,
+            "rangeHigh": 170.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "US Small-Cap",
+            "ticker": "IWM",
+            "side": "short",
+            "dateAdded": "9/14/2026",
+            "recentPrice": 273.67,
+            "rangeLow": 265.0,
+            "rangeHigh": 283.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Palladium",
+            "ticker": "PALL",
+            "side": "short",
+            "dateAdded": "9/21/2026",
+            "recentPrice": 18.56,
+            "rangeLow": 16.55,
+            "rangeHigh": 19.57,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Silver",
+            "ticker": "SLV",
+            "side": "short",
+            "dateAdded": "9/30/2026",
+            "recentPrice": 46.87,
+            "rangeLow": 43.46,
+            "rangeHigh": 49.99,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Philippines",
+            "ticker": "EPHE",
+            "side": "short",
+            "dateAdded": "10/20/2026",
+            "recentPrice": 22.9,
+            "rangeLow": 21.98,
+            "rangeHigh": 23.16,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "Indonesia",
+            "ticker": "IDX",
+            "side": "short",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 8.89,
+            "rangeLow": 8.37,
+            "rangeHigh": 9.36,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "South Korea",
+            "ticker": "EWY",
+            "side": "short",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 137.01,
+            "rangeLow": 128.0,
+            "rangeHigh": 158.0,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "Roundhill Memory",
+            "ticker": "DRAM",
+            "side": "short",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 39.29,
+            "rangeLow": 35.12,
+            "rangeHigh": 46.65,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Gold Miners",
+            "ticker": "GDX",
+            "side": "short",
+            "dateAdded": "10/27/2026",
+            "recentPrice": 87.6,
+            "rangeLow": 75.81,
+            "rangeHigh": 89.44,
+            "assetClass": "International Equity"
+          },
+          {
+            "name": "\"Granny Shots\" U.S. Large Cap",
+            "ticker": "GRNY",
+            "side": "short",
+            "dateAdded": "10/27/2026",
+            "recentPrice": 25.18,
+            "rangeLow": 24.06,
+            "rangeHigh": 26.53,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Meme",
+            "ticker": "MEME",
+            "side": "short",
+            "dateAdded": "10/29/2026",
+            "recentPrice": 5.5,
+            "rangeLow": 4.67,
+            "rangeHigh": 6.87,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Hedge Fund VIP",
+            "ticker": "GVIP",
+            "side": "short",
+            "dateAdded": "11/3/2026",
+            "recentPrice": 155.34,
+            "rangeLow": 149.0,
+            "rangeHigh": 163.0,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Euro",
+            "ticker": "FXE",
+            "side": "short",
+            "dateAdded": "11/4/2026",
+            "recentPrice": 102.77,
+            "rangeLow": 100.0,
+            "rangeHigh": 103.0,
+            "assetClass": "Foreign Currencies"
+          },
+          {
+            "name": "Nasdaq 100",
+            "ticker": "QQQ",
+            "side": "short",
+            "dateAdded": "11/4/2026",
+            "recentPrice": 656.1,
+            "rangeLow": 635.0,
+            "rangeHigh": 690.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Lithium Tech",
+            "ticker": "LIT",
+            "side": "short",
+            "dateAdded": "11/4/2026",
+            "recentPrice": 60.91,
+            "rangeLow": 57.91,
+            "rangeHigh": 63.24,
+            "assetClass": "Global Equities *All ETF recent intra day prices data through 11/8/2026"
+          }
+        ]
+      },
+      {
+        "type": "weekly",
+        "sourceFile": "weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+        "reportDatetime": "2026-11-08 07:13PM EST",
+        "positions": [
+          {
+            "name": "Income Short Maturity",
+            "ticker": "BUXX",
+            "side": "long",
+            "dateAdded": "10/25/2023",
+            "recentPrice": 20.19,
+            "rangeLow": 20.13,
+            "rangeHigh": 20.25,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "AAA CLO",
+            "ticker": "CLOX",
+            "side": "long",
+            "dateAdded": "3/6/2025",
+            "recentPrice": 25.55,
+            "rangeLow": 25.48,
+            "rangeHigh": 25.6,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "Healthcare",
+            "ticker": "XLV",
+            "side": "long",
+            "dateAdded": "6/17/2026",
+            "recentPrice": 184.8,
+            "rangeLow": 176.0,
+            "rangeHigh": 191.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Healthcare Technology",
+            "ticker": "HTEC",
+            "side": "long",
+            "dateAdded": "10/2/2026",
+            "recentPrice": 44.7,
+            "rangeLow": 43.53,
+            "rangeHigh": 47.1,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "US Dollar Bullish",
+            "ticker": "UUP",
+            "side": "long",
+            "dateAdded": "10/13/2026",
+            "recentPrice": 29.13,
+            "rangeLow": 28.8,
+            "rangeHigh": 29.5,
+            "assetClass": "Foreign Currencies"
+          },
+          {
+            "name": "S&P Equal Weight",
+            "ticker": "RSP",
+            "side": "long",
+            "dateAdded": "10/19/2026",
+            "recentPrice": 216.05,
+            "rangeLow": 213.0,
+            "rangeHigh": 223.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Catastrophe Bonds",
+            "ticker": "ILS",
+            "side": "long",
+            "dateAdded": "10/22/2026",
+            "recentPrice": 20.35,
+            "rangeLow": 20.25,
+            "rangeHigh": 20.41,
+            "assetClass": "Fixed Income"
+          },
+          {
+            "name": "Consumer Staples",
+            "ticker": "XLP",
+            "side": "long",
+            "dateAdded": "10/23/2026",
+            "recentPrice": 90.08,
+            "rangeLow": 86.0,
+            "rangeHigh": 93.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "International High Dividend",
+            "ticker": "LVHI",
+            "side": "long",
+            "dateAdded": "10/23/2026",
+            "recentPrice": 42.85,
+            "rangeLow": 42.43,
+            "rangeHigh": 43.75,
+            "assetClass": "International Equities"
+          },
+          {
+            "name": "Food & Beverage",
+            "ticker": "FTXG",
+            "side": "long",
+            "dateAdded": "10/26/2026",
+            "recentPrice": 23.19,
+            "rangeLow": 22.22,
+            "rangeHigh": 23.96,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "US Insurance",
+            "ticker": "IAK",
+            "side": "long",
+            "dateAdded": "10/28/2026",
+            "recentPrice": 148.7,
+            "rangeLow": 144.0,
+            "rangeHigh": 155.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "US Deflation",
+            "ticker": "BNDD",
+            "side": "long",
+            "dateAdded": "10/30/2026",
+            "recentPrice": 98.48,
+            "rangeLow": 97.16,
+            "rangeHigh": 99.22,
+            "assetClass": "US Fixed Income"
+          },
+          {
+            "name": "US Market Neutral",
+            "ticker": "BTAL",
+            "side": "long",
+            "dateAdded": "11/3/2026",
+            "recentPrice": 13.25,
+            "rangeLow": 12.72,
+            "rangeHigh": 13.76,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "US Treasury Long",
+            "ticker": "ZROZ",
+            "side": "long",
+            "dateAdded": "11/3/2026",
+            "recentPrice": 59.04,
+            "rangeLow": 57.45,
+            "rangeHigh": 59.57,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "US Min Vol",
+            "ticker": "USMV",
+            "side": "long",
+            "dateAdded": "11/3/2026",
+            "recentPrice": 101.23,
+            "rangeLow": 100.0,
+            "rangeHigh": 105.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Core Plus Bond",
+            "ticker": "JCPB",
+            "side": "long",
+            "dateAdded": "11/3/2026",
+            "recentPrice": 45.6,
+            "rangeLow": 45.1,
+            "rangeHigh": 45.83,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "Utilities Sector",
+            "ticker": "XLU",
+            "side": "long",
+            "dateAdded": "11/4/2026",
+            "recentPrice": 43.13,
+            "rangeLow": 42.32,
+            "rangeHigh": 44.11,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Long Treasury Bond",
+            "ticker": "TLT",
+            "side": "long",
+            "dateAdded": "11/4/2026",
+            "recentPrice": 81.92,
+            "rangeLow": 80.45,
+            "rangeHigh": 82.46,
+            "assetClass": "Domestic Fixed Income"
+          },
+          {
+            "name": "Tail Risk Strategy",
+            "ticker": "CAOS",
+            "side": "long",
+            "dateAdded": "11/5/2026",
+            "recentPrice": 91.81,
+            "rangeLow": 91.25,
+            "rangeHigh": 92.12,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Real Estate",
+            "ticker": "XLRE",
+            "side": "long",
+            "dateAdded": "11/6/2026",
+            "recentPrice": 44.0,
+            "rangeLow": 42.76,
+            "rangeHigh": 45.36,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Clean Energy",
+            "ticker": "PBD",
+            "side": "short",
+            "dateAdded": "8/5/2026",
+            "recentPrice": 15.14,
+            "rangeLow": 14.2,
+            "rangeHigh": 15.84,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Industrials",
+            "ticker": "XLI",
+            "side": "short",
+            "dateAdded": "9/8/2026",
+            "recentPrice": 162.67,
+            "rangeLow": 158.0,
+            "rangeHigh": 170.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "US Small-Cap",
+            "ticker": "IWM",
+            "side": "short",
+            "dateAdded": "9/14/2026",
+            "recentPrice": 273.67,
+            "rangeLow": 265.0,
+            "rangeHigh": 283.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Palladium",
+            "ticker": "PALL",
+            "side": "short",
+            "dateAdded": "9/21/2026",
+            "recentPrice": 18.56,
+            "rangeLow": 16.55,
+            "rangeHigh": 19.57,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Silver",
+            "ticker": "SLV",
+            "side": "short",
+            "dateAdded": "9/30/2026",
+            "recentPrice": 46.87,
+            "rangeLow": 43.46,
+            "rangeHigh": 49.99,
+            "assetClass": "Commodities"
+          },
+          {
+            "name": "Philippines",
+            "ticker": "EPHE",
+            "side": "short",
+            "dateAdded": "10/20/2026",
+            "recentPrice": 22.9,
+            "rangeLow": 21.98,
+            "rangeHigh": 23.16,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "Indonesia",
+            "ticker": "IDX",
+            "side": "short",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 8.89,
+            "rangeLow": 8.37,
+            "rangeHigh": 9.36,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "South Korea",
+            "ticker": "EWY",
+            "side": "short",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 137.01,
+            "rangeLow": 128.0,
+            "rangeHigh": 158.0,
+            "assetClass": "Emerging Markets Equities"
+          },
+          {
+            "name": "Roundhill Memory",
+            "ticker": "DRAM",
+            "side": "short",
+            "dateAdded": "10/21/2026",
+            "recentPrice": 39.29,
+            "rangeLow": 35.12,
+            "rangeHigh": 46.65,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Gold Miners",
+            "ticker": "GDX",
+            "side": "short",
+            "dateAdded": "10/27/2026",
+            "recentPrice": 87.6,
+            "rangeLow": 75.81,
+            "rangeHigh": 89.44,
+            "assetClass": "International Equity"
+          },
+          {
+            "name": "\"Granny Shots\" U.S. Large Cap",
+            "ticker": "GRNY",
+            "side": "short",
+            "dateAdded": "10/27/2026",
+            "recentPrice": 25.18,
+            "rangeLow": 24.06,
+            "rangeHigh": 26.53,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Meme",
+            "ticker": "MEME",
+            "side": "short",
+            "dateAdded": "10/29/2026",
+            "recentPrice": 5.5,
+            "rangeLow": 4.67,
+            "rangeHigh": 6.87,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Hedge Fund VIP",
+            "ticker": "GVIP",
+            "side": "short",
+            "dateAdded": "11/3/2026",
+            "recentPrice": 155.34,
+            "rangeLow": 149.0,
+            "rangeHigh": 163.0,
+            "assetClass": "Global Equities"
+          },
+          {
+            "name": "Euro",
+            "ticker": "FXE",
+            "side": "short",
+            "dateAdded": "11/4/2026",
+            "recentPrice": 102.77,
+            "rangeLow": 100.0,
+            "rangeHigh": 103.0,
+            "assetClass": "Foreign Currencies"
+          },
+          {
+            "name": "Nasdaq 100",
+            "ticker": "QQQ",
+            "side": "short",
+            "dateAdded": "11/4/2026",
+            "recentPrice": 656.1,
+            "rangeLow": 635.0,
+            "rangeHigh": 690.0,
+            "assetClass": "Domestic Equities"
+          },
+          {
+            "name": "Lithium Tech",
+            "ticker": "LIT",
+            "side": "short",
+            "dateAdded": "11/4/2026",
+            "recentPrice": 60.91,
+            "rangeLow": 57.91,
+            "rangeHigh": 63.24,
+            "assetClass": "Global Equities *All ETF recent intra day prices data through 11/8/2026"
           }
         ]
       },
@@ -4336,6 +6678,24 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_111595_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-09 10:56AM EDT",
+        "addsLong": [
+          {
+            "name": "Nasdaq 100",
+            "ticker": "QQQ"
+          },
+          {
+            "name": "Japan",
+            "ticker": "FJP"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_111643_UPDATE__2_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2026-10-09 10:56AM EDT",
         "addsLong": [
@@ -4351,6 +6711,35 @@
         "addsShort": [],
         "removesLong": [],
         "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_111748_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-12 10:41AM EDT",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "Quantum Tech",
+            "ticker": "QTUM",
+            "rangeLow": 148.0,
+            "rangeHigh": 160.0
+          },
+          {
+            "name": "Solana",
+            "ticker": "SOLZ",
+            "rangeLow": 10.24,
+            "rangeHigh": 12.49
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "Digital Payments",
+            "ticker": "IPAY",
+            "rangeLow": 45.7,
+            "rangeHigh": 49.5
+          }
+        ]
       },
       {
         "type": "intraday",
@@ -4383,6 +6772,32 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_111801_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-13 10:29AM EDT",
+        "addsLong": [
+          {
+            "name": "US Dollar Bullish",
+            "ticker": "UUP"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Denmark",
+            "ticker": "EDEN"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Ethereum",
+            "ticker": "ETHA",
+            "rangeLow": 55.01,
+            "rangeHigh": 63.8
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_111850_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2026-10-13 10:29AM EDT",
         "addsLong": [
@@ -4409,6 +6824,24 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_111858_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-14 10:28AM EDT",
+        "addsLong": [
+          {
+            "name": "Natural Gas",
+            "ticker": "UNG"
+          },
+          {
+            "name": "Hypergrowth",
+            "ticker": "HYP"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_111907_UPDATE__2_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2026-10-14 10:28AM EDT",
         "addsLong": [
@@ -4424,6 +6857,49 @@
         "addsShort": [],
         "removesLong": [],
         "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_111927_UPDATE__6_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-15 11:13AM EDT",
+        "addsLong": [
+          {
+            "name": "Brazil",
+            "ticker": "EWZ"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "British Pound",
+            "ticker": "FXB"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Japan",
+            "ticker": "FJP",
+            "rangeLow": 76.92,
+            "rangeHigh": 80.62
+          },
+          {
+            "name": "Hypergrowth",
+            "ticker": "HYP"
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "Utilities Sector",
+            "ticker": "XLU",
+            "rangeLow": 38.9,
+            "rangeHigh": 42.37
+          },
+          {
+            "name": "Consumer Discretionary",
+            "ticker": "XLY",
+            "rangeLow": 105.0,
+            "rangeHigh": 115.0
+          }
+        ]
       },
       {
         "type": "intraday",
@@ -4470,6 +6946,22 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_112017_UPDATE__1_New_ETF_Pro_Change.txt",
+        "reportDatetime": "2026-10-16 11:55AM EDT",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Financials",
+            "ticker": "XLF",
+            "rangeLow": 52.9,
+            "rangeHigh": 55.2
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_112066_UPDATE__1_New_ETF_Pro_Change.txt",
         "reportDatetime": "2026-10-16 11:55AM EDT",
         "addsLong": [],
@@ -4481,6 +6973,31 @@
             "ticker": "XLF",
             "rangeLow": 52.9,
             "rangeHigh": 55.2
+          }
+        ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_112160_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-19 10:31AM EDT",
+        "addsLong": [
+          {
+            "name": "S&P Equal Weight",
+            "ticker": "RSP"
+          },
+          {
+            "name": "Rising Rates Fixed Income",
+            "ticker": "RISR"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Australia Equities",
+            "ticker": "EWA",
+            "rangeLow": 27.99,
+            "rangeHigh": 29.24
           }
         ]
       },
@@ -4506,6 +7023,67 @@
             "ticker": "EWA",
             "rangeLow": 27.99,
             "rangeHigh": 29.24
+          }
+        ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_112232_UPDATE__9_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-20 10:27AM EDT",
+        "addsLong": [
+          {
+            "name": "Dow Covered Call",
+            "ticker": "DJIA"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Malaysia",
+            "ticker": "EWM"
+          },
+          {
+            "name": "Philippines",
+            "ticker": "EPHE"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Japan",
+            "ticker": "JPXN",
+            "rangeLow": 101.0,
+            "rangeHigh": 106.0
+          },
+          {
+            "name": "Nasdaq 100",
+            "ticker": "QQQ",
+            "rangeLow": 705.0,
+            "rangeHigh": 767.0
+          },
+          {
+            "name": "Natural Gas",
+            "ticker": "UNG",
+            "rangeLow": 10.25,
+            "rangeHigh": 11.41
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "Switzerland",
+            "ticker": "EWL",
+            "rangeLow": 58.8,
+            "rangeHigh": 62.98
+          },
+          {
+            "name": "Mexico",
+            "ticker": "EWW",
+            "rangeLow": 70.7,
+            "rangeHigh": 75.52
+          },
+          {
+            "name": "British Pound",
+            "ticker": "FXB",
+            "rangeLow": 126.0,
+            "rangeHigh": 129.0
           }
         ]
       },
@@ -4572,6 +7150,48 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_112309_UPDATE__7_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-21 10:25AM EDT",
+        "addsLong": [
+          {
+            "name": "Commodity Strategy",
+            "ticker": "HGER"
+          },
+          {
+            "name": "Microsoft Income",
+            "ticker": "MSFY"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "France",
+            "ticker": "EWQ"
+          },
+          {
+            "name": "Indonesia",
+            "ticker": "IDX"
+          },
+          {
+            "name": "South Korea",
+            "ticker": "EWY"
+          },
+          {
+            "name": "Roundhill Memory",
+            "ticker": "DRAM"
+          }
+        ],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Denmark",
+            "ticker": "EDEN",
+            "rangeLow": 106.0,
+            "rangeHigh": 112.0
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_112359_UPDATE__7_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2026-10-21 10:25AM EDT",
         "addsLong": [
@@ -4614,6 +7234,46 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_112388_UPDATE__5_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-22 10:35AM EDT",
+        "addsLong": [
+          {
+            "name": "Catastrophe Bonds",
+            "ticker": "ILS"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "US Critical Tech",
+            "ticker": "CRTC",
+            "rangeLow": 40.5,
+            "rangeHigh": 42.73
+          },
+          {
+            "name": "Technology Sector",
+            "ticker": "XLK",
+            "rangeLow": 179.0,
+            "rangeHigh": 205.0
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "Long Treasury Bond",
+            "ticker": "TLT",
+            "rangeLow": 76.72,
+            "rangeHigh": 80.98
+          },
+          {
+            "name": "US Treasury Long",
+            "ticker": "ZROZ",
+            "rangeLow": 52.67,
+            "rangeHigh": 57.54
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_112438_UPDATE__5_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2026-10-22 10:35AM EDT",
         "addsLong": [
@@ -4649,6 +7309,53 @@
             "ticker": "ZROZ",
             "rangeLow": 52.67,
             "rangeHigh": 57.54
+          }
+        ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_112459_UPDATE__7_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-23 10:57AM EDT",
+        "addsLong": [
+          {
+            "name": "Consumer Staples",
+            "ticker": "XLP"
+          },
+          {
+            "name": "International High Dividend",
+            "ticker": "LVHI"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Quality Momentum",
+            "ticker": "JOET"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "CLOs",
+            "ticker": "CLOZ",
+            "rangeLow": 26.16,
+            "rangeHigh": 26.31
+          },
+          {
+            "name": "Top 20 US Stocks",
+            "ticker": "TOPT",
+            "rangeLow": 34.26,
+            "rangeHigh": 36.0
+          },
+          {
+            "name": "Rising Rates Fixed Income",
+            "ticker": "RISR"
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "US Corporate Bonds",
+            "ticker": "LQD",
+            "rangeLow": 101.0,
+            "rangeHigh": 104.0
           }
         ]
       },
@@ -4701,6 +7408,36 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_112627_UPDATE__4_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-26 10:34AM EDT",
+        "addsLong": [
+          {
+            "name": "Japanese Yen",
+            "ticker": "FXY"
+          },
+          {
+            "name": "Food & Beverage",
+            "ticker": "FTXG"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Small Cap Growth",
+            "ticker": "ISCG"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Brazil",
+            "ticker": "EWZ",
+            "rangeLow": 40.71,
+            "rangeHigh": 43.74
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_112678_UPDATE__4_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2026-10-26 10:34AM EDT",
         "addsLong": [
@@ -4725,6 +7462,31 @@
             "ticker": "EWZ",
             "rangeLow": 40.71,
             "rangeHigh": 43.74
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_112713_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-27 10:32AM EDT",
+        "addsLong": [],
+        "addsShort": [
+          {
+            "name": "Gold Miners",
+            "ticker": "GDX"
+          },
+          {
+            "name": "\"Granny Shots\" U.S. Large Cap",
+            "ticker": "GRNY"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Bitcoin",
+            "ticker": "IBIT",
+            "rangeLow": 44.41,
+            "rangeHigh": 48.55
           }
         ],
         "removesShort": []
@@ -4756,6 +7518,25 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_112809_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-28 10:25AM EDT",
+        "addsLong": [
+          {
+            "name": "US Insurance",
+            "ticker": "IAK"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Global Airlines",
+            "ticker": "JETS"
+          }
+        ],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_112861_UPDATE__2_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2026-10-28 10:25AM EDT",
         "addsLong": [
@@ -4772,6 +7553,46 @@
         ],
         "removesLong": [],
         "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_112893_UPDATE__5_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-29 10:31AM EDT",
+        "addsLong": [],
+        "addsShort": [
+          {
+            "name": "Meme",
+            "ticker": "MEME"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Oil Refiners",
+            "ticker": "CRAK",
+            "rangeLow": 61.0,
+            "rangeHigh": 69.0
+          },
+          {
+            "name": "Microsoft Income",
+            "ticker": "MSFY",
+            "rangeLow": 20.4,
+            "rangeHigh": 22.19
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "Germany",
+            "ticker": "EWG",
+            "rangeLow": 40.06,
+            "rangeHigh": 41.94
+          },
+          {
+            "name": "Quality Momentum",
+            "ticker": "JOET",
+            "rangeLow": 44.01,
+            "rangeHigh": 46.0
+          }
+        ]
       },
       {
         "type": "intraday",
@@ -4810,6 +7631,56 @@
             "ticker": "JOET",
             "rangeLow": 44.01,
             "rangeHigh": 46.0
+          }
+        ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_112999_UPDATE__7_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-10-30 10:39AM EDT",
+        "addsLong": [
+          {
+            "name": "US Deflation",
+            "ticker": "BNDD"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "Tech Software",
+            "ticker": "IGV",
+            "rangeLow": 103.0,
+            "rangeHigh": 114.0
+          },
+          {
+            "name": "Managed Futures",
+            "ticker": "DBMF",
+            "rangeLow": 32.23,
+            "rangeHigh": 33.3
+          },
+          {
+            "name": "Interest Rate Hedge",
+            "ticker": "PFIX",
+            "rangeLow": 54.92,
+            "rangeHigh": 63.0
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "Credit Rotation",
+            "ticker": "JOJO",
+            "rangeLow": 14.29,
+            "rangeHigh": 14.81
+          },
+          {
+            "name": "High Yield Bonds",
+            "ticker": "HYG",
+            "rangeLow": 76.41,
+            "rangeHigh": 78.0
+          },
+          {
+            "name": "Small Cap Growth",
+            "ticker": "ISCG"
           }
         ]
       },
@@ -4865,6 +7736,22 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_113165_UPDATE__1_New_ETF_Pro_Change.txt",
+        "reportDatetime": "2026-11-02 10:16AM EST",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Qatar",
+            "ticker": "QAT",
+            "rangeLow": 14.76,
+            "rangeHigh": 16.71
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_113218_UPDATE__1_New_ETF_Pro_Change.txt",
         "reportDatetime": "2026-11-02 10:16AM EST",
         "addsLong": [],
@@ -4876,6 +7763,75 @@
             "ticker": "QAT",
             "rangeLow": 14.76,
             "rangeHigh": 16.71
+          }
+        ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_113245_UPDATE__11_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-11-03 10:22AM EST",
+        "addsLong": [
+          {
+            "name": "US Market Neutral",
+            "ticker": "BTAL"
+          },
+          {
+            "name": "US Treasury Long",
+            "ticker": "ZROZ"
+          },
+          {
+            "name": "US Min Vol",
+            "ticker": "USMV"
+          },
+          {
+            "name": "Core Plus Bond",
+            "ticker": "JCPB"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Hedge Fund VIP",
+            "ticker": "GVIP"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Tanker Shipping",
+            "ticker": "BWET",
+            "rangeLow": 799.0,
+            "rangeHigh": 1022.0
+          },
+          {
+            "name": "Dow Covered Call",
+            "ticker": "DJIA",
+            "rangeLow": 22.04,
+            "rangeHigh": 22.67
+          },
+          {
+            "name": "Commodity Strategy",
+            "ticker": "HGER",
+            "rangeLow": 34.0,
+            "rangeHigh": 36.5
+          },
+          {
+            "name": "Japanese Yen",
+            "ticker": "FXY",
+            "rangeLow": 57.55,
+            "rangeHigh": 58.92
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "India",
+            "ticker": "INDA",
+            "rangeLow": 45.56,
+            "rangeHigh": 49.0
+          },
+          {
+            "name": "Global Airlines",
+            "ticker": "JETS",
+            "rangeLow": 25.58,
+            "rangeHigh": 28.5
           }
         ]
       },
@@ -4950,6 +7906,57 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_113319_UPDATE__8_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-11-04 10:29AM EST",
+        "addsLong": [
+          {
+            "name": "Utilities Sector",
+            "ticker": "XLU"
+          },
+          {
+            "name": "Long Treasury Bond",
+            "ticker": "TLT"
+          }
+        ],
+        "addsShort": [
+          {
+            "name": "Euro",
+            "ticker": "FXE"
+          },
+          {
+            "name": "Nasdaq 100",
+            "ticker": "QQQ"
+          },
+          {
+            "name": "Lithium Tech",
+            "ticker": "LIT"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "Brent Oil",
+            "ticker": "BNO",
+            "rangeLow": 65.8,
+            "rangeHigh": 73.33
+          },
+          {
+            "name": "Cybersecurity",
+            "ticker": "BUG",
+            "rangeLow": 44.76,
+            "rangeHigh": 54.08
+          }
+        ],
+        "removesShort": [
+          {
+            "name": "Global Private Equity",
+            "ticker": "PSP",
+            "rangeLow": 55.18,
+            "rangeHigh": 60.5
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2026-11-04 10:29AM EST",
         "addsLong": [
@@ -5001,6 +8008,27 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_113424_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-11-05 10:25AM EST",
+        "addsLong": [
+          {
+            "name": "Tail Risk Strategy",
+            "ticker": "CAOS"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Malaysia",
+            "ticker": "EWM",
+            "rangeLow": 26.18,
+            "rangeHigh": 27.44
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_113478_UPDATE__2_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2026-11-05 10:25AM EST",
         "addsLong": [
@@ -5022,6 +8050,27 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_113510_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-11-06 10:11AM EST",
+        "addsLong": [
+          {
+            "name": "Real Estate",
+            "ticker": "XLRE"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "France",
+            "ticker": "EWQ",
+            "rangeLow": 40.06,
+            "rangeHigh": 44.0
+          }
+        ]
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_113564_UPDATE__2_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2026-11-06 10:11AM EST",
         "addsLong": [
@@ -5038,6 +8087,48 @@
             "ticker": "EWQ",
             "rangeLow": 40.06,
             "rangeHigh": 44.0
+          }
+        ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_113686_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-11-09 10:32AM EST",
+        "addsLong": [
+          {
+            "name": "Pricing Power",
+            "ticker": "POWA"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Gold Miners",
+            "ticker": "GDX",
+            "rangeLow": 75.81,
+            "rangeHigh": 89.44
+          }
+        ]
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_113743_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-11-09 10:32AM EST",
+        "addsLong": [
+          {
+            "name": "Pricing Power",
+            "ticker": "POWA"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": [
+          {
+            "name": "Gold Miners",
+            "ticker": "GDX",
+            "rangeLow": 75.81,
+            "rangeHigh": 89.44
           }
         ]
       },
@@ -5811,6 +8902,101 @@
       },
       {
         "type": "monthly",
+        "sourceFile": "monthly_111811_ETF_Pro_Plus__October_Update__Q4_2026_.txt",
+        "title": "October Update (Q4 2026)",
+        "reportDatetime": "2026-10-13 01:06PM EDT",
+        "quadCurrent": null,
+        "totalPositions": null,
+        "currentLineup": {
+          "long": [
+            "BUXX",
+            "CLOX",
+            "CLOZ",
+            "XLV",
+            "IGV",
+            "IBIT",
+            "DBMF",
+            "PFIX",
+            "BNO",
+            "CRAK",
+            "BWET",
+            "BUG",
+            "CRTC",
+            "XLK",
+            "TOPT",
+            "HTEC",
+            "JPXN",
+            "QQQ",
+            "FJP"
+          ],
+          "short": [
+            "QAT",
+            "LQD",
+            "TLT",
+            "PBD",
+            "XLU",
+            "ZROZ",
+            "JOJO",
+            "XLI",
+            "INDA",
+            "IWM",
+            "EWA",
+            "EWL",
+            "PSP",
+            "EWG",
+            "PALL",
+            "XLY",
+            "HYG",
+            "XLF",
+            "EWW",
+            "SLV",
+            "IPAY"
+          ]
+        },
+        "changes": {
+          "addedLongs": [
+            "BNO",
+            "CRAK",
+            "BWET",
+            "BUG",
+            "CRTC",
+            "XLK",
+            "TOPT",
+            "HTEC",
+            "JPXN",
+            "QQQ",
+            "FJP"
+          ],
+          "addedShorts": [
+            "PALL",
+            "XLY",
+            "HYG",
+            "XLF",
+            "EWW",
+            "SLV",
+            "IPAY"
+          ],
+          "flippedShortToLong": [],
+          "flippedLongToShort": [],
+          "removed": [
+            "AAAU",
+            "FXH",
+            "COLO",
+            "LVHI",
+            "MSOS",
+            "CORN",
+            "EWZ",
+            "XLE",
+            "JETS",
+            "PRN",
+            "JOET",
+            "SMH",
+            "UFO"
+          ]
+        }
+      },
+      {
+        "type": "monthly",
         "sourceFile": "monthly_111860_ETF_Pro_Plus__October_Update__Q4_2026_.txt",
         "title": "October Update (Q4 2026)",
         "reportDatetime": "2026-10-13 01:06PM EDT",
@@ -5901,6 +9087,112 @@
             "JOET",
             "SMH",
             "UFO"
+          ]
+        }
+      },
+      {
+        "type": "monthly",
+        "sourceFile": "monthly_113256_ETF_Pro_Plus__November_Update__Q4_2026_.txt",
+        "title": "November Update (Q4 2026)",
+        "reportDatetime": "2026-11-03 12:36PM EST",
+        "quadCurrent": null,
+        "totalPositions": null,
+        "currentLineup": {
+          "long": [
+            "BUXX",
+            "CLOX",
+            "XLV",
+            "BNO",
+            "BWET",
+            "BUG",
+            "HTEC",
+            "UUP",
+            "RSP",
+            "DJIA",
+            "HGER",
+            "ILS",
+            "XLP",
+            "LVHI",
+            "FXY",
+            "FTXG",
+            "IAK",
+            "BNDD"
+          ],
+          "short": [
+            "QAT",
+            "PBD",
+            "XLI",
+            "INDA",
+            "IWM",
+            "PSP",
+            "PALL",
+            "SLV",
+            "EWM",
+            "EPHE",
+            "EWQ",
+            "IDX",
+            "EWY",
+            "DRAM",
+            "GDX",
+            "GRNY",
+            "JETS",
+            "MEME"
+          ]
+        },
+        "changes": {
+          "addedLongs": [
+            "UUP",
+            "RSP",
+            "DJIA",
+            "HGER",
+            "ILS",
+            "XLP",
+            "LVHI",
+            "FXY",
+            "FTXG",
+            "IAK",
+            "BNDD"
+          ],
+          "addedShorts": [
+            "EWM",
+            "EPHE",
+            "EWQ",
+            "IDX",
+            "EWY",
+            "DRAM",
+            "GDX",
+            "GRNY",
+            "JETS",
+            "MEME"
+          ],
+          "flippedShortToLong": [],
+          "flippedLongToShort": [],
+          "removed": [
+            "CLOZ",
+            "IGV",
+            "IBIT",
+            "DBMF",
+            "PFIX",
+            "CRAK",
+            "CRTC",
+            "XLK",
+            "TOPT",
+            "JPXN",
+            "QQQ",
+            "FJP",
+            "LQD",
+            "TLT",
+            "XLU",
+            "ZROZ",
+            "JOJO",
+            "EWA",
+            "EWL",
+            "EWG",
+            "XLY",
+            "HYG",
+            "XLF",
+            "EWW",
+            "IPAY"
           ]
         }
       },
@@ -6376,8 +9668,20 @@
     {
       "date": "2026-10-09 10:56AM EDT",
       "type": "intraday",
+      "sourceFile": "intraday_111595_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Nasdaq 100 (QQQ), Japan (FJP)"
+    },
+    {
+      "date": "2026-10-09 10:56AM EDT",
+      "type": "intraday",
       "sourceFile": "intraday_111643_UPDATE__2_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Nasdaq 100 (QQQ), Japan (FJP)"
+    },
+    {
+      "date": "2026-10-11 04:35PM EDT",
+      "type": "weekly",
+      "sourceFile": "weekly_111719_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "summary": "Snapshot consolidado: 43 posições ativas (22 long / 21 short)"
     },
     {
       "date": "2026-10-11 04:35PM EDT",
@@ -6388,8 +9692,20 @@
     {
       "date": "2026-10-12 10:41AM EDT",
       "type": "intraday",
+      "sourceFile": "intraday_111748_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Removeu LONG: Quantum Tech (QTUM), Solana (SOLZ) | Removeu SHORT: Digital Payments (IPAY)"
+    },
+    {
+      "date": "2026-10-12 10:41AM EDT",
+      "type": "intraday",
       "sourceFile": "intraday_111797_UPDATE__3_New_ETF_Pro_Changes.txt",
       "summary": "Removeu LONG: Quantum Tech (QTUM), Solana (SOLZ) | Removeu SHORT: Digital Payments (IPAY)"
+    },
+    {
+      "date": "2026-10-13 01:06PM EDT",
+      "type": "monthly",
+      "sourceFile": "monthly_111811_ETF_Pro_Plus__October_Update__Q4_2026_.txt",
+      "summary": "[Quad N/D] Longs adicionados no mês: BNO, CRAK, BWET, BUG, CRTC, XLK, TOPT, HTEC, JPXN, QQQ, FJP | Shorts adicionados no mês: PALL, XLY, HYG, XLF, EWW, SLV, IPAY | Removidos no mês: AAAU, FXH, COLO, LVHI, MSOS, CORN, EWZ, XLE, JETS, PRN, JOET, SMH, UFO"
     },
     {
       "date": "2026-10-13 01:06PM EDT",
@@ -6400,8 +9716,20 @@
     {
       "date": "2026-10-13 10:29AM EDT",
       "type": "intraday",
+      "sourceFile": "intraday_111801_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: US Dollar Bullish (UUP) | Adicionou SHORT: Denmark (EDEN) | Removeu LONG: Ethereum (ETHA)"
+    },
+    {
+      "date": "2026-10-13 10:29AM EDT",
+      "type": "intraday",
       "sourceFile": "intraday_111850_UPDATE__3_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: US Dollar Bullish (UUP) | Adicionou SHORT: Denmark (EDEN) | Removeu LONG: Ethereum (ETHA)"
+    },
+    {
+      "date": "2026-10-14 10:28AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_111858_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Natural Gas (UNG), Hypergrowth (HYP)"
     },
     {
       "date": "2026-10-14 10:28AM EDT",
@@ -6412,8 +9740,20 @@
     {
       "date": "2026-10-15 11:13AM EDT",
       "type": "intraday",
+      "sourceFile": "intraday_111927_UPDATE__6_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Brazil (EWZ) | Adicionou SHORT: British Pound (FXB) | Removeu LONG: Japan (FJP), Hypergrowth (HYP) | Removeu SHORT: Utilities Sector (XLU), Consumer Discretionary (XLY)"
+    },
+    {
+      "date": "2026-10-15 11:13AM EDT",
+      "type": "intraday",
       "sourceFile": "intraday_111976_UPDATE__6_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Brazil (EWZ) | Adicionou SHORT: British Pound (FXB) | Removeu LONG: Japan (FJP), Hypergrowth (HYP) | Removeu SHORT: Utilities Sector (XLU), Consumer Discretionary (XLY)"
+    },
+    {
+      "date": "2026-10-16 11:55AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_112017_UPDATE__1_New_ETF_Pro_Change.txt",
+      "summary": "Removeu SHORT: Financials (XLF)"
     },
     {
       "date": "2026-10-16 11:55AM EDT",
@@ -6424,8 +9764,20 @@
     {
       "date": "2026-10-18 12:26PM EDT",
       "type": "weekly",
+      "sourceFile": "weekly_112122_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "summary": "Snapshot consolidado: 40 posições ativas (21 long / 19 short)"
+    },
+    {
+      "date": "2026-10-18 12:26PM EDT",
+      "type": "weekly",
       "sourceFile": "weekly_112171_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "summary": "Snapshot consolidado: 40 posições ativas (21 long / 19 short)"
+    },
+    {
+      "date": "2026-10-19 10:31AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_112160_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: S&P Equal Weight (RSP), Rising Rates Fixed Income (RISR) | Removeu SHORT: Australia Equities (EWA)"
     },
     {
       "date": "2026-10-19 10:31AM EDT",
@@ -6436,8 +9788,20 @@
     {
       "date": "2026-10-20 10:27AM EDT",
       "type": "intraday",
+      "sourceFile": "intraday_112232_UPDATE__9_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Dow Covered Call (DJIA) | Adicionou SHORT: Malaysia (EWM), Philippines (EPHE) | Removeu LONG: Japan (JPXN), Nasdaq 100 (QQQ), Natural Gas (UNG) | Removeu SHORT: Switzerland (EWL), Mexico (EWW), British Pound (FXB)"
+    },
+    {
+      "date": "2026-10-20 10:27AM EDT",
+      "type": "intraday",
       "sourceFile": "intraday_112282_UPDATE__9_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Dow Covered Call (DJIA) | Adicionou SHORT: Malaysia (EWM), Philippines (EPHE) | Removeu LONG: Japan (JPXN), Nasdaq 100 (QQQ), Natural Gas (UNG) | Removeu SHORT: Switzerland (EWL), Mexico (EWW), British Pound (FXB)"
+    },
+    {
+      "date": "2026-10-21 10:25AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_112309_UPDATE__7_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Commodity Strategy (HGER), Microsoft Income (MSFY) | Adicionou SHORT: France (EWQ), Indonesia (IDX), South Korea (EWY), Roundhill Memory (DRAM) | Removeu SHORT: Denmark (EDEN)"
     },
     {
       "date": "2026-10-21 10:25AM EDT",
@@ -6448,8 +9812,20 @@
     {
       "date": "2026-10-22 10:35AM EDT",
       "type": "intraday",
+      "sourceFile": "intraday_112388_UPDATE__5_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Catastrophe Bonds (ILS) | Removeu LONG: US Critical Tech (CRTC), Technology Sector (XLK) | Removeu SHORT: Long Treasury Bond (TLT), US Treasury Long (ZROZ)"
+    },
+    {
+      "date": "2026-10-22 10:35AM EDT",
+      "type": "intraday",
       "sourceFile": "intraday_112438_UPDATE__5_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Catastrophe Bonds (ILS) | Removeu LONG: US Critical Tech (CRTC), Technology Sector (XLK) | Removeu SHORT: Long Treasury Bond (TLT), US Treasury Long (ZROZ)"
+    },
+    {
+      "date": "2026-10-23 10:57AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_112459_UPDATE__7_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Consumer Staples (XLP), International High Dividend (LVHI) | Adicionou SHORT: Quality Momentum (JOET) | Removeu LONG: CLOs (CLOZ), Top 20 US Stocks (TOPT), Rising Rates Fixed Income (RISR) | Removeu SHORT: US Corporate Bonds (LQD)"
     },
     {
       "date": "2026-10-23 10:57AM EDT",
@@ -6460,8 +9836,20 @@
     {
       "date": "2026-10-25 12:01PM EDT",
       "type": "weekly",
+      "sourceFile": "weekly_112574_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "summary": "Snapshot consolidado: 39 posições ativas (21 long / 18 short)"
+    },
+    {
+      "date": "2026-10-25 12:01PM EDT",
+      "type": "weekly",
       "sourceFile": "weekly_112625_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "summary": "Snapshot consolidado: 39 posições ativas (21 long / 18 short)"
+    },
+    {
+      "date": "2026-10-26 10:34AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_112627_UPDATE__4_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Japanese Yen (FXY), Food & Beverage (FTXG) | Adicionou SHORT: Small Cap Growth (ISCG) | Removeu LONG: Brazil (EWZ)"
     },
     {
       "date": "2026-10-26 10:34AM EDT",
@@ -6472,8 +9860,20 @@
     {
       "date": "2026-10-27 10:32AM EDT",
       "type": "intraday",
+      "sourceFile": "intraday_112713_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou SHORT: Gold Miners (GDX), \"Granny Shots\" U.S. Large Cap (GRNY) | Removeu LONG: Bitcoin (IBIT)"
+    },
+    {
+      "date": "2026-10-27 10:32AM EDT",
+      "type": "intraday",
       "sourceFile": "intraday_112765_UPDATE__3_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou SHORT: Gold Miners (GDX), \"Granny Shots\" U.S. Large Cap (GRNY) | Removeu LONG: Bitcoin (IBIT)"
+    },
+    {
+      "date": "2026-10-28 10:25AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_112809_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: US Insurance (IAK) | Adicionou SHORT: Global Airlines (JETS)"
     },
     {
       "date": "2026-10-28 10:25AM EDT",
@@ -6484,8 +9884,20 @@
     {
       "date": "2026-10-29 10:31AM EDT",
       "type": "intraday",
+      "sourceFile": "intraday_112893_UPDATE__5_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou SHORT: Meme (MEME) | Removeu LONG: Oil Refiners (CRAK), Microsoft Income (MSFY) | Removeu SHORT: Germany (EWG), Quality Momentum (JOET)"
+    },
+    {
+      "date": "2026-10-29 10:31AM EDT",
+      "type": "intraday",
       "sourceFile": "intraday_112945_UPDATE__5_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou SHORT: Meme (MEME) | Removeu LONG: Oil Refiners (CRAK), Microsoft Income (MSFY) | Removeu SHORT: Germany (EWG), Quality Momentum (JOET)"
+    },
+    {
+      "date": "2026-10-30 10:39AM EDT",
+      "type": "intraday",
+      "sourceFile": "intraday_112999_UPDATE__7_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: US Deflation (BNDD) | Removeu LONG: Tech Software (IGV), Managed Futures (DBMF), Interest Rate Hedge (PFIX) | Removeu SHORT: Credit Rotation (JOJO), High Yield Bonds (HYG), Small Cap Growth (ISCG)"
     },
     {
       "date": "2026-10-30 10:39AM EDT",
@@ -6496,8 +9908,20 @@
     {
       "date": "2026-11-01 04:21PM EST",
       "type": "weekly",
+      "sourceFile": "weekly_113134_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "summary": "Snapshot consolidado: 36 posições ativas (18 long / 18 short)"
+    },
+    {
+      "date": "2026-11-01 04:21PM EST",
+      "type": "weekly",
       "sourceFile": "weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "summary": "Snapshot consolidado: 36 posições ativas (18 long / 18 short)"
+    },
+    {
+      "date": "2026-11-02 10:16AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_113165_UPDATE__1_New_ETF_Pro_Change.txt",
+      "summary": "Removeu SHORT: Qatar (QAT)"
     },
     {
       "date": "2026-11-02 10:16AM EST",
@@ -6508,8 +9932,20 @@
     {
       "date": "2026-11-03 10:22AM EST",
       "type": "intraday",
+      "sourceFile": "intraday_113245_UPDATE__11_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: US Market Neutral (BTAL), US Treasury Long (ZROZ), US Min Vol (USMV), Core Plus Bond (JCPB) | Adicionou SHORT: Hedge Fund VIP (GVIP) | Removeu LONG: Tanker Shipping (BWET), Dow Covered Call (DJIA), Commodity Strategy (HGER), Japanese Yen (FXY) | Removeu SHORT: India (INDA), Global Airlines (JETS)"
+    },
+    {
+      "date": "2026-11-03 10:22AM EST",
+      "type": "intraday",
       "sourceFile": "intraday_113299_UPDATE__11_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: US Market Neutral (BTAL), US Treasury Long (ZROZ), US Min Vol (USMV), Core Plus Bond (JCPB) | Adicionou SHORT: Hedge Fund VIP (GVIP) | Removeu LONG: Tanker Shipping (BWET), Dow Covered Call (DJIA), Commodity Strategy (HGER), Japanese Yen (FXY) | Removeu SHORT: India (INDA), Global Airlines (JETS)"
+    },
+    {
+      "date": "2026-11-03 12:36PM EST",
+      "type": "monthly",
+      "sourceFile": "monthly_113256_ETF_Pro_Plus__November_Update__Q4_2026_.txt",
+      "summary": "[Quad N/D] Longs adicionados no mês: UUP, RSP, DJIA, HGER, ILS, XLP, LVHI, FXY, FTXG, IAK, BNDD | Shorts adicionados no mês: EWM, EPHE, EWQ, IDX, EWY, DRAM, GDX, GRNY, JETS, MEME | Removidos no mês: CLOZ, IGV, IBIT, DBMF, PFIX, CRAK, CRTC, XLK, TOPT, JPXN, QQQ, FJP, LQD, TLT, XLU, ZROZ, JOJO, EWA, EWL, EWG, XLY, HYG, XLF, EWW, IPAY"
     },
     {
       "date": "2026-11-03 12:36PM EST",
@@ -6520,8 +9956,20 @@
     {
       "date": "2026-11-04 10:29AM EST",
       "type": "intraday",
+      "sourceFile": "intraday_113319_UPDATE__8_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Utilities Sector (XLU), Long Treasury Bond (TLT) | Adicionou SHORT: Euro (FXE), Nasdaq 100 (QQQ), Lithium Tech (LIT) | Removeu LONG: Brent Oil (BNO), Cybersecurity (BUG) | Removeu SHORT: Global Private Equity (PSP)"
+    },
+    {
+      "date": "2026-11-04 10:29AM EST",
+      "type": "intraday",
       "sourceFile": "intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Utilities Sector (XLU), Long Treasury Bond (TLT) | Adicionou SHORT: Euro (FXE), Nasdaq 100 (QQQ), Lithium Tech (LIT) | Removeu LONG: Brent Oil (BNO), Cybersecurity (BUG) | Removeu SHORT: Global Private Equity (PSP)"
+    },
+    {
+      "date": "2026-11-05 10:25AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_113424_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Tail Risk Strategy (CAOS) | Removeu SHORT: Malaysia (EWM)"
     },
     {
       "date": "2026-11-05 10:25AM EST",
@@ -6532,8 +9980,38 @@
     {
       "date": "2026-11-06 10:11AM EST",
       "type": "intraday",
+      "sourceFile": "intraday_113510_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Real Estate (XLRE) | Removeu SHORT: France (EWQ)"
+    },
+    {
+      "date": "2026-11-06 10:11AM EST",
+      "type": "intraday",
       "sourceFile": "intraday_113564_UPDATE__2_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Real Estate (XLRE) | Removeu SHORT: France (EWQ)"
+    },
+    {
+      "date": "2026-11-08 07:13PM EST",
+      "type": "weekly",
+      "sourceFile": "weekly_113642_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "summary": "Snapshot consolidado: 36 posições ativas (20 long / 16 short)"
+    },
+    {
+      "date": "2026-11-08 07:13PM EST",
+      "type": "weekly",
+      "sourceFile": "weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "summary": "Snapshot consolidado: 36 posições ativas (20 long / 16 short)"
+    },
+    {
+      "date": "2026-11-09 10:32AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_113686_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Pricing Power (POWA) | Removeu SHORT: Gold Miners (GDX)"
+    },
+    {
+      "date": "2026-11-09 10:32AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_113743_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Pricing Power (POWA) | Removeu SHORT: Gold Miners (GDX)"
     }
   ],
   "currentLineup": [
@@ -6543,11 +10021,11 @@
       "side": "long",
       "dateAdded": "10/25/2023",
       "assetClass": "Domestic Fixed Income",
-      "entryPrice": 20.22,
+      "entryPrice": 20.19,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 20.12,
+      "rangeLow": 20.13,
       "rangeHigh": 20.25,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 3.0,
         "midPct": 6.5,
@@ -6565,11 +10043,11 @@
       "side": "long",
       "dateAdded": "3/6/2025",
       "assetClass": "Fixed Income",
-      "entryPrice": 25.61,
+      "entryPrice": 25.55,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 25.54,
-      "rangeHigh": 25.65,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 25.48,
+      "rangeHigh": 25.6,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 3.0,
         "midPct": 6.5,
@@ -6587,11 +10065,11 @@
       "side": "long",
       "dateAdded": "6/17/2026",
       "assetClass": "Domestic Equities",
-      "entryPrice": 184.87,
+      "entryPrice": 184.8,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 175.0,
-      "rangeHigh": 189.0,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 176.0,
+      "rangeHigh": 191.0,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 2.0,
         "midPct": 4.0,
@@ -6609,11 +10087,11 @@
       "side": "long",
       "dateAdded": "10/2/2026",
       "assetClass": "Global Equities",
-      "entryPrice": 45.5,
+      "entryPrice": 44.7,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 43.5,
-      "rangeHigh": 46.99,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 43.53,
+      "rangeHigh": 47.1,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 2.0,
         "midPct": 4.0,
@@ -6632,11 +10110,11 @@
       "side": "long",
       "dateAdded": "10/13/2026",
       "assetClass": "Foreign Currencies",
-      "entryPrice": 29.0,
+      "entryPrice": 29.13,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 28.74,
-      "rangeHigh": 29.24,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 28.8,
+      "rangeHigh": 29.5,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 4.0,
         "midPct": 8.0,
@@ -6651,15 +10129,15 @@
     },
     {
       "ticker": "RSP",
-      "name": "P Equal Weight",
+      "name": "S&P Equal Weight",
       "side": "long",
       "dateAdded": "10/19/2026",
       "assetClass": "Domestic Equities",
-      "entryPrice": 218.31,
+      "entryPrice": 216.05,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 212.0,
-      "rangeHigh": 220.0,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 213.0,
+      "rangeHigh": 223.0,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 2.0,
         "midPct": 4.0,
@@ -6678,11 +10156,11 @@
       "side": "long",
       "dateAdded": "10/22/2026",
       "assetClass": "Fixed Income",
-      "entryPrice": 20.32,
+      "entryPrice": 20.35,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 20.22,
-      "rangeHigh": 20.44,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 20.25,
+      "rangeHigh": 20.41,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 3.0,
         "midPct": 6.5,
@@ -6700,11 +10178,11 @@
       "side": "long",
       "dateAdded": "10/23/2026",
       "assetClass": "Domestic Equities",
-      "entryPrice": 89.42,
+      "entryPrice": 90.08,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 85.0,
-      "rangeHigh": 92.0,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 86.0,
+      "rangeHigh": 93.0,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 2.0,
         "midPct": 4.0,
@@ -6722,11 +10200,11 @@
       "side": "long",
       "dateAdded": "10/23/2026",
       "assetClass": "International Equities",
-      "entryPrice": 43.18,
+      "entryPrice": 42.85,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 42.49,
-      "rangeHigh": 43.97,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 42.43,
+      "rangeHigh": 43.75,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 2.0,
         "midPct": 4.0,
@@ -6741,15 +10219,15 @@
     },
     {
       "ticker": "FTXG",
-      "name": "Beverage",
+      "name": "Food & Beverage",
       "side": "long",
       "dateAdded": "10/26/2026",
       "assetClass": "Domestic Equities",
-      "entryPrice": 22.83,
+      "entryPrice": 23.19,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 22.0,
-      "rangeHigh": 23.51,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 22.22,
+      "rangeHigh": 23.96,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 2.0,
         "midPct": 4.0,
@@ -6768,11 +10246,11 @@
       "side": "long",
       "dateAdded": "10/28/2026",
       "assetClass": "Domestic Equities",
-      "entryPrice": 148.83,
+      "entryPrice": 148.7,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
       "rangeLow": 144.0,
-      "rangeHigh": 152.0,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeHigh": 155.0,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 2.0,
         "midPct": 4.0,
@@ -6791,14 +10269,195 @@
       "side": "long",
       "dateAdded": "10/30/2026",
       "assetClass": "US Fixed Income",
-      "entryPrice": 98.9,
+      "entryPrice": 98.48,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 96.13,
-      "rangeHigh": 99.4,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 97.16,
+      "rangeHigh": 99.22,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "BTAL",
+      "name": "US Market Neutral",
+      "side": "long",
+      "dateAdded": "11/3/2026",
+      "assetClass": "Domestic Equities",
+      "entryPrice": 13.25,
+      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
+      "rangeLow": 12.72,
+      "rangeHigh": 13.76,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "allowedBand": {
+        "minPct": 2.0,
+        "midPct": 4.0,
+        "maxPct": 6.0,
+        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
+      },
+      "nativeQuads": [
+        1,
+        2
+      ],
+      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
+    },
+    {
+      "ticker": "ZROZ",
+      "name": "US Treasury Long",
+      "side": "long",
+      "dateAdded": "11/3/2026",
+      "assetClass": "Domestic Fixed Income",
+      "entryPrice": 59.04,
+      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
+      "rangeLow": 57.45,
+      "rangeHigh": 59.57,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "allowedBand": {
+        "minPct": 3.0,
+        "midPct": 6.5,
+        "maxPct": 10.0,
+        "label": "Renda Fixa"
+      },
+      "nativeQuads": [
+        4
+      ],
+      "quadNote": "Long — alinhado com Q4 (Best Asset Class/Setor nesses regimes)"
+    },
+    {
+      "ticker": "USMV",
+      "name": "US Min Vol",
+      "side": "long",
+      "dateAdded": "11/3/2026",
+      "assetClass": "Domestic Equities",
+      "entryPrice": 101.23,
+      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
+      "rangeLow": 100.0,
+      "rangeHigh": 105.0,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "allowedBand": {
+        "minPct": 2.0,
+        "midPct": 4.0,
+        "maxPct": 6.0,
+        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
+      },
+      "nativeQuads": [
+        1,
+        2
+      ],
+      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
+    },
+    {
+      "ticker": "JCPB",
+      "name": "Core Plus Bond",
+      "side": "long",
+      "dateAdded": "11/3/2026",
+      "assetClass": "Domestic Fixed Income",
+      "entryPrice": 45.6,
+      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
+      "rangeLow": 45.1,
+      "rangeHigh": 45.83,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "allowedBand": {
+        "minPct": 3.0,
+        "midPct": 6.5,
+        "maxPct": 10.0,
+        "label": "Renda Fixa"
+      },
+      "nativeQuads": [
+        4
+      ],
+      "quadNote": "Long — alinhado com Q4 (Best Asset Class/Setor nesses regimes)"
+    },
+    {
+      "ticker": "XLU",
+      "name": "Utilities Sector",
+      "side": "long",
+      "dateAdded": "11/4/2026",
+      "assetClass": "Domestic Equities",
+      "entryPrice": 43.13,
+      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
+      "rangeLow": 42.32,
+      "rangeHigh": 44.11,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "allowedBand": {
+        "minPct": 2.0,
+        "midPct": 4.0,
+        "maxPct": 6.0,
+        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
+      },
+      "nativeQuads": [
+        3,
+        4
+      ],
+      "quadNote": "Long — alinhado com Q3/Q4 (Best Asset Class/Setor nesses regimes)"
+    },
+    {
+      "ticker": "TLT",
+      "name": "Long Treasury Bond",
+      "side": "long",
+      "dateAdded": "11/4/2026",
+      "assetClass": "Domestic Fixed Income",
+      "entryPrice": 81.92,
+      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
+      "rangeLow": 80.45,
+      "rangeHigh": 82.46,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "allowedBand": {
+        "minPct": 3.0,
+        "midPct": 6.5,
+        "maxPct": 10.0,
+        "label": "Renda Fixa"
+      },
+      "nativeQuads": [
+        4
+      ],
+      "quadNote": "Long — alinhado com Q4 (Best Asset Class/Setor nesses regimes)"
+    },
+    {
+      "ticker": "CAOS",
+      "name": "Tail Risk Strategy",
+      "side": "long",
+      "dateAdded": "11/5/2026",
+      "assetClass": "Domestic Equities",
+      "entryPrice": 91.81,
+      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
+      "rangeLow": 91.25,
+      "rangeHigh": 92.12,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "allowedBand": {
+        "minPct": 2.0,
+        "midPct": 4.0,
+        "maxPct": 6.0,
+        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
+      },
+      "nativeQuads": [
+        1,
+        2
+      ],
+      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
+    },
+    {
+      "ticker": "XLRE",
+      "name": "Real Estate",
+      "side": "long",
+      "dateAdded": "11/6/2026",
+      "assetClass": "Domestic Equities",
+      "entryPrice": 44.0,
+      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
+      "rangeLow": 42.76,
+      "rangeHigh": 45.36,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "allowedBand": {
+        "minPct": 2.0,
+        "midPct": 4.0,
+        "maxPct": 6.0,
+        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
+      },
+      "nativeQuads": [
+        3,
+        4
+      ],
+      "quadNote": "Long — alinhado com Q3/Q4 (Best Asset Class/Setor nesses regimes)"
     },
     {
       "ticker": "PBD",
@@ -6806,11 +10465,11 @@
       "side": "short",
       "dateAdded": "8/5/2026",
       "assetClass": "Global Equities",
-      "entryPrice": 15.0,
+      "entryPrice": 15.14,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 14.09,
-      "rangeHigh": 15.9,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 14.2,
+      "rangeHigh": 15.84,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 1.0,
         "midPct": 2.0,
@@ -6829,11 +10488,11 @@
       "side": "short",
       "dateAdded": "9/8/2026",
       "assetClass": "Domestic Equities",
-      "entryPrice": 167.4,
+      "entryPrice": 162.67,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 160.0,
-      "rangeHigh": 171.0,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 158.0,
+      "rangeHigh": 170.0,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 1.0,
         "midPct": 2.0,
@@ -6852,11 +10511,11 @@
       "side": "short",
       "dateAdded": "9/14/2026",
       "assetClass": "Domestic Equities",
-      "entryPrice": 279.33,
+      "entryPrice": 273.67,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 270.0,
-      "rangeHigh": 285.0,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 265.0,
+      "rangeHigh": 283.0,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 1.0,
         "midPct": 2.0,
@@ -6875,11 +10534,11 @@
       "side": "short",
       "dateAdded": "9/21/2026",
       "assetClass": "Commodities",
-      "entryPrice": 17.78,
+      "entryPrice": 18.56,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 17.09,
-      "rangeHigh": 20.21,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 16.55,
+      "rangeHigh": 19.57,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 0.5,
         "midPct": 1.25,
@@ -6899,11 +10558,11 @@
       "side": "short",
       "dateAdded": "9/30/2026",
       "assetClass": "Commodities",
-      "entryPrice": 44.6,
+      "entryPrice": 46.87,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 43.65,
-      "rangeHigh": 51.79,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 43.46,
+      "rangeHigh": 49.99,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 0.5,
         "midPct": 1.25,
@@ -6923,11 +10582,11 @@
       "side": "short",
       "dateAdded": "10/20/2026",
       "assetClass": "Emerging Markets Equities",
-      "entryPrice": 22.33,
+      "entryPrice": 22.9,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 21.3,
-      "rangeHigh": 23.14,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 21.98,
+      "rangeHigh": 23.16,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 1.0,
         "midPct": 2.0,
@@ -6946,11 +10605,11 @@
       "side": "short",
       "dateAdded": "10/21/2026",
       "assetClass": "Emerging Markets Equities",
-      "entryPrice": 8.79,
+      "entryPrice": 8.89,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 8.32,
-      "rangeHigh": 9.47,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 8.37,
+      "rangeHigh": 9.36,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 1.0,
         "midPct": 2.0,
@@ -6969,11 +10628,11 @@
       "side": "short",
       "dateAdded": "10/21/2026",
       "assetClass": "Emerging Markets Equities",
-      "entryPrice": 152.89,
+      "entryPrice": 137.01,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 143.0,
-      "rangeHigh": 164.0,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 128.0,
+      "rangeHigh": 158.0,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 1.0,
         "midPct": 2.0,
@@ -6992,11 +10651,11 @@
       "side": "short",
       "dateAdded": "10/21/2026",
       "assetClass": "Domestic Equities",
-      "entryPrice": 48.01,
+      "entryPrice": 39.29,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 44.06,
-      "rangeHigh": 54.11,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 35.12,
+      "rangeHigh": 46.65,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 1.0,
         "midPct": 2.0,
@@ -7010,34 +10669,16 @@
       "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
     },
     {
-      "ticker": "GDX",
-      "name": "Gold Miners",
-      "side": "short",
-      "dateAdded": "10/27/2026",
-      "assetClass": "International Equity",
-      "entryPrice": 77.09,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 75.81,
-      "rangeHigh": 85.78,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": null,
-      "nativeQuads": [
-        3,
-        4
-      ],
-      "quadNote": "Short — aposta CONTRA Q3/Q4 (histórico de força nesses regimes)"
-    },
-    {
       "ticker": "GRNY",
-      "name": "U.S. Large Cap",
+      "name": "\"Granny Shots\" U.S. Large Cap",
       "side": "short",
       "dateAdded": "10/27/2026",
       "assetClass": "Domestic Equities",
-      "entryPrice": 26.58,
+      "entryPrice": 25.18,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 26.03,
-      "rangeHigh": 27.51,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 24.06,
+      "rangeHigh": 26.53,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 1.0,
         "midPct": 2.0,
@@ -7056,11 +10697,11 @@
       "side": "short",
       "dateAdded": "10/29/2026",
       "assetClass": "Domestic Equities",
-      "entryPrice": 6.37,
+      "entryPrice": 5.5,
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 5.98,
-      "rangeHigh": 7.12,
-      "sourceOfEntry": "weekly:weekly_113187_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "rangeLow": 4.67,
+      "rangeHigh": 6.87,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 1.0,
         "midPct": 2.0,
@@ -7074,154 +10715,85 @@
       "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
     },
     {
-      "ticker": "BTAL",
-      "name": "US Market Neutral",
-      "side": "long",
-      "dateAdded": "2026-11-03 10:22AM EST",
-      "assetClass": null,
-      "entryPrice": 13.13,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_113299_UPDATE__11_New_ETF_Pro_Changes.txt",
-      "allowedBand": null,
-      "nativeQuads": [],
-      "quadNote": "N/D (sem classificação de setor/classe confiável)"
-    },
-    {
-      "ticker": "ZROZ",
-      "name": "US Treasury Long",
-      "side": "long",
-      "dateAdded": "2026-11-03 10:22AM EST",
-      "assetClass": null,
-      "entryPrice": 58.13,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_113299_UPDATE__11_New_ETF_Pro_Changes.txt",
-      "allowedBand": null,
-      "nativeQuads": [],
-      "quadNote": "N/D (sem classificação de setor/classe confiável)"
-    },
-    {
-      "ticker": "USMV",
-      "name": "US Min Vol",
-      "side": "long",
-      "dateAdded": "2026-11-03 10:22AM EST",
-      "assetClass": null,
-      "entryPrice": 102.72,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_113299_UPDATE__11_New_ETF_Pro_Changes.txt",
-      "allowedBand": null,
-      "nativeQuads": [],
-      "quadNote": "N/D (sem classificação de setor/classe confiável)"
-    },
-    {
-      "ticker": "JCPB",
-      "name": "Core Plus Bond",
-      "side": "long",
-      "dateAdded": "2026-11-03 10:22AM EST",
-      "assetClass": null,
-      "entryPrice": 45.36,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_113299_UPDATE__11_New_ETF_Pro_Changes.txt",
-      "allowedBand": null,
-      "nativeQuads": [],
-      "quadNote": "N/D (sem classificação de setor/classe confiável)"
-    },
-    {
       "ticker": "GVIP",
       "name": "Hedge Fund VIP",
       "side": "short",
-      "dateAdded": "2026-11-03 10:22AM EST",
-      "assetClass": null,
-      "entryPrice": 160.686,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_113299_UPDATE__11_New_ETF_Pro_Changes.txt",
-      "allowedBand": null,
-      "nativeQuads": [],
-      "quadNote": "N/D (sem classificação de setor/classe confiável)"
-    },
-    {
-      "ticker": "XLU",
-      "name": "Utilities Sector",
-      "side": "long",
-      "dateAdded": "2026-11-04 10:29AM EST",
-      "assetClass": null,
-      "entryPrice": 43.61,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
-      "allowedBand": null,
+      "dateAdded": "11/3/2026",
+      "assetClass": "Global Equities",
+      "entryPrice": 155.34,
+      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
+      "rangeLow": 149.0,
+      "rangeHigh": 163.0,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "allowedBand": {
+        "minPct": 1.0,
+        "midPct": 2.0,
+        "maxPct": 3.0,
+        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
+      },
       "nativeQuads": [
-        3,
-        4
+        1,
+        2
       ],
-      "quadNote": "Long — alinhado com Q3/Q4 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "TLT",
-      "name": "Long Treasury Bond",
-      "side": "long",
-      "dateAdded": "2026-11-04 10:29AM EST",
-      "assetClass": null,
-      "entryPrice": 81.76,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
-      "allowedBand": null,
-      "nativeQuads": [],
-      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
     },
     {
       "ticker": "FXE",
       "name": "Euro",
       "side": "short",
-      "dateAdded": "2026-11-04 10:29AM EST",
-      "assetClass": null,
-      "entryPrice": 103.61,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
-      "allowedBand": null,
-      "nativeQuads": [],
-      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+      "dateAdded": "11/4/2026",
+      "assetClass": "Foreign Currencies",
+      "entryPrice": 102.77,
+      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
+      "rangeLow": 100.0,
+      "rangeHigh": 103.0,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "allowedBand": {
+        "minPct": 2.0,
+        "midPct": 4.0,
+        "maxPct": 6.0,
+        "label": "Moeda Estrangeira — Short (extrapolado, metade da banda Long)"
+      },
+      "nativeQuads": [
+        1,
+        2
+      ],
+      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
     },
     {
       "ticker": "QQQ",
       "name": "Nasdaq 100",
       "side": "short",
-      "dateAdded": "2026-11-04 10:29AM EST",
-      "assetClass": null,
-      "entryPrice": 691.95,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
-      "allowedBand": null,
-      "nativeQuads": [],
-      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+      "dateAdded": "11/4/2026",
+      "assetClass": "Domestic Equities",
+      "entryPrice": 656.1,
+      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
+      "rangeLow": 635.0,
+      "rangeHigh": 690.0,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
+      "allowedBand": {
+        "minPct": 1.0,
+        "midPct": 2.0,
+        "maxPct": 3.0,
+        "label": "Perna Short de book Long/Short em ETFs (ex.: ETF Pro Plus)"
+      },
+      "nativeQuads": [
+        1,
+        2
+      ],
+      "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
     },
     {
       "ticker": "LIT",
       "name": "Lithium Tech",
       "side": "short",
-      "dateAdded": "2026-11-04 10:29AM EST",
-      "assetClass": null,
-      "entryPrice": 61.88,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_113373_UPDATE__8_New_ETF_Pro_Changes.txt",
+      "dateAdded": "11/4/2026",
+      "assetClass": "Global Equities *All ETF recent intra day prices data through 11/8/2026",
+      "entryPrice": 60.91,
+      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
+      "rangeLow": 57.91,
+      "rangeHigh": 63.24,
+      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": null,
       "nativeQuads": [
         1,
@@ -7230,37 +10802,19 @@
       "quadNote": "Short — aposta CONTRA Q1/Q2 (histórico de força nesses regimes)"
     },
     {
-      "ticker": "CAOS",
-      "name": "Tail Risk Strategy",
+      "ticker": "POWA",
+      "name": "Pricing Power",
       "side": "long",
-      "dateAdded": "2026-11-05 10:25AM EST",
+      "dateAdded": "2026-11-09 10:32AM EST",
       "assetClass": null,
-      "entryPrice": 92.0,
+      "entryPrice": 94.669,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_113478_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "sourceOfEntry": "intraday:intraday_113743_UPDATE__2_New_ETF_Pro_Changes.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
-    },
-    {
-      "ticker": "XLRE",
-      "name": "Real Estate",
-      "side": "long",
-      "dateAdded": "2026-11-06 10:11AM EST",
-      "assetClass": null,
-      "entryPrice": 44.285,
-      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
-      "rangeLow": null,
-      "rangeHigh": null,
-      "sourceOfEntry": "intraday:intraday_113564_UPDATE__2_New_ETF_Pro_Changes.txt",
-      "allowedBand": null,
-      "nativeQuads": [
-        3,
-        4
-      ],
-      "quadNote": "Long — alinhado com Q3/Q4 (Best Asset Class/Setor nesses regimes)"
     }
   ],
   "lineupSnapshots": [],

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T12:46:58.752762",
+  "generatedAt": "2026-11-09T18:36:18.233142",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -77,7 +77,7 @@
           "periodStart": "2024-02-01",
           "periodEnd": "2024-02-29",
           "priceStart": 17.6852,
-          "priceEnd": 17.7333,
+          "priceEnd": 17.7332,
           "returnPct": 0.272
         }
       ]
@@ -188,7 +188,7 @@
           "side": "long",
           "periodStart": "2024-09-01",
           "periodEnd": "2024-09-30",
-          "priceStart": 18.3003,
+          "priceStart": 18.3002,
           "priceEnd": 18.4022,
           "returnPct": 0.557
         }
@@ -213,7 +213,7 @@
     {
       "month": "2024-11",
       "activePositions": 1,
-      "monthlyReturnPct": 0.504,
+      "monthlyReturnPct": 0.503,
       "details": [
         {
           "ticker": "BUXX",
@@ -222,7 +222,7 @@
           "periodEnd": "2024-11-30",
           "priceStart": 18.4656,
           "priceEnd": 18.5585,
-          "returnPct": 0.504
+          "returnPct": 0.503
         }
       ]
     },
@@ -245,7 +245,7 @@
     {
       "month": "2025-01",
       "activePositions": 1,
-      "monthlyReturnPct": 0.503,
+      "monthlyReturnPct": 0.504,
       "details": [
         {
           "ticker": "BUXX",
@@ -254,7 +254,7 @@
           "periodEnd": "2025-01-31",
           "priceStart": 18.6198,
           "priceEnd": 18.7135,
-          "returnPct": 0.503
+          "returnPct": 0.504
         }
       ]
     },
@@ -302,8 +302,8 @@
           "side": "long",
           "periodStart": "2025-03-06",
           "periodEnd": "2025-03-31",
-          "priceStart": 23.6399,
-          "priceEnd": 23.6029,
+          "priceStart": 23.543,
+          "priceEnd": 23.5061,
           "returnPct": -0.157
         },
         {
@@ -336,8 +336,8 @@
           "side": "long",
           "periodStart": "2025-04-01",
           "periodEnd": "2025-04-30",
-          "priceStart": 23.6122,
-          "priceEnd": 23.6382,
+          "priceStart": 23.5154,
+          "priceEnd": 23.5413,
           "returnPct": 0.11
         },
         {
@@ -370,8 +370,8 @@
           "side": "long",
           "periodStart": "2025-05-01",
           "periodEnd": "2025-05-31",
-          "priceStart": 23.5824,
-          "priceEnd": 23.8615,
+          "priceStart": 23.4858,
+          "priceEnd": 23.7636,
           "returnPct": 1.183
         },
         {
@@ -404,8 +404,8 @@
           "side": "long",
           "periodStart": "2025-06-01",
           "periodEnd": "2025-06-30",
-          "priceStart": 23.9128,
-          "priceEnd": 23.9831,
+          "priceStart": 23.8148,
+          "priceEnd": 23.8847,
           "returnPct": 0.294
         },
         {
@@ -438,8 +438,8 @@
           "side": "long",
           "periodStart": "2025-07-01",
           "periodEnd": "2025-07-31",
-          "priceStart": 23.9831,
-          "priceEnd": 24.0574,
+          "priceStart": 23.8847,
+          "priceEnd": 23.9587,
           "returnPct": 0.31
         },
         {
@@ -472,8 +472,8 @@
           "side": "long",
           "periodStart": "2025-08-01",
           "periodEnd": "2025-08-31",
-          "priceStart": 24.0508,
-          "priceEnd": 24.219,
+          "priceStart": 23.9522,
+          "priceEnd": 24.1197,
           "returnPct": 0.699
         },
         {
@@ -506,8 +506,8 @@
           "side": "long",
           "periodStart": "2025-09-01",
           "periodEnd": "2025-09-30",
-          "priceStart": 24.1935,
-          "priceEnd": 24.2732,
+          "priceStart": 24.0943,
+          "priceEnd": 24.1737,
           "returnPct": 0.33
         },
         {
@@ -540,8 +540,8 @@
           "side": "long",
           "periodStart": "2025-10-01",
           "periodEnd": "2025-10-31",
-          "priceStart": 24.314,
-          "priceEnd": 24.377,
+          "priceStart": 24.2143,
+          "priceEnd": 24.277,
           "returnPct": 0.259
         },
         {
@@ -574,8 +574,8 @@
           "side": "long",
           "periodStart": "2025-11-01",
           "periodEnd": "2025-11-30",
-          "priceStart": 24.4008,
-          "priceEnd": 24.5081,
+          "priceStart": 24.3007,
+          "priceEnd": 24.4076,
           "returnPct": 0.44
         },
         {
@@ -608,8 +608,8 @@
           "side": "long",
           "periodStart": "2025-12-01",
           "periodEnd": "2025-12-31",
-          "priceStart": 24.5128,
-          "priceEnd": 24.6265,
+          "priceStart": 24.4123,
+          "priceEnd": 24.5255,
           "returnPct": 0.464
         },
         {
@@ -642,8 +642,8 @@
           "side": "long",
           "periodStart": "2026-01-01",
           "periodEnd": "2026-01-31",
-          "priceStart": 24.6274,
-          "priceEnd": 24.7375,
+          "priceStart": 24.5265,
+          "priceEnd": 24.6361,
           "returnPct": 0.447
         },
         {
@@ -676,8 +676,8 @@
           "side": "long",
           "periodStart": "2026-02-01",
           "periodEnd": "2026-02-28",
-          "priceStart": 24.7472,
-          "priceEnd": 24.8189,
+          "priceStart": 24.6457,
+          "priceEnd": 24.7171,
           "returnPct": 0.29
         },
         {
@@ -710,8 +710,8 @@
           "side": "long",
           "periodStart": "2026-03-01",
           "periodEnd": "2026-03-31",
-          "priceStart": 24.8237,
-          "priceEnd": 24.8743,
+          "priceStart": 24.722,
+          "priceEnd": 24.7723,
           "returnPct": 0.204
         },
         {
@@ -727,8 +727,8 @@
     },
     {
       "month": "2026-04",
-      "activePositions": 4,
-      "monthlyReturnPct": -0.312,
+      "activePositions": 5,
+      "monthlyReturnPct": -0.047,
       "details": [
         {
           "ticker": "BUXX",
@@ -744,8 +744,8 @@
           "side": "long",
           "periodStart": "2026-04-01",
           "periodEnd": "2026-04-30",
-          "priceStart": 24.884,
-          "priceEnd": 25.0501,
+          "priceStart": 24.782,
+          "priceEnd": 24.9474,
           "returnPct": 0.667
         },
         {
@@ -762,16 +762,25 @@
           "side": "long",
           "periodStart": "2026-04-22",
           "periodEnd": "2026-04-30",
-          "priceStart": 25.2684,
-          "priceEnd": 25.5246,
+          "priceStart": 25.1223,
+          "priceEnd": 25.377,
+          "returnPct": 1.014
+        },
+        {
+          "ticker": "CLOZ",
+          "side": "long",
+          "periodStart": "2026-04-22",
+          "periodEnd": "2026-04-30",
+          "priceStart": 25.1223,
+          "priceEnd": 25.377,
           "returnPct": 1.014
         }
       ]
     },
     {
       "month": "2026-05",
-      "activePositions": 4,
-      "monthlyReturnPct": 0.089,
+      "activePositions": 5,
+      "monthlyReturnPct": 0.295,
       "details": [
         {
           "ticker": "BUXX",
@@ -787,8 +796,8 @@
           "side": "long",
           "periodStart": "2026-05-01",
           "periodEnd": "2026-05-31",
-          "priceStart": 25.011,
-          "priceEnd": 25.0895,
+          "priceStart": 24.9085,
+          "priceEnd": 24.9866,
           "returnPct": 0.314
         },
         {
@@ -805,16 +814,25 @@
           "side": "long",
           "periodStart": "2026-05-01",
           "periodEnd": "2026-05-31",
-          "priceStart": 25.4907,
-          "priceEnd": 25.7755,
+          "priceStart": 25.3434,
+          "priceEnd": 25.6265,
+          "returnPct": 1.117
+        },
+        {
+          "ticker": "CLOZ",
+          "side": "long",
+          "periodStart": "2026-05-01",
+          "periodEnd": "2026-05-31",
+          "priceStart": 25.3434,
+          "priceEnd": 25.6265,
           "returnPct": 1.117
         }
       ]
     },
     {
       "month": "2026-06",
-      "activePositions": 6,
-      "monthlyReturnPct": 0.106,
+      "activePositions": 7,
+      "monthlyReturnPct": 0.11,
       "details": [
         {
           "ticker": "BUXX",
@@ -830,8 +848,8 @@
           "side": "long",
           "periodStart": "2026-06-01",
           "periodEnd": "2026-06-30",
-          "priceStart": 25.1042,
-          "priceEnd": 25.2204,
+          "priceStart": 25.0013,
+          "priceEnd": 25.117,
           "returnPct": 0.463
         },
         {
@@ -866,16 +884,25 @@
           "side": "long",
           "periodStart": "2026-06-01",
           "periodEnd": "2026-06-30",
-          "priceStart": 25.7901,
-          "priceEnd": 25.8233,
+          "priceStart": 25.641,
+          "priceEnd": 25.6741,
+          "returnPct": 0.129
+        },
+        {
+          "ticker": "CLOZ",
+          "side": "long",
+          "periodStart": "2026-06-01",
+          "periodEnd": "2026-06-30",
+          "priceStart": 25.641,
+          "priceEnd": 25.6741,
           "returnPct": 0.129
         }
       ]
     },
     {
       "month": "2026-07",
-      "activePositions": 9,
-      "monthlyReturnPct": 1.855,
+      "activePositions": 11,
+      "monthlyReturnPct": 1.667,
       "details": [
         {
           "ticker": "BUXX",
@@ -891,8 +918,8 @@
           "side": "long",
           "periodStart": "2026-07-01",
           "periodEnd": "2026-07-31",
-          "priceStart": 25.2549,
-          "priceEnd": 25.3072,
+          "priceStart": 25.1513,
+          "priceEnd": 25.2035,
           "returnPct": 0.207
         },
         {
@@ -945,9 +972,27 @@
           "side": "long",
           "periodStart": "2026-07-01",
           "periodEnd": "2026-07-31",
-          "priceStart": 25.8233,
-          "priceEnd": 25.9402,
+          "priceStart": 25.6741,
+          "priceEnd": 25.7903,
           "returnPct": 0.453
+        },
+        {
+          "ticker": "CLOZ",
+          "side": "long",
+          "periodStart": "2026-07-01",
+          "periodEnd": "2026-07-31",
+          "priceStart": 25.6741,
+          "priceEnd": 25.7903,
+          "returnPct": 0.453
+        },
+        {
+          "ticker": "QAT",
+          "side": "short",
+          "periodStart": "2026-07-16",
+          "periodEnd": "2026-07-31",
+          "priceStart": 17.59,
+          "priceEnd": 17.38,
+          "returnPct": 1.194
         },
         {
           "ticker": "QAT",
@@ -962,8 +1007,8 @@
     },
     {
       "month": "2026-08",
-      "activePositions": 25,
-      "monthlyReturnPct": 2.645,
+      "activePositions": 33,
+      "monthlyReturnPct": 2.437,
       "details": [
         {
           "ticker": "BUXX",
@@ -979,8 +1024,8 @@
           "side": "long",
           "periodStart": "2026-08-01",
           "periodEnd": "2026-08-31",
-          "priceStart": 25.2934,
-          "priceEnd": 25.3857,
+          "priceStart": 25.1897,
+          "priceEnd": 25.2816,
           "returnPct": 0.365
         },
         {
@@ -1024,8 +1069,8 @@
           "side": "long",
           "periodStart": "2026-08-26",
           "periodEnd": "2026-08-31",
-          "priceStart": 70.453,
-          "priceEnd": 70.613,
+          "priceStart": 70.4458,
+          "priceEnd": 70.6058,
           "returnPct": 0.227
         },
         {
@@ -1128,12 +1173,21 @@
           "returnPct": 3.672
         },
         {
+          "ticker": "XLU",
+          "side": "short",
+          "periodStart": "2026-08-12",
+          "periodEnd": "2026-08-31",
+          "priceStart": 43.52,
+          "priceEnd": 41.9218,
+          "returnPct": 3.672
+        },
+        {
           "ticker": "TLT",
           "side": "short",
           "periodStart": "2026-08-05",
           "periodEnd": "2026-08-31",
-          "priceStart": 82.6832,
-          "priceEnd": 82.205,
+          "priceStart": 82.3515,
+          "priceEnd": 81.8752,
           "returnPct": 0.578
         },
         {
@@ -1141,8 +1195,26 @@
           "side": "short",
           "periodStart": "2026-08-25",
           "periodEnd": "2026-08-31",
-          "priceStart": 59.83,
-          "priceEnd": 58.77,
+          "priceStart": 59.2197,
+          "priceEnd": 58.1705,
+          "returnPct": 1.772
+        },
+        {
+          "ticker": "TLT",
+          "side": "short",
+          "periodStart": "2026-08-05",
+          "periodEnd": "2026-08-31",
+          "priceStart": 82.3515,
+          "priceEnd": 81.8752,
+          "returnPct": 0.578
+        },
+        {
+          "ticker": "ZROZ",
+          "side": "short",
+          "periodStart": "2026-08-25",
+          "periodEnd": "2026-08-31",
+          "priceStart": 59.2197,
+          "priceEnd": 58.1705,
           "returnPct": 1.772
         },
         {
@@ -1150,8 +1222,8 @@
           "side": "long",
           "periodStart": "2026-08-01",
           "periodEnd": "2026-08-31",
-          "priceStart": 25.9402,
-          "priceEnd": 25.879,
+          "priceStart": 25.7903,
+          "priceEnd": 25.7294,
           "returnPct": -0.236
         },
         {
@@ -1159,8 +1231,26 @@
           "side": "short",
           "periodStart": "2026-08-04",
           "periodEnd": "2026-08-31",
-          "priceStart": 106.3137,
-          "priceEnd": 105.766,
+          "priceStart": 105.8569,
+          "priceEnd": 105.3116,
+          "returnPct": 0.515
+        },
+        {
+          "ticker": "CLOZ",
+          "side": "long",
+          "periodStart": "2026-08-01",
+          "periodEnd": "2026-08-31",
+          "priceStart": 25.7903,
+          "priceEnd": 25.7294,
+          "returnPct": -0.236
+        },
+        {
+          "ticker": "LQD",
+          "side": "short",
+          "periodStart": "2026-08-04",
+          "periodEnd": "2026-08-31",
+          "priceStart": 105.8569,
+          "priceEnd": 105.3116,
           "returnPct": 0.515
         },
         {
@@ -1177,9 +1267,36 @@
           "side": "short",
           "periodStart": "2026-08-26",
           "periodEnd": "2026-08-31",
-          "priceStart": 14.9908,
-          "priceEnd": 14.9938,
+          "priceStart": 14.9188,
+          "priceEnd": 14.9218,
           "returnPct": -0.02
+        },
+        {
+          "ticker": "IGV",
+          "side": "long",
+          "periodStart": "2026-08-12",
+          "periodEnd": "2026-08-31",
+          "priceStart": 103.08,
+          "priceEnd": 109.98,
+          "returnPct": 6.694
+        },
+        {
+          "ticker": "JOJO",
+          "side": "short",
+          "periodStart": "2026-08-26",
+          "periodEnd": "2026-08-31",
+          "priceStart": 14.9188,
+          "priceEnd": 14.9218,
+          "returnPct": -0.02
+        },
+        {
+          "ticker": "QAT",
+          "side": "short",
+          "periodStart": "2026-08-01",
+          "periodEnd": "2026-08-31",
+          "priceStart": 17.645,
+          "priceEnd": 17.41,
+          "returnPct": 1.332
         },
         {
           "ticker": "QAT",
@@ -1194,8 +1311,8 @@
     },
     {
       "month": "2026-09",
-      "activePositions": 42,
-      "monthlyReturnPct": 0.284,
+      "activePositions": 56,
+      "monthlyReturnPct": 0.432,
       "details": [
         {
           "ticker": "BUXX",
@@ -1211,8 +1328,8 @@
           "side": "long",
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
-          "priceStart": 25.4273,
-          "priceEnd": 25.4622,
+          "priceStart": 25.3231,
+          "priceEnd": 25.3578,
           "returnPct": 0.137
         },
         {
@@ -1301,8 +1418,8 @@
           "side": "long",
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
-          "priceStart": 70.36,
-          "priceEnd": 70.28,
+          "priceStart": 70.3528,
+          "priceEnd": 70.2728,
           "returnPct": -0.114
         },
         {
@@ -1319,8 +1436,8 @@
           "side": "long",
           "periodStart": "2026-09-11",
           "periodEnd": "2026-09-15",
-          "priceStart": 53.7811,
-          "priceEnd": 54.2901,
+          "priceStart": 53.7082,
+          "priceEnd": 54.2166,
           "returnPct": 0.947
         },
         {
@@ -1337,8 +1454,8 @@
           "side": "long",
           "periodStart": "2026-09-11",
           "periodEnd": "2026-09-15",
-          "priceStart": 53.7811,
-          "priceEnd": 54.2901,
+          "priceStart": 53.7082,
+          "priceEnd": 54.2166,
           "returnPct": 0.947
         },
         {
@@ -1355,8 +1472,8 @@
           "side": "long",
           "periodStart": "2026-09-11",
           "periodEnd": "2026-09-15",
-          "priceStart": 53.7811,
-          "priceEnd": 54.2901,
+          "priceStart": 53.7082,
+          "priceEnd": 54.2166,
           "returnPct": 0.947
         },
         {
@@ -1373,8 +1490,8 @@
           "side": "long",
           "periodStart": "2026-09-11",
           "periodEnd": "2026-09-15",
-          "priceStart": 53.7811,
-          "priceEnd": 54.2901,
+          "priceStart": 53.7082,
+          "priceEnd": 54.2166,
           "returnPct": 0.947
         },
         {
@@ -1459,6 +1576,24 @@
           "returnPct": 2.914
         },
         {
+          "ticker": "XLU",
+          "side": "short",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-15",
+          "priceStart": 42.2493,
+          "priceEnd": 41.0184,
+          "returnPct": 2.914
+        },
+        {
+          "ticker": "EWA",
+          "side": "short",
+          "periodStart": "2026-09-14",
+          "periodEnd": "2026-09-15",
+          "priceStart": 29.06,
+          "priceEnd": 28.89,
+          "returnPct": 0.585
+        },
+        {
           "ticker": "EWA",
           "side": "short",
           "periodStart": "2026-09-14",
@@ -1477,12 +1612,21 @@
           "returnPct": 0.397
         },
         {
+          "ticker": "EWL",
+          "side": "short",
+          "periodStart": "2026-09-14",
+          "periodEnd": "2026-09-15",
+          "priceStart": 60.49,
+          "priceEnd": 60.25,
+          "returnPct": 0.397
+        },
+        {
           "ticker": "TLT",
           "side": "short",
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
-          "priceStart": 81.87,
-          "priceEnd": 80.71,
+          "priceStart": 81.5416,
+          "priceEnd": 80.3862,
           "returnPct": 1.417
         },
         {
@@ -1490,8 +1634,26 @@
           "side": "short",
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
-          "priceStart": 58.45,
-          "priceEnd": 57.66,
+          "priceStart": 57.8538,
+          "priceEnd": 57.0718,
+          "returnPct": 1.352
+        },
+        {
+          "ticker": "TLT",
+          "side": "short",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-15",
+          "priceStart": 81.5416,
+          "priceEnd": 80.3862,
+          "returnPct": 1.417
+        },
+        {
+          "ticker": "ZROZ",
+          "side": "short",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-15",
+          "priceStart": 57.8538,
+          "priceEnd": 57.0718,
           "returnPct": 1.352
         },
         {
@@ -1499,8 +1661,8 @@
           "side": "long",
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
-          "priceStart": 25.879,
-          "priceEnd": 26.0161,
+          "priceStart": 25.7294,
+          "priceEnd": 25.8657,
           "returnPct": 0.53
         },
         {
@@ -1508,9 +1670,36 @@
           "side": "short",
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
-          "priceStart": 105.22,
-          "priceEnd": 104.28,
+          "priceStart": 104.7679,
+          "priceEnd": 103.832,
           "returnPct": 0.893
+        },
+        {
+          "ticker": "CLOZ",
+          "side": "long",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-15",
+          "priceStart": 25.7294,
+          "priceEnd": 25.8657,
+          "returnPct": 0.53
+        },
+        {
+          "ticker": "LQD",
+          "side": "short",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-15",
+          "priceStart": 104.7679,
+          "priceEnd": 103.832,
+          "returnPct": 0.893
+        },
+        {
+          "ticker": "IBIT",
+          "side": "long",
+          "periodStart": "2026-09-02",
+          "periodEnd": "2026-09-15",
+          "priceStart": 43.79,
+          "priceEnd": 43.11,
+          "returnPct": -1.553
         },
         {
           "ticker": "IBIT",
@@ -1544,9 +1733,45 @@
           "side": "short",
           "periodStart": "2026-09-01",
           "periodEnd": "2026-09-15",
-          "priceStart": 14.949,
-          "priceEnd": 14.795,
+          "priceStart": 14.8772,
+          "priceEnd": 14.724,
           "returnPct": 1.03
+        },
+        {
+          "ticker": "IGV",
+          "side": "long",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-15",
+          "priceStart": 106.18,
+          "priceEnd": 105.55,
+          "returnPct": -0.593
+        },
+        {
+          "ticker": "DBMF",
+          "side": "long",
+          "periodStart": "2026-09-03",
+          "periodEnd": "2026-09-15",
+          "priceStart": 31.2694,
+          "priceEnd": 32.0957,
+          "returnPct": 2.642
+        },
+        {
+          "ticker": "JOJO",
+          "side": "short",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-15",
+          "priceStart": 14.8772,
+          "priceEnd": 14.724,
+          "returnPct": 1.03
+        },
+        {
+          "ticker": "QAT",
+          "side": "short",
+          "periodStart": "2026-09-01",
+          "periodEnd": "2026-09-15",
+          "priceStart": 17.3,
+          "priceEnd": 17.19,
+          "returnPct": 0.636
         },
         {
           "ticker": "QAT",
@@ -1565,6 +1790,24 @@
           "priceStart": 48.57,
           "priceEnd": 47.59,
           "returnPct": 2.018
+        },
+        {
+          "ticker": "INDA",
+          "side": "short",
+          "periodStart": "2026-09-11",
+          "periodEnd": "2026-09-15",
+          "priceStart": 48.57,
+          "priceEnd": 47.59,
+          "returnPct": 2.018
+        },
+        {
+          "ticker": "PSP",
+          "side": "short",
+          "periodStart": "2026-09-15",
+          "periodEnd": "2026-09-15",
+          "priceStart": 58.7519,
+          "priceEnd": 58.7519,
+          "returnPct": -0.0
         },
         {
           "ticker": "PSP",
@@ -1633,11 +1876,11 @@
     },
     {
       "month": "2024-11",
-      "cumulativeIndex": 107.104
+      "cumulativeIndex": 107.103
     },
     {
       "month": "2024-12",
-      "cumulativeIndex": 107.563
+      "cumulativeIndex": 107.562
     },
     {
       "month": "2025-01",
@@ -1701,27 +1944,27 @@
     },
     {
       "month": "2026-04",
-      "cumulativeIndex": 129.889
+      "cumulativeIndex": 130.234
     },
     {
       "month": "2026-05",
-      "cumulativeIndex": 130.005
+      "cumulativeIndex": 130.619
     },
     {
       "month": "2026-06",
-      "cumulativeIndex": 130.142
+      "cumulativeIndex": 130.762
     },
     {
       "month": "2026-07",
-      "cumulativeIndex": 132.557
+      "cumulativeIndex": 132.942
     },
     {
       "month": "2026-08",
-      "cumulativeIndex": 136.063
+      "cumulativeIndex": 136.182
     },
     {
       "month": "2026-09",
-      "cumulativeIndex": 136.449
+      "cumulativeIndex": 136.77
     }
   ],
   "excludedPositions": [
@@ -1756,8 +1999,23 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     },
     {
+      "ticker": "HYP",
+      "side": "long",
+      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
+    },
+    {
       "ticker": "RISR",
       "side": "long",
+      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
+    },
+    {
+      "ticker": "RISR",
+      "side": "long",
+      "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
+    },
+    {
+      "ticker": "ISCG",
+      "side": "short",
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     },
     {
@@ -1821,5 +2079,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 119
+  "positionsIncluded": 167
 }
