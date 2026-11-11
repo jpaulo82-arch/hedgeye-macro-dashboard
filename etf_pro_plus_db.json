@@ -1,5 +1,5 @@
 {
-  "updatedAt": "09/11/2026 18:35:36",
+  "updatedAt": "10/11/2026 12:46:30",
   "reports": {
     "weekly": [
       {
@@ -8134,6 +8134,20 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_113831_UPDATE__1_New_ETF_Pro_Change.txt",
+        "reportDatetime": "2026-11-10 10:22AM EST",
+        "addsLong": [
+          {
+            "name": "US Intermediate Treasury",
+            "ticker": "VGIT"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -10012,6 +10026,12 @@
       "type": "intraday",
       "sourceFile": "intraday_113743_UPDATE__2_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Pricing Power (POWA) | Removeu SHORT: Gold Miners (GDX)"
+    },
+    {
+      "date": "2026-11-10 10:22AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_113831_UPDATE__1_New_ETF_Pro_Change.txt",
+      "summary": "Adicionou LONG: US Intermediate Treasury (VGIT)"
     }
   ],
   "currentLineup": [
@@ -10807,11 +10827,26 @@
       "side": "long",
       "dateAdded": "2026-11-09 10:32AM EST",
       "assetClass": null,
-      "entryPrice": 94.669,
+      "entryPrice": 94.67,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
       "sourceOfEntry": "intraday:intraday_113743_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "VGIT",
+      "name": "US Intermediate Treasury",
+      "side": "long",
+      "dateAdded": "2026-11-10 10:22AM EST",
+      "assetClass": null,
+      "entryPrice": 57.32,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_113831_UPDATE__1_New_ETF_Pro_Change.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"

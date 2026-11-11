@@ -1,6 +1,30 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261110",
+      "date": "10/11/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (10/11/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-11-10T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "VGIT",
+          "categoria": "ETF PRO PLUS — US INTERMEDIATE TREASURY",
+          "regime": null,
+          "decisao": "Comprar / Long",
+          "racional": "ETF Pro Plus adicionou US Intermediate Treasury (VGIT) como LONG no UPDATE de 10/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 10/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261109",
       "date": "09/11/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (09/11/2026)",
@@ -5263,5 +5287,5 @@
       ]
     }
   ],
-  "updatedAt": "10/11/2026 09:32:30"
+  "updatedAt": "11/11/2026 09:31:16"
 }

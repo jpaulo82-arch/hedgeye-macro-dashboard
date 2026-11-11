@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T18:36:18.233142",
+  "generatedAt": "2026-11-10T12:47:15.440043",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -77,7 +77,7 @@
           "periodStart": "2024-02-01",
           "periodEnd": "2024-02-29",
           "priceStart": 17.6852,
-          "priceEnd": 17.7332,
+          "priceEnd": 17.7333,
           "returnPct": 0.272
         }
       ]
@@ -188,7 +188,7 @@
           "side": "long",
           "periodStart": "2024-09-01",
           "periodEnd": "2024-09-30",
-          "priceStart": 18.3002,
+          "priceStart": 18.3003,
           "priceEnd": 18.4022,
           "returnPct": 0.557
         }
@@ -213,7 +213,7 @@
     {
       "month": "2024-11",
       "activePositions": 1,
-      "monthlyReturnPct": 0.503,
+      "monthlyReturnPct": 0.504,
       "details": [
         {
           "ticker": "BUXX",
@@ -222,7 +222,7 @@
           "periodEnd": "2024-11-30",
           "priceStart": 18.4656,
           "priceEnd": 18.5585,
-          "returnPct": 0.503
+          "returnPct": 0.504
         }
       ]
     },
@@ -245,7 +245,7 @@
     {
       "month": "2025-01",
       "activePositions": 1,
-      "monthlyReturnPct": 0.504,
+      "monthlyReturnPct": 0.503,
       "details": [
         {
           "ticker": "BUXX",
@@ -254,7 +254,7 @@
           "periodEnd": "2025-01-31",
           "priceStart": 18.6198,
           "priceEnd": 18.7135,
-          "returnPct": 0.504
+          "returnPct": 0.503
         }
       ]
     },
@@ -1876,11 +1876,11 @@
     },
     {
       "month": "2024-11",
-      "cumulativeIndex": 107.103
+      "cumulativeIndex": 107.104
     },
     {
       "month": "2024-12",
-      "cumulativeIndex": 107.562
+      "cumulativeIndex": 107.563
     },
     {
       "month": "2025-01",
@@ -2079,5 +2079,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 167
+  "positionsIncluded": 168
 }
