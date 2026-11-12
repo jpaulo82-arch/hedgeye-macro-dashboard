@@ -1,6 +1,86 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261111",
+      "date": "11/11/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (11/11/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-11-11T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "XHB",
+          "categoria": "ETF PRO PLUS — HOMEBUILDERS",
+          "regime": null,
+          "decisao": "Comprar / Long",
+          "racional": "ETF Pro Plus adicionou Homebuilders (XHB) como LONG no UPDATE de 11/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 11/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "DFGX",
+          "categoria": "ETF PRO PLUS — INTERNATIONAL CORE FIXED INCOME",
+          "regime": null,
+          "decisao": "Comprar / Long",
+          "racional": "ETF Pro Plus adicionou International Core Fixed Income (DFGX) como LONG no UPDATE de 11/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 11/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "ARTY",
+          "categoria": "ETF PRO PLUS — AI TECH",
+          "regime": null,
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "ETF Pro Plus adicionou AI Tech (ARTY) como SHORT no UPDATE de 11/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 11/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "EWT",
+          "categoria": "ETF PRO PLUS — TAIWAN",
+          "regime": null,
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "ETF Pro Plus adicionou Taiwan (EWT) como SHORT no UPDATE de 11/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 11/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "CPER",
+          "categoria": "ETF PRO PLUS — COPPER",
+          "regime": null,
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "ETF Pro Plus adicionou Copper (CPER) como SHORT no UPDATE de 11/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 11/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261110",
       "date": "10/11/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (10/11/2026)",
@@ -5287,5 +5367,5 @@
       ]
     }
   ],
-  "updatedAt": "11/11/2026 09:31:16"
+  "updatedAt": "12/11/2026 10:01:52"
 }
