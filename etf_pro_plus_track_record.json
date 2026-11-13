@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T09:47:39.806429",
+  "generatedAt": "2026-11-12T21:21:31.022058",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -188,7 +188,7 @@
           "side": "long",
           "periodStart": "2024-09-01",
           "periodEnd": "2024-09-30",
-          "priceStart": 18.3002,
+          "priceStart": 18.3003,
           "priceEnd": 18.4022,
           "returnPct": 0.557
         }
@@ -499,7 +499,7 @@
           "periodEnd": "2025-09-30",
           "priceStart": 19.2897,
           "priceEnd": 19.323,
-          "returnPct": 0.173
+          "returnPct": 0.172
         },
         {
           "ticker": "CLOX",
@@ -574,7 +574,7 @@
           "side": "long",
           "periodStart": "2025-11-01",
           "periodEnd": "2025-11-30",
-          "priceStart": 24.3007,
+          "priceStart": 24.3008,
           "priceEnd": 24.4076,
           "returnPct": 0.44
         },
@@ -2337,5 +2337,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 220
+  "positionsIncluded": 221
 }

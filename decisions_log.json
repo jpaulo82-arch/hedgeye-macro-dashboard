@@ -1,6 +1,30 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261112",
+      "date": "12/11/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (12/11/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-11-12T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "HTEC",
+          "categoria": "ETF PRO PLUS — HEALTHCARE TECHNOLOGY",
+          "regime": null,
+          "decisao": "Vender / Zerar Long",
+          "racional": "ETF Pro Plus encerrou o LONG em Healthcare Technology (HTEC) no UPDATE de 12/11/2026. Saída no Trend Range: 43.53 – 47.10.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 12/11/2026)",
+          "rangeLow": 43.53,
+          "rangeHigh": 47.1
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261111",
       "date": "11/11/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (11/11/2026)",
@@ -5367,5 +5391,5 @@
       ]
     }
   ],
-  "updatedAt": "12/11/2026 10:01:52"
+  "updatedAt": "13/11/2026 09:31:55"
 }

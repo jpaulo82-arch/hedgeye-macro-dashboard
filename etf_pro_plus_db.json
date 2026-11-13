@@ -1,5 +1,5 @@
 {
-  "updatedAt": "12/11/2026 09:46:55",
+  "updatedAt": "12/11/2026 21:20:41",
   "reports": {
     "weekly": [
       {
@@ -10895,6 +10895,38 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_113953_UPDATE__1_New_ETF_Pro_Change.txt",
+        "reportDatetime": "2026-11-12 09:54AM EST",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "Healthcare Technology",
+            "ticker": "HTEC",
+            "rangeLow": 43.53,
+            "rangeHigh": 47.1
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_113954_UPDATE__1_New_ETF_Pro_Change.txt",
+        "reportDatetime": "2026-11-12 09:54AM EST",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "Healthcare Technology",
+            "ticker": "HTEC",
+            "rangeLow": 43.53,
+            "rangeHigh": 47.1
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -13160,6 +13192,18 @@
       "type": "intraday",
       "sourceFile": "intraday_113925_UPDATE__5_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Homebuilders (XHB), International Core Fixed Income (DFGX) | Adicionou SHORT: AI Tech (ARTY), Taiwan (EWT), Copper (CPER)"
+    },
+    {
+      "date": "2026-11-12 09:54AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_113953_UPDATE__1_New_ETF_Pro_Change.txt",
+      "summary": "Removeu LONG: Healthcare Technology (HTEC)"
+    },
+    {
+      "date": "2026-11-12 09:54AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_113954_UPDATE__1_New_ETF_Pro_Change.txt",
+      "summary": "Removeu LONG: Healthcare Technology (HTEC)"
     }
   ],
   "currentLineup": [
@@ -13228,29 +13272,6 @@
         4
       ],
       "quadNote": "Long — alinhado com Q4 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "HTEC",
-      "name": "Healthcare Technology",
-      "side": "long",
-      "dateAdded": "10/2/2026",
-      "assetClass": "Global Equities",
-      "entryPrice": 44.7,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 43.53,
-      "rangeHigh": 47.1,
-      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     },
     {
       "ticker": "UUP",
