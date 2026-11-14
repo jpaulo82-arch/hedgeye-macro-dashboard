@@ -1,5 +1,5 @@
 {
-  "updatedAt": "12/11/2026 21:20:41",
+  "updatedAt": "13/11/2026 12:46:39",
   "reports": {
     "weekly": [
       {
@@ -10927,6 +10927,31 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_114055_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-11-13 10:27AM EST",
+        "addsLong": [],
+        "addsShort": [
+          {
+            "name": "Japan",
+            "ticker": "EWJ"
+          },
+          {
+            "name": "Oil Refiners",
+            "ticker": "CRAK"
+          }
+        ],
+        "removesLong": [
+          {
+            "name": "US Treasury Long",
+            "ticker": "ZROZ",
+            "rangeLow": 57.45,
+            "rangeHigh": 59.57
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -13204,6 +13229,12 @@
       "type": "intraday",
       "sourceFile": "intraday_113954_UPDATE__1_New_ETF_Pro_Change.txt",
       "summary": "Removeu LONG: Healthcare Technology (HTEC)"
+    },
+    {
+      "date": "2026-11-13 10:27AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_114055_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou SHORT: Japan (EWJ), Oil Refiners (CRAK) | Removeu LONG: US Treasury Long (ZROZ)"
     }
   ],
   "currentLineup": [
@@ -13469,28 +13500,6 @@
         2
       ],
       "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "ZROZ",
-      "name": "US Treasury Long",
-      "side": "long",
-      "dateAdded": "11/3/2026",
-      "assetClass": "Domestic Fixed Income",
-      "entryPrice": 59.04,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 57.45,
-      "rangeHigh": 59.57,
-      "sourceOfEntry": "weekly:weekly_113697_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 3.0,
-        "midPct": 6.5,
-        "maxPct": 10.0,
-        "label": "Renda Fixa"
-      },
-      "nativeQuads": [
-        4
-      ],
-      "quadNote": "Long — alinhado com Q4 (Best Asset Class/Setor nesses regimes)"
     },
     {
       "ticker": "USMV",
@@ -14074,6 +14083,36 @@
       "rangeLow": null,
       "rangeHigh": null,
       "sourceOfEntry": "intraday:intraday_113925_UPDATE__5_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "EWJ",
+      "name": "Japan",
+      "side": "short",
+      "dateAdded": "2026-11-13 10:27AM EST",
+      "assetClass": null,
+      "entryPrice": 90.95,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_114055_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "CRAK",
+      "name": "Oil Refiners",
+      "side": "short",
+      "dateAdded": "2026-11-13 10:27AM EST",
+      "assetClass": null,
+      "entryPrice": 57.44,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_114055_UPDATE__3_New_ETF_Pro_Changes.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"

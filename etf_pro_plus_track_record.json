@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T21:21:31.022058",
+  "generatedAt": "2026-11-13T12:47:28.964250",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -77,7 +77,7 @@
           "periodStart": "2024-02-01",
           "periodEnd": "2024-02-29",
           "priceStart": 17.6852,
-          "priceEnd": 17.7333,
+          "priceEnd": 17.7332,
           "returnPct": 0.272
         }
       ]
@@ -499,7 +499,7 @@
           "periodEnd": "2025-09-30",
           "priceStart": 19.2897,
           "priceEnd": 19.323,
-          "returnPct": 0.172
+          "returnPct": 0.173
         },
         {
           "ticker": "CLOX",
@@ -574,7 +574,7 @@
           "side": "long",
           "periodStart": "2025-11-01",
           "periodEnd": "2025-11-30",
-          "priceStart": 24.3008,
+          "priceStart": 24.3007,
           "priceEnd": 24.4076,
           "returnPct": 0.44
         },
@@ -1240,7 +1240,7 @@
           "side": "short",
           "periodStart": "2026-08-05",
           "periodEnd": "2026-08-31",
-          "priceStart": 82.0064,
+          "priceStart": 82.0063,
           "priceEnd": 81.5321,
           "returnPct": 0.578
         },
@@ -1258,7 +1258,7 @@
           "side": "short",
           "periodStart": "2026-08-05",
           "periodEnd": "2026-08-31",
-          "priceStart": 82.0064,
+          "priceStart": 82.0063,
           "priceEnd": 81.5321,
           "returnPct": 0.578
         },
@@ -1276,7 +1276,7 @@
           "side": "short",
           "periodStart": "2026-08-05",
           "periodEnd": "2026-08-31",
-          "priceStart": 82.0064,
+          "priceStart": 82.0063,
           "priceEnd": 81.5321,
           "returnPct": 0.578
         },
@@ -2337,5 +2337,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 221
+  "positionsIncluded": 223
 }
