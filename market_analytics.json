@@ -1,47 +1,47 @@
 {
-  "updated_at": "15/11/2026 12:54:11",
+  "updated_at": "16/11/2026 09:33:32",
   "gex": [
     {
       "ticker": "SPY",
       "current_price": 754.37,
-      "net_gex_million": -964.54,
-      "regime": "SHORT GAMMA",
-      "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
-      "call_wall": 760.0,
-      "put_wall": 763.0,
-      "zero_gamma_level": 753.0,
-      "total_call_oi": 268563,
-      "total_put_oi": 317341,
-      "put_call_ratio": 1.18,
-      "updated_at": "15/11/2026 12:53:35"
+      "net_gex_million": 894.44,
+      "regime": "LONG GAMMA",
+      "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
+      "call_wall": 755.0,
+      "put_wall": 750.0,
+      "zero_gamma_level": 380.0,
+      "total_call_oi": 1046164,
+      "total_put_oi": 3100476,
+      "put_call_ratio": 2.96,
+      "updated_at": "16/11/2026 09:32:55"
     },
     {
       "ticker": "QQQ",
       "current_price": 679.89,
-      "net_gex_million": -351.3,
-      "regime": "SHORT GAMMA",
-      "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
-      "call_wall": 700.0,
-      "put_wall": 680.0,
-      "zero_gamma_level": 681.0,
-      "total_call_oi": 155109,
-      "total_put_oi": 252849,
-      "put_call_ratio": 1.63,
-      "updated_at": "15/11/2026 12:53:37"
+      "net_gex_million": 7303.6,
+      "regime": "LONG GAMMA",
+      "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
+      "call_wall": 680.0,
+      "put_wall": 675.0,
+      "zero_gamma_level": 370.0,
+      "total_call_oi": 1148325,
+      "total_put_oi": 1246439,
+      "put_call_ratio": 1.09,
+      "updated_at": "16/11/2026 09:32:57"
     },
     {
       "ticker": "IWM",
       "current_price": 277.54,
-      "net_gex_million": -128.51,
-      "regime": "SHORT GAMMA",
-      "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
-      "call_wall": 281.0,
-      "put_wall": 275.0,
-      "zero_gamma_level": 281.0,
-      "total_call_oi": 48972,
-      "total_put_oi": 63509,
-      "put_call_ratio": 1.3,
-      "updated_at": "15/11/2026 12:53:38"
+      "net_gex_million": 3.37,
+      "regime": "LONG GAMMA",
+      "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
+      "call_wall": 278.0,
+      "put_wall": 265.0,
+      "zero_gamma_level": 140.0,
+      "total_call_oi": 589585,
+      "total_put_oi": 1596263,
+      "put_call_ratio": 2.71,
+      "updated_at": "16/11/2026 09:32:59"
     }
   ],
   "fundamentals": [
@@ -173,7 +173,7 @@
       "revenue_growth": "+114.7%",
       "market_cap": "US$ 24.7B",
       "beta": "3.29",
-      "recommendation": "STRONG_BUY"
+      "recommendation": "NONE"
     },
     {
       "ticker": "ARM",
@@ -402,7 +402,7 @@
       "name": "Alphabet Inc.",
       "sector": "Information Technology",
       "ownership_count": 36,
-      "hold_price": "$352.25"
+      "hold_price": "$351.55"
     },
     {
       "ticker": "AMZN",
@@ -416,7 +416,7 @@
       "name": "Meta Platforms Inc.",
       "sector": "Technology",
       "ownership_count": 32,
-      "hold_price": "$619.47"
+      "hold_price": "$621.36"
     },
     {
       "ticker": "V",
@@ -430,14 +430,14 @@
       "name": "Berkshire Hathaway CL B",
       "sector": "Financials",
       "ownership_count": 26,
-      "hold_price": "$498.92"
+      "hold_price": "$498.89"
     },
     {
       "ticker": "AAPL",
       "name": "Apple Inc.",
       "sector": "Information Technology",
       "ownership_count": 22,
-      "hold_price": "$300.92"
+      "hold_price": "$300.93"
     },
     {
       "ticker": "MA",
@@ -472,7 +472,7 @@
       "name": "Capital One Financial",
       "sector": "Financials",
       "ownership_count": 17,
-      "hold_price": "$198.33"
+      "hold_price": "$197.13"
     },
     {
       "ticker": "MCO",
@@ -486,14 +486,7 @@
       "name": "United Health Group Inc.",
       "sector": "Health Care",
       "ownership_count": 17,
-      "hold_price": "$393.00"
-    },
-    {
-      "ticker": "BAC",
-      "name": "Bank of America Corp.",
-      "sector": "Financials",
-      "ownership_count": 15,
-      "hold_price": "$56.01"
+      "hold_price": "$383.50"
     },
     {
       "ticker": "JPM",
@@ -515,6 +508,13 @@
       "sector": "Technology",
       "ownership_count": 14,
       "hold_price": "$362.80"
+    },
+    {
+      "ticker": "BAC",
+      "name": "Bank of America Corp.",
+      "sector": "Financials",
+      "ownership_count": 14,
+      "hold_price": "$56.01"
     },
     {
       "ticker": "CMCSA",
@@ -542,7 +542,7 @@
       "name": "Elevance Health Inc.",
       "sector": "Health Care",
       "ownership_count": 13,
-      "hold_price": "$388.13"
+      "hold_price": "$388.34"
     },
     {
       "ticker": "TMO",
@@ -559,11 +559,11 @@
       "hold_price": "$285.22"
     },
     {
-      "ticker": "DHR",
-      "name": "Danaher Corp.",
-      "sector": "Industrials",
-      "ownership_count": 12,
-      "hold_price": "$204.33"
+      "ticker": "UBER",
+      "name": "Uber Technologies Inc.",
+      "sector": "Technology",
+      "ownership_count": 13,
+      "hold_price": "$71.47"
     }
   ],
   "dataroma_activity": {
@@ -786,7 +786,7 @@
     {
       "ticker": "GOOGL",
       "ownership_count": 36,
-      "hold_price": "$352.25",
+      "hold_price": "$351.55",
       "sector": "Information Technology",
       "is_top_consensus": true,
       "recent_activity": "🟢 Alta Convicção Institucional (Top Consenso)",
@@ -795,7 +795,7 @@
     {
       "ticker": "META",
       "ownership_count": 32,
-      "hold_price": "$619.47",
+      "hold_price": "$621.36",
       "sector": "Technology",
       "is_top_consensus": true,
       "recent_activity": "🟢 Alta Convicção Institucional (Top Consenso)",
@@ -811,16 +811,16 @@
       "activity_badge": "badge-neutral"
     },
     {
-      "ticker": "MELI",
-      "ownership_count": 0,
-      "hold_price": "N/D",
-      "sector": "Carteira Própria",
-      "is_top_consensus": false,
+      "ticker": "UBER",
+      "ownership_count": 13,
+      "hold_price": "$71.47",
+      "sector": "Technology",
+      "is_top_consensus": true,
       "recent_activity": "Neutro / Sem mudanças recentes",
       "activity_badge": "badge-neutral"
     },
     {
-      "ticker": "UBER",
+      "ticker": "MELI",
       "ownership_count": 0,
       "hold_price": "N/D",
       "sector": "Carteira Própria",
@@ -1669,188 +1669,20 @@
     "last_close": "13/11/2026",
     "fonte": "Yahoo Finance (fechamentos ajustados)",
     "aviso": "Composição das cestas definida no sistema, não publicada pela Hedgeye. O regime oficial vem do Early Look.",
-    "updated_at": "15/11/2026 12:53:58"
+    "updated_at": "16/11/2026 09:33:22"
   },
   "economic_calendar": {
-    "updated_at": "15/11/2026 12:54:00",
+    "updated_at": "16/11/2026 09:33:24",
     "source": "TradingView Official Real-Time Calendar API",
-    "current_week": "09/11 a 13/11/2026",
-    "total_events": 128,
+    "current_week": "16/11 a 20/11/2026",
+    "total_events": 121,
     "events": [
-      {
-        "id": "1001667118201",
-        "date_raw": "2026-11-13T12:00:00.000Z",
-        "date_str": "13/11 (Sex) 12:00 UTC",
-        "tag": "DIVULGADO",
-        "is_today": false,
-        "has_actual": true,
-        "country": "BR",
-        "country_label": "[Brasil]",
-        "indicator": "[Brasil] · Retail Sales MoM",
-        "raw_title": "Retail Sales MoM",
-        "consensus": "Divulgado: 0.2 | Projeção: -0.2 | Anterior: 0.2",
-        "actual": 0.2,
-        "forecast": -0.2,
-        "previous": 0.2,
-        "unit": "BRL",
-        "importance": 0,
-        "quad_impact": "Indicador antecedente do PIB e atividade industrial/serviços (G ↑/↓). Acima de 50 afasta recessão imediata e valida teses de crescimento (#Quad1/#Quad2).",
-        "market_trigger": "Surpresas de alta sustentam rotações para ativos cíclicos; fraqueza pressiona margens.",
-        "portfolio_sensitivity": "Cíclicos / Industriais / Tech / Consumo",
-        "badge_class": "badge-bullish",
-        "source": "IBGE",
-        "source_url": "https://www.tradingview.com/economic-calendar/"
-      },
-      {
-        "id": "1001653880803",
-        "date_raw": "2026-11-13T13:30:00.000Z",
-        "date_str": "13/11 (Sex) 13:30 UTC",
-        "tag": "DIVULGADO",
-        "is_today": false,
-        "has_actual": true,
-        "country": "US",
-        "country_label": "[EUA]",
-        "indicator": "[EUA] · PPI MoM",
-        "raw_title": "PPI MoM",
-        "consensus": "Divulgado: 0.3 | Projeção: 0.4 | Anterior: 1.4",
-        "actual": 0.3,
-        "forecast": 0.4,
-        "previous": 1.4,
-        "unit": "USD",
-        "importance": 1,
-        "quad_impact": "Pressão direta na aceleração/desaceleração da Inflação (I ↑/↓). Leitura acima do consenso sustenta regimes inflacionários (#Quad2/#Quad3) e yields 'Higher for Longer'.",
-        "market_trigger": "Movimenta curva de Treasuries (10Y Yield), Dólar DXY e demanda por hedges de inflação.",
-        "portfolio_sensitivity": "ALTO IMPACTO (Ouro / Commodities / Treasuries / DXY)",
-        "badge_class": "badge-bullish",
-        "source": "Bureau of Labour Statistics",
-        "source_url": "https://www.bls.gov"
-      },
-      {
-        "id": "1001653880805",
-        "date_raw": "2026-11-13T13:30:00.000Z",
-        "date_str": "13/11 (Sex) 13:30 UTC",
-        "tag": "DIVULGADO",
-        "is_today": false,
-        "has_actual": true,
-        "country": "US",
-        "country_label": "[EUA]",
-        "indicator": "[EUA] · Core PPI MoM",
-        "raw_title": "Core PPI MoM",
-        "consensus": "Divulgado: 0.3 | Projeção: 0.3 | Anterior: 0.8",
-        "actual": 0.3,
-        "forecast": 0.3,
-        "previous": 0.8,
-        "unit": "USD",
-        "importance": 0,
-        "quad_impact": "Pressão direta na aceleração/desaceleração da Inflação (I ↑/↓). Leitura acima do consenso sustenta regimes inflacionários (#Quad2/#Quad3) e yields 'Higher for Longer'.",
-        "market_trigger": "Movimenta curva de Treasuries (10Y Yield), Dólar DXY e demanda por hedges de inflação.",
-        "portfolio_sensitivity": "ALTO IMPACTO (Ouro / Commodities / Treasuries / DXY)",
-        "badge_class": "badge-bullish",
-        "source": "Department of Labour",
-        "source_url": "https://www.bls.gov"
-      },
-      {
-        "id": "1001653882201",
-        "date_raw": "2026-11-13T13:30:00.000Z",
-        "date_str": "13/11 (Sex) 13:30 UTC",
-        "tag": "DIVULGADO",
-        "is_today": false,
-        "has_actual": true,
-        "country": "US",
-        "country_label": "[EUA]",
-        "indicator": "[EUA] · PPI Machinery Manufacturing",
-        "raw_title": "PPI Machinery Manufacturing",
-        "consensus": "Divulgado: 200.8 | Anterior: 200.26",
-        "actual": 200.8,
-        "forecast": null,
-        "previous": 200.26,
-        "unit": "USD",
-        "importance": 0,
-        "quad_impact": "Pressão direta na aceleração/desaceleração da Inflação (I ↑/↓). Leitura acima do consenso sustenta regimes inflacionários (#Quad2/#Quad3) e yields 'Higher for Longer'.",
-        "market_trigger": "Movimenta curva de Treasuries (10Y Yield), Dólar DXY e demanda por hedges de inflação.",
-        "portfolio_sensitivity": "ALTO IMPACTO (Ouro / Commodities / Treasuries / DXY)",
-        "badge_class": "badge-bullish",
-        "source": "Bureau of Labour Statistics",
-        "source_url": "https://www.bls.gov"
-      },
-      {
-        "id": "1001694152313",
-        "date_raw": "2026-11-13T13:30:00.000Z",
-        "date_str": "13/11 (Sex) 13:30 UTC",
-        "tag": "DIVULGADO",
-        "is_today": false,
-        "has_actual": true,
-        "country": "US",
-        "country_label": "[EUA]",
-        "indicator": "[EUA] · USDA Pork Net Export Sales",
-        "raw_title": "USDA Pork Net Export Sales",
-        "consensus": "Divulgado: 39.5 | Anterior: 37.3",
-        "actual": 39.5,
-        "forecast": null,
-        "previous": 37.3,
-        "unit": "USD",
-        "importance": 0,
-        "quad_impact": "Evento macroeconômico acompanhado pelos agentes de mercado e mesas institucionais.",
-        "market_trigger": "Acompanhamento de volatilidade intraday.",
-        "portfolio_sensitivity": "Sensibilidade moderada de mercado",
-        "badge_class": "badge-neutral",
-        "source": "Department of Agriculture",
-        "source_url": "https://www.usda.gov/"
-      },
-      {
-        "id": "1001694152314",
-        "date_raw": "2026-11-13T13:30:00.000Z",
-        "date_str": "13/11 (Sex) 13:30 UTC",
-        "tag": "DIVULGADO",
-        "is_today": false,
-        "has_actual": true,
-        "country": "US",
-        "country_label": "[EUA]",
-        "indicator": "[EUA] · USDA Pork Gross Export Sales",
-        "raw_title": "USDA Pork Gross Export Sales",
-        "consensus": "Divulgado: 41.5 | Anterior: 39.5",
-        "actual": 41.5,
-        "forecast": null,
-        "previous": 39.5,
-        "unit": "USD",
-        "importance": 0,
-        "quad_impact": "Evento macroeconômico acompanhado pelos agentes de mercado e mesas institucionais.",
-        "market_trigger": "Acompanhamento de volatilidade intraday.",
-        "portfolio_sensitivity": "Sensibilidade moderada de mercado",
-        "badge_class": "badge-neutral",
-        "source": "Department of Agriculture",
-        "source_url": "https://www.usda.gov/"
-      },
-      {
-        "id": "1001691653801",
-        "date_raw": "2026-11-13T19:00:00.000Z",
-        "date_str": "13/11 (Sex) 19:00 UTC",
-        "tag": "DIVULGADO",
-        "is_today": false,
-        "has_actual": true,
-        "country": "US",
-        "country_label": "[EUA]",
-        "indicator": "[EUA] · Baker Hughes Gas Rig Count",
-        "raw_title": "Baker Hughes Gas Rig Count",
-        "consensus": "Divulgado: 127 | Anterior: 131",
-        "actual": 127,
-        "forecast": null,
-        "previous": 131,
-        "unit": "USD",
-        "importance": 0,
-        "quad_impact": "Balanço físico de oferta e demanda de energia. Queda nos estoques pressiona custos de frete e insumos produtivos.",
-        "market_trigger": "Direciona contratos futuros de WTI, Brent e ações do complexo de energia (XLE/OIH).",
-        "portfolio_sensitivity": "Petróleo / Energia (WTI / OIH)",
-        "badge_class": "badge-bullish",
-        "source": "Baker Hughes Company",
-        "source_url": "https://www.bakerhughes.com/"
-      },
       {
         "id": "1001652132001",
         "date_raw": "2026-11-16T13:30:00.000Z",
-        "date_str": "16/11 (Amanhã - Seg) 13:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "16/11 (Hoje - Seg) 13:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -1872,9 +1704,9 @@
       {
         "id": "1001689745901",
         "date_raw": "2026-11-16T16:30:00.000Z",
-        "date_str": "16/11 (Amanhã - Seg) 16:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "16/11 (Hoje - Seg) 16:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -1896,9 +1728,9 @@
       {
         "id": "1001689745902",
         "date_raw": "2026-11-16T16:30:00.000Z",
-        "date_str": "16/11 (Amanhã - Seg) 16:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "16/11 (Hoje - Seg) 16:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -1920,9 +1752,9 @@
       {
         "id": "1001689745904",
         "date_raw": "2026-11-16T16:30:00.000Z",
-        "date_str": "16/11 (Amanhã - Seg) 16:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "16/11 (Hoje - Seg) 16:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -1944,9 +1776,9 @@
       {
         "id": "1001693783801",
         "date_raw": "2026-11-16T16:30:00.000Z",
-        "date_str": "16/11 (Amanhã - Seg) 16:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "16/11 (Hoje - Seg) 16:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -1968,9 +1800,9 @@
       {
         "id": "1001693783802",
         "date_raw": "2026-11-16T16:30:00.000Z",
-        "date_str": "16/11 (Amanhã - Seg) 16:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "16/11 (Hoje - Seg) 16:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -1992,9 +1824,9 @@
       {
         "id": "1001693783804",
         "date_raw": "2026-11-16T16:30:00.000Z",
-        "date_str": "16/11 (Amanhã - Seg) 16:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "16/11 (Hoje - Seg) 16:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -2016,9 +1848,9 @@
       {
         "id": "1001654813101",
         "date_raw": "2026-11-16T17:00:00.000Z",
-        "date_str": "16/11 (Amanhã - Seg) 17:00 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "16/11 (Hoje - Seg) 17:00 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -2040,8 +1872,8 @@
       {
         "id": "1001697260201",
         "date_raw": "2026-11-17T13:15:00.000Z",
-        "date_str": "17/11 (Ter) 13:15 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "17/11 (Amanhã - Ter) 13:15 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2064,8 +1896,8 @@
       {
         "id": "1001660567801",
         "date_raw": "2026-11-17T13:30:00.000Z",
-        "date_str": "17/11 (Ter) 13:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "17/11 (Amanhã - Ter) 13:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2088,8 +1920,8 @@
       {
         "id": "1001660567802",
         "date_raw": "2026-11-17T13:30:00.000Z",
-        "date_str": "17/11 (Ter) 13:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "17/11 (Amanhã - Ter) 13:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2112,8 +1944,8 @@
       {
         "id": "1001660567803",
         "date_raw": "2026-11-17T13:30:00.000Z",
-        "date_str": "17/11 (Ter) 13:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "17/11 (Amanhã - Ter) 13:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2136,8 +1968,8 @@
       {
         "id": "1001661350202",
         "date_raw": "2026-11-17T13:30:00.000Z",
-        "date_str": "17/11 (Ter) 13:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "17/11 (Amanhã - Ter) 13:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2160,8 +1992,8 @@
       {
         "id": "1001661350203",
         "date_raw": "2026-11-17T13:30:00.000Z",
-        "date_str": "17/11 (Ter) 13:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "17/11 (Amanhã - Ter) 13:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2184,8 +2016,8 @@
       {
         "id": "1001659552803",
         "date_raw": "2026-11-17T14:15:00.000Z",
-        "date_str": "17/11 (Ter) 14:15 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "17/11 (Amanhã - Ter) 14:15 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2208,8 +2040,8 @@
       {
         "id": "1001664110601",
         "date_raw": "2026-11-17T15:00:00.000Z",
-        "date_str": "17/11 (Ter) 15:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "17/11 (Amanhã - Ter) 15:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2232,8 +2064,8 @@
       {
         "id": "1001668383701",
         "date_raw": "2026-11-17T15:00:00.000Z",
-        "date_str": "17/11 (Ter) 15:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "17/11 (Amanhã - Ter) 15:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2256,8 +2088,8 @@
       {
         "id": "1001660034402",
         "date_raw": "2026-11-17T21:30:00.000Z",
-        "date_str": "17/11 (Ter) 21:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "17/11 (Amanhã - Ter) 21:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -4755,7 +4587,7 @@
     {
       "ticker": "MLI",
       "earnings_date": "20/10/2026",
-      "days_until": -26,
+      "days_until": -27,
       "eps_consensus": "US$ 0.94",
       "revenue_consensus": "US$ 1.17B",
       "status": "Próximo Tri"
@@ -4763,7 +4595,7 @@
     {
       "ticker": "NEM",
       "earnings_date": "22/10/2026",
-      "days_until": -24,
+      "days_until": -25,
       "eps_consensus": "US$ 1.96",
       "revenue_consensus": "US$ 6.42B",
       "status": "Próximo Tri"
@@ -4771,7 +4603,7 @@
     {
       "ticker": "BE",
       "earnings_date": "22/10/2026",
-      "days_until": -24,
+      "days_until": -25,
       "eps_consensus": "US$ 1.12",
       "revenue_consensus": "US$ 1.46B",
       "status": "Próximo Tri"
@@ -4779,15 +4611,15 @@
     {
       "ticker": "GOOGL",
       "earnings_date": "28/10/2026",
-      "days_until": -18,
-      "eps_consensus": "US$ 3.27",
-      "revenue_consensus": "US$ 142.40B",
+      "days_until": -19,
+      "eps_consensus": "US$ 3.25",
+      "revenue_consensus": "US$ 143.06B",
       "status": "Próximo Tri"
     },
     {
       "ticker": "AXTI",
       "earnings_date": "29/10/2026",
-      "days_until": -17,
+      "days_until": -18,
       "eps_consensus": "US$ 0.57",
       "revenue_consensus": "US$ 91.5M",
       "status": "Próximo Tri"
@@ -4795,7 +4627,7 @@
     {
       "ticker": "TSEM",
       "earnings_date": "02/11/2026",
-      "days_until": -13,
+      "days_until": -14,
       "eps_consensus": "US$ 1.38",
       "revenue_consensus": "US$ 601.7M",
       "status": "Próximo Tri"
@@ -4803,7 +4635,7 @@
     {
       "ticker": "ALAB",
       "earnings_date": "03/11/2026",
-      "days_until": -12,
+      "days_until": -13,
       "eps_consensus": "US$ 1.65",
       "revenue_consensus": "US$ 741.9M",
       "status": "Próximo Tri"
@@ -4811,7 +4643,7 @@
     {
       "ticker": "MELI",
       "earnings_date": "04/11/2026",
-      "days_until": -11,
+      "days_until": -12,
       "eps_consensus": "US$ 10.11",
       "revenue_consensus": "US$ 11.92B",
       "status": "Próximo Tri"
@@ -4819,23 +4651,23 @@
     {
       "ticker": "CRDO",
       "earnings_date": "01/12/2026",
-      "days_until": 16,
+      "days_until": 15,
       "eps_consensus": "US$ 1.28",
       "revenue_consensus": "US$ 531.9M",
-      "status": "Em 16 dias"
+      "status": "Em 15 dias"
     },
     {
       "ticker": "AVGO",
       "earnings_date": "09/12/2026",
-      "days_until": 24,
+      "days_until": 23,
       "eps_consensus": "US$ 3.84",
       "revenue_consensus": "US$ 34.91B",
-      "status": "Em 24 dias"
+      "status": "Em 23 dias"
     },
     {
       "ticker": "ASML",
       "earnings_date": "27/01/2027",
-      "days_until": 73,
+      "days_until": 72,
       "eps_consensus": "US$ 15.39",
       "revenue_consensus": "US$ 14.82B",
       "status": "Próximo Tri"
@@ -4843,15 +4675,15 @@
     {
       "ticker": "META",
       "earnings_date": "27/01/2027",
-      "days_until": 73,
+      "days_until": 72,
       "eps_consensus": "US$ 8.72",
-      "revenue_consensus": "US$ 75.16B",
+      "revenue_consensus": "US$ 75.13B",
       "status": "Próximo Tri"
     },
     {
       "ticker": "INTC",
       "earnings_date": "28/01/2027",
-      "days_until": 74,
+      "days_until": 73,
       "eps_consensus": "US$ 0.25",
       "revenue_consensus": "US$ 15.62B",
       "status": "Próximo Tri"
@@ -4859,7 +4691,7 @@
     {
       "ticker": "NOK",
       "earnings_date": "28/01/2027",
-      "days_until": 74,
+      "days_until": 73,
       "eps_consensus": "US$ 0.17",
       "revenue_consensus": "US$ 6.29B",
       "status": "Próximo Tri"
@@ -4867,7 +4699,7 @@
     {
       "ticker": "FN",
       "earnings_date": "01/02/2027",
-      "days_until": 78,
+      "days_until": 77,
       "eps_consensus": "US$ 4.86",
       "revenue_consensus": "US$ 1.63B",
       "status": "Próximo Tri"
@@ -4875,7 +4707,7 @@
     {
       "ticker": "UBER",
       "earnings_date": "03/02/2027",
-      "days_until": 80,
+      "days_until": 79,
       "eps_consensus": "US$ 0.97",
       "revenue_consensus": "US$ 15.66B",
       "status": "Próximo Tri"
@@ -4883,7 +4715,7 @@
     {
       "ticker": "COHR",
       "earnings_date": "03/02/2027",
-      "days_until": 80,
+      "days_until": 79,
       "eps_consensus": "US$ 2.40",
       "revenue_consensus": "US$ 2.65B",
       "status": "Próximo Tri"
@@ -4891,7 +4723,7 @@
     {
       "ticker": "ARM",
       "earnings_date": "03/02/2027",
-      "days_until": 80,
+      "days_until": 79,
       "eps_consensus": "US$ 0.56",
       "revenue_consensus": "US$ 1.54B",
       "status": "Próximo Tri"
@@ -4899,7 +4731,7 @@
     {
       "ticker": "MTSI",
       "earnings_date": "04/02/2027",
-      "days_until": 81,
+      "days_until": 80,
       "eps_consensus": "US$ 2.25",
       "revenue_consensus": "US$ 455.3M",
       "status": "Próximo Tri"
