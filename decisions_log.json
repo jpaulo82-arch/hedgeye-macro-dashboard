@@ -1,6 +1,58 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261116",
+      "date": "16/11/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (16/11/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-11-16T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "XRT",
+          "categoria": "ETF PRO PLUS — RETAIL",
+          "regime": null,
+          "decisao": "Comprar / Long",
+          "racional": "ETF Pro Plus adicionou Retail (XRT) como LONG no UPDATE de 16/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 16/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "XOP",
+          "categoria": "ETF PRO PLUS — OIL & GAS EQUITY",
+          "regime": null,
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "ETF Pro Plus adicionou Oil & Gas Equity (XOP) como SHORT no UPDATE de 16/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 16/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "JCPB",
+          "categoria": "ETF PRO PLUS — CORE PLUS BOND",
+          "regime": null,
+          "decisao": "Vender / Zerar Long",
+          "racional": "ETF Pro Plus encerrou o LONG em Core Plus Bond (JCPB) no UPDATE de 16/11/2026. Saída no Trend Range: 44.52 – 45.77.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 16/11/2026)",
+          "rangeLow": 44.52,
+          "rangeHigh": 45.77
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261113",
       "date": "13/11/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (13/11/2026)",
@@ -5443,5 +5495,5 @@
       ]
     }
   ],
-  "updatedAt": "16/11/2026 09:32:00"
+  "updatedAt": "17/11/2026 09:32:29"
 }

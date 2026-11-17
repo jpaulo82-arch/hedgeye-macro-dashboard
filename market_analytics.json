@@ -1,47 +1,47 @@
 {
-  "updated_at": "16/11/2026 09:33:32",
+  "updated_at": "17/11/2026 09:33:47",
   "gex": [
     {
       "ticker": "SPY",
-      "current_price": 754.37,
-      "net_gex_million": 894.44,
+      "current_price": 739.95,
+      "net_gex_million": 1859.65,
       "regime": "LONG GAMMA",
       "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
-      "call_wall": 755.0,
-      "put_wall": 750.0,
+      "call_wall": 740.0,
+      "put_wall": 735.0,
       "zero_gamma_level": 380.0,
-      "total_call_oi": 1046164,
-      "total_put_oi": 3100476,
-      "put_call_ratio": 2.96,
-      "updated_at": "16/11/2026 09:32:55"
+      "total_call_oi": 1123239,
+      "total_put_oi": 3171466,
+      "put_call_ratio": 2.82,
+      "updated_at": "17/11/2026 09:33:08"
     },
     {
       "ticker": "QQQ",
-      "current_price": 679.89,
-      "net_gex_million": 7303.6,
+      "current_price": 661.75,
+      "net_gex_million": 4782.92,
       "regime": "LONG GAMMA",
       "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
-      "call_wall": 680.0,
-      "put_wall": 675.0,
+      "call_wall": 662.0,
+      "put_wall": 655.0,
       "zero_gamma_level": 370.0,
-      "total_call_oi": 1148325,
-      "total_put_oi": 1246439,
-      "put_call_ratio": 1.09,
-      "updated_at": "16/11/2026 09:32:57"
+      "total_call_oi": 1196313,
+      "total_put_oi": 1229680,
+      "put_call_ratio": 1.03,
+      "updated_at": "17/11/2026 09:33:10"
     },
     {
       "ticker": "IWM",
-      "current_price": 277.54,
-      "net_gex_million": 3.37,
+      "current_price": 272.94,
+      "net_gex_million": 7696.79,
       "regime": "LONG GAMMA",
       "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
-      "call_wall": 278.0,
-      "put_wall": 265.0,
+      "call_wall": 273.0,
+      "put_wall": 270.0,
       "zero_gamma_level": 140.0,
-      "total_call_oi": 589585,
-      "total_put_oi": 1596263,
-      "put_call_ratio": 2.71,
-      "updated_at": "16/11/2026 09:32:59"
+      "total_call_oi": 602508,
+      "total_put_oi": 1569771,
+      "put_call_ratio": 2.61,
+      "updated_at": "17/11/2026 09:33:12"
     }
   ],
   "fundamentals": [
@@ -49,12 +49,12 @@
       "ticker": "MELI",
       "shortName": "MercadoLibre, Inc.",
       "sector": "Consumer Cyclical",
-      "price": 1491.49,
-      "pe": "40.0x",
-      "ev_ebitda": "21.4x",
+      "price": 1462.12,
+      "pe": "39.2x",
+      "ev_ebitda": "21.0x",
       "net_margin": "4.9%",
       "revenue_growth": "+45.1%",
-      "market_cap": "US$ 75.6B",
+      "market_cap": "US$ 74.1B",
       "beta": "1.39",
       "recommendation": "STRONG_BUY"
     },
@@ -62,12 +62,12 @@
       "ticker": "GOOGL",
       "shortName": "Alphabet Inc.",
       "sector": "Communication Services",
-      "price": 295.77,
-      "pe": "15.4x",
-      "ev_ebitda": "19.1x",
+      "price": 283.72,
+      "pe": "14.8x",
+      "ev_ebitda": "18.3x",
       "net_margin": "50.0%",
       "revenue_growth": "+24.7%",
-      "market_cap": "US$ 3636.2B",
+      "market_cap": "US$ 3488.1B",
       "beta": "1.23",
       "recommendation": "STRONG_BUY"
     },
@@ -75,12 +75,12 @@
       "ticker": "UBER",
       "shortName": "Uber Technologies, Inc.",
       "sector": "Technology",
-      "price": 69.69,
-      "pe": "41.0x",
-      "ev_ebitda": "19.3x",
+      "price": 69.99,
+      "pe": "41.2x",
+      "ev_ebitda": "19.4x",
       "net_margin": "6.1%",
       "revenue_growth": "+9.6%",
-      "market_cap": "US$ 142.3B",
+      "market_cap": "US$ 142.9B",
       "beta": "1.31",
       "recommendation": "BUY"
     },
@@ -88,12 +88,12 @@
       "ticker": "AVGO",
       "shortName": "Broadcom Inc.",
       "sector": "Technology",
-      "price": 347.01,
-      "pe": "44.3x",
-      "ev_ebitda": "32.4x",
+      "price": 333.4,
+      "pe": "42.6x",
+      "ev_ebitda": "31.1x",
       "net_margin": "42.9%",
       "revenue_growth": "+85.5%",
-      "market_cap": "US$ 1656.5B",
+      "market_cap": "US$ 1591.5B",
       "beta": "1.51",
       "recommendation": "STRONG_BUY"
     },
@@ -101,12 +101,12 @@
       "ticker": "ASML",
       "shortName": "ASML Holding N.V. - New York Re",
       "sector": "Technology",
-      "price": 1495.16,
-      "pe": "36.8x",
-      "ev_ebitda": "1966.0x",
+      "price": 1406.79,
+      "pe": "34.6x",
+      "ev_ebitda": "1849.7x",
       "net_margin": "34.1%",
       "revenue_growth": "+55.2%",
-      "market_cap": "US$ 576.3B",
+      "market_cap": "US$ 542.2B",
       "beta": "1.33",
       "recommendation": "STRONG_BUY"
     },
@@ -114,12 +114,12 @@
       "ticker": "META",
       "shortName": "Meta Platforms, Inc.",
       "sector": "Communication Services",
-      "price": 641.69,
-      "pe": "21.9x",
-      "ev_ebitda": "14.4x",
+      "price": 626.41,
+      "pe": "21.4x",
+      "ev_ebitda": "14.1x",
       "net_margin": "31.1%",
       "revenue_growth": "+26.1%",
-      "market_cap": "US$ 1640.3B",
+      "market_cap": "US$ 1601.3B",
       "beta": "1.28",
       "recommendation": "STRONG_BUY"
     },
@@ -127,12 +127,12 @@
       "ticker": "FN",
       "shortName": "Fabrinet",
       "sector": "Technology",
-      "price": 327.98,
-      "pe": "24.8x",
-      "ev_ebitda": "18.7x",
+      "price": 311.01,
+      "pe": "23.5x",
+      "ev_ebitda": "17.7x",
       "net_margin": "9.4%",
       "revenue_growth": "+50.7%",
-      "market_cap": "US$ 11.7B",
+      "market_cap": "US$ 11.1B",
       "beta": "1.37",
       "recommendation": "BUY"
     },
@@ -140,12 +140,12 @@
       "ticker": "ALAB",
       "shortName": "Astera Labs, Inc.",
       "sector": "Technology",
-      "price": 221.83,
-      "pe": "87.7x",
-      "ev_ebitda": "90.7x",
+      "price": 202.34,
+      "pe": "80.0x",
+      "ev_ebitda": "82.5x",
       "net_margin": "29.6%",
       "revenue_growth": "+153.7%",
-      "market_cap": "US$ 38.8B",
+      "market_cap": "US$ 35.4B",
       "beta": "3.86",
       "recommendation": "BUY"
     },
@@ -153,12 +153,12 @@
       "ticker": "COHR",
       "shortName": "Coherent Corp.",
       "sector": "Technology",
-      "price": 218.15,
-      "pe": "45.2x",
-      "ev_ebitda": "27.6x",
+      "price": 203.43,
+      "pe": "42.1x",
+      "ev_ebitda": "25.9x",
       "net_margin": "12.2%",
       "revenue_growth": "+49.9%",
-      "market_cap": "US$ 43.0B",
+      "market_cap": "US$ 40.1B",
       "beta": "2.23",
       "recommendation": "BUY"
     },
@@ -166,25 +166,25 @@
       "ticker": "CRDO",
       "shortName": "Credo Technology Group Holding ",
       "sector": "Technology",
-      "price": 131.51,
-      "pe": "46.6x",
-      "ev_ebitda": "44.1x",
+      "price": 120.71,
+      "pe": "42.8x",
+      "ev_ebitda": "40.4x",
       "net_margin": "33.8%",
       "revenue_growth": "+114.7%",
-      "market_cap": "US$ 24.7B",
+      "market_cap": "US$ 22.7B",
       "beta": "3.29",
-      "recommendation": "NONE"
+      "recommendation": "STRONG_BUY"
     },
     {
       "ticker": "ARM",
       "shortName": "Arm Holdings plc",
       "sector": "Technology",
-      "price": 190.53,
-      "pe": "219.0x",
-      "ev_ebitda": "178.0x",
+      "price": 175.05,
+      "pe": "201.2x",
+      "ev_ebitda": "163.3x",
       "net_margin": "17.1%",
       "revenue_growth": "+27.1%",
-      "market_cap": "US$ 203.9B",
+      "market_cap": "US$ 187.3B",
       "beta": "3.94",
       "recommendation": "BUY"
     },
@@ -192,12 +192,12 @@
       "ticker": "MTSI",
       "shortName": "MACOM Technology Solutions Hold",
       "sector": "Technology",
-      "price": 232.06,
-      "pe": "53.8x",
-      "ev_ebitda": "47.5x",
+      "price": 220.44,
+      "pe": "51.1x",
+      "ev_ebitda": "45.0x",
       "net_margin": "25.3%",
       "revenue_growth": "+62.7%",
-      "market_cap": "US$ 17.8B",
+      "market_cap": "US$ 16.9B",
       "beta": "1.83",
       "recommendation": "STRONG_BUY"
     },
@@ -205,12 +205,12 @@
       "ticker": "AXTI",
       "shortName": "AXT Inc",
       "sector": "Technology",
-      "price": 41.84,
-      "pe": "85.4x",
-      "ev_ebitda": "54.1x",
+      "price": 38.46,
+      "pe": "78.5x",
+      "ev_ebitda": "49.1x",
       "net_margin": "18.5%",
       "revenue_growth": "+162.6%",
-      "market_cap": "US$ 2.7B",
+      "market_cap": "US$ 2.5B",
       "beta": "2.01",
       "recommendation": "BUY"
     },
@@ -218,12 +218,12 @@
       "ticker": "TSEM",
       "shortName": "Tower Semiconductor Ltd.",
       "sector": "Technology",
-      "price": 146.89,
-      "pe": "47.2x",
-      "ev_ebitda": "22.3x",
+      "price": 133.42,
+      "pe": "42.9x",
+      "ev_ebitda": "20.1x",
       "net_margin": "19.4%",
       "revenue_growth": "+33.0%",
-      "market_cap": "US$ 16.7B",
+      "market_cap": "US$ 15.1B",
       "beta": "0.96",
       "recommendation": "STRONG_BUY"
     },
@@ -231,12 +231,12 @@
       "ticker": "INTC",
       "shortName": "Intel Corporation",
       "sector": "Technology",
-      "price": 59.66,
-      "pe": "Fwd 33.3x",
-      "ev_ebitda": "17.2x",
+      "price": 55.44,
+      "pe": "Fwd 31.0x",
+      "ev_ebitda": "16.1x",
       "net_margin": "-20.1%",
       "revenue_growth": "+20.9%",
-      "market_cap": "US$ 317.1B",
+      "market_cap": "US$ 294.7B",
       "beta": "2.43",
       "recommendation": "HOLD"
     },
@@ -244,25 +244,25 @@
       "ticker": "NOK",
       "shortName": "Nokia Corporation Sponsored",
       "sector": "Technology",
-      "price": 8.07,
-      "pe": "50.4x",
-      "ev_ebitda": "16.0x",
+      "price": 7.69,
+      "pe": "48.1x",
+      "ev_ebitda": "15.2x",
       "net_margin": "3.8%",
       "revenue_growth": "+9.7%",
-      "market_cap": "US$ 45.7B",
+      "market_cap": "US$ 43.5B",
       "beta": "0.76",
-      "recommendation": "NONE"
+      "recommendation": "BUY"
     },
     {
       "ticker": "NEM",
       "shortName": "Newmont Corporation",
       "sector": "Basic Materials",
-      "price": 113.14,
-      "pe": "13.1x",
-      "ev_ebitda": "6.5x",
+      "price": 110.31,
+      "pe": "12.8x",
+      "ev_ebitda": "6.3x",
       "net_margin": "34.7%",
       "revenue_growth": "+15.2%",
-      "market_cap": "US$ 117.6B",
+      "market_cap": "US$ 114.6B",
       "beta": "0.57",
       "recommendation": "BUY"
     },
@@ -270,12 +270,12 @@
       "ticker": "BE",
       "shortName": "Bloom Energy Corporation",
       "sector": "Industrials",
-      "price": 191.99,
-      "pe": "116.4x",
-      "ev_ebitda": "94.7x",
+      "price": 177.28,
+      "pe": "116.6x",
+      "ev_ebitda": "87.5x",
       "net_margin": "13.5%",
       "revenue_growth": "+138.1%",
-      "market_cap": "US$ 56.8B",
+      "market_cap": "US$ 52.4B",
       "beta": "3.62",
       "recommendation": "BUY"
     },
@@ -283,12 +283,12 @@
       "ticker": "MLI",
       "shortName": "Mueller Industries, Inc.",
       "sector": "Industrials",
-      "price": 54.89,
-      "pe": "14.1x",
-      "ev_ebitda": "9.5x",
+      "price": 53.97,
+      "pe": "13.8x",
+      "ev_ebitda": "9.3x",
       "net_margin": "17.3%",
       "revenue_growth": "+31.6%",
-      "market_cap": "US$ 12.0B",
+      "market_cap": "US$ 11.8B",
       "beta": "1.02",
       "recommendation": "NONE"
     },
@@ -296,7 +296,7 @@
       "ticker": "AAAU",
       "shortName": "Goldman Sachs Physical Gold ETF",
       "sector": "N/A",
-      "price": 38.22,
+      "price": 37.94,
       "pe": "N/D",
       "ev_ebitda": "N/D",
       "net_margin": "N/D",
@@ -309,8 +309,8 @@
       "ticker": "GDX",
       "shortName": "VanEck Gold Miners ETF",
       "sector": "N/A",
-      "price": 81.64,
-      "pe": "12.9x",
+      "price": 78.95,
+      "pe": "12.5x",
       "ev_ebitda": "N/D",
       "net_margin": "N/D",
       "revenue_growth": "N/D",
@@ -322,7 +322,7 @@
       "ticker": "SLV",
       "shortName": "iShares Silver Trust",
       "sector": "N/A",
-      "price": 44.13,
+      "price": 42.39,
       "pe": "N/D",
       "ev_ebitda": "N/D",
       "net_margin": "N/D",
@@ -335,7 +335,7 @@
       "ticker": "SGOV",
       "shortName": "iShares 0-3 Month Treasury Bond",
       "sector": "N/A",
-      "price": 100.56,
+      "price": 100.58,
       "pe": "N/D",
       "ev_ebitda": "N/D",
       "net_margin": "N/D",
@@ -362,225 +362,232 @@
     },
     {
       "investor": "Warren Buffett (Berkshire Hathaway)",
-      "filing_period": "Período: Q2 2026",
+      "filing_period": "Período: Q3 2026",
       "thesis": "Acúmulo recorde de Treasury Bills (SGOV/Caixa), energia (Oxy) e defensivos",
       "top_holdings": [
-        "AAPL Apple Inc. (22.04%)",
-        "AXP American Express (17.14%)",
-        "KO Coca Cola Co. (10.86%)",
-        "GOOGL Alphabet Inc. (9.41%)",
-        "BAC Bank of America Corp. (9.20%)",
-        "CVX Chevron Corp. (4.67%)"
+        "AAPL Apple Inc. (24.95%)",
+        "AXP American Express (15.16%)",
+        "KO Coca Cola Co. (11.32%)",
+        "GOOGL Alphabet Inc. (8.91%)",
+        "BAC Bank of America Corp. (8.16%)",
+        "CVX Chevron Corp. (5.66%)"
       ],
       "action_guidance": "Foco em disciplina de ciclo, assimetria em ativos reais e preservação de caixa para compra nos picos de estresse de liquidez."
     },
     {
       "investor": "Li Lu (Himalaya Capital Management)",
-      "filing_period": "Período: Q2 2026",
+      "filing_period": "Período: Q3 2026",
       "thesis": "Monopólios seculares, semicondutores, energia e megacaps de tecnologia",
       "top_holdings": [
-        "GOOGL Alphabet Inc. (24.55%)",
-        "GOOG Alphabet Inc. CL C (23.39%)",
-        "PDD Pinduoduo Inc. (22.17%)",
-        "BRK.B Berkshire Hathaway CL B (14.98%)",
-        "EWBC East West Bancorp (9.68%)",
-        "CROX Crocs Inc. (2.89%)"
+        "PDD Pinduoduo Inc. (24.24%)",
+        "GOOGL Alphabet Inc. (23.14%)",
+        "GOOG Alphabet Inc. CL C (22.09%)",
+        "BRK.B Berkshire Hathaway CL B (14.59%)",
+        "EWBC East West Bancorp (9.10%)",
+        "TME Tencent Music Entertainment Grp (3.11%)"
       ],
       "action_guidance": "Foco em disciplina de ciclo, assimetria em ativos reais e preservação de caixa para compra nos picos de estresse de liquidez."
     }
   ],
   "dataroma_consensus": [
     {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "sector": "Information Technology",
+      "ownership_count": 38,
+      "hold_price": "$344.87"
+    },
+    {
       "ticker": "MSFT",
       "name": "Microsoft Corp.",
       "sector": "Information Technology",
       "ownership_count": 37,
-      "hold_price": "$463.26"
-    },
-    {
-      "ticker": "GOOGL",
-      "name": "Alphabet Inc.",
-      "sector": "Information Technology",
-      "ownership_count": 36,
-      "hold_price": "$351.55"
+      "hold_price": "$510.11"
     },
     {
       "ticker": "AMZN",
       "name": "Amazon.com Inc.",
       "sector": "Consumer Discretionary",
-      "ownership_count": 35,
-      "hold_price": "$244.45"
+      "ownership_count": 36,
+      "hold_price": "$249.15"
     },
     {
       "ticker": "META",
       "name": "Meta Platforms Inc.",
       "sector": "Technology",
-      "ownership_count": 32,
-      "hold_price": "$621.36"
+      "ownership_count": 34,
+      "hold_price": "$725.18"
     },
     {
       "ticker": "V",
       "name": "Visa Inc.",
       "sector": "Services",
-      "ownership_count": 30,
-      "hold_price": "$350.94"
+      "ownership_count": 29,
+      "hold_price": "$358.84"
     },
     {
       "ticker": "BRK.B",
       "name": "Berkshire Hathaway CL B",
       "sector": "Financials",
-      "ownership_count": 26,
-      "hold_price": "$498.89"
+      "ownership_count": 27,
+      "hold_price": "$497.88"
+    },
+    {
+      "ticker": "MA",
+      "name": "Mastercard Inc.",
+      "sector": "Services",
+      "ownership_count": 23,
+      "hold_price": "$551.47"
     },
     {
       "ticker": "AAPL",
       "name": "Apple Inc.",
       "sector": "Information Technology",
       "ownership_count": 22,
-      "hold_price": "$300.93"
-    },
-    {
-      "ticker": "MA",
-      "name": "Mastercard Inc.",
-      "sector": "Services",
-      "ownership_count": 22,
-      "hold_price": "$540.23"
+      "hold_price": "$333.02"
     },
     {
       "ticker": "DIS",
       "name": "Walt Disney Co.",
       "sector": "Consumer Discretionary",
-      "ownership_count": 20,
-      "hold_price": "$101.66"
+      "ownership_count": 21,
+      "hold_price": "$104.90"
     },
     {
       "ticker": "NVDA",
       "name": "NVIDIA Corp.",
       "sector": "Information Technology",
-      "ownership_count": 18,
-      "hold_price": "$212.66"
+      "ownership_count": 20,
+      "hold_price": "$228.38"
     },
     {
       "ticker": "AXP",
       "name": "American Express",
       "sector": "Financials",
-      "ownership_count": 17,
-      "hold_price": "$320.47"
-    },
-    {
-      "ticker": "COF",
-      "name": "Capital One Financial",
-      "sector": "Financials",
-      "ownership_count": 17,
-      "hold_price": "$197.13"
+      "ownership_count": 18,
+      "hold_price": "$304.10"
     },
     {
       "ticker": "MCO",
       "name": "Moody's Corp",
       "sector": "Financials",
       "ownership_count": 17,
-      "hold_price": "$453.46"
+      "hold_price": "$454.11"
     },
     {
       "ticker": "UNH",
       "name": "United Health Group Inc.",
       "sector": "Health Care",
       "ownership_count": 17,
-      "hold_price": "$383.50"
+      "hold_price": "$367.08"
+    },
+    {
+      "ticker": "BAC",
+      "name": "Bank of America Corp.",
+      "sector": "Financials",
+      "ownership_count": 16,
+      "hold_price": "$54.43"
+    },
+    {
+      "ticker": "COF",
+      "name": "Capital One Financial",
+      "sector": "Financials",
+      "ownership_count": 16,
+      "hold_price": "$193.07"
     },
     {
       "ticker": "JPM",
       "name": "JPMorgan Chase & Co.",
       "sector": "Financials",
+      "ownership_count": 16,
+      "hold_price": "$330.83"
+    },
+    {
+      "ticker": "CMCSA",
+      "name": "Comcast Corp.",
+      "sector": "Consumer Discretionary",
       "ownership_count": 15,
-      "hold_price": "$329.16"
+      "hold_price": "$21.76"
+    },
+    {
+      "ticker": "ORCL",
+      "name": "Oracle Corp.",
+      "sector": "Information Technology",
+      "ownership_count": 15,
+      "hold_price": "$138.65"
     },
     {
       "ticker": "SPGI",
       "name": "S&P Global Inc.",
       "sector": "Consumer Discretionary",
       "ownership_count": 15,
-      "hold_price": "$406.46"
+      "hold_price": "$395.37"
+    },
+    {
+      "ticker": "WFC",
+      "name": "Wells Fargo",
+      "sector": "Financials",
+      "ownership_count": 15,
+      "hold_price": "$80.05"
     },
     {
       "ticker": "AVGO",
       "name": "Broadcom Inc.",
       "sector": "Technology",
       "ownership_count": 14,
-      "hold_price": "$362.80"
-    },
-    {
-      "ticker": "BAC",
-      "name": "Bank of America Corp.",
-      "sector": "Financials",
-      "ownership_count": 14,
-      "hold_price": "$56.01"
-    },
-    {
-      "ticker": "CMCSA",
-      "name": "Comcast Corp.",
-      "sector": "Consumer Discretionary",
-      "ownership_count": 14,
-      "hold_price": "$22.36"
-    },
-    {
-      "ticker": "ORCL",
-      "name": "Oracle Corp.",
-      "sector": "Information Technology",
-      "ownership_count": 14,
-      "hold_price": "$139.89"
-    },
-    {
-      "ticker": "WFC",
-      "name": "Wells Fargo",
-      "sector": "Financials",
-      "ownership_count": 14,
-      "hold_price": "$80.32"
+      "hold_price": "$358.50"
     },
     {
       "ticker": "ELV",
       "name": "Elevance Health Inc.",
       "sector": "Health Care",
-      "ownership_count": 13,
-      "hold_price": "$388.34"
+      "ownership_count": 14,
+      "hold_price": "$388.82"
     },
     {
       "ticker": "TMO",
       "name": "Thermo Fisher Scientific",
       "sector": "Health Care",
-      "ownership_count": 13,
-      "hold_price": "$678.77"
+      "ownership_count": 14,
+      "hold_price": "$700.17"
     },
     {
-      "ticker": "TXN",
-      "name": "Texas Instruments",
-      "sector": "Information Technology",
+      "ticker": "ACN",
+      "name": "Accenture",
+      "sector": "Services",
       "ownership_count": 13,
-      "hold_price": "$285.22"
+      "hold_price": "$183.37"
     },
     {
-      "ticker": "UBER",
-      "name": "Uber Technologies Inc.",
-      "sector": "Technology",
+      "ticker": "DHR",
+      "name": "Danaher Corp.",
+      "sector": "Industrials",
       "ownership_count": 13,
-      "hold_price": "$71.47"
+      "hold_price": "$221.55"
     }
   ],
   "dataroma_activity": {
     "top_buys": [
       {
-        "ticker": "BFAM",
+        "ticker": "MDLN",
         "manager": "Abrams Bison Investments",
-        "period": "Q2 2026",
+        "period": "Q3 2026",
         "action": "COMPRA / APORTE",
-        "details": "Bright Horizons Family Solutions Inc.Add 69.37%Change to portfolio: 3.39%"
+        "details": "Medline Inc Cl ABuyChange to portfolio: 5.75%"
       },
       {
-        "ticker": "URBN",
+        "ticker": "AMAT",
         "manager": "Abrams Bison Investments",
-        "period": "Q2 2026",
+        "period": "Q3 2026",
         "action": "COMPRA / APORTE",
-        "details": "Urban Outfitters Inc.Add 0.22%Change to portfolio: 0.02%"
+        "details": "Applied MaterialsAdd 36.23%Change to portfolio: 5.16%"
+      },
+      {
+        "ticker": "BFAM",
+        "manager": "Abrams Bison Investments",
+        "period": "Q3 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Bright Horizons Family Solutions Inc.Add 19.17%Change to portfolio: 1.48%"
       },
       {
         "ticker": "SUNB",
@@ -590,39 +597,46 @@
         "details": "Sunbelt Rentals Holdings IncAdd 12.15%Change to portfolio: 1.71%"
       },
       {
-        "ticker": "ASH",
+        "ticker": "WFRD",
         "manager": "Alex Roepers - Atlantic Investment Management",
-        "period": "Q2 2026",
+        "period": "Q3 2026",
         "action": "COMPRA / APORTE",
-        "details": "Ashland Global Holdings Inc.BuyChange to portfolio: 17.47%"
-      },
-      {
-        "ticker": "XRAY",
-        "manager": "Alex Roepers - Atlantic Investment Management",
-        "period": "Q2 2026",
-        "action": "COMPRA / APORTE",
-        "details": "DENTSPLY SIRONA Inc.Add 261.15%Change to portfolio: 8.81%"
-      },
-      {
-        "ticker": "PVH",
-        "manager": "Alex Roepers - Atlantic Investment Management",
-        "period": "Q2 2026",
-        "action": "COMPRA / APORTE",
-        "details": "PVH Corp.Add 100.33%Change to portfolio: 4.97%"
+        "details": "Weatherford International Corp.Add 416.79%Change to portfolio: 10.76%"
       },
       {
         "ticker": "APTV",
         "manager": "Alex Roepers - Atlantic Investment Management",
-        "period": "Q2 2026",
+        "period": "Q3 2026",
         "action": "COMPRA / APORTE",
-        "details": "Aptiv PLCAdd 40.52%Change to portfolio: 4.18%"
+        "details": "Aptiv PLCAdd 62.51%Change to portfolio: 6.79%"
       },
       {
-        "ticker": "VGNT",
+        "ticker": "KEX",
         "manager": "Alex Roepers - Atlantic Investment Management",
-        "period": "Q2 2026",
+        "period": "Q3 2026",
         "action": "COMPRA / APORTE",
-        "details": "Versigent PlcBuyChange to portfolio: 2.64%"
+        "details": "Kirby Corp.Add 22.76%Change to portfolio: 3.10%"
+      },
+      {
+        "ticker": "OSK",
+        "manager": "Alex Roepers - Atlantic Investment Management",
+        "period": "Q3 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Oshkosh Corp.Add 35.13%Change to portfolio: 2.11%"
+      },
+      {
+        "ticker": "AESI",
+        "manager": "Alex Roepers - Atlantic Investment Management",
+        "period": "Q3 2026",
+        "action": "COMPRA / APORTE",
+        "details": "Atlas Energy Solutions IncBuyChange to portfolio: 1.67%"
+      },
+      {
+        "ticker": "ABM",
+        "manager": "Alex Roepers - Atlantic Investment Management",
+        "period": "Q3 2026",
+        "action": "COMPRA / APORTE",
+        "details": "ABM IndustriesAdd 15.89%Change to portfolio: 1.31%"
       },
       {
         "ticker": "MSFT",
@@ -632,90 +646,41 @@
         "details": "Microsoft Corp.Add 13.13%Change to portfolio: 3.73%"
       },
       {
-        "ticker": "INTU",
+        "ticker": "CTSH",
         "manager": "Arnold Van Den Berg - Century Management",
-        "period": "Q2 2026",
+        "period": "Q3 2026",
         "action": "COMPRA / APORTE",
-        "details": "Intuit Inc.Add 264.25%Change to portfolio: 1.00%"
+        "details": "Cognizant Technology SolutionsBuyChange to portfolio: 1.26%"
       },
       {
-        "ticker": "APH",
+        "ticker": "GNRC",
         "manager": "Arnold Van Den Berg - Century Management",
-        "period": "Q2 2026",
+        "period": "Q3 2026",
         "action": "COMPRA / APORTE",
-        "details": "Amphenol Corp.BuyChange to portfolio: 0.81%"
+        "details": "Generac Holdings Inc.Add 63.66%Change to portfolio: 0.60%"
       },
       {
-        "ticker": "MKTX",
+        "ticker": "CRGY",
         "manager": "Arnold Van Den Berg - Century Management",
-        "period": "Q2 2026",
+        "period": "Q3 2026",
         "action": "COMPRA / APORTE",
-        "details": "MarketAxess Holdings Inc.Add 65.66%Change to portfolio: 0.50%"
+        "details": "Crescent Energy Inc AAdd 73.47%Change to portfolio: 0.44%"
       },
       {
-        "ticker": "VNT",
+        "ticker": "CME",
         "manager": "Arnold Van Den Berg - Century Management",
-        "period": "Q2 2026",
+        "period": "Q3 2026",
         "action": "COMPRA / APORTE",
-        "details": "Vontier Corp.Add 24.64%Change to portfolio: 0.34%"
-      },
-      {
-        "ticker": "DVN",
-        "manager": "Arnold Van Den Berg - Century Management",
-        "period": "Q2 2026",
-        "action": "COMPRA / APORTE",
-        "details": "Devon Energy Corp.Add 117.07%Change to portfolio: 0.30%"
-      },
-      {
-        "ticker": "HD",
-        "manager": "Bill & Melinda Gates Foundation Trust",
-        "period": "Q2 2026",
-        "action": "COMPRA / APORTE",
-        "details": "Home DepotBuyChange to portfolio: 1.02%"
+        "details": "CME GroupAdd 16.79%Change to portfolio: 0.20%"
       }
     ],
     "top_sells": [
       {
-        "ticker": "SUNB",
+        "ticker": "SN",
         "manager": "Abrams Bison Investments",
-        "period": "Q2 2026",
+        "period": "Q3 2026",
         "action": "VENDA / REDUÇÃO",
-        "details": "Sunbelt Rentals Holdings IncReduce -83.61%Change to portfolio: 38.36%"
-      },
-      {
-        "ticker": "SNX",
-        "manager": "Abrams Bison Investments",
-        "period": "Q2 2026",
-        "action": "VENDA / REDUÇÃO",
-        "details": "SYNNEX Corp.Reduce -18.88%Change to portfolio: 6.14%"
-      },
-      {
-        "ticker": "AMAT",
-        "manager": "Abrams Bison Investments",
-        "period": "Q2 2026",
-        "action": "VENDA / REDUÇÃO",
-        "details": "Applied MaterialsReduce -21.59%Change to portfolio: 5.36%"
-      },
-      {
-        "ticker": "TFX",
-        "manager": "Abrams Bison Investments",
-        "period": "Q2 2026",
-        "action": "VENDA / REDUÇÃO",
-        "details": "TeleflexReduce -20.70%Change to portfolio: 1.28%"
-      },
-      {
-        "ticker": "ACHC",
-        "manager": "Abrams Bison Investments",
-        "period": "Q2 2026",
-        "action": "VENDA / REDUÇÃO",
-        "details": "Acadia Healthcare Co.Reduce -4.91%Change to portfolio: 0.31%"
-      },
-      {
-        "ticker": "NYT",
-        "manager": "Abrams Bison Investments",
-        "period": "Q2 2026",
-        "action": "VENDA / REDUÇÃO",
-        "details": "New York Times CL AReduce -5.97%Change to portfolio: 0.29%"
+        "details": "Sharkninja IncReduce -70.61%Change to portfolio: 9.23%"
       },
       {
         "ticker": "ADI",
@@ -779,14 +744,49 @@
         "period": "Q3 2026",
         "action": "VENDA / REDUÇÃO",
         "details": "GE AerospaceReduce -22.93%Change to portfolio: 1.75%"
+      },
+      {
+        "ticker": "ASH",
+        "manager": "Alex Roepers - Atlantic Investment Management",
+        "period": "Q3 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Ashland Global Holdings Inc.Sell -100.00%Change to portfolio: 17.47%"
+      },
+      {
+        "ticker": "VGNT",
+        "manager": "Alex Roepers - Atlantic Investment Management",
+        "period": "Q3 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Versigent PlcSell -100.00%Change to portfolio: 2.64%"
+      },
+      {
+        "ticker": "DCH",
+        "manager": "Alex Roepers - Atlantic Investment Management",
+        "period": "Q3 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Dauch Corp.Reduce -28.79%Change to portfolio: 1.17%"
+      },
+      {
+        "ticker": "NOMD",
+        "manager": "Alex Roepers - Atlantic Investment Management",
+        "period": "Q3 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Nomad Foods LtdReduce -13.20%Change to portfolio: 1.01%"
+      },
+      {
+        "ticker": "AMZN",
+        "manager": "AltaRock Partners",
+        "period": "Q3 2026",
+        "action": "VENDA / REDUÇÃO",
+        "details": "Amazon.com Inc.Reduce -15.79%Change to portfolio: 5.35%"
       }
     ]
   },
   "portfolio_dataroma_match": [
     {
       "ticker": "GOOGL",
-      "ownership_count": 36,
-      "hold_price": "$351.55",
+      "ownership_count": 38,
+      "hold_price": "$344.87",
       "sector": "Information Technology",
       "is_top_consensus": true,
       "recent_activity": "🟢 Alta Convicção Institucional (Top Consenso)",
@@ -794,8 +794,8 @@
     },
     {
       "ticker": "META",
-      "ownership_count": 32,
-      "hold_price": "$621.36",
+      "ownership_count": 34,
+      "hold_price": "$725.18",
       "sector": "Technology",
       "is_top_consensus": true,
       "recent_activity": "🟢 Alta Convicção Institucional (Top Consenso)",
@@ -804,16 +804,7 @@
     {
       "ticker": "AVGO",
       "ownership_count": 14,
-      "hold_price": "$362.80",
-      "sector": "Technology",
-      "is_top_consensus": true,
-      "recent_activity": "Neutro / Sem mudanças recentes",
-      "activity_badge": "badge-neutral"
-    },
-    {
-      "ticker": "UBER",
-      "ownership_count": 13,
-      "hold_price": "$71.47",
+      "hold_price": "$358.50",
       "sector": "Technology",
       "is_top_consensus": true,
       "recent_activity": "Neutro / Sem mudanças recentes",
@@ -821,6 +812,15 @@
     },
     {
       "ticker": "MELI",
+      "ownership_count": 0,
+      "hold_price": "N/D",
+      "sector": "Carteira Própria",
+      "is_top_consensus": false,
+      "recent_activity": "Neutro / Sem mudanças recentes",
+      "activity_badge": "badge-neutral"
+    },
+    {
+      "ticker": "UBER",
       "ownership_count": 0,
       "hold_price": "N/D",
       "sector": "Carteira Própria",
@@ -1010,7 +1010,6 @@
   },
   "quad_rotation_tracker": {
     "dates": [
-      "15/10",
       "16/10",
       "19/10",
       "20/10",
@@ -1031,7 +1030,8 @@
       "10/11",
       "11/11",
       "12/11",
-      "13/11"
+      "13/11",
+      "16/11"
     ],
     "baskets": {
       "QUAD 1": {
@@ -1045,112 +1045,112 @@
         ],
         "desc": "QQQ, XLY, IWM, HYG (cesta definida no sistema)",
         "periods": {
-          "1D": -0.49,
-          "1S": 1.68,
-          "1M": 0.09,
-          "3M": -3.53,
-          "6M": -0.07,
-          "YTD": 6.48,
-          "1A": 7.02
+          "1D": -1.53,
+          "1S": -2.34,
+          "1M": -0.11,
+          "3M": -4.2,
+          "6M": -1.32,
+          "YTD": 4.82,
+          "1A": 7.47
         },
-        "ret_1d": "-0.49%",
-        "ret_1d_val": -0.49,
-        "ret_5d": "+1.68%",
-        "ret_5d_val": 1.68,
-        "ret_30d": "+0.09%",
-        "ret_30d_val": 0.09,
+        "ret_1d": "-1.53%",
+        "ret_1d_val": -1.53,
+        "ret_5d": "-2.34%",
+        "ret_5d_val": -2.34,
+        "ret_30d": "-0.11%",
+        "ret_30d_val": -0.11,
         "acceleration": "N/D",
         "acceleration_val": null,
         "accel_state": "",
         "accel_badge": "",
         "series": [
           0.0,
-          -1.34,
-          -0.54,
-          0.07,
-          0.45,
-          -0.32,
-          -0.84,
-          -0.16,
-          0.83,
-          1.05,
-          1.14,
-          -0.37,
-          -0.14,
-          -0.09,
-          1.8,
-          -2.04,
-          -1.52,
-          0.93,
+          0.81,
+          1.44,
+          1.82,
+          1.03,
           0.5,
-          1.31,
-          0.57,
-          0.09
+          1.2,
+          2.21,
+          2.44,
+          2.52,
+          0.98,
+          1.2,
+          1.25,
+          3.17,
+          -0.74,
+          -0.2,
+          2.29,
+          1.85,
+          2.67,
+          1.93,
+          1.43,
+          -0.11
         ],
         "assets": [
           {
             "ticker": "QQQ",
-            "price": 679.89,
+            "price": 661.75,
             "periods": {
-              "1D": -1.2,
-              "1S": 3.63,
-              "1M": -6.61,
-              "3M": -6.75,
-              "6M": -3.89,
-              "YTD": 11.05,
-              "1A": 9.98
+              "1D": -2.67,
+              "1S": -2.59,
+              "1M": -6.77,
+              "3M": -7.68,
+              "6M": -6.05,
+              "YTD": 8.09,
+              "1A": 9.28
             },
-            "ret_1d": "-1.20%",
-            "ret_30d": "-6.61%",
-            "ret_30d_val": -6.61
+            "ret_1d": "-2.67%",
+            "ret_30d": "-6.77%",
+            "ret_30d_val": -6.77
           },
           {
             "ticker": "XLY",
-            "price": 119.98,
+            "price": 118.15,
             "periods": {
-              "1D": -0.4,
-              "1S": 2.04,
-              "1M": 5.79,
-              "3M": 2.99,
-              "6M": 3.39,
-              "YTD": 1.1,
-              "1A": 1.68
+              "1D": -1.53,
+              "1S": -2.36,
+              "1M": 5.06,
+              "3M": 1.76,
+              "6M": 2.0,
+              "YTD": -0.44,
+              "1A": 2.69
             },
-            "ret_1d": "-0.40%",
-            "ret_30d": "+5.79%",
-            "ret_30d_val": 5.79
+            "ret_1d": "-1.53%",
+            "ret_30d": "+5.06%",
+            "ret_30d_val": 5.06
           },
           {
             "ticker": "IWM",
-            "price": 277.54,
+            "price": 272.94,
             "periods": {
-              "1D": -0.32,
-              "1S": 1.41,
-              "1M": 0.89,
-              "3M": -8.48,
-              "6M": 0.48,
-              "YTD": 13.51,
-              "1A": 15.07
+              "1D": -1.66,
+              "1S": -3.39,
+              "1M": 0.92,
+              "3M": -8.85,
+              "6M": -0.6,
+              "YTD": 11.63,
+              "1A": 16.44
             },
-            "ret_1d": "-0.32%",
-            "ret_30d": "+0.89%",
-            "ret_30d_val": 0.89
+            "ret_1d": "-1.66%",
+            "ret_30d": "+0.92%",
+            "ret_30d_val": 0.92
           },
           {
             "ticker": "HYG",
-            "price": 76.94,
+            "price": 76.73,
             "periods": {
-              "1D": -0.05,
-              "1S": -0.38,
-              "1M": 0.27,
-              "3M": -1.88,
-              "6M": -0.26,
-              "YTD": 0.27,
-              "1A": 1.34
+              "1D": -0.27,
+              "1S": -1.01,
+              "1M": 0.35,
+              "3M": -2.05,
+              "6M": -0.63,
+              "YTD": -0.0,
+              "1A": 1.48
             },
-            "ret_1d": "-0.05%",
-            "ret_30d": "+0.27%",
-            "ret_30d_val": 0.27
+            "ret_1d": "-0.27%",
+            "ret_30d": "+0.35%",
+            "ret_30d_val": 0.35
           }
         ]
       },
@@ -1165,112 +1165,112 @@
         ],
         "desc": "DBC, CPER, XLI, XLB (cesta definida no sistema)",
         "periods": {
-          "1D": -0.72,
-          "1S": -0.28,
-          "1M": -2.78,
-          "3M": -4.24,
-          "6M": -0.45,
-          "YTD": 17.13,
-          "1A": 21.33
+          "1D": -1.61,
+          "1S": -3.32,
+          "1M": -4.83,
+          "3M": -4.61,
+          "6M": -2.23,
+          "YTD": 15.24,
+          "1A": 20.4
         },
-        "ret_1d": "-0.72%",
-        "ret_1d_val": -0.72,
-        "ret_5d": "-0.28%",
-        "ret_5d_val": -0.28,
-        "ret_30d": "-2.78%",
-        "ret_30d_val": -2.78,
+        "ret_1d": "-1.61%",
+        "ret_1d_val": -1.61,
+        "ret_5d": "-3.32%",
+        "ret_5d_val": -3.32,
+        "ret_30d": "-4.83%",
+        "ret_30d_val": -4.83,
         "acceleration": "N/D",
         "acceleration_val": null,
         "accel_state": "",
         "accel_badge": "",
         "series": [
           0.0,
-          0.52,
-          0.37,
-          0.56,
-          0.65,
-          -0.03,
-          0.24,
-          0.59,
-          1.21,
-          1.66,
-          1.8,
-          0.95,
+          -0.15,
+          0.04,
+          0.13,
+          -0.55,
+          -0.29,
+          0.07,
+          0.69,
           1.13,
-          0.27,
-          -0.17,
-          -2.63,
-          -2.54,
-          -1.06,
-          -1.73,
-          -1.26,
-          -2.08,
-          -2.78
+          1.27,
+          0.42,
+          0.61,
+          -0.24,
+          -0.67,
+          -3.13,
+          -3.04,
+          -1.56,
+          -2.23,
+          -1.76,
+          -2.58,
+          -3.27,
+          -4.83
         ],
         "assets": [
           {
             "ticker": "DBC",
-            "price": 30.79,
+            "price": 30.25,
             "periods": {
-              "1D": -0.39,
-              "1S": -2.38,
-              "1M": -7.54,
-              "3M": 0.75,
-              "6M": -1.28,
-              "YTD": 37.7,
-              "1A": 38.13
+              "1D": -1.75,
+              "1S": -2.36,
+              "1M": -10.34,
+              "3M": -0.75,
+              "6M": -3.6,
+              "YTD": 35.29,
+              "1A": 36.42
             },
-            "ret_1d": "-0.39%",
-            "ret_30d": "-7.54%",
-            "ret_30d_val": -7.54
+            "ret_1d": "-1.75%",
+            "ret_30d": "-10.34%",
+            "ret_30d_val": -10.34
           },
           {
             "ticker": "CPER",
-            "price": 36.53,
+            "price": 36.03,
             "periods": {
-              "1D": -1.91,
-              "1S": -3.03,
-              "1M": -7.4,
-              "3M": -8.97,
-              "6M": -4.22,
-              "YTD": 4.49,
-              "1A": 15.97
+              "1D": -1.37,
+              "1S": -6.25,
+              "1M": -8.78,
+              "3M": -8.04,
+              "6M": -6.17,
+              "YTD": 3.06,
+              "1A": 15.26
             },
-            "ret_1d": "-1.91%",
-            "ret_30d": "-7.40%",
-            "ret_30d_val": -7.4
+            "ret_1d": "-1.37%",
+            "ret_30d": "-8.78%",
+            "ret_30d_val": -8.78
           },
           {
             "ticker": "XLI",
-            "price": 168.78,
+            "price": 165.66,
             "periods": {
-              "1D": -0.39,
-              "1S": 3.76,
-              "1M": 0.53,
-              "3M": -9.17,
-              "6M": -1.02,
-              "YTD": 9.67,
-              "1A": 10.57
+              "1D": -1.85,
+              "1S": -1.91,
+              "1M": -1.25,
+              "3M": -9.51,
+              "6M": -2.48,
+              "YTD": 7.65,
+              "1A": 10.23
             },
-            "ret_1d": "-0.39%",
-            "ret_30d": "+0.53%",
-            "ret_30d_val": 0.53
+            "ret_1d": "-1.85%",
+            "ret_30d": "-1.25%",
+            "ret_30d_val": -1.25
           },
           {
             "ticker": "XLB",
-            "price": 52.23,
+            "price": 51.47,
             "periods": {
-              "1D": -0.21,
-              "1S": 0.54,
-              "1M": 3.3,
-              "3M": 0.44,
-              "6M": 4.7,
-              "YTD": 16.65,
-              "1A": 20.64
+              "1D": -1.46,
+              "1S": -2.78,
+              "1M": 1.08,
+              "3M": -0.14,
+              "6M": 3.35,
+              "YTD": 14.95,
+              "1A": 19.68
             },
-            "ret_1d": "-0.21%",
-            "ret_30d": "+3.30%",
-            "ret_30d_val": 3.3
+            "ret_1d": "-1.46%",
+            "ret_30d": "+1.08%",
+            "ret_30d_val": 1.08
           }
         ]
       },
@@ -1285,112 +1285,112 @@
         ],
         "desc": "GLD, XLU, XLE, XLK (cesta definida no sistema)",
         "periods": {
-          "1D": -0.09,
-          "1S": 1.58,
-          "1M": -3.45,
-          "3M": -4.48,
-          "6M": -1.37,
-          "YTD": 15.47,
-          "1A": 14.34
+          "1D": -1.43,
+          "1S": -1.75,
+          "1M": -4.99,
+          "3M": -5.25,
+          "6M": -3.16,
+          "YTD": 13.67,
+          "1A": 13.72
         },
-        "ret_1d": "-0.09%",
-        "ret_1d_val": -0.09,
-        "ret_5d": "+1.58%",
-        "ret_5d_val": 1.58,
-        "ret_30d": "-3.45%",
-        "ret_30d_val": -3.45,
+        "ret_1d": "-1.43%",
+        "ret_1d_val": -1.43,
+        "ret_5d": "-1.75%",
+        "ret_5d_val": -1.75,
+        "ret_30d": "-4.99%",
+        "ret_30d_val": -4.99,
         "acceleration": "N/D",
         "acceleration_val": null,
         "accel_state": "",
         "accel_badge": "",
         "series": [
           0.0,
+          -0.48,
+          -0.31,
+          0.34,
+          -0.86,
+          -0.43,
           0.17,
-          -0.33,
-          -0.16,
-          0.48,
-          -0.69,
-          -0.25,
-          0.35,
-          0.7,
-          0.85,
-          0.72,
-          -0.67,
-          -1.88,
-          -2.1,
-          -2.31,
-          -4.88,
-          -4.86,
-          -3.08,
-          -3.94,
-          -3.0,
-          -3.4,
-          -3.45
+          0.55,
+          0.71,
+          0.56,
+          -0.88,
+          -2.09,
+          -2.29,
+          -2.47,
+          -5.08,
+          -5.05,
+          -3.25,
+          -4.12,
+          -3.17,
+          -3.58,
+          -3.65,
+          -4.99
         ],
         "assets": [
           {
             "ticker": "GLD",
-            "price": 355.45,
+            "price": 352.93,
             "periods": {
-              "1D": 0.16,
-              "1S": -4.58,
-              "1M": -7.12,
-              "3M": -12.34,
-              "6M": -14.82,
-              "YTD": -10.31,
-              "1A": -7.91
+              "1D": -0.71,
+              "1S": -7.01,
+              "1M": -7.61,
+              "3M": -11.45,
+              "6M": -15.65,
+              "YTD": -10.95,
+              "1A": -7.82
             },
-            "ret_1d": "+0.16%",
-            "ret_30d": "-7.12%",
-            "ret_30d_val": -7.12
+            "ret_1d": "-0.71%",
+            "ret_30d": "-7.61%",
+            "ret_30d_val": -7.61
           },
           {
             "ticker": "XLU",
-            "price": 44.04,
+            "price": 44.12,
             "periods": {
-              "1D": 0.52,
-              "1S": 2.11,
-              "1M": 5.74,
-              "3M": 0.42,
-              "6M": 1.77,
-              "YTD": 5.32,
-              "1A": 0.75
+              "1D": 0.18,
+              "1S": 0.75,
+              "1M": 4.52,
+              "3M": 0.96,
+              "6M": 1.79,
+              "YTD": 5.51,
+              "1A": 2.34
             },
-            "ret_1d": "+0.52%",
-            "ret_30d": "+5.74%",
-            "ret_30d_val": 5.74
+            "ret_1d": "+0.18%",
+            "ret_30d": "+4.52%",
+            "ret_30d_val": 4.52
           },
           {
             "ticker": "XLE",
-            "price": 64.96,
+            "price": 63.69,
             "periods": {
-              "1D": 0.98,
-              "1S": 5.42,
-              "1M": -2.4,
-              "3M": 4.42,
-              "6M": 10.73,
-              "YTD": 48.17,
-              "1A": 48.06
+              "1D": -1.96,
+              "1S": 2.83,
+              "1M": -6.67,
+              "3M": 0.61,
+              "6M": 6.52,
+              "YTD": 45.27,
+              "1A": 44.8
             },
-            "ret_1d": "+0.98%",
-            "ret_30d": "-2.40%",
-            "ret_30d_val": -2.4
+            "ret_1d": "-1.96%",
+            "ret_30d": "-6.67%",
+            "ret_30d_val": -6.67
           },
           {
             "ticker": "XLK",
-            "price": 170.28,
+            "price": 164.76,
             "periods": {
-              "1D": -2.01,
-              "1S": 3.36,
-              "1M": -10.0,
-              "3M": -10.43,
-              "6M": -3.16,
-              "YTD": 18.7,
-              "1A": 16.46
+              "1D": -3.24,
+              "1S": -3.58,
+              "1M": -10.2,
+              "3M": -11.13,
+              "6M": -5.28,
+              "YTD": 14.85,
+              "1A": 15.57
             },
-            "ret_1d": "-2.01%",
-            "ret_30d": "-10.00%",
-            "ret_30d_val": -10.0
+            "ret_1d": "-3.24%",
+            "ret_30d": "-10.20%",
+            "ret_30d_val": -10.2
           }
         ]
       },
@@ -1405,112 +1405,112 @@
         ],
         "desc": "IEF, XLV, XLP, XLU (cesta definida no sistema)",
         "periods": {
-          "1D": 0.57,
-          "1S": 1.21,
-          "1M": 4.71,
-          "3M": 5.42,
-          "6M": 10.47,
-          "YTD": 11.7,
-          "1A": 11.45
+          "1D": 0.04,
+          "1S": 0.17,
+          "1M": 4.17,
+          "3M": 4.78,
+          "6M": 9.9,
+          "YTD": 11.73,
+          "1A": 11.91
         },
-        "ret_1d": "+0.57%",
-        "ret_1d_val": 0.57,
-        "ret_5d": "+1.21%",
-        "ret_5d_val": 1.21,
-        "ret_30d": "+4.71%",
-        "ret_30d_val": 4.71,
+        "ret_1d": "+0.04%",
+        "ret_1d_val": 0.04,
+        "ret_5d": "+0.17%",
+        "ret_5d_val": 0.17,
+        "ret_30d": "+4.17%",
+        "ret_30d_val": 4.17,
         "acceleration": "N/D",
         "acceleration_val": null,
         "accel_state": "",
         "accel_badge": "",
         "series": [
           0.0,
-          0.56,
-          -0.31,
-          0.79,
-          0.55,
-          2.5,
-          1.49,
-          1.42,
-          1.34,
-          1.05,
-          2.54,
-          3.33,
-          3.86,
-          2.99,
-          4.9,
-          3.93,
-          3.45,
-          4.56,
-          4.42,
-          4.59,
-          4.11,
-          4.71
+          -0.86,
+          0.23,
+          -0.01,
+          1.93,
+          0.93,
+          0.86,
+          0.78,
+          0.49,
+          1.98,
+          2.76,
+          3.28,
+          2.42,
+          4.32,
+          3.36,
+          2.88,
+          3.98,
+          3.84,
+          4.01,
+          3.53,
+          4.13,
+          4.17
         ],
         "assets": [
           {
             "ticker": "IEF",
-            "price": 90.04,
+            "price": 90.24,
             "periods": {
-              "1D": -0.19,
-              "1S": -1.98,
-              "1M": -0.0,
-              "3M": -2.0,
-              "6M": -1.72,
-              "YTD": -3.2,
-              "1A": -3.32
+              "1D": 0.22,
+              "1S": -1.7,
+              "1M": 0.14,
+              "3M": -1.88,
+              "6M": -1.46,
+              "YTD": -2.98,
+              "1A": -2.82
             },
-            "ret_1d": "-0.19%",
-            "ret_30d": "-0.00%",
-            "ret_30d_val": -0.0
+            "ret_1d": "+0.22%",
+            "ret_30d": "+0.14%",
+            "ret_30d_val": 0.14
           },
           {
             "ticker": "XLV",
-            "price": 188.85,
+            "price": 187.88,
             "periods": {
-              "1D": 0.54,
-              "1S": 2.19,
-              "1M": 6.58,
-              "3M": 13.48,
-              "6M": 31.23,
-              "YTD": 23.51,
-              "1A": 25.64
+              "1D": -0.51,
+              "1S": -0.24,
+              "1M": 6.32,
+              "3M": 11.12,
+              "6M": 30.0,
+              "YTD": 22.87,
+              "1A": 25.06
             },
-            "ret_1d": "+0.54%",
-            "ret_30d": "+6.58%",
-            "ret_30d_val": 6.58
+            "ret_1d": "-0.51%",
+            "ret_30d": "+6.32%",
+            "ret_30d_val": 6.32
           },
           {
             "ticker": "XLP",
-            "price": 92.35,
+            "price": 92.6,
             "periods": {
-              "1D": 1.42,
-              "1S": 2.52,
-              "1M": 6.54,
-              "3M": 9.77,
-              "6M": 10.59,
-              "YTD": 21.18,
-              "1A": 22.72
+              "1D": 0.27,
+              "1S": 1.88,
+              "1M": 5.68,
+              "3M": 8.91,
+              "6M": 9.26,
+              "YTD": 21.5,
+              "1A": 23.05
             },
-            "ret_1d": "+1.42%",
-            "ret_30d": "+6.54%",
-            "ret_30d_val": 6.54
+            "ret_1d": "+0.27%",
+            "ret_30d": "+5.68%",
+            "ret_30d_val": 5.68
           },
           {
             "ticker": "XLU",
-            "price": 44.04,
+            "price": 44.12,
             "periods": {
-              "1D": 0.52,
-              "1S": 2.11,
-              "1M": 5.74,
-              "3M": 0.42,
-              "6M": 1.77,
-              "YTD": 5.32,
-              "1A": 0.75
+              "1D": 0.18,
+              "1S": 0.75,
+              "1M": 4.52,
+              "3M": 0.96,
+              "6M": 1.79,
+              "YTD": 5.51,
+              "1A": 2.34
             },
-            "ret_1d": "+0.52%",
-            "ret_30d": "+5.74%",
-            "ret_30d_val": 5.74
+            "ret_1d": "+0.18%",
+            "ret_30d": "+4.52%",
+            "ret_30d_val": 4.52
           }
         ]
       }
@@ -1526,7 +1526,7 @@
     ],
     "leaders": {
       "1D": "QUAD 4",
-      "1S": "QUAD 1",
+      "1S": "QUAD 4",
       "1M": "QUAD 4",
       "3M": "QUAD 4",
       "6M": "QUAD 4",
@@ -1537,142 +1537,142 @@
       "1D": [
         {
           "quad": "QUAD 4",
-          "ret": 0.57
+          "ret": 0.04
         },
         {
           "quad": "QUAD 3",
-          "ret": -0.09
+          "ret": -1.43
         },
         {
           "quad": "QUAD 1",
-          "ret": -0.49
+          "ret": -1.53
         },
         {
           "quad": "QUAD 2",
-          "ret": -0.72
+          "ret": -1.61
         }
       ],
       "1S": [
         {
-          "quad": "QUAD 1",
-          "ret": 1.68
+          "quad": "QUAD 4",
+          "ret": 0.17
         },
         {
           "quad": "QUAD 3",
-          "ret": 1.58
+          "ret": -1.75
         },
         {
-          "quad": "QUAD 4",
-          "ret": 1.21
+          "quad": "QUAD 1",
+          "ret": -2.34
         },
         {
           "quad": "QUAD 2",
-          "ret": -0.28
+          "ret": -3.32
         }
       ],
       "1M": [
         {
           "quad": "QUAD 4",
-          "ret": 4.71
+          "ret": 4.17
         },
         {
           "quad": "QUAD 1",
-          "ret": 0.09
+          "ret": -0.11
         },
         {
           "quad": "QUAD 2",
-          "ret": -2.78
+          "ret": -4.83
         },
         {
           "quad": "QUAD 3",
-          "ret": -3.45
+          "ret": -4.99
         }
       ],
       "3M": [
         {
           "quad": "QUAD 4",
-          "ret": 5.42
+          "ret": 4.78
         },
         {
           "quad": "QUAD 1",
-          "ret": -3.53
+          "ret": -4.2
         },
         {
           "quad": "QUAD 2",
-          "ret": -4.24
+          "ret": -4.61
         },
         {
           "quad": "QUAD 3",
-          "ret": -4.48
+          "ret": -5.25
         }
       ],
       "6M": [
         {
           "quad": "QUAD 4",
-          "ret": 10.47
+          "ret": 9.9
         },
         {
           "quad": "QUAD 1",
-          "ret": -0.07
+          "ret": -1.32
         },
         {
           "quad": "QUAD 2",
-          "ret": -0.45
+          "ret": -2.23
         },
         {
           "quad": "QUAD 3",
-          "ret": -1.37
+          "ret": -3.16
         }
       ],
       "YTD": [
         {
           "quad": "QUAD 2",
-          "ret": 17.13
+          "ret": 15.24
         },
         {
           "quad": "QUAD 3",
-          "ret": 15.47
+          "ret": 13.67
         },
         {
           "quad": "QUAD 4",
-          "ret": 11.7
+          "ret": 11.73
         },
         {
           "quad": "QUAD 1",
-          "ret": 6.48
+          "ret": 4.82
         }
       ],
       "1A": [
         {
           "quad": "QUAD 2",
-          "ret": 21.33
+          "ret": 20.4
         },
         {
           "quad": "QUAD 3",
-          "ret": 14.34
+          "ret": 13.72
         },
         {
           "quad": "QUAD 4",
-          "ret": 11.45
+          "ret": 11.91
         },
         {
           "quad": "QUAD 1",
-          "ret": 7.02
+          "ret": 7.47
         }
       ]
     },
     "macro_ratios": {},
     "leading_today": "QUAD 4",
     "leading_month": "QUAD 4",
-    "transition_signal": "Quad líder por período (cestas do sistema): 1D: QUAD 4 · 1S: QUAD 1 · 1M: QUAD 4 · 3M: QUAD 4 · 6M: QUAD 4 · YTD: QUAD 2 · 1A: QUAD 2",
+    "transition_signal": "Quad líder por período (cestas do sistema): 1D: QUAD 4 · 1S: QUAD 4 · 1M: QUAD 4 · 3M: QUAD 4 · 6M: QUAD 4 · YTD: QUAD 2 · 1A: QUAD 2",
     "signal_badge": "badge-neutral",
-    "last_close": "13/11/2026",
+    "last_close": "16/11/2026",
     "fonte": "Yahoo Finance (fechamentos ajustados)",
     "aviso": "Composição das cestas definida no sistema, não publicada pela Hedgeye. O regime oficial vem do Early Look.",
-    "updated_at": "16/11/2026 09:33:22"
+    "updated_at": "17/11/2026 09:33:35"
   },
   "economic_calendar": {
-    "updated_at": "16/11/2026 09:33:24",
+    "updated_at": "17/11/2026 09:33:36",
     "source": "TradingView Official Real-Time Calendar API",
     "current_week": "16/11 a 20/11/2026",
     "total_events": 121,
@@ -1680,16 +1680,16 @@
       {
         "id": "1001652132001",
         "date_raw": "2026-11-16T13:30:00.000Z",
-        "date_str": "16/11 (Hoje - Seg) 13:30 UTC",
-        "tag": "HOJE",
-        "is_today": true,
-        "has_actual": false,
+        "date_str": "16/11 (Ontem - Seg) 13:30 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
+        "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · NY Empire State Manufacturing Index",
         "raw_title": "NY Empire State Manufacturing Index",
-        "consensus": "Projeção: 18 | Anterior: 25.5",
-        "actual": null,
+        "consensus": "Divulgado: 7.8 | Projeção: 18 | Anterior: 25.5",
+        "actual": 7.8,
         "forecast": 18,
         "previous": 25.5,
         "unit": "USD",
@@ -1704,18 +1704,18 @@
       {
         "id": "1001689745901",
         "date_raw": "2026-11-16T16:30:00.000Z",
-        "date_str": "16/11 (Hoje - Seg) 16:30 UTC",
-        "tag": "HOJE",
-        "is_today": true,
-        "has_actual": false,
+        "date_str": "16/11 (Ontem - Seg) 16:30 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
+        "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · 3-Month Bill Auction Allotted at High",
         "raw_title": "3-Month Bill Auction Allotted at High",
-        "consensus": "Sem projeção pública de mercado",
-        "actual": null,
+        "consensus": "Divulgado: 93.85 | Anterior: 79.03",
+        "actual": 93.85,
         "forecast": null,
-        "previous": null,
+        "previous": 79.03,
         "unit": "USD",
         "importance": 0,
         "quad_impact": "Evento macroeconômico acompanhado pelos agentes de mercado e mesas institucionais.",
@@ -1728,18 +1728,18 @@
       {
         "id": "1001689745902",
         "date_raw": "2026-11-16T16:30:00.000Z",
-        "date_str": "16/11 (Hoje - Seg) 16:30 UTC",
-        "tag": "HOJE",
-        "is_today": true,
-        "has_actual": false,
+        "date_str": "16/11 (Ontem - Seg) 16:30 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
+        "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · 3-Month Bill Auction Bid-to-Cover",
         "raw_title": "3-Month Bill Auction Bid-to-Cover",
-        "consensus": "Sem projeção pública de mercado",
-        "actual": null,
+        "consensus": "Divulgado: 2.76 | Anterior: 2.67",
+        "actual": 2.76,
         "forecast": null,
-        "previous": null,
+        "previous": 2.67,
         "unit": "USD",
         "importance": 0,
         "quad_impact": "Evento macroeconômico acompanhado pelos agentes de mercado e mesas institucionais.",
@@ -1752,9 +1752,9 @@
       {
         "id": "1001689745904",
         "date_raw": "2026-11-16T16:30:00.000Z",
-        "date_str": "16/11 (Hoje - Seg) 16:30 UTC",
-        "tag": "HOJE",
-        "is_today": true,
+        "date_str": "16/11 (Ontem - Seg) 16:30 UTC",
+        "tag": "CONCLUÍDO",
+        "is_today": false,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -1776,18 +1776,18 @@
       {
         "id": "1001693783801",
         "date_raw": "2026-11-16T16:30:00.000Z",
-        "date_str": "16/11 (Hoje - Seg) 16:30 UTC",
-        "tag": "HOJE",
-        "is_today": true,
-        "has_actual": false,
+        "date_str": "16/11 (Ontem - Seg) 16:30 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
+        "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · 6-Month Bill Auction Allotted at High",
         "raw_title": "6-Month Bill Auction Allotted at High",
-        "consensus": "Sem projeção pública de mercado",
-        "actual": null,
+        "consensus": "Divulgado: 7.39 | Anterior: 70.91",
+        "actual": 7.39,
         "forecast": null,
-        "previous": null,
+        "previous": 70.91,
         "unit": "USD",
         "importance": 0,
         "quad_impact": "Evento macroeconômico acompanhado pelos agentes de mercado e mesas institucionais.",
@@ -1800,18 +1800,18 @@
       {
         "id": "1001693783802",
         "date_raw": "2026-11-16T16:30:00.000Z",
-        "date_str": "16/11 (Hoje - Seg) 16:30 UTC",
-        "tag": "HOJE",
-        "is_today": true,
-        "has_actual": false,
+        "date_str": "16/11 (Ontem - Seg) 16:30 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
+        "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · 6-Month Bill Auction Bid-to-Cover",
         "raw_title": "6-Month Bill Auction Bid-to-Cover",
-        "consensus": "Sem projeção pública de mercado",
-        "actual": null,
+        "consensus": "Divulgado: 2.83 | Anterior: 2.92",
+        "actual": 2.83,
         "forecast": null,
-        "previous": null,
+        "previous": 2.92,
         "unit": "USD",
         "importance": 0,
         "quad_impact": "Evento macroeconômico acompanhado pelos agentes de mercado e mesas institucionais.",
@@ -1824,18 +1824,18 @@
       {
         "id": "1001693783804",
         "date_raw": "2026-11-16T16:30:00.000Z",
-        "date_str": "16/11 (Hoje - Seg) 16:30 UTC",
-        "tag": "HOJE",
-        "is_today": true,
-        "has_actual": false,
+        "date_str": "16/11 (Ontem - Seg) 16:30 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
+        "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · 6-Month Bill Auction Total Accepted",
         "raw_title": "6-Month Bill Auction Total Accepted",
-        "consensus": "Sem projeção pública de mercado",
-        "actual": null,
+        "consensus": "Divulgado: 87.8472 | Anterior: 87.4885",
+        "actual": 87.8472,
         "forecast": null,
-        "previous": null,
+        "previous": 87.4885,
         "unit": "USD",
         "importance": 0,
         "quad_impact": "Evento macroeconômico acompanhado pelos agentes de mercado e mesas institucionais.",
@@ -1848,16 +1848,16 @@
       {
         "id": "1001654813101",
         "date_raw": "2026-11-16T17:00:00.000Z",
-        "date_str": "16/11 (Hoje - Seg) 17:00 UTC",
-        "tag": "HOJE",
-        "is_today": true,
-        "has_actual": false,
+        "date_str": "16/11 (Ontem - Seg) 17:00 UTC",
+        "tag": "DIVULGADO",
+        "is_today": false,
+        "has_actual": true,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · NOPA Soybean Oil Stocks",
         "raw_title": "NOPA Soybean Oil Stocks",
-        "consensus": "Projeção: 1.089 | Anterior: 1.053",
-        "actual": null,
+        "consensus": "Divulgado: 1.171 | Projeção: 1.089 | Anterior: 1.053",
+        "actual": 1.171,
         "forecast": 1.089,
         "previous": 1.053,
         "unit": "USD",
@@ -1872,9 +1872,9 @@
       {
         "id": "1001697260201",
         "date_raw": "2026-11-17T13:15:00.000Z",
-        "date_str": "17/11 (Amanhã - Ter) 13:15 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "17/11 (Hoje - Ter) 13:15 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -1896,14 +1896,14 @@
       {
         "id": "1001660567801",
         "date_raw": "2026-11-17T13:30:00.000Z",
-        "date_str": "17/11 (Amanhã - Ter) 13:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "17/11 (Hoje - Ter) 13:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
-        "indicator": "[EUA] · United States-Imports/Exports-Export Prices YY",
-        "raw_title": "United States-Imports/Exports-Export Prices YY",
+        "indicator": "[EUA] · United States-Imports/Exports-Export Prices YY *",
+        "raw_title": "United States-Imports/Exports-Export Prices YY *",
         "consensus": "Anterior: 11.63",
         "actual": null,
         "forecast": null,
@@ -1920,17 +1920,17 @@
       {
         "id": "1001660567802",
         "date_raw": "2026-11-17T13:30:00.000Z",
-        "date_str": "17/11 (Amanhã - Ter) 13:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "17/11 (Hoje - Ter) 13:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · Export Prices MoM",
         "raw_title": "Export Prices MoM",
-        "consensus": "Projeção: 0.3 | Anterior: 2.2",
+        "consensus": "Projeção: 0.5 | Anterior: 2.2",
         "actual": null,
-        "forecast": 0.3,
+        "forecast": 0.5,
         "previous": 2.2,
         "unit": "USD",
         "importance": 0,
@@ -1944,9 +1944,9 @@
       {
         "id": "1001660567803",
         "date_raw": "2026-11-17T13:30:00.000Z",
-        "date_str": "17/11 (Amanhã - Ter) 13:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "17/11 (Hoje - Ter) 13:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -1968,9 +1968,9 @@
       {
         "id": "1001661350202",
         "date_raw": "2026-11-17T13:30:00.000Z",
-        "date_str": "17/11 (Amanhã - Ter) 13:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "17/11 (Hoje - Ter) 13:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -1992,9 +1992,9 @@
       {
         "id": "1001661350203",
         "date_raw": "2026-11-17T13:30:00.000Z",
-        "date_str": "17/11 (Amanhã - Ter) 13:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "17/11 (Hoje - Ter) 13:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -2016,9 +2016,9 @@
       {
         "id": "1001659552803",
         "date_raw": "2026-11-17T14:15:00.000Z",
-        "date_str": "17/11 (Amanhã - Ter) 14:15 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "17/11 (Hoje - Ter) 14:15 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -2040,9 +2040,9 @@
       {
         "id": "1001664110601",
         "date_raw": "2026-11-17T15:00:00.000Z",
-        "date_str": "17/11 (Amanhã - Ter) 15:00 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "17/11 (Hoje - Ter) 15:00 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -2064,9 +2064,9 @@
       {
         "id": "1001668383701",
         "date_raw": "2026-11-17T15:00:00.000Z",
-        "date_str": "17/11 (Amanhã - Ter) 15:00 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "17/11 (Hoje - Ter) 15:00 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
@@ -2088,17 +2088,17 @@
       {
         "id": "1001660034402",
         "date_raw": "2026-11-17T21:30:00.000Z",
-        "date_str": "17/11 (Amanhã - Ter) 21:30 UTC",
-        "tag": "AMANHÃ",
-        "is_today": false,
+        "date_str": "17/11 (Hoje - Ter) 21:30 UTC",
+        "tag": "HOJE",
+        "is_today": true,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · API Crude Oil Stock Change",
         "raw_title": "API Crude Oil Stock Change",
-        "consensus": "Anterior: 8.968",
+        "consensus": "Projeção: -0.5 | Anterior: 8.968",
         "actual": null,
-        "forecast": null,
+        "forecast": -0.5,
         "previous": 8.968,
         "unit": "USD",
         "importance": 0,
@@ -2112,8 +2112,8 @@
       {
         "id": "1001665474901",
         "date_raw": "2026-11-18T12:00:00.000Z",
-        "date_str": "18/11 (Qua) 12:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 12:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2136,8 +2136,8 @@
       {
         "id": "1001665474902",
         "date_raw": "2026-11-18T12:00:00.000Z",
-        "date_str": "18/11 (Qua) 12:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 12:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2160,8 +2160,8 @@
       {
         "id": "1001665474903",
         "date_raw": "2026-11-18T12:00:00.000Z",
-        "date_str": "18/11 (Qua) 12:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 12:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2184,8 +2184,8 @@
       {
         "id": "1001665474904",
         "date_raw": "2026-11-18T12:00:00.000Z",
-        "date_str": "18/11 (Qua) 12:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 12:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2208,8 +2208,8 @@
       {
         "id": "1001665474905",
         "date_raw": "2026-11-18T12:00:00.000Z",
-        "date_str": "18/11 (Qua) 12:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 12:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2232,8 +2232,8 @@
       {
         "id": "1001665474907",
         "date_raw": "2026-11-18T12:00:00.000Z",
-        "date_str": "18/11 (Qua) 12:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 12:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2256,8 +2256,8 @@
       {
         "id": "1001665474911",
         "date_raw": "2026-11-18T12:00:00.000Z",
-        "date_str": "18/11 (Qua) 12:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 12:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2280,17 +2280,17 @@
       {
         "id": "1001661345001",
         "date_raw": "2026-11-18T13:30:00.000Z",
-        "date_str": "18/11 (Qua) 13:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 13:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · Housing Starts",
         "raw_title": "Housing Starts",
-        "consensus": "Projeção: 1.268 | Anterior: 1.221",
+        "consensus": "Projeção: 1.245 | Anterior: 1.221",
         "actual": null,
-        "forecast": 1.268,
+        "forecast": 1.245,
         "previous": 1.221,
         "unit": "USD",
         "importance": 1,
@@ -2304,8 +2304,8 @@
       {
         "id": "1001661345002",
         "date_raw": "2026-11-18T13:30:00.000Z",
-        "date_str": "18/11 (Qua) 13:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 13:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2328,8 +2328,8 @@
       {
         "id": "1001661345901",
         "date_raw": "2026-11-18T13:30:00.000Z",
-        "date_str": "18/11 (Qua) 13:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 13:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2352,8 +2352,8 @@
       {
         "id": "1001661345902",
         "date_raw": "2026-11-18T13:30:00.000Z",
-        "date_str": "18/11 (Qua) 13:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 13:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2376,8 +2376,8 @@
       {
         "id": "1001661051301",
         "date_raw": "2026-11-18T15:00:00.000Z",
-        "date_str": "18/11 (Qua) 15:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 15:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2400,8 +2400,8 @@
       {
         "id": "1001661051302",
         "date_raw": "2026-11-18T15:00:00.000Z",
-        "date_str": "18/11 (Qua) 15:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 15:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2424,8 +2424,8 @@
       {
         "id": "1001689741901",
         "date_raw": "2026-11-18T15:30:00.000Z",
-        "date_str": "18/11 (Qua) 15:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 15:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2448,8 +2448,8 @@
       {
         "id": "1001689741902",
         "date_raw": "2026-11-18T15:30:00.000Z",
-        "date_str": "18/11 (Qua) 15:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 15:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2472,17 +2472,17 @@
       {
         "id": "1001692990406",
         "date_raw": "2026-11-18T15:30:00.000Z",
-        "date_str": "18/11 (Qua) 15:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 15:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · EIA Crude Oil Stocks Change",
         "raw_title": "EIA Crude Oil Stocks Change",
-        "consensus": "Anterior: 4.657",
+        "consensus": "Projeção: -0.5 | Anterior: 4.657",
         "actual": null,
-        "forecast": null,
+        "forecast": -0.5,
         "previous": 4.657,
         "unit": "USD",
         "importance": 0,
@@ -2496,17 +2496,17 @@
       {
         "id": "1001692990408",
         "date_raw": "2026-11-18T15:30:00.000Z",
-        "date_str": "18/11 (Qua) 15:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 15:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
         "country_label": "[EUA]",
         "indicator": "[EUA] · EIA Gasoline Stocks Change",
         "raw_title": "EIA Gasoline Stocks Change",
-        "consensus": "Anterior: 1.799",
+        "consensus": "Projeção: 1.6 | Anterior: 1.799",
         "actual": null,
-        "forecast": null,
+        "forecast": 1.6,
         "previous": 1.799,
         "unit": "USD",
         "importance": 0,
@@ -2520,8 +2520,8 @@
       {
         "id": "1001692990413",
         "date_raw": "2026-11-18T15:30:00.000Z",
-        "date_str": "18/11 (Qua) 15:30 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 15:30 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2544,8 +2544,8 @@
       {
         "id": "1001690806301",
         "date_raw": "2026-11-18T18:00:00.000Z",
-        "date_str": "18/11 (Qua) 18:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 18:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2568,8 +2568,8 @@
       {
         "id": "1001690806302",
         "date_raw": "2026-11-18T18:00:00.000Z",
-        "date_str": "18/11 (Qua) 18:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 18:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2592,8 +2592,8 @@
       {
         "id": "1001690806304",
         "date_raw": "2026-11-18T18:00:00.000Z",
-        "date_str": "18/11 (Qua) 18:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 18:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2616,8 +2616,8 @@
       {
         "id": "1001661053304",
         "date_raw": "2026-11-18T21:00:00.000Z",
-        "date_str": "18/11 (Qua) 21:00 UTC",
-        "tag": "PRÓXIMO",
+        "date_str": "18/11 (Amanhã - Qua) 21:00 UTC",
+        "tag": "AMANHÃ",
         "is_today": false,
         "has_actual": false,
         "country": "US",
@@ -2648,9 +2648,9 @@
         "country_label": "[EUA]",
         "indicator": "[EUA] · Philadelphia Fed Manufacturing Index",
         "raw_title": "Philadelphia Fed Manufacturing Index",
-        "consensus": "Projeção: 18 | Anterior: 20.9",
+        "consensus": "Projeção: 20 | Anterior: 20.9",
         "actual": null,
-        "forecast": 18,
+        "forecast": 20,
         "previous": 20.9,
         "unit": "USD",
         "importance": 0,
@@ -2720,9 +2720,9 @@
         "country_label": "[EUA]",
         "indicator": "[EUA] · Initial Jobless Claims",
         "raw_title": "Initial Jobless Claims",
-        "consensus": "Projeção: 196 | Anterior: 200",
+        "consensus": "Projeção: 197 | Anterior: 200",
         "actual": null,
-        "forecast": 196,
+        "forecast": 197,
         "previous": 200,
         "unit": "USD",
         "importance": 0,
@@ -2888,9 +2888,9 @@
         "country_label": "[EUA]",
         "indicator": "[EUA] · Michigan Consumer Sentiment Final",
         "raw_title": "Michigan Consumer Sentiment Final",
-        "consensus": "Projeção: 52 | Anterior: 48",
+        "consensus": "Projeção: 51.5 | Anterior: 48",
         "actual": null,
-        "forecast": 52,
+        "forecast": 51.5,
         "previous": 48,
         "unit": "USD",
         "importance": 0,
@@ -3320,9 +3320,9 @@
         "country_label": "[EUA]",
         "indicator": "[EUA] · CB Consumer Confidence",
         "raw_title": "CB Consumer Confidence",
-        "consensus": "Anterior: 91.7",
+        "consensus": "Projeção: 92 | Anterior: 91.7",
         "actual": null,
-        "forecast": null,
+        "forecast": 92,
         "previous": 91.7,
         "unit": "USD",
         "importance": 0,
@@ -3824,9 +3824,9 @@
         "country_label": "[EUA]",
         "indicator": "[EUA] · PCE Price Index MoM",
         "raw_title": "PCE Price Index MoM",
-        "consensus": "Anterior: 0.5",
+        "consensus": "Projeção: 0.3 | Anterior: 0.5",
         "actual": null,
-        "forecast": null,
+        "forecast": 0.3,
         "previous": 0.5,
         "unit": "USD",
         "importance": 0,
@@ -3848,9 +3848,9 @@
         "country_label": "[EUA]",
         "indicator": "[EUA] · Core PCE Price Index MoM",
         "raw_title": "Core PCE Price Index MoM",
-        "consensus": "Anterior: 0.3",
+        "consensus": "Projeção: 0.3 | Anterior: 0.3",
         "actual": null,
-        "forecast": null,
+        "forecast": 0.3,
         "previous": 0.3,
         "unit": "USD",
         "importance": 1,
@@ -3944,9 +3944,9 @@
         "country_label": "[EUA]",
         "indicator": "[EUA] · GDP Growth Rate QoQ 2nd Est",
         "raw_title": "GDP Growth Rate QoQ 2nd Est",
-        "consensus": "Anterior: 1.5",
+        "consensus": "Projeção: 3.4 | Anterior: 1.5",
         "actual": null,
-        "forecast": null,
+        "forecast": 3.4,
         "previous": 1.5,
         "unit": "USD",
         "importance": 1,
@@ -4016,9 +4016,9 @@
         "country_label": "[EUA]",
         "indicator": "[EUA] · Durable Goods Orders MoM",
         "raw_title": "Durable Goods Orders MoM",
-        "consensus": "Anterior: 1.8",
+        "consensus": "Projeção: 0 | Anterior: 1.8",
         "actual": null,
-        "forecast": null,
+        "forecast": 0,
         "previous": 1.8,
         "unit": "USD",
         "importance": 1,
@@ -4088,9 +4088,9 @@
         "country_label": "[EUA]",
         "indicator": "[EUA] · New Home Sales",
         "raw_title": "New Home Sales",
-        "consensus": "Anterior: 0.676",
+        "consensus": "Projeção: 0.67 | Anterior: 0.676",
         "actual": null,
-        "forecast": null,
+        "forecast": 0.67,
         "previous": 0.676,
         "unit": "USD",
         "importance": 0,
@@ -4587,7 +4587,7 @@
     {
       "ticker": "MLI",
       "earnings_date": "20/10/2026",
-      "days_until": -27,
+      "days_until": -28,
       "eps_consensus": "US$ 0.94",
       "revenue_consensus": "US$ 1.17B",
       "status": "Próximo Tri"
@@ -4595,7 +4595,7 @@
     {
       "ticker": "NEM",
       "earnings_date": "22/10/2026",
-      "days_until": -25,
+      "days_until": -26,
       "eps_consensus": "US$ 1.96",
       "revenue_consensus": "US$ 6.42B",
       "status": "Próximo Tri"
@@ -4603,7 +4603,7 @@
     {
       "ticker": "BE",
       "earnings_date": "22/10/2026",
-      "days_until": -25,
+      "days_until": -26,
       "eps_consensus": "US$ 1.12",
       "revenue_consensus": "US$ 1.46B",
       "status": "Próximo Tri"
@@ -4611,7 +4611,7 @@
     {
       "ticker": "GOOGL",
       "earnings_date": "28/10/2026",
-      "days_until": -19,
+      "days_until": -20,
       "eps_consensus": "US$ 3.25",
       "revenue_consensus": "US$ 143.06B",
       "status": "Próximo Tri"
@@ -4619,7 +4619,7 @@
     {
       "ticker": "AXTI",
       "earnings_date": "29/10/2026",
-      "days_until": -18,
+      "days_until": -19,
       "eps_consensus": "US$ 0.57",
       "revenue_consensus": "US$ 91.5M",
       "status": "Próximo Tri"
@@ -4627,7 +4627,7 @@
     {
       "ticker": "TSEM",
       "earnings_date": "02/11/2026",
-      "days_until": -14,
+      "days_until": -15,
       "eps_consensus": "US$ 1.38",
       "revenue_consensus": "US$ 601.7M",
       "status": "Próximo Tri"
@@ -4635,7 +4635,7 @@
     {
       "ticker": "ALAB",
       "earnings_date": "03/11/2026",
-      "days_until": -13,
+      "days_until": -14,
       "eps_consensus": "US$ 1.65",
       "revenue_consensus": "US$ 741.9M",
       "status": "Próximo Tri"
@@ -4643,7 +4643,7 @@
     {
       "ticker": "MELI",
       "earnings_date": "04/11/2026",
-      "days_until": -12,
+      "days_until": -13,
       "eps_consensus": "US$ 10.11",
       "revenue_consensus": "US$ 11.92B",
       "status": "Próximo Tri"
@@ -4651,23 +4651,23 @@
     {
       "ticker": "CRDO",
       "earnings_date": "01/12/2026",
-      "days_until": 15,
+      "days_until": 14,
       "eps_consensus": "US$ 1.28",
       "revenue_consensus": "US$ 531.9M",
-      "status": "Em 15 dias"
+      "status": "Em 14 dias"
     },
     {
       "ticker": "AVGO",
       "earnings_date": "09/12/2026",
-      "days_until": 23,
+      "days_until": 22,
       "eps_consensus": "US$ 3.84",
       "revenue_consensus": "US$ 34.91B",
-      "status": "Em 23 dias"
+      "status": "Em 22 dias"
     },
     {
       "ticker": "ASML",
       "earnings_date": "27/01/2027",
-      "days_until": 72,
+      "days_until": 71,
       "eps_consensus": "US$ 15.39",
       "revenue_consensus": "US$ 14.82B",
       "status": "Próximo Tri"
@@ -4675,7 +4675,7 @@
     {
       "ticker": "META",
       "earnings_date": "27/01/2027",
-      "days_until": 72,
+      "days_until": 71,
       "eps_consensus": "US$ 8.72",
       "revenue_consensus": "US$ 75.13B",
       "status": "Próximo Tri"
@@ -4683,7 +4683,7 @@
     {
       "ticker": "INTC",
       "earnings_date": "28/01/2027",
-      "days_until": 73,
+      "days_until": 72,
       "eps_consensus": "US$ 0.25",
       "revenue_consensus": "US$ 15.62B",
       "status": "Próximo Tri"
@@ -4691,7 +4691,7 @@
     {
       "ticker": "NOK",
       "earnings_date": "28/01/2027",
-      "days_until": 73,
+      "days_until": 72,
       "eps_consensus": "US$ 0.17",
       "revenue_consensus": "US$ 6.29B",
       "status": "Próximo Tri"
@@ -4699,7 +4699,7 @@
     {
       "ticker": "FN",
       "earnings_date": "01/02/2027",
-      "days_until": 77,
+      "days_until": 76,
       "eps_consensus": "US$ 4.86",
       "revenue_consensus": "US$ 1.63B",
       "status": "Próximo Tri"
@@ -4707,7 +4707,7 @@
     {
       "ticker": "UBER",
       "earnings_date": "03/02/2027",
-      "days_until": 79,
+      "days_until": 78,
       "eps_consensus": "US$ 0.97",
       "revenue_consensus": "US$ 15.66B",
       "status": "Próximo Tri"
@@ -4715,7 +4715,7 @@
     {
       "ticker": "COHR",
       "earnings_date": "03/02/2027",
-      "days_until": 79,
+      "days_until": 78,
       "eps_consensus": "US$ 2.40",
       "revenue_consensus": "US$ 2.65B",
       "status": "Próximo Tri"
@@ -4723,7 +4723,7 @@
     {
       "ticker": "ARM",
       "earnings_date": "03/02/2027",
-      "days_until": 79,
+      "days_until": 78,
       "eps_consensus": "US$ 0.56",
       "revenue_consensus": "US$ 1.54B",
       "status": "Próximo Tri"
@@ -4731,7 +4731,7 @@
     {
       "ticker": "MTSI",
       "earnings_date": "04/02/2027",
-      "days_until": 80,
+      "days_until": 79,
       "eps_consensus": "US$ 2.25",
       "revenue_consensus": "US$ 455.3M",
       "status": "Próximo Tri"
