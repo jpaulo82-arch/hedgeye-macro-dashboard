@@ -1,5 +1,5 @@
 {
-  "updatedAt": "16/11/2026 12:46:47",
+  "updatedAt": "17/11/2026 12:47:19",
   "reports": {
     "weekly": [
       {
@@ -11405,6 +11405,27 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_114351_UPDATE__2_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-11-17 10:24AM EST",
+        "addsLong": [
+          {
+            "name": "2026 High Yield",
+            "ticker": "IBHF"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "US Intermediate Treasury",
+            "ticker": "VGIT",
+            "rangeLow": 56.58,
+            "rangeHigh": 57.93
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -13700,6 +13721,12 @@
       "type": "intraday",
       "sourceFile": "intraday_114242_UPDATE__3_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Retail (XRT) | Adicionou SHORT: Oil & Gas Equity (XOP) | Removeu LONG: Core Plus Bond (JCPB)"
+    },
+    {
+      "date": "2026-11-17 10:24AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_114351_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: 2026 High Yield (IBHF) | Removeu LONG: US Intermediate Treasury (VGIT)"
     }
   ],
   "currentLineup": [
@@ -14102,28 +14129,6 @@
         2
       ],
       "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "VGIT",
-      "name": "US Intermediate Treasury",
-      "side": "long",
-      "dateAdded": "11/10/2026",
-      "assetClass": "Domestic Fixed Income",
-      "entryPrice": 56.9,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 56.58,
-      "rangeHigh": 57.93,
-      "sourceOfEntry": "weekly:weekly_114188_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 3.0,
-        "midPct": 6.5,
-        "maxPct": 10.0,
-        "label": "Renda Fixa"
-      },
-      "nativeQuads": [
-        4
-      ],
-      "quadNote": "Long — alinhado com Q4 (Best Asset Class/Setor nesses regimes)"
     },
     {
       "ticker": "XHB",
@@ -14624,7 +14629,7 @@
       "side": "long",
       "dateAdded": "2026-11-16 10:37AM EST",
       "assetClass": null,
-      "entryPrice": 90.0509,
+      "entryPrice": 89.59,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -14639,11 +14644,26 @@
       "side": "short",
       "dateAdded": "2026-11-16 10:37AM EST",
       "assetClass": null,
-      "entryPrice": 181.8551,
+      "entryPrice": 179.98,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
       "sourceOfEntry": "intraday:intraday_114242_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "IBHF",
+      "name": "2026 High Yield",
+      "side": "long",
+      "dateAdded": "2026-11-17 10:24AM EST",
+      "assetClass": null,
+      "entryPrice": 22.53,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_114351_UPDATE__2_New_ETF_Pro_Changes.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
