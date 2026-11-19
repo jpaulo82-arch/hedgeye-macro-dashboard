@@ -1,5 +1,5 @@
 {
-  "updatedAt": "17/11/2026 12:47:19",
+  "updatedAt": "18/11/2026 12:46:55",
   "reports": {
     "weekly": [
       {
@@ -11426,6 +11426,31 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_114452_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-11-18 10:43AM EST",
+        "addsLong": [
+          {
+            "name": "Water Resources",
+            "ticker": "PHO"
+          },
+          {
+            "name": "Global Infrastructure",
+            "ticker": "GII"
+          }
+        ],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "Homebuilders",
+            "ticker": "XHB",
+            "rangeLow": 99.23,
+            "rangeHigh": 108.0
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -13727,6 +13752,12 @@
       "type": "intraday",
       "sourceFile": "intraday_114351_UPDATE__2_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: 2026 High Yield (IBHF) | Removeu LONG: US Intermediate Treasury (VGIT)"
+    },
+    {
+      "date": "2026-11-18 10:43AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_114452_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Adicionou LONG: Water Resources (PHO), Global Infrastructure (GII) | Removeu LONG: Homebuilders (XHB)"
     }
   ],
   "currentLineup": [
@@ -14117,29 +14148,6 @@
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
       "rangeLow": 92.44,
       "rangeHigh": 96.63,
-      "sourceOfEntry": "weekly:weekly_114188_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "XHB",
-      "name": "Homebuilders",
-      "side": "long",
-      "dateAdded": "11/11/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 102.07,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 99.23,
-      "rangeHigh": 108.0,
       "sourceOfEntry": "weekly:weekly_114188_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 2.0,
@@ -14659,11 +14667,41 @@
       "side": "long",
       "dateAdded": "2026-11-17 10:24AM EST",
       "assetClass": null,
-      "entryPrice": 22.53,
+      "entryPrice": 22.54,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
       "sourceOfEntry": "intraday:intraday_114351_UPDATE__2_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "PHO",
+      "name": "Water Resources",
+      "side": "long",
+      "dateAdded": "2026-11-18 10:43AM EST",
+      "assetClass": null,
+      "entryPrice": 75.8,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_114452_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "GII",
+      "name": "Global Infrastructure",
+      "side": "long",
+      "dateAdded": "2026-11-18 10:43AM EST",
+      "assetClass": null,
+      "entryPrice": 74.815,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_114452_UPDATE__3_New_ETF_Pro_Changes.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"

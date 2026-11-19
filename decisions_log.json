@@ -1,6 +1,58 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261118",
+      "date": "18/11/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (18/11/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-11-18T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "PHO",
+          "categoria": "ETF PRO PLUS — WATER RESOURCES",
+          "regime": null,
+          "decisao": "Comprar / Long",
+          "racional": "ETF Pro Plus adicionou Water Resources (PHO) como LONG no UPDATE de 18/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 18/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "GII",
+          "categoria": "ETF PRO PLUS — GLOBAL INFRASTRUCTURE",
+          "regime": null,
+          "decisao": "Comprar / Long",
+          "racional": "ETF Pro Plus adicionou Global Infrastructure (GII) como LONG no UPDATE de 18/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 18/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "XHB",
+          "categoria": "ETF PRO PLUS — HOMEBUILDERS",
+          "regime": null,
+          "decisao": "Vender / Zerar Long",
+          "racional": "ETF Pro Plus encerrou o LONG em Homebuilders (XHB) no UPDATE de 18/11/2026. Saída no Trend Range: 99.23 – 108.00.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 18/11/2026)",
+          "rangeLow": 99.23,
+          "rangeHigh": 108.0
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261117",
       "date": "17/11/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (17/11/2026)",
@@ -5533,5 +5585,5 @@
       ]
     }
   ],
-  "updatedAt": "18/11/2026 09:31:40"
+  "updatedAt": "19/11/2026 09:31:59"
 }
