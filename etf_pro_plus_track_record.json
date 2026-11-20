@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T12:47:43.254963",
+  "generatedAt": "2026-11-20T19:41:14.780417",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -213,7 +213,7 @@
     {
       "month": "2024-11",
       "activePositions": 1,
-      "monthlyReturnPct": 0.503,
+      "monthlyReturnPct": 0.504,
       "details": [
         {
           "ticker": "BUXX",
@@ -222,7 +222,7 @@
           "periodEnd": "2024-11-30",
           "priceStart": 18.4656,
           "priceEnd": 18.5585,
-          "returnPct": 0.503
+          "returnPct": 0.504
         }
       ]
     },
@@ -245,7 +245,7 @@
     {
       "month": "2025-01",
       "activePositions": 1,
-      "monthlyReturnPct": 0.503,
+      "monthlyReturnPct": 0.504,
       "details": [
         {
           "ticker": "BUXX",
@@ -254,7 +254,7 @@
           "periodEnd": "2025-01-31",
           "priceStart": 18.6198,
           "priceEnd": 18.7135,
-          "returnPct": 0.503
+          "returnPct": 0.504
         }
       ]
     },
@@ -2119,95 +2119,95 @@
     },
     {
       "month": "2024-11",
-      "cumulativeIndex": 107.103
+      "cumulativeIndex": 107.104
     },
     {
       "month": "2024-12",
-      "cumulativeIndex": 107.562
+      "cumulativeIndex": 107.563
     },
     {
       "month": "2025-01",
-      "cumulativeIndex": 108.103
+      "cumulativeIndex": 108.106
     },
     {
       "month": "2025-02",
-      "cumulativeIndex": 108.3
+      "cumulativeIndex": 108.302
     },
     {
       "month": "2025-03",
-      "cumulativeIndex": 111.211
+      "cumulativeIndex": 111.214
     },
     {
       "month": "2025-04",
-      "cumulativeIndex": 113.451
+      "cumulativeIndex": 113.453
     },
     {
       "month": "2025-05",
-      "cumulativeIndex": 114.91
+      "cumulativeIndex": 114.912
     },
     {
       "month": "2025-06",
-      "cumulativeIndex": 114.38
+      "cumulativeIndex": 114.383
     },
     {
       "month": "2025-07",
-      "cumulativeIndex": 114.081
+      "cumulativeIndex": 114.083
     },
     {
       "month": "2025-08",
-      "cumulativeIndex": 115.585
+      "cumulativeIndex": 115.588
     },
     {
       "month": "2025-09",
-      "cumulativeIndex": 119.31
+      "cumulativeIndex": 119.312
     },
     {
       "month": "2025-10",
-      "cumulativeIndex": 120.834
+      "cumulativeIndex": 120.837
     },
     {
       "month": "2025-11",
-      "cumulativeIndex": 123.256
+      "cumulativeIndex": 123.258
     },
     {
       "month": "2025-12",
-      "cumulativeIndex": 124.31
+      "cumulativeIndex": 124.312
     },
     {
       "month": "2026-01",
-      "cumulativeIndex": 129.645
+      "cumulativeIndex": 129.648
     },
     {
       "month": "2026-02",
-      "cumulativeIndex": 135.559
+      "cumulativeIndex": 135.562
     },
     {
       "month": "2026-03",
-      "cumulativeIndex": 130.294
+      "cumulativeIndex": 130.297
     },
     {
       "month": "2026-04",
-      "cumulativeIndex": 130.464
+      "cumulativeIndex": 130.466
     },
     {
       "month": "2026-05",
-      "cumulativeIndex": 131.027
+      "cumulativeIndex": 131.03
     },
     {
       "month": "2026-06",
-      "cumulativeIndex": 131.174
+      "cumulativeIndex": 131.177
     },
     {
       "month": "2026-07",
-      "cumulativeIndex": 133.192
+      "cumulativeIndex": 133.194
     },
     {
       "month": "2026-08",
-      "cumulativeIndex": 136.27
+      "cumulativeIndex": 136.272
     },
     {
       "month": "2026-09",
-      "cumulativeIndex": 136.98
+      "cumulativeIndex": 136.982
     }
   ],
   "excludedPositions": [
@@ -2337,5 +2337,5 @@
       "reason": "removida sem data de entrada conhecida (fora da janela de relatórios capturados)"
     }
   ],
-  "positionsIncluded": 228
+  "positionsIncluded": 229
 }

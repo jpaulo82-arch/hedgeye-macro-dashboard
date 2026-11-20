@@ -1,6 +1,82 @@
 {
   "entradas": [
     {
+      "reportId": "etf_intra_20261120",
+      "date": "20/11/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (20/11/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-11-20T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "LVHI",
+          "categoria": "ETF PRO PLUS — INTERNATIONAL HIGH DIVIDEND",
+          "regime": null,
+          "decisao": "Vender / Zerar Long",
+          "racional": "ETF Pro Plus encerrou o LONG em International High Dividend (LVHI) no UPDATE de 20/11/2026. Saída no Trend Range: 42.00 – 44.96.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 20/11/2026)",
+          "rangeLow": 42.0,
+          "rangeHigh": 44.96
+        },
+        {
+          "ativo": "USMV",
+          "categoria": "ETF PRO PLUS — US MIN VOL",
+          "regime": null,
+          "decisao": "Vender / Zerar Long",
+          "racional": "ETF Pro Plus encerrou o LONG em US Min Vol (USMV) no UPDATE de 20/11/2026. Saída no Trend Range: 99.00 – 106.00.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 20/11/2026)",
+          "rangeLow": 99.0,
+          "rangeHigh": 106.0
+        },
+        {
+          "ativo": "POWA",
+          "categoria": "ETF PRO PLUS — PRICING POWER",
+          "regime": null,
+          "decisao": "Vender / Zerar Long",
+          "racional": "ETF Pro Plus encerrou o LONG em Pricing Power (POWA) no UPDATE de 20/11/2026. Saída no Trend Range: 92.00 – 96.63.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 20/11/2026)",
+          "rangeLow": 92.0,
+          "rangeHigh": 96.63
+        }
+      ]
+    },
+    {
+      "reportId": "etf_intra_20261119",
+      "date": "19/11/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (19/11/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-11-19T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "RSP",
+          "categoria": "ETF PRO PLUS — S&P EQUAL WEIGHT",
+          "regime": null,
+          "decisao": "Vender / Zerar Long",
+          "racional": "ETF Pro Plus encerrou o LONG em S&P Equal Weight (RSP) no UPDATE de 19/11/2026. Saída no Trend Range: 215.00 – 226.00.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 19/11/2026)",
+          "rangeLow": 215.0,
+          "rangeHigh": 226.0
+        }
+      ]
+    },
+    {
       "reportId": "etf_intra_20261118",
       "date": "18/11/2026",
       "reportTitle": "ETF PRO PLUS: Ordens Intraday (18/11/2026)",
@@ -5585,5 +5661,5 @@
       ]
     }
   ],
-  "updatedAt": "19/11/2026 09:31:59"
+  "updatedAt": "20/11/2026 19:41:23"
 }

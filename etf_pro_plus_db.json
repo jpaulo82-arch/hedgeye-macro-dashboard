@@ -1,5 +1,5 @@
 {
-  "updatedAt": "18/11/2026 12:46:55",
+  "updatedAt": "20/11/2026 19:40:30",
   "reports": {
     "weekly": [
       {
@@ -11451,6 +11451,50 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_114546_UPDATE__1_New_ETF_Pro_Change.txt",
+        "reportDatetime": "2026-11-19 10:31AM EST",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "S&P Equal Weight",
+            "ticker": "RSP",
+            "rangeLow": 215.0,
+            "rangeHigh": 226.0
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
+        "sourceFile": "intraday_114651_UPDATE__3_New_ETF_Pro_Changes.txt",
+        "reportDatetime": "2026-11-20 02:15PM EST",
+        "addsLong": [],
+        "addsShort": [],
+        "removesLong": [
+          {
+            "name": "International High Dividend",
+            "ticker": "LVHI",
+            "rangeLow": 42.0,
+            "rangeHigh": 44.96
+          },
+          {
+            "name": "US Min Vol",
+            "ticker": "USMV",
+            "rangeLow": 99.0,
+            "rangeHigh": 106.0
+          },
+          {
+            "name": "Pricing Power",
+            "ticker": "POWA",
+            "rangeLow": 92.0,
+            "rangeHigh": 96.63
+          }
+        ],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_78834_UPDATE__3_New_ETF_Pro_Changes.txt",
         "reportDatetime": "2024-12-13 01:14PM EST",
         "addsLong": [],
@@ -13758,6 +13802,18 @@
       "type": "intraday",
       "sourceFile": "intraday_114452_UPDATE__3_New_ETF_Pro_Changes.txt",
       "summary": "Adicionou LONG: Water Resources (PHO), Global Infrastructure (GII) | Removeu LONG: Homebuilders (XHB)"
+    },
+    {
+      "date": "2026-11-19 10:31AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_114546_UPDATE__1_New_ETF_Pro_Change.txt",
+      "summary": "Removeu LONG: S&P Equal Weight (RSP)"
+    },
+    {
+      "date": "2026-11-20 02:15PM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_114651_UPDATE__3_New_ETF_Pro_Changes.txt",
+      "summary": "Removeu LONG: International High Dividend (LVHI), US Min Vol (USMV), Pricing Power (POWA)"
     }
   ],
   "currentLineup": [
@@ -13851,29 +13907,6 @@
       "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     },
     {
-      "ticker": "RSP",
-      "name": "S&P Equal Weight",
-      "side": "long",
-      "dateAdded": "10/19/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 221.16,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 215.0,
-      "rangeHigh": 226.0,
-      "sourceOfEntry": "weekly:weekly_114188_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
       "ticker": "ILS",
       "name": "Catastrophe Bonds",
       "side": "long",
@@ -13916,29 +13949,6 @@
         4
       ],
       "quadNote": "Long — alinhado com Q4 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "LVHI",
-      "name": "International High Dividend",
-      "side": "long",
-      "dateAdded": "10/23/2026",
-      "assetClass": "International Equities",
-      "entryPrice": 44.18,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 43.01,
-      "rangeHigh": 44.96,
-      "sourceOfEntry": "weekly:weekly_114188_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     },
     {
       "ticker": "FTXG",
@@ -14011,29 +14021,6 @@
       "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
       "rangeLow": 12.75,
       "rangeHigh": 13.66,
-      "sourceOfEntry": "weekly:weekly_114188_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "USMV",
-      "name": "US Min Vol",
-      "side": "long",
-      "dateAdded": "11/3/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 104.1,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 101.0,
-      "rangeHigh": 106.0,
       "sourceOfEntry": "weekly:weekly_114188_ETF_Pro_Plus_-_New_Weekly_Report.txt",
       "allowedBand": {
         "minPct": 2.0,
@@ -14137,29 +14124,6 @@
         4
       ],
       "quadNote": "Long — alinhado com Q3/Q4 (Best Asset Class/Setor nesses regimes)"
-    },
-    {
-      "ticker": "POWA",
-      "name": "Pricing Power",
-      "side": "long",
-      "dateAdded": "11/9/2026",
-      "assetClass": "Domestic Equities",
-      "entryPrice": 95.08,
-      "entryPriceSource": "relatório semanal (Recent Price no Date Added)",
-      "rangeLow": 92.44,
-      "rangeHigh": 96.63,
-      "sourceOfEntry": "weekly:weekly_114188_ETF_Pro_Plus_-_New_Weekly_Report.txt",
-      "allowedBand": {
-        "minPct": 2.0,
-        "midPct": 4.0,
-        "maxPct": 6.0,
-        "label": "Perna Long de book Long/Short em ETFs (ex.: ETF Pro Plus)"
-      },
-      "nativeQuads": [
-        1,
-        2
-      ],
-      "quadNote": "Long — alinhado com Q1/Q2 (Best Asset Class/Setor nesses regimes)"
     },
     {
       "ticker": "DFGX",
@@ -14682,7 +14646,7 @@
       "side": "long",
       "dateAdded": "2026-11-18 10:43AM EST",
       "assetClass": null,
-      "entryPrice": 75.8,
+      "entryPrice": 76.24,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
@@ -14697,7 +14661,7 @@
       "side": "long",
       "dateAdded": "2026-11-18 10:43AM EST",
       "assetClass": null,
-      "entryPrice": 74.815,
+      "entryPrice": 74.92,
       "entryPriceSource": "fechamento real (yfinance) na data de entrada",
       "rangeLow": null,
       "rangeHigh": null,
