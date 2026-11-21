@@ -1,6 +1,6 @@
 {
-  "gerado_em": "2026-11-20T19:42:44.041477",
-  "data": "2026-11-20",
+  "gerado_em": "2026-11-21T09:32:29.335121",
+  "data": "2026-11-21",
   "posicoes": {
     "US10": {
       "ticker": "US10",
@@ -20,7 +20,7 @@
       "live_price": {
         "value": 76.33,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1795214560
+        "timestamp": 1795264345
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -50,7 +50,7 @@
       "live_price": {
         "value": 103.69,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1795214561
+        "timestamp": 1795264345
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -80,7 +80,7 @@
       "live_price": {
         "value": 6910.39,
         "fonte": "TradingView (America)",
-        "timestamp": 1795214561
+        "timestamp": 1795264346
       },
       "trade_signal": "bearish",
       "range_zone": "abaixo_lrr",
@@ -110,7 +110,7 @@
       "live_price": {
         "value": 22617.733,
         "fonte": "TradingView (America)",
-        "timestamp": 1795214561
+        "timestamp": 1795264346
       },
       "trade_signal": "bearish",
       "range_zone": "abaixo_lrr",
@@ -140,7 +140,7 @@
       "live_price": {
         "value": 2581.7894,
         "fonte": "TradingView (Cfd)",
-        "timestamp": 1795214561
+        "timestamp": 1795264346
       },
       "trade_signal": "bearish",
       "range_zone": "abaixo_lrr",
@@ -170,7 +170,7 @@
       "live_price": {
         "value": 177.24,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1795214561
+        "timestamp": 1795264346
       },
       "trade_signal": "bullish",
       "range_zone": "perto_lrr",
@@ -192,7 +192,7 @@
     "RSP": {
       "ticker": "RSP",
       "trend_signal": "BEARISH",
-      "trend_just_broke_today": true,
+      "trend_just_broke_today": false,
       "risk_range": {
         "low": 208.0,
         "high": 218.0
@@ -200,7 +200,7 @@
       "live_price": {
         "value": 207.44,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1795214562
+        "timestamp": 1795264347
       },
       "trade_signal": "bearish",
       "range_zone": "abaixo_lrr",
@@ -230,7 +230,7 @@
       "live_price": {
         "value": 35.89,
         "fonte": "TradingView (America)",
-        "timestamp": 1795214562
+        "timestamp": 1795264347
       },
       "trade_signal": "bullish",
       "range_zone": "acima_trr",
@@ -260,7 +260,7 @@
       "live_price": {
         "value": 103.84,
         "fonte": "TradingView (America)",
-        "timestamp": 1795214562
+        "timestamp": 1795264347
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -290,7 +290,7 @@
       "live_price": {
         "value": 83.41,
         "fonte": "TradingView (Futures)",
-        "timestamp": 1795214562
+        "timestamp": 1795264347
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -320,7 +320,7 @@
       "live_price": {
         "value": 3.411,
         "fonte": "TradingView (Futures)",
-        "timestamp": 1795214563
+        "timestamp": 1795264348
       },
       "trade_signal": "bullish",
       "range_zone": "acima_trr",
@@ -350,7 +350,7 @@
       "live_price": {
         "value": 3538.31,
         "fonte": "TradingView (Cfd)",
-        "timestamp": 1795214563
+        "timestamp": 1795264348
       },
       "trade_signal": "bullish",
       "range_zone": "perto_lrr",
@@ -380,7 +380,7 @@
       "live_price": {
         "value": 5.485,
         "fonte": "TradingView (Futures)",
-        "timestamp": 1795214563
+        "timestamp": 1795264348
       },
       "trade_signal": "bullish",
       "range_zone": "perto_lrr",
@@ -410,7 +410,7 @@
       "live_price": {
         "value": 41.221,
         "fonte": "TradingView (Cfd)",
-        "timestamp": 1795214563
+        "timestamp": 1795264349
       },
       "trade_signal": "bullish",
       "range_zone": "perto_lrr",
@@ -434,7 +434,7 @@
     "status": "ok",
     "value": 35.89,
     "fonte": "TradingView (America)",
-    "timestamp": 1795214562,
+    "timestamp": 1795264347,
     "bucket": {
       "key": "crash_risk",
       "min": 30.0,
