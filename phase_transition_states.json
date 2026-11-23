@@ -1,6 +1,6 @@
 {
-  "gerado_em": "2026-11-21T10:02:16.966810",
-  "data": "2026-11-21",
+  "gerado_em": "2026-11-23T09:08:19.654230",
+  "data": "2026-11-23",
   "posicoes": {
     "US10": {
       "ticker": "US10",
@@ -20,7 +20,7 @@
       "live_price": {
         "value": 76.33,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1795266133
+        "timestamp": 1795435696
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -50,7 +50,7 @@
       "live_price": {
         "value": 103.69,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1795266133
+        "timestamp": 1795435696
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
@@ -80,7 +80,7 @@
       "live_price": {
         "value": 6910.39,
         "fonte": "TradingView (America)",
-        "timestamp": 1795266134
+        "timestamp": 1795435696
       },
       "trade_signal": "bearish",
       "range_zone": "abaixo_lrr",
@@ -110,7 +110,7 @@
       "live_price": {
         "value": 22617.733,
         "fonte": "TradingView (America)",
-        "timestamp": 1795266134
+        "timestamp": 1795435696
       },
       "trade_signal": "bearish",
       "range_zone": "abaixo_lrr",
@@ -140,7 +140,7 @@
       "live_price": {
         "value": 2581.7894,
         "fonte": "TradingView (Cfd)",
-        "timestamp": 1795266134
+        "timestamp": 1795435697
       },
       "trade_signal": "bearish",
       "range_zone": "abaixo_lrr",
@@ -170,7 +170,7 @@
       "live_price": {
         "value": 177.24,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1795266134
+        "timestamp": 1795435697
       },
       "trade_signal": "bullish",
       "range_zone": "perto_lrr",
@@ -200,7 +200,7 @@
       "live_price": {
         "value": 207.44,
         "fonte": "TradingView Real-Time",
-        "timestamp": 1795266135
+        "timestamp": 1795435697
       },
       "trade_signal": "bearish",
       "range_zone": "abaixo_lrr",
@@ -228,13 +228,13 @@
         "high": 29.98
       },
       "live_price": {
-        "value": 35.89,
+        "value": 29.99,
         "fonte": "TradingView (America)",
-        "timestamp": 1795266135
+        "timestamp": 1795435697
       },
       "trade_signal": "bullish",
       "range_zone": "acima_trr",
-      "range_pct_position": 160.2,
+      "range_pct_position": 100.1,
       "matrix_state": {
         "label": "Press It",
         "description": "Intacto nos dois horizontes. Confiança total.",
@@ -258,13 +258,13 @@
         "high": 104.64
       },
       "live_price": {
-        "value": 103.84,
+        "value": 103.926,
         "fonte": "TradingView (America)",
-        "timestamp": 1795266135
+        "timestamp": 1795435698
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 61.5,
+      "range_pct_position": 65.7,
       "matrix_state": {
         "label": "Press It",
         "description": "Intacto nos dois horizontes. Confiança total.",
@@ -288,13 +288,13 @@
         "high": 88.73
       },
       "live_price": {
-        "value": 83.41,
+        "value": 82.37,
         "fonte": "TradingView (Futures)",
-        "timestamp": 1795266135
+        "timestamp": 1795435698
       },
       "trade_signal": "bullish",
       "range_zone": "dentro",
-      "range_pct_position": 38.7,
+      "range_pct_position": 26.7,
       "matrix_state": {
         "label": "Bounce, Not a Reversal",
         "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
@@ -318,13 +318,13 @@
         "high": 3.4
       },
       "live_price": {
-        "value": 3.411,
+        "value": 3.205,
         "fonte": "TradingView (Futures)",
-        "timestamp": 1795266136
+        "timestamp": 1795435698
       },
       "trade_signal": "bullish",
-      "range_zone": "acima_trr",
-      "range_pct_position": 103.0,
+      "range_zone": "dentro",
+      "range_pct_position": 47.3,
       "matrix_state": {
         "label": "Press It",
         "description": "Intacto nos dois horizontes. Confiança total.",
@@ -348,13 +348,13 @@
         "high": 3813.0
       },
       "live_price": {
-        "value": 3538.31,
+        "value": 3618.807,
         "fonte": "TradingView (Cfd)",
-        "timestamp": 1795266136
+        "timestamp": 1795435698
       },
       "trade_signal": "bullish",
-      "range_zone": "perto_lrr",
-      "range_pct_position": 9.0,
+      "range_zone": "dentro",
+      "range_pct_position": 35.7,
       "matrix_state": {
         "label": "Bounce, Not a Reversal",
         "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
@@ -378,13 +378,13 @@
         "high": 5.96
       },
       "live_price": {
-        "value": 5.485,
+        "value": 5.5185,
         "fonte": "TradingView (Futures)",
-        "timestamp": 1795266136
+        "timestamp": 1795435699
       },
       "trade_signal": "bullish",
-      "range_zone": "perto_lrr",
-      "range_pct_position": 13.6,
+      "range_zone": "dentro",
+      "range_pct_position": 19.7,
       "matrix_state": {
         "label": "Bounce, Not a Reversal",
         "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
@@ -408,13 +408,13 @@
         "high": 47.0
       },
       "live_price": {
-        "value": 41.221,
+        "value": 42.4421,
         "fonte": "TradingView (Cfd)",
-        "timestamp": 1795266136
+        "timestamp": 1795435699
       },
       "trade_signal": "bullish",
-      "range_zone": "perto_lrr",
-      "range_pct_position": 3.7,
+      "range_zone": "dentro",
+      "range_pct_position": 24.0,
       "matrix_state": {
         "label": "Bounce, Not a Reversal",
         "description": "Um rally dentro de uma tendência de baixa. Ficar cético.",
@@ -432,15 +432,9 @@
   },
   "vix_gauge": {
     "status": "ok",
-    "value": 35.89,
+    "value": 29.99,
     "fonte": "TradingView (America)",
-    "timestamp": 1795266135,
-    "bucket": {
-      "key": "crash_risk",
-      "min": 30.0,
-      "max": null,
-      "label": "F*ck Bucket (Crash Risk)",
-      "action": "Correlações convergem e níveis param de funcionar. Preservar capital primeiro; a oportunidade vem depois."
-    }
+    "timestamp": 1795435697,
+    "bucket": null
   }
 }
