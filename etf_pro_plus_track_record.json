@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T19:41:14.780417",
+  "generatedAt": "2026-11-23T09:33:44.616771",
   "methodologyNote": "Calculado a partir das mudanças reais de carteira (entradas/saídas capturadas nos relatórios semanal/diário/mensal do ETF Pro Plus), não de uma tabela de terceiros. Cada posição contribui com peso igual no(s) mês(es) em que esteve ativa; retorno = variação do fechamento (yfinance) no período dentro do mês, invertido para Short. Posições sem data de entrada confiável ficam de fora e aparecem em 'excludedPositions'.",
   "monthly": [
     {
@@ -245,7 +245,7 @@
     {
       "month": "2025-01",
       "activePositions": 1,
-      "monthlyReturnPct": 0.504,
+      "monthlyReturnPct": 0.503,
       "details": [
         {
           "ticker": "BUXX",
@@ -254,7 +254,7 @@
           "periodEnd": "2025-01-31",
           "priceStart": 18.6198,
           "priceEnd": 18.7135,
-          "returnPct": 0.504
+          "returnPct": 0.503
         }
       ]
     },
@@ -762,7 +762,7 @@
           "side": "long",
           "periodStart": "2026-04-22",
           "periodEnd": "2026-04-30",
-          "priceStart": 25.1223,
+          "priceStart": 25.1224,
           "priceEnd": 25.377,
           "returnPct": 1.014
         },
@@ -771,7 +771,7 @@
           "side": "long",
           "periodStart": "2026-04-22",
           "periodEnd": "2026-04-30",
-          "priceStart": 25.1223,
+          "priceStart": 25.1224,
           "priceEnd": 25.377,
           "returnPct": 1.014
         },
@@ -780,7 +780,7 @@
           "side": "long",
           "periodStart": "2026-04-22",
           "periodEnd": "2026-04-30",
-          "priceStart": 25.1223,
+          "priceStart": 25.1224,
           "priceEnd": 25.377,
           "returnPct": 1.014
         }
@@ -2127,87 +2127,87 @@
     },
     {
       "month": "2025-01",
-      "cumulativeIndex": 108.106
+      "cumulativeIndex": 108.105
     },
     {
       "month": "2025-02",
-      "cumulativeIndex": 108.302
+      "cumulativeIndex": 108.301
     },
     {
       "month": "2025-03",
-      "cumulativeIndex": 111.214
+      "cumulativeIndex": 111.212
     },
     {
       "month": "2025-04",
-      "cumulativeIndex": 113.453
+      "cumulativeIndex": 113.452
     },
     {
       "month": "2025-05",
-      "cumulativeIndex": 114.912
+      "cumulativeIndex": 114.911
     },
     {
       "month": "2025-06",
-      "cumulativeIndex": 114.383
+      "cumulativeIndex": 114.381
     },
     {
       "month": "2025-07",
-      "cumulativeIndex": 114.083
+      "cumulativeIndex": 114.082
     },
     {
       "month": "2025-08",
-      "cumulativeIndex": 115.588
+      "cumulativeIndex": 115.587
     },
     {
       "month": "2025-09",
-      "cumulativeIndex": 119.312
+      "cumulativeIndex": 119.311
     },
     {
       "month": "2025-10",
-      "cumulativeIndex": 120.837
+      "cumulativeIndex": 120.836
     },
     {
       "month": "2025-11",
-      "cumulativeIndex": 123.258
+      "cumulativeIndex": 123.257
     },
     {
       "month": "2025-12",
-      "cumulativeIndex": 124.312
+      "cumulativeIndex": 124.311
     },
     {
       "month": "2026-01",
-      "cumulativeIndex": 129.648
+      "cumulativeIndex": 129.646
     },
     {
       "month": "2026-02",
-      "cumulativeIndex": 135.562
+      "cumulativeIndex": 135.561
     },
     {
       "month": "2026-03",
-      "cumulativeIndex": 130.297
+      "cumulativeIndex": 130.296
     },
     {
       "month": "2026-04",
-      "cumulativeIndex": 130.466
+      "cumulativeIndex": 130.465
     },
     {
       "month": "2026-05",
-      "cumulativeIndex": 131.03
+      "cumulativeIndex": 131.029
     },
     {
       "month": "2026-06",
-      "cumulativeIndex": 131.177
+      "cumulativeIndex": 131.175
     },
     {
       "month": "2026-07",
-      "cumulativeIndex": 133.194
+      "cumulativeIndex": 133.193
     },
     {
       "month": "2026-08",
-      "cumulativeIndex": 136.272
+      "cumulativeIndex": 136.271
     },
     {
       "month": "2026-09",
-      "cumulativeIndex": 136.982
+      "cumulativeIndex": 136.981
     }
   ],
   "excludedPositions": [
