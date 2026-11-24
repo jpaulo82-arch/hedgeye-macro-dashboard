@@ -1,20 +1,20 @@
 {
-  "source": "early_look_our_levels",
-  "source_title": "EARLY LOOK: Fear Is Broad, Opportunity Is Specific",
-  "source_email_id": "114617",
-  "source_file": "hedgeye_114617_EARLY_LOOK__Fear_Is_Broad__Opportunity_Is_Spe.md",
-  "sent_at": "2026-11-20T07:27:54-05:00",
-  "signals_date": "2026-11-20",
-  "parsed_at": "2026-11-23T09:34:32",
-  "total_signals": 15,
+  "source": "early_look_and_weekly_ranges",
+  "source_title": "EARLY LOOK: Saving the Day",
+  "source_email_id": "113734",
+  "source_file": "hedgeye_113734_EARLY_LOOK__Saving_the_Day.md",
+  "sent_at": "2026-11-24T07:29:27-05:00",
+  "signals_date": "2026-11-24",
+  "parsed_at": "2026-11-24T09:31:47",
+  "total_signals": 61,
   "signals": [
     {
       "ticker": "US10",
       "ticker_hedgeye": "US10",
       "name": "10-Year U.S. Treasury Yield",
-      "trend": "BULLISH",
-      "buy_trade": 4.86,
-      "sell_trade": 5.15,
+      "trend": "BEARISH",
+      "buy_trade": 4.85,
+      "sell_trade": 5.13,
       "prev_close": null
     },
     {
@@ -22,8 +22,8 @@
       "ticker_hedgeye": "HYG",
       "name": "High Yield",
       "trend": "BEARISH",
-      "buy_trade": 76.15,
-      "sell_trade": 77.27,
+      "buy_trade": 76.06,
+      "sell_trade": 77.04,
       "prev_close": null
     },
     {
@@ -31,8 +31,8 @@
       "ticker_hedgeye": "LQD",
       "name": "Investment Grade Corporate Bond ETF",
       "trend": "BEARISH",
-      "buy_trade": 101.9,
-      "sell_trade": 104.1,
+      "buy_trade": 102.2,
+      "sell_trade": 104.3,
       "prev_close": null
     },
     {
@@ -40,8 +40,8 @@
       "ticker_hedgeye": "SPX",
       "name": "S&P 500",
       "trend": "BEARISH",
-      "buy_trade": 7106.0,
-      "sell_trade": 7518.0,
+      "buy_trade": 6901.0,
+      "sell_trade": 7393.0,
       "prev_close": null
     },
     {
@@ -49,8 +49,8 @@
       "ticker_hedgeye": "COMPQ",
       "name": "NASDAQ Composite",
       "trend": "BEARISH",
-      "buy_trade": 23684.0,
-      "sell_trade": 25394.0,
+      "buy_trade": 22561.0,
+      "sell_trade": 25115.0,
       "prev_close": null
     },
     {
@@ -58,8 +58,8 @@
       "ticker_hedgeye": "RUT",
       "name": "Russell 2000",
       "trend": "BEARISH",
-      "buy_trade": 2620.0,
-      "sell_trade": 2758.0,
+      "buy_trade": 2540.0,
+      "sell_trade": 2751.0,
       "prev_close": null
     },
     {
@@ -67,8 +67,8 @@
       "ticker_hedgeye": "XLV",
       "name": "Health Care Select Sector SPDR Fund",
       "trend": "BULLISH",
-      "buy_trade": 175.0,
-      "sell_trade": 192.0,
+      "buy_trade": 173.0,
+      "sell_trade": 191.0,
       "prev_close": null
     },
     {
@@ -76,8 +76,8 @@
       "ticker_hedgeye": "RSP",
       "name": "Invesco S&P 500 Equal Weight ETF",
       "trend": "BEARISH",
-      "buy_trade": 208.0,
-      "sell_trade": 218.0,
+      "buy_trade": 205.0,
+      "sell_trade": 216.0,
       "prev_close": null
     },
     {
@@ -85,8 +85,8 @@
       "ticker_hedgeye": "VIX",
       "name": "Volatility Index",
       "trend": "BULLISH",
-      "buy_trade": 20.16,
-      "sell_trade": 29.98,
+      "buy_trade": 18.99,
+      "sell_trade": 36.18,
       "prev_close": null
     },
     {
@@ -94,8 +94,8 @@
       "ticker_hedgeye": "USD",
       "name": "U.S. Dollar Index",
       "trend": "BULLISH",
-      "buy_trade": 102.56,
-      "sell_trade": 104.64,
+      "buy_trade": 102.9,
+      "sell_trade": 104.56,
       "prev_close": null
     },
     {
@@ -103,8 +103,8 @@
       "ticker_hedgeye": "WTIC",
       "name": "Light Crude Oil Continuous Contract",
       "trend": "BEARISH",
-      "buy_trade": 80.05,
-      "sell_trade": 88.73,
+      "buy_trade": 78.13,
+      "sell_trade": 88.74,
       "prev_close": null
     },
     {
@@ -112,7 +112,7 @@
       "ticker_hedgeye": "NATGAS",
       "name": "Natural Gas Continuous Contract",
       "trend": "BULLISH",
-      "buy_trade": 3.03,
+      "buy_trade": 3.01,
       "sell_trade": 3.4,
       "prev_close": null
     },
@@ -121,8 +121,8 @@
       "ticker_hedgeye": "GOLD",
       "name": "Gold Spot Price",
       "trend": "BEARISH",
-      "buy_trade": 3511.0,
-      "sell_trade": 3813.0,
+      "buy_trade": 3472.0,
+      "sell_trade": 3900.0,
       "prev_close": null
     },
     {
@@ -130,8 +130,8 @@
       "ticker_hedgeye": "COPPER",
       "name": "Copper Spot Price",
       "trend": "BEARISH",
-      "buy_trade": 5.41,
-      "sell_trade": 5.96,
+      "buy_trade": 5.17,
+      "sell_trade": 5.81,
       "prev_close": null
     },
     {
@@ -139,9 +139,423 @@
       "ticker_hedgeye": "SILVER",
       "name": "Silver Spot Price",
       "trend": "BEARISH",
-      "buy_trade": 41.0,
-      "sell_trade": 47.0,
+      "buy_trade": 38.0,
+      "sell_trade": 46.0,
       "prev_close": null
+    },
+    {
+      "ticker": "BUXX",
+      "ticker_hedgeye": "BUXX",
+      "name": "Income Short Maturity",
+      "trend": "BULLISH",
+      "buy_trade": 20.15,
+      "sell_trade": 20.25,
+      "prev_close": null
+    },
+    {
+      "ticker": "CLOX",
+      "ticker_hedgeye": "CLOX",
+      "name": "AAA CLO",
+      "trend": "BULLISH",
+      "buy_trade": 25.52,
+      "sell_trade": 25.62,
+      "prev_close": null
+    },
+    {
+      "ticker": "UUP",
+      "ticker_hedgeye": "UUP",
+      "name": "US Dollar Bullish",
+      "trend": "BULLISH",
+      "buy_trade": 29.2,
+      "sell_trade": 29.85,
+      "prev_close": null
+    },
+    {
+      "ticker": "ILS",
+      "ticker_hedgeye": "ILS",
+      "name": "Catastrophe Bonds",
+      "trend": "BULLISH",
+      "buy_trade": 20.3,
+      "sell_trade": 20.42,
+      "prev_close": null
+    },
+    {
+      "ticker": "XLP",
+      "ticker_hedgeye": "XLP",
+      "name": "Consumer Staples",
+      "trend": "BULLISH",
+      "buy_trade": 88.0,
+      "sell_trade": 94.0,
+      "prev_close": null
+    },
+    {
+      "ticker": "FTXG",
+      "ticker_hedgeye": "FTXG",
+      "name": "Food & Beverage",
+      "trend": "BULLISH",
+      "buy_trade": 22.75,
+      "sell_trade": 23.81,
+      "prev_close": null
+    },
+    {
+      "ticker": "IAK",
+      "ticker_hedgeye": "IAK",
+      "name": "US Insurance",
+      "trend": "BULLISH",
+      "buy_trade": 147.0,
+      "sell_trade": 155.0,
+      "prev_close": null
+    },
+    {
+      "ticker": "BNDD",
+      "ticker_hedgeye": "BNDD",
+      "name": "US Deflation",
+      "trend": "BULLISH",
+      "buy_trade": 96.01,
+      "sell_trade": 98.44,
+      "prev_close": null
+    },
+    {
+      "ticker": "BTAL",
+      "ticker_hedgeye": "BTAL",
+      "name": "US Market Neutral",
+      "trend": "BULLISH",
+      "buy_trade": 12.96,
+      "sell_trade": 14.42,
+      "prev_close": null
+    },
+    {
+      "ticker": "XLU",
+      "ticker_hedgeye": "XLU",
+      "name": "Utilities Sector",
+      "trend": "BULLISH",
+      "buy_trade": 42.25,
+      "sell_trade": 44.57,
+      "prev_close": null
+    },
+    {
+      "ticker": "TLT",
+      "ticker_hedgeye": "TLT",
+      "name": "Long Treasury Bond",
+      "trend": "BULLISH",
+      "buy_trade": 78.88,
+      "sell_trade": 81.99,
+      "prev_close": null
+    },
+    {
+      "ticker": "CAOS",
+      "ticker_hedgeye": "CAOS",
+      "name": "Tail Risk Strategy",
+      "trend": "BULLISH",
+      "buy_trade": 91.39,
+      "sell_trade": 93.99,
+      "prev_close": null
+    },
+    {
+      "ticker": "DFGX",
+      "ticker_hedgeye": "DFGX",
+      "name": "International Core Fixed Income",
+      "trend": "BULLISH",
+      "buy_trade": 50.95,
+      "sell_trade": 51.6,
+      "prev_close": null
+    },
+    {
+      "ticker": "IBHF",
+      "ticker_hedgeye": "IBHF",
+      "name": "2026 High Yield",
+      "trend": "BULLISH",
+      "buy_trade": 22.47,
+      "sell_trade": 22.58,
+      "prev_close": null
+    },
+    {
+      "ticker": "PHO",
+      "ticker_hedgeye": "PHO",
+      "name": "Water Resources",
+      "trend": "BULLISH",
+      "buy_trade": 73.11,
+      "sell_trade": 78.02,
+      "prev_close": null
+    },
+    {
+      "ticker": "PBD",
+      "ticker_hedgeye": "PBD",
+      "name": "Clean Energy",
+      "trend": "BEARISH",
+      "buy_trade": 12.29,
+      "sell_trade": 14.99,
+      "prev_close": null
+    },
+    {
+      "ticker": "XLI",
+      "ticker_hedgeye": "XLI",
+      "name": "Industrials",
+      "trend": "BEARISH",
+      "buy_trade": 152.0,
+      "sell_trade": 166.0,
+      "prev_close": null
+    },
+    {
+      "ticker": "IWM",
+      "ticker_hedgeye": "IWM",
+      "name": "US Small-Cap",
+      "trend": "BEARISH",
+      "buy_trade": 253.0,
+      "sell_trade": 274.0,
+      "prev_close": null
+    },
+    {
+      "ticker": "PALL",
+      "ticker_hedgeye": "PALL",
+      "name": "Palladium",
+      "trend": "BEARISH",
+      "buy_trade": 15.31,
+      "sell_trade": 18.84,
+      "prev_close": null
+    },
+    {
+      "ticker": "SLV",
+      "ticker_hedgeye": "SLV",
+      "name": "Silver",
+      "trend": "BEARISH",
+      "buy_trade": 35.13,
+      "sell_trade": 46.02,
+      "prev_close": null
+    },
+    {
+      "ticker": "EPHE",
+      "ticker_hedgeye": "EPHE",
+      "name": "Philippines",
+      "trend": "BEARISH",
+      "buy_trade": 19.58,
+      "sell_trade": 22.21,
+      "prev_close": null
+    },
+    {
+      "ticker": "IDX",
+      "ticker_hedgeye": "IDX",
+      "name": "Indonesia",
+      "trend": "BEARISH",
+      "buy_trade": 8.42,
+      "sell_trade": 9.3,
+      "prev_close": null
+    },
+    {
+      "ticker": "EWY",
+      "ticker_hedgeye": "EWY",
+      "name": "South Korea",
+      "trend": "BEARISH",
+      "buy_trade": 120.0,
+      "sell_trade": 147.0,
+      "prev_close": null
+    },
+    {
+      "ticker": "DRAM",
+      "ticker_hedgeye": "DRAM",
+      "name": "Roundhill Memory",
+      "trend": "BEARISH",
+      "buy_trade": 32.08,
+      "sell_trade": 44.41,
+      "prev_close": null
+    },
+    {
+      "ticker": "GRNY",
+      "ticker_hedgeye": "GRNY",
+      "name": "\"Granny Shots\" U.S. Large Cap",
+      "trend": "BEARISH",
+      "buy_trade": 22.18,
+      "sell_trade": 25.9,
+      "prev_close": null
+    },
+    {
+      "ticker": "MEME",
+      "ticker_hedgeye": "MEME",
+      "name": "Meme",
+      "trend": "BEARISH",
+      "buy_trade": 4.03,
+      "sell_trade": 6.06,
+      "prev_close": null
+    },
+    {
+      "ticker": "GVIP",
+      "ticker_hedgeye": "GVIP",
+      "name": "Hedge Fund VIP",
+      "trend": "BEARISH",
+      "buy_trade": 136.0,
+      "sell_trade": 156.0,
+      "prev_close": null
+    },
+    {
+      "ticker": "FXE",
+      "ticker_hedgeye": "FXE",
+      "name": "Euro",
+      "trend": "BEARISH",
+      "buy_trade": 100.0,
+      "sell_trade": 103.0,
+      "prev_close": null
+    },
+    {
+      "ticker": "QQQ",
+      "ticker_hedgeye": "QQQ",
+      "name": "Nasdaq 100",
+      "trend": "BEARISH",
+      "buy_trade": 601.0,
+      "sell_trade": 680.0,
+      "prev_close": null
+    },
+    {
+      "ticker": "LIT",
+      "ticker_hedgeye": "LIT",
+      "name": "Lithium Tech",
+      "trend": "BEARISH",
+      "buy_trade": 50.42,
+      "sell_trade": 60.18,
+      "prev_close": null
+    },
+    {
+      "ticker": "ARTY",
+      "ticker_hedgeye": "ARTY",
+      "name": "AI Tech",
+      "trend": "BEARISH",
+      "buy_trade": 52.47,
+      "sell_trade": 62.66,
+      "prev_close": null
+    },
+    {
+      "ticker": "EWT",
+      "ticker_hedgeye": "EWT",
+      "name": "Taiwan",
+      "trend": "BEARISH",
+      "buy_trade": 73.8,
+      "sell_trade": 96.54,
+      "prev_close": null
+    },
+    {
+      "ticker": "CPER",
+      "ticker_hedgeye": "CPER",
+      "name": "Copper",
+      "trend": "BEARISH",
+      "buy_trade": 31.43,
+      "sell_trade": 35.98,
+      "prev_close": null
+    },
+    {
+      "ticker": "EWJ",
+      "ticker_hedgeye": "EWJ",
+      "name": "Japan",
+      "trend": "BEARISH",
+      "buy_trade": 81.96,
+      "sell_trade": 89.5,
+      "prev_close": null
+    },
+    {
+      "ticker": "CRAK",
+      "ticker_hedgeye": "CRAK",
+      "name": "Oil Refiners",
+      "trend": "BEARISH",
+      "buy_trade": 50.12,
+      "sell_trade": 58.22,
+      "prev_close": null
+    },
+    {
+      "ticker": "XOP",
+      "ticker_hedgeye": "XOP",
+      "name": "Oil & Gas Equity",
+      "trend": "BEARISH",
+      "buy_trade": 161.0,
+      "sell_trade": 183.0,
+      "prev_close": null
+    },
+    {
+      "ticker": "PM",
+      "ticker_hedgeye": "PM",
+      "name": "Philip Morris International Inc",
+      "trend": "BULLISH",
+      "buy_trade": 194.0,
+      "sell_trade": 208.0,
+      "prev_close": 199.47
+    },
+    {
+      "ticker": "SPHR",
+      "ticker_hedgeye": "SPHR",
+      "name": "Sphere Entertainment Co. Class A",
+      "trend": "BEARISH",
+      "buy_trade": 98.07,
+      "sell_trade": 117.0,
+      "prev_close": 108.94
+    },
+    {
+      "ticker": "WST",
+      "ticker_hedgeye": "WST",
+      "name": "West Pharmaceutical Services Inc.",
+      "trend": "BULLISH",
+      "buy_trade": 374.0,
+      "sell_trade": 402.0,
+      "prev_close": 392.15
+    },
+    {
+      "ticker": "DKNG",
+      "ticker_hedgeye": "DKNG",
+      "name": "DraftKings Inc.",
+      "trend": "BEARISH",
+      "buy_trade": 18.22,
+      "sell_trade": 22.41,
+      "prev_close": 20.91
+    },
+    {
+      "ticker": "SAIA",
+      "ticker_hedgeye": "SAIA",
+      "name": "Saia Inc.",
+      "trend": "BEARISH",
+      "buy_trade": 324.0,
+      "sell_trade": 348.0,
+      "prev_close": 332.14
+    },
+    {
+      "ticker": "DKS",
+      "ticker_hedgeye": "DKS",
+      "name": "Dick's Sporting Goods Inc",
+      "trend": "BEARISH",
+      "buy_trade": 131.0,
+      "sell_trade": 151.0,
+      "prev_close": 144.67
+    },
+    {
+      "ticker": "CRWD",
+      "ticker_hedgeye": "CRWD",
+      "name": "CrowdStrike Holdings Inc.",
+      "trend": "BULLISH",
+      "buy_trade": 221.0,
+      "sell_trade": 277.0,
+      "prev_close": 257.57
+    },
+    {
+      "ticker": "MSFT",
+      "ticker_hedgeye": "MSFT",
+      "name": "Microsoft Corporation",
+      "trend": "BULLISH",
+      "buy_trade": 515.0,
+      "sell_trade": 547.0,
+      "prev_close": 524.51
+    },
+    {
+      "ticker": "DT",
+      "ticker_hedgeye": "DT",
+      "name": "Dynatrace Inc.",
+      "trend": "BULLISH",
+      "buy_trade": 60.29,
+      "sell_trade": 66.71,
+      "prev_close": 64.05
+    },
+    {
+      "ticker": "TXG",
+      "ticker_hedgeye": "TXG",
+      "name": "10x Genomics Inc.",
+      "trend": "BULLISH",
+      "buy_trade": 67.17,
+      "sell_trade": 80.64,
+      "prev_close": 71.55
     }
   ],
   "trend_changes": [],

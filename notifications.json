@@ -1,0 +1,33 @@
+{
+  "updatedAt": "2026-11-24T09:36:04",
+  "items": [
+    {
+      "id": "vix_alert_2026-11-24",
+      "title": "🚨 VIX em 31.56 (F*ck Bucket (Crash Risk))",
+      "message": "Regime de alta volatilidade / risco de crash ativo. Postura defensiva máxima.",
+      "category": "VIX",
+      "createdAt": "2026-11-24T09:36:04"
+    },
+    {
+      "id": "port_sair_2026-11-24_15",
+      "title": "⚠️ Alerta de Carteira × Hedgeye",
+      "message": "15 posições encerradas ou em lado oposto na Hedgeye: AAAU, AMZN, BNO, ETHA, FXH, IBIT, IGV, JPXN",
+      "category": "PORTFOLIO",
+      "createdAt": "2026-11-24T09:36:04"
+    },
+    {
+      "id": "vix_alert_2026-11-23",
+      "title": "🚨 VIX em 31.56 (F*ck Bucket (Crash Risk))",
+      "message": "Regime de alta volatilidade / risco de crash ativo. Postura defensiva máxima.",
+      "category": "VIX",
+      "createdAt": "2026-11-23T09:58:47"
+    },
+    {
+      "id": "port_sair_2026-11-23_15",
+      "title": "⚠️ Alerta de Carteira × Hedgeye",
+      "message": "15 posições encerradas ou em lado oposto na Hedgeye: AAAU, AMZN, BNO, ETHA, FXH, IBIT, IGV, JPXN",
+      "category": "PORTFOLIO",
+      "createdAt": "2026-11-23T09:58:46"
+    }
+  ]
+}

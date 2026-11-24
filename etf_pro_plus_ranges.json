@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T09:33:46",
+  "generatedAt": "2026-11-24T09:35:46",
   "ranges": {
     "BUXX": {
       "low": 20.15,
@@ -12,314 +12,306 @@
     "CLOX": {
       "low": 25.52,
       "high": 25.62,
-      "price": 25.58,
-      "pct": 60.0,
+      "price": 25.59,
+      "pct": 70.0,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "XLV": {
-      "low": 175.0,
-      "high": 192.0,
-      "price": 177.24,
-      "pct": 13.2,
-      "zone": "perto do LRR",
+      "low": 173.0,
+      "high": 191.0,
+      "price": 179.42,
+      "pct": 35.7,
+      "zone": "meio do range",
       "source": "Early Look (Our Levels, diário)"
     },
     "UUP": {
       "low": 29.2,
       "high": 29.85,
-      "price": 29.62,
-      "pct": 64.6,
-      "zone": "meio do range",
+      "price": 29.78,
+      "pct": 89.2,
+      "zone": "perto do TRR",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "ILS": {
       "low": 20.3,
       "high": 20.42,
-      "price": 20.35,
-      "pct": 41.7,
+      "price": 20.38,
+      "pct": 66.7,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "XLP": {
       "low": 88.0,
       "high": 94.0,
-      "price": 90.46,
-      "pct": 41.0,
+      "price": 90.38,
+      "pct": 39.7,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "FTXG": {
       "low": 22.75,
       "high": 23.81,
-      "price": 23.18,
-      "pct": 40.6,
+      "price": 23.04,
+      "pct": 27.4,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "IAK": {
       "low": 147.0,
       "high": 155.0,
-      "price": 149.66,
-      "pct": 33.2,
+      "price": 150.12,
+      "pct": 39.0,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "BNDD": {
       "low": 96.01,
       "high": 98.44,
-      "price": 97.22,
-      "pct": 49.8,
+      "price": 97.45,
+      "pct": 59.3,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "BTAL": {
       "low": 12.96,
       "high": 14.42,
-      "price": 13.92,
-      "pct": 65.8,
+      "price": 13.58,
+      "pct": 42.5,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "XLU": {
       "low": 42.25,
       "high": 44.57,
-      "price": 42.69,
-      "pct": 19.0,
+      "price": 43.32,
+      "pct": 46.1,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "TLT": {
       "low": 78.88,
       "high": 81.99,
-      "price": 81.45,
-      "pct": 82.6,
-      "zone": "meio do range",
+      "price": 81.69,
+      "pct": 90.4,
+      "zone": "perto do TRR",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "CAOS": {
       "low": 91.39,
       "high": 93.99,
-      "price": 93.58,
-      "pct": 84.2,
+      "price": 91.84,
+      "pct": 17.3,
       "zone": "meio do range",
-      "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
-    },
-    "XLRE": {
-      "low": 42.03,
-      "high": 45.22,
-      "price": 42.46,
-      "pct": 13.5,
-      "zone": "perto do LRR",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "DFGX": {
       "low": 50.95,
       "high": 51.6,
-      "price": 51.39,
-      "pct": 67.7,
+      "price": 51.45,
+      "pct": 76.9,
       "zone": "meio do range",
-      "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
-    },
-    "XRT": {
-      "low": 85.72,
-      "high": 93.72,
-      "price": 86.49,
-      "pct": 9.6,
-      "zone": "perto do LRR",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "IBHF": {
       "low": 22.47,
       "high": 22.58,
-      "price": 22.52,
-      "pct": 45.5,
+      "price": 22.51,
+      "pct": 36.4,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "PHO": {
       "low": 73.11,
       "high": 78.02,
-      "price": 73.77,
-      "pct": 13.4,
-      "zone": "perto do LRR",
-      "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
-    },
-    "GII": {
-      "low": 72.4,
-      "high": 76.22,
-      "price": 72.91,
-      "pct": 13.4,
-      "zone": "perto do LRR",
+      "price": 75.74,
+      "pct": 53.6,
+      "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "PBD": {
       "low": 12.29,
       "high": 14.99,
-      "price": 12.79,
-      "pct": 18.5,
+      "price": 13.37,
+      "pct": 40.0,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "XLI": {
       "low": 152.0,
       "high": 166.0,
-      "price": 156.37,
-      "pct": 31.2,
+      "price": 162.47,
+      "pct": 74.8,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "IWM": {
       "low": 253.0,
       "high": 274.0,
-      "price": 256.61,
-      "pct": 17.2,
+      "price": 265.74,
+      "pct": 60.7,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "PALL": {
       "low": 15.31,
       "high": 18.84,
-      "price": 16.19,
-      "pct": 24.9,
+      "price": 16.22,
+      "pct": 25.8,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "SLV": {
       "low": 35.13,
       "high": 46.02,
-      "price": 36.97,
-      "pct": 16.9,
+      "price": 38.91,
+      "pct": 34.7,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "EPHE": {
       "low": 19.58,
       "high": 22.21,
-      "price": 20.53,
-      "pct": 36.1,
+      "price": 21.24,
+      "pct": 63.1,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "IDX": {
       "low": 8.42,
       "high": 9.3,
-      "price": 8.66,
-      "pct": 27.3,
+      "price": 9.07,
+      "pct": 73.9,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "EWY": {
       "low": 120.0,
       "high": 147.0,
-      "price": 123.26,
-      "pct": 12.1,
-      "zone": "perto do LRR",
+      "price": 135.72,
+      "pct": 58.2,
+      "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "DRAM": {
       "low": 32.08,
       "high": 44.41,
-      "price": 33.36,
-      "pct": 10.4,
-      "zone": "perto do LRR",
+      "price": 39.57,
+      "pct": 60.7,
+      "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "GRNY": {
       "low": 22.18,
       "high": 25.9,
-      "price": 23.23,
-      "pct": 28.2,
+      "price": 24.43,
+      "pct": 60.5,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "MEME": {
       "low": 4.03,
       "high": 6.06,
-      "price": 4.33,
-      "pct": 14.8,
-      "zone": "perto do LRR",
+      "price": 5.05,
+      "pct": 50.2,
+      "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "GVIP": {
       "low": 136.0,
       "high": 156.0,
-      "price": 141.98,
-      "pct": 29.9,
+      "price": 150.12,
+      "pct": 70.6,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "FXE": {
       "low": 100.0,
       "high": 103.0,
-      "price": 101.21,
-      "pct": 40.3,
+      "price": 100.64,
+      "pct": 21.3,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "QQQ": {
       "low": 601.0,
       "high": 680.0,
-      "price": 608.45,
-      "pct": 9.4,
-      "zone": "perto do LRR",
+      "price": 651.03,
+      "pct": 63.3,
+      "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "LIT": {
       "low": 50.42,
       "high": 60.18,
-      "price": 51.98,
-      "pct": 16.0,
+      "price": 54.7,
+      "pct": 43.9,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "ARTY": {
       "low": 52.47,
       "high": 62.66,
-      "price": 53.94,
-      "pct": 14.4,
-      "zone": "perto do LRR",
+      "price": 60.24,
+      "pct": 76.3,
+      "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "EWT": {
       "low": 73.8,
       "high": 96.54,
-      "price": 74.77,
-      "pct": 4.3,
-      "zone": "perto do LRR",
+      "price": 88.21,
+      "pct": 63.4,
+      "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "CPER": {
       "low": 31.43,
       "high": 35.98,
-      "price": 32.92,
-      "pct": 32.7,
+      "price": 33.81,
+      "pct": 52.3,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "EWJ": {
       "low": 81.96,
       "high": 89.5,
-      "price": 83.43,
-      "pct": 19.5,
+      "price": 86.9,
+      "pct": 65.5,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "CRAK": {
       "low": 50.12,
       "high": 58.22,
-      "price": 52.36,
-      "pct": 27.7,
+      "price": 52.16,
+      "pct": 25.2,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
     },
     "XOP": {
       "low": 161.0,
       "high": 183.0,
-      "price": 168.06,
-      "pct": 32.1,
+      "price": 165.27,
+      "pct": 19.4,
       "zone": "meio do range",
       "source": "ETF Pro semanal de 22/11/2026 (range de TREND)"
+    },
+    "SPDN": {
+      "low": null,
+      "high": null,
+      "price": 8.98,
+      "pct": null,
+      "zone": null,
+      "source": null
+    },
+    "XLK": {
+      "low": null,
+      "high": null,
+      "price": 162.38,
+      "pct": null,
+      "zone": null,
+      "source": null
     }
   }
 }
