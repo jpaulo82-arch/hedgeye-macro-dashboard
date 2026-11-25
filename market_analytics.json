@@ -1,47 +1,47 @@
 {
-  "updated_at": "25/11/2026 09:35:53",
+  "updated_at": "25/11/2026 10:06:19",
   "gex": [
     {
       "ticker": "SPY",
       "current_price": 718.78,
-      "net_gex_million": 643.7,
-      "regime": "LONG GAMMA",
-      "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
+      "net_gex_million": -570.39,
+      "regime": "SHORT GAMMA",
+      "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
       "call_wall": 720.0,
       "put_wall": 700.0,
-      "zero_gamma_level": 719.0,
+      "zero_gamma_level": 717.0,
       "total_call_oi": 965269,
       "total_put_oi": 1196058,
       "put_call_ratio": 1.24,
-      "updated_at": "25/11/2026 09:35:16"
+      "updated_at": "25/11/2026 10:05:36"
     },
     {
       "ticker": "QQQ",
       "current_price": 638.1,
-      "net_gex_million": 56.99,
+      "net_gex_million": 17.33,
       "regime": "LONG GAMMA",
       "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
-      "call_wall": 640.0,
-      "put_wall": 630.0,
-      "zero_gamma_level": 639.0,
+      "call_wall": 650.0,
+      "put_wall": 640.0,
+      "zero_gamma_level": 634.0,
       "total_call_oi": 700952,
       "total_put_oi": 673836,
       "put_call_ratio": 0.96,
-      "updated_at": "25/11/2026 09:35:18"
+      "updated_at": "25/11/2026 10:05:39"
     },
     {
       "ticker": "IWM",
       "current_price": 267.14,
-      "net_gex_million": 1.45,
-      "regime": "LONG GAMMA",
-      "regime_desc": "Dealers compram na baixa e vendem na alta (volatilidade amortecida / 'buy the dip' seguro)",
-      "call_wall": 268.0,
-      "put_wall": 260.0,
+      "net_gex_million": -290.54,
+      "regime": "SHORT GAMMA",
+      "regime_desc": "Dealers vendem na baixa e compram na alta (volatilidade acelerada / risco de liquidação rápida)",
+      "call_wall": 270.0,
+      "put_wall": 270.0,
       "zero_gamma_level": 267.5,
       "total_call_oi": 168013,
       "total_put_oi": 326581,
       "put_call_ratio": 1.94,
-      "updated_at": "25/11/2026 09:35:20"
+      "updated_at": "25/11/2026 10:05:40"
     }
   ],
   "fundamentals": [
@@ -1667,10 +1667,10 @@
     "last_close": "24/11/2026",
     "fonte": "Yahoo Finance (fechamentos ajustados)",
     "aviso": "Composição das cestas definida no sistema, não publicada pela Hedgeye. O regime oficial vem do Early Look.",
-    "updated_at": "25/11/2026 09:35:43"
+    "updated_at": "25/11/2026 10:06:05"
   },
   "economic_calendar": {
-    "updated_at": "25/11/2026 09:35:44",
+    "updated_at": "25/11/2026 10:06:06",
     "source": "TradingView Official Real-Time Calendar API",
     "current_week": "23/11 a 27/11/2026",
     "total_events": 128,

@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-11-25T09:34:58",
+  "updatedAt": "2026-11-25T10:05:26",
   "items": [
+    {
+      "id": "vix_alert_2026-11-25",
+      "title": "🚨 VIX em 31.04 (F*ck Bucket (Crash Risk))",
+      "message": "Regime de alta volatilidade / risco de crash ativo. Postura defensiva máxima.",
+      "category": "VIX",
+      "createdAt": "2026-11-25T10:05:26"
+    },
     {
       "id": "port_sair_2026-11-25_16",
       "title": "⚠️ Alerta de Carteira × Hedgeye",
