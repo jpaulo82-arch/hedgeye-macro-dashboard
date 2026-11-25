@@ -221,9 +221,33 @@
       ]
     },
     {
+      "reportId": "etf_intra_20261124",
+      "date": "24/11/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (24/11/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-11-24T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "CANE",
+          "categoria": "ETF PRO PLUS — SUGAR",
+          "regime": null,
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "ETF Pro Plus adicionou Sugar (CANE) como SHORT no UPDATE de 24/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 24/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
       "reportId": "el_20261123",
       "date": "23/11/2026",
-      "reportTitle": "EARLY LOOK: Rougher #Quad4 Reiterated (23/11/2026)",
+      "reportTitle": "EARLY LOOK: #Quad4 Mais Severo Reiterado (23/11/2026)",
       "extractedByModel": "Hedgeye Official Email Parser",
       "extractedAt": "2026-11-23T09:35:00",
       "sourceType": "earlylook",
@@ -13693,5 +13717,5 @@
       ]
     }
   ],
-  "updatedAt": "24/11/2026 09:35:55"
+  "updatedAt": "25/11/2026 09:34:07"
 }
