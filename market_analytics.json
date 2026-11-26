@@ -1,5 +1,5 @@
 {
-  "updated_at": "26/11/2026 10:06:00",
+  "updated_at": "26/11/2026 10:32:56",
   "gex": [
     {
       "ticker": "SPY",
@@ -13,7 +13,7 @@
       "total_call_oi": 965269,
       "total_put_oi": 1196058,
       "put_call_ratio": 1.24,
-      "updated_at": "26/11/2026 10:05:14"
+      "updated_at": "26/11/2026 10:32:10"
     },
     {
       "ticker": "QQQ",
@@ -27,7 +27,7 @@
       "total_call_oi": 700952,
       "total_put_oi": 673836,
       "put_call_ratio": 0.96,
-      "updated_at": "26/11/2026 10:05:17"
+      "updated_at": "26/11/2026 10:32:12"
     },
     {
       "ticker": "IWM",
@@ -41,7 +41,7 @@
       "total_call_oi": 168013,
       "total_put_oi": 326581,
       "put_call_ratio": 1.94,
-      "updated_at": "26/11/2026 10:05:19"
+      "updated_at": "26/11/2026 10:32:15"
     }
   ],
   "fundamentals": [
@@ -1667,10 +1667,10 @@
     "last_close": "25/11/2026",
     "fonte": "Yahoo Finance (fechamentos ajustados)",
     "aviso": "Composição das cestas definida no sistema, não publicada pela Hedgeye. O regime oficial vem do Early Look.",
-    "updated_at": "26/11/2026 10:05:48"
+    "updated_at": "26/11/2026 10:32:43"
   },
   "economic_calendar": {
-    "updated_at": "26/11/2026 10:05:49",
+    "updated_at": "26/11/2026 10:32:44",
     "source": "TradingView Official Real-Time Calendar API",
     "current_week": "23/11 a 27/11/2026",
     "total_events": 125,
@@ -4849,11 +4849,11 @@
       "indicator": "REAL_GDP",
       "label": "PIB Real (Growth)",
       "status": "ok",
-      "value": 6186.41,
+      "value": 6202.425,
       "date": "2026-07-01",
       "prev_value": 6112.411,
       "prev_date": "2026-04-01",
-      "delta": 73.999,
+      "delta": 90.014,
       "direction": "alta",
       "unit": "billions of dollars",
       "source": "Alpha Vantage (BLS/BEA/Fed oficial)"
