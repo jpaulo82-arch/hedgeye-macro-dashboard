@@ -1,5 +1,5 @@
 {
-  "updatedAt": "24/11/2026 20:47:16",
+  "updatedAt": "25/11/2026 14:01:11",
   "reports": {
     "weekly": [
       {
@@ -16946,6 +16946,20 @@
       },
       {
         "type": "intraday",
+        "sourceFile": "intraday_112669_UPDATE__1_New_ETF_Pro_Change.txt",
+        "reportDatetime": "2026-11-25 11:16AM EST",
+        "addsLong": [],
+        "addsShort": [
+          {
+            "name": "Canadian Dollar",
+            "ticker": "FXC"
+          }
+        ],
+        "removesLong": [],
+        "removesShort": []
+      },
+      {
+        "type": "intraday",
         "sourceFile": "intraday_112675_UPDATE__1_New_ETF_Pro_Change.txt",
         "reportDatetime": "2026-11-19 10:31AM EST",
         "addsLong": [],
@@ -21301,6 +21315,12 @@
       "type": "intraday",
       "sourceFile": "intraday_112651_UPDATE__1_New_ETF_Pro_Change.txt",
       "summary": "Adicionou SHORT: Sugar (CANE)"
+    },
+    {
+      "date": "2026-11-25 11:16AM EST",
+      "type": "intraday",
+      "sourceFile": "intraday_112669_UPDATE__1_New_ETF_Pro_Change.txt",
+      "summary": "Adicionou SHORT: Canadian Dollar (FXC)"
     }
   ],
   "currentLineup": [
@@ -22171,6 +22191,21 @@
       "rangeLow": null,
       "rangeHigh": null,
       "sourceOfEntry": "intraday:intraday_112651_UPDATE__1_New_ETF_Pro_Change.txt",
+      "allowedBand": null,
+      "nativeQuads": [],
+      "quadNote": "N/D (sem classificação de setor/classe confiável)"
+    },
+    {
+      "ticker": "FXC",
+      "name": "Canadian Dollar",
+      "side": "short",
+      "dateAdded": "2026-11-25 11:16AM EST",
+      "assetClass": null,
+      "entryPrice": 68.6913,
+      "entryPriceSource": "fechamento real (yfinance) na data de entrada",
+      "rangeLow": null,
+      "rangeHigh": null,
+      "sourceOfEntry": "intraday:intraday_112669_UPDATE__1_New_ETF_Pro_Change.txt",
       "allowedBand": null,
       "nativeQuads": [],
       "quadNote": "N/D (sem classificação de setor/classe confiável)"
