@@ -1,11 +1,11 @@
 {
   "source": "early_look_and_weekly_ranges",
-  "source_title": "EARLY LOOK: Thankful",
-  "source_email_id": "112646",
-  "source_file": "hedgeye_112646_EARLY_LOOK__Thankful.md",
-  "sent_at": "2026-11-25T08:13:07-05:00",
-  "signals_date": "2026-11-25",
-  "parsed_at": "2026-11-27T09:32:08",
+  "source_title": "EARLY LOOK: Pass the Disinflation, Please",
+  "source_email_id": "112920",
+  "source_file": "hedgeye_112920_EARLY_LOOK__Pass_the_Disinflation__Please.md",
+  "sent_at": "2026-11-27T07:56:12-05:00",
+  "signals_date": "2026-11-27",
+  "parsed_at": "2026-11-27T10:01:41",
   "total_signals": 60,
   "signals": [
     {
@@ -13,8 +13,8 @@
       "ticker_hedgeye": "US10",
       "name": "10-Year U.S. Treasury Yield",
       "trend": "BEARISH",
-      "buy_trade": 4.82,
-      "sell_trade": 5.06,
+      "buy_trade": 4.8,
+      "sell_trade": 5.01,
       "prev_close": null
     },
     {
@@ -22,17 +22,17 @@
       "ticker_hedgeye": "HYG",
       "name": "High Yield",
       "trend": "BEARISH",
-      "buy_trade": 76.03,
-      "sell_trade": 76.95,
+      "buy_trade": 76.05,
+      "sell_trade": 76.97,
       "prev_close": null
     },
     {
       "ticker": "LQD",
       "ticker_hedgeye": "LQD",
       "name": "Investment Grade Corporate Bond ETF",
-      "trend": "BEARISH",
-      "buy_trade": 102.0,
-      "sell_trade": 104.3,
+      "trend": "NEUTRAL",
+      "buy_trade": 102.5,
+      "sell_trade": 104.7,
       "prev_close": null
     },
     {
@@ -40,8 +40,8 @@
       "ticker_hedgeye": "SPX",
       "name": "S&P 500",
       "trend": "BEARISH",
-      "buy_trade": 6892.0,
-      "sell_trade": 7316.0,
+      "buy_trade": 6907.0,
+      "sell_trade": 7352.0,
       "prev_close": null
     },
     {
@@ -49,8 +49,8 @@
       "ticker_hedgeye": "COMPQ",
       "name": "NASDAQ Composite",
       "trend": "BEARISH",
-      "buy_trade": 22503.0,
-      "sell_trade": 24996.0,
+      "buy_trade": 22609.0,
+      "sell_trade": 24903.0,
       "prev_close": null
     },
     {
@@ -58,8 +58,8 @@
       "ticker_hedgeye": "RUT",
       "name": "Russell 2000",
       "trend": "BEARISH",
-      "buy_trade": 2563.0,
-      "sell_trade": 2735.0,
+      "buy_trade": 2598.0,
+      "sell_trade": 2755.0,
       "prev_close": null
     },
     {
@@ -67,8 +67,8 @@
       "ticker_hedgeye": "XLV",
       "name": "Health Care Select Sector SPDR Fund",
       "trend": "BULLISH",
-      "buy_trade": 175.0,
-      "sell_trade": 192.0,
+      "buy_trade": 177.0,
+      "sell_trade": 191.0,
       "prev_close": null
     },
     {
@@ -76,8 +76,8 @@
       "ticker_hedgeye": "BTAL",
       "name": "AGF U.S. Market Neutral Anti-Beta Fund",
       "trend": "BULLISH",
-      "buy_trade": 13.05,
-      "sell_trade": 14.38,
+      "buy_trade": 13.09,
+      "sell_trade": 14.25,
       "prev_close": null
     },
     {
@@ -85,8 +85,8 @@
       "ticker_hedgeye": "VIX",
       "name": "Volatility Index",
       "trend": "BULLISH",
-      "buy_trade": 19.22,
-      "sell_trade": 35.99,
+      "buy_trade": 19.35,
+      "sell_trade": 35.11,
       "prev_close": null
     },
     {
@@ -94,8 +94,8 @@
       "ticker_hedgeye": "USD",
       "name": "U.S. Dollar Index",
       "trend": "BULLISH",
-      "buy_trade": 103.03,
-      "sell_trade": 104.5,
+      "buy_trade": 103.33,
+      "sell_trade": 104.4,
       "prev_close": null
     },
     {
@@ -103,8 +103,8 @@
       "ticker_hedgeye": "WTIC",
       "name": "Light Crude Oil Continuous Contract",
       "trend": "BEARISH",
-      "buy_trade": 78.79,
-      "sell_trade": 88.64,
+      "buy_trade": 79.19,
+      "sell_trade": 87.34,
       "prev_close": null
     },
     {
@@ -112,8 +112,8 @@
       "ticker_hedgeye": "NATGAS",
       "name": "Natural Gas Continuous Contract",
       "trend": "BULLISH",
-      "buy_trade": 3.12,
-      "sell_trade": 3.77,
+      "buy_trade": 3.19,
+      "sell_trade": 3.8,
       "prev_close": null
     },
     {
@@ -121,8 +121,8 @@
       "ticker_hedgeye": "GOLD",
       "name": "Gold Spot Price",
       "trend": "BEARISH",
-      "buy_trade": 3402.0,
-      "sell_trade": 3697.0,
+      "buy_trade": 3459.0,
+      "sell_trade": 3751.0,
       "prev_close": null
     },
     {
@@ -130,8 +130,8 @@
       "ticker_hedgeye": "COPPER",
       "name": "Copper Spot Price",
       "trend": "BEARISH",
-      "buy_trade": 5.1,
-      "sell_trade": 5.7,
+      "buy_trade": 5.16,
+      "sell_trade": 5.65,
       "prev_close": null
     },
     {
@@ -139,8 +139,8 @@
       "ticker_hedgeye": "SILVER",
       "name": "Silver Spot Price",
       "trend": "BEARISH",
-      "buy_trade": 37.0,
-      "sell_trade": 44.0,
+      "buy_trade": 38.0,
+      "sell_trade": 45.0,
       "prev_close": null
     },
     {
