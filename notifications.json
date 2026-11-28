@@ -1,6 +1,13 @@
 {
-  "updatedAt": "2026-11-27T09:33:46",
+  "updatedAt": "2026-11-28T13:21:57",
   "items": [
+    {
+      "id": "port_sair_2026-11-28_19",
+      "title": "⚠️ Alerta de Carteira × Hedgeye",
+      "message": "19 posições encerradas ou em lado oposto na Hedgeye: AAAU, AMZN, BNO, ETHA, FXH, HYG, IBIT, IGV",
+      "category": "PORTFOLIO",
+      "createdAt": "2026-11-28T13:21:57"
+    },
     {
       "id": "port_sair_2026-11-27_19",
       "title": "⚠️ Alerta de Carteira × Hedgeye",

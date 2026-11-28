@@ -5,8 +5,8 @@
   "source_file": "hedgeye_112920_EARLY_LOOK__Pass_the_Disinflation__Please.md",
   "sent_at": "2026-11-27T07:56:12-05:00",
   "signals_date": "2026-11-27",
-  "parsed_at": "2026-11-27T10:01:41",
-  "total_signals": 60,
+  "parsed_at": "2026-11-28T13:21:26",
+  "total_signals": 59,
   "signals": [
     {
       "ticker": "US10",
@@ -321,15 +321,6 @@
       "trend": "BEARISH",
       "buy_trade": 19.58,
       "sell_trade": 22.21,
-      "prev_close": null
-    },
-    {
-      "ticker": "IDX",
-      "ticker_hedgeye": "IDX",
-      "name": "Indonesia",
-      "trend": "BEARISH",
-      "buy_trade": 8.42,
-      "sell_trade": 9.3,
       "prev_close": null
     },
     {

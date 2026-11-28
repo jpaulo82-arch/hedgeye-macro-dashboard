@@ -221,6 +221,86 @@
       ]
     },
     {
+      "reportId": "etf_intra_20261127",
+      "date": "27/11/2026",
+      "reportTitle": "ETF PRO PLUS: Ordens Intraday (27/11/2026)",
+      "extractedByModel": "Hedgeye ETF Pro Engine",
+      "extractedAt": "2026-11-27T10:30:00",
+      "sourceType": "etf_pro_plus",
+      "decisions": [
+        {
+          "ativo": "TAIL",
+          "categoria": "ETF PRO PLUS — TAIL RISK",
+          "regime": null,
+          "decisao": "Comprar / Long",
+          "racional": "ETF Pro Plus adicionou Tail Risk (TAIL) como LONG no UPDATE de 27/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 27/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "ZROZ",
+          "categoria": "ETF PRO PLUS — US TREASURY LONG",
+          "regime": null,
+          "decisao": "Comprar / Long",
+          "racional": "ETF Pro Plus adicionou US Treasury Long (ZROZ) como LONG no UPDATE de 27/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bullish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 27/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "EWQ",
+          "categoria": "ETF PRO PLUS — FRANCE",
+          "regime": null,
+          "decisao": "Vender a Descoberto / Short",
+          "racional": "ETF Pro Plus adicionou France (EWQ) como SHORT no UPDATE de 27/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "bearish",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 27/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        },
+        {
+          "ativo": "IDX",
+          "categoria": "ETF PRO PLUS — INDONESIA",
+          "regime": null,
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "ETF Pro Plus encerrou o SHORT em Indonesia (IDX) no UPDATE de 27/11/2026. Cobertura no Trend Range: 8.42 – 9.30.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 27/11/2026)",
+          "rangeLow": 8.42,
+          "rangeHigh": 9.3
+        },
+        {
+          "ativo": "CANE",
+          "categoria": "ETF PRO PLUS — SUGAR",
+          "regime": null,
+          "decisao": "Cobrir Short / Fechar",
+          "racional": "ETF Pro Plus encerrou o SHORT em Sugar (CANE) no UPDATE de 27/11/2026.",
+          "gatilho_invalidacao": null,
+          "tipo_gatilho": "Mudança no lineup ETF Pro Plus",
+          "status": "neutral",
+          "carteira": "ETF Pro Plus",
+          "fonte": "Hedgeye ETF Pro Plus (UPDATE 27/11/2026)",
+          "rangeLow": null,
+          "rangeHigh": null
+        }
+      ]
+    },
+    {
       "reportId": "el_20261125",
       "date": "25/11/2026",
       "reportTitle": "EARLY LOOK: Grato (25/11/2026)",
@@ -10917,7 +10997,7 @@
         {
           "ativo": "US10",
           "categoria": "EARLY LOOK OUR LEVELS — 10-YEAR U.S. TREASURY YIELD",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Manter / Comprar no Piso (Bullish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BULLISH TREND com Risk Range 5.2 – 5.35.",
           "gatilho_invalidacao": "Quebra do piso de TREND (5.2)",
@@ -10931,7 +11011,7 @@
         {
           "ativo": "HYG",
           "categoria": "EARLY LOOK OUR LEVELS — HIGH YIELD",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Evitar / Vender no Teto (Bearish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BEARISH TREND com Risk Range 76.59 – 77.54.",
           "gatilho_invalidacao": "Rompimento do teto de TREND (77.54)",
@@ -10945,7 +11025,7 @@
         {
           "ativo": "LQD",
           "categoria": "EARLY LOOK OUR LEVELS — INVESTMENT GRADE CORPORATE BOND ETF",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Evitar / Vender no Teto (Bearish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BEARISH TREND com Risk Range 101.4 – 102.7.",
           "gatilho_invalidacao": "Rompimento do teto de TREND (102.7)",
@@ -10959,7 +11039,7 @@
         {
           "ativo": "SPX",
           "categoria": "EARLY LOOK OUR LEVELS — S&P 500",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Manter / Comprar no Piso (Bullish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BULLISH TREND com Risk Range 7701.0 – 7880.0.",
           "gatilho_invalidacao": "Quebra do piso de TREND (7701.0)",
@@ -10973,7 +11053,7 @@
         {
           "ativo": "COMPQ",
           "categoria": "EARLY LOOK OUR LEVELS — NASDAQ COMPOSITE",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Manter / Comprar no Piso (Bullish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BULLISH TREND com Risk Range 26852.0 – 27812.0.",
           "gatilho_invalidacao": "Quebra do piso de TREND (26852.0)",
@@ -10987,7 +11067,7 @@
         {
           "ativo": "RUT",
           "categoria": "EARLY LOOK OUR LEVELS — RUSSELL 2000",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Evitar / Vender no Teto (Bearish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BEARISH TREND com Risk Range 2750.0 – 2867.0.",
           "gatilho_invalidacao": "Rompimento do teto de TREND (2867.0)",
@@ -11001,7 +11081,7 @@
         {
           "ativo": "XLV",
           "categoria": "EARLY LOOK OUR LEVELS — HEALTH CARE SELECT SECTOR SPDR FUND",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Manter / Comprar no Piso (Bullish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BULLISH TREND com Risk Range 166.0 – 173.0.",
           "gatilho_invalidacao": "Quebra do piso de TREND (166.0)",
@@ -11015,7 +11095,7 @@
         {
           "ativo": "IGV",
           "categoria": "EARLY LOOK OUR LEVELS — ISHARES EXPANDED TECH-SOFTWARE SECTOR ETF",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Manter / Comprar no Piso (Bullish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BULLISH TREND com Risk Range 107.0 – 114.0.",
           "gatilho_invalidacao": "Quebra do piso de TREND (107.0)",
@@ -11029,7 +11109,7 @@
         {
           "ativo": "XLK",
           "categoria": "EARLY LOOK OUR LEVELS — TECHNOLOGY SELECT SECTOR SPDR FUND",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Manter / Comprar no Piso (Bullish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BULLISH TREND com Risk Range 194.0 – 205.0.",
           "gatilho_invalidacao": "Quebra do piso de TREND (194.0)",
@@ -11043,7 +11123,7 @@
         {
           "ativo": "VIX",
           "categoria": "EARLY LOOK OUR LEVELS — VOLATILITY INDEX",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Evitar / Vender no Teto (Bearish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BEARISH TREND com Risk Range 14.21 – 16.66.",
           "gatilho_invalidacao": "Rompimento do teto de TREND (16.66)",
@@ -11057,7 +11137,7 @@
         {
           "ativo": "USD",
           "categoria": "EARLY LOOK OUR LEVELS — U.S. DOLLAR INDEX",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Manter / Comprar no Piso (Bullish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BULLISH TREND com Risk Range 101.61 – 102.74.",
           "gatilho_invalidacao": "Quebra do piso de TREND (101.61)",
@@ -11071,7 +11151,7 @@
         {
           "ativo": "WTIC",
           "categoria": "EARLY LOOK OUR LEVELS — LIGHT CRUDE OIL CONTINUOUS CONTRACT",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Manter / Comprar no Piso (Bullish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BULLISH TREND com Risk Range 87.56 – 94.84.",
           "gatilho_invalidacao": "Quebra do piso de TREND (87.56)",
@@ -11085,7 +11165,7 @@
         {
           "ativo": "NATGAS",
           "categoria": "EARLY LOOK OUR LEVELS — NATURAL GAS CONTINUOUS CONTRACT",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Manter / Comprar no Piso (Bullish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BULLISH TREND com Risk Range 2.98 – 3.29.",
           "gatilho_invalidacao": "Quebra do piso de TREND (2.98)",
@@ -11099,7 +11179,7 @@
         {
           "ativo": "GOLD",
           "categoria": "EARLY LOOK OUR LEVELS — GOLD SPOT PRICE",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Evitar / Vender no Teto (Bearish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BEARISH TREND com Risk Range 4100.0 – 4237.0.",
           "gatilho_invalidacao": "Rompimento do teto de TREND (4237.0)",
@@ -11113,7 +11193,7 @@
         {
           "ativo": "COPPER",
           "categoria": "EARLY LOOK OUR LEVELS — COPPER SPOT PRICE",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Manter / Comprar no Piso (Bullish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BULLISH TREND com Risk Range 6.46 – 6.8.",
           "gatilho_invalidacao": "Quebra do piso de TREND (6.46)",
@@ -11127,7 +11207,7 @@
         {
           "ativo": "SILVER",
           "categoria": "EARLY LOOK OUR LEVELS — SILVER SPOT PRICE",
-          "regime": "QUAD 2",
+          "regime": "Quad 2",
           "decisao": "Evitar / Vender no Teto (Bearish Trend)",
           "racional": "EARLY LOOK: #Quad2 Momentum Continues: Sinal oficial BEARISH TREND com Risk Range 58.0 – 62.0.",
           "gatilho_invalidacao": "Rompimento do teto de TREND (62.0)",
@@ -14181,5 +14261,5 @@
       ]
     }
   ],
-  "updatedAt": "27/11/2026 10:02:47"
+  "updatedAt": "28/11/2026 13:22:58"
 }
